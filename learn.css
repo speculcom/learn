@@ -1,0 +1,369 @@
+/* ============================================================
+ * learn 站页面样式 —— 配色与容器**全部继承 brand.css**，本页只定义
+ * 名词墙独有的东西（方块、排布段、抽屉、维度表）。
+ *
+ * 为什么不再自带 --bg/--tx/--ln：
+ *   原型页是自己起的一套 token（--bg:#05080f、--tx、--ln…），
+ *   品牌站用的是另一套（--bg-raise:#0c1017、--ink-mid…），
+ *   两套并存导致同一个 learn.specul.com 在不同站里底色/文字色对不上
+ *   （#05080f vs #0a0e14 是两种黑）。**配色真相源只能有brand.css 一处。**
+ *
+ * 下面只保留 brand.css 没有的语义 token：圆角与 8 个功能域配色。
+ * 品牌 token 映射：--tx→--ink / --tx-2→--ink-mid / --tx-3→--ink-dim
+ *                 --ln→--line / --ln-2→--line-mid
+ * 浅色值同样要在 html[data-theme="light"] 里重给一遍 —— 功能域颜色要在
+ * 浅底上换成同色系深色版，否则 12px 小字对比度不够。
+ * ============================================================ */
+:root{
+  --r:10px; --r-s:7px;
+  /* 功能域配色（深色态） */
+  --d-concept:#a396f9; --d-model:#2fd6c7; --d-dev:#f5c542; --d-agent:#f2789b;
+  --d-data:#6da8ff; --d-media:#5dd39e; --d-infra:#c98fff; --d-choice:#ff9a6b;
+  /* 页面内简写 → 品牌 token */
+  --tx:var(--ink); --tx-2:var(--ink-mid); --tx-3:var(--ink-dim);
+  --ln:var(--line); --ln-2:var(--line-mid);
+}
+html[data-theme="light"]{
+  /* 功能域配色（浅色态，同色系深色版，保证文字对比度） */
+  --d-concept:#5b4bd6; --d-model:#0d8a80; --d-dev:#8a6300; --d-agent:#b83e68;
+  --d-data:#1f63c4; --d-media:#1c8a63; --d-infra:#7d3fbf; --d-choice:#b4531c;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{
+  margin:0; background:var(--bg); color:var(--tx);
+  /* ⚠ 不要在这里写 `font:` —— brand.css 的 body 已定义字体栈与
+     font-size: var(--fs-base)（15.5px）。本文件在 brand.css **之后**加载
+     （index.html 里 brand.css → learn.css），一写 font: 就把品牌字体整个覆盖掉，
+     于是 learn 站成了全站唯一字体不同的站（test-consistency 报
+     `-apple-system / 15px`，其余站都是 `Segoe UI / 15.5px`）。
+     本站的字号差异一律用选择器写，不要动body。 */
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--vio); text-decoration:none}
+a:hover{text-decoration:underline}
+code,pre{overflow-wrap:anywhere}
+
+/* hero 与控制条：跟着品牌容器走，不能自己写 max-width ——
+ * 原型页用的 1240px 和 brand.css 的 --container(min(1120px,90vw))
+ * 不一样，转正式站时不改就会比其他站宽出一截。 */
+.hero{padding:clamp(36px,6vh,56px) 0 clamp(20px,3vh,28px)}
+.hero h1{margin:0 0 12px; font-size:clamp(26px,3.2vw,34px); font-weight:500; line-height:1.32; letter-spacing:-.01em}
+.hero p{margin:0 0 9px; color:var(--tx-2); max-width:68ch}
+.hero .lead{color:var(--tx); font-size:16.5px}
+
+/* ===== 入门路径 =====
+ * 6 层编成 1→6 步。跟 .dchip / .tb 一样用 --dc 吃功能域色，
+ * 但**不引入新色**——配色真相源只有 brand.css 一处（见文件头注释）。
+ */
+.path{
+  margin-bottom:26px; padding:18px 20px;
+  border:1px solid var(--ln); border-radius:var(--r); background:var(--bg-raise);
+}
+.path-h{margin-bottom:14px}
+.path-h h2{margin:0 0 5px; font-size:17px; font-weight:500}
+.path-h p{margin:0; color:var(--tx-2); font-size:13.5px; max-width:74ch}
+.steps{list-style:none; margin:0; padding:0; counter-reset:none}
+.step{padding:14px 0; border-top:1px solid var(--ln)}
+.step:first-child{padding-top:4px; border-top:none}
+.step-h{display:flex; align-items:flex-start; gap:11px; flex-wrap:wrap}
+.step-n{
+  flex-shrink:0; width:23px; height:23px; border-radius:50%;
+  background:var(--vio); color:#fff;
+  font-size:12.5px; display:flex; align-items:center; justify-content:center;
+}
+.step-txt{min-width:0; flex:1}
+.step-txt b{display:block; font-size:14.5px; font-weight:500; line-height:1.5}
+.step-take{display:block; color:var(--tx-2); font-size:13px; margin-top:2px}
+.step-n2{
+  flex-shrink:0; font-size:11.5px; color:var(--tx-3);
+  background:var(--bg-inset); border:1px solid var(--ln);
+  border-radius:99px; padding:2px 9px; white-space:nowrap;
+}
+.step-d{margin:7px 0 9px; color:var(--tx-2); font-size:13px; max-width:74ch; min-width:0}
+.step-words{display:flex; flex-wrap:wrap; gap:6px; align-items:center}
+.wchip{
+  padding:3px 10px; border:1px solid var(--ln-2); border-radius:99px;
+  background:var(--bg); color:var(--tx-2); font-size:12.5px; cursor:pointer;
+  font-family:inherit; max-width:100%; overflow-wrap:anywhere;
+}
+.wchip:hover{border-color:var(--vio); color:var(--vio)}
+.wchip:focus-visible{outline:2px solid var(--vio); outline-offset:2px}
+.step-all{
+  margin-left:auto; background:none; border:none; cursor:pointer; font-family:inherit;
+  color:var(--vio); font-size:12.5px; padding:3px 2px; white-space:nowrap;
+}
+.step-all:hover{text-decoration:underline}
+.step-all:focus-visible{outline:2px solid var(--vio); outline-offset:2px}
+.path-foot{margin:13px 0 0; color:var(--tx-3); font-size:12.5px}
+
+/* ===== 控制条 ===== */
+.ctrl{
+  position:sticky; top:53px; z-index:20;
+  background:color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter:saturate(1.4) blur(10px);
+  border:1px solid var(--ln); border-radius:var(--r);
+  padding:14px 18px; margin-bottom:26px;
+}
+.crow{display:flex; flex-wrap:wrap; align-items:center; gap:10px 16px}
+.clab{font-size:12.5px; color:var(--tx-3); flex-shrink:0}
+.segs{display:flex; flex-wrap:wrap; gap:6px}
+.seg{
+  padding:5px 13px; border:1px solid var(--ln-2); border-radius:var(--r-s);
+  background:var(--bg-raise); color:var(--tx-2); font-size:13px; cursor:pointer;
+  font-family:inherit; white-space:nowrap;
+}
+.seg:hover{border-color:var(--vio); color:var(--vio)}
+.seg[aria-pressed="true"]{background:var(--vio); border-color:var(--vio); color:#fff}
+.seg:focus-visible{outline:2px solid var(--vio); outline-offset:2px}
+.seg small{opacity:.7; margin-left:5px; font-size:11.5px}
+.cbar{
+  margin-top:12px; padding-top:12px; border-top:1px solid var(--ln);
+  display:flex; flex-wrap:wrap; gap:8px 12px; align-items:center;
+}
+.search{
+  flex:1; min-width:180px; padding:6px 12px; border-radius:var(--r-s);
+  border:1px solid var(--ln-2); background:var(--bg-raise); color:var(--tx);
+  font-size:13.5px; font-family:inherit;
+}
+.search::placeholder{color:var(--tx-3)}
+.search:focus{outline:none; border-color:var(--vio)}
+.cnt{font-size:12.5px; color:var(--tx-3); white-space:nowrap}
+
+/* ===== 分组 ===== */
+.grp{margin-bottom:30px}
+.gh{
+  display:flex; align-items:baseline; gap:11px; flex-wrap:wrap;
+  padding-bottom:9px; margin-bottom:13px; border-bottom:1px solid var(--ln);
+}
+.gh h2{margin:0; font-size:17px; font-weight:500}
+.gh p{margin:0; color:var(--tx-2); font-size:13px; min-width:0}
+.gnum{
+  font-size:11.5px; color:var(--tx-3); background:var(--bg-inset);
+  border:1px solid var(--ln); border-radius:99px; padding:2px 9px; flex-shrink:0;
+}
+
+/* ===== 方块墙 ===== */
+.wall{
+  display:grid; gap:8px;
+  grid-template-columns:repeat(auto-fill, minmax(min(168px,100%), 1fr));
+}
+.tb{
+  position:relative; text-align:left; cursor:pointer; font-family:inherit;
+  background:var(--bg-panel); border:1px solid var(--ln);
+  border-radius:var(--r-s); padding:12px 13px;
+  min-height:62px; display:flex; flex-direction:column; gap:4px;
+  overflow:hidden; transition:border-color .12s, background .12s;
+}
+.tb::before{
+  content:''; position:absolute; left:0; top:0; bottom:0; width:3px;
+  background:var(--dc, var(--vio));
+}
+.tb:hover{border-color:var(--dc, var(--vio)); background:var(--bg-inset)}
+.tb:focus-visible{outline:2px solid var(--vio); outline-offset:2px}
+.tb-n{font-size:14.5px; font-weight:500; line-height:1.4}
+.tb-en{font-size:11.5px; color:var(--tx-3); line-height:1.35; overflow-wrap:anywhere}
+.tb-p{
+  font-size:12px; color:var(--tx-2); line-height:1.5; margin-top:2px;
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+.tb-lv{
+  position:absolute; right:9px; top:9px; font-size:10.5px;
+  color:var(--tx-3); background:var(--bg-inset);
+  border:1px solid var(--ln); border-radius:4px; padding:0 5px; line-height:16px;
+}
+.tb.is-open{border-color:var(--vio); background:var(--bg-inset)}
+
+.empty{
+  text-align:center; color:var(--tx-3); font-size:14px;
+  padding:52px 20px; border:1px dashed var(--ln-2); border-radius:var(--r);
+}
+
+/* ===== 维度对照表 ===== */
+.dintro{
+  background:var(--bg-panel); border:1px solid var(--ln);
+  border-radius:var(--r); padding:20px 22px; margin-bottom:24px;
+}
+.dintro h2{margin:0 0 6px; font-size:17px; font-weight:500}
+.dintro p{margin:0 0 10px; color:var(--tx-2); font-size:14px}
+.dintro .warn{
+  border-left:2px solid var(--gold); padding-left:12px;
+  color:var(--tx-2); font-size:13.5px;
+}
+/* 维度视图：每个维度一个 .drow，标题行是 .drow-h。
+ * ⚠ 下面三条 .dset 规则是**死规则**（2026-10-03 清理）——
+ *   维度视图早期用过 .dset > h3 的容器结构，改成卡片式 .drow 之后容器名换了，
+ *   这三条没跟着删。结果是它们不报错、不影响任何东西，只是 `.tagcode`
+ *   的样式（11.5px 等宽 + 底色 + 圆角）**从来没生效过** ——
+ *   11 个维度 key 一直以 15.5px 常规字体裸渲染，看起来像「排版没设计过」。
+ *   留着会让人以为 tagcode 已经有样式了，所以改成注释说明而不是悄悄删。
+ *   现在真正生效的 .tagcode 规则在下面 .drow-h 那组里。 */
+.drow{
+  background:var(--bg-panel); border:1px solid var(--ln);
+  border-radius:var(--r-s); padding:15px 17px; margin-bottom:9px;
+}
+.drow-h{
+  display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin-bottom:8px;
+}
+.drow-h b{font-size:15px; font-weight:500}
+/* 维度 key（model_access / transport / …）—— 等宽小标签。
+ * 这条原来写成 `.dset > h3 .tagcode`，与真实 DOM 不匹配而从未生效（见上方说明）。 */
+.drow-h .tagcode{
+  font-size:11.5px; color:var(--tx-3); font-family:ui-monospace, Menlo, monospace;
+  background:var(--bg-inset); border:1px solid var(--ln); border-radius:4px; padding:1px 6px;
+  /* 11 个 key 里最长的 model_access 有 12 字符，加上卡片 padding 必须能放下；
+     narrow 屏下不许把它折成多行（折行会让维度行高忽高忽低）。*/
+  overflow-wrap:normal; word-break:keep-all; white-space:nowrap;
+}
+.drow-h .n{font-size:12px; color:var(--tx-3); margin-left:auto; white-space:nowrap}
+.drow-q{color:var(--tx-2); font-size:13.5px; margin-bottom:11px}
+.dchips{display:flex; flex-wrap:wrap; gap:6px}
+.dchip{
+  padding:4px 11px; border:1px solid var(--ln-2); border-radius:99px;
+  background:var(--bg-raise); color:var(--tx-2); font-size:13px; cursor:pointer;
+  font-family:inherit;
+}
+.dchip:hover{border-color:var(--vio); color:var(--vio)}
+.dchip:focus-visible{outline:2px solid var(--vio); outline-offset:2px}
+.dcaveat{
+  margin-top:11px; padding:9px 12px; border-radius:var(--r-s);
+  background:var(--bg-inset); border:1px solid var(--ln);
+  font-size:13px; color:var(--tx-2); line-height:1.65;
+}
+.dcaveat i{color:var(--gold); font-style:normal}
+
+/* ===== 详情抽屉 ===== */
+.scrim{
+  position:fixed; inset:0; z-index:40; background:rgba(2,5,12,.62);
+  opacity:0; pointer-events:none; transition:opacity .16s;
+  backdrop-filter:blur(2px);
+}
+.scrim.on{opacity:1; pointer-events:auto}
+.drawer{
+  position:fixed; z-index:41; right:0; top:0; bottom:0; width:min(520px, 100%);
+  background:var(--bg-panel); border-left:1px solid var(--ln);
+  transform:translateX(100%); transition:transform .2s ease;
+  display:flex; flex-direction:column; min-width:0;
+}
+.drawer.on{transform:none}
+.dh{
+  padding:20px 22px 16px; border-bottom:1px solid var(--ln);
+  display:flex; align-items:flex-start; gap:14px; flex-shrink:0;
+}
+.dh-txt{min-width:0; flex:1}
+.dh-txt h3{margin:0 0 3px; font-size:21px; font-weight:500; line-height:1.32}
+.dh-txt .en{font-size:13px; margin:0}
+.dtags{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px}
+.dtag{
+  font-size:11.5px; color:var(--tx-2); background:var(--bg-inset);
+  border:1px solid var(--ln); border-radius:99px; padding:2px 9px;
+}
+.dtag.d{border-color:var(--dc); color:var(--dc)}
+.dclose{
+  flex-shrink:0; width:32px; height:32px; border-radius:var(--r-s);
+  border:1px solid var(--ln-2); background:var(--bg-inset); color:var(--tx-2);
+  cursor:pointer; font-size:17px; line-height:1; display:grid; place-items:center;
+  font-family:inherit;
+}
+.dclose:hover{border-color:var(--vio); color:var(--vio)}
+.dclose:focus-visible{outline:2px solid var(--vio); outline-offset:2px}
+.db{padding:20px 22px 32px; overflow-y:auto; flex:1; min-width:0}
+.ds{padding:14px 16px; border-radius:var(--r-s); margin-bottom:16px}
+.ds.p{background:color-mix(in srgb, var(--cyan) 10%, var(--bg-inset)); border:1px solid color-mix(in srgb, var(--cyan) 28%, var(--ln))}
+html[data-theme="light"] .ds.p{background:color-mix(in srgb, var(--vio) 7%, var(--bg-inset)); border-color:color-mix(in srgb, var(--vio) 26%, var(--ln))}
+.dslabel{font-size:11.5px; color:var(--tx-3); margin-bottom:6px; letter-spacing:.04em}
+.dcaveat strong,.drow-q strong,.ds.txt strong,.ddef strong{color:var(--tx); font-weight:500}
+html[data-theme="light"] .dcaveat strong,html[data-theme="light"] .drow-q strong{color:var(--vio)}
+.ds.p .dslabel{color:var(--cyan)}
+html[data-theme="light"] .ds.p .dslabel{color:var(--vio)}
+.ds.txt{color:var(--tx); font-size:15px; line-height:1.72}
+.ds.w{
+  background:var(--bg-inset); border:1px solid var(--ln);
+}
+.ds.w .dslabel{color:var(--gold)}
+.ds.w .ds.txt{color:var(--tx-2); font-size:14px}
+.ddef{color:var(--tx-2); font-size:14.5px; margin-bottom:11px; line-height:1.72}
+.ddef:last-of-type{margin-bottom:0}
+.alias{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px}
+.alias span{
+  font-size:11.5px; color:var(--tx-3); background:var(--bg-inset);
+  border:1px solid var(--ln); border-radius:var(--r-s); padding:2px 8px;
+}
+.related{margin-top:22px; padding-top:18px; border-top:1px solid var(--ln)}
+.related h4{margin:0 0 4px; font-size:13px; font-weight:500; color:var(--tx)}
+.related p{margin:0 0 12px; font-size:12.5px; color:var(--tx-3)}
+.rgrid{display:flex; flex-wrap:wrap; gap:7px}
+.rbtn{
+  padding:4px 11px; border:1px solid var(--ln-2); border-radius:99px;
+  background:var(--bg-raise); color:var(--tx-2); font-size:12.5px; cursor:pointer;
+  font-family:inherit;
+}
+.rbtn:hover{border-color:var(--vio); color:var(--vio)}
+.rbtn:focus-visible{outline:2px solid var(--vio); outline-offset:2px}
+.refs{margin-top:20px; padding-top:18px; border-top:1px solid var(--ln)}
+.refs h4{margin:0 0 10px; font-size:13px; font-weight:500}
+.refs-grid{display:grid; gap:8px}
+.refs a{
+  display:block; padding:10px 13px; border:1px solid var(--ln);
+  border-radius:var(--r-s); background:var(--bg-inset);
+  color:var(--tx-2); font-size:13.5px;
+}
+.refs a:hover{border-color:var(--vio); color:var(--vio); text-decoration:none}
+.dnav{display:flex; gap:8px; margin-top:22px; padding-top:18px; border-top:1px solid var(--ln)}
+.dnav button{
+  flex:1; padding:9px 12px; border:1px solid var(--ln-2); border-radius:var(--r-s);
+  background:var(--bg-raise); color:var(--tx-2); font-size:13px; cursor:pointer;
+  font-family:inherit; text-align:left; min-width:0;
+}
+.dnav button:hover:not(:disabled){border-color:var(--vio); color:var(--vio)}
+.dnav button:disabled{opacity:.35; cursor:default}
+.dnav b{display:block; font-size:10.5px; color:var(--tx-3); font-weight:400; margin-bottom:1px}
+.dnav span{overflow:hidden; text-overflow:ellipsis; white-space:nowrap; display:block}
+
+/* ===== 去哪一站 ===== */
+.dest{
+  margin-top:44px; background:var(--bg-panel);
+  border:1px solid var(--ln); border-radius:var(--r); padding:22px 24px;
+}
+.dest h2{margin:0 0 5px; font-size:17px; font-weight:500}
+.dest > p{margin:0 0 16px; color:var(--tx-2); font-size:14px}
+.dgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr)); gap:11px}
+.d{
+  background:var(--bg-inset); border:1px solid var(--ln);
+  border-radius:var(--r-s); padding:13px 15px; color:var(--tx); display:block;
+}
+.d:hover{border-color:var(--vio); text-decoration:none}
+.d b{display:block; font-size:14.5px; font-weight:500; margin-bottom:3px}
+.d span{color:var(--tx-2); font-size:13px; line-height:1.6; display:block}
+.d i{color:var(--tx-3); font-style:normal; font-size:12px; display:block; margin-top:5px}
+
+.note{
+  margin-top:34px; padding:15px 19px; border-radius:var(--r-s);
+  background:var(--bg-raise); border:1px solid var(--ln); color:var(--tx-2); font-size:13.5px;
+}
+.note b{color:var(--tx); font-weight:500}
+
+footer{
+  max-width:1240px; margin:0 auto; padding:24px 24px 40px;
+  border-top:1px solid var(--ln); color:var(--tx-3); font-size:13px;
+  display:flex; flex-wrap:wrap; gap:8px 18px; align-items:center;
+}
+footer a{color:var(--tx-2)}
+.foot-sp{flex:1; min-width:0}
+
+@media (max-width:760px){
+  .top-in{padding:10px 16px; gap:10px}
+  .en,.tt{display:none}
+  .wrap{padding:0 16px 72px}
+  .hero{padding:30px 0 20px}
+  .hero h1{font-size:23px}
+  .ctrl{top:49px; padding:12px 14px; position:static}
+  .wall{grid-template-columns:repeat(auto-fill, minmax(min(140px,100%), 1fr)); gap:7px}
+  .tb{min-height:56px; padding:10px 11px}
+  .tb-n{font-size:13.5px}
+  .tb-p{display:none}
+  .dest{padding:16px}
+  .dh{padding:16px 18px 14px}
+  .db{padding:16px 18px 28px}
+  footer{padding:20px 16px 30px}
+}
