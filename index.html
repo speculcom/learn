@@ -18,7 +18,7 @@
   <style>:root { --accent: var(--cyan); }</style>
 </head>
 <body class="brand-ambient" style="--accent:var(--cyan)">
-  <a class="t-skip" href="#main">跳到主要内容</a>
+  <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
   <header class="site-header">
     <div class="container site-bar">
       <a class="brand" href="https://specul.com/" title="投机取巧">
@@ -59,11 +59,11 @@
 
 <div class="ctrl">
   <div class="crow">
-    <span class="clab">排布方式</span>
+    <span class="clab"><span data-zh>排布方式</span><span data-en>Arrange by</span></span>
     <div class="segs" id="segGroup" role="group" aria-label="排布方式">
-      <button class="seg" type="button" data-mode="domain" aria-pressed="true">按功能域<small id="c-domain"></small></button>
-      <button class="seg" type="button" data-mode="purpose" aria-pressed="false">按用途<small id="c-purpose"></small></button>
-      <button class="seg" type="button" data-mode="level" aria-pressed="false">按难度<small id="c-level"></small></button>
+      <button class="seg" type="button" data-mode="domain" aria-pressed="true"><span data-zh>按功能域</span><span data-en>By domain</span><small id="c-domain"></small></button>
+      <button class="seg" type="button" data-mode="purpose" aria-pressed="false"><span data-zh>按用途</span><span data-en>By purpose</span><small id="c-purpose"></small></button>
+      <button class="seg" type="button" data-mode="level" aria-pressed="false"><span data-zh>按难度</span><span data-en>By level</span><small id="c-level"></small></button>
       <button class="seg" type="button" data-mode="dims" aria-pressed="false">维度对照<small id="c-dims"></small></button>
       <button class="seg" type="button" data-mode="flat" aria-pressed="false">全部平铺<small id="c-flat"></small></button>
     </div>
@@ -141,6 +141,33 @@
   <script>
 
 var DOMAINS = META.domains, PURPOSES = META.purposes, LEVELS = META.levels;
+
+/* ── 双语取词（2026-10-04）─────────────────────────────────────────
+   meta.js 的 18 条（8 域 / 4 用途 / 6 层）此前只有中文，英文态下
+   实测首屏仍显示「核心概念 / 第一层·入门层 / 21 词」。
+   data/meta.js 已补 nameEn / shortEn / descEn，这里负责按语言取值。
+   **所有双语取值都必须走这两个函数** —— 逐处写三元表达式在新增调用点时必漏。 */
+function IS_EN(){ return document.documentElement.lang === 'en'; }
+/* 取 meta 对象的 name / desc（field 为 'name' 或 'desc'）*/
+function L(meta, field){
+  if(!meta) return '';
+  var en = meta[field + 'En'];
+  return (IS_EN() && en) ? en : meta[field];
+}
+/* 取层级的短名 */
+function LS(k){
+  var lv = LEVELS[k];
+  if(!lv) return '';
+  return IS_EN() && lv.shortEn ? lv.shortEn : lv.short;
+}
+/* 组装「第X 层 · 短名」的英文态写法 */
+function LN(k){
+  var lv = LEVELS[k];
+  if(!lv) return '';
+  var n = IS_EN() && lv.nameEn ? lv.nameEn : lv.name;
+  return IS_EN() ? ('Layer ' + n + ' · ' + LS(k))
+                 : ('第' + n + '层 · ' + LS(k));
+}
 var DCOLOR = {};
 Object.keys(DOMAINS).forEach(function(k){ DCOLOR[k] = DOMAINS[k].color; });
 
@@ -173,23 +200,26 @@ var byZh = {};
 FLAT.forEach(function(t){ byZh[t.zh] = t; });
 
 function groupsOf(mode, terms){
-  if(mode === 'flat') return [{key:'all', name:'全部名词', desc:'不分组，按首字排。适合已经知道要找什么。', items:terms.slice()}];
+  if(mode === 'flat') return [{key:'all',
+      name:IS_EN()?'All terms':'全部名词',
+      desc:IS_EN()?'Not grouped, sorted alphabetically. Best when you already know what you want.'
+                  :'不分组，按首字排。适合已经知道要找什么。',
+      items:terms.slice()}];
   if(mode === 'domain'){
     return Object.keys(DOMAINS).map(function(k){
-      return {key:k, name:DOMAINS[k].name, desc:DOMAINS[k].desc,
+      return {key:k, name:L(DOMAINS[k],'name'), desc:L(DOMAINS[k],'desc'),
         items:terms.filter(function(t){ return t.domain===k; })};
     }).filter(function(g){ return g.items.length; });
   }
   if(mode === 'purpose'){
     return Object.keys(PURPOSES).map(function(k){
-      return {key:k, name:PURPOSES[k].name, desc:PURPOSES[k].desc,
+      return {key:k, name:L(PURPOSES[k],'name'), desc:L(PURPOSES[k],'desc'),
         items:terms.filter(function(t){ return t.purposeTag===k; })};
     }).filter(function(g){ return g.items.length; });
   }
   // level
   return Object.keys(LEVELS).map(function(k){
-    return {key:k, name:'第'+LEVELS[k].name+'层 · '+LEVELS[k].short,
-      desc:LEVELS[k].desc,
+    return {key:k, name:LN(k), desc:L(LEVELS[k], 'desc'),
       items:terms.filter(function(t){ return String(t.level)===k; })};
   }).filter(function(g){ return g.items.length; });
 }
@@ -227,8 +257,12 @@ function tile(t){
  */
 function renderDims(q){
   var h = '<div class="dintro"><h2>赛道维度 ↔ 名词对照表</h2>'
-    + '<p>本站群在比较产品时，看的是固定的几组维度。这张表把维度和名词地图接起来——<b>一个维度在问什么，涉及哪些名词，点词进解释</b>。</p>'
-    + '<p class="warn">这里只列 IDE / CLI / Harness 的八维与 MCP 的三维。名词地图里的<b>入门、使用、部署层大部分词不在这张表里</b>——那些是「怎么把AI 用起来」的知识，而站点比较的是「同类产品怎么选」。两者用途不同，不是遗漏。</p></div>';
+    + (IS_EN()
+      ? '<p>The atlas sites compare products along a fixed set of dimensions. This table connects those dimensions to the term map — <b>what each dimension asks, which terms it involves, click a term to read it</b>.</p>'
+      : '<p>本站群在比较产品时，看的是固定的几组维度。这张表把维度和名词地图接起来——<b>一个维度在问什么，涉及哪些名词，点词进解释</b>。</p>')
+    + (IS_EN()
+        ? '<p class="warn">Only the eight IDE / CLI / Harness dimensions and the three MCP ones are listed. Most <b>introductory, usage and deployment terms</b> are not here — those are about <em>how to put AI to work</em>, while the sites compare <em>how to choose among comparable products</em>. Different purposes, not an omission.</p>'
+        : '<p class="warn">这里只列 IDE / CLI / Harness 的八维与 MCP 的三维。名词地图里的<b>入门、使用、部署层大部分词不在这张表里</b>——那些是「怎么把AI 用起来」的知识，而站点比较的是「同类产品怎么选」。两者用途不同，不是遗漏。</p>') + '</div>';
   var totalUsed = 0;
   [['八维 · IDE / CLI / Harness 共用', DIMS.DIMENSIONS8], ['三维 · MCP 赛道专用', DIMS.DIMENSIONS3]].forEach(function(pair){
     h += '<section class="dset"><h3>'+esc(pair[0])+'</h3><p>每个维度对应档案里的一组固定考察项。</p>';
@@ -241,7 +275,7 @@ function renderDims(q){
       var shown = q ? items.filter(function(t){ return match(t, q); }) : items;
       h += '<div class="drow"><div class="drow-h"><b>'+esc(d.label)+'</b>'
          + '<span class="tagcode">'+esc(d.key)+'</span>'
-         + '<span class="n">'+shown.length+' 个词</span></div>'
+         + '<span class="n">'+shown.length+(IS_EN()?' terms':' 个词')+'</span></div>'
          + '<div class="drow-q">'+escMd(d.q)+'</div><div class="dchips">';
       shown.forEach(function(t){
         h += '<button class="dchip" type="button" data-zh="'+esc(t.zh)+'" style="border-color:'+DCOLOR[t.domain]+'33">'+esc(t.zh)+'</button>';
@@ -255,9 +289,12 @@ function renderDims(q){
   document.getElementById('wall').innerHTML = h;
   document.getElementById('empty').hidden = true;
   var cov = Math.round(totalUsed / FLAT.length * 100);
-  document.getElementById('cnt').textContent = '维度 '+(DIMS.DIMENSIONS8.length+DIMS.DIMENSIONS3.length)
-    + ' 个 · 覆盖名词 '+totalUsed+' / '+FLAT.length+'（'+cov+'%）'
-    + (q ? '（筛选：'+q+'）' : '');
+  document.getElementById('cnt').textContent = (IS_EN()?'Dimensions ':'维度 ')
+    + (DIMS.DIMENSIONS8.length+DIMS.DIMENSIONS3.length)
+    + (IS_EN()
+        ? ' · covering ' + totalUsed + ' / ' + FLAT.length + ' terms (' + cov + '%)'
+        : ' 个 · 覆盖名词 ' + totalUsed + ' / ' + FLAT.length + '（' + cov + '%）')
+    + (q ? (IS_EN()?(' (filter: '+q+')') : ('（筛选：'+q+'）')) : '');
 }
 
 function render(){
@@ -272,14 +309,14 @@ function render(){
   var groups = groupsOf(mode, terms);
   var h = '';
   groups.forEach(function(g){
-    h += '<section class="grp"><div class="gh"><span class="gnum">'+g.items.length+' 词</span>'
+    h += '<section class="grp"><div class="gh"><span class="gnum">'+g.items.length+(IS_EN()?' terms':' 词')+'</span>'
        + '<h2>'+esc(g.name)+'</h2><p>'+esc(g.desc)+'</p></div><div class="wall">';
     g.items.forEach(function(t){ h += tile(t); });
     h += '</div></section>';
   });
   document.getElementById('wall').innerHTML = h;
   document.getElementById('empty').hidden = terms.length > 0;
-  document.getElementById('cnt').textContent = terms.length + ' / ' + FLAT.length + ' 个名词'
+  document.getElementById('cnt').textContent = terms.length + ' / ' + FLAT.length + (IS_EN()?' terms':' 个名词')
     + (query ? '（筛选：' + query + '）' : '');
 }
 
@@ -340,6 +377,19 @@ var PATH_TAKE = {
   '5': '知道模型跑在自己机器上要吃多少显存',
   '6': '把学到的东西变成一个能签字的决定'
 };
+var PATH_TAKE_EN = {
+  '1': 'Explain what AI is doing to another person',
+  '2': 'Know when it fails, so a demo cannot fool you',
+  '3': 'Judge whether a plan holds up instead of trusting the vendor',
+  '4': 'Understand why it behaves that way, rather than memorising',
+  '5': 'Know how much VRAM running it locally will take',
+  '6': 'Turn what you learned into a decision you can sign off on'
+};
+/* 英文态下没配译文时回退到层级短名（而不是留中文）*/
+function TAKE_TAKE(k){
+  if(IS_EN()) return PATH_TAKE_EN[k] || LS(k);
+  return '学完能：' + (PATH_TAKE[k] || LEVELS[k].short);
+}
 function renderPath(){
   var groups = groupsOf('level', FLAT);
   var h = '';
@@ -350,21 +400,25 @@ function renderPath(){
     if(picks.length < 3) picks = g.items.slice(0, 3);
     h += '<li class="step"><div class="step-h">'
       + '<span class="step-n">'+(i+1)+'</span>'
-      + '<div class="step-txt"><b>第'+esc(LEVELS[key].name)+'层 · '+esc(LEVELS[key].short)+'</b>'
-      + '<span class="step-take">学完能：'+esc(PATH_TAKE[key]||LEVELS[key].short)+'</span></div>'
-      + '<span class="step-n2">'+g.items.length+' 词</span></div>'
-      + '<p class="step-d">'+esc(g.desc)+'</p>'
+      + '<div class="step-txt"><b>'+esc(LN(key))+'</b>'
+      + '<span class="step-take">'+esc(TAKE_TAKE(key))+'</span></div>'
+      + '<span class="step-n2">'+g.items.length+(IS_EN()?' terms':' 词')+'</span></div>'
+      + '<p class="step-d">'+esc(L(LEVELS[key],'desc'))+'</p>'
       + '<div class="step-words">';
     picks.forEach(function(t){
       h += '<button class="wchip" type="button" data-zh="'+esc(t.zh)+'" style="border-color:'+DCOLOR[t.domain]+'33">'+esc(t.zh)+'</button>';
     });
-    h += '<button class="step-all" type="button" data-level="'+esc(key)+'">看这一层全部 '+g.items.length+' 词 →</button>'
+    h += '<button class="step-all" type="button" data-level="'+esc(key)+'">'
+      + (IS_EN()? 'See all ' + g.items.length + ' terms in this layer →'
+                : '看这一层全部 ' + g.items.length + ' 词 →') + '</button>'
       + '</div></li>';
   });
   document.getElementById('steps').innerHTML = h;
-  document.getElementById('pathFoot').textContent =
-    '一共 ' + FLAT.length + ' 个词。全部读完不需要顺序，但停在一层就够用了——'
-    + '大多数人不做本地部署，第 5 层可以先跳过。';
+  document.getElementById('pathFoot').textContent = IS_EN()
+    ? FLAT.length + ' terms in all. You do not need to read them in order — stopping at one layer is enough. '
+      + 'Most people do not deploy locally, so layer 5 can be skipped.'
+    : '一共 ' + FLAT.length + ' 个词。全部读完不需要顺序，但停在一层就够用了——'
+      + '大多数人不做本地部署，第 5 层可以先跳过。';
 }
 
 var cur = null;
@@ -377,21 +431,25 @@ function openTerm(zh){
   document.getElementById('dEn').textContent = t.en || '';
   var tg = document.getElementById('dTags');
   tg.innerHTML = ''
-    + '<span class="dtag d" style="--dc:'+DCOLOR[t.domain]+'">'+esc(DOMAINS[t.domain].name)+'</span>'
-    + '<span class="dtag">'+esc(PURPOSES[t.purposeTag].name)+'</span>'
-    + '<span class="dtag">第'+esc(t._lvlName)+'层</span>'
-    + '<span class="dtag">'+esc(t._layer)+'</span>';
+    + '<span class="dtag d" style="--dc:'+DCOLOR[t.domain]+'">'+esc(L(DOMAINS[t.domain],'name'))+'</span>'
+    + '<span class="dtag">'+esc(L(PURPOSES[t.purposeTag],'name'))+'</span>'
+    + '<span class="dtag">'+(IS_EN()?'Level ':'第')+esc(t._lvlName)+(IS_EN()?'':'层')+'</span>'
+    + '<span class="dtag">'+esc(IS_EN() ? LS(String(t.level)) : t._layer)+'</span>';
   var b = document.getElementById('dBody');
   var h = '';
-  if(t.purpose) h += '<div class="ds p"><div class="dslabel">它解决什么问题</div><div class="ds txt">'+escMd(t.purpose)+'</div></div>';
-  h += '<div class="dslabel">这是什么</div>';
+  if(t.purpose) h += '<div class="ds p"><div class="dslabel">'
+    + (IS_EN()?'What problem it solves':'它解决什么问题')
+    + '</div><div class="ds txt">'+escMd(t.purpose)+'</div></div>';
+  h += '<div class="dslabel">'+(IS_EN()?'What it is':'这是什么')+'</div>';
   (t.def||[]).forEach(function(d){ h += '<div class="ddef">'+escMd(d)+'</div>'; });
   if(t.alias && t.alias.length){
     h += '<div class="alias">';
     t.alias.forEach(function(a){ h += '<span>也叫 '+esc(a)+'</span>'; });
     h += '</div>';
   }
-  if(t.why) h += '<div class="ds w"><div class="dslabel">为什么需要知道</div><div class="ds txt">'+escMd(t.why)+'</div></div>';
+  if(t.why) h += '<div class="ds w"><div class="dslabel">'
+    + (IS_EN()?'Why it is worth knowing':'为什么需要知道')
+    + '</div><div class="ds txt">'+escMd(t.why)+'</div></div>';
   if(t.refs && t.refs.length){
     h += '<div class="refs"><h4>看具体例子</h4><div class="refs-grid">';
     t.refs.forEach(function(r){ h += '<a href="'+esc(r[1])+'" target="_blank" rel="noopener">'+esc(r[0])+' ↗</a>'; });
