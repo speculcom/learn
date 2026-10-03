@@ -71,8 +71,12 @@ code,pre{overflow-wrap:anywhere}
 /* hero 与控制条：跟着品牌容器走，不能自己写 max-width ——
  * 原型页用的 1240px 和 brand.css 的 --container(min(1120px,90vw))
  * 不一样，转正式站时不改就会比其他站宽出一截。 */
-.hero{padding:clamp(36px,6vh,56px) 0 clamp(20px,3vh,28px)}
-.hero h1{margin:0 0 12px; font-size:clamp(26px,3.2vw,34px); font-weight:500; line-height:1.32; letter-spacing:-.01em}
+/* 2026-10-03：原 clamp(36px,6vh,56px) → vh 让留白随视口高度漂移。
+   改用固定档，与全站同一节奏。 */
+.hero{padding:var(--section-pad) 0 var(--sp-3)}
+/* 2026-10-03：原 clamp(26px,3.2vw,34px) → 实测 h1 仅 34px，是六站最小。
+   接入全站 --display-sub，learn 与其它站同一档。 */
+.hero h1{margin:0 0 var(--sp-3); font-size:var(--display-sub); font-weight:600; line-height:1.16; letter-spacing:-.02em}
 .hero p{margin:0 0 9px; color:var(--tx-2); max-width:68ch}
 .hero .lead{color:var(--tx); font-size:16.5px}
 
@@ -380,7 +384,7 @@ footer a{color:var(--tx-2)}
   .en,.tt{display:none}
   .wrap{padding:0 16px 72px}
   .hero{padding:30px 0 20px}
-  .hero h1{font-size:23px}
+  .hero h1{font-size:var(--display-sub)}
   .ctrl{top:49px; padding:12px 14px; position:static}
   .wall{grid-template-columns:repeat(auto-fill, minmax(min(140px,100%), 1fr)); gap:7px}
   .tb{min-height:56px; padding:10px 11px}
