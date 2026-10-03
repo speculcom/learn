@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>学 AI · 116 个名词与 11 个维度 | 投机取巧</title>
+  <meta name="description" content="116 个 AI 名词按功能域、用途、难度排成方块墙，另有 11 个维度对照表。这些词是什么、干什么用、为什么你需要知道它。" />
+  <link rel="canonical" href="https://learn.specul.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="学 AI" />
+  <meta property="og:url" content="https://learn.specul.com/" />
+  <meta property="og:title" content="学 AI · 116 个名词与 11 个维度 | 投机取巧" />
+  <meta property="og:description" content="116 个 AI 名词按功能域、用途、难度排成方块墙，另有 11 个维度对照表。" />
+  <meta name="theme-color" content="#05080f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="brand.css" />
+  <link rel="stylesheet" href="learn.css" />
+  <style>:root { --accent: var(--cyan); }</style>
+</head>
+<body class="brand-ambient" style="--accent:var(--cyan)">
+  <a class="t-skip" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/" aria-current="page"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://agent.specul.com/"><span data-zh>Agent</span><span data-en>Agent</span></a>
+        <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+        <span class="nav-tools">
+          <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+          <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+        </span>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <div class="container">
+<section class="hero">
+  <h1>学 AI · 名词地图</h1>
+  <p class="lead">116 个 AI 名词排成方块墙。不想从头翻，下面有一条<b>零基础入门路径</b>，六层按顺序走就行。你也可以从别的角度看它——<b>按功能域</b>看它属于哪一片、按<b>用途</b>看它帮你解决什么、按<b>难度</b>看该从哪层开始读。另有<b>维度对照表</b>，把这 116 个词接到本站群实际考察的维度上。</p>
+  <p>点任意一个方块，右边会展开这个词是什么、干什么用、为什么你需要知道它，以及它相关的其他词和具体产品页。</p>
+</section>
+
+<section class="path" id="path">
+  <div class="path-h">
+    <h2>零基础怎么开始</h2>
+    <p>116 个词不用从头背。这 6 层是有顺序的——<b>上一层是下一层的地基</b>，跳着读会卡住。每层点进去就是那一层全部的词。</p>
+  </div>
+  <ol class="steps" id="steps"></ol>
+  <p class="path-foot" id="pathFoot"></p>
+</section>
+
+<div class="ctrl">
+  <div class="crow">
+    <span class="clab">排布方式</span>
+    <div class="segs" id="segGroup" role="group" aria-label="排布方式">
+      <button class="seg" type="button" data-mode="domain" aria-pressed="true">按功能域<small id="c-domain"></small></button>
+      <button class="seg" type="button" data-mode="purpose" aria-pressed="false">按用途<small id="c-purpose"></small></button>
+      <button class="seg" type="button" data-mode="level" aria-pressed="false">按难度<small id="c-level"></small></button>
+      <button class="seg" type="button" data-mode="dims" aria-pressed="false">维度对照<small id="c-dims"></small></button>
+      <button class="seg" type="button" data-mode="flat" aria-pressed="false">全部平铺<small id="c-flat"></small></button>
+    </div>
+  </div>
+  <div class="cbar">
+    <input class="search" id="q" type="search" placeholder="搜词名或解释里的字，比如「显存」「幻觉」" aria-label="搜索名词">
+    <span class="cnt" id="cnt"></span>
+  </div>
+</div>
+
+<div id="wall"></div>
+<div class="empty" id="empty" hidden>没有匹配的名词。换个词试试，或清空搜索框。</div>
+
+<section class="dest">
+  <h2>带着需求，去对应的那一站</h2>
+  <p>名词是手段，决策是目的。下面几条是本站群能直接回答的问题。</p>
+  <div class="dgrid">
+    <a class="d" href="https://agent.specul.com/"><b>我要让AI 替我干活</b><span>21 份 agent 档案 —— 装在编辑器 / 终端里自己跑的，和常驻云端的。</span><i>agent.specul.com</i></a>
+    <a class="d" href="https://models.specul.com/"><b>我要在自己电脑上跑模型</b><span>7 个系列 11 种规格，按显存选量化档位。</span><i>models.specul.com</i></a>
+    <a class="d" href="https://nav.specul.com/"><b>我只想知道有什么存在</b><span>713 条导航，12 个分类。</span><i>nav.specul.com</i></a>
+    <a class="d" href="https://agent.specul.com/"><b>我要让 AI 接外部数据</b><span>9 份 MCP server 档案 —— 给 agent 装的工具，缺什么装什么。</span><i>agent.specul.com</i></a>
+  </div>
+</section>
+
+<div class="note">
+  <b>关于可信度。</b>名词定义力求准确，涉及具体数值、报价、性能的断言只写有出处的，没有出处的会明说「未获官方确认」，不猜测。这页解决的是「看不懂」的问题；具体产品的取舍请到各站看那份档案——档案里每条事实都带来源清单。
+</div>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 Specul · <span data-zh>投机</span><span data-en>Specul</span> · <span data-zh>推演</span><span data-en>Speculate</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/">首页</a>
+          <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+          <a href="https://agent.specul.com/"><span data-zh>Agent</span><span data-en>Agent</span></a>
+          <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
+          <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
+          <a href="https://github.com/speculcom/learn" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+  </footer>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" aria-hidden="true">
+  <div class="dh">
+    <div class="dh-txt">
+      <h3 id="dTitle"></h3>
+      <p class="en" id="dEn"></p>
+      <div class="dtags" id="dTags"></div>
+    </div>
+    <button class="dclose" id="dClose" type="button" aria-label="关闭">×</button>
+  </div>
+  <div class="db" id="dBody"></div>
+</aside>
+  <script src="brand.js"></script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      function sync() { root.setAttribute('data-lang', root.lang === 'en' ? 'en' : 'zh'); }
+      new MutationObserver(sync).observe(root, { attributes: true, attributeFilter: ['lang'] });
+      sync();
+    })();
+  </script>
+  <script src="data/terms.all.js"></script>
+  <script src="data/meta.js"></script>
+  <script src="data/dims.js"></script>
+  <script>
+
+var DOMAINS = META.domains, PURPOSES = META.purposes, LEVELS = META.levels;
+var DCOLOR = {};
+Object.keys(DOMAINS).forEach(function(k){ DCOLOR[k] = DOMAINS[k].color; });
+
+function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+/* 词条正文里我用了 **强调** 标记（和档案里一致）。esc 会把 * 原样输出，
+ * 页面上就会露出裸的 ** —— 所以这里做一次轻量 markdown 处理：
+ * 只处理 **加粗**，其余字符保持 esc 后的结果。
+ * 用占位符往返，避免动到已转义的实体。 */
+function escMd(s){
+  var out = esc(s);
+  var slots = [];
+  out = out.replace(/\*\*([^*]+)\*\*/g, function(_, inner){
+    slots.push(inner);
+    return '\u0000' + (slots.length - 1) + '\u0000';
+  });
+  out = out.replace(/\u0000(\d+)\u0000/g, function(_, i){
+    return '<strong>' + slots[Number(i)] + '</strong>';
+  });
+  return out;
+}
+
+// 建立扁平列表 + 索引
+var FLAT = [];
+TERMS.forEach(function(L){
+  L.terms.forEach(function(t){ t._layer = L.name; t._lvlName = LEVELS[String(t.level)].name; FLAT.push(t); });
+});
+
+var byZh = {};
+FLAT.forEach(function(t){ byZh[t.zh] = t; });
+
+function groupsOf(mode, terms){
+  if(mode === 'flat') return [{key:'all', name:'全部名词', desc:'不分组，按首字排。适合已经知道要找什么。', items:terms.slice()}];
+  if(mode === 'domain'){
+    return Object.keys(DOMAINS).map(function(k){
+      return {key:k, name:DOMAINS[k].name, desc:DOMAINS[k].desc,
+        items:terms.filter(function(t){ return t.domain===k; })};
+    }).filter(function(g){ return g.items.length; });
+  }
+  if(mode === 'purpose'){
+    return Object.keys(PURPOSES).map(function(k){
+      return {key:k, name:PURPOSES[k].name, desc:PURPOSES[k].desc,
+        items:terms.filter(function(t){ return t.purposeTag===k; })};
+    }).filter(function(g){ return g.items.length; });
+  }
+  // level
+  return Object.keys(LEVELS).map(function(k){
+    return {key:k, name:'第'+LEVELS[k].name+'层 · '+LEVELS[k].short,
+      desc:LEVELS[k].desc,
+      items:terms.filter(function(t){ return String(t.level)===k; })};
+  }).filter(function(g){ return g.items.length; });
+}
+
+/* 搜索匹配。返回命中层级（0=不中，数字越大越相关），
+ * 排序时命中词名的要排在只命中解释的前面 —— 否则搜「显存」
+ * 会把只在正文里提过一句的词排在「显存」自己前面。 */
+function matchScore(t, q){
+  if(!q) return 1;
+  q = q.toLowerCase();
+  if(t.zh.toLowerCase().indexOf(q)>=0) return 6;          // 词名
+  if((t.alias||[]).join(' ').toLowerCase().indexOf(q)>=0) return 5; // 别名
+  if((t.en||'').toLowerCase().indexOf(q)>=0) return 4;    // 英文名
+  if((t.purpose||'').toLowerCase().indexOf(q)>=0) return 3;// 用途句
+  if((t.def||[]).join(' ').toLowerCase().indexOf(q)>=0) return 2; // 定义
+  if((t.why||'').toLowerCase().indexOf(q)>=0) return 1;
+  return 0;
+}
+function match(t, q){ return matchScore(t, q) > 0; }
+
+var mode = 'domain', query = '';
+
+function tile(t){
+  return '<button class="tb" type="button" data-zh="'+esc(t.zh)+'" style="--dc:'+DCOLOR[t.domain]+'" aria-label="'+esc(t.zh)+'，点击查看解释">'
+    + '<span class="tb-lv">L'+t.level+'</span>'
+    + '<span class="tb-n">'+esc(t.zh)+'</span>'
+    + (t.en ? '<span class="tb-en">'+esc(t.en)+'</span>' : '')
+    + (t.purpose ? '<span class="tb-p">'+escMd(t.purpose)+'</span>' : '')
+    + '</button>';
+}
+
+/* ===== 维度对照视图 =====
+ * 这不是第四种排布，而是**另一张表**：把赛道维度摊开，
+ * 每个维度下挂它涉及的名词，点词照样开抽屉。
+ */
+function renderDims(q){
+  var h = '<div class="dintro"><h2>赛道维度 ↔ 名词对照表</h2>'
+    + '<p>本站群在比较产品时，看的是固定的几组维度。这张表把维度和名词地图接起来——<b>一个维度在问什么，涉及哪些名词，点词进解释</b>。</p>'
+    + '<p class="warn">这里只列 IDE / CLI / Harness 的八维与 MCP 的三维。名词地图里的<b>入门、使用、部署层大部分词不在这张表里</b>——那些是「怎么把AI 用起来」的知识，而站点比较的是「同类产品怎么选」。两者用途不同，不是遗漏。</p></div>';
+  var totalUsed = 0;
+  [['八维 · IDE / CLI / Harness 共用', DIMS.DIMENSIONS8], ['三维 · MCP 赛道专用', DIMS.DIMENSIONS3]].forEach(function(pair){
+    h += '<section class="dset"><h3>'+esc(pair[0])+'</h3><p>每个维度对应档案里的一组固定考察项。</p>';
+    pair[1].forEach(function(d){
+      var items = d.terms.map(function(z){ return byZh[z]; }).filter(Boolean);
+      totalUsed += items.length;
+      // 搜索过滤：维度里任一词命中就保留该维度
+      var visible = !q || items.some(function(t){ return match(t, q); });
+      if(!visible) return;
+      var shown = q ? items.filter(function(t){ return match(t, q); }) : items;
+      h += '<div class="drow"><div class="drow-h"><b>'+esc(d.label)+'</b>'
+         + '<span class="tagcode">'+esc(d.key)+'</span>'
+         + '<span class="n">'+shown.length+' 个词</span></div>'
+         + '<div class="drow-q">'+escMd(d.q)+'</div><div class="dchips">';
+      shown.forEach(function(t){
+        h += '<button class="dchip" type="button" data-zh="'+esc(t.zh)+'" style="border-color:'+DCOLOR[t.domain]+'33">'+esc(t.zh)+'</button>';
+      });
+      h += '</div>';
+      if(d.caveat && !q) h += '<div class="dcaveat"><i>容易误解</i>　'+escMd(d.caveat)+'</div>';
+      h += '</div>';
+    });
+    h += '</section>';
+  });
+  document.getElementById('wall').innerHTML = h;
+  document.getElementById('empty').hidden = true;
+  var cov = Math.round(totalUsed / FLAT.length * 100);
+  document.getElementById('cnt').textContent = '维度 '+(DIMS.DIMENSIONS8.length+DIMS.DIMENSIONS3.length)
+    + ' 个 · 覆盖名词 '+totalUsed+' / '+FLAT.length+'（'+cov+'%）'
+    + (q ? '（筛选：'+q+'）' : '');
+}
+
+function render(){
+  if(mode === 'dims'){ renderDims(query); return; }
+  var terms = FLAT.filter(function(t){ return match(t, query); });
+  //有关键词时按命中层级排序，命中越直接越靠前
+  if(query){
+    terms = terms.slice().sort(function(a,b){
+      return matchScore(b, query) - matchScore(a, query);
+    });
+  }
+  var groups = groupsOf(mode, terms);
+  var h = '';
+  groups.forEach(function(g){
+    h += '<section class="grp"><div class="gh"><span class="gnum">'+g.items.length+' 词</span>'
+       + '<h2>'+esc(g.name)+'</h2><p>'+esc(g.desc)+'</p></div><div class="wall">';
+    g.items.forEach(function(t){ h += tile(t); });
+    h += '</div></section>';
+  });
+  document.getElementById('wall').innerHTML = h;
+  document.getElementById('empty').hidden = terms.length > 0;
+  document.getElementById('cnt').textContent = terms.length + ' / ' + FLAT.length + ' 个名词'
+    + (query ? '（筛选：' + query + '）' : '');
+}
+
+/* 相关词算法（三次修正后的最终版）
+ *
+ * 第一版：同域 +2 / 同用途 +2 / 同层 +1 ——「幻觉」的相关词里
+ *   混进「可替换性」「bpw」，因为同层信号太弱、被同域无关词挤满 8 个。
+ * 第二版：去掉同层、加英文名匹配 ——「幻觉」的相关词里
+ *   出现「供应商锁定」「差异对比」。根因：**purpose 标签太粗**，
+ *   guard(不出事) 下有 18 个词，「同用途」等于把整类都拉进来。
+ * 最终版：**必须命中「被提及」或「同域」之一才进榜**，
+ *   同用途/英文名匹配只作为加权项，不能单独构成相关。
+ */
+function related(t){
+  var out=[], seen={};
+  var tText = ((t.def||[]).concat([t.purpose], [t.why||''])).join(' ');
+  var tEn = (t.en||'').toLowerCase().replace(/[^a-z]/g,'');
+  FLAT.forEach(function(o){
+    if(o.zh===t.zh) return;
+    if(seen[o.zh]) return;
+    var s = 0;
+    // 强信号：一方解释里直接提到另一方
+    var mentioned = tText.indexOf(o.zh)>=0 || oTextHits(o, t.zh);
+    if(mentioned) s += 6;
+    // 弱信号：同一功能域
+    if(o.domain===t.domain) s += 2;
+    // 修饰项：同用途 / 英文名包含（只能加分，不能单独进榜）
+    if(o.purposeTag===t.purposeTag) s += 1;
+    if(tEn.length>4){
+      var oEn=(o.en||'').toLowerCase().replace(/[^a-z]/g,'');
+      if(oEn.indexOf(tEn)>=0 || (tEn.indexOf(oEn)>=0 && oEn.length>4)) s += 2;
+    }
+    // 门槛：必须有强信号或同域，否则不相关
+    if(!mentioned && o.domain!==t.domain) return;
+    if(s < 3) return;
+    seen[o.zh]=1;
+    out.push([o.zh, s]);
+  });
+  out.sort(function(a,b){ return b[1]-a[1] || (a[0]<b[0]?-1:1); });
+  return out.slice(0,8).map(function(x){ return x[0]; });
+}
+function oTextHits(o, zh){
+  var txt=((o.def||[]).concat([o.purpose],[o.why||''])).join(' ');
+  return txt.indexOf(zh)>=0;
+}
+
+/* ===== 入门路径 =====
+ * 这不是第四种排布，而是**一条顺序**：把 6 个难度层编成 1→6 步，
+ * 每步给一句「学完这层你能干什么」+ 该层词数 + 几个代表词。
+ * 数据源就是 groupsOf('level') —— 与方块墙读同一份 LEVELS/FLAT，
+ * **不存在两套词表对不上的可能**（这是刻意的：另建一份索引必然漂移）。
+ */
+var PATH_TAKE = {
+  '1': '能跟人聊明白 AI 在做什么',
+  '2': '知道它什么时候会出错，不被演示骗',
+  '3': '判断一个方案靠不靠谱，而不是听服务商说',
+  '4': '看懂为什么会有这些表现，不再死记硬背',
+  '5': '知道模型跑在自己机器上要吃多少显存',
+  '6': '把学到的东西变成一个能签字的决定'
+};
+function renderPath(){
+  var groups = groupsOf('level', FLAT);
+  var h = '';
+  groups.forEach(function(g, i){
+    var key = g.key;
+    // 每层挑 3 个代表词：优先用途标签是「搞懂概念」的，其余按原序
+    var picks = g.items.filter(function(t){ return t.purposeTag === 'learn'; }).slice(0, 3);
+    if(picks.length < 3) picks = g.items.slice(0, 3);
+    h += '<li class="step"><div class="step-h">'
+      + '<span class="step-n">'+(i+1)+'</span>'
+      + '<div class="step-txt"><b>第'+esc(LEVELS[key].name)+'层 · '+esc(LEVELS[key].short)+'</b>'
+      + '<span class="step-take">学完能：'+esc(PATH_TAKE[key]||LEVELS[key].short)+'</span></div>'
+      + '<span class="step-n2">'+g.items.length+' 词</span></div>'
+      + '<p class="step-d">'+esc(g.desc)+'</p>'
+      + '<div class="step-words">';
+    picks.forEach(function(t){
+      h += '<button class="wchip" type="button" data-zh="'+esc(t.zh)+'" style="border-color:'+DCOLOR[t.domain]+'33">'+esc(t.zh)+'</button>';
+    });
+    h += '<button class="step-all" type="button" data-level="'+esc(key)+'">看这一层全部 '+g.items.length+' 词 →</button>'
+      + '</div></li>';
+  });
+  document.getElementById('steps').innerHTML = h;
+  document.getElementById('pathFoot').textContent =
+    '一共 ' + FLAT.length + ' 个词。全部读完不需要顺序，但停在一层就够用了——'
+    + '大多数人不做本地部署，第 5 层可以先跳过。';
+}
+
+var cur = null;
+
+function openTerm(zh){
+  var t = byZh[zh];
+  if(!t) return;
+  cur = zh;
+  document.getElementById('dTitle').textContent = t.zh;
+  document.getElementById('dEn').textContent = t.en || '';
+  var tg = document.getElementById('dTags');
+  tg.innerHTML = ''
+    + '<span class="dtag d" style="--dc:'+DCOLOR[t.domain]+'">'+esc(DOMAINS[t.domain].name)+'</span>'
+    + '<span class="dtag">'+esc(PURPOSES[t.purposeTag].name)+'</span>'
+    + '<span class="dtag">第'+esc(t._lvlName)+'层</span>'
+    + '<span class="dtag">'+esc(t._layer)+'</span>';
+  var b = document.getElementById('dBody');
+  var h = '';
+  if(t.purpose) h += '<div class="ds p"><div class="dslabel">它解决什么问题</div><div class="ds txt">'+escMd(t.purpose)+'</div></div>';
+  h += '<div class="dslabel">这是什么</div>';
+  (t.def||[]).forEach(function(d){ h += '<div class="ddef">'+escMd(d)+'</div>'; });
+  if(t.alias && t.alias.length){
+    h += '<div class="alias">';
+    t.alias.forEach(function(a){ h += '<span>也叫 '+esc(a)+'</span>'; });
+    h += '</div>';
+  }
+  if(t.why) h += '<div class="ds w"><div class="dslabel">为什么需要知道</div><div class="ds txt">'+escMd(t.why)+'</div></div>';
+  if(t.refs && t.refs.length){
+    h += '<div class="refs"><h4>看具体例子</h4><div class="refs-grid">';
+    t.refs.forEach(function(r){ h += '<a href="'+esc(r[1])+'" target="_blank" rel="noopener">'+esc(r[0])+' ↗</a>'; });
+    h += '</div></div>';
+  }
+  var rel = related(t);
+  if(rel.length){
+    h += '<div class="related"><h4>相关的词</h4><p>点一下跳过去看。</p><div class="rgrid">';
+    rel.forEach(function(z){ h += '<button class="rbtn" type="button" data-go="'+esc(z)+'">'+esc(z)+'</button>'; });
+    h += '</div></div>';
+  }
+  var i = FLAT.indexOf(t);
+  h += '<div class="dnav">'
+     + '<button type="button" id="prevT"'+(i<=0?' disabled':'')+'><b>上一个</b><span>'+(i>0?esc(FLAT[i-1].zh):'')+'</span></button>'
+     + '<button type="button" id="nextT"'+(i>=FLAT.length-1?' disabled':'')+'><b>下一个</b><span>'+(i<FLAT.length-1?esc(FLAT[i+1].zh):'')+'</span></button>'
+     + '</div>';
+  b.innerHTML = h;
+  b.scrollTop = 0;
+  document.getElementById('drawer').classList.add('on');
+  document.getElementById('drawer').setAttribute('aria-hidden','false');
+  document.getElementById('scrim').classList.add('on');
+  Array.prototype.forEach.call(document.querySelectorAll('.tb'), function(x){
+    x.classList.toggle('is-open', x.dataset.zh === zh);
+  });
+  document.getElementById('dClose').focus();
+}
+
+function closeDrawer(){
+  document.getElementById('drawer').classList.remove('on');
+  document.getElementById('drawer').setAttribute('aria-hidden','true');
+  document.getElementById('scrim').classList.remove('on');
+  Array.prototype.forEach.call(document.querySelectorAll('.tb'), function(x){ x.classList.remove('is-open'); });
+  cur = null;
+}
+
+document.getElementById('wall').addEventListener('click', function(e){
+  // 维度视图里的词是 .dchip，其余三种是 .tb
+  var t = e.target.closest('.tb') || e.target.closest('.dchip');
+  if(t) openTerm(t.dataset.zh);
+});
+document.getElementById('dBody').addEventListener('click', function(e){
+  var g = e.target.closest('[data-go]');
+  if(g){ openTerm(g.dataset.go); return; }
+  // ⚠ 必须用 closest()，不能写 e.target.id === 'nextT'（2026-10-03 修）。
+  // 上一版就是那么写的，于是「上一个/下一个」**基本点不动** ——
+  // 按钮内容全是子元素（<b>上一个</b><span>词名</span>），没有直接文本节点，
+  // 访客点「下一个」那三个字时 e.target 是那个 <b>，id 为空，判断永远不成立。
+  // 表现与本轮修的那几个「静默丢内容」同一类：不报错、元素在那、就是不响应。
+  // （旁边的 .rbtn 一直用 closest()，所以相关词跳转是好的 —— 一个不留神就会漏掉）
+  var nb = e.target.closest('#prevT');
+  var na = e.target.closest('#nextT');
+  if(nb){ var i=FLAT.findIndex(function(t){return t.zh===cur;}); if(i>0) openTerm(FLAT[i-1].zh); return; }
+  if(na){ var j=FLAT.findIndex(function(t){return t.zh===cur;}); if(j<FLAT.length-1) openTerm(FLAT[j+1].zh); return; }
+});
+document.getElementById('dClose').addEventListener('click', closeDrawer);
+document.getElementById('scrim').addEventListener('click', closeDrawer);
+document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeDrawer(); });
+
+// 入门路径：代表词直接开抽屉；「看全部」切到按难度排布
+document.getElementById('steps').addEventListener('click', function(e){
+  var w = e.target.closest('.wchip');
+  if(w){ openTerm(w.dataset.zh); return; }
+  var a = e.target.closest('[data-level]');
+  if(!a) return;
+  // 切成按难度排布（点第 3 个分段按钮），再滚到对应分组标题
+  var segs = document.querySelectorAll('#segGroup .seg');
+  var target = null;
+  Array.prototype.forEach.call(segs, function(s){ if(s.dataset.mode === 'level') target = s; });
+  if(target) target.click();
+  var grp = document.querySelectorAll('#wall .grp');
+  // groupsOf('level') 的顺序与 DOM 顺序一致，按层级键匹配而非按下标
+  var lvls = groupsOf('level', FLAT).map(function(g){ return g.key; });
+  var idx = lvls.indexOf(a.dataset.level);
+  if(grp[idx]) grp[idx].scrollIntoView({ behavior:'smooth', block:'start' });
+});
+
+var segBox = document.getElementById('segGroup');
+segBox.addEventListener('click', function(e){
+  var b = e.target.closest('.seg');
+  if(!b) return;
+  mode = b.dataset.mode;
+  Array.prototype.forEach.call(segBox.querySelectorAll('.seg'), function(x){
+    x.setAttribute('aria-pressed', x === b ? 'true' : 'false');
+  });
+  render();
+});
+
+var qEl = document.getElementById('q');
+qEl.addEventListener('input', function(){ query = qEl.value.trim(); render(); });
+
+// 各模式词数标注
+['domain','purpose','level'].forEach(function(k){
+  document.getElementById('c-'+k).textContent = Object.keys(k==='domain'?DOMAINS:k==='purpose'?PURPOSES:LEVELS).length;
+});
+document.getElementById('c-dims').textContent = DIMS.DIMENSIONS8.length + DIMS.DIMENSIONS3.length;
+document.getElementById('c-flat').textContent = FLAT.length;
+
+renderPath();
+render();
+  </script>
+</body>
+</html>
