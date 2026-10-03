@@ -78,7 +78,7 @@ code,pre{overflow-wrap:anywhere}
    接入全站 --display-sub，learn 与其它站同一档。 */
 .hero h1{margin:0 0 var(--sp-3); font-size:var(--display-sub); font-weight:600; line-height:1.16; letter-spacing:-.02em}
 .hero p{margin:0 0 9px; color:var(--tx-2); max-width:68ch}
-.hero .lead{color:var(--tx); font-size:16.5px}
+.hero .lead{color:var(--tx); font-size:17px}
 
 /* ===== 入门路径 =====
  * 6 层编成 1→6 步。跟 .dchip / .tb 一样用 --dc 吃功能域色，
@@ -90,7 +90,7 @@ code,pre{overflow-wrap:anywhere}
 }
 .path-h{margin-bottom:14px}
 .path-h h2{margin:0 0 5px; font-size:17px; font-weight:500}
-.path-h p{margin:0; color:var(--tx-2); font-size:13.5px; max-width:74ch}
+.path-h p{margin:0; color:var(--tx-2); font-size:14px; max-width:74ch}
 .steps{list-style:none; margin:0; padding:0; counter-reset:none}
 .step{padding:14px 0; border-top:1px solid var(--ln)}
 .step:first-child{padding-top:4px; border-top:none}
@@ -98,13 +98,13 @@ code,pre{overflow-wrap:anywhere}
 .step-n{
   flex-shrink:0; width:23px; height:23px; border-radius:50%;
   background:var(--vio); color:#fff;
-  font-size:12.5px; display:flex; align-items:center; justify-content:center;
+  font-size:13px; display:flex; align-items:center; justify-content:center;
 }
 .step-txt{min-width:0; flex:1}
-.step-txt b{display:block; font-size:14.5px; font-weight:500; line-height:1.5}
+.step-txt b{display:block; font-size:15px; font-weight:500; line-height:1.5}
 .step-take{display:block; color:var(--tx-2); font-size:13px; margin-top:2px}
 .step-n2{
-  flex-shrink:0; font-size:11.5px; color:var(--tx-3);
+  flex-shrink:0; font-size:12px; color:var(--tx-3);
   background:var(--bg-inset); border:1px solid var(--ln);
   border-radius:99px; padding:2px 9px; white-space:nowrap;
 }
@@ -112,18 +112,18 @@ code,pre{overflow-wrap:anywhere}
 .step-words{display:flex; flex-wrap:wrap; gap:6px; align-items:center}
 .wchip{
   padding:3px 10px; border:1px solid var(--ln-2); border-radius:99px;
-  background:var(--bg); color:var(--tx-2); font-size:12.5px; cursor:pointer;
+  background:var(--bg); color:var(--tx-2); font-size:13px; cursor:pointer;
   font-family:inherit; max-width:100%; overflow-wrap:anywhere;
 }
 .wchip:hover{border-color:var(--vio); color:var(--vio)}
 .wchip:focus-visible{outline:2px solid var(--vio); outline-offset:2px}
 .step-all{
   margin-left:auto; background:none; border:none; cursor:pointer; font-family:inherit;
-  color:var(--vio); font-size:12.5px; padding:3px 2px; white-space:nowrap;
+  color:var(--vio); font-size:13px; padding:3px 2px; white-space:nowrap;
 }
 .step-all:hover{text-decoration:underline}
 .step-all:focus-visible{outline:2px solid var(--vio); outline-offset:2px}
-.path-foot{margin:13px 0 0; color:var(--tx-3); font-size:12.5px}
+.path-foot{margin:13px 0 0; color:var(--tx-3); font-size:13px}
 
 /* ===== 控制条 ===== */
 .ctrl{
@@ -134,7 +134,7 @@ code,pre{overflow-wrap:anywhere}
   padding:14px 18px; margin-bottom:26px;
 }
 .crow{display:flex; flex-wrap:wrap; align-items:center; gap:10px 16px}
-.clab{font-size:12.5px; color:var(--tx-3); flex-shrink:0}
+.clab{font-size:13px; color:var(--tx-3); flex-shrink:0}
 .segs{display:flex; flex-wrap:wrap; gap:6px}
 .seg{
   padding:5px 13px; border:1px solid var(--ln-2); border-radius:var(--r-s);
@@ -144,7 +144,7 @@ code,pre{overflow-wrap:anywhere}
 .seg:hover{border-color:var(--vio); color:var(--vio)}
 .seg[aria-pressed="true"]{background:var(--vio); border-color:var(--vio); color:#fff}
 .seg:focus-visible{outline:2px solid var(--vio); outline-offset:2px}
-.seg small{opacity:.7; margin-left:5px; font-size:11.5px}
+.seg small{opacity:.7; margin-left:5px; font-size:12px}
 .cbar{
   margin-top:12px; padding-top:12px; border-top:1px solid var(--ln);
   display:flex; flex-wrap:wrap; gap:8px 12px; align-items:center;
@@ -152,11 +152,11 @@ code,pre{overflow-wrap:anywhere}
 .search{
   flex:1; min-width:180px; padding:6px 12px; border-radius:var(--r-s);
   border:1px solid var(--ln-2); background:var(--bg-raise); color:var(--tx);
-  font-size:13.5px; font-family:inherit;
+  font-size:14px; font-family:inherit;
 }
 .search::placeholder{color:var(--tx-3)}
 .search:focus{outline:none; border-color:var(--vio)}
-.cnt{font-size:12.5px; color:var(--tx-3); white-space:nowrap}
+.cnt{font-size:13px; color:var(--tx-3); white-space:nowrap}
 
 /* ===== 分组 ===== */
 .grp{margin-bottom:30px}
@@ -167,7 +167,7 @@ code,pre{overflow-wrap:anywhere}
 .gh h2{margin:0; font-size:17px; font-weight:500}
 .gh p{margin:0; color:var(--tx-2); font-size:13px; min-width:0}
 .gnum{
-  font-size:11.5px; color:var(--tx-3); background:var(--bg-inset);
+  font-size:12px; color:var(--tx-3); background:var(--bg-inset);
   border:1px solid var(--ln); border-radius:99px; padding:2px 9px; flex-shrink:0;
 }
 
@@ -189,14 +189,14 @@ code,pre{overflow-wrap:anywhere}
 }
 .tb:hover{border-color:var(--dc, var(--vio)); background:var(--bg-inset)}
 .tb:focus-visible{outline:2px solid var(--vio); outline-offset:2px}
-.tb-n{font-size:14.5px; font-weight:500; line-height:1.4}
-.tb-en{font-size:11.5px; color:var(--tx-3); line-height:1.35; overflow-wrap:anywhere}
+.tb-n{font-size:15px; font-weight:500; line-height:1.4}
+.tb-en{font-size:12px; color:var(--tx-3); line-height:1.35; overflow-wrap:anywhere}
 .tb-p{
   font-size:12px; color:var(--tx-2); line-height:1.5; margin-top:2px;
   display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
 }
 .tb-lv{
-  position:absolute; right:9px; top:9px; font-size:10.5px;
+  position:absolute; right:9px; top:9px; font-size:11px;
   color:var(--tx-3); background:var(--bg-inset);
   border:1px solid var(--ln); border-radius:4px; padding:0 5px; line-height:16px;
 }
@@ -216,7 +216,7 @@ code,pre{overflow-wrap:anywhere}
 .dintro p{margin:0 0 10px; color:var(--tx-2); font-size:14px}
 .dintro .warn{
   border-left:2px solid var(--gold); padding-left:12px;
-  color:var(--tx-2); font-size:13.5px;
+  color:var(--tx-2); font-size:14px;
 }
 /* 维度视图：每个维度一个 .drow，标题行是 .drow-h。
  * ⚠ 下面三条 .dset 规则是**死规则**（2026-10-03 清理）——
@@ -237,14 +237,14 @@ code,pre{overflow-wrap:anywhere}
 /* 维度 key（model_access / transport / …）—— 等宽小标签。
  * 这条原来写成 `.dset > h3 .tagcode`，与真实 DOM 不匹配而从未生效（见上方说明）。 */
 .drow-h .tagcode{
-  font-size:11.5px; color:var(--tx-3); font-family:ui-monospace, Menlo, monospace;
+  font-size:12px; color:var(--tx-3); font-family:ui-monospace, Menlo, monospace;
   background:var(--bg-inset); border:1px solid var(--ln); border-radius:4px; padding:1px 6px;
   /* 11 个 key 里最长的 model_access 有 12 字符，加上卡片 padding 必须能放下；
      narrow 屏下不许把它折成多行（折行会让维度行高忽高忽低）。*/
   overflow-wrap:normal; word-break:keep-all; white-space:nowrap;
 }
 .drow-h .n{font-size:12px; color:var(--tx-3); margin-left:auto; white-space:nowrap}
-.drow-q{color:var(--tx-2); font-size:13.5px; margin-bottom:11px}
+.drow-q{color:var(--tx-2); font-size:14px; margin-bottom:11px}
 .dchips{display:flex; flex-wrap:wrap; gap:6px}
 .dchip{
   padding:4px 11px; border:1px solid var(--ln-2); border-radius:99px;
@@ -283,7 +283,7 @@ code,pre{overflow-wrap:anywhere}
 .dh-txt .en{font-size:13px; margin:0}
 .dtags{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px}
 .dtag{
-  font-size:11.5px; color:var(--tx-2); background:var(--bg-inset);
+  font-size:12px; color:var(--tx-2); background:var(--bg-inset);
   border:1px solid var(--ln); border-radius:99px; padding:2px 9px;
 }
 .dtag.d{border-color:var(--dc); color:var(--dc)}
@@ -299,7 +299,7 @@ code,pre{overflow-wrap:anywhere}
 .ds{padding:14px 16px; border-radius:var(--r-s); margin-bottom:16px}
 .ds.p{background:color-mix(in srgb, var(--cyan) 10%, var(--bg-inset)); border:1px solid color-mix(in srgb, var(--cyan) 28%, var(--ln))}
 html[data-theme="light"] .ds.p{background:color-mix(in srgb, var(--vio) 7%, var(--bg-inset)); border-color:color-mix(in srgb, var(--vio) 26%, var(--ln))}
-.dslabel{font-size:11.5px; color:var(--tx-3); margin-bottom:6px; letter-spacing:.04em}
+.dslabel{font-size:12px; color:var(--tx-3); margin-bottom:6px; letter-spacing:.04em}
 .dcaveat strong,.drow-q strong,.ds.txt strong,.ddef strong{color:var(--tx); font-weight:500}
 html[data-theme="light"] .dcaveat strong,html[data-theme="light"] .drow-q strong{color:var(--vio)}
 .ds.p .dslabel{color:var(--cyan)}
@@ -310,20 +310,20 @@ html[data-theme="light"] .ds.p .dslabel{color:var(--vio)}
 }
 .ds.w .dslabel{color:var(--gold)}
 .ds.w .ds.txt{color:var(--tx-2); font-size:14px}
-.ddef{color:var(--tx-2); font-size:14.5px; margin-bottom:11px; line-height:1.72}
+.ddef{color:var(--tx-2); font-size:15px; margin-bottom:11px; line-height:1.72}
 .ddef:last-of-type{margin-bottom:0}
 .alias{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px}
 .alias span{
-  font-size:11.5px; color:var(--tx-3); background:var(--bg-inset);
+  font-size:12px; color:var(--tx-3); background:var(--bg-inset);
   border:1px solid var(--ln); border-radius:var(--r-s); padding:2px 8px;
 }
 .related{margin-top:22px; padding-top:18px; border-top:1px solid var(--ln)}
 .related h4{margin:0 0 4px; font-size:13px; font-weight:500; color:var(--tx)}
-.related p{margin:0 0 12px; font-size:12.5px; color:var(--tx-3)}
+.related p{margin:0 0 12px; font-size:13px; color:var(--tx-3)}
 .rgrid{display:flex; flex-wrap:wrap; gap:7px}
 .rbtn{
   padding:4px 11px; border:1px solid var(--ln-2); border-radius:99px;
-  background:var(--bg-raise); color:var(--tx-2); font-size:12.5px; cursor:pointer;
+  background:var(--bg-raise); color:var(--tx-2); font-size:13px; cursor:pointer;
   font-family:inherit;
 }
 .rbtn:hover{border-color:var(--vio); color:var(--vio)}
@@ -334,7 +334,7 @@ html[data-theme="light"] .ds.p .dslabel{color:var(--vio)}
 .refs a{
   display:block; padding:10px 13px; border:1px solid var(--ln);
   border-radius:var(--r-s); background:var(--bg-inset);
-  color:var(--tx-2); font-size:13.5px;
+  color:var(--tx-2); font-size:14px;
 }
 .refs a:hover{border-color:var(--vio); color:var(--vio); text-decoration:none}
 .dnav{display:flex; gap:8px; margin-top:22px; padding-top:18px; border-top:1px solid var(--ln)}
@@ -345,7 +345,7 @@ html[data-theme="light"] .ds.p .dslabel{color:var(--vio)}
 }
 .dnav button:hover:not(:disabled){border-color:var(--vio); color:var(--vio)}
 .dnav button:disabled{opacity:.35; cursor:default}
-.dnav b{display:block; font-size:10.5px; color:var(--tx-3); font-weight:400; margin-bottom:1px}
+.dnav b{display:block; font-size:11px; color:var(--tx-3); font-weight:400; margin-bottom:1px}
 .dnav span{overflow:hidden; text-overflow:ellipsis; white-space:nowrap; display:block}
 
 /* ===== 去哪一站 ===== */
@@ -361,13 +361,13 @@ html[data-theme="light"] .ds.p .dslabel{color:var(--vio)}
   border-radius:var(--r-s); padding:13px 15px; color:var(--tx); display:block;
 }
 .d:hover{border-color:var(--vio); text-decoration:none}
-.d b{display:block; font-size:14.5px; font-weight:500; margin-bottom:3px}
+.d b{display:block; font-size:15px; font-weight:500; margin-bottom:3px}
 .d span{color:var(--tx-2); font-size:13px; line-height:1.6; display:block}
 .d i{color:var(--tx-3); font-style:normal; font-size:12px; display:block; margin-top:5px}
 
 .note{
   margin-top:34px; padding:15px 19px; border-radius:var(--r-s);
-  background:var(--bg-raise); border:1px solid var(--ln); color:var(--tx-2); font-size:13.5px;
+  background:var(--bg-raise); border:1px solid var(--ln); color:var(--tx-2); font-size:14px;
 }
 .note b{color:var(--tx); font-weight:500}
 
@@ -388,7 +388,7 @@ footer a{color:var(--tx-2)}
   .ctrl{top:49px; padding:12px 14px; position:static}
   .wall{grid-template-columns:repeat(auto-fill, minmax(min(140px,100%), 1fr)); gap:7px}
   .tb{min-height:56px; padding:10px 11px}
-  .tb-n{font-size:13.5px}
+  .tb-n{font-size:14px}
   .tb-p{display:none}
   .dest{padding:16px}
   .dh{padding:16px 18px 14px}
