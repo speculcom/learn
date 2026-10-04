@@ -468,7 +468,8 @@ function openTerm(zh){
   }
   var rel = related(t);
   if(rel.length){
-    h += '<div class="related"><h4>相关的词</h4><p>点一下跳过去看。</p><div class="rgrid">';
+    h += '<div class="related"><h4>'+(IS_EN()?'Related terms':'相关的词')+'</h4>'
+      + '<p>'+(IS_EN()?'Click to jump there.':'点一下跳过去看。')+'</p><div class="rgrid">';
     rel.forEach(function(z){ h += '<button class="rbtn" type="button" data-go="'+esc(z)+'">'+esc(z)+'</button>'; });
     h += '</div></div>';
   }
