@@ -100,7 +100,7 @@
         <span class="foot-copy">© 2026 Specul · <span data-zh>投机</span><span data-en>Specul</span> · <span data-zh>推演</span><span data-en>Speculate</span></span>
       </div>
       <nav class="foot-links" aria-label="页脚导航">
-          <a href="https://specul.com/">首页</a>
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
           <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
           <a href="https://agent.specul.com/"><span data-zh>Agent</span><span data-en>Agent</span></a>
           <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
@@ -193,7 +193,11 @@ function escMd(s){
 // 建立扁平列表 + 索引
 var FLAT = [];
 TERMS.forEach(function(L){
-  L.terms.forEach(function(t){ t._layer = L.name; t._lvlName = LEVELS[String(t.level)].name; FLAT.push(t); });
+  L.terms.forEach(function(t){ t._layer = L.name; t._lvlName = LEVELS[String(t.level)].name;
+    /* 英文态用 nameEn（'One'/'Two'…）—— LEVELS[].name 是中文的「一」「二」，
+       英文态下会显示成「Level 一」（实测残留 1 处）。 */
+    t._lvlNameEn = LEVELS[String(t.level)].nameEn || LEVELS[String(t.level)].name;
+    FLAT.push(t); });
 });
 
 var byZh = {};
@@ -433,23 +437,30 @@ function openTerm(zh){
   tg.innerHTML = ''
     + '<span class="dtag d" style="--dc:'+DCOLOR[t.domain]+'">'+esc(L(DOMAINS[t.domain],'name'))+'</span>'
     + '<span class="dtag">'+esc(L(PURPOSES[t.purposeTag],'name'))+'</span>'
-    + '<span class="dtag">'+(IS_EN()?'Level ':'第')+esc(t._lvlName)+(IS_EN()?'':'层')+'</span>'
+    + '<span class="dtag">'+(IS_EN()?'Layer '+esc(t._lvlNameEn):'第'+esc(t._lvlName)+'层')+'</span>'
     + '<span class="dtag">'+esc(IS_EN() ? LS(String(t.level)) : t._layer)+'</span>';
   var b = document.getElementById('dBody');
   var h = '';
-  if(t.purpose) h += '<div class="ds p"><div class="dslabel">'
+  var purposeTxt = IS_EN() ? (t.purposeEn || t.purpose) : t.purpose;
+  if(purposeTxt) h += '<div class="ds p"><div class="dslabel">'
     + (IS_EN()?'What problem it solves':'它解决什么问题')
-    + '</div><div class="ds txt">'+escMd(t.purpose)+'</div></div>';
+    + '</div><div class="ds txt">'+escMd(purposeTxt)+'</div></div>';
   h += '<div class="dslabel">'+(IS_EN()?'What it is':'这是什么')+'</div>';
-  (t.def||[]).forEach(function(d){ h += '<div class="ddef">'+escMd(d)+'</div>'; });
+  /* def的渲染收敛到这一处：原先下面还有一行 (t.def||[]).forEach 渲染中文，
+   * 那样加了 defEn 之后英文态会**同时**显示中英两段（实测 .ddef 里全是中文）。
+   * 现在按语言选一份列表，逐条渲染成 .ddef（保留原有样式与结构）。 */
+  var defList = (IS_EN() && t.defEn && t.defEn.length) ? t.defEn : t.def;
+  (defList||[]).forEach(function(d){ h += '<div class="ddef">'+escMd(d)+'</div>'; });
   if(t.alias && t.alias.length){
     h += '<div class="alias">';
-    t.alias.forEach(function(a){ h += '<span>也叫 '+esc(a)+'</span>'; });
+    var aliases = (IS_EN() && t.aliasEn && t.aliasEn.length) ? t.aliasEn : t.alias;
+    aliases.forEach(function(a){ h += '<span>'+(IS_EN()?'Also called ':'也叫 ')+esc(a)+'</span>'; });
     h += '</div>';
   }
-  if(t.why) h += '<div class="ds w"><div class="dslabel">'
+  var whyTxt = IS_EN() ? (t.whyEn || t.why) : t.why;
+  if(whyTxt) h += '<div class="ds w"><div class="dslabel">'
     + (IS_EN()?'Why it is worth knowing':'为什么需要知道')
-    + '</div><div class="ds txt">'+escMd(t.why)+'</div></div>';
+    + '</div><div class="ds txt">'+escMd(whyTxt)+'</div></div>';
   if(t.refs && t.refs.length){
     h += '<div class="refs"><h4>看具体例子</h4><div class="refs-grid">';
     t.refs.forEach(function(r){ h += '<a href="'+esc(r[1])+'" target="_blank" rel="noopener">'+esc(r[0])+' ↗</a>'; });
@@ -463,8 +474,8 @@ function openTerm(zh){
   }
   var i = FLAT.indexOf(t);
   h += '<div class="dnav">'
-     + '<button type="button" id="prevT"'+(i<=0?' disabled':'')+'><b>上一个</b><span>'+(i>0?esc(FLAT[i-1].zh):'')+'</span></button>'
-     + '<button type="button" id="nextT"'+(i>=FLAT.length-1?' disabled':'')+'><b>下一个</b><span>'+(i<FLAT.length-1?esc(FLAT[i+1].zh):'')+'</span></button>'
+     + '<button type="button" id="prevT"'+(i<=0?' disabled':'')+'><b>'+(IS_EN()?'Previous':'上一个')+'</b><span>'+(i>0?esc(IS_EN()?FLAT[i-1].en:FLAT[i-1].zh):'')+'</span></button>'
+     + '<button type="button" id="nextT"'+(i>=FLAT.length-1?' disabled':'')+'><b>'+(IS_EN()?'Next':'下一个')+'</b><span>'+(i<FLAT.length-1?esc(IS_EN()?FLAT[i+1].en:FLAT[i+1].zh):'')+'</span></button>'
      + '</div>';
   b.innerHTML = h;
   b.scrollTop = 0;
