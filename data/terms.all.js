@@ -29,7 +29,12 @@ var TERMS = [
     "level": 1,
     "layer": "一",
     "ord": 1,
-    "refs": []
+    "refs": [],
+    "purposeEn": "Let machines do what used to need human intelligence — see images, understand speech, write, and decide.",
+    "defEn": [
+     "A broad field: making machines behave in ways we recognise as intelligent. It is not one technology but many, and today's chatbots are only a branch of it."
+    ],
+    "whyEn": "People often use \"AI\" to mean a chat model. Strictly speaking a large language model is one approach inside AI, not AI itself — most claims about \"AI\" are really claims about one kind of model."
    },
    {
     "zh": "机器学习",
@@ -46,7 +51,12 @@ var TERMS = [
     "layer": "一",
     "ord": 2,
     "alias": [],
-    "refs": []
+    "refs": [],
+    "purposeEn": "Instead of writing rules by hand, let the machine find patterns in data.",
+    "defEn": [
+     "A method where a system improves at a task by fitting parameters to examples, rather than following rules a programmer wrote."
+    ],
+    "whyEn": "It is the foundation under essentially everything called AI today. Knowing where the rules came from tells you what the system can and cannot do."
    },
    {
     "zh": "深度学习",
@@ -63,7 +73,12 @@ var TERMS = [
     "layer": "一",
     "ord": 3,
     "alias": [],
-    "refs": []
+    "refs": [],
+    "purposeEn": "Stack many layers so the network learns its own features instead of being told them.",
+    "defEn": [
+     "Machine learning using multi-layer neural networks, where representations are learned from raw data rather than hand-designed."
+    ],
+    "whyEn": "It is what made image, speech and language tasks leap forward. Understanding it helps you judge which claims about \"deep learning\" are real."
    },
    {
     "zh": "神经网络",
@@ -80,7 +95,12 @@ var TERMS = [
     "layer": "一",
     "ord": 4,
     "alias": [],
-    "refs": []
+    "refs": [],
+    "purposeEn": "A network of simple units whose combined output can approximate very complex functions.",
+    "defEn": [
+     "Layers of connected units, each applying a small transformation, whose overall behaviour is learned from data rather than specified."
+    ],
+    "whyEn": "It is the mechanism behind deep learning. You do not need the maths to use it, but it explains both what it can do and why it fails in particular ways."
    },
    {
     "zh": "大模型 / 大语言模型",
@@ -110,7 +130,12 @@ var TERMS = [
     "purposeTag": "learn",
     "level": 1,
     "layer": "一",
-    "ord": 5
+    "ord": 5,
+    "purposeEn": "After training, the learned parameters that let a system generalise to inputs it has never seen.",
+    "defEn": [
+     "The trained artefact: parameters plus the architecture that produced them. \"Loading a model\" means loading these, not running a program."
+    ],
+    "whyEn": "Model and product are different things. Many misunderstandings about AI products come from treating a model as if it were an application."
    },
    {
     "zh": "参数",
@@ -132,7 +157,12 @@ var TERMS = [
     "level": 1,
     "layer": "一",
     "ord": 6,
-    "alias": []
+    "alias": [],
+    "purposeEn": "The numbers the training process adjusts; everything the model knows lives in them.",
+    "defEn": [
+     "Weights and biases inside the network. Model size usually refers to how many there are, and larger counts generally mean more capacity."
+    ],
+    "whyEn": "It grounds abstract claims: a \"7B model\" is a statement about parameter count, not about being better than everything else."
    },
    {
     "zh": "训练",
@@ -149,7 +179,12 @@ var TERMS = [
     "layer": "一",
     "ord": 7,
     "alias": [],
-    "refs": []
+    "refs": [],
+    "purposeEn": "Let the system learn its parameters from data by repeated exposure.",
+    "defEn": [
+     "Fitting parameters so predictions match targets, usually by minimising a loss over many examples."
+    ],
+    "whyEn": "Training determines what the model knows. It is also where cost and bias enter — training data is not neutral."
    },
    {
     "zh": "推理",
@@ -171,7 +206,12 @@ var TERMS = [
     "level": 1,
     "layer": "一",
     "ord": 8,
-    "alias": []
+    "alias": [],
+    "purposeEn": "The model you trained is now answering real queries — a different phase with different costs.",
+    "defEn": [
+     "Running a trained model to produce an answer. Often confused with \"reasoning\", but inference simply means using the model."
+    ],
+    "whyEn": "Training and inference have different cost structures. It explains why a model can be cheap to make and expensive to serve."
    },
    {
     "zh": "提示词",
@@ -190,7 +230,12 @@ var TERMS = [
     "level": 1,
     "layer": "一",
     "ord": 9,
-    "refs": []
+    "refs": [],
+    "purposeEn": "The instructions you give the model, and often the main lever you actually control.",
+    "defEn": [
+     "The input text shaping the model's behaviour. In a chat interface it is what you type; in an API it is part of the request."
+    ],
+    "whyEn": "For using models, prompt quality often matters more than model choice — the same model behaves very differently under different phrasing."
    },
    {
     "zh": "Token",
@@ -243,7 +288,12 @@ var TERMS = [
     "purposeTag": "apply",
     "level": 1,
     "layer": "一",
-    "ord": 11
+    "ord": 11,
+    "purposeEn": "How much the model can see at once — the page of text it can keep in mind while answering.",
+    "defEn": [
+     "The token budget for one request: system prompt, documents, conversation history and the reply all draw from it."
+    ],
+    "whyEn": "It sets a hard ceiling on what can be asked. \"It forgot what I told it\" is usually a context-window limit, not a memory bug."
    },
    {
     "zh": "词表",
@@ -413,7 +463,12 @@ var TERMS = [
     "purposeTag": "guard",
     "level": 2,
     "layer": "二",
-    "ord": 1
+    "ord": 1,
+    "purposeEn": "The model states something plausible and confident that is simply not true.",
+    "defEn": [
+     "Output that is fluent and confident but factually wrong. It comes from producing likely-sounding text rather than retrieving verified facts."
+    ],
+    "whyEn": "It is the single biggest practical risk with language models, and the reason fact-checking matters more than ever."
    },
    {
     "zh": "多模态",
@@ -431,7 +486,12 @@ var TERMS = [
     "level": 2,
     "layer": "二",
     "ord": 2,
-    "refs": []
+    "refs": [],
+    "purposeEn": "Handle text, images, audio and video in one system rather than bolting separate models together.",
+    "defEn": [
+     "A model that takes or produces more than one kind of input or output, so images and text can be reasoned about together."
+    ],
+    "whyEn": "It is what makes document Q&A, screenshot understanding and video generation practical rather than staged pipelines."
    },
    {
     "zh": "推理模型",
@@ -531,7 +591,12 @@ var TERMS = [
     "level": 2,
     "layer": "二",
     "ord": 7,
-    "alias": []
+    "alias": [],
+    "purposeEn": "Teach an existing model a specific task or style, rather than describing the task in the prompt.",
+    "defEn": [
+     "Further training of an already-trained model on task-specific data, changing its weights rather than its instructions."
+    ],
+    "whyEn": "It can beat prompting for a narrow task, but it costs more and is harder to maintain. Prompting first is usually the right order."
    },
    {
     "zh": "偏好对齐",
@@ -592,7 +657,12 @@ var TERMS = [
     "purposeTag": "apply",
     "level": 2,
     "layer": "二",
-    "ord": 10
+    "ord": 10,
+    "purposeEn": "Let the model look things up before answering, instead of answering from memory alone.",
+    "defEn": [
+     "Retrieval-augmented generation: fetch relevant passages first, then have the model answer using them, ideally with citations."
+    ],
+    "whyEn": "It is the most practical way to reduce hallucination and give a model private or current knowledge."
    },
    {
     "zh": "向量 / 嵌入",
@@ -614,7 +684,12 @@ var TERMS = [
     "level": 2,
     "layer": "二",
     "ord": 11,
-    "alias": []
+    "alias": [],
+    "purposeEn": "Represent text as coordinates, so meaning can be compared by geometry rather than by string match.",
+    "defEn": [
+     "Turning text into a list of numbers where closer vectors mean closer meaning. It is how semantic search and retrieval work."
+    ],
+    "whyEn": "Most retrieval systems are built on it. It also explains why keyword search still matters alongside vector search."
    },
    {
     "zh": "向量数据库",
@@ -914,7 +989,12 @@ var TERMS = [
     "purposeTag": "apply",
     "level": 3,
     "layer": "三",
-    "ord": 1
+    "ord": 1,
+    "purposeEn": "Stop answering and start acting: let the model take multi-step actions on its own.",
+    "defEn": [
+     "A system where a model plans, calls tools, reads results and repeats until the task is done, rather than replying once."
+    ],
+    "whyEn": "It is the difference between \"it tells you how\" and \"it does it for you\". Most of the practical value in agents comes from tool use, not conversation."
    },
    {
     "zh": "工具调用",
@@ -931,7 +1011,12 @@ var TERMS = [
     "layer": "三",
     "ord": 2,
     "alias": [],
-    "refs": []
+    "refs": [],
+    "purposeEn": "Let the model actually do things — search, run code, edit files — rather than only describe them.",
+    "defEn": [
+     "A mechanism where the model emits a structured request for a function, the system runs it, and the result goes back into the conversation."
+    ],
+    "whyEn": "It is what turns a language model into a usable assistant. It also introduces real risk: the model can act wrongly, not just speak wrongly."
    },
    {
     "zh": "MCP",
