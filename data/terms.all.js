@@ -123,7 +123,7 @@ var TERMS = [
      ],
      [
       "哪个模型适合编程",
-      "https://cli.specul.com/"
+      "https://agent.specul.com/"
      ]
     ],
     "domain": "concept",
@@ -287,7 +287,7 @@ var TERMS = [
      ],
      [
       "MCP 怎么解决喂资料的问题",
-      "https://mcp.specul.com/context7.html"
+      "https://agent.specul.com/tools/context7.html"
      ]
     ],
     "domain": "model",
@@ -379,7 +379,7 @@ var TERMS = [
     "refs": [
      [
       "Agent 框架对照",
-      "https://harness.specul.com/"
+      "https://agent.specul.com/"
      ]
     ],
     "domain": "concept",
@@ -453,15 +453,15 @@ var TERMS = [
     "refs": [
      [
       "FileSystem server 为什么强制声明目录",
-      "https://mcp.specul.com/filesystem.html"
+      "https://agent.specul.com/tools/filesystem.html"
      ],
      [
       "OpenHands 的受限模式",
-      "https://harness.specul.com/openhands.html"
+      "https://agent.specul.com/harness/openhands.html"
      ],
      [
       "CLI 的权限询问机制",
-      "https://cli.specul.com/opencode.html"
+      "https://agent.specul.com/opencode.html"
      ]
     ],
     "domain": "agent",
@@ -500,7 +500,7 @@ var TERMS = [
     "refs": [
      [
       "为什么本站的档案要逐条写来源",
-      "https://harness.specul.com/"
+      "https://agent.specul.com/"
      ]
     ],
     "domain": "model",
@@ -553,7 +553,7 @@ var TERMS = [
     "refs": [
      [
       "哪个工具用了什么模型",
-      "https://cli.specul.com/"
+      "https://agent.specul.com/"
      ],
      [
       "模型规格对照",
@@ -649,7 +649,7 @@ var TERMS = [
     "refs": [
      [
       "想搭 Agent 该选哪个框架",
-      "https://harness.specul.com/"
+      "https://agent.specul.com/"
      ]
     ],
     "domain": "model",
@@ -722,11 +722,11 @@ var TERMS = [
     "refs": [
      [
       "context7 用 MCP 喂文档的方案",
-      "https://mcp.specul.com/context7.html"
+      "https://agent.specul.com/tools/context7.html"
      ],
      [
       "LlamaIndex 文档解析",
-      "https://harness.specul.com/llamaindex.html"
+      "https://agent.specul.com/harness/llamaindex.html"
      ]
     ],
     "domain": "data",
@@ -752,7 +752,7 @@ var TERMS = [
     "refs": [
      [
       "向量与上下文",
-      "https://mcp.specul.com/context7.html"
+      "https://agent.specul.com/tools/context7.html"
      ]
     ],
     "domain": "data",
@@ -1130,11 +1130,11 @@ var TERMS = [
     "refs": [
      [
       "10 份 Agent 框架档案",
-      "https://harness.specul.com/"
+      "https://agent.specul.com/"
      ],
      [
       "CrewAI 的角色分工",
-      "https://harness.specul.com/crewai.html"
+      "https://agent.specul.com/harness/crewai.html"
      ]
     ],
     "domain": "agent",
@@ -1185,15 +1185,15 @@ var TERMS = [
     "refs": [
      [
       "MCP 是什么·9 份 server 档案",
-      "https://mcp.specul.com/"
+      "https://agent.specul.com/"
      ],
      [
       "文件操作 server",
-      "https://mcp.specul.com/filesystem.html"
+      "https://agent.specul.com/tools/filesystem.html"
      ],
      [
       "网页抓取 server",
-      "https://mcp.specul.com/fetch.html"
+      "https://agent.specul.com/tools/fetch.html"
      ]
     ],
     "domain": "agent",
@@ -1220,11 +1220,11 @@ var TERMS = [
     "refs": [
      [
       "CrewAI 的角色分工模式",
-      "https://harness.specul.com/crewai.html"
+      "https://agent.specul.com/harness/crewai.html"
      ],
      [
       "LangGraph 低层编排",
-      "https://harness.specul.com/langgraph.html"
+      "https://agent.specul.com/harness/langgraph.html"
      ]
     ],
     "domain": "agent",
@@ -1251,11 +1251,11 @@ var TERMS = [
     "refs": [
      [
       "Google ADK 的图执行引擎",
-      "https://harness.specul.com/google-adk.html"
+      "https://agent.specul.com/harness/google-adk.html"
      ],
      [
       "OpenAI Agents SDK",
-      "https://harness.specul.com/openai-agents-sdk.html"
+      "https://agent.specul.com/harness/openai-agents-sdk.html"
      ]
     ],
     "domain": "agent",
@@ -1282,7 +1282,7 @@ var TERMS = [
     "refs": [
      [
       "知识图谱记忆 server",
-      "https://mcp.specul.com/memory.html"
+      "https://agent.specul.com/tools/memory.html"
      ]
     ],
     "domain": "agent",
@@ -1309,11 +1309,11 @@ var TERMS = [
     "refs": [
      [
       "Hermes 的学习闭环",
-      "https://harness.specul.com/hermes-agent.html"
+      "https://agent.specul.com/harness/hermes-agent.html"
      ],
      [
       "Deep Agents 长任务设计",
-      "https://harness.specul.com/deepagents.html"
+      "https://agent.specul.com/harness/deepagents.html"
      ]
     ],
     "domain": "agent",
@@ -1339,7 +1339,7 @@ var TERMS = [
     "refs": [
      [
       "CLI 的权限询问机制",
-      "https://cli.specul.com/opencode.html"
+      "https://agent.specul.com/opencode.html"
      ]
     ],
     "domain": "agent",
@@ -1365,7 +1365,7 @@ var TERMS = [
     "refs": [
      [
       "OpenHands 的受限模式",
-      "https://harness.specul.com/openhands.html"
+      "https://agent.specul.com/harness/openhands.html"
      ]
     ],
     "domain": "agent",
@@ -1454,7 +1454,7 @@ var TERMS = [
     "refs": [
      [
       "8 份 IDE 对照",
-      "https://ide.specul.com/"
+      "https://agent.specul.com/"
      ]
     ],
     "domain": "dev",
@@ -1501,7 +1501,7 @@ var TERMS = [
     "refs": [
      [
       "6 份 CLI 对照",
-      "https://cli.specul.com/"
+      "https://agent.specul.com/"
      ]
     ],
     "domain": "dev",
@@ -1527,7 +1527,7 @@ var TERMS = [
     "refs": [
      [
       "Aider 的 Git 集成设计",
-      "https://cli.specul.com/aider-cli.html"
+      "https://agent.specul.com/aider-cli.html"
      ]
     ],
     "domain": "dev",
@@ -1553,11 +1553,11 @@ var TERMS = [
     "refs": [
      [
       "Codex 的 app server 架构",
-      "https://cli.specul.com/codex-cli.html"
+      "https://agent.specul.com/codex-cli.html"
      ],
      [
       "Codex IDE 扩展",
-      "https://ide.specul.com/codex-ide.html"
+      "https://agent.specul.com/codex-ide.html"
      ]
     ],
     "domain": "dev",
@@ -1583,7 +1583,7 @@ var TERMS = [
     "refs": [
      [
       "Zed 的三种 agent path 编排",
-      "https://ide.specul.com/zed.html"
+      "https://agent.specul.com/zed.html"
      ]
     ],
     "domain": "dev",
@@ -1609,7 +1609,7 @@ var TERMS = [
     "refs": [
      [
       "Aider 的设计理念",
-      "https://cli.specul.com/aider-cli.html"
+      "https://agent.specul.com/aider-cli.html"
      ]
     ],
     "domain": "dev",
@@ -1635,11 +1635,11 @@ var TERMS = [
     "refs": [
      [
       "Playwright MCP server",
-      "https://mcp.specul.com/playwright.html"
+      "https://agent.specul.com/tools/playwright.html"
      ],
      [
       "网页抓取 server 的安全警告",
-      "https://mcp.specul.com/fetch.html"
+      "https://agent.specul.com/tools/fetch.html"
      ]
     ],
     "domain": "agent",
@@ -1665,11 +1665,11 @@ var TERMS = [
     "refs": [
      [
       "Everything 是测试用 server",
-      "https://mcp.specul.com/everything.html"
+      "https://agent.specul.com/tools/everything.html"
      ],
      [
       "Filesystem 实现",
-      "https://mcp.specul.com/filesystem.html"
+      "https://agent.specul.com/tools/filesystem.html"
      ]
     ],
     "domain": "agent",
@@ -1698,7 +1698,7 @@ var TERMS = [
     "refs": [
      [
       "Git MCP server 的作用域",
-      "https://mcp.specul.com/git.html"
+      "https://agent.specul.com/tools/git.html"
      ]
     ],
     "domain": "dev",
@@ -1745,7 +1745,7 @@ var TERMS = [
     "refs": [
      [
       "Fetch server 的安全警告",
-      "https://mcp.specul.com/fetch.html"
+      "https://agent.specul.com/tools/fetch.html"
      ]
     ],
     "domain": "agent",
@@ -1771,7 +1771,7 @@ var TERMS = [
     "refs": [
      [
       "Cursor 的云端 Agent 与自托管",
-      "https://ide.specul.com/cursor.html"
+      "https://agent.specul.com/cursor.html"
      ]
     ],
     "domain": "agent",
@@ -1962,7 +1962,7 @@ var TERMS = [
     "refs": [
      [
       "RAG server 的做法",
-      "https://mcp.specul.com/context7.html"
+      "https://agent.specul.com/tools/context7.html"
      ]
     ],
     "domain": "model",
@@ -2537,11 +2537,11 @@ var TERMS = [
     "refs": [
      [
       "自托管方案对照",
-      "https://harness.specul.com/"
+      "https://agent.specul.com/"
      ],
      [
       "Cursor 的自托管支持",
-      "https://ide.specul.com/cursor.html"
+      "https://agent.specul.com/cursor.html"
      ]
     ],
     "domain": "choice",
@@ -2656,7 +2656,7 @@ var TERMS = [
     "refs": [
      [
       "MCP server 的权限边界",
-      "https://mcp.specul.com/filesystem.html"
+      "https://agent.specul.com/tools/filesystem.html"
      ]
     ],
     "domain": "choice",
@@ -2797,11 +2797,11 @@ var TERMS = [
     "refs": [
      [
       "MCP 作为标准接口的价值",
-      "https://mcp.specul.com/"
+      "https://agent.specul.com/"
      ],
      [
       "ACP 协议",
-      "https://ide.specul.com/zed.html"
+      "https://agent.specul.com/zed.html"
      ]
     ],
     "domain": "choice",
@@ -2827,7 +2827,7 @@ var TERMS = [
     "refs": [
      [
       "站点如何逐条核实并写来源",
-      "https://harness.specul.com/claude-agent-sdk.html"
+      "https://agent.specul.com/harness/claude-agent-sdk.html"
      ]
     ],
     "domain": "choice",
@@ -2896,7 +2896,7 @@ var TERMS = [
     "refs": [
      [
       "官方定价逐条核实",
-      "https://harness.specul.com/crewai.html"
+      "https://agent.specul.com/harness/crewai.html"
      ],
      [
       "缓存策略的降本作用",
@@ -2928,11 +2928,11 @@ var TERMS = [
     "refs": [
      [
       "MCP 三维里的传输方式",
-      "https://mcp.specul.com/"
+      "https://agent.specul.com/"
      ],
      [
       "远程托管 vs 本地 server",
-      "https://mcp.specul.com/context7.html"
+      "https://agent.specul.com/tools/context7.html"
      ]
     ],
     "domain": "data",
