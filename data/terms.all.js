@@ -727,6 +727,10 @@ var TERMS = [
      [
       "LlamaIndex 文档解析",
       "https://agent.specul.com/harness/llamaindex.html"
+     ],
+     [
+      "Pinecone 的检索文档",
+      "https://www.pinecone.io"
      ]
     ],
     "domain": "data",
@@ -775,13 +779,18 @@ var TERMS = [
      "为「按相似度检索」设计的存储引擎，传统数据库做不了这种查询。"
     ],
     "why": "如果你要做 RAG，这就是必需件。理解它能帮你判断一个方案为什么快、为什么慢。",
+    "refs": [
+     [
+      "Qdrant 的官方站点",
+      "https://qdrant.tech"
+     ]
+    ],
     "domain": "data",
     "purposeTag": "apply",
     "level": 2,
     "layer": "二",
     "ord": 12,
     "alias": [],
-    "refs": [],
     "purposeEn": "A database built to store and search those numeric arrays, so RAG can find the relevant passages among millions of documents in an instant.",
     "defEn": [
      "Storage engines designed for similarity search — a query traditional databases cannot serve."
@@ -796,13 +805,18 @@ var TERMS = [
      "RAG 流程里把文档切成段落的过程。切太小丢上下文，切太大塞不进上下文窗口。"
     ],
     "why": "它是 RAG 里最容易被忽略、却最影响效果的环节。很多「AI 答得不准」的原因是切块切坏了。",
+    "refs": [
+     [
+      "Chroma 的官方站点（切分与索引）",
+      "https://www.trychroma.com"
+     ]
+    ],
     "domain": "data",
     "purposeTag": "apply",
     "level": 2,
     "layer": "二",
     "ord": 13,
     "alias": [],
-    "refs": [],
     "purposeEn": "Cut a long document into pieces before feeding it to the model. How you chunk decides how accurate the answer is.",
     "defEn": [
      "The step in a RAG pipeline that splits a document into passages. Too small loses context; too large does not fit the context window."
@@ -1477,13 +1491,18 @@ var TERMS = [
      "AI 建立整个代码库的索引与结构认知，能跨文件回答问题、影响范围分析。"
     ],
     "why": "这是「Copilot 类工具」与「简单补全」的分水岭。做重构类任务时必须要有它。",
+    "refs": [
+     [
+      "LlamaIndex 的索引方案",
+      "https://www.llamaindex.ai"
+     ]
+    ],
     "domain": "dev",
     "purposeTag": "apply",
     "level": 3,
     "layer": "三",
     "ord": 14,
     "alias": [],
-    "refs": [],
     "purposeEn": "Let the AI read the whole project, not just the file that happens to be open.",
     "defEn": [
      "The AI builds an index and structural model of the entire codebase, so it can answer across files and reason about blast radius."
