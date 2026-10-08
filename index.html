@@ -84,7 +84,7 @@
   <div class="dgrid">
     <a class="d" href="https://agent.specul.com/"><b><span data-zh>我要让AI 替我干活</span><span data-en>I want AI to do work for me</span></b><span><span data-zh>21 份 agent 档案 —— 装在编辑器 / 终端里自己跑的，和常驻云端的。</span><span data-en>21 agent profiles — ones you run yourself in an editor or terminal, and ones hosted in the cloud.</span></span><i>agent.specul.com</i></a>
     <a class="d" href="https://models.specul.com/"><b><span data-zh>我要在自己电脑上跑模型</span><span data-en>I want to run models on my own machine</span></b><span><span data-zh>7 个系列 11 种规格，按显存选量化档位。</span><span data-en>7 series, 11 specs — pick a quantization tier by VRAM.</span></span><i>models.specul.com</i></a>
-    <a class="d" href="https://nav.specul.com/"><b><span data-zh>我只想知道有什么存在</span><span data-en>I just want to know what exists</span></b><span><span data-zh>713 条导航，12 个分类。</span><span data-en>713 links across 12 categories.</span></span><i>nav.specul.com</i></a>
+    <a class="d" href="https://nav.specul.com/"><b><span data-zh>我只想知道有什么存在</span><span data-en>I just want to know what exists</span></b><span><span data-zh>527 条导航，11 个分类。</span><span data-en>527 links across 11 categories.</span></span><i>nav.specul.com</i></a>
     <a class="d" href="https://agent.specul.com/"><b><span data-zh>我要让 AI 接外部数据</span><span data-en>I want to connect AI to external data</span></b><span><span data-zh>9 份 MCP server 档案 —— 给 agent 装的工具，缺什么装什么。</span><span data-en>9 MCP server profiles — tools you install for an agent, for whatever's missing.</span></span><i>agent.specul.com</i></a>
   </div>
 </section>
@@ -453,10 +453,18 @@ function openTerm(zh){
    * 现在按语言选一份列表，逐条渲染成 .ddef（保留原有样式与结构）。 */
   var defList = (IS_EN() && t.defEn && t.defEn.length) ? t.defEn : t.def;
   (defList||[]).forEach(function(d){ h += '<div class="ddef">'+escMd(d)+'</div>'; });
-  if(t.alias && t.alias.length){
+  /* 别名渲染。
+   * 英文态优先 aliasEn（terms.en.json 提供），**并且过滤掉含汉字的别名**——
+   * 之前是「有 aliasEn 就用它，否则整包回落中文 alias」，于是 MCP→模型上下文协议、
+   * Token→词元、幻觉→胡说八道 这类中文别名在英文态原样露出（20 个词条受影响）。
+   * 不给它们硬造英文译名：多数只是英文名的直译（MCP = Model Context Protocol
+   * 已经在 en 字段里了），编一个反而是假信息。含汉字的一律不显示，
+   * 纯 ASCII 的缩写（AI / LLM / RAG / TP / TTS / ASR / Git / tok/s）照常显示。 */
+  var aliasList = (IS_EN() && t.aliasEn && t.aliasEn.length) ? t.aliasEn : (t.alias || []);
+  if(IS_EN()) aliasList = aliasList.filter(function(a){ return !/[一-鿿]/.test(String(a)); });
+  if(aliasList.length){
     h += '<div class="alias">';
-    var aliases = (IS_EN() && t.aliasEn && t.aliasEn.length) ? t.aliasEn : t.alias;
-    aliases.forEach(function(a){ h += '<span>'+(IS_EN()?'Also called ':'也叫 ')+esc(a)+'</span>'; });
+    aliasList.forEach(function(a){ h += '<span>'+(IS_EN()?'Also called ':'也叫 ')+esc(a)+'</span>'; });
     h += '</div>';
   }
   var whyTxt = IS_EN() ? (t.whyEn || t.why) : t.why;
