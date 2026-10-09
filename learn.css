@@ -32,7 +32,10 @@ html:not([data-theme="light"]) {
 }
 
 html[data-theme="light"] {
-  --brand: #0d9488;
+  /* B6（2026-10-09）：--brand 从 #0d9488 压深到 #0b7c72。
+     同上：它当填充色没问题，但作为**正文文字色**在亮底上只有 3.74:1，不够 AA 的 4.5。
+     新值按「白底 + 各自柔和底」双条件算出（5.05 / 4.53），色相不变。 */
+  --brand: #0b7c72;
   --brand-on: #ffffff;
   --brand-soft: rgba(13, 148, 136, .10);
   --brand-line: rgba(13, 148, 136, .30);
@@ -102,9 +105,13 @@ code,pre{overflow-wrap:anywhere}
 .step-h{display:flex; align-items:flex-start; gap:11px; flex-wrap:wrap}
 .step-n{
   flex-shrink:0; width:23px; height:23px; border-radius:50%;
-  background:var(--vio); color:#fff;
+  /* B5（2026-10-09）：原来是白字配 --vio 底。深色主题下 --vio 是亮青（#3ddbc8），
+     白字只有 1.73:1；浅色主题下 --vio 是深紫（#6d4fd6），白字才达标。
+     所以分主题写：亮底用深字、暗底用白字。 */
+  background:var(--vio); color:#06080d;
   font-size:13px; display:flex; align-items:center; justify-content:center;
 }
+[data-theme="light"] .step-n{color:#fff}
 .step-txt{min-width:0; flex:1}
 .step-txt b{display:block; font-size:15px; font-weight:500; line-height:1.5}
 .step-take{display:block; color:var(--tx-2); font-size:13px; margin-top:2px}
@@ -147,7 +154,8 @@ code,pre{overflow-wrap:anywhere}
   font-family:inherit; white-space:nowrap;
 }
 .seg:hover{border-color:var(--vio); color:var(--vio)}
-.seg[aria-pressed="true"]{background:var(--vio); border-color:var(--vio); color:#fff}
+.seg[aria-pressed="true"]{background:var(--vio); border-color:var(--vio); color:#06080d}
+[data-theme="light"] .seg[aria-pressed="true"]{color:#fff}
 .seg:focus-visible{outline:2px solid var(--vio); outline-offset:2px}
 .seg small{opacity:.7; margin-left:5px; font-size:12px}
 .cbar{
