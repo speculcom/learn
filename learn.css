@@ -25,20 +25,20 @@
    ───────────────────────────────────────────────────────────── */
 
 html:not([data-theme="light"]) {
-  --brand: #3ddbc8;
-  --brand-on: #04211d;
-  --brand-soft: rgba(61, 219, 200, .14);
-  --brand-line: rgba(61, 219, 200, .34);
+  --brand: #8b7cf8;
+  --brand-on:#fff;
+  --brand-soft:rgba(139, 124, 248, .14);
+  --brand-line:rgba(139, 124, 248, .34);
 }
 
 html[data-theme="light"] {
   /* B6（2026-10-09）：--brand 从 #0d9488 压深到 #0b7c72。
      同上：它当填充色没问题，但作为**正文文字色**在亮底上只有 3.74:1，不够 AA 的 4.5。
      新值按「白底 + 各自柔和底」双条件算出（5.05 / 4.53），色相不变。 */
-  --brand: #0b7c72;
-  --brand-on: #ffffff;
-  --brand-soft: rgba(13, 148, 136, .10);
-  --brand-line: rgba(13, 148, 136, .30);
+  --brand: #6d4fd6;
+  --brand-on:#fff;
+  --brand-soft:rgba(109, 79, 214, .08);
+  --brand-line:rgba(109, 79, 214, .28);
 }
 
 :root{
@@ -98,7 +98,7 @@ code,pre{overflow-wrap:anywhere}
 }
 .path-h{margin-bottom:14px}
 .path-h h2{margin:0 0 5px; font-size:17px; font-weight:500}
-.path-h p{margin:0; color:var(--tx-2); font-size:14px; max-width:74ch}
+.path-h p{margin:0; color:var(--tx-2); font-size:var(--fs-xs); max-width:74ch}
 .steps{list-style:none; margin:0; padding:0; counter-reset:none}
 .step{padding:14px 0; border-top:1px solid var(--ln)}
 .step:first-child{padding-top:4px; border-top:none}
@@ -109,33 +109,33 @@ code,pre{overflow-wrap:anywhere}
      白字只有 1.73:1；浅色主题下 --vio 是深紫（#6d4fd6），白字才达标。
      所以分主题写：亮底用深字、暗底用白字。 */
   background:var(--vio); color:#06080d;
-  font-size:13px; display:flex; align-items:center; justify-content:center;
+  font-size:var(--fs-xs); display:flex; align-items:center; justify-content:center;
 }
 [data-theme="light"] .step-n{color:#fff}
 .step-txt{min-width:0; flex:1}
-.step-txt b{display:block; font-size:15px; font-weight:500; line-height:1.5}
-.step-take{display:block; color:var(--tx-2); font-size:13px; margin-top:2px}
+.step-txt b{display:block; font-size:var(--fs-sm); font-weight:500; line-height:1.5}
+.step-take{display:block; color:var(--tx-2); font-size:var(--fs-xs); margin-top:2px}
 .step-n2{
-  flex-shrink:0; font-size:12px; color:var(--tx-3);
+  flex-shrink:0; font-size:var(--fs-xs); color:var(--tx-3);
   background:var(--bg-inset); border:1px solid var(--ln);
   border-radius:var(--r-lg); padding:2px 9px; white-space:nowrap;
 }
-.step-d{margin:7px 0 9px; color:var(--tx-2); font-size:13px; max-width:74ch; min-width:0}
+.step-d{margin:7px 0 9px; color:var(--tx-2); font-size:var(--fs-xs); max-width:74ch; min-width:0}
 .step-words{display:flex; flex-wrap:wrap; gap:6px; align-items:center}
 .wchip{
   padding:3px 10px; border:1px solid var(--ln-2); border-radius:var(--r-lg);
-  background:var(--bg); color:var(--tx-2); font-size:13px; cursor:pointer;
+  background:var(--bg); color:var(--tx-2); font-size:var(--fs-xs); cursor:pointer;
   font-family:inherit; max-width:100%; overflow-wrap:anywhere;
 }
 .wchip:hover{border-color:var(--vio); color:var(--vio)}
 .wchip:focus-visible{outline:2px solid var(--vio); outline-offset:2px}
 .step-all{
   margin-left:auto; background:none; border:none; cursor:pointer; font-family:inherit;
-  color:var(--vio); font-size:13px; padding:3px 2px; white-space:nowrap;
+  color:var(--vio); font-size:var(--fs-xs); padding:3px 2px; white-space:nowrap;
 }
 .step-all:hover{text-decoration:underline}
 .step-all:focus-visible{outline:2px solid var(--vio); outline-offset:2px}
-.path-foot{margin:13px 0 0; color:var(--tx-3); font-size:13px}
+.path-foot{margin:13px 0 0; color:var(--tx-3); font-size:var(--fs-xs)}
 
 /* ===== 控制条 ===== */
 .ctrl{
@@ -146,18 +146,18 @@ code,pre{overflow-wrap:anywhere}
   padding:14px 18px; margin-bottom:26px;
 }
 .crow{display:flex; flex-wrap:wrap; align-items:center; gap:10px 16px}
-.clab{font-size:13px; color:var(--tx-3); flex-shrink:0}
+.clab{font-size:var(--fs-xs); color:var(--tx-3); flex-shrink:0}
 .segs{display:flex; flex-wrap:wrap; gap:6px}
 .seg{
   padding:5px 13px; border:1px solid var(--ln-2); border-radius:var(--r-sm);
-  background:var(--bg-raise); color:var(--tx-2); font-size:13px; cursor:pointer;
+  background:var(--bg-raise); color:var(--tx-2); font-size:var(--fs-xs); cursor:pointer;
   font-family:inherit; white-space:nowrap;
 }
 .seg:hover{border-color:var(--vio); color:var(--vio)}
 .seg[aria-pressed="true"]{background:var(--vio); border-color:var(--vio); color:#06080d}
 [data-theme="light"] .seg[aria-pressed="true"]{color:#fff}
 .seg:focus-visible{outline:2px solid var(--vio); outline-offset:2px}
-.seg small{opacity:.7; margin-left:5px; font-size:12px}
+.seg small{opacity:.7; margin-left:5px; font-size:var(--fs-xs)}
 .cbar{
   margin-top:12px; padding-top:12px; border-top:1px solid var(--ln);
   display:flex; flex-wrap:wrap; gap:8px 12px; align-items:center;
@@ -165,11 +165,11 @@ code,pre{overflow-wrap:anywhere}
 .search{
   flex:1; min-width:180px; padding:6px 12px; border-radius:var(--r-sm);
   border:1px solid var(--ln-2); background:var(--bg-raise); color:var(--tx);
-  font-size:14px; font-family:inherit;
+  font-size:var(--fs-xs); font-family:inherit;
 }
 .search::placeholder{color:var(--tx-3)}
 .search:focus{outline:none; border-color:var(--vio)}
-.cnt{font-size:13px; color:var(--tx-3); white-space:nowrap}
+.cnt{font-size:var(--fs-xs); color:var(--tx-3); white-space:nowrap}
 
 /* ===== 分组 ===== */
 .grp{margin-bottom:30px}
@@ -178,9 +178,9 @@ code,pre{overflow-wrap:anywhere}
   padding-bottom:9px; margin-bottom:13px; border-bottom:1px solid var(--ln);
 }
 .gh h2{margin:0; font-size:17px; font-weight:500}
-.gh p{margin:0; color:var(--tx-2); font-size:13px; min-width:0}
+.gh p{margin:0; color:var(--tx-2); font-size:var(--fs-xs); min-width:0}
 .gnum{
-  font-size:12px; color:var(--tx-3); background:var(--bg-inset);
+  font-size:var(--fs-xs); color:var(--tx-3); background:var(--bg-inset);
   border:1px solid var(--ln); border-radius:var(--r-lg); padding:2px 9px; flex-shrink:0;
 }
 
@@ -202,21 +202,21 @@ code,pre{overflow-wrap:anywhere}
 }
 .tb:hover{border-color:var(--dc, var(--vio)); background:var(--bg-inset)}
 .tb:focus-visible{outline:2px solid var(--vio); outline-offset:2px}
-.tb-n{font-size:15px; font-weight:500; line-height:1.4}
-.tb-en{font-size:12px; color:var(--tx-3); line-height:1.35; overflow-wrap:anywhere}
+.tb-n{font-size:var(--fs-sm); font-weight:500; line-height:1.4}
+.tb-en{font-size:var(--fs-xs); color:var(--tx-3); line-height:1.35; overflow-wrap:anywhere}
 .tb-p{
-  font-size:12px; color:var(--tx-2); line-height:1.5; margin-top:2px;
+  font-size:var(--fs-xs); color:var(--tx-2); line-height:1.5; margin-top:2px;
   display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
 }
 .tb-lv{
-  position:absolute; right:9px; top:9px; font-size:11px;
+  position:absolute; right:9px; top:9px; font-size:var(--fs-xs);
   color:var(--tx-3); background:var(--bg-inset);
   border:1px solid var(--ln); border-radius:var(--r-xs); padding:0 5px; line-height:16px;
 }
 .tb.is-open{border-color:var(--vio); background:var(--bg-inset)}
 
 .empty{
-  text-align:center; color:var(--tx-3); font-size:14px;
+  text-align:center; color:var(--tx-3); font-size:var(--fs-xs);
   padding:52px 20px; border:1px dashed var(--ln-2); border-radius:var(--r);
 }
 
@@ -226,10 +226,10 @@ code,pre{overflow-wrap:anywhere}
   border-radius:var(--r); padding:20px 22px; margin-bottom:24px;
 }
 .dintro h2{margin:0 0 6px; font-size:17px; font-weight:500}
-.dintro p{margin:0 0 10px; color:var(--tx-2); font-size:14px}
+.dintro p{margin:0 0 10px; color:var(--tx-2); font-size:var(--fs-xs)}
 .dintro .warn{
   border-left:2px solid var(--gold); padding-left:12px;
-  color:var(--tx-2); font-size:14px;
+  color:var(--tx-2); font-size:var(--fs-xs);
 }
 /* 维度视图：每个维度一个 .drow，标题行是 .drow-h。
  * ⚠ 下面三条 .dset 规则是**死规则**（2026-10-03 清理）——
@@ -246,22 +246,22 @@ code,pre{overflow-wrap:anywhere}
 .drow-h{
   display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin-bottom:8px;
 }
-.drow-h b{font-size:15px; font-weight:500}
+.drow-h b{font-size:var(--fs-sm); font-weight:500}
 /* 维度 key（model_access / transport / …）—— 等宽小标签。
  * 这条原来写成 `.dset > h3 .tagcode`，与真实 DOM 不匹配而从未生效（见上方说明）。 */
 .drow-h .tagcode{
-  font-size:12px; color:var(--tx-3); font-family:ui-monospace, Menlo, monospace;
+  font-size:var(--fs-xs); color:var(--tx-3); font-family:ui-monospace, Menlo, monospace;
   background:var(--bg-inset); border:1px solid var(--ln); border-radius:var(--r-xs); padding:1px 6px;
   /* 11 个 key 里最长的 model_access 有 12 字符，加上卡片 padding 必须能放下；
      narrow 屏下不许把它折成多行（折行会让维度行高忽高忽低）。*/
   overflow-wrap:normal; word-break:keep-all; white-space:nowrap;
 }
-.drow-h .n{font-size:12px; color:var(--tx-3); margin-left:auto; white-space:nowrap}
-.drow-q{color:var(--tx-2); font-size:14px; margin-bottom:11px}
+.drow-h .n{font-size:var(--fs-xs); color:var(--tx-3); margin-left:auto; white-space:nowrap}
+.drow-q{color:var(--tx-2); font-size:var(--fs-xs); margin-bottom:11px}
 .dchips{display:flex; flex-wrap:wrap; gap:6px}
 .dchip{
   padding:4px 11px; border:1px solid var(--ln-2); border-radius:var(--r-lg);
-  background:var(--bg-raise); color:var(--tx-2); font-size:13px; cursor:pointer;
+  background:var(--bg-raise); color:var(--tx-2); font-size:var(--fs-xs); cursor:pointer;
   font-family:inherit;
 }
 .dchip:hover{border-color:var(--vio); color:var(--vio)}
@@ -269,7 +269,7 @@ code,pre{overflow-wrap:anywhere}
 .dcaveat{
   margin-top:11px; padding:9px 12px; border-radius:var(--r-sm);
   background:var(--bg-inset); border:1px solid var(--ln);
-  font-size:13px; color:var(--tx-2); line-height:1.65;
+  font-size:var(--fs-xs); color:var(--tx-2); line-height:1.65;
 }
 .dcaveat i{color:var(--gold); font-style:normal}
 
@@ -293,10 +293,10 @@ code,pre{overflow-wrap:anywhere}
 }
 .dh-txt{min-width:0; flex:1}
 .dh-txt h3{margin:0 0 3px; font-size:21px; font-weight:500; line-height:1.32}
-.dh-txt .en{font-size:13px; margin:0}
+.dh-txt .en{font-size:var(--fs-xs); margin:0}
 .dtags{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px}
 .dtag{
-  font-size:12px; color:var(--tx-2); background:var(--bg-inset);
+  font-size:var(--fs-xs); color:var(--tx-2); background:var(--bg-inset);
   border:1px solid var(--ln); border-radius:var(--r-lg); padding:2px 9px;
 }
 .dtag.d{border-color:var(--dc); color:var(--dc)}
@@ -312,53 +312,53 @@ code,pre{overflow-wrap:anywhere}
 .ds{padding:14px 16px; border-radius:var(--r-sm); margin-bottom:16px}
 .ds.p{background:color-mix(in srgb, var(--cyan) 10%, var(--bg-inset)); border:1px solid color-mix(in srgb, var(--cyan) 28%, var(--ln))}
 html[data-theme="light"] .ds.p{background:color-mix(in srgb, var(--vio) 7%, var(--bg-inset)); border-color:color-mix(in srgb, var(--vio) 26%, var(--ln))}
-.dslabel{font-size:12px; color:var(--tx-3); margin-bottom:6px; letter-spacing:.04em}
+.dslabel{font-size:var(--fs-xs); color:var(--tx-3); margin-bottom:6px; letter-spacing:.04em}
 .dcaveat strong,.drow-q strong,.ds.txt strong,.ddef strong{color:var(--tx); font-weight:500}
 html[data-theme="light"] .dcaveat strong,html[data-theme="light"] .drow-q strong{color:var(--vio)}
 .ds.p .dslabel{color:var(--cyan)}
 html[data-theme="light"] .ds.p .dslabel{color:var(--vio)}
-.ds.txt{color:var(--tx); font-size:15px; line-height:1.72}
+.ds.txt{color:var(--tx); font-size:var(--fs-sm); line-height:1.72}
 .ds.w{
   background:var(--bg-inset); border:1px solid var(--ln);
 }
 .ds.w .dslabel{color:var(--gold)}
-.ds.w .ds.txt{color:var(--tx-2); font-size:14px}
-.ddef{color:var(--tx-2); font-size:15px; margin-bottom:11px; line-height:1.72}
+.ds.w .ds.txt{color:var(--tx-2); font-size:var(--fs-xs)}
+.ddef{color:var(--tx-2); font-size:var(--fs-sm); margin-bottom:11px; line-height:1.72}
 .ddef:last-of-type{margin-bottom:0}
 .alias{display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px}
 .alias span{
-  font-size:12px; color:var(--tx-3); background:var(--bg-inset);
+  font-size:var(--fs-xs); color:var(--tx-3); background:var(--bg-inset);
   border:1px solid var(--ln); border-radius:var(--r-sm); padding:2px 8px;
 }
 .related{margin-top:22px; padding-top:18px; border-top:1px solid var(--ln)}
-.related h4{margin:0 0 4px; font-size:13px; font-weight:500; color:var(--tx)}
-.related p{margin:0 0 12px; font-size:13px; color:var(--tx-3)}
+.related h4{margin:0 0 4px; font-size:var(--fs-xs); font-weight:500; color:var(--tx)}
+.related p{margin:0 0 12px; font-size:var(--fs-xs); color:var(--tx-3)}
 .rgrid{display:flex; flex-wrap:wrap; gap:7px}
 .rbtn{
   padding:4px 11px; border:1px solid var(--ln-2); border-radius:var(--r-lg);
-  background:var(--bg-raise); color:var(--tx-2); font-size:13px; cursor:pointer;
+  background:var(--bg-raise); color:var(--tx-2); font-size:var(--fs-xs); cursor:pointer;
   font-family:inherit;
 }
 .rbtn:hover{border-color:var(--vio); color:var(--vio)}
 .rbtn:focus-visible{outline:2px solid var(--vio); outline-offset:2px}
 .refs{margin-top:20px; padding-top:18px; border-top:1px solid var(--ln)}
-.refs h4{margin:0 0 10px; font-size:13px; font-weight:500}
+.refs h4{margin:0 0 10px; font-size:var(--fs-xs); font-weight:500}
 .refs-grid{display:grid; gap:8px}
 .refs a{
   display:block; padding:10px 13px; border:1px solid var(--ln);
   border-radius:var(--r-sm); background:var(--bg-inset);
-  color:var(--tx-2); font-size:14px;
+  color:var(--tx-2); font-size:var(--fs-xs);
 }
 .refs a:hover{border-color:var(--vio); color:var(--vio); text-decoration:none}
 .dnav{display:flex; gap:8px; margin-top:22px; padding-top:18px; border-top:1px solid var(--ln)}
 .dnav button{
   flex:1; padding:9px 12px; border:1px solid var(--ln-2); border-radius:var(--r-sm);
-  background:var(--bg-raise); color:var(--tx-2); font-size:13px; cursor:pointer;
+  background:var(--bg-raise); color:var(--tx-2); font-size:var(--fs-xs); cursor:pointer;
   font-family:inherit; text-align:left; min-width:0;
 }
 .dnav button:hover:not(:disabled){border-color:var(--vio); color:var(--vio)}
 .dnav button:disabled{opacity:.35; cursor:default}
-.dnav b{display:block; font-size:11px; color:var(--tx-3); font-weight:400; margin-bottom:1px}
+.dnav b{display:block; font-size:var(--fs-xs); color:var(--tx-3); font-weight:400; margin-bottom:1px}
 .dnav span{overflow:hidden; text-overflow:ellipsis; white-space:nowrap; display:block}
 
 /* ===== 去哪一站 ===== */
@@ -367,26 +367,26 @@ html[data-theme="light"] .ds.p .dslabel{color:var(--vio)}
   border:1px solid var(--ln); border-radius:var(--r); padding:22px 24px;
 }
 .dest h2{margin:0 0 5px; font-size:17px; font-weight:500}
-.dest > p{margin:0 0 16px; color:var(--tx-2); font-size:14px}
+.dest > p{margin:0 0 16px; color:var(--tx-2); font-size:var(--fs-xs)}
 .dgrid{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr)); gap:11px}
 .d{
   background:var(--bg-inset); border:1px solid var(--ln);
   border-radius:var(--r-sm); padding:13px 15px; color:var(--tx); display:block;
 }
 .d:hover{border-color:var(--vio); text-decoration:none}
-.d b{display:block; font-size:15px; font-weight:500; margin-bottom:3px}
-.d span{color:var(--tx-2); font-size:13px; line-height:1.6; display:block}
-.d i{color:var(--tx-3); font-style:normal; font-size:12px; display:block; margin-top:5px}
+.d b{display:block; font-size:var(--fs-sm); font-weight:500; margin-bottom:3px}
+.d span{color:var(--tx-2); font-size:var(--fs-xs); line-height:1.6; display:block}
+.d i{color:var(--tx-3); font-style:normal; font-size:var(--fs-xs); display:block; margin-top:5px}
 
 .note{
   margin-top:34px; padding:15px 19px; border-radius:var(--r-sm);
-  background:var(--bg-raise); border:1px solid var(--ln); color:var(--tx-2); font-size:14px;
+  background:var(--bg-raise); border:1px solid var(--ln); color:var(--tx-2); font-size:var(--fs-xs);
 }
 .note b{color:var(--tx); font-weight:500}
 
 footer{
   max-width:1240px; margin:0 auto; padding:24px 24px 40px;
-  border-top:1px solid var(--ln); color:var(--tx-3); font-size:13px;
+  border-top:1px solid var(--ln); color:var(--tx-3); font-size:var(--fs-xs);
   display:flex; flex-wrap:wrap; gap:8px 18px; align-items:center;
 }
 footer a{color:var(--tx-2)}
@@ -401,7 +401,7 @@ footer a{color:var(--tx-2)}
   .ctrl{top:49px; padding:12px 14px; position:static}
   .wall{grid-template-columns:repeat(auto-fill, minmax(min(140px,100%), 1fr)); gap:7px}
   .tb{min-height:56px; padding:10px 11px}
-  .tb-n{font-size:14px}
+  .tb-n{font-size:var(--fs-xs)}
   .tb-p{display:none}
   .dest{padding:16px}
   .dh{padding:16px 18px 14px}
