@@ -47,5 +47,5 @@ node scripts/build.mjs
 
 ## 法律
 
-内容 CC-BY-SA 4.0。自有内容与第三方内容的界限见
-<https://specul.com/legal.html>。
+内容 CC BY 4.0（署名即可自由使用与改编，含商业用途）；源码 MIT。
+自有内容与第三方内容的界限见 <https://specul.com/legal.html>。
