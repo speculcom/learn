@@ -399,10 +399,21 @@ footer a{color:var(--tx-2)}
   .hero{padding:30px 0 20px}
   .hero h1{font-size:var(--display-sub)}
   .ctrl{top:49px; padding:12px 14px; position:static}
-  .wall{grid-template-columns:repeat(auto-fill, minmax(min(140px,100%), 1fr)); gap:7px}
-  .tb{min-height:56px; padding:10px 11px}
+  /* ── 方块墙：窄屏改为**一行一个**（2026-10-10 用户指出「横向排两个显示效果太差」）──
+   * 原值 `minmax(min(140px,100%),1fr)` 在 390px 视口下算出**两列 172px**：
+   *   · 「Large Language Model, LLM」这类长英文被压成两行
+   *   · 每个方块挤成 172×~90，标题、层级徽标、英文互相挤压
+   * 而这一屏是 116 个词条的主入口，读得清比排得满重要。
+   * 改成 1fr = 一行一个，卡片拿到整行宽度 ✓
+   * ⚠ `responsive-overflow` 门禁量的就是「9 种宽度无横向溢出」，
+   *   改完必须跑它 —— 窄屏最容易在这里翻车。 */
+  .wall{grid-template-columns:1fr; gap:8px}
+  .tb{min-height:56px; padding:12px 14px}
   .tb-n{font-size:var(--fs-xs)}
   .tb-p{display:none}
+  /* 释义藏了之后，方块只剩「层级 + 词 + 英文」三行 ——
+     给英文一个完整的一行，不再与中文挤在同一窄列里。*/
+  .tb-en{white-space:normal; overflow-wrap:anywhere}
   .dest{padding:16px}
   .dh{padding:16px 18px 14px}
   .db{padding:16px 18px 28px}
