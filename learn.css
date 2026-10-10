@@ -84,7 +84,7 @@ code,pre{overflow-wrap:anywhere}
 .hero{padding:var(--section-pad) 0 var(--sp-3)}
 /* 2026-10-03：原 clamp(26px,3.2vw,34px) → 实测 h1 仅 34px，是六站最小。
    接入全站 --display-sub，learn 与其它站同一档。 */
-.hero h1{margin:0 0 var(--sp-3); font-size:var(--display-sub); font-weight:600; line-height:1.16; letter-spacing:-.02em}
+.hero h1{margin:0 0 var(--sp-3); letter-spacing:-.02em}
 .hero p{margin:0 0 9px; color:var(--tx-2); max-width:68ch}
 .hero .lead{color:var(--tx); font-size:17px}
 
