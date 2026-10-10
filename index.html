@@ -36,7 +36,7 @@
   }
   </script>
 </head>
-<body class="brand-ambient" style="--accent:var(--cyan)">
+<body class="brand-ambient has-tabbar" style="--accent:var(--cyan)">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
   <header class="site-header">
     <div class="container site-bar">
@@ -153,7 +153,10 @@
           <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
           <a href="https://vg.specul.com/"><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></a>
           <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
-          <a href="https://github.com/speculcom/learn" target="_blank" rel="noopener">GitHub</a>
+          <!-- 2026-10-10 用户定案：页脚叫「开源」，指向 markdown 内容仓（不是部署仓 speculcom/learn）。
+     ⚠ 本页是手写首页，与 _data/glossary/scripts/build.mjs 的 FOOTER/TABBAR 各存一份 ——
+       改页脚要两处都改（词条页由 build.mjs 生成）。 -->
+<a href="https://github.com/speculcom/ai-glossary" target="_blank" rel="noopener"><span data-zh>开源</span><span data-en>Open source</span></a>
       </nav>
       <nav class="foot-legal-links" aria-label="法律">
         <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
@@ -174,6 +177,15 @@
   </div>
   <div class="db" id="dBody"></div>
 </aside>
+<!-- 底部 tab bar（手机端 App 式固定导航）—— 与 www 首页 / 共享 shell 同一份标记。
+     样式在 brand.css，行为在 brand.js（点「更多」开的就是上面那个 .nav-drawer）。 -->
+<nav class="nav-tabbar" aria-label="快捷导航">
+  <a href="https://specul.com/"><span class="ti" aria-hidden="true">◎</span><span data-zh>首页</span><span data-en>Home</span></a>
+  <a href="https://learn.specul.com/" aria-current="page"><span class="ti" aria-hidden="true">▤</span><span data-zh>学 AI</span><span data-en>Learn</span></a>
+  <a href="https://agent.specul.com/"><span class="ti" aria-hidden="true">◈</span>Agent</a>
+  <a href="https://models.specul.com/"><span class="ti" aria-hidden="true">▦</span><span data-zh>模型</span><span data-en>Models</span></a>
+  <button type="button" id="tabMore" aria-controls="navDrawer" aria-expanded="false"><span class="ti" aria-hidden="true">⋯</span><span data-zh>更多</span><span data-en>More</span></button>
+</nav>
   <script src="brand.js"></script>
   <script>
     (function () {
