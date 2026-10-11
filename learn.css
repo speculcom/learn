@@ -84,7 +84,10 @@ code,pre{overflow-wrap:anywhere}
 .hero{padding:var(--section-pad) 0 var(--sp-3)}
 /* 2026-10-03：原 clamp(26px,3.2vw,34px) → 实测 h1 仅 34px，是六站最小。
    接入全站 --display-sub，learn 与其它站同一档。 */
-.hero h1{margin:0 0 var(--sp-3); letter-spacing:-.02em}
+/* ⚠ 2026-10-10：删掉了这里的 `letter-spacing:-.02em` —— 共享层 brand.css 的 h1
+   已是 -.028em（六站一致），这条把它盖掉，learn 主标字距与全站对不上。
+   h1 属骨架，字距只由 brand.css 一处决定。 */
+.hero h1{margin:0 0 var(--sp-3)}
 .hero p{margin:0 0 9px; color:var(--tx-2); max-width:68ch}
 .hero .lead{color:var(--tx); font-size:17px}
 
@@ -384,8 +387,11 @@ html[data-theme="light"] .ds.p .dslabel{color:var(--vio)}
 }
 .note b{color:var(--tx); font-weight:500}
 
+/* ⚠ 2026-10-10：原先是 `max-width:1240px` —— learn 的页脚比其余五站的
+   .site-footer（1120px 容器）宽 120px，六站页脚宽度因此对不齐
+   （ui-parity 实测：learn 页脚宽 1240、其余 1120）。统一到 1120。 */
 footer{
-  max-width:1240px; margin:0 auto; padding:24px 24px 40px;
+max-width:1120px; margin:0 auto; padding:24px 24px 40px;
   border-top:1px solid var(--ln); color:var(--tx-3); font-size:var(--fs-xs);
   display:flex; flex-wrap:wrap; gap:8px 18px; align-items:center;
 }
