@@ -67,7 +67,6 @@ html[data-theme="light"]{
    是**同一属性同值**的副本（ui-core 报「冗余副本」）。
    同值副本最危险：今天一样，明天改一处就悄悄分叉。
    learn 只保留自己独有的部分（html/body 的 overflow-x、正文排版、术语卡等）。 */
-*,*::before,*::after{box-sizing:border-box}
 html,body{overflow-x:clip}
 body{
   /* ⚠ 不要在这里写 `font:` —— brand.css 的 body 已定义字体栈与
