@@ -61,12 +61,18 @@
         <a href="https://vg.specul.com/"><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></a>
         <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
       </nav>
-      <!-- 2026-10-10：.nav-tools 移到 <nav> 外（放里面时窄屏按钮组会被链接挤到第三条）。 -->
+      <!-- 2026-10-10：.nav-tools 从 nav 元素**内部**移到外面，与 .nav-links 平级。
+           放里面时窄屏下它会跟着链接一起换行：链接占满整行 → 按钮被挤到第三条
+           （实测顶栏 134px、按钮组孤零零一行）。移出来后它与品牌同行，
+           链接独占第二行居中 —— 这才是下面注释里方案 B 想要的样子。 -->
       <span class="nav-tools">
         <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
         <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
       </span>
-      <!-- B6（2026-10-09）：窄屏导航入口（样式与行为在共享 brand.css / brand.js）。 -->
+      <!-- B6（2026-10-09）：窄屏（≤900px）下 .nav-links 会隐藏，这个汉堡是替代入口。
+           行为在共享 brand.js 里（一处实现、六站共用），样式在共享 brand.css。
+           无脚本时 CSS 不会显示它，而是把 .nav-links 在窄屏放出来 —— 不会出现
+           「导航被藏进一个点了没反应的按钮」。 -->
       <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
         <i></i><i></i><i></i>
       </button>
@@ -76,11 +82,32 @@
   <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
     <div class="nav-drawer-h">
       <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <span class="brand-sub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
       <button class="nav-dclose" type="button" aria-label="关闭">×</button>
     </div>
     <nav class="nav-drawer-list">
       <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://learn.specul.com/"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/" aria-current="page"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://agent.specul.com/"><span><span data-zh>Agent</span><span data-en>Agent</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>本地模型</span><span data-en>Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://vg.specul.com/"><span><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/"><span><span data-zh>导航</span><span data-en>Directory</span></span><span class="ar" aria-hidden="true">→</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>6 个站，各管一件事</span><span data-en>Six sites, one job each</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <span class="brand-sub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/" aria-current="page"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
       <a href="https://agent.specul.com/"><span><span data-zh>Agent</span><span data-en>Agent</span></span><span class="ar" aria-hidden="true">→</span></a>
       <a href="https://models.specul.com/"><span><span data-zh>本地模型</span><span data-en>Models</span></span><span class="ar" aria-hidden="true">→</span></a>
       <a href="https://vg.specul.com/"><span><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></span><span class="ar" aria-hidden="true">→</span></a>
@@ -159,7 +186,7 @@
     <div class="container foot-row">
       <div class="foot-brand">
         <span class="brand-dot" aria-hidden="true"></span>
-        <span class="foot-copy">© 2026 Specul · <span data-zh>投机</span><span data-en>Specul</span> · <span data-zh>推演</span><span data-en>Speculate</span></span>
+        <span class="foot-copy">© 2026 投机取巧 · <span data-zh>Specul</span><span data-en>Specul</span></span>
       </div>
       <nav class="foot-links" aria-label="页脚导航">
           <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
@@ -168,9 +195,6 @@
           <a href="https://models.specul.com/"><span data-zh>本地模型</span><span data-en>Models</span></a>
           <a href="https://vg.specul.com/"><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></a>
           <a href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
-          <!-- 2026-10-10 用户定案：页脚不再叫「GitHub」，叫「开源」；
-               链接指向 **markdown 内容仓** speculcom/ai-glossary，不是部署仓 speculcom/learn
-               （部署仓是构建产物，内容仓才是「原创」）。 -->
           <a href="https://github.com/speculcom/ai-glossary" target="_blank" rel="noopener"><span data-zh>开源</span><span data-en>Open source</span></a>
       </nav>
       <nav class="foot-legal-links" aria-label="法律">
