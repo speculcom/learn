@@ -41,6 +41,7 @@ node scripts/build.mjs
 | `terms/*.md` | 本仓 | 一词一文件，frontmatter + 正文 + 英文 |
 | `terms/INDEX.md` | 本仓 | 词条索引，按站分组 |
 | `meta.js` | 本仓 | 六站定义（名称 / 描述 / 「学完你能」/ 中英）—— **页面分层标题读的是它** |
+| `paths/*.json` | 本仓 | 学习路径真相源（有序 slug + 检查点，中英双语）—— 构建出 `path/<id>/` 页面 |
 | `dims.js` | 本仓 | 维度对照表（8 + 3） |
 | `terms.en.json` | 本仓 | 词条释义英文，键 = md 文件名 |
 | `data/*.js` | **产物** | 不要手改，改了会被下次 build 覆盖 |

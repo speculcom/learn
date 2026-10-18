@@ -104,6 +104,14 @@
   <p class="path-foot" id="pathFoot"></p>
 </section>
 
+<section class="paths" id="paths">
+  <div class="path-h">
+    <h2><span data-zh>想按条走，不按站逛</span><span data-en>Follow a route instead of browsing stations</span></h2>
+    <p><span data-zh>三条精选路径，从 185 个词里挑出顺序，各带一个学完自测。点进去是一条能分享的路线。</span><span data-en>Three curated routes picked out of the 185 terms, each with an ordered list and a checkpoint. Each one is a shareable page.</span></p>
+  </div>
+  <div class="t-grid t-grid-2" id="pathCards"></div>
+</section>
+
 <div class="ctrl">
   <div class="crow">
     <span class="clab"><span data-zh>排布方式</span><span data-en>Arrange by</span></span>
@@ -198,6 +206,7 @@
   <script src="data/terms.all.js"></script>
   <script src="data/meta.js"></script>
   <script src="data/dims.js"></script>
+  <script src="data/paths.js"></script>
   <script>
 
 var DOMAINS = META.domains, PURPOSES = META.purposes, LEVELS = META.levels;
@@ -488,6 +497,23 @@ function renderPath(){
       + '大多数人不做本地部署，第 5 站可以先跳过。';
 }
 
+/* S23（2026-10-19）· 路径导览条：读 data/paths.js（产物；真相源 paths/*.json）。
+ * 卡片版式全部走共享层 brand.css 的 .t-pathcard / .t-grid（宪章 1：
+ * 与 path/<id>/ 路径页同一套类，learn.css 里不写路径样式）。 */
+function renderPaths(){
+  var list = (typeof PATHS !== 'undefined' && PATHS) ? PATHS : [];
+  var h = '';
+  list.forEach(function(p){
+    h += '<div class="t-pathcard">'
+      + '<h3>'+esc(IS_EN()?p.en:p.zh)+'</h3>'
+      + '<span class="t-pathspan">'+esc(IS_EN()?p.span.en:p.span.zh)+' · '+p.steps.length+(IS_EN()?' terms':' 词')+'</span>'
+      + '<p class="t-pathlead">'+esc(IS_EN()?p.lead.en:p.lead.zh)+'</p>'
+      + '<a class="t-pathgo" href="path/'+encodeURIComponent(p.id)+'/">'+(IS_EN()?'Open this route →':'打开这条路径 →')+'</a>'
+      + '</div>';
+  });
+  document.getElementById('pathCards').innerHTML = h;
+}
+
 var cur = null;
 
 function openTerm(zh){
@@ -666,6 +692,7 @@ document.getElementById('c-dims').textContent = DIMS.DIMENSIONS8.length + DIMS.D
 document.getElementById('c-flat').textContent = FLAT.length;
 
 renderPath();
+renderPaths();
 render();
 /* ⚠ 必须**在首次 render() 之后**调：方块墙是渲染出来的，早于它调用时
  *   document.getElementById('layer-N') 一定是 null（第一版就放在前面，等于没生效，
