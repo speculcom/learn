@@ -112,6 +112,14 @@
   <div class="t-grid t-grid-2" id="pathCards"></div>
 </section>
 
+<section class="paths" id="guides">
+  <div class="path-h">
+    <h2><span data-zh>不等读完才动手</span><span data-en>Act before you finish reading</span></h2>
+    <p><span data-zh>微型指南：5–10 分钟一篇，讲怎么做而不是怎么解释。每篇都标了出处，也标了它依赖哪几个词。</span><span data-en>Short guides: five to ten minutes each, about how to do something rather than how to explain it. Every one cites its sources and names the terms it leans on.</span></p>
+  </div>
+  <div class="t-grid t-grid-2" id="guideCards"></div>
+</section>
+
 <div class="ctrl">
   <div class="crow">
     <span class="clab"><span data-zh>排布方式</span><span data-en>Arrange by</span></span>
@@ -207,6 +215,7 @@
   <script src="data/meta.js"></script>
   <script src="data/dims.js"></script>
   <script src="data/paths.js"></script>
+  <script src="data/guides.js"></script>
   <script>
 
 var DOMAINS = META.domains, PURPOSES = META.purposes, LEVELS = META.levels;
@@ -514,6 +523,26 @@ function renderPaths(){
   document.getElementById('pathCards').innerHTML = h;
 }
 
+/* S24（2026-10-19）· 指南导览条：读 data/guides.js（产物；真相源 guides/*.md frontmatter）。
+ * 卡片版式走共享层 brand.css 的 .t-guidecard（宪章 1：与 guide/<slug>/ 页同一套类）。 */
+function renderGuides(){
+  var list = (typeof GUIDES !== 'undefined' && GUIDES) ? GUIDES : [];
+  var el = document.getElementById('guideCards');
+  if (!el) return;
+  var h = '';
+  list.forEach(function(g){
+    var lead = IS_EN() ? g.lead.en : g.lead.zh;
+    var kind = g.kind === 'myth' ? (IS_EN() ? 'Myth' : '误区') : (IS_EN() ? 'Guide' : '指南');
+    h += '<div class="t-guidecard">'
+      + '<h3>'+esc(IS_EN()?g.en:g.zh)+'</h3>'
+      + '<span class="t-guidespan">'+kind+' · '+(IS_EN()?'Station ':'第')+esc(String(g.station))+(IS_EN()?'':'站')+' · ~'+g.span+(IS_EN()?' min':' 分钟')+'</span>'
+      + '<p class="t-guidelead">'+esc(lead)+'</p>'
+      + '<a class="t-guidego" href="guide/'+encodeURIComponent(g.id)+'/">'+(IS_EN()?'Read this guide →':'打开这篇指南 →')+'</a>'
+      + '</div>';
+  });
+  el.innerHTML = h;
+}
+
 var cur = null;
 
 function openTerm(zh){
@@ -693,6 +722,7 @@ document.getElementById('c-flat').textContent = FLAT.length;
 
 renderPath();
 renderPaths();
+renderGuides();
 render();
 /* ⚠ 必须**在首次 render() 之后**调：方块墙是渲染出来的，早于它调用时
  *   document.getElementById('layer-N') 一定是 null（第一版就放在前面，等于没生效，
