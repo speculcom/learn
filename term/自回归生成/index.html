@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>自回归生成 · 学 AI | 投机取巧</title>
-  <meta name="description" content="大模型「一个字一个字往外蹦」的生成方式，很多下游问题的根源。 自回归模型逐 token 生成：每一步以已生成的文本为条件，预测下一个 token。" />
+  <meta name="description" content="大模型「一个字一个字往外蹦」的生成方式，很多下游问题的根源。 自回归模型逐 token 生成。每一步以已生成的文本为条件，预测下一个 token。" />
   <link rel="canonical" href="https://learn.specul.com/term/%E8%87%AA%E5%9B%9E%E5%BD%92%E7%94%9F%E6%88%90/" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="学 AI" />
   <meta property="og:url" content="https://learn.specul.com/term/%E8%87%AA%E5%9B%9E%E5%BD%92%E7%94%9F%E6%88%90/" />
   <meta property="og:title" content="自回归生成 · 学 AI" />
-  <meta property="og:description" content="大模型「一个字一个字往外蹦」的生成方式，很多下游问题的根源。 自回归模型逐 token 生成：每一步以已生成的文本为条件，预测下一个 token。" />
+  <meta property="og:description" content="大模型「一个字一个字往外蹦」的生成方式，很多下游问题的根源。 自回归模型逐 token 生成。每一步以已生成的文本为条件，预测下一个 token。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="../../brand.css" />
@@ -118,7 +118,7 @@
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>这是什么</span><span data-en>What it is</span></div>
 <span data-zh>
-      <p class="tp-li">自回归模型逐 token 生成：每一步以已生成的文本为条件，预测下一个 token。</p>
+      <p class="tp-li">自回归模型逐 token 生成。每一步以已生成的文本为条件，预测下一个 token。</p>
       <p class="tp-li">GPT 系列论文对自己的定义就是「自回归语言模型」。</p>
       <p class="tp-li">生成质量取决于每一步的选择，错误也会顺着往下带。</p>
 </span>
@@ -131,7 +131,7 @@
 
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>为什么需要知道</span><span data-en>Why it matters</span></div>
-          <p class="tp-p"><span data-zh>流式输出为什么是一个字一个字出来的、为什么中途能停、为什么一步选歪后面会顺着歪——根源都在这。</span><span data-en>Why streamed output arrives word by word, why it can be stopped mid-way, why one bad pick warps what follows — it all traces back to this.</span></p>
+          <p class="tp-p"><span data-zh>流式输出为什么是一个字一个字出来的？为什么中途能停？为什么一步选歪后面会顺着歪？根源都在这。</span><span data-en>Why streamed output arrives word by word, why it can be stopped mid-way, why one bad pick warps what follows — it all traces back to this.</span></p>
         </div>
 
       <div class="tp-sec">
