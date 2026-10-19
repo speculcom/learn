@@ -16,29 +16,6 @@
   <link rel="stylesheet" href="../../brand.css" />
   <link rel="stylesheet" href="../../learn.css" />
   <style>:root { --accent: var(--gold); }</style>
-<style>
-.tp-wrap{max-width:52rem;margin:0 auto}
-.tp-crumbs{font-size:var(--fs-micro);opacity:.7;margin:1.6rem 0 .4rem;display:flex;gap:.5rem;flex-wrap:wrap}
-.tp-crumbs a{text-decoration:none;border-bottom:1px dotted currentColor}
-/* ⚠ 2026-10-10：删掉本地的 clamp(1.6rem,4vw,2.3rem) —— 词条页主标因此只有 36.8px，
-   比全站其余页面小近 10px。现一律继承 brand.css 的 h1（--display-sub / --lh-tight / 800）。 */
-.tp h1{margin:.6rem 0 .3rem}
-.tp-en{opacity:.65;font-size:var(--fs-base);margin:0 0 .9rem}
-.tp-tags{display:flex;gap:.4rem;flex-wrap:wrap;margin:0 0 1.8rem;padding:0;list-style:none}
-.tp-tag{border:1px solid var(--line,rgba(127,127,127,.28));border-radius:999px;padding:.14rem .62rem;font-size:var(--fs-micro);opacity:.9}
-.tp-sec{margin:1.7rem 0}
-.tp-lab{font-size:var(--fs-micro);letter-spacing:.09em;text-transform:uppercase;opacity:.55;margin-bottom:.45rem}
-.tp-p{line-height:1.9;margin:.5rem 0}
-.tp-li{line-height:1.9;margin:.5rem 0;padding-left:1.05rem;position:relative}
-.tp-li::before{content:'·';position:absolute;left:.15rem;opacity:.5}
-.tp-refs{list-style:none;padding:0;margin:.5rem 0}
-.tp-refs li{margin:.45rem 0;line-height:1.7}
-.tp-refs a{text-decoration:none;border-bottom:1px solid var(--line,rgba(127,127,127,.35))}
-.tp-pn{display:flex;justify-content:space-between;gap:1rem;margin:3rem 0 1rem;padding-top:1.4rem;border-top:1px solid var(--line,rgba(127,127,127,.25));font-size:var(--fs-xs)}
-.tp-pn a{text-decoration:none;max-width:46%}
-.tp-pn .tp-ph{opacity:.55;display:block;font-size:var(--fs-micro)}
-@media(max-width:520px){.tp-pn{flex-direction:column}.tp-pn a{max-width:100%}}
-</style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"怎么向 AI 提问","description":"同样问 AI，问法不同，答案的可用性差很多。这份指南讲提问前要交代的五件事。","url":"https://learn.specul.com/guide/%E6%80%8E%E4%B9%88%E5%90%91%20AI%20%E6%8F%90%E9%97%AE/","inLanguage":"zh-Hans","step":[{"@type":"HowToStep","position":1,"name":"先说清目标和完成标准：不是「写篇文章」，而是「写篇 300 字的零基础介绍」。"},{"@type":"HowToStep","position":2,"name":"给上下文：你是谁、读者是谁、有哪些限制，比如字数、格式、语气。"},{"@type":"HowToStep","position":3,"name":"把要处理的原文贴进对话，不要让 AI 猜你指的是哪一段。"},{"@type":"HowToStep","position":4,"name":"先要提纲再要正文：让它先列结构，你确认后再展开。"},{"@type":"HowToStep","position":5,"name":"不满意就指出具体哪里不对，比笼统的「重新回答」更有效。"}]}</script>
 </head>
 <body class="brand-ambient has-tabbar" style="--accent:var(--gold)">
