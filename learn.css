@@ -305,6 +305,10 @@ a:hover{text-decoration:underline}
   border:1px solid var(--ln); border-radius:var(--r-lg); padding:2px 9px;
 }
 .dtag.d{border-color:var(--dc); color:var(--dc)}
+/* S60（2026-10-21）：从 index.html 内联 <style> 搬来（B1 补的「独立页面」链接态）。
+   宪章：站级规则住站级 CSS，首页内联只留 --accent 注入。 */
+.dtag.dlink{text-decoration:none;border:1px solid currentColor;opacity:.85}
+.dtag.dlink:hover{opacity:1}
 .dclose{
   flex-shrink:0; width:32px; height:32px; border-radius:var(--r-sm);
   border:1px solid var(--ln-2); background:var(--bg-inset); color:var(--tx-2);
