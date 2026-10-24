@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>过拟合 · 学 AI | 投机取巧</title>
   <meta name="description" content="把练习题背熟了，换一套新题就不会做。 模型记住了训练数据里的噪声和细节，在新数据上反而变差。 评测造假、榜单注水多半与它有关。看到「训练集上 99 分」要警惕。" />
   <link rel="canonical" href="https://learn.specul.com/term/%E8%BF%87%E6%8B%9F%E5%90%88/" />
@@ -13,7 +13,8 @@
   <meta property="og:description" content="把练习题背熟了，换一套新题就不会做。 模型记住了训练数据里的噪声和细节，在新数据上反而变差。 评测造假、榜单注水多半与它有关。看到「训练集上 99 分」要警惕。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
-  <link rel="stylesheet" href="../../brand.css" />
+  <script src="../../brand.js?v=6a580ac0420e"></script>
+  <link rel="stylesheet" href="../../brand.css?v=6a580ac0420e" />
   <link rel="stylesheet" href="../../learn.css" />
   <style>:root { --accent: var(--cyan); }</style>
   <!-- B5：词条页的结构性数据（DefinedTerm） -->
@@ -75,26 +76,6 @@
       <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
     </div>
   </aside>
-  <div class="nav-scrim"></div>
-  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
-    <div class="nav-drawer-h">
-      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
-      <span class="brand-sub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
-      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
-    </div>
-    <nav class="nav-drawer-list">
-      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://learn.specul.com/" aria-current="page"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://tools.specul.com/"><span><span data-zh>AI 工具</span><span data-en>AI Tools</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://models.specul.com/"><span><span data-zh>AI 模型</span><span data-en>AI Models</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://vg.specul.com/"><span><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://nav.specul.com/"><span><span data-zh>AI 导航</span><span data-en>AI Directory</span></span><span class="ar" aria-hidden="true">→</span></a>
-    </nav>
-    <div class="nav-drawer-foot">
-      <p><span data-zh>6 个站，各管一件事</span><span data-en>Six sites, one job each</span></p>
-      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
-    </div>
-  </aside>
   <main id="main">
     <div class="container">
       <article class="tp tp-wrap">
@@ -103,7 +84,7 @@
           <span aria-hidden="true">·</span>
           <a href="../../#layer-1"><span data-zh>进门</span><span data-en>Getting In</span></a>
         </nav>
-        <h1>过拟合</h1>
+        <h1><span data-zh>过拟合</span><span data-en>Overfitting</span></h1>
         <p class="tp-en">Overfitting</p>
         <ul class="tp-tags">
           <li class="tp-tag"><span data-zh>核心概念</span><span data-en>Core concepts</span></li>
@@ -132,9 +113,9 @@
           <p class="tp-p"><span data-zh>评测造假、榜单注水多半与它有关。看到「训练集上 99 分」要警惕。</span><span data-en>Inflated benchmarks and leaderboard games are usually tied to it. Treat &quot;99 on the training set&quot; with suspicion.</span></p>
         </div>
 
-      <div class="tp-sec">
+      <div class="tp-sec tp-related">
         <div class="tp-lab"><span data-zh>相关词条</span><span data-en>Related terms</span></div>
-        <p class="tp-p"><a href="../%E6%B3%9B%E5%8C%96/">泛化</a> · <a href="../%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/">无监督学习</a> · <a href="../%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/">监督学习</a></p>
+        <p class="tp-p"><a href="../%E6%B3%9B%E5%8C%96/"><span data-zh>泛化</span><span data-en>Generalization</span></a> · <a href="../%E6%97%A0%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/"><span data-zh>无监督学习</span><span data-en>Unsupervised Learning</span></a> · <a href="../%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/"><span data-zh>监督学习</span><span data-en>Supervised Learning</span></a></p>
       </div>
 
       <div class="tp-sec">
@@ -150,9 +131,9 @@
           </ul>
         </div>
 
-        <nav class="tp-pn" aria-label="上下篇">
-          <a href="../%E6%B3%9B%E5%8C%96/"><span class="tp-ph"><span data-zh>上一篇</span><span data-en>Previous</span></span>泛化</a>
-          <a href="../%E8%AE%AD%E7%BB%83%E9%9B%86%E4%B8%8E%E6%B5%8B%E8%AF%95%E9%9B%86/" style="text-align:right"><span class="tp-ph"><span data-zh>下一篇</span><span data-en>Next</span></span>训练集与测试集</a>
+        <nav class="tp-pn" aria-label="上下篇" data-ui-aria-label-zh="上下篇" data-ui-aria-label-en="Previous and next">
+          <a href="../%E6%B3%9B%E5%8C%96/"><span class="tp-ph"><span data-zh>上一篇</span><span data-en>Previous</span></span><span data-zh>泛化</span><span data-en>Generalization</span></a>
+          <a href="../%E8%AE%AD%E7%BB%83%E9%9B%86%E4%B8%8E%E6%B5%8B%E8%AF%95%E9%9B%86/" style="text-align:right"><span class="tp-ph"><span data-zh>下一篇</span><span data-en>Next</span></span><span data-zh>训练集与测试集</span><span data-en>Training Set, Test Set</span></a>
         </nav>
       </article>
     </div>
@@ -161,7 +142,7 @@
     <div class="container foot-row">
       <div class="foot-brand">
         <span class="brand-dot" aria-hidden="true"></span>
-        <span class="foot-copy">© 2026 投机取巧 · <span data-zh>Specul</span><span data-en>Specul</span></span>
+        <span class="foot-copy">© 2026 <span data-zh>投机取巧</span><span data-en>Specul</span></span>
       </div>
       <nav class="foot-links" aria-label="页脚导航">
           <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
@@ -189,6 +170,5 @@
   <a href="https://models.specul.com/"><span class="ti" aria-hidden="true">▦</span><span data-zh>模型</span><span data-en>Models</span></a>
   <button type="button" id="tabMore" aria-controls="navDrawer" aria-expanded="false"><span class="ti" aria-hidden="true">⋯</span><span data-zh>更多</span><span data-en>More</span></button>
 </nav>
-  <script src="../../brand.js"></script>
 </body>
 </html>
