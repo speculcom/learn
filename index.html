@@ -120,7 +120,7 @@
 <section class="paths" id="guides">
   <div class="path-h">
     <h2><span data-zh>不等读完才动手</span><span data-en>Act before you finish reading</span></h2>
-    <p><span data-zh>微型指南：5–10 分钟一篇，讲怎么做而不是怎么解释。每篇都标了出处，也标了它依赖哪几个词。</span><span data-en>Short guides: five to ten minutes each, about how to do something rather than how to explain it. Every one cites its sources and names the terms it leans on.</span></p>
+    <p><span data-zh>微型指南与论文卡：5–10 分钟一篇，讲怎么做而不是怎么解释。每篇都标了出处，也标了它依赖哪几个词。</span><span data-en>Short guides and paper cards: five to ten minutes each, about how to do something rather than how to explain it. Every one cites its sources and names the terms it leans on.</span></p>
   </div>
   <div class="t-grid t-grid-2" id="guideCards"></div>
 </section>
@@ -551,12 +551,12 @@ function renderGuides(){
   var h = '';
   list.forEach(function(g){
     var lead = IS_EN() ? g.lead.en : g.lead.zh;
-    var kind = g.kind === 'myth' ? (IS_EN() ? 'Myth' : '误区') : (IS_EN() ? 'Guide' : '指南');
+    var kind = g.kind === 'myth' ? (IS_EN() ? 'Myth' : '误区') : g.kind === 'paper' ? (IS_EN() ? 'Paper card' : '论文卡') : (IS_EN() ? 'Guide' : '指南');
     h += '<div class="t-guidecard">'
       + '<h3>'+esc(IS_EN()?g.en:g.zh)+'</h3>'
       + '<span class="t-guidespan">'+kind+' · '+(IS_EN()?'Station ':'第')+esc(String(g.station))+(IS_EN()?'':'站')+' · ~'+g.span+(IS_EN()?' min':' 分钟')+'</span>'
       + '<p class="t-guidelead">'+esc(lead)+'</p>'
-      + '<a class="t-guidego" href="guide/'+encodeURIComponent(g.id)+'/">'+(IS_EN()?'Read this guide →':'打开这篇指南 →')+'</a>'
+      + '<a class="t-guidego" href="guide/'+encodeURIComponent(g.id)+'/">'+(g.kind==='paper'?(IS_EN()?'Read this paper card →':'打开这张论文卡 →'):(IS_EN()?'Read this guide →':'打开这篇指南 →'))+'</a>'
       + '</div>';
   });
   el.innerHTML = h;
