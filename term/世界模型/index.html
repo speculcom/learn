@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>世界模型 · 学 AI | 投机取巧</title>
+  <meta name="description" content="让模型在内部预测「世界接下来会怎样」，而不只是描述当前画面。 世界模型是对环境状态与变化的压缩表示：给定当前状态与动作，预测下一状态、画面或物理结果。" />
+  <link rel="canonical" href="https://learn.specul.com/term/%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="学 AI" />
+  <meta property="og:url" content="https://learn.specul.com/term/%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B/" />
+  <meta property="og:title" content="世界模型 · 学 AI" />
+  <meta property="og:description" content="让模型在内部预测「世界接下来会怎样」，而不只是描述当前画面。 世界模型是对环境状态与变化的压缩表示：给定当前状态与动作，预测下一状态、画面或物理结果。" />
+  <meta name="theme-color" content="#16121f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <script src="../../brand.js?v=6a580ac0420e"></script>
+  <link rel="stylesheet" href="../../brand.css?v=6a580ac0420e" />
+  <link rel="stylesheet" href="../../learn.css" />
+  <style>:root { --accent: var(--cyan); }</style>
+  <!-- B5：词条页的结构性数据（DefinedTerm） -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTerm","name":"世界模型","alternateName":"World Model","description":"让模型在内部预测「世界接下来会怎样」，而不只是描述当前画面。","url":"https://learn.specul.com/term/%E4%B8%96%E7%95%8C%E6%A8%A1%E5%9E%8B/","inLanguage":"zh-Hans","inDefinedTermSet":{"@type":"DefinedTermSet","name":"学 AI · 第二站（上手）","url":"https://learn.specul.com/#layer-2"},"isPartOf":{"@type":"WebSite","name":"学 AI","url":"https://learn.specul.com/"}}</script>
+</head>
+<body class="brand-ambient has-tabbar" style="--accent:var(--cyan)">
+  <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+          <span class="brand-sub" id="markSub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/" aria-current="page"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://tools.specul.com/"><span data-zh>AI 工具</span><span data-en>AI Tools</span></a>
+        <a href="https://models.specul.com/"><span data-zh>AI 模型</span><span data-en>AI Models</span></a>
+        <a href="https://vg.specul.com/"><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>AI 导航</span><span data-en>AI Directory</span></a>
+      </nav>
+      <!-- 2026-10-10：.nav-tools 从 nav 元素**内部**移到外面，与 .nav-links 平级。
+           放里面时窄屏下它会跟着链接一起换行：链接占满整行 → 按钮被挤到第三条
+           （实测顶栏 134px、按钮组孤零零一行）。移出来后它与品牌同行，
+           链接独占第二行居中 —— 这才是下面注释里方案 B 想要的样子。 -->
+      <span class="nav-tools">
+        <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+        <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+      </span>
+      <!-- B6（2026-10-09）：窄屏（≤900px）下 .nav-links 会隐藏，这个汉堡是替代入口。
+           行为在共享 brand.js 里（一处实现、六站共用），样式在共享 brand.css。
+           无脚本时 CSS 不会显示它，而是把 .nav-links 在窄屏放出来 —— 不会出现
+           「导航被藏进一个点了没反应的按钮」。 -->
+      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
+  </header>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <span class="brand-sub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/" aria-current="page"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://tools.specul.com/"><span><span data-zh>AI 工具</span><span data-en>AI Tools</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>AI 模型</span><span data-en>AI Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://vg.specul.com/"><span><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/"><span><span data-zh>AI 导航</span><span data-en>AI Directory</span></span><span class="ar" aria-hidden="true">→</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>6 个站，各管一件事</span><span data-en>Six sites, one job each</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
+  <main id="main">
+    <div class="container">
+      <article class="tp tp-wrap">
+        <nav class="tp-crumbs" aria-label="面包屑">
+          <a href="../../"><span data-zh>← 名词地图</span><span data-en>← Term map</span></a>
+          <span aria-hidden="true">·</span>
+          <a href="../../#layer-2"><span data-zh>上手</span><span data-en>Hands On</span></a>
+        </nav>
+        <h1><span data-zh>世界模型</span><span data-en>World Model</span></h1>
+        <p class="tp-en">World Model</p>
+        <ul class="tp-tags">
+          <li class="tp-tag"><span data-zh>模型能力</span><span data-en>Model capabilities</span></li>
+          <li class="tp-tag"><span data-zh>第二站 · 上手</span><span data-en>Station 2 · Hands On</span></li>
+          <li class="tp-tag"><span data-zh>引用核验 2026-11-03</span><span data-en>refs checked 2026-11-03</span></li>
+        </ul>
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>解决什么问题</span><span data-en>What problem it solves</span></div>
+          <p class="tp-p"><span data-zh>让模型在内部预测「世界接下来会怎样」，而不只是描述当前画面。</span><span data-en>Let a model predict what the world will do next, not merely describe the current frame.</span></p>
+        </div>
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>这是什么</span><span data-en>What it is</span></div>
+<span data-zh>
+      <p class="tp-li">世界模型是对环境状态与变化的压缩表示：给定当前状态与动作，预测下一状态、画面或物理结果。</p>
+      <p class="tp-li">视频生成、3D 生成与机器人规划都在用这个概念，但各自「世界」的粒度不同。</p>
+</span>
+<span data-en>
+      <p class="tp-li" data-en>A world model is a compressed representation of environment state and change: given the current state and an action, it predicts the next state, frame or physical outcome.</p>
+      <p class="tp-li" data-en>Video generation, 3D generation and robot planning all use the term, but at different granularity.</p>
+</span>
+        </div>
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>为什么需要知道</span><span data-en>Why it matters</span></div>
+          <p class="tp-p"><span data-zh>它把「生成一段视频」和「理解物理规律」区分开：画面好看不代表模型真的知道物体会怎么动。</span><span data-en>It separates &quot;generating a video&quot; from &quot;understanding physics&quot;: good-looking frames do not prove the model knows how objects move.</span></p>
+        </div>
+
+      <div class="tp-sec tp-related">
+        <div class="tp-lab"><span data-zh>相关词条</span><span data-en>Related terms</span></div>
+        <p class="tp-p"><a href="../LoRA/"><span data-zh>LoRA</span><span data-en>LoRA (Low-Rank Adaptation)</span></a> · <a href="../AI%20%E6%90%9C%E7%B4%A2/"><span data-zh>AI 搜索</span><span data-en>AI Search</span></a> · <a href="../%E7%9F%A5%E8%AF%86%E6%88%AA%E6%AD%A2/"><span data-zh>知识截止</span><span data-en>Knowledge Cutoff</span></a></p>
+      </div>
+
+      <div class="tp-sec">
+        <div class="tp-lab"><span data-zh>现在能做什么</span><span data-en>What you can do now</span></div>
+        <p class="tp-p"><a href="https://models.specul.com/"><span data-zh>去 Models 图谱：看这个模型有哪些量化版、按你的显存该下哪一档</span><span data-en>Models atlas: which quantisations exist and which tier fits your VRAM</span> ↗</a></p>
+        <p class="tp-p"><a href="../../#layer-2"><span data-zh>回到名词地图看第2站的其他 35 个词 →</span><span data-en>Back to the map: the other 35 terms in station 2 →</span></a></p>
+      </div>
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>出处</span><span data-en>Sources</span></div>
+          <ul class="tp-refs">
+      <li><span data-zh>Ha &amp; Schmidhuber · World Models（arXiv 1803.10122）</span><span data-en>Ha &amp; Schmidhuber, World Models</span> <a href="https://arxiv.org/abs/1803.10122" target="_blank" rel="noopener">↗</a></li>
+      <li><span data-zh>DeepMind · Genie 2 官方介绍</span><span data-en>DeepMind · Genie 2</span> <a href="https://deepmind.google/discover/blog/genie-2-a-large-scale-foundation-world-model/" target="_blank" rel="noopener">↗</a></li>
+          </ul>
+        </div>
+
+        <nav class="tp-pn" aria-label="上下篇" data-ui-aria-label-zh="上下篇" data-ui-aria-label-en="Previous and next">
+          <a href="../%E8%87%AA%E5%8A%A8%E5%8C%96%E5%81%8F%E8%A7%81/"><span class="tp-ph"><span data-zh>上一篇</span><span data-en>Previous</span></span><span data-zh>自动化偏见</span><span data-en>Automation Bias</span></a>
+          <a href="../%E6%99%BA%E8%83%BD%E4%BD%93%20-%20Agent/" style="text-align:right"><span class="tp-ph"><span data-zh>下一篇</span><span data-en>Next</span></span><span data-zh>智能体 / Agent</span><span data-en>Agent</span></a>
+        </nav>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 <span data-zh>投机取巧</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+          <a href="https://tools.specul.com/"><span data-zh>AI 工具</span><span data-en>AI Tools</span></a>
+          <a href="https://models.specul.com/"><span data-zh>AI 模型</span><span data-en>AI Models</span></a>
+          <a href="https://vg.specul.com/"><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></a>
+          <a href="https://nav.specul.com/"><span data-zh>AI 导航</span><span data-en>AI Directory</span></a>
+          <a href="https://github.com/speculcom/ai-handbook" target="_blank" rel="noopener"><span data-zh>开源</span><span data-en>Open source</span></a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+    <div class="container">
+      <p class="foot-trademark"><span data-zh>产品名与商标归各权利方所有，本站仅作识别与评论之用。</span><span data-en>Product names and trademarks belong to their respective owners and are used here for identification and commentary only.</span></p>
+    </div>
+  </footer>
+<nav class="nav-tabbar" aria-label="快捷导航">
+  <a href="https://specul.com/"><span class="ti" aria-hidden="true">◎</span><span data-zh>首页</span><span data-en>Home</span></a>
+  <a href="https://learn.specul.com/" aria-current="page"><span class="ti" aria-hidden="true">▤</span><span data-zh>学 AI</span><span data-en>Learn</span></a>
+  <a href="https://tools.specul.com/"><span class="ti" aria-hidden="true">◈</span><span data-zh>工具</span><span data-en>Tools</span></a>
+  <a href="https://models.specul.com/"><span class="ti" aria-hidden="true">▦</span><span data-zh>模型</span><span data-en>Models</span></a>
+  <button type="button" id="tabMore" aria-controls="navDrawer" aria-expanded="false"><span class="ti" aria-hidden="true">⋯</span><span data-zh>更多</span><span data-en>More</span></button>
+</nav>
+</body>
+</html>
