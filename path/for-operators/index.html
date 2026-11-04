@@ -4,20 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>运维上线路线 · 学 AI 学习路径 | 投机取巧</title>
-  <meta name="description" content="负责把 AI 服务跑起来并稳住的人：性能从哪来、成本从哪来、出事时先看哪里。 14 个词 · 约 60 分钟 说出首字延迟和吞吐各自受什么影响，各给一个优化手段" />
+  <meta name="description" content="沿运行、监控、权限、故障与退役读十四个主题。先建立排查顺序，再用具体服务的配置与日志验证。 14 个词 · 约 60 分钟 说出首字延迟和吞吐各自受什么影响，各给一个优化手段" />
   <link rel="canonical" href="https://learn.specul.com/path/for-operators/" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="学 AI" />
   <meta property="og:url" content="https://learn.specul.com/path/for-operators/" />
   <meta property="og:title" content="运维上线路线 · 学 AI 学习路径" />
-  <meta property="og:description" content="负责把 AI 服务跑起来并稳住的人：性能从哪来、成本从哪来、出事时先看哪里。 14 个词 · 约 60 分钟 说出首字延迟和吞吐各自受什么影响，各给一个优化手段" />
+  <meta property="og:description" content="沿运行、监控、权限、故障与退役读十四个主题。先建立排查顺序，再用具体服务的配置与日志验证。 14 个词 · 约 60 分钟 说出首字延迟和吞吐各自受什么影响，各给一个优化手段" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <script src="../../brand.js?v=6a580ac0420e"></script>
+  <script defer src="../../data/paths.js"></script>
+  <script defer src="../../data/reading.js"></script>
   <link rel="stylesheet" href="../../brand.css?v=6a580ac0420e" />
   <link rel="stylesheet" href="../../learn.css" />
   <style>:root { --accent: var(--cyan); }</style>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"运维上线路线","description":"负责把 AI 服务跑起来并稳住的人：性能从哪来、成本从哪来、出事时先看哪里。","url":"https://learn.specul.com/path/for-operators/","inLanguage":"zh-Hans","itemListOrder":"ItemListOrderAscending","numberOfItems":14,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://learn.specul.com/term/%E6%8E%A8%E7%90%86%E6%88%90%E6%9C%AC/"},{"@type":"ListItem","position":2,"url":"https://learn.specul.com/term/%E9%A6%96%E5%AD%97%E5%BB%B6%E8%BF%9F/"},{"@type":"ListItem","position":3,"url":"https://learn.specul.com/term/%E5%90%9E%E5%90%90/"},{"@type":"ListItem","position":4,"url":"https://learn.specul.com/term/KV%20%E7%BC%93%E5%AD%98/"},{"@type":"ListItem","position":5,"url":"https://learn.specul.com/term/%E7%BC%93%E5%AD%98%E7%AD%96%E7%95%A5/"},{"@type":"ListItem","position":6,"url":"https://learn.specul.com/term/%E8%BF%9E%E7%BB%AD%E6%89%B9%E5%A4%84%E7%90%86/"},{"@type":"ListItem","position":7,"url":"https://learn.specul.com/term/%E9%80%9F%E7%8E%87%E9%99%90%E5%88%B6/"},{"@type":"ListItem","position":8,"url":"https://learn.specul.com/term/%E5%8F%AF%E8%A7%82%E6%B5%8B%E6%80%A7/"},{"@type":"ListItem","position":9,"url":"https://learn.specul.com/term/%E6%8A%A4%E6%A0%8F/"},{"@type":"ListItem","position":10,"url":"https://learn.specul.com/term/%E6%8F%90%E7%A4%BA%E6%B3%A8%E5%85%A5/"},{"@type":"ListItem","position":11,"url":"https://learn.specul.com/term/%E6%9D%83%E9%99%90/"},{"@type":"ListItem","position":12,"url":"https://learn.specul.com/term/%E6%9C%8D%E5%8A%A1%E4%B8%AD%E6%96%AD%E9%A3%8E%E9%99%A9/"},{"@type":"ListItem","position":13,"url":"https://learn.specul.com/term/%E6%A8%A1%E5%9E%8B%E9%80%80%E5%BD%B9/"},{"@type":"ListItem","position":14,"url":"https://learn.specul.com/term/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"运维上线路线","description":"沿运行、监控、权限、故障与退役读十四个主题。先建立排查顺序，再用具体服务的配置与日志验证。","url":"https://learn.specul.com/path/for-operators/","inLanguage":"zh-Hans","itemListOrder":"ItemListOrderAscending","numberOfItems":14,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://learn.specul.com/term/%E6%8E%A8%E7%90%86%E6%88%90%E6%9C%AC/"},{"@type":"ListItem","position":2,"url":"https://learn.specul.com/term/%E9%A6%96%E5%AD%97%E5%BB%B6%E8%BF%9F/"},{"@type":"ListItem","position":3,"url":"https://learn.specul.com/term/%E5%90%9E%E5%90%90/"},{"@type":"ListItem","position":4,"url":"https://learn.specul.com/term/KV%20%E7%BC%93%E5%AD%98/"},{"@type":"ListItem","position":5,"url":"https://learn.specul.com/term/%E7%BC%93%E5%AD%98%E7%AD%96%E7%95%A5/"},{"@type":"ListItem","position":6,"url":"https://learn.specul.com/term/%E8%BF%9E%E7%BB%AD%E6%89%B9%E5%A4%84%E7%90%86/"},{"@type":"ListItem","position":7,"url":"https://learn.specul.com/term/%E9%80%9F%E7%8E%87%E9%99%90%E5%88%B6/"},{"@type":"ListItem","position":8,"url":"https://learn.specul.com/term/%E5%8F%AF%E8%A7%82%E6%B5%8B%E6%80%A7/"},{"@type":"ListItem","position":9,"url":"https://learn.specul.com/term/%E6%8A%A4%E6%A0%8F/"},{"@type":"ListItem","position":10,"url":"https://learn.specul.com/term/%E6%8F%90%E7%A4%BA%E6%B3%A8%E5%85%A5/"},{"@type":"ListItem","position":11,"url":"https://learn.specul.com/term/%E6%9D%83%E9%99%90/"},{"@type":"ListItem","position":12,"url":"https://learn.specul.com/term/%E6%9C%8D%E5%8A%A1%E4%B8%AD%E6%96%AD%E9%A3%8E%E9%99%A9/"},{"@type":"ListItem","position":13,"url":"https://learn.specul.com/term/%E6%A8%A1%E5%9E%8B%E9%80%80%E5%BD%B9/"},{"@type":"ListItem","position":14,"url":"https://learn.specul.com/term/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/"}]}</script>
 </head>
 <body class="brand-ambient has-tabbar" style="--accent:var(--cyan)">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
@@ -85,29 +87,29 @@
         </nav>
         <h1><span data-zh>运维上线路线</span><span data-en>The Operator's Route</span></h1>
         <p class="tp-en"><span data-zh>约 60 分钟</span><span data-en>about 60 minutes</span></p>
-        <p class="tp-p"><span data-zh>负责把 AI 服务跑起来并稳住的人：性能从哪来、成本从哪来、出事时先看哪里。</span><span data-en>For people who keep AI services running: where performance comes from, where cost comes from, and what to check first when things break.</span></p>
+        <p class="tp-p"><span data-zh>沿运行、监控、权限、故障与退役读十四个主题。先建立排查顺序，再用具体服务的配置与日志验证。</span><span data-en>Study fourteen topics covering runtime, monitoring, permissions, failure and retirement. Form an investigation order, then validate it against a service’s configuration and logs.</span></p>
 
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>按这个顺序读</span><span data-en>Read in this order</span></div>
           <ol class="t-pathsteps">
-        <li><a href="../../term/%E6%8E%A8%E7%90%86%E6%88%90%E6%9C%AC/"><span data-zh>推理成本</span><span data-en>Inference Cost</span></a></li>
-        <li><a href="../../term/%E9%A6%96%E5%AD%97%E5%BB%B6%E8%BF%9F/"><span data-zh>首字延迟</span><span data-en>Time To First Token, TTFT</span></a></li>
-        <li><a href="../../term/%E5%90%9E%E5%90%90/"><span data-zh>吞吐</span><span data-en>Throughput, TPS</span></a></li>
-        <li><a href="../../term/KV%20%E7%BC%93%E5%AD%98/"><span data-zh>KV 缓存</span><span data-en>KV Cache</span></a></li>
-        <li><a href="../../term/%E7%BC%93%E5%AD%98%E7%AD%96%E7%95%A5/"><span data-zh>缓存策略</span><span data-en>Caching Strategy</span></a></li>
-        <li><a href="../../term/%E8%BF%9E%E7%BB%AD%E6%89%B9%E5%A4%84%E7%90%86/"><span data-zh>连续批处理</span><span data-en>Continuous Batching</span></a></li>
-        <li><a href="../../term/%E9%80%9F%E7%8E%87%E9%99%90%E5%88%B6/"><span data-zh>速率限制</span><span data-en>Rate Limiting</span></a></li>
-        <li><a href="../../term/%E5%8F%AF%E8%A7%82%E6%B5%8B%E6%80%A7/"><span data-zh>可观测性</span><span data-en>Observability</span></a></li>
-        <li><a href="../../term/%E6%8A%A4%E6%A0%8F/"><span data-zh>护栏</span><span data-en>Guardrails</span></a></li>
-        <li><a href="../../term/%E6%8F%90%E7%A4%BA%E6%B3%A8%E5%85%A5/"><span data-zh>提示注入</span><span data-en>Prompt Injection</span></a></li>
-        <li><a href="../../term/%E6%9D%83%E9%99%90/"><span data-zh>权限</span><span data-en>Permission</span></a></li>
-        <li><a href="../../term/%E6%9C%8D%E5%8A%A1%E4%B8%AD%E6%96%AD%E9%A3%8E%E9%99%A9/"><span data-zh>服务中断风险</span><span data-en>Vendor Dependency</span></a></li>
-        <li><a href="../../term/%E6%A8%A1%E5%9E%8B%E9%80%80%E5%BD%B9/"><span data-zh>模型退役</span><span data-en>Model Retirement</span></a></li>
-        <li><a href="../../term/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/"><span data-zh>本地部署</span><span data-en>Local Deployment</span></a></li>
+        <li><a href="../../term/%E6%8E%A8%E7%90%86%E6%88%90%E6%9C%AC/?path=for-operators"><span data-zh>推理成本</span><span data-en>Inference Cost</span></a></li>
+        <li><a href="../../term/%E9%A6%96%E5%AD%97%E5%BB%B6%E8%BF%9F/?path=for-operators"><span data-zh>首字延迟</span><span data-en>Time To First Token, TTFT</span></a></li>
+        <li><a href="../../term/%E5%90%9E%E5%90%90/?path=for-operators"><span data-zh>吞吐</span><span data-en>Throughput, TPS</span></a></li>
+        <li><a href="../../term/KV%20%E7%BC%93%E5%AD%98/?path=for-operators"><span data-zh>KV 缓存</span><span data-en>KV Cache</span></a></li>
+        <li><a href="../../term/%E7%BC%93%E5%AD%98%E7%AD%96%E7%95%A5/?path=for-operators"><span data-zh>缓存策略</span><span data-en>Caching Strategy</span></a></li>
+        <li><a href="../../term/%E8%BF%9E%E7%BB%AD%E6%89%B9%E5%A4%84%E7%90%86/?path=for-operators"><span data-zh>连续批处理</span><span data-en>Continuous Batching</span></a></li>
+        <li><a href="../../term/%E9%80%9F%E7%8E%87%E9%99%90%E5%88%B6/?path=for-operators"><span data-zh>速率限制</span><span data-en>Rate Limiting</span></a></li>
+        <li><a href="../../term/%E5%8F%AF%E8%A7%82%E6%B5%8B%E6%80%A7/?path=for-operators"><span data-zh>可观测性</span><span data-en>Observability</span></a></li>
+        <li><a href="../../term/%E6%8A%A4%E6%A0%8F/?path=for-operators"><span data-zh>护栏</span><span data-en>Guardrails</span></a></li>
+        <li><a href="../../term/%E6%8F%90%E7%A4%BA%E6%B3%A8%E5%85%A5/?path=for-operators"><span data-zh>提示注入</span><span data-en>Prompt Injection</span></a></li>
+        <li><a href="../../term/%E6%9D%83%E9%99%90/?path=for-operators"><span data-zh>权限</span><span data-en>Permission</span></a></li>
+        <li><a href="../../term/%E6%9C%8D%E5%8A%A1%E4%B8%AD%E6%96%AD%E9%A3%8E%E9%99%A9/?path=for-operators"><span data-zh>服务中断风险</span><span data-en>Vendor Dependency</span></a></li>
+        <li><a href="../../term/%E6%A8%A1%E5%9E%8B%E9%80%80%E5%BD%B9/?path=for-operators"><span data-zh>模型退役</span><span data-en>Model Retirement</span></a></li>
+        <li><a href="../../term/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/?path=for-operators"><span data-zh>本地部署</span><span data-en>Local Deployment</span></a></li>
           </ol>
         </div>
 
-        <div class="t-check">
+        <div class="t-check" id="checkpoint">
           <div class="t-check-h"><span data-zh>学完自测</span><span data-en>Checkpoint</span></div>
 <span data-zh>
           <ol>
@@ -125,6 +127,11 @@
 </span>
         </div>
 
+        <p class="tp-p"><span data-zh>先试着回答，再展开参考答案。答不上来的地方，可从上方步骤返回对应词条。参考回答是核对要点，不要求逐字复述。</span><span data-en>Try answering before opening the reference. Revisit the relevant step above if needed. These answers highlight key ideas; you do not need to repeat the wording.</span></p>
+<details class="tp-sec"><summary><span data-zh>第 1 题 · 参考回答</span><span data-en>Question 1 · Reference answer</span></summary><p class="tp-p"><span data-zh>首字延迟影响开始等待的时间，吞吐影响连续生成或并发能力。前者可先查输入处理与排队，后者可查批处理与硬件瓶颈；需用相同负载验证。</span><span data-en>Time to first token affects initial waiting; throughput affects generation/concurrency capacity. Investigate input processing and queues for the former, batching and hardware limits for the latter under equal load.</span></p><p><a href="../../term/%E9%A6%96%E5%AD%97%E5%BB%B6%E8%BF%9F/?path=for-operators"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
+<details class="tp-sec"><summary><span data-zh>第 2 题 · 参考回答</span><span data-en>Question 2 · Reference answer</span></summary><p class="tp-p"><span data-zh>先看任务完成率、延迟分布、错误、用量和权限异常。成本突增时对照请求数、输入长度、重试和工具调用记录，不立即归因于模型单价。</span><span data-en>Track completion, latency distribution, errors, usage and permission anomalies. For a cost spike, compare request count, input lengths, retries and tool calls before blaming the model rate.</span></p><p><a href="../../term/%E5%8F%AF%E8%A7%82%E6%B5%8B%E6%80%A7/?path=for-operators"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
+<details class="tp-sec"><summary><span data-zh>第 3 题 · 参考回答</span><span data-en>Question 3 · Reference answer</span></summary><p class="tp-p"><span data-zh>至少覆盖接口与流式、任务质量、工具与权限、成本与延迟，并核对数据条款和回滚。先在代表性请求上对比，达到预先约定的条件再切换。</span><span data-en>Cover interface/streaming, task quality, tools/permissions and cost/latency, plus data terms and rollback. Compare representative requests before switching against agreed criteria.</span></p><p><a href="../../term/%E6%A8%A1%E5%9E%8B%E9%80%80%E5%BD%B9/?path=for-operators"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
+        <section class="tp-sec"><h2><span data-zh>用在一个具体任务里</span><span data-en>Apply this to a concrete task</span></h2><p><a href="https://tools.specul.com/mcp/guides/playbook-local-model.html#worked-example"><span data-zh>从容量预算走到运行检查</span><span data-en>Move from a capacity budget to runtime checks</span> →</a></p></section>
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>其他路径</span><span data-en>Other paths</span></div>
           <p class="tp-p"><a href="../quick-start/"><span data-zh>半小时入门</span><span data-en>The Half-Hour Primer</span></a> · <a href="../afternoon-principles/"><span data-zh>一个下午看懂原理</span><span data-en>One Afternoon Under the Hood</span></a> · <a href="../full-week/"><span data-zh>一周路线</span><span data-en>The Full Week</span></a> · <a href="../for-writers/"><span data-zh>内容工作者路线</span><span data-en>The Writer's Route</span></a> · <a href="../for-builders/"><span data-zh>动手开发者路线</span><span data-en>The Builder's Route</span></a> · <a href="../for-managers/"><span data-zh>选型决策者路线</span><span data-en>The Decision-Maker's Route</span></a> · <a href="../for-researchers/"><span data-zh>研究学习者路线</span><span data-en>The Researcher's Route</span></a> · <a href="../for-consumers/"><span data-zh>普通消费者路线</span><span data-en>The Everyday User's Route</span></a> · <a href="../for-creators/"><span data-zh>图像 / 视频 / 音频创作者路线</span><span data-en>The Image / Video / Audio Creator's Route</span></a></p>

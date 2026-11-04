@@ -14,6 +14,8 @@
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <script src="../../brand.js?v=6a580ac0420e"></script>
+  <script defer src="../../data/paths.js"></script>
+  <script defer src="../../data/reading.js"></script>
   <link rel="stylesheet" href="../../brand.css?v=6a580ac0420e" />
   <link rel="stylesheet" href="../../learn.css" />
   <style>:root { --accent: var(--cyan); }</style>
@@ -114,14 +116,10 @@
           <p class="tp-p"><span data-zh>这是本地跑模型唯一需要先算清楚的账。选量化档位本质上就是为了塞进显存。</span><span data-en>It is the only budget you must settle before running a model locally. Choosing a quantisation tier is essentially about fitting inside VRAM.</span></p>
         </div>
 
-      <div class="tp-sec tp-related">
-        <div class="tp-lab"><span data-zh>相关词条</span><span data-en>Related terms</span></div>
-        <p class="tp-p"><a href="../%E9%87%8F%E5%8C%96/"><span data-zh>量化</span><span data-en>Quantization</span></a> · <a href="../GPU/"><span data-zh>GPU</span><span data-en>Graphics Processing Unit</span></a> · <a href="../bpw/"><span data-zh>bpw</span><span data-en>Bits Per Weight</span></a></p>
-      </div>
-
+<div class="tp-sec tp-related"><div class="tp-lab"><span data-zh>接着读什么，为什么</span><span data-en>What to read next, and why</span></div><ul><li><a href="../%E9%87%8F%E5%8C%96/"><span data-zh>量化</span><span data-en>Quantization</span></a><p class="t-sm"><span data-zh>把权重体积接到可用硬件约束。</span><span data-en>Connect weight size to hardware limits.</span></p></li><li><a href="../KV%20%E7%BC%93%E5%AD%98/"><span data-zh>KV 缓存</span><span data-en>KV Cache</span></a><p class="t-sm"><span data-zh>权重之外还需要为上下文留空间。</span><span data-en>Context needs memory beyond the weights.</span></p></li><li><a href="../%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AA%97%E5%8F%A3%E7%9A%84%E4%BB%A3%E4%BB%B7/"><span data-zh>上下文窗口的代价</span><span data-en>Context Cost</span></a><p class="t-sm"><span data-zh>在《一周路线》中接着读</span><span data-en>Continue in “The Full Week”</span></p></li></ul></div>
       <div class="tp-sec">
         <div class="tp-lab"><span data-zh>现在能做什么</span><span data-en>What you can do now</span></div>
-        <p class="tp-p"><a href="https://models.specul.com/"><span data-zh>去 Models 图谱：看这个模型有哪些量化版、按你的显存该下哪一档</span><span data-en>Models atlas: which quantisations exist and which tier fits your VRAM</span> ↗</a></p>
+        <p class="tp-p"><a href="https://models.specul.com/guides/gpu-cost-math.html"><span data-zh>区分权重、缓存与运行时余量</span><span data-en>Budget for weights, cache and runtime headroom</span> ↗</a></p>
         <p class="tp-p"><a href="../../#layer-5"><span data-zh>回到名词地图看第5站的其他 29 个词 →</span><span data-en>Back to the map: the other 29 terms in station 5 →</span></a></p>
       </div>
 

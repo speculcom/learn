@@ -462,3 +462,12 @@ footer a{color:var(--tx-2)}
 .tp-pn a{text-decoration:none;max-width:46%}
 .tp-pn .tp-ph{opacity:.55;display:block;font-size:var(--fs-micro)}
 @media(max-width:520px){.tp-pn{flex-direction:column}.tp-pn a{max-width:100%}}
+
+/* Reading route controls share the site's tokens and wrap at narrow widths. */
+.reading-panel{margin:var(--sp-4) 0;padding:var(--sp-4);border:1px solid var(--line);border-radius:var(--r);background:var(--bg-panel);overflow-wrap:anywhere}
+.reading-panel h2{font-size:var(--fs-lg);margin:0 0 var(--sp-3)}
+.reading-actions{display:flex;flex-wrap:wrap;gap:var(--sp-3);align-items:center;margin:var(--sp-3) 0}
+.reading-button,.reading-panel select{font:inherit;color:var(--text);background:var(--bg-panel);border:1px solid var(--line);border-radius:var(--r-sm);padding:var(--sp-2);max-width:100%;white-space:normal}
+.reading-panel select{display:block;margin-top:var(--sp-2);width:100%}
+.reading-done{text-decoration:line-through}
+.reading-button:focus-visible,.reading-panel a:focus-visible,.reading-panel select:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
