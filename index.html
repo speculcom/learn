@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>学 AI · 204 个名词与 11 个维度 | 投机取巧</title>
-  <meta name="description" content="204 个 AI 名词按功能域、用途、难度排成方块墙，另有 11 个维度对照表。这些词是什么、干什么用、为什么你需要知道它。" />
+  <title>学 AI · 228 个名词与 11 个维度 | 投机取巧</title>
+  <meta name="description" content="228 个 AI 名词按功能域、用途、难度排成方块墙，另有 11 个维度对照表。这些词是什么、干什么用、为什么你需要知道它。" />
   <link rel="canonical" href="https://learn.specul.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="学 AI" />
   <meta property="og:url" content="https://learn.specul.com/" />
-  <meta property="og:title" content="学 AI · 204 个名词与 11 个维度 | 投机取巧" />
-  <meta property="og:description" content="204 个 AI 名词按功能域、用途、难度排成方块墙，另有 11 个维度对照表。" />
+  <meta property="og:title" content="学 AI · 228 个名词与 11 个维度 | 投机取巧" />
+  <meta property="og:description" content="228 个 AI 名词按功能域、用途、难度排成方块墙，另有 11 个维度对照表。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2040/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
-  <script src="brand.js?v=6a580ac0420e"></script>
-  <link rel="stylesheet" href="brand.css?v=6a580ac0420e" />
+  <script src="brand.js?v=bf69a6d205ad"></script>
+  <link rel="stylesheet" href="brand.css?v=bf69a6d205ad" />
   <link rel="stylesheet" href="learn.css" />
   <style>:root { --accent: var(--cyan); }</style>
   <!-- B5（2026-10-09）：名词地图的结构性数据。
        用 DefinedTermSet（术语集）—— 与每个词条页的 DefinedTerm 对应；
-       词条数量从数据算不出来（这里是手写页），所以写**静态**的 204 并由探针核对
+       词条数量从数据算不出来（这里是手写页），所以写静态的 228 并由 content-freshness 探针核对
        （content-freshness 已有词条数守卫，改数据时会同时报出来）。 -->
   <script type="application/ld+json">
   {
@@ -27,7 +27,7 @@
     "@type": "DefinedTermSet",
     "name": "学 AI · 名词地图",
     "url": "https://learn.specul.com/",
-    "description": "204 个 AI 名词按六站排列，每词给出处与实际用法。",
+    "description": "228 个 AI 名词按六站排列，每词给出处与实际用法。",
     "inLanguage": "zh-Hans",
     "isPartOf": { "@type": "WebSite", "name": "学 AI", "url": "https://learn.specul.com/" }
   }
@@ -58,6 +58,7 @@
            （实测顶栏 134px、按钮组孤零零一行）。移出来后它与品牌同行，
            链接独占第二行居中 —— 这才是下面注释里方案 B 想要的样子。 -->
       <span class="nav-tools">
+        <a class="icon-btn" href="https://specul.com/search.html" aria-label="搜索" data-ui-aria-label-zh="搜索" data-ui-aria-label-en="Search" title="搜索全站" data-ui-title-zh="搜索全站" data-ui-title-en="Search all sites"><span aria-hidden="true">⌕</span></a>
         <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
         <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
       </span>
@@ -98,6 +99,7 @@
   <h1><span data-zh>学 AI · 名词地图</span><span data-en>Learn AI · Term Map</span></h1>
   <p class="lead"><span data-zh>查一个不懂的词，或选一条路线开始。第一次接触 AI，可以先读十个常用概念；已有基础，直接找你要解决的问题。</span><span data-en>Look up a term or choose a route. New to AI? Start with ten common concepts. If you have some background, go straight to the problem you want to solve.</span></p>
   <section id="reading-start"><p><a href="path/quick-start/"><span data-zh>从半小时入门开始 →</span><span data-en>Start with the half-hour primer →</span></a></p></section>
+  <p><a href="#diagnose"><span data-zh>练习卡住了？先分清概念、输入与验证问题 →</span><span data-en>Stuck in practice? Check concepts, input and verification →</span></a></p>
   <p><span data-zh>点任意一个方块，右边会展开这个词是什么、干什么用、为什么你需要知道它，以及它相关的其他词和具体产品页。</span><span data-en>Click any block and the right panel expands with what the term means, what it's for, why it's worth knowing, plus related terms and the product pages that mention it.</span></p>
 </section>
 
@@ -110,10 +112,10 @@
   <p class="path-foot" id="pathFoot"></p>
 </section>
 
-<details class="paths" id="paths"><summary><span data-zh>浏览全部十条路线</span><span data-en>Browse all ten routes</span></summary>
+<details class="paths" id="paths"><summary><span data-zh>浏览全部十二条路线</span><span data-en>Browse all twelve routes</span></summary>
   <div class="path-h">
     <h2><span data-zh>想按条走，不按站逛</span><span data-en>Follow a route instead of browsing stations</span></h2>
-    <p><span data-zh>十条精选路径，从 204 个词里挑出顺序（部分路径还接入微型指南与论文卡），各带一个学完自测。点进去是一条能分享的路线。</span><span data-en>Ten curated routes picked out of the 204 terms (some also weave in short guides and paper cards), each with an ordered list and a checkpoint. Each one is a shareable page.</span></p>
+    <p><span data-zh>十二条精选路径，从 228 个词里挑出顺序（部分路径还接入微型指南与论文卡），各带一个学完自测。点进去是一条能分享的路线。</span><span data-en>Twelve curated routes picked out of the 228 terms (some also weave in short guides and paper cards), each with an ordered list and a checkpoint. Each one is a shareable page.</span></p>
   </div>
   <div class="t-grid t-grid-2" id="pathCards"></div>
 </details>
@@ -179,6 +181,9 @@
   <b><span data-zh>关于可信度。</span><span data-en>On trustworthiness.</span></b><span data-zh>名词定义力求准确，涉及具体数值、报价、性能的断言只写有出处的，没有出处的会明说「未获官方确认」，不猜测。这页解决的是「看不懂」的问题；具体产品的取舍请到各站看那份档案——档案里每条事实都带来源清单。</span><span data-en>Term definitions aim for accuracy: any claim about specific numbers, pricing, or performance is written only when it has a source; when it doesn't, the page says "not officially confirmed" rather than guessing. This page solves "I don't understand it." For product trade-offs, read the profile on each site — every fact there carries a source list.</span>
 </div>
     </div>
+  <!-- SPECUL:DIAGNOSTICS:START -->
+<div class="container"><section id="diagnose" class="section"><h2><span data-zh>练习卡住了，先找是哪一步</span><span data-en>Stuck? Identify the failing step</span></h2><p><span data-zh>先选一个判断，再展开理由。概念、输入、验证可能同时出问题；这些虚构情境不评分、不认证，也不自动标记学会。</span><span data-en>Choose a response before opening the reasoning. Concept, input and verification problems may coexist. These fictional scenarios do not score, certify or mark learning complete.</span></p><nav aria-label="练习分流" data-ui-aria-label-zh="练习分流" data-ui-aria-label-en="Practice branches"><a href="#diagnose-concept"><span data-zh>概念没分清</span><span data-en>Concept confusion</span></a> · <a href="#diagnose-input"><span data-zh>输入缺信息</span><span data-en>Missing input</span></a> · <a href="#diagnose-check"><span data-zh>结果缺验证</span><span data-en>Unchecked output</span></a></nav><section id="diagnose-concept"><h3><span data-zh>概念没分清</span><span data-en>Concept confusion</span></h3><article class="panel is-slim diagnostic-case" id="diagnostic-context"><h3><span data-zh>窗口与记忆</span><span data-en>Window and memory</span></h3><p><span data-zh>一个模型支持长上下文。只凭这个数字，能否断言它下次对话仍记得你？</span><span data-en>A model advertises a large context window. Does that alone establish that it remembers you in the next conversation?</span></p><ol><li><span data-zh>A：可以，窗口越大记得越久。</span><span data-en>A: Yes; a larger window means longer lasting memory.</span></li><li><span data-zh>B：不能，还要知道下次实际传入什么，以及是否另有保存机制。</span><span data-en>B: No; inspect the next request and any separate persistence mechanism.</span></li></ol><details><summary><span data-zh>作答后看理由与下一步</span><span data-en>After answering: reasoning and next steps</span></summary><p><span data-zh>选 B。上下文容量、实际输入和跨次保存是不同问题。A 把容量变成了持久记忆承诺，缺少依据。先画出一次请求带入的内容，再讨论保存。</span><span data-en>Choose B. Capacity, actual request content and persistence are separate questions. A turns capacity into an unsupported memory promise. Map one request before discussing what is saved.</span></p><ul><li><a href="https://learn.specul.com/guide/%E5%AE%83%E8%AE%B0%E5%BE%97%E4%BD%A0%E4%B9%8B%E5%89%8D%E8%AF%B4%E8%BF%87%E7%9A%84/"><span data-zh>它记得你之前说过的</span><span data-en>Distinguish request context and persistence</span></a></li><li><a href="https://tools.specul.com/mcp/guides/toolkit-prompt-context.html"><span data-zh>填写一次请求的输入与限制</span><span data-en>Write the input and limits of one request</span></a></li></ul></details></article><article class="panel is-slim diagnostic-case" id="diagnostic-retrieval"><h3><span data-zh>相似与证据</span><span data-en>Similarity and evidence</span></h3><p><span data-zh>检索排第一的段落和问题很像，但只谈去年。能直接拿它证明今年的价格吗？</span><span data-en>The top retrieved passage resembles the question but describes last year. Does it establish this year’s price?</span></p><ol><li><span data-zh>A：不能，相关不代表支持当前时间和口径。</span><span data-en>A: No; relevance does not establish the current time/scope.</span></li><li><span data-zh>B：可以，排名第一就是答案。</span><span data-en>B: Yes; the first rank is the answer.</span></li></ol><details><summary><span data-zh>作答后看理由与下一步</span><span data-en>After answering: reasoning and next steps</span></summary><p><span data-zh>选 A。检索排序只提供候选材料；仍要检查对象、日期、档位和原句是否支持结论。B 把排序当成了事实核验。找不到当前证据时写未知。</span><span data-en>Choose A. Ranking supplies candidates; check object, date, tier and support in the passage. B mistakes order for verification. Keep the current fact unknown without evidence.</span></p><ul><li><a href="https://learn.specul.com/guide/%E6%80%8E%E4%B9%88%E8%AF%84%E6%B5%8B%20RAG%20%E7%9A%84%E6%95%88%E6%9E%9C/"><span data-zh>怎么评测 RAG 的效果</span><span data-en>Check retrieval and answer support separately</span></a></li><li><a href="https://tools.specul.com/mcp/guides/playbook-research-brief.html"><span data-zh>写一份带出处的简报</span><span data-en>Prepare a brief with evidence locations</span></a></li></ul></details></article></section><section id="diagnose-input"><h3><span data-zh>输入缺信息</span><span data-en>Missing input</span></h3><article class="panel is-slim diagnostic-case" id="diagnostic-blank-price"><h3><span data-zh>空白单价</span><span data-en>A blank price</span></h3><p><span data-zh>扫描订单里 003 的单价为空。表格转换时应该怎样记录？</span><span data-en>The scan has a blank price for item 003. How should conversion record it?</span></p><ol><li><span data-zh>A：填 0，让合计能算出来。</span><span data-en>A: Fill zero so a total can be calculated.</span></li><li><span data-zh>B：留空，标缺失，并保留页与行位置。</span><span data-en>B: Keep it blank, mark it missing and retain page/row evidence.</span></li></ol><details><summary><span data-zh>作答后看理由与下一步</span><span data-en>After answering: reasoning and next steps</span></summary><p><span data-zh>选 B。缺失值不是零。A 虚构了价格，也会把部分小计伪装成完整总额。先确认是原件未提供还是识别漏掉，再决定能否补录。</span><span data-en>Choose B. Missing is not zero. A invents a price and can disguise a partial sum as a total. Establish whether the original is blank or extraction omitted a value before adding anything.</span></p><ul><li><a href="https://learn.specul.com/guide/%E6%80%8E%E4%B9%88%E6%8A%8A%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%86%99%E7%BB%93%E6%9E%84/"><span data-zh>怎么把提示词写结构</span><span data-en>Specify missing-value and evidence rules</span></a></li><li><a href="https://tools.specul.com/mcp/guides/playbook-pdf-table.html"><span data-zh>下载 PDF 与参考表练习</span><span data-en>Try the PDF and reference table</span></a></li></ul></details></article><article class="panel is-slim diagnostic-case" id="diagnostic-date"><h3><span data-zh>日期歧义</span><span data-en>An ambiguous date</span></h3><p><span data-zh>两份订单都写 03/11/2026，没给地区约定。你能直接改成 2026-11-03 吗？</span><span data-en>Two orders say 03/11/2026 without a locale. Can you normalize it directly to 2026-11-03?</span></p><ol><li><span data-zh>A：能，按自己电脑的设置。</span><span data-en>A: Yes; use the computer’s locale.</span></li><li><span data-zh>B：不能，保留原值并请求口径，暂列异常。</span><span data-en>B: No; retain the raw value, ask for the convention and quarantine it.</span></li></ol><details><summary><span data-zh>作答后看理由与下一步</span><span data-en>After answering: reasoning and next steps</span></summary><p><span data-zh>选 B。同一字符可以表示不同日期。电脑设置不能替代数据来源的定义。只有获得明确口径后才转换，并记录规则与受影响的行。</span><span data-en>Choose B. The same string can denote different dates. Local computer settings do not define source data. Normalize only after the convention is established, recording the rule and affected rows.</span></p><ul><li><a href="https://learn.specul.com/guide/%E4%B8%8A%E4%B8%8B%E6%96%87%E5%B7%A5%E7%A8%8B%E6%80%8E%E4%B9%88%E5%81%9A/"><span data-zh>上下文工程怎么做</span><span data-en>Identify information the task is missing</span></a></li><li><a href="https://tools.specul.com/mcp/guides/playbook-table-merge.html"><span data-zh>处理重复、冲突与日期异常</span><span data-en>Handle duplicates, conflicts and ambiguous dates</span></a></li></ul></details></article></section><section id="diagnose-check"><h3><span data-zh>结果缺验证</span><span data-en>Unchecked output</span></h3><article class="panel is-slim diagnostic-case" id="diagnostic-citation"><h3><span data-zh>有角标就够了吗</span><span data-en>Is a source marker enough?</span></h3><p><span data-zh>摘要有引用链接，原文却写“预览”，摘要写“全部上线”。先改什么？</span><span data-en>A summary has a citation, but the source says preview while the summary says available to everyone. What needs correction?</span></p><ol><li><span data-zh>A：加更多角标就能保留原结论。</span><span data-en>A: Keep the claim and add more citations.</span></li><li><span data-zh>B：把结论收回原文支持的范围，再查日期与对象。</span><span data-en>B: Limit the claim to source support, then check date and eligible users.</span></li></ol><details><summary><span data-zh>作答后看理由与下一步</span><span data-en>After answering: reasoning and next steps</span></summary><p><span data-zh>选 B。链接存在不证明它支持这句话。A 增加数量却没有修复含义。逐条对照原句，保留预览、推出范围和核验日期；证据不足时撤回结论。</span><span data-en>Choose B. A working URL does not establish support for a sentence. A adds quantity without fixing meaning. Check each passage and retain preview status, availability scope and check date; withdraw unsupported claims.</span></p><ul><li><a href="https://learn.specul.com/guide/%E6%80%8E%E4%B9%88%E9%AA%8C%E8%AF%81%20AI%20%E7%9A%84%E8%BE%93%E5%87%BA/"><span data-zh>怎么验证 AI 的输出</span><span data-en>Check support, scope and numbers</span></a></li><li><a href="https://tools.specul.com/mcp/guides/playbook-document-review.html"><span data-zh>审阅两版文档的冲突</span><span data-en>Review conflicting document versions</span></a></li></ul></details></article><article class="panel is-slim diagnostic-case" id="diagnostic-proposal"><h3><span data-zh>提议还是决定</span><span data-en>Proposal or decision</span></h3><p><span data-zh>Jo 说“建议加字幕，但本周无法负责”。纪要把任务分给 Jo。是否合格？</span><span data-en>Jo suggests subtitles but says they cannot own them this week. Notes assign the work to Jo. Is that acceptable?</span></p><ol><li><span data-zh>A：不合格，提议与接受任务不同，应把负责人留待确认。</span><span data-en>A: No; proposing differs from accepting ownership. Keep the owner unresolved.</span></li><li><span data-zh>B：合格，谁提议就由谁负责。</span><span data-en>B: Yes; whoever suggests it owns it.</span></li></ol><details><summary><span data-zh>作答后看理由与下一步</span><span data-en>After answering: reasoning and next steps</span></summary><p><span data-zh>选 A。原话没有接受分派，而且明确说明无法负责。B 编造了责任规则。回听对应片段，把状态改回提议，负责人和期限分别确认。</span><span data-en>Choose A. The speaker did not accept assignment and explicitly cannot own it. B invents an assignment rule. Replay the passage, restore proposal status, and confirm owner and deadline separately.</span></p><ul><li><a href="https://learn.specul.com/guide/AI%20%E5%B8%B8%E7%8A%AF%E4%BB%80%E4%B9%88%E9%94%99/"><span data-zh>AI 常犯什么错</span><span data-en>Separate extraction errors from plausible wording</span></a></li><li><a href="https://tools.specul.com/mcp/guides/playbook-meeting-notes.html"><span data-zh>回听合成录音并核对行动表</span><span data-en>Replay synthetic audio and check actions</span></a></li></ul></details></article></section></section></div>
+<!-- SPECUL:DIAGNOSTICS:END -->
   </main>
   <!-- SPECUL:FOOTER:START -->
   <footer class="site-footer">
@@ -203,6 +208,8 @@
       </nav>
     </div>
     <div class="container">
+      <p><a href="https://specul.com/search.html"><span data-zh>搜索六站内容</span><span data-en>Search all six sites</span></a></p>
+      <p><a href="https://specul.com/correct.html"><span data-zh>发现错误？生成纠错草稿</span><span data-en>Spot an error? Compose a correction draft</span></a></p>
       <p class="foot-trademark"><span data-zh>产品名与商标归各权利方所有，本站仅作识别与评论之用。</span><span data-en>Product names and trademarks belong to their respective owners and are used here for identification and commentary only.</span></p>
     </div>
   </footer>
@@ -259,7 +266,7 @@ function LS(k){
   return IS_EN() && lv.shortEn ? lv.shortEn : lv.short;
 }
 /* 组装「第X 站 · 站名」的写法（v7 §1.3：六层→六站，2026-10-18）
- * ⚠ 锚点 id 仍是 `layer-N` —— 它出现在 204 个词条页的面包屑里，
+ * ⚠ 锚点 id 仍是 `layer-N` —— 它出现在 228 个词条页的面包屑里，
  *   改 id 等于全站死链。名字改、锚点不改（anchor-check 守的就是它）。 */
 function LN(k){
   var lv = LEVELS[k];
@@ -581,7 +588,7 @@ function openTerm(zh){
     + '<span class="dtag">'+esc(L(PURPOSES[t.purposeTag],'name'))+'</span>'
     + '<span class="dtag">'+(IS_EN()?'Station '+esc(t.level)+' · '+esc(LS(t.level)):'第'+esc(t._lvlName)+'站 · '+esc(LS(t.level)))+'</span>'
     + '<span class="dtag">'+esc(IS_EN() ? LS(String(t.level)) : t._layer)+'</span>'
-    /* B1：链到该词的独立页（/term/<slug>/）。没有这条，204 个词条页就是孤岛。
+    /* B1：链到该词的独立页（/term/<slug>/）。没有这条，228 个词条页就是孤岛。
      * slug 来自数据字段（不是从 zh 拼的 —— 9 个词的 zh 与文件名不同）。 */
     + (t.slug ? '<a class="dtag dlink" href="term/'+encodeURIComponent(t.slug)+'/"><span data-zh>独立页面</span><span data-en>Standalone page</span> ↗</a>' : '');
   var b = document.getElementById('dBody');
@@ -680,7 +687,7 @@ document.getElementById('dBody').addEventListener('click', function(e){
   // 上一版就是那么写的，于是「上一个/下一个」**基本点不动** ——
   // 按钮内容全是子元素（<b>上一个</b><span>词名</span>），没有直接文本节点，
   // 访客点「下一个」那三个字时 e.target 是那个 <b>，id 为空，判断永远不成立。
-  // 表现与本轮修的那几个「静默丢内容」同一类：不报错、元素在那、就是不响应。
+  // 表现与那几个「静默丢内容」的坑同一类：不报错、元素在那、就是不响应。
   // （旁边的 .rbtn 一直用 closest()，所以相关词跳转是好的 —— 一个不留神就会漏掉）
   var nb = e.target.closest('#prevT');
   var na = e.target.closest('#nextT');

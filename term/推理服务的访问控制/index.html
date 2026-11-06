@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>推理服务的访问控制 · 学 AI | 投机取巧</title>
+  <meta name="description" content="决定谁能调你的模型服务、以什么身份调、能用多少、事后能不能查。 第一道控制是监听地址而不是密码：Ollama 官方文档写明服务默认绑定 127.0.0.1:11434，用 OLLAMA_HOST 改绑定地址就会把它开放给网络；该文档没有为这种暴露提供鉴权方案。" />
+  <link rel="canonical" href="https://learn.specul.com/term/%E6%8E%A8%E7%90%86%E6%9C%8D%E5%8A%A1%E7%9A%84%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="学 AI" />
+  <meta property="og:url" content="https://learn.specul.com/term/%E6%8E%A8%E7%90%86%E6%9C%8D%E5%8A%A1%E7%9A%84%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/" />
+  <meta property="og:title" content="推理服务的访问控制 · 学 AI" />
+  <meta property="og:description" content="决定谁能调你的模型服务、以什么身份调、能用多少、事后能不能查。 第一道控制是监听地址而不是密码：Ollama 官方文档写明服务默认绑定 127.0.0.1:11434，用 OLLAMA_HOST 改绑定地址就会把它开放给网络；该文档没有为这种暴露提供鉴权方案。" />
+  <meta name="theme-color" content="#16121f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <script src="../../brand.js?v=bf69a6d205ad"></script>
+  <script defer src="../../data/paths.js"></script>
+  <script defer src="../../data/reading.js"></script>
+  <link rel="stylesheet" href="../../brand.css?v=bf69a6d205ad" />
+  <link rel="stylesheet" href="../../learn.css" />
+  <style>:root { --accent: var(--cyan); }</style>
+  <!-- B5：词条页的结构性数据（DefinedTerm） -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTerm","name":"推理服务的访问控制","alternateName":"Access Control for an Inference Service","description":"决定谁能调你的模型服务、以什么身份调、能用多少、事后能不能查。","url":"https://learn.specul.com/term/%E6%8E%A8%E7%90%86%E6%9C%8D%E5%8A%A1%E7%9A%84%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/","inLanguage":"zh-Hans","inDefinedTermSet":{"@type":"DefinedTermSet","name":"学 AI · 第五站（跑起来）","url":"https://learn.specul.com/#layer-5"},"isPartOf":{"@type":"WebSite","name":"学 AI","url":"https://learn.specul.com/"}}</script>
+</head>
+<body class="brand-ambient has-tabbar" style="--accent:var(--cyan)">
+  <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+          <span class="brand-sub" id="markSub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/" aria-current="page"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://tools.specul.com/"><span data-zh>AI 工具</span><span data-en>AI Tools</span></a>
+        <a href="https://models.specul.com/"><span data-zh>AI 模型</span><span data-en>AI Models</span></a>
+        <a href="https://vg.specul.com/"><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>AI 导航</span><span data-en>AI Directory</span></a>
+      </nav>
+      <!-- 2026-10-10：.nav-tools 从 nav 元素**内部**移到外面，与 .nav-links 平级。
+           放里面时窄屏下它会跟着链接一起换行：链接占满整行 → 按钮被挤到第三条
+           （实测顶栏 134px、按钮组孤零零一行）。移出来后它与品牌同行，
+           链接独占第二行居中 —— 这才是下面注释里方案 B 想要的样子。 -->
+      <span class="nav-tools">
+        <a class="icon-btn" href="https://specul.com/search.html" aria-label="搜索" data-ui-aria-label-zh="搜索" data-ui-aria-label-en="Search" title="搜索全站" data-ui-title-zh="搜索全站" data-ui-title-en="Search all sites"><span aria-hidden="true">⌕</span></a>
+        <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+        <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+      </span>
+      <!-- B6（2026-10-09）：窄屏（≤900px）下 .nav-links 会隐藏，这个汉堡是替代入口。
+           行为在共享 brand.js 里（一处实现、六站共用），样式在共享 brand.css。
+           无脚本时 CSS 不会显示它，而是把 .nav-links 在窄屏放出来 —— 不会出现
+           「导航被藏进一个点了没反应的按钮」。 -->
+      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
+  </header>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <span class="brand-sub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/" aria-current="page"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://tools.specul.com/"><span><span data-zh>AI 工具</span><span data-en>AI Tools</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>AI 模型</span><span data-en>AI Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://vg.specul.com/"><span><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/"><span><span data-zh>AI 导航</span><span data-en>AI Directory</span></span><span class="ar" aria-hidden="true">→</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>6 个站，各管一件事</span><span data-en>Six sites, one job each</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
+  <main id="main">
+    <div class="container">
+      <article class="tp tp-wrap">
+        <nav class="tp-crumbs" aria-label="面包屑">
+          <a href="../../"><span data-zh>← 名词地图</span><span data-en>← Term map</span></a>
+          <span aria-hidden="true">·</span>
+          <a href="../../#layer-5"><span data-zh>跑起来</span><span data-en>Running It</span></a>
+        </nav>
+        <h1><span data-zh>推理服务的访问控制</span><span data-en>Access Control for an Inference Service</span></h1>
+        <p class="tp-en">Access Control for an Inference Service</p>
+        <ul class="tp-tags">
+          <li class="tp-tag"><span data-zh>硬件与部署</span><span data-en>Hardware &amp; deployment</span></li>
+          <li class="tp-tag"><span data-zh>第五站 · 跑起来</span><span data-en>Station 5 · Running It</span></li>
+          <li class="tp-tag"><span data-zh>引用核验 2026-11-06</span><span data-en>refs checked 2026-11-06</span></li>
+        </ul>
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>解决什么问题</span><span data-en>What problem it solves</span></div>
+          <p class="tp-p"><span data-zh>决定谁能调你的模型服务、以什么身份调、能用多少、事后能不能查。</span><span data-en>Decides who may call your model service, in what identity, within what budget, and whether it can be traced afterwards.</span></p>
+        </div>
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>这是什么</span><span data-en>What it is</span></div>
+<span data-zh>
+      <p class="tp-li">第一道控制是监听地址而不是密码：Ollama 官方文档写明服务默认绑定 127.0.0.1:11434，用 OLLAMA_HOST 改绑定地址就会把它开放给网络；该文档没有为这种暴露提供鉴权方案。</p>
+      <p class="tp-li">鉴权通常要往外放一层：官方给出的暴露方式是「通过 Nginx 之类的代理服务器」，也就是由反代、网关或云 IAM 承担身份与配额，而不是推理进程自己做。</p>
+      <p class="tp-li">可分的维度有四个：身份（谁能调）、配额与限流（能用多少）、审计（谁在什么时候调了哪个模型）、隔离（不同用途不同 key，避免一个泄漏全线受影响）。</p>
+      <p class="tp-li">在通用安全框架里这些落在防护面：NIST 网络安全框架用 IDENTIFY、PROTECT、DETECT、RESPOND、RECOVER 五个职能组织控制项，访问控制属于 PROTECT。</p>
+      <p class="tp-li">内网可达不等于安全：能连到端口就能提交提示词，也能把服务当算力消耗点或数据外带通道用。</p>
+</span>
+<span data-en>
+      <p class="tp-li" data-en>The first control is the bind address, not a password. Ollama's FAQ states the server binds 127.0.0.1:11434 by default and that changing OLLAMA_HOST exposes it on the network; the same document offers no authentication for that exposure.</p>
+      <p class="tp-li" data-en>Authentication normally sits one layer out. The documented way to expose the server is behind a proxy such as Nginx, so identity and quotas are handled by the reverse proxy, gateway or cloud IAM rather than by the inference process itself.</p>
+      <p class="tp-li" data-en>Four dimensions are worth separating: identity (who may call), quota and rate limits (how much they may use), audit (who called which model when), and isolation (separate keys per purpose, so one leak does not affect everyone).</p>
+      <p class="tp-li" data-en>In general security vocabulary this sits on the protective side: the NIST Cybersecurity Framework organises controls into IDENTIFY, PROTECT, DETECT, RESPOND and RECOVER, and access control belongs to PROTECT.</p>
+      <p class="tp-li" data-en>&quot;Internal network only&quot; is not a security property. Anything that can reach the port can submit prompts, spend compute on your bill, and read your system prompt.</p>
+</span>
+        </div>
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>为什么需要知道</span><span data-en>Why it matters</span></div>
+          <p class="tp-p"><span data-zh>一个没有鉴权的推理端口，同时是三样东西：别人替你付费的算力、绕过你应用层校验的入口、以及不需要拿到 key 就能读你系统提示词的位置。控制点越早，事后能解释的空间越大。</span><span data-en>An unauthenticated inference endpoint is three things at once: someone else's pay-as-you-go compute, a route around the checks in your application layer, and a way to read your system prompt without ever holding a key. The earlier you place the control, the more you can explain afterwards.</span></p>
+        </div>
+      <div class="tp-sec"><div class="tp-lab"><span data-zh>别名</span><span data-en>Chinese aliases</span></div><p class="tp-p"><span data-zh>谁能动我的模型服务</span></p></div>
+
+<div class="tp-sec tp-related"><div class="tp-lab"><span data-zh>接着读什么，为什么</span><span data-en>What to read next, and why</span></div><ul><li><a href="../%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E7%9A%84%E9%9A%94%E7%A6%BB%E9%9D%A2/"><span data-zh>本地部署的隔离面</span><span data-en>Isolation Surfaces of a Local Deployment</span></a><p class="t-sm"><span data-zh>机器在你手里不等于服务没人能碰。</span><span data-en>Owning the machine does not mean nobody can reach the service.</span></p></li></ul></div>
+      <div class="tp-sec">
+        <div class="tp-lab"><span data-zh>现在能做什么</span><span data-en>What you can do now</span></div>
+        <p class="tp-p"><a href="https://models.specul.com/"><span data-zh>去 Models 图谱：看这个模型有哪些量化版、按你的显存该下哪一档</span><span data-en>Models atlas: which quantisations exist and which tier fits your VRAM</span> ↗</a></p>
+        <p class="tp-p"><a href="../../#layer-5"><span data-zh>回到名词地图看第5站的其他 33 个词 →</span><span data-en>Back to the map: the other 33 terms in station 5 →</span></a></p>
+      </div>
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>出处</span><span data-en>Sources</span></div>
+          <ul class="tp-refs">
+      <li><span data-zh>Ollama 官方 FAQ：默认绑定地址与通过代理暴露</span><span data-en>Ollama FAQ: default bind address and exposing via a proxy</span> <a href="https://docs.ollama.com/faq" target="_blank" rel="noopener">↗</a></li>
+      <li><span data-zh>NIST 网络安全框架（CSF 2.0 的五个职能）</span><span data-en>NIST Cybersecurity Framework</span> <a href="https://www.nist.gov/cyberframework" target="_blank" rel="noopener">↗</a></li>
+          </ul>
+        </div>
+
+        <nav class="tp-pn" aria-label="上下篇" data-ui-aria-label-zh="上下篇" data-ui-aria-label-en="Previous and next">
+          <a href="../%E5%AF%86%E9%92%A5%E4%B8%8E%E5%87%AD%E6%8D%AE%E7%AE%A1%E7%90%86/"><span class="tp-ph"><span data-zh>上一篇</span><span data-en>Previous</span></span><span data-zh>密钥与凭据管理</span><span data-en>Secret and Credential Management</span></a>
+          <a href="../%E6%95%B0%E6%8D%AE%E9%A9%BB%E7%95%99%E4%B8%8E%E5%87%BA%E5%A2%83/" style="text-align:right"><span class="tp-ph"><span data-zh>下一篇</span><span data-en>Next</span></span><span data-zh>数据驻留与出境</span><span data-en>Data Residency and Cross-border Transfer</span></a>
+        </nav>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 <span data-zh>投机取巧</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+          <a href="https://tools.specul.com/"><span data-zh>AI 工具</span><span data-en>AI Tools</span></a>
+          <a href="https://models.specul.com/"><span data-zh>AI 模型</span><span data-en>AI Models</span></a>
+          <a href="https://vg.specul.com/"><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></a>
+          <a href="https://nav.specul.com/"><span data-zh>AI 导航</span><span data-en>AI Directory</span></a>
+          <a href="https://github.com/speculcom/ai-handbook" target="_blank" rel="noopener"><span data-zh>开源</span><span data-en>Open source</span></a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+    <div class="container">
+      <p><a href="https://specul.com/search.html"><span data-zh>搜索六站内容</span><span data-en>Search all six sites</span></a></p>
+      <p><a href="https://specul.com/correct.html"><span data-zh>发现错误？生成纠错草稿</span><span data-en>Spot an error? Compose a correction draft</span></a></p>
+      <p class="foot-trademark"><span data-zh>产品名与商标归各权利方所有，本站仅作识别与评论之用。</span><span data-en>Product names and trademarks belong to their respective owners and are used here for identification and commentary only.</span></p>
+    </div>
+  </footer>
+<nav class="nav-tabbar" aria-label="快捷导航">
+  <a href="https://specul.com/"><span class="ti" aria-hidden="true">◎</span><span data-zh>首页</span><span data-en>Home</span></a>
+  <a href="https://learn.specul.com/" aria-current="page"><span class="ti" aria-hidden="true">▤</span><span data-zh>学 AI</span><span data-en>Learn</span></a>
+  <a href="https://tools.specul.com/"><span class="ti" aria-hidden="true">◈</span><span data-zh>工具</span><span data-en>Tools</span></a>
+  <a href="https://models.specul.com/"><span class="ti" aria-hidden="true">▦</span><span data-zh>模型</span><span data-en>Models</span></a>
+  <button type="button" id="tabMore" aria-controls="navDrawer" aria-expanded="false"><span class="ti" aria-hidden="true">⋯</span><span data-zh>更多</span><span data-en>More</span></button>
+</nav>
+</body>
+</html>

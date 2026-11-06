@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>对齐与拒答训练 · 学 AI | 投机取巧</title>
+  <meta name="description" content="解释模型的「不肯答」是怎么被训练进去的，以及这条边界为什么会随版本移动。 预训练只教模型续写；会不会拒绝、在哪类请求上拒绝，是预训练之后那几步训练加进来的行为：监督微调、人类偏好数据、以及写成文本的规则目标。" />
+  <link rel="canonical" href="https://learn.specul.com/term/%E5%AF%B9%E9%BD%90%E4%B8%8E%E6%8B%92%E7%AD%94%E8%AE%AD%E7%BB%83/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="学 AI" />
+  <meta property="og:url" content="https://learn.specul.com/term/%E5%AF%B9%E9%BD%90%E4%B8%8E%E6%8B%92%E7%AD%94%E8%AE%AD%E7%BB%83/" />
+  <meta property="og:title" content="对齐与拒答训练 · 学 AI" />
+  <meta property="og:description" content="解释模型的「不肯答」是怎么被训练进去的，以及这条边界为什么会随版本移动。 预训练只教模型续写；会不会拒绝、在哪类请求上拒绝，是预训练之后那几步训练加进来的行为：监督微调、人类偏好数据、以及写成文本的规则目标。" />
+  <meta name="theme-color" content="#16121f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <script src="../../brand.js?v=bf69a6d205ad"></script>
+  <script defer src="../../data/paths.js"></script>
+  <script defer src="../../data/reading.js"></script>
+  <link rel="stylesheet" href="../../brand.css?v=bf69a6d205ad" />
+  <link rel="stylesheet" href="../../learn.css" />
+  <style>:root { --accent: var(--cyan); }</style>
+  <!-- B5：词条页的结构性数据（DefinedTerm） -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTerm","name":"对齐与拒答训练","alternateName":"Alignment and Refusal Training","description":"解释模型的「不肯答」是怎么被训练进去的，以及这条边界为什么会随版本移动。","url":"https://learn.specul.com/term/%E5%AF%B9%E9%BD%90%E4%B8%8E%E6%8B%92%E7%AD%94%E8%AE%AD%E7%BB%83/","inLanguage":"zh-Hans","inDefinedTermSet":{"@type":"DefinedTermSet","name":"学 AI · 第四站（看懂）","url":"https://learn.specul.com/#layer-4"},"isPartOf":{"@type":"WebSite","name":"学 AI","url":"https://learn.specul.com/"}}</script>
+</head>
+<body class="brand-ambient has-tabbar" style="--accent:var(--cyan)">
+  <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+          <span class="brand-sub" id="markSub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/" aria-current="page"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://tools.specul.com/"><span data-zh>AI 工具</span><span data-en>AI Tools</span></a>
+        <a href="https://models.specul.com/"><span data-zh>AI 模型</span><span data-en>AI Models</span></a>
+        <a href="https://vg.specul.com/"><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>AI 导航</span><span data-en>AI Directory</span></a>
+      </nav>
+      <!-- 2026-10-10：.nav-tools 从 nav 元素**内部**移到外面，与 .nav-links 平级。
+           放里面时窄屏下它会跟着链接一起换行：链接占满整行 → 按钮被挤到第三条
+           （实测顶栏 134px、按钮组孤零零一行）。移出来后它与品牌同行，
+           链接独占第二行居中 —— 这才是下面注释里方案 B 想要的样子。 -->
+      <span class="nav-tools">
+        <a class="icon-btn" href="https://specul.com/search.html" aria-label="搜索" data-ui-aria-label-zh="搜索" data-ui-aria-label-en="Search" title="搜索全站" data-ui-title-zh="搜索全站" data-ui-title-en="Search all sites"><span aria-hidden="true">⌕</span></a>
+        <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+        <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+      </span>
+      <!-- B6（2026-10-09）：窄屏（≤900px）下 .nav-links 会隐藏，这个汉堡是替代入口。
+           行为在共享 brand.js 里（一处实现、六站共用），样式在共享 brand.css。
+           无脚本时 CSS 不会显示它，而是把 .nav-links 在窄屏放出来 —— 不会出现
+           「导航被藏进一个点了没反应的按钮」。 -->
+      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
+  </header>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <span class="brand-sub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/" aria-current="page"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://tools.specul.com/"><span><span data-zh>AI 工具</span><span data-en>AI Tools</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>AI 模型</span><span data-en>AI Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://vg.specul.com/"><span><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/"><span><span data-zh>AI 导航</span><span data-en>AI Directory</span></span><span class="ar" aria-hidden="true">→</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>6 个站，各管一件事</span><span data-en>Six sites, one job each</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
+  <main id="main">
+    <div class="container">
+      <article class="tp tp-wrap">
+        <nav class="tp-crumbs" aria-label="面包屑">
+          <a href="../../"><span data-zh>← 名词地图</span><span data-en>← Term map</span></a>
+          <span aria-hidden="true">·</span>
+          <a href="../../#layer-4"><span data-zh>看懂</span><span data-en>Under the Hood</span></a>
+        </nav>
+        <h1><span data-zh>对齐与拒答训练</span><span data-en>Alignment and Refusal Training</span></h1>
+        <p class="tp-en">Alignment and Refusal Training</p>
+        <ul class="tp-tags">
+          <li class="tp-tag"><span data-zh>核心概念</span><span data-en>Core concepts</span></li>
+          <li class="tp-tag"><span data-zh>第四站 · 看懂</span><span data-en>Station 4 · Under the Hood</span></li>
+          <li class="tp-tag"><span data-zh>引用核验 2026-11-06</span><span data-en>refs checked 2026-11-06</span></li>
+        </ul>
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>解决什么问题</span><span data-en>What problem it solves</span></div>
+          <p class="tp-p"><span data-zh>解释模型的「不肯答」是怎么被训练进去的，以及这条边界为什么会随版本移动。</span><span data-en>Explains how a model's habit of saying no gets trained in, and why that line moves between versions.</span></p>
+        </div>
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>这是什么</span><span data-en>What it is</span></div>
+<span data-zh>
+      <p class="tp-li">预训练只教模型续写；会不会拒绝、在哪类请求上拒绝，是预训练之后那几步训练加进来的行为：监督微调、人类偏好数据、以及写成文本的规则目标。</p>
+      <p class="tp-li">OpenAI 的 Model Spec（2026-10-29 版）把回应方式写成可核对的档位：照做、给更安全的替代、说明理由后拒绝、直接拒绝；文中写明「当预期安全收益大于成本时」可以暂停、给替代或拒绝。</p>
+      <p class="tp-li">拒答住在权重里，不在开关里：Arditi 等人 2024 年的研究报告，移除模型内部某一个方向后模型不再拒绝有害请求，把同一方向加回去时连无害提问也会被拒。</p>
+      <p class="tp-li">所以边界会漂：换训练数据、换规则版本、换对齐方法，同一句提问的结局可能不同。这是训练配置的变化，不是你的提问写错了。</p>
+      <p class="tp-li">过度拒绝和漏答（该拒不拒）是同一条边界的两侧，都由训练强度与目标决定。</p>
+</span>
+<span data-en>
+      <p class="tp-li" data-en>Pretraining only teaches continuation. Whether the model declines, and on which requests, comes from the steps that follow: supervised fine-tuning, human preference data, and the written rules a lab optimises against.</p>
+      <p class="tp-li" data-en>OpenAI's Model Spec (2026-10-29 revision) turns response modes into something you can check line by line: follow the instruction, offer a safer alternative, explain then refuse, or refuse outright. The text ties the choice to whether the expected safety benefit outweighs the cost.</p>
+      <p class="tp-li" data-en>Refusal lives in the weights, not in a switch. Arditi et al. (2024) report that removing one internal direction stops a model refusing harmful requests, while adding that same direction makes it refuse harmless ones.</p>
+      <p class="tp-li" data-en>So the boundary drifts. New training data, a new rule revision, or a different alignment method can change the outcome of the same prompt. That is a change in training configuration, not a mistake in your wording.</p>
+      <p class="tp-li" data-en>Over-refusal and under-refusal are two sides of one boundary, both set by training intensity and objectives.</p>
+</span>
+        </div>
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>为什么需要知道</span><span data-en>Why it matters</span></div>
+          <p class="tp-p"><span data-zh>把拒答当成训练产物，你才会去查它依据哪份规则文本、哪个版本、训练目标写了什么，而不是把它读成「模型坏了」或者「供应商心情」。看一家公司的安全姿态，公开的对齐规则与版本记录比单个提问的拒绝结果更有信息量。</span><span data-en>Treating refusal as a trained artefact sends you to the right documents: which rule text the model was aligned to, which version, what the training objectives say. When you want to read a lab's safety posture, its published alignment rules and version history tell you more than the outcome of one test prompt.</span></p>
+        </div>
+      <div class="tp-sec"><div class="tp-lab"><span data-zh>别名</span><span data-en>Chinese aliases</span></div><p class="tp-p"><span data-zh>拒答是怎么练出来的</span></p></div>
+
+<div class="tp-sec tp-related"><div class="tp-lab"><span data-zh>接着读什么，为什么</span><span data-en>What to read next, and why</span></div><ul><li><a href="../%E5%81%8F%E5%A5%BD%E5%AF%B9%E9%BD%90/"><span data-zh>偏好对齐</span><span data-en>RLHF / Alignment</span></a><p class="t-sm"><span data-zh>一个讲训练方法，一个讲训练目标所依据的偏好。</span><span data-en>One is the training method, the other the preferences the goal rests on.</span></p></li></ul></div>
+      <div class="tp-sec">
+        <div class="tp-lab"><span data-zh>现在能做什么</span><span data-en>What you can do now</span></div>
+        <p class="tp-p"><a href="https://models.specul.com/"><span data-zh>去 Models 图谱：看这个模型有哪些量化版、按你的显存该下哪一档</span><span data-en>Models atlas: which quantisations exist and which tier fits your VRAM</span> ↗</a></p>
+        <p class="tp-p"><a href="../../#layer-4"><span data-zh>回到名词地图看第4站的其他 38 个词 →</span><span data-en>Back to the map: the other 38 terms in station 4 →</span></a></p>
+      </div>
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>出处</span><span data-en>Sources</span></div>
+          <ul class="tp-refs">
+      <li><span data-zh>OpenAI Model Spec 全文（2026-10-29 版）</span><span data-en>OpenAI Model Spec, 2026-10-29 revision</span> <a href="https://model-spec.openai.com/2026-10-29.html" target="_blank" rel="noopener">↗</a></li>
+      <li><span data-zh>Arditi 等《Refusal in Language Models Is Mediated by a Single Direction》</span><span data-en>Refusal mediated by a single direction (paper)</span> <a href="https://arxiv.org/abs/2406.11717" target="_blank" rel="noopener">↗</a></li>
+      <li><span data-zh>InstructGPT 论文（监督微调 + RLHF 的训练流程）</span><span data-en>Training language models to follow instructions with human feedback</span> <a href="https://arxiv.org/abs/2203.02155" target="_blank" rel="noopener">↗</a></li>
+          </ul>
+        </div>
+
+        <nav class="tp-pn" aria-label="上下篇" data-ui-aria-label-zh="上下篇" data-ui-aria-label-en="Previous and next">
+          <a href="../%E6%B5%8B%E8%AF%95%E6%97%B6%E8%AE%A1%E7%AE%97/"><span class="tp-ph"><span data-zh>上一篇</span><span data-en>Previous</span></span><span data-zh>测试时计算</span><span data-en>Test-time Compute</span></a>
+          <a href="../%E8%92%B8%E9%A6%8F%E4%B8%8E%E7%9F%A5%E8%AF%86%E6%9D%A5%E6%BA%90/" style="text-align:right"><span class="tp-ph"><span data-zh>下一篇</span><span data-en>Next</span></span><span data-zh>蒸馏与知识来源</span><span data-en>Distillation and Knowledge Provenance</span></a>
+        </nav>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 <span data-zh>投机取巧</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+          <a href="https://tools.specul.com/"><span data-zh>AI 工具</span><span data-en>AI Tools</span></a>
+          <a href="https://models.specul.com/"><span data-zh>AI 模型</span><span data-en>AI Models</span></a>
+          <a href="https://vg.specul.com/"><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></a>
+          <a href="https://nav.specul.com/"><span data-zh>AI 导航</span><span data-en>AI Directory</span></a>
+          <a href="https://github.com/speculcom/ai-handbook" target="_blank" rel="noopener"><span data-zh>开源</span><span data-en>Open source</span></a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+    <div class="container">
+      <p><a href="https://specul.com/search.html"><span data-zh>搜索六站内容</span><span data-en>Search all six sites</span></a></p>
+      <p><a href="https://specul.com/correct.html"><span data-zh>发现错误？生成纠错草稿</span><span data-en>Spot an error? Compose a correction draft</span></a></p>
+      <p class="foot-trademark"><span data-zh>产品名与商标归各权利方所有，本站仅作识别与评论之用。</span><span data-en>Product names and trademarks belong to their respective owners and are used here for identification and commentary only.</span></p>
+    </div>
+  </footer>
+<nav class="nav-tabbar" aria-label="快捷导航">
+  <a href="https://specul.com/"><span class="ti" aria-hidden="true">◎</span><span data-zh>首页</span><span data-en>Home</span></a>
+  <a href="https://learn.specul.com/" aria-current="page"><span class="ti" aria-hidden="true">▤</span><span data-zh>学 AI</span><span data-en>Learn</span></a>
+  <a href="https://tools.specul.com/"><span class="ti" aria-hidden="true">◈</span><span data-zh>工具</span><span data-en>Tools</span></a>
+  <a href="https://models.specul.com/"><span class="ti" aria-hidden="true">▦</span><span data-zh>模型</span><span data-en>Models</span></a>
+  <button type="button" id="tabMore" aria-controls="navDrawer" aria-expanded="false"><span class="ti" aria-hidden="true">⋯</span><span data-zh>更多</span><span data-en>More</span></button>
+</nav>
+</body>
+</html>

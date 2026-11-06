@@ -13,10 +13,10 @@
   <meta property="og:description" content="RAG 不是默认选项。它适合「知识会变、要出处」的场景，不适合另一些场景，硬上反而更差。 知识量小且稳定：直接放进上下文更简单，检索层是多余复杂度。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
-  <script src="../../brand.js?v=6a580ac0420e"></script>
+  <script src="../../brand.js?v=bf69a6d205ad"></script>
   <script defer src="../../data/paths.js"></script>
   <script defer src="../../data/reading.js"></script>
-  <link rel="stylesheet" href="../../brand.css?v=6a580ac0420e" />
+  <link rel="stylesheet" href="../../brand.css?v=bf69a6d205ad" />
   <link rel="stylesheet" href="../../learn.css" />
   <style>:root { --accent: var(--gold); }</style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"什么时候不该用 RAG","description":"RAG 不是默认选项。它适合「知识会变、要出处」的场景，不适合另一些场景，硬上反而更差。","url":"https://learn.specul.com/guide/%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E4%B8%8D%E8%AF%A5%E7%94%A8%20RAG/","inLanguage":"zh-Hans","step":[{"@type":"HowToStep","position":1,"name":"知识量小且稳定：直接放进上下文更简单，检索层是多余复杂度。"},{"@type":"HowToStep","position":2,"name":"要求精确算术或推理：检索帮不上，问题在模型本身。"},{"@type":"HowToStep","position":3,"name":"文档质量差：垃圾进垃圾出，先修文档再谈检索。"},{"@type":"HowToStep","position":4,"name":"延迟预算紧：检索加重排加生成，链路长，实时场景要掂量。"},{"@type":"HowToStep","position":5,"name":"需要严格一致性：同一问题两次检索结果可能不同，合规场景要评估。"},{"@type":"HowToStep","position":6,"name":"先试基线：不加检索直接问，效果够好就不用搭 RAG。"}]}</script>
@@ -45,6 +45,7 @@
            （实测顶栏 134px、按钮组孤零零一行）。移出来后它与品牌同行，
            链接独占第二行居中 —— 这才是下面注释里方案 B 想要的样子。 -->
       <span class="nav-tools">
+        <a class="icon-btn" href="https://specul.com/search.html" aria-label="搜索" data-ui-aria-label-zh="搜索" data-ui-aria-label-en="Search" title="搜索全站" data-ui-title-zh="搜索全站" data-ui-title-en="Search all sites"><span aria-hidden="true">⌕</span></a>
         <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
         <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
       </span>
@@ -110,6 +111,7 @@
 </span>
         </div>
         <section class="tp-sec"><h2><span data-zh>例子与判断</span><span data-en>Example and interpretation</span></h2><p class="t-sm"><span data-zh>以下是教学情境，不是本站运行或实测记录。</span><span data-en>A teaching scenario, not a measured or executed site test.</span></p><p class="tp-p"><span data-zh>只有一页稳定的产品说明时，先试把说明直接作为上下文。若需求只是按规则算总价，应考虑确定性的计算逻辑。是否增加检索层，取决于材料规模、更新、权限和出处要求，不由技术热度决定。</span><span data-en>For one stable product sheet, first try supplying it directly. For rule-based totals, consider deterministic calculation. Add retrieval based on volume, updates, permissions and citation needs, rather than novelty.</span></p></section>
+<section class="tp-sec diagnostic-guide"><h2><span data-zh>做完例子后怎么检查</span><span data-en>How to check your practice</span></h2><p><span data-zh>先用自己的话解释上面的判断，再检查输入条件，最后回原文验证。说不清原因时回概念；缺日期、字段或权限时补输入；结论无出处时先撤回结论。</span><span data-en>Explain the example in your own words, inspect input constraints, then verify against the source. Revisit concepts if you cannot explain why; supply missing dates, fields or permissions; withdraw unsupported conclusions.</span></p><p><a href="../../#diagnose-concept"><span data-zh>按这篇主题，先从“概念没分清”练习查起</span><span data-en>For this topic, start with concept confusion</span></a> · <a href="../../#diagnose"><span data-zh>查看全部六个情境与理由</span><span data-en>See all six scenarios and their reasoning</span></a></p></section>
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>先懂这几个词</span><span data-en>Terms behind this</span></div>
           <p class="tp-p"><a class="t-guidechip" href="../../term/%E8%81%94%E7%BD%91%20-%20%E6%A3%80%E7%B4%A2%E5%A2%9E%E5%BC%BA/"><span data-zh>联网 / 检索增强</span><span data-en>Retrieval-Augmented Generation, RAG</span></a> <a class="t-guidechip" href="../../term/%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AA%97%E5%8F%A3/"><span data-zh>上下文窗口</span><span data-en>Context Window</span></a> <a class="t-guidechip" href="../../term/%E8%83%BD%E5%8A%9B%E8%BE%B9%E7%95%8C/"><span data-zh>能力边界</span><span data-en>Capability Boundary</span></a></p>
@@ -151,6 +153,8 @@
       </nav>
     </div>
     <div class="container">
+      <p><a href="https://specul.com/search.html"><span data-zh>搜索六站内容</span><span data-en>Search all six sites</span></a></p>
+      <p><a href="https://specul.com/correct.html"><span data-zh>发现错误？生成纠错草稿</span><span data-en>Spot an error? Compose a correction draft</span></a></p>
       <p class="foot-trademark"><span data-zh>产品名与商标归各权利方所有，本站仅作识别与评论之用。</span><span data-en>Product names and trademarks belong to their respective owners and are used here for identification and commentary only.</span></p>
     </div>
   </footer>

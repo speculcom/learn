@@ -13,10 +13,10 @@
   <meta property="og:description" content="回答之前先去查资料，把查到的内容塞进上下文里再回答。 一种做法：先从你的文档或数据库里检索相关片段，再让模型基于这些片段作答。 这是让模型用上你的私有文档最实用的手段，通常比微调更便宜也更安全。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
-  <script src="../../brand.js?v=6a580ac0420e"></script>
+  <script src="../../brand.js?v=bf69a6d205ad"></script>
   <script defer src="../../data/paths.js"></script>
   <script defer src="../../data/reading.js"></script>
-  <link rel="stylesheet" href="../../brand.css?v=6a580ac0420e" />
+  <link rel="stylesheet" href="../../brand.css?v=bf69a6d205ad" />
   <link rel="stylesheet" href="../../learn.css" />
   <style>:root { --accent: var(--cyan); }</style>
   <!-- B5：词条页的结构性数据（DefinedTerm） -->
@@ -46,6 +46,7 @@
            （实测顶栏 134px、按钮组孤零零一行）。移出来后它与品牌同行，
            链接独占第二行居中 —— 这才是下面注释里方案 B 想要的样子。 -->
       <span class="nav-tools">
+        <a class="icon-btn" href="https://specul.com/search.html" aria-label="搜索" data-ui-aria-label-zh="搜索" data-ui-aria-label-en="Search" title="搜索全站" data-ui-title-zh="搜索全站" data-ui-title-en="Search all sites"><span aria-hidden="true">⌕</span></a>
         <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
         <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
       </span>
@@ -116,11 +117,11 @@
         </div>
       <div class="tp-sec"><div class="tp-lab"><span data-zh>别名</span><span data-en>Chinese aliases</span></div><p class="tp-p"><span data-zh>RAG · 检索增强</span></p></div>
 
-<div class="tp-sec tp-related"><div class="tp-lab"><span data-zh>接着读什么，为什么</span><span data-en>What to read next, and why</span></div><ul><li><a href="../%E5%B9%BB%E8%A7%89/"><span data-zh>幻觉</span><span data-en>Hallucination</span></a><p class="t-sm"><span data-zh>看引入资料能解决什么，以及仍需核对什么。</span><span data-en>See what external evidence can help and what still needs checking.</span></p></li><li><a href="../%E5%88%86%E5%9D%97/"><span data-zh>分块</span><span data-en>Chunking</span></a><p class="t-sm"><span data-zh>先看文档被切成哪些可检索单元。</span><span data-en>Understand the document units that retrieval can return.</span></p></li><li><a href="../%E5%90%91%E9%87%8F%20-%20%E5%B5%8C%E5%85%A5/"><span data-zh>向量 / 嵌入</span><span data-en>Embedding / Vector</span></a><p class="t-sm"><span data-zh>一起用于《怎么给文档做分块》</span><span data-en>Used together in “How to Chunk Documents for Retrieval”</span></p></li></ul></div>
+<div class="tp-sec tp-related"><div class="tp-lab"><span data-zh>接着读什么，为什么</span><span data-en>What to read next, and why</span></div><ul><li><a href="../%E5%B9%BB%E8%A7%89/"><span data-zh>幻觉</span><span data-en>Hallucination</span></a><p class="t-sm"><span data-zh>看引入资料能解决什么，以及仍需核对什么。</span><span data-en>See what external evidence can help and what still needs checking.</span></p></li><li><a href="../%E5%88%86%E5%9D%97/"><span data-zh>分块</span><span data-en>Chunking</span></a><p class="t-sm"><span data-zh>先看文档被切成哪些可检索单元。</span><span data-en>Understand the document units that retrieval can return.</span></p></li><li><a href="../%E6%A3%80%E7%B4%A2%E8%B4%A8%E9%87%8F%E5%BA%A6%E9%87%8F/"><span data-zh>检索质量度量</span><span data-en>Retrieval Quality Metrics</span></a><p class="t-sm"><span data-zh>先有检索链路，才谈得上检索质量的度量口径。</span><span data-en>Retrieval exists first; then you define how to measure it.</span></p></li></ul></div>
       <div class="tp-sec">
         <div class="tp-lab"><span data-zh>现在能做什么</span><span data-en>What you can do now</span></div>
         <p class="tp-p"><a href="https://tools.specul.com/mcp/context7.html"><span data-zh>context7 用 MCP 喂文档的方案</span><span data-en>Feeding docs via MCP (context7)</span> ↗</a></p>
-        <p class="tp-p"><a href="../../#layer-2"><span data-zh>回到名词地图看第2站的其他 35 个词 →</span><span data-en>Back to the map: the other 35 terms in station 2 →</span></a></p>
+        <p class="tp-p"><a href="../../#layer-2"><span data-zh>回到名词地图看第2站的其他 41 个词 →</span><span data-en>Back to the map: the other 41 terms in station 2 →</span></a></p>
       </div>
 
         <div class="tp-sec">
@@ -161,6 +162,8 @@
       </nav>
     </div>
     <div class="container">
+      <p><a href="https://specul.com/search.html"><span data-zh>搜索六站内容</span><span data-en>Search all six sites</span></a></p>
+      <p><a href="https://specul.com/correct.html"><span data-zh>发现错误？生成纠错草稿</span><span data-en>Spot an error? Compose a correction draft</span></a></p>
       <p class="foot-trademark"><span data-zh>产品名与商标归各权利方所有，本站仅作识别与评论之用。</span><span data-en>Product names and trademarks belong to their respective owners and are used here for identification and commentary only.</span></p>
     </div>
   </footer>

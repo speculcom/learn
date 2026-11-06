@@ -13,10 +13,10 @@
   <meta property="og:description" content="按搭建顺序读接口、检索、工具调用、评测与成本。阅读用于理解链路；实际接入还需按当前版本检查并验证。 14 个词 · 约 60 分钟 说清一次 API 调用的费用由哪几段 token 构成" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
-  <script src="../../brand.js?v=6a580ac0420e"></script>
+  <script src="../../brand.js?v=bf69a6d205ad"></script>
   <script defer src="../../data/paths.js"></script>
   <script defer src="../../data/reading.js"></script>
-  <link rel="stylesheet" href="../../brand.css?v=6a580ac0420e" />
+  <link rel="stylesheet" href="../../brand.css?v=bf69a6d205ad" />
   <link rel="stylesheet" href="../../learn.css" />
   <style>:root { --accent: var(--cyan); }</style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"动手开发者路线","description":"按搭建顺序读接口、检索、工具调用、评测与成本。阅读用于理解链路；实际接入还需按当前版本检查并验证。","url":"https://learn.specul.com/path/for-builders/","inLanguage":"zh-Hans","itemListOrder":"ItemListOrderAscending","numberOfItems":14,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://learn.specul.com/term/API%20-%20%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8/"},{"@type":"ListItem","position":2,"url":"https://learn.specul.com/term/OpenAI%20%E5%85%BC%E5%AE%B9%E6%8E%A5%E5%8F%A3/"},{"@type":"ListItem","position":3,"url":"https://learn.specul.com/term/%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AA%97%E5%8F%A3/"},{"@type":"ListItem","position":4,"url":"https://learn.specul.com/term/%E5%90%91%E9%87%8F%20-%20%E5%B5%8C%E5%85%A5/"},{"@type":"ListItem","position":5,"url":"https://learn.specul.com/term/%E5%88%86%E5%9D%97/"},{"@type":"ListItem","position":6,"url":"https://learn.specul.com/term/%E8%81%94%E7%BD%91%20-%20%E6%A3%80%E7%B4%A2%E5%A2%9E%E5%BC%BA/"},{"@type":"ListItem","position":7,"url":"https://learn.specul.com/term/%E5%B7%A5%E5%85%B7%E5%AE%9A%E4%B9%89/"},{"@type":"ListItem","position":8,"url":"https://learn.specul.com/term/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"},{"@type":"ListItem","position":9,"url":"https://learn.specul.com/term/MCP/"},{"@type":"ListItem","position":10,"url":"https://learn.specul.com/term/%E6%99%BA%E8%83%BD%E4%BD%93%20-%20Agent/"},{"@type":"ListItem","position":11,"url":"https://learn.specul.com/term/%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%BC%96%E6%8E%92/"},{"@type":"ListItem","position":12,"url":"https://learn.specul.com/term/%E8%AF%84%E4%BC%B0/"},{"@type":"ListItem","position":13,"url":"https://learn.specul.com/term/%E5%8D%95%E6%AC%A1%E8%B0%83%E7%94%A8%E6%88%90%E6%9C%AC/"},{"@type":"ListItem","position":14,"url":"https://learn.specul.com/term/%E6%8F%90%E7%A4%BA%E6%B3%A8%E5%85%A5/"}]}</script>
@@ -45,6 +45,7 @@
            （实测顶栏 134px、按钮组孤零零一行）。移出来后它与品牌同行，
            链接独占第二行居中 —— 这才是下面注释里方案 B 想要的样子。 -->
       <span class="nav-tools">
+        <a class="icon-btn" href="https://specul.com/search.html" aria-label="搜索" data-ui-aria-label-zh="搜索" data-ui-aria-label-en="Search" title="搜索全站" data-ui-title-zh="搜索全站" data-ui-title-en="Search all sites"><span aria-hidden="true">⌕</span></a>
         <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
         <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
       </span>
@@ -134,7 +135,7 @@
         <section class="tp-sec"><h2><span data-zh>用在一个具体任务里</span><span data-en>Apply this to a concrete task</span></h2><p><a href="https://tools.specul.com/mcp/guides/playbook-fix-a-bug.html#worked-example"><span data-zh>按一个小问题练习复现与验收</span><span data-en>Practice reproduction and acceptance on a small issue</span> →</a></p></section>
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>其他路径</span><span data-en>Other paths</span></div>
-          <p class="tp-p"><a href="../quick-start/"><span data-zh>半小时入门</span><span data-en>The Half-Hour Primer</span></a> · <a href="../afternoon-principles/"><span data-zh>一个下午看懂原理</span><span data-en>One Afternoon Under the Hood</span></a> · <a href="../full-week/"><span data-zh>一周路线</span><span data-en>The Full Week</span></a> · <a href="../for-writers/"><span data-zh>内容工作者路线</span><span data-en>The Writer's Route</span></a> · <a href="../for-managers/"><span data-zh>选型决策者路线</span><span data-en>The Decision-Maker's Route</span></a> · <a href="../for-researchers/"><span data-zh>研究学习者路线</span><span data-en>The Researcher's Route</span></a> · <a href="../for-operators/"><span data-zh>运维上线路线</span><span data-en>The Operator's Route</span></a> · <a href="../for-consumers/"><span data-zh>普通消费者路线</span><span data-en>The Everyday User's Route</span></a> · <a href="../for-creators/"><span data-zh>图像 / 视频 / 音频创作者路线</span><span data-en>The Image / Video / Audio Creator's Route</span></a></p>
+          <p class="tp-p"><a href="../quick-start/"><span data-zh>半小时入门</span><span data-en>The Half-Hour Primer</span></a> · <a href="../afternoon-principles/"><span data-zh>一个下午看懂原理</span><span data-en>One Afternoon Under the Hood</span></a> · <a href="../full-week/"><span data-zh>一周路线</span><span data-en>The Full Week</span></a> · <a href="../for-writers/"><span data-zh>内容工作者路线</span><span data-en>The Writer's Route</span></a> · <a href="../for-managers/"><span data-zh>选型决策者路线</span><span data-en>The Decision-Maker's Route</span></a> · <a href="../for-researchers/"><span data-zh>研究学习者路线</span><span data-en>The Researcher's Route</span></a> · <a href="../for-operators/"><span data-zh>运维上线路线</span><span data-en>The Operator's Route</span></a> · <a href="../for-consumers/"><span data-zh>普通消费者路线</span><span data-en>The Everyday User's Route</span></a> · <a href="../for-creators/"><span data-zh>图像 / 视频 / 音频创作者路线</span><span data-en>The Image / Video / Audio Creator's Route</span></a> · <a href="../for-safety-review/"><span data-zh>安全与合规评审路线</span><span data-en>The Safety and Compliance Review Route</span></a> · <a href="../for-eval-builders/"><span data-zh>评测与质量路线</span><span data-en>The Evaluation and Quality Route</span></a></p>
         </div>
       </article>
     </div>
@@ -161,6 +162,8 @@
       </nav>
     </div>
     <div class="container">
+      <p><a href="https://specul.com/search.html"><span data-zh>搜索六站内容</span><span data-en>Search all six sites</span></a></p>
+      <p><a href="https://specul.com/correct.html"><span data-zh>发现错误？生成纠错草稿</span><span data-en>Spot an error? Compose a correction draft</span></a></p>
       <p class="foot-trademark"><span data-zh>产品名与商标归各权利方所有，本站仅作识别与评论之用。</span><span data-en>Product names and trademarks belong to their respective owners and are used here for identification and commentary only.</span></p>
     </div>
   </footer>

@@ -13,10 +13,10 @@
   <meta property="og:description" content="误区篇说「榜单分数高不等于好用」；这篇讲怎么把榜单读出信息：谁做的、怎么测、哪里失真。 先查三件事：谁维护、题目从哪来、分数怎么算——三者不明的榜单只当广告看。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
-  <script src="../../brand.js?v=6a580ac0420e"></script>
+  <script src="../../brand.js?v=bf69a6d205ad"></script>
   <script defer src="../../data/paths.js"></script>
   <script defer src="../../data/reading.js"></script>
-  <link rel="stylesheet" href="../../brand.css?v=6a580ac0420e" />
+  <link rel="stylesheet" href="../../brand.css?v=bf69a6d205ad" />
   <link rel="stylesheet" href="../../learn.css" />
   <style>:root { --accent: var(--gold); }</style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"榜单怎么读","description":"误区篇说「榜单分数高不等于好用」；这篇讲怎么把榜单读出信息：谁做的、怎么测、哪里失真。","url":"https://learn.specul.com/guide/%E6%A6%9C%E5%8D%95%E6%80%8E%E4%B9%88%E8%AF%BB/","inLanguage":"zh-Hans","step":[{"@type":"HowToStep","position":1,"name":"先查三件事：谁维护、题目从哪来、分数怎么算——三者不明的榜单只当广告看。"},{"@type":"HowToStep","position":2,"name":"看题目发布时间：榜单晚于模型训练截止才有区分度；疑似泄漏的公开题集分数普遍虚高。"},{"@type":"HowToStep","position":3,"name":"总分拆开看：同一模型在不同任务子集上排名可以完全颠倒，按你要的任务子集比。"},{"@type":"HowToStep","position":4,"name":"对比要同口径：不同榜单的分数不能互比，同一榜单里不同评测条件（上下文长度、工具开关）也不能混比。"},{"@type":"HowToStep","position":5,"name":"看分数差有没有意义：1-2 分常在评测噪声范围内，排名相邻基本等于打平。"},{"@type":"HowToStep","position":6,"name":"自建口径补位：公共榜单回答「普遍水平」，你自己的 20-50 道题回答「在我这活儿上行不行」。"}]}</script>
@@ -45,6 +45,7 @@
            （实测顶栏 134px、按钮组孤零零一行）。移出来后它与品牌同行，
            链接独占第二行居中 —— 这才是下面注释里方案 B 想要的样子。 -->
       <span class="nav-tools">
+        <a class="icon-btn" href="https://specul.com/search.html" aria-label="搜索" data-ui-aria-label-zh="搜索" data-ui-aria-label-en="Search" title="搜索全站" data-ui-title-zh="搜索全站" data-ui-title-en="Search all sites"><span aria-hidden="true">⌕</span></a>
         <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
         <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
       </span>
@@ -110,6 +111,7 @@
 </span>
         </div>
         <section class="tp-sec"><h2><span data-zh>例子与判断</span><span data-en>Example and interpretation</span></h2><p class="t-sm"><span data-zh>以下是教学情境，不是本站运行或实测记录。</span><span data-en>A teaching scenario, not a measured or executed site test.</span></p><p class="tp-p"><span data-zh>两个榜单给出的第一名不同，先比较题目、版本、提示、工具和评分。若一个测代码、另一个测知识问答，名次不构成矛盾；你需要的是与实际任务相关的那部分证据。</span><span data-en>When two leaderboards have different leaders, compare tasks, versions, prompts, tools and scoring. Coding and knowledge tests need not agree. Use the evidence relevant to your actual task.</span></p></section>
+<section class="tp-sec diagnostic-guide"><h2><span data-zh>做完例子后怎么检查</span><span data-en>How to check your practice</span></h2><p><span data-zh>先用自己的话解释上面的判断，再检查输入条件，最后回原文验证。说不清原因时回概念；缺日期、字段或权限时补输入；结论无出处时先撤回结论。</span><span data-en>Explain the example in your own words, inspect input constraints, then verify against the source. Revisit concepts if you cannot explain why; supply missing dates, fields or permissions; withdraw unsupported conclusions.</span></p><p><a href="../../#diagnose-check"><span data-zh>按这篇主题，先从“结果缺验证”练习查起</span><span data-en>For this topic, start with unchecked output</span></a> · <a href="../../#diagnose"><span data-zh>查看全部六个情境与理由</span><span data-en>See all six scenarios and their reasoning</span></a></p></section>
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>先懂这几个词</span><span data-en>Terms behind this</span></div>
           <p class="tp-p"><a class="t-guidechip" href="../../term/%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/"><span data-zh>基准测试</span><span data-en>Benchmark</span></a> <a class="t-guidechip" href="../../term/%E6%A8%A1%E5%9E%8B%E8%AF%84%E6%B5%8B%E7%9A%84%E5%B1%80%E9%99%90/"><span data-zh>模型评测的局限</span><span data-en>Evaluation Limits</span></a> <a class="t-guidechip" href="../../term/%E8%AF%84%E6%B5%8B%E9%A5%B1%E5%92%8C/"><span data-zh>评测饱和</span><span data-en>Benchmark Saturation</span></a> <a class="t-guidechip" href="../../term/%E6%80%BB%E5%88%86%20-%20%E7%BB%BC%E5%90%88%E8%AF%84%E6%B5%8B/"><span data-zh>总分 / 综合评测</span><span data-en>Aggregate Score</span></a> <a class="t-guidechip" href="../../term/%E6%95%B0%E6%8D%AE%E6%B1%A1%E6%9F%93/"><span data-zh>数据污染</span><span data-en>Data Contamination</span></a></p>
@@ -154,6 +156,8 @@
       </nav>
     </div>
     <div class="container">
+      <p><a href="https://specul.com/search.html"><span data-zh>搜索六站内容</span><span data-en>Search all six sites</span></a></p>
+      <p><a href="https://specul.com/correct.html"><span data-zh>发现错误？生成纠错草稿</span><span data-en>Spot an error? Compose a correction draft</span></a></p>
       <p class="foot-trademark"><span data-zh>产品名与商标归各权利方所有，本站仅作识别与评论之用。</span><span data-en>Product names and trademarks belong to their respective owners and are used here for identification and commentary only.</span></p>
     </div>
   </footer>

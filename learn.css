@@ -297,6 +297,9 @@ a:hover{text-decoration:underline}
   display:flex; align-items:flex-start; gap:14px; flex-shrink:0;
 }
 .dh-txt{min-width:0; flex:1}
+/* 无类的 h3（诊断卡、维度视图、JS 生成的列表标题）此前没有本站规则，
+   直接吃到浏览器默认 1.17em → 18.72px 半像素。补一条本站整数阶。 */
+h3 { font-size: 18px; font-weight: 600; line-height: 1.45; }
 .dh-txt h3{margin:0 0 3px; font-size:21px; font-weight:500; line-height:1.32}
 .dh-txt .en{font-size:var(--fs-xs); margin:0}
 .dtags{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px}

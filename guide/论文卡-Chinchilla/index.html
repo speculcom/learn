@@ -13,10 +13,10 @@
   <meta property="og:description" content="「模型该多大、数据该多少」的定标论文。这张卡列清它的结论原话、证据规模、以及作者自己提醒的外推边界。 研究问题：摘要原话——给定算力预算下，最优的模型大小与训练 token 数各是多少；结论是「当前大模型普遍训练不足」（&quot;significa…" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
-  <script src="../../brand.js?v=6a580ac0420e"></script>
+  <script src="../../brand.js?v=bf69a6d205ad"></script>
   <script defer src="../../data/paths.js"></script>
   <script defer src="../../data/reading.js"></script>
-  <link rel="stylesheet" href="../../brand.css?v=6a580ac0420e" />
+  <link rel="stylesheet" href="../../brand.css?v=bf69a6d205ad" />
   <link rel="stylesheet" href="../../learn.css" />
   <style>:root { --accent: var(--gold); }</style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","name":"论文卡-Chinchilla","description":"「模型该多大、数据该多少」的定标论文。这张卡列清它的结论原话、证据规模、以及作者自己提醒的外推边界。","url":"https://learn.specul.com/guide/%E8%AE%BA%E6%96%87%E5%8D%A1-Chinchilla/","inLanguage":"zh-Hans"}</script>
@@ -45,6 +45,7 @@
            （实测顶栏 134px、按钮组孤零零一行）。移出来后它与品牌同行，
            链接独占第二行居中 —— 这才是下面注释里方案 B 想要的样子。 -->
       <span class="nav-tools">
+        <a class="icon-btn" href="https://specul.com/search.html" aria-label="搜索" data-ui-aria-label-zh="搜索" data-ui-aria-label-en="Search" title="搜索全站" data-ui-title-zh="搜索全站" data-ui-title-en="Search all sites"><span aria-hidden="true">⌕</span></a>
         <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
         <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
       </span>
@@ -108,6 +109,7 @@
 </span>
         </div>
         <section class="tp-sec"><h2><span data-zh>例子与判断</span><span data-en>Example and interpretation</span></h2><p class="t-sm"><span data-zh>以下是教学情境，不是本站运行或实测记录。</span><span data-en>A teaching scenario, not a measured or executed site test.</span></p><p class="tp-p"><span data-zh>比较两套训练方案前，先固定计算预算，再看参数量与训练数据量如何分配。不要只摘出模型大小来说明效率；结论还受训练方法和论文讨论的范围限制。</span><span data-en>Fix compute budget before comparing parameter/data allocation in two training plans. Model size alone does not establish efficiency; methods and the paper's scope also matter.</span></p></section>
+<section class="tp-sec diagnostic-guide"><h2><span data-zh>做完例子后怎么检查</span><span data-en>How to check your practice</span></h2><p><span data-zh>先用自己的话解释上面的判断，再检查输入条件，最后回原文验证。说不清原因时回概念；缺日期、字段或权限时补输入；结论无出处时先撤回结论。</span><span data-en>Explain the example in your own words, inspect input constraints, then verify against the source. Revisit concepts if you cannot explain why; supply missing dates, fields or permissions; withdraw unsupported conclusions.</span></p><p><a href="../../#diagnose-concept"><span data-zh>按这篇主题，先从“概念没分清”练习查起</span><span data-en>For this topic, start with concept confusion</span></a> · <a href="../../#diagnose"><span data-zh>查看全部六个情境与理由</span><span data-en>See all six scenarios and their reasoning</span></a></p></section>
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>先懂这几个词</span><span data-en>Terms behind this</span></div>
           <p class="tp-p"><a class="t-guidechip" href="../../term/%E9%A2%84%E8%AE%AD%E7%BB%83/"><span data-zh>预训练</span><span data-en>Pre-training</span></a> <a class="t-guidechip" href="../../term/%E5%A4%A7%E6%A8%A1%E5%9E%8B%20-%20%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/"><span data-zh>大模型 / 大语言模型</span><span data-en>Large Language Model, LLM</span></a> <a class="t-guidechip" href="../../term/%E6%95%B0%E6%8D%AE%E6%B1%A1%E6%9F%93/"><span data-zh>数据污染</span><span data-en>Data Contamination</span></a></p>
@@ -149,6 +151,8 @@
       </nav>
     </div>
     <div class="container">
+      <p><a href="https://specul.com/search.html"><span data-zh>搜索六站内容</span><span data-en>Search all six sites</span></a></p>
+      <p><a href="https://specul.com/correct.html"><span data-zh>发现错误？生成纠错草稿</span><span data-en>Spot an error? Compose a correction draft</span></a></p>
       <p class="foot-trademark"><span data-zh>产品名与商标归各权利方所有，本站仅作识别与评论之用。</span><span data-en>Product names and trademarks belong to their respective owners and are used here for identification and commentary only.</span></p>
     </div>
   </footer>

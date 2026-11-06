@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>通过一次评测就可以上线 · 学 AI 微型指南 | 投机取巧</title>
+  <meta name="description" content="上线不是通过一场考试，而是一个需要被持续检查的状态。 那一次通过只覆盖当时的版本组合：模型版本、提示、检索到的材料、用户问法与数据分布，任何一项变动都可能让结论失效。发布后要留抽检、监控与回滚路径，改动时复跑同一套样本。（虚构示例）输入是一…" />
+  <link rel="canonical" href="https://learn.specul.com/guide/%E9%80%9A%E8%BF%87%E4%B8%80%E6%AC%A1%E8%AF%84%E6%B5%8B%E5%B0%B1%E5%8F%AF%E4%BB%A5%E4%B8%8A%E7%BA%BF/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="学 AI" />
+  <meta property="og:url" content="https://learn.specul.com/guide/%E9%80%9A%E8%BF%87%E4%B8%80%E6%AC%A1%E8%AF%84%E6%B5%8B%E5%B0%B1%E5%8F%AF%E4%BB%A5%E4%B8%8A%E7%BA%BF/" />
+  <meta property="og:title" content="通过一次评测就可以上线 · 学 AI 微型指南" />
+  <meta property="og:description" content="上线不是通过一场考试，而是一个需要被持续检查的状态。 那一次通过只覆盖当时的版本组合：模型版本、提示、检索到的材料、用户问法与数据分布，任何一项变动都可能让结论失效。发布后要留抽检、监控与回滚路径，改动时复跑同一套样本。（虚构示例）输入是一…" />
+  <meta name="theme-color" content="#16121f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <script src="../../brand.js?v=bf69a6d205ad"></script>
+  <script defer src="../../data/paths.js"></script>
+  <script defer src="../../data/reading.js"></script>
+  <link rel="stylesheet" href="../../brand.css?v=bf69a6d205ad" />
+  <link rel="stylesheet" href="../../learn.css" />
+  <style>:root { --accent: var(--gold); }</style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","name":"通过一次评测就可以上线","description":"上线不是通过一场考试，而是一个需要被持续检查的状态。","url":"https://learn.specul.com/guide/%E9%80%9A%E8%BF%87%E4%B8%80%E6%AC%A1%E8%AF%84%E6%B5%8B%E5%B0%B1%E5%8F%AF%E4%BB%A5%E4%B8%8A%E7%BA%BF/","inLanguage":"zh-Hans"}</script>
+</head>
+<body class="brand-ambient has-tabbar" style="--accent:var(--gold)">
+  <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+          <span class="brand-sub" id="markSub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/" aria-current="page"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://tools.specul.com/"><span data-zh>AI 工具</span><span data-en>AI Tools</span></a>
+        <a href="https://models.specul.com/"><span data-zh>AI 模型</span><span data-en>AI Models</span></a>
+        <a href="https://vg.specul.com/"><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>AI 导航</span><span data-en>AI Directory</span></a>
+      </nav>
+      <!-- 2026-10-10：.nav-tools 从 nav 元素**内部**移到外面，与 .nav-links 平级。
+           放里面时窄屏下它会跟着链接一起换行：链接占满整行 → 按钮被挤到第三条
+           （实测顶栏 134px、按钮组孤零零一行）。移出来后它与品牌同行，
+           链接独占第二行居中 —— 这才是下面注释里方案 B 想要的样子。 -->
+      <span class="nav-tools">
+        <a class="icon-btn" href="https://specul.com/search.html" aria-label="搜索" data-ui-aria-label-zh="搜索" data-ui-aria-label-en="Search" title="搜索全站" data-ui-title-zh="搜索全站" data-ui-title-en="Search all sites"><span aria-hidden="true">⌕</span></a>
+        <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+        <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+      </span>
+      <!-- B6（2026-10-09）：窄屏（≤900px）下 .nav-links 会隐藏，这个汉堡是替代入口。
+           行为在共享 brand.js 里（一处实现、六站共用），样式在共享 brand.css。
+           无脚本时 CSS 不会显示它，而是把 .nav-links 在窄屏放出来 —— 不会出现
+           「导航被藏进一个点了没反应的按钮」。 -->
+      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
+  </header>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <span class="brand-sub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/" aria-current="page"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://tools.specul.com/"><span><span data-zh>AI 工具</span><span data-en>AI Tools</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>AI 模型</span><span data-en>AI Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://vg.specul.com/"><span><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/"><span><span data-zh>AI 导航</span><span data-en>AI Directory</span></span><span class="ar" aria-hidden="true">→</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>6 个站，各管一件事</span><span data-en>Six sites, one job each</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
+  <main id="main">
+    <div class="container">
+      <article class="tp tp-wrap">
+        <nav class="tp-crumbs" aria-label="面包屑">
+          <a href="../../"><span data-zh>← 名词地图</span><span data-en>← Term map</span></a>
+          <span aria-hidden="true">·</span>
+          <a href="../../#layer-3"><span data-zh>第3站 · 三</span><span data-en>Station 3 · Going Deeper</span></a>
+          <span aria-hidden="true">·</span>
+          <span><span data-zh>微型指南</span><span data-en>Guide</span></span>
+        </nav>
+        <h1><span data-zh>通过一次评测就可以上线</span><span data-en>Passing One Evaluation Is Enough to Ship</span></h1>
+        <p class="tp-en"><span data-zh>微型指南 · 约 5 分钟</span><span data-en>Guide · about 5 min</span><span data-zh> · 引用核验 2026-11-06（仅引用链接与日期）</span><span data-en> · refs checked 2026-11-06 (reference links and dates only)</span></p>
+        <p class="tp-p"><span data-zh>上线不是通过一场考试，而是一个需要被持续检查的状态。</span><span data-en>Shipping is not passing one exam; it is a state that needs continuous checking.</span></p>
+        <div class="t-myth">
+          <p class="t-myth-said"><span data-zh>上线前把评测跑通一次，之后就可以不用管了。</span><span data-en>Run the evaluation once before launch and you never have to look again.</span></p>
+          <p class="t-myth-fact"><span data-zh>那一次通过只覆盖当时的版本组合：模型版本、提示、检索到的材料、用户问法与数据分布，任何一项变动都可能让结论失效。发布后要留抽检、监控与回滚路径，改动时复跑同一套样本。（虚构示例）输入是一次「只更换检索源、模型与提示都没变」的改动 → 处理是复跑同一套样本 → 结果判断看的是「引用是否命中现行文档」这一项口径 → 若该项通过率下降，下一步是重新做上线判断并给检索源加一条变更检查，而不是沿用旧一次的「已通过」。</span><span data-en>That single pass covers only the version combination at the time: model version, prompt, retrieved material, user phrasing and data distribution - a change in any of them can void the result. After release keep sampling, monitoring and a rollback path, and rerun the same sample set on changes. (Fictional example) Input is a change that swaps only the retrieval source, with model and prompt untouched -&gt; processing reruns the previous sample set -&gt; the check looks at the single criterion &quot;does the citation hit the current document&quot; -&gt; if that pass rate drops, the next step is to redo the go-live decision and add a retrieval-source change check, not to keep relying on last round's &quot;passed&quot;.</span></p>
+        </div>
+        <section class="tp-sec"><h2><span data-zh>例子与判断</span><span data-en>Example and interpretation</span></h2><p class="t-sm"><span data-zh>以下是教学情境，不是本站运行或实测记录。</span><span data-en>A teaching scenario, not a measured or executed site test.</span></p><p class="tp-p"><span data-zh>把评测样本换成两周后的真实问法，同一套提示的通过率可能变化；上线门禁里要写明样本采集时间范围与多久复评一次，否则「通过」只描述过去。</span><span data-en>Swap the evaluation samples for how people actually ask two weeks later and the pass rate may move. Launch gates should state the collection window of the samples and how often they are refreshed, otherwise 'passed' only describes the past.</span></p></section>
+<section class="tp-sec diagnostic-guide"><h2><span data-zh>做完例子后怎么检查</span><span data-en>How to check your practice</span></h2><p><span data-zh>先用自己的话解释上面的判断，再检查输入条件，最后回原文验证。说不清原因时回概念；缺日期、字段或权限时补输入；结论无出处时先撤回结论。</span><span data-en>Explain the example in your own words, inspect input constraints, then verify against the source. Revisit concepts if you cannot explain why; supply missing dates, fields or permissions; withdraw unsupported conclusions.</span></p><p><a href="../../#diagnose-check"><span data-zh>按这篇主题，先从“结果缺验证”练习查起</span><span data-en>For this topic, start with unchecked output</span></a> · <a href="../../#diagnose"><span data-zh>查看全部六个情境与理由</span><span data-en>See all six scenarios and their reasoning</span></a></p></section>
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>先懂这几个词</span><span data-en>Terms behind this</span></div>
+          <p class="tp-p"><a class="t-guidechip" href="../../term/%E8%AF%84%E4%BC%B0/"><span data-zh>评估</span><span data-en>Evaluation, Evals</span></a> <a class="t-guidechip" href="../../term/%E6%8A%A4%E6%A0%8F/"><span data-zh>护栏</span><span data-en>Guardrails</span></a> <a class="t-guidechip" href="../../term/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/"><span data-zh>持续集成</span><span data-en>Continuous Integration, CI</span></a></p>
+        </div>
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>出处</span><span data-en>Sources</span></div>
+          <ul class="tp-refs">
+      <li><span data-zh>NIST AI Risk Management Framework</span><span data-en>NIST AI Risk Management Framework</span> <a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener">↗</a></li>
+      <li><span data-zh>OpenAI Deployment Safety Hub（官方）</span><span data-en>OpenAI Deployment Safety Hub</span> <a href="https://deploymentsafety.openai.com/" target="_blank" rel="noopener">↗</a></li>
+      <li><span data-zh>HelloFresh：用持续数据流评测对抗污染与过拟合（arXiv 2406.03428）</span><span data-en>HelloFresh: continuous data streams against contamination and overfitting</span> <a href="https://arxiv.org/abs/2406.03428" target="_blank" rel="noopener">↗</a></li>
+          </ul>
+        </div>
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>围绕这些概念继续读</span><span data-en>More on these concepts</span></div>
+          <p class="tp-p"><a href="../怎么让AI按格式输出/"><span data-zh>怎么让 AI 按格式输出</span><span data-en>How to Get AI to Output in Your Format</span></a> · <a href="../怎么自建评测口径/"><span data-zh>怎么自建评测口径</span><span data-en>How to Build Your Own Eval</span></a> · <a href="../提示词怎么版本化/"><span data-zh>提示词怎么版本化</span><span data-en>How to Version Your Prompts</span></a> · <a href="../系统提示怎么设计/"><span data-zh>系统提示怎么设计</span><span data-en>How to Design a System Prompt</span></a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 <span data-zh>投机取巧</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+          <a href="https://tools.specul.com/"><span data-zh>AI 工具</span><span data-en>AI Tools</span></a>
+          <a href="https://models.specul.com/"><span data-zh>AI 模型</span><span data-en>AI Models</span></a>
+          <a href="https://vg.specul.com/"><span data-zh>AI 做游戏</span><span data-en>Vibe Gaming</span></a>
+          <a href="https://nav.specul.com/"><span data-zh>AI 导航</span><span data-en>AI Directory</span></a>
+          <a href="https://github.com/speculcom/ai-handbook" target="_blank" rel="noopener"><span data-zh>开源</span><span data-en>Open source</span></a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+    <div class="container">
+      <p><a href="https://specul.com/search.html"><span data-zh>搜索六站内容</span><span data-en>Search all six sites</span></a></p>
+      <p><a href="https://specul.com/correct.html"><span data-zh>发现错误？生成纠错草稿</span><span data-en>Spot an error? Compose a correction draft</span></a></p>
+      <p class="foot-trademark"><span data-zh>产品名与商标归各权利方所有，本站仅作识别与评论之用。</span><span data-en>Product names and trademarks belong to their respective owners and are used here for identification and commentary only.</span></p>
+    </div>
+  </footer>
+<nav class="nav-tabbar" aria-label="快捷导航">
+  <a href="https://specul.com/"><span class="ti" aria-hidden="true">◎</span><span data-zh>首页</span><span data-en>Home</span></a>
+  <a href="https://learn.specul.com/" aria-current="page"><span class="ti" aria-hidden="true">▤</span><span data-zh>学 AI</span><span data-en>Learn</span></a>
+  <a href="https://tools.specul.com/"><span class="ti" aria-hidden="true">◈</span><span data-zh>工具</span><span data-en>Tools</span></a>
+  <a href="https://models.specul.com/"><span class="ti" aria-hidden="true">▦</span><span data-zh>模型</span><span data-en>Models</span></a>
+  <button type="button" id="tabMore" aria-controls="navDrawer" aria-expanded="false"><span class="ti" aria-hidden="true">⋯</span><span data-zh>更多</span><span data-en>More</span></button>
+</nav>
+</body>
+</html>
