@@ -13,10 +13,10 @@
   <meta property="og:description" content="分块、嵌入、检索、重排、生成、引用——RAG 的每一步都会单独失败；这篇把它们串成一条可排障的链路。 文档解析与分块：先处理版式、表格与扫描件，再按语义边界切、保留标题与来源；解析错，后面全错。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
-  <script src="../../brand.js?v=5e907aab579b"></script>
+  <script src="../../brand.js?v=ab9707c3586a"></script>
   <script defer src="../../data/paths.js"></script>
   <script defer src="../../data/reading.js"></script>
-  <link rel="stylesheet" href="../../brand.css?v=5e907aab579b" />
+  <link rel="stylesheet" href="../../brand.css?v=ab9707c3586a" />
   <link rel="stylesheet" href="../../learn.css" />
   <style>:root { --accent: var(--gold); }</style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"RAG 全链路：从文档到答案","description":"分块、嵌入、检索、重排、生成、引用——RAG 的每一步都会单独失败；这篇把它们串成一条可排障的链路。","url":"https://learn.specul.com/guide/RAG%20%E5%85%A8%E9%93%BE%E8%B7%AF%EF%BC%9A%E4%BB%8E%E6%96%87%E6%A1%A3%E5%88%B0%E7%AD%94%E6%A1%88/","inLanguage":"zh-Hans","step":[{"@type":"HowToStep","position":1,"name":"文档解析与分块：先处理版式、表格与扫描件，再按语义边界切、保留标题与来源；解析错，后面全错。"},{"@type":"HowToStep","position":2,"name":"嵌入与索引：记录模型版本与维度，换嵌入模型要重建索引。"},{"@type":"HowToStep","position":3,"name":"检索：先召回足够多的候选，再用重排模型或规则收窄；只看 top-1 容易漏。"},{"@type":"HowToStep","position":4,"name":"拼上下文：只放相关块，带来源标识；块之间去重，避免同一段重复占 token。"},{"@type":"HowToStep","position":5,"name":"生成与引用：要求答案逐条对应来源；没有来源的句子标为「推断」。"},{"@type":"HowToStep","position":6,"name":"Agentic RAG：让 agent 自己改 query、决定是否再检索、判断资料够不够；代价是步数与成本上升。"},{"@type":"HowToStep","position":7,"name":"评测：分开测召回率、答案正确率与引用正确率，不要只测最终回答。"}]}</script>
