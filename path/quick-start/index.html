@@ -13,10 +13,10 @@
   <meta property="og:description" content="先读十个常用概念，再做三道自测。目标是分清模型、产品与能力边界，不需要记住全部名词。 10 个词 · 约 30 分钟 向外行解释：大模型是怎么「学会」的，为什么按 Token 计费" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
-  <script src="../../brand.js?v=ab9707c3586a"></script>
+  <script src="../../brand.js?v=2cf1b9037c48"></script>
   <script defer src="../../data/paths.js"></script>
   <script defer src="../../data/reading.js"></script>
-  <link rel="stylesheet" href="../../brand.css?v=ab9707c3586a" />
+  <link rel="stylesheet" href="../../brand.css?v=2cf1b9037c48" />
   <link rel="stylesheet" href="../../learn.css" />
   <style>:root { --accent: var(--cyan); }</style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"半小时入门","description":"先读十个常用概念，再做三道自测。目标是分清模型、产品与能力边界，不需要记住全部名词。","url":"https://learn.specul.com/path/quick-start/","inLanguage":"zh-Hans","itemListOrder":"ItemListOrderAscending","numberOfItems":10,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://learn.specul.com/term/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"},{"@type":"ListItem","position":2,"url":"https://learn.specul.com/term/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"},{"@type":"ListItem","position":3,"url":"https://learn.specul.com/term/%E5%A4%A7%E6%A8%A1%E5%9E%8B%20-%20%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/"},{"@type":"ListItem","position":4,"url":"https://learn.specul.com/term/%E6%8F%90%E7%A4%BA%E8%AF%8D/"},{"@type":"ListItem","position":5,"url":"https://learn.specul.com/term/Token/"},{"@type":"ListItem","position":6,"url":"https://learn.specul.com/term/%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AA%97%E5%8F%A3/"},{"@type":"ListItem","position":7,"url":"https://learn.specul.com/term/AI%20%E4%BA%A7%E5%93%81%20vs%20AI%20%E6%A8%A1%E5%9E%8B/"},{"@type":"ListItem","position":8,"url":"https://learn.specul.com/term/%E7%94%9F%E6%88%90%E5%BC%8F%20AI/"},{"@type":"ListItem","position":9,"url":"https://learn.specul.com/term/AI%20Agent%20%E4%B8%8E%E8%81%8A%E5%A4%A9%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E5%8C%BA%E5%88%AB/"},{"@type":"ListItem","position":10,"url":"https://learn.specul.com/term/%E8%83%BD%E5%8A%9B%E8%BE%B9%E7%95%8C/"}]}</script>
@@ -35,13 +35,13 @@
       <nav class="nav-links" aria-label="站点导航">
         <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
         <a href="https://learn.specul.com/" aria-current="page"><span data-zh>学 AI</span><span data-en>Learn</span></a>
-        <a href="https://tools.specul.com/"><span data-zh>AI 工具</span><span data-en>AI Tools</span></a>
-        <a href="https://models.specul.com/"><span data-zh>AI 模型</span><span data-en>AI Models</span></a>
+        <a href="https://tools.specul.com/"><span data-zh>工具</span><span data-en>Tools</span></a>
+        <a href="https://models.specul.com/"><span data-zh>模型</span><span data-en>Models</span></a>
         <a href="https://demos.specul.com/"><span data-zh>作品库</span><span data-en>Demos</span></a>
-        <a href="https://hardware.specul.com/"><span data-zh>AI 硬件</span><span data-en>AI Hardware</span></a>
-        <a href="https://papers.specul.com/"><span data-zh>论文</span><span data-en>Papers</span></a>
-        <a href="https://chain.specul.com/"><span data-zh>链 × AI</span><span data-en>Chain × AI</span></a>
-        <a href="https://nav.specul.com/"><span data-zh>AI 导航</span><span data-en>AI Directory</span></a>
+        <a href="https://hardware.specul.com/" class="nav-group-start"><span data-zh>硬件算力</span><span data-en>Compute</span></a>
+        <a href="https://papers.specul.com/"><span data-zh>AI 论文</span><span data-en>AI Papers</span></a>
+        <a href="https://chain.specul.com/"><span data-zh>链</span><span data-en>Chain</span></a>
+        <a href="https://nav.specul.com/" class="nav-group-start" data-nav-group="external"><span data-zh>外部站点</span><span data-en>External</span></a>
       </nav>
       <!-- 2026-10-10：.nav-tools 从 nav 元素**内部**移到外面，与 .nav-links 平级。
            放里面时窄屏下它会跟着链接一起换行：链接占满整行 → 按钮被挤到第三条
@@ -71,16 +71,16 @@
     <nav class="nav-drawer-list">
       <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
       <a href="https://learn.specul.com/" aria-current="page"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://tools.specul.com/"><span><span data-zh>AI 工具</span><span data-en>AI Tools</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://models.specul.com/"><span><span data-zh>AI 模型</span><span data-en>AI Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://tools.specul.com/"><span><span data-zh>工具</span><span data-en>Tools</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>模型</span><span data-en>Models</span></span><span class="ar" aria-hidden="true">→</span></a>
       <a href="https://demos.specul.com/"><span><span data-zh>作品库</span><span data-en>Demos</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://hardware.specul.com/"><span><span data-zh>AI 硬件</span><span data-en>AI Hardware</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://papers.specul.com/"><span><span data-zh>论文</span><span data-en>Papers</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://chain.specul.com/"><span><span data-zh>链 × AI</span><span data-en>Chain × AI</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://nav.specul.com/"><span><span data-zh>AI 导航</span><span data-en>AI Directory</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://hardware.specul.com/" class="nav-group-start"><span><span data-zh>硬件算力</span><span data-en>Compute</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://papers.specul.com/"><span><span data-zh>AI 论文</span><span data-en>AI Papers</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://chain.specul.com/"><span><span data-zh>链</span><span data-en>Chain</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/" class="nav-group-start" data-nav-group="external"><span><span data-zh>外部站点</span><span data-en>External</span></span><span class="ar" aria-hidden="true">↗</span></a>
     </nav>
     <div class="nav-drawer-foot">
-      <p><span data-zh>9 个站，各管一件事</span><span data-en>Nine sites, one job each</span></p>
+      <p><span data-zh>8 个内容站，外加一个去别处的出口</span><span data-en>Eight content sites, plus one gateway to other sites</span></p>
       <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
     </div>
   </aside>
@@ -151,13 +151,13 @@
       <nav class="foot-links" aria-label="页脚导航">
           <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
           <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
-          <a href="https://tools.specul.com/"><span data-zh>AI 工具</span><span data-en>AI Tools</span></a>
-          <a href="https://models.specul.com/"><span data-zh>AI 模型</span><span data-en>AI Models</span></a>
+          <a href="https://tools.specul.com/"><span data-zh>工具</span><span data-en>Tools</span></a>
+          <a href="https://models.specul.com/"><span data-zh>模型</span><span data-en>Models</span></a>
           <a href="https://demos.specul.com/"><span data-zh>作品库</span><span data-en>Demos</span></a>
-          <a href="https://hardware.specul.com/"><span data-zh>AI 硬件</span><span data-en>AI Hardware</span></a>
-          <a href="https://papers.specul.com/"><span data-zh>论文</span><span data-en>Papers</span></a>
-          <a href="https://chain.specul.com/"><span data-zh>链 × AI</span><span data-en>Chain × AI</span></a>
-          <a href="https://nav.specul.com/"><span data-zh>AI 导航</span><span data-en>AI Directory</span></a>
+          <a href="https://hardware.specul.com/"><span data-zh>硬件算力</span><span data-en>Compute</span></a>
+          <a href="https://papers.specul.com/"><span data-zh>AI 论文</span><span data-en>AI Papers</span></a>
+          <a href="https://chain.specul.com/"><span data-zh>链</span><span data-en>Chain</span></a>
+          <a href="https://nav.specul.com/"><span data-zh>外部站点</span><span data-en>External</span></a>
           <a href="https://github.com/speculcom/ai-handbook" target="_blank" rel="noopener"><span data-zh>开源</span><span data-en>Open source</span></a>
       </nav>
       <nav class="foot-legal-links" aria-label="法律">
