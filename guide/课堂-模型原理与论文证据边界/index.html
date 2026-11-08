@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>课堂-模型原理与论文证据边界 · 学 AI 课堂教案 | 投机取巧</title>
+  <meta name="description" content="学员用两篇论文摘要练「主张—证据—条件」三栏读法，再把观察连回自回归与注意力，去掉无条件的能力断言。 能从摘要分出研究问题、证据位置、实验条件三栏。" />
+  <link rel="canonical" href="https://learn.specul.com/guide/%E8%AF%BE%E5%A0%82-%E6%A8%A1%E5%9E%8B%E5%8E%9F%E7%90%86%E4%B8%8E%E8%AE%BA%E6%96%87%E8%AF%81%E6%8D%AE%E8%BE%B9%E7%95%8C/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="学 AI" />
+  <meta property="og:url" content="https://learn.specul.com/guide/%E8%AF%BE%E5%A0%82-%E6%A8%A1%E5%9E%8B%E5%8E%9F%E7%90%86%E4%B8%8E%E8%AE%BA%E6%96%87%E8%AF%81%E6%8D%AE%E8%BE%B9%E7%95%8C/" />
+  <meta property="og:title" content="课堂-模型原理与论文证据边界 · 学 AI 课堂教案" />
+  <meta property="og:description" content="学员用两篇论文摘要练「主张—证据—条件」三栏读法，再把观察连回自回归与注意力，去掉无条件的能力断言。 能从摘要分出研究问题、证据位置、实验条件三栏。" />
+  <meta name="theme-color" content="#16121f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <script src="../../brand.js?v=5e907aab579b"></script>
+  <script defer src="../../data/paths.js"></script>
+  <script defer src="../../data/reading.js"></script>
+  <link rel="stylesheet" href="../../brand.css?v=5e907aab579b" />
+  <link rel="stylesheet" href="../../learn.css" />
+  <style>:root { --accent: var(--gold); }</style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"课堂-模型原理与论文证据边界","description":"学员用两篇论文摘要练「主张—证据—条件」三栏读法，再把观察连回自回归与注意力，去掉无条件的能力断言。","url":"https://learn.specul.com/guide/%E8%AF%BE%E5%A0%82-%E6%A8%A1%E5%9E%8B%E5%8E%9F%E7%90%86%E4%B8%8E%E8%AE%BA%E6%96%87%E8%AF%81%E6%8D%AE%E8%BE%B9%E7%95%8C/","inLanguage":"zh-Hans","teaches":["能从摘要分出研究问题、证据位置、实验条件三栏。","能写出至少一条作者没有主张的内容，并说明依据来自原文哪一句。","能用自回归生成与注意力解释输出为什么逐词产生，不说成查表或理解。","能区分「窗口装得下」与「窗口里的信息被用上」，并引用位置效应的结论。"]}</script>
+</head>
+<body class="brand-ambient has-tabbar" style="--accent:var(--gold)">
+  <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+          <span class="brand-sub" id="markSub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/" aria-current="page"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://tools.specul.com/"><span data-zh>AI 工具</span><span data-en>AI Tools</span></a>
+        <a href="https://models.specul.com/"><span data-zh>AI 模型</span><span data-en>AI Models</span></a>
+        <a href="https://demos.specul.com/"><span data-zh>作品库</span><span data-en>Demos</span></a>
+        <a href="https://hardware.specul.com/"><span data-zh>AI 硬件</span><span data-en>AI Hardware</span></a>
+        <a href="https://papers.specul.com/"><span data-zh>论文</span><span data-en>Papers</span></a>
+        <a href="https://chain.specul.com/"><span data-zh>链 × AI</span><span data-en>Chain × AI</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>AI 导航</span><span data-en>AI Directory</span></a>
+      </nav>
+      <!-- 2026-10-10：.nav-tools 从 nav 元素**内部**移到外面，与 .nav-links 平级。
+           放里面时窄屏下它会跟着链接一起换行：链接占满整行 → 按钮被挤到第三条
+           （实测顶栏 134px、按钮组孤零零一行）。移出来后它与品牌同行，
+           链接独占第二行居中 —— 这才是下面注释里方案 B 想要的样子。 -->
+      <span class="nav-tools">
+        <a class="icon-btn" href="https://specul.com/search.html" aria-label="搜索" data-ui-aria-label-zh="搜索" data-ui-aria-label-en="Search" title="搜索全站" data-ui-title-zh="搜索全站" data-ui-title-en="Search all sites"><span aria-hidden="true">⌕</span></a>
+        <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+        <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+      </span>
+      <!-- B6（2026-10-09）：窄屏（≤900px）下 .nav-links 会隐藏，这个汉堡是替代入口。
+           行为在共享 brand.js 里（一处实现、六站共用），样式在共享 brand.css。
+           无脚本时 CSS 不会显示它，而是把 .nav-links 在窄屏放出来 —— 不会出现
+           「导航被藏进一个点了没反应的按钮」。 -->
+      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
+  </header>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <span class="brand-sub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/" aria-current="page"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://tools.specul.com/"><span><span data-zh>AI 工具</span><span data-en>AI Tools</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>AI 模型</span><span data-en>AI Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://demos.specul.com/"><span><span data-zh>作品库</span><span data-en>Demos</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://hardware.specul.com/"><span><span data-zh>AI 硬件</span><span data-en>AI Hardware</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://papers.specul.com/"><span><span data-zh>论文</span><span data-en>Papers</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://chain.specul.com/"><span><span data-zh>链 × AI</span><span data-en>Chain × AI</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/"><span><span data-zh>AI 导航</span><span data-en>AI Directory</span></span><span class="ar" aria-hidden="true">→</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>9 个站，各管一件事</span><span data-en>Nine sites, one job each</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
+  <main id="main">
+    <div class="container">
+      <article class="tp tp-wrap">
+        <nav class="tp-crumbs" aria-label="面包屑">
+          <a href="../../"><span data-zh>← 名词地图</span><span data-en>← Term map</span></a>
+          <span aria-hidden="true">·</span>
+          <a href="../../#layer-4"><span data-zh>第4站 · 四</span><span data-en>Station 4 · Under the Hood</span></a>
+          <span aria-hidden="true">·</span>
+          <span><span data-zh>课堂教案</span><span data-en>Lesson plan</span></span>
+        </nav>
+        <h1><span data-zh>课堂-模型原理与论文证据边界</span><span data-en>Lesson - Model Mechanics and Paper Evidence Limits</span></h1>
+        <p class="tp-en"><span data-zh>课堂教案 · 约 12 分钟</span><span data-en>Lesson plan · about 12 min</span><span data-zh> · 引用核验 2026-11-07（仅引用链接与日期）</span><span data-en> · refs checked 2026-11-07 (reference links and dates only)</span></p>
+        <p class="tp-p"><span data-zh>学员用两篇论文摘要练「主张—证据—条件」三栏读法，再把观察连回自回归与注意力，去掉无条件的能力断言。</span><span data-en>Learners use two paper abstracts to practise a claim-evidence-conditions reading, then connect observations back to autoregression and attention and remove unconditional capability claims.</span></p>
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>课时目标</span><span data-en>Lesson objectives</span></div>
+<span data-zh>
+      <p class="tp-li">能从摘要分出研究问题、证据位置、实验条件三栏。</p>
+      <p class="tp-li">能写出至少一条作者没有主张的内容，并说明依据来自原文哪一句。</p>
+      <p class="tp-li">能用自回归生成与注意力解释输出为什么逐词产生，不说成查表或理解。</p>
+      <p class="tp-li">能区分「窗口装得下」与「窗口里的信息被用上」，并引用位置效应的结论。</p>
+</span>
+<span data-en>
+      <p class="tp-li" data-en>Separate an abstract into research question, evidence location and experimental conditions.</p>
+      <p class="tp-li" data-en>Write at least one thing the authors did not claim and point to the original sentence supporting that boundary.</p>
+      <p class="tp-li" data-en>Use autoregressive generation and attention to explain why output is produced token by token, without calling it lookup or understanding.</p>
+      <p class="tp-li" data-en>Distinguish information fitting in the window from information in the window being used, citing position-effect findings.</p>
+</span>
+        </div>
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>材料</span><span data-en>Materials</span></div>
+<span data-zh>
+      <p class="tp-li">arXiv 1706.03762《Attention Is All You Need》摘要页：翻译任务、BLEU 与训练设置。</p>
+      <p class="tp-li">arXiv 2307.03172《Lost in the Middle》摘要页：多文档问答与键值检索中的位置效应。</p>
+      <p class="tp-li">本站《论文卡-Attention Is All You Need》作为读法示例。</p>
+      <p class="tp-li">三栏工作表：主张、证据位置、条件与未主张。</p>
+</span>
+<span data-en>
+      <p class="tp-li" data-en>arXiv 1706.03762 Attention Is All You Need abstract: translation tasks, BLEU and training setup.</p>
+      <p class="tp-li" data-en>arXiv 2307.03172 Lost in the Middle abstract: position effects in multi-document QA and key-value retrieval.</p>
+      <p class="tp-li" data-en>This site’s paper card for Attention Is All You Need as a reading example.</p>
+      <p class="tp-li" data-en>A three-column worksheet: claim, evidence location, conditions and non-claims.</p>
+</span>
+        </div>
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>步骤</span><span data-en>Steps</span></div>
+<span data-zh>
+          <ol>
+            <li>3 分钟读第一篇：圈出任务名与指标，写出它主张的范围。</li>
+            <li>3 分钟读第二篇：把结论写成条件句，说明信息位置变化时表现怎么变。</li>
+            <li>3 分钟互查：小组交换工作表，把无条件断言改写成带条件的转述。</li>
+            <li>3 分钟连回机制：用自回归与注意力解释这两篇的观察，指出哪些说法证据不足。</li>
+          </ol>
+</span>
+<span data-en>
+          <ol>
+            <li data-en>3-minute first paper: circle task names and metrics and write the scope of the claim.</li>
+            <li data-en>3-minute second paper: write conclusions as conditional sentences and describe how performance changes with information position.</li>
+            <li data-en>3-minute peer check: groups exchange worksheets and rewrite unconditional claims as conditional paraphrases.</li>
+            <li data-en>3-minute mechanism link: use autoregression and attention to explain the observations and identify statements with insufficient evidence.</li>
+          </ol>
+</span>
+        </div>
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>常见误解</span><span data-en>Common misconceptions</span></div>
+<span data-zh>
+      <p class="tp-li">把标题或摘要里的强措辞当结论；结论受任务与设置限制。</p>
+      <p class="tp-li">把长窗口当成「长文档都能答对」；信息在中间时表现可能下降。</p>
+      <p class="tp-li">把注意力当成人类式「注意到重点」；它是权重计算。</p>
+      <p class="tp-li">把某个指标提升当成能力全面升级；BLEU 对应特定翻译任务。</p>
+</span>
+<span data-en>
+      <p class="tp-li" data-en>Treating strong wording in a title or abstract as the conclusion; conclusions are bounded by task and setup.</p>
+      <p class="tp-li" data-en>Treating a long window as able to answer every long document correctly; performance can drop when information is in the middle.</p>
+      <p class="tp-li" data-en>Treating attention as human-like noticing the key point; it is a weight computation.</p>
+      <p class="tp-li" data-en>Treating one metric gain as a general capability upgrade; BLEU corresponds to a specific translation task.</p>
+</span>
+        </div>
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>评分核对</span><span data-en>Assessment checks</span></div>
+<span data-zh>
+      <p class="tp-li">三栏工作表填完，「未主张」一栏至少一条能回连原文。</p>
+      <p class="tp-li">转述句含任务、设置与观察结果，不含「理解」「总是」这类无条件词。</p>
+      <p class="tp-li">能说明本课没有复跑实验，也不给出自测分数。</p>
+</span>
+<span data-en>
+      <p class="tp-li" data-en>The worksheet is complete, and at least one non-claim can be linked back to the original text.</p>
+      <p class="tp-li" data-en>Paraphrases include task, setup and observed result, without unconditional words such as understands or always.</p>
+      <p class="tp-li" data-en>Learners can state that this lesson did not rerun experiments and gives no self-test score.</p>
+</span>
+        </div>
+        <section class="tp-sec"><h2><span data-zh>例子与判断</span><span data-en>Example and interpretation</span></h2><p class="t-sm"><span data-zh>以下是教学情境，不是本站运行或实测记录。</span><span data-en>A teaching scenario, not a measured or executed site test.</span></p><p class="tp-p"><span data-zh>课堂练习：把「长窗口能读懂整份文档」改写成「在该论文的多文档问答设置中，信息位置变化会影响表现」。未主张栏写明论文没有证明所有长文档任务都可靠。</span><span data-en>Class exercise: rewrite a long window understands the whole document into in the paper’s multi-document QA setup, information position affects performance. In the non-claim column, state that the paper does not prove reliability across all long-document tasks.</span></p></section>
+<section class="tp-sec diagnostic-guide"><h2><span data-zh>做完例子后怎么检查</span><span data-en>How to check your practice</span></h2><p><span data-zh>先用自己的话解释上面的判断，再检查输入条件，最后回原文验证。说不清原因时回概念；缺日期、字段或权限时补输入；结论无出处时先撤回结论。</span><span data-en>Explain the example in your own words, inspect input constraints, then verify against the source. Revisit concepts if you cannot explain why; supply missing dates, fields or permissions; withdraw unsupported conclusions.</span></p><p><a href="../../#diagnose-concept"><span data-zh>按这篇主题，先从“概念没分清”练习查起</span><span data-en>For this topic, start with concept confusion</span></a> · <a href="../../#diagnose"><span data-zh>查看全部六个情境与理由</span><span data-en>See all six scenarios and their reasoning</span></a></p></section>
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>先懂这几个词</span><span data-en>Terms behind this</span></div>
+          <p class="tp-p"><a class="t-guidechip" href="../../term/Transformer/"><span data-zh>Transformer</span><span data-en>Transformer</span></a> <a class="t-guidechip" href="../../term/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/"><span data-zh>注意力机制</span><span data-en>Attention</span></a> <a class="t-guidechip" href="../../term/%E8%87%AA%E5%9B%9E%E5%BD%92%E7%94%9F%E6%88%90/"><span data-zh>自回归生成</span><span data-en>Autoregressive Generation</span></a> <a class="t-guidechip" href="../../term/%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87/"><span data-zh>长上下文</span><span data-en>Long Context</span></a> <a class="t-guidechip" href="../../term/%E6%A8%A1%E5%9E%8B%E8%AF%84%E6%B5%8B%E7%9A%84%E5%B1%80%E9%99%90/"><span data-zh>模型评测的局限</span><span data-en>Evaluation Limits</span></a></p>
+        </div>
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>出处</span><span data-en>Sources</span></div>
+          <ul class="tp-refs">
+      <li><span data-zh>Vaswani 等《Attention Is All You Need》（arXiv 1706.03762）</span><span data-en>Vaswani et al., Attention Is All You Need (arXiv 1706.03762)</span> <a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener">↗</a></li>
+      <li><span data-zh>Liu 等《Lost in the Middle》（arXiv 2307.03172）</span><span data-en>Liu et al., Lost in the Middle: How Language Models Use Long Contexts (arXiv 2307.03172)</span> <a href="https://arxiv.org/abs/2307.03172" target="_blank" rel="noopener">↗</a></li>
+          </ul>
+        </div>
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>围绕这些概念继续读</span><span data-en>More on these concepts</span></div>
+          <p class="tp-p"><a href="../AI 真的读懂了你的话吗/"><span data-zh>AI 真的读懂了你的话吗</span><span data-en>Does AI Really Understand You</span></a> · <a href="../怎么评测 RAG 的效果/"><span data-zh>怎么评测 RAG 的效果</span><span data-en>How to Evaluate a RAG System</span></a> · <a href="../温度调高会更聪明/"><span data-zh>温度调高会更聪明</span><span data-en>Higher Temperature Means Smarter</span></a> · <a href="../怎么自建评测口径/"><span data-zh>怎么自建评测口径</span><span data-en>How to Build Your Own Eval</span></a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 <span data-zh>投机取巧</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+          <a href="https://tools.specul.com/"><span data-zh>AI 工具</span><span data-en>AI Tools</span></a>
+          <a href="https://models.specul.com/"><span data-zh>AI 模型</span><span data-en>AI Models</span></a>
+          <a href="https://demos.specul.com/"><span data-zh>作品库</span><span data-en>Demos</span></a>
+          <a href="https://hardware.specul.com/"><span data-zh>AI 硬件</span><span data-en>AI Hardware</span></a>
+          <a href="https://papers.specul.com/"><span data-zh>论文</span><span data-en>Papers</span></a>
+          <a href="https://chain.specul.com/"><span data-zh>链 × AI</span><span data-en>Chain × AI</span></a>
+          <a href="https://nav.specul.com/"><span data-zh>AI 导航</span><span data-en>AI Directory</span></a>
+          <a href="https://github.com/speculcom/ai-handbook" target="_blank" rel="noopener"><span data-zh>开源</span><span data-en>Open source</span></a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+    <div class="container">
+      <p><a href="https://specul.com/search.html"><span data-zh>搜索全站内容</span><span data-en>Search all sites</span></a></p>
+      <p><a href="https://specul.com/correct.html"><span data-zh>发现错误？生成纠错草稿</span><span data-en>Spot an error? Compose a correction draft</span></a></p>
+      <p class="foot-trademark"><span data-zh>产品名与商标归各权利方所有，本站仅作识别与评论之用。</span><span data-en>Product names and trademarks belong to their respective owners and are used here for identification and commentary only.</span></p>
+    </div>
+  </footer>
+<nav class="nav-tabbar" aria-label="快捷导航">
+  <a href="https://specul.com/"><span class="ti" aria-hidden="true">◎</span><span data-zh>首页</span><span data-en>Home</span></a>
+  <a href="https://learn.specul.com/" aria-current="page"><span class="ti" aria-hidden="true">▤</span><span data-zh>学 AI</span><span data-en>Learn</span></a>
+  <a href="https://tools.specul.com/"><span class="ti" aria-hidden="true">◈</span><span data-zh>工具</span><span data-en>Tools</span></a>
+  <a href="https://models.specul.com/"><span class="ti" aria-hidden="true">▦</span><span data-zh>模型</span><span data-en>Models</span></a>
+  <button type="button" id="tabMore" aria-controls="navDrawer" aria-expanded="false"><span class="ti" aria-hidden="true">⋯</span><span data-zh>更多</span><span data-en>More</span></button>
+</nav>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>机器人中间件 · 学 AI | 投机取巧</title>
+  <meta name="description" content="把机器人的驱动、算法与工具接成一套能互相通信的软件骨架。 机器人中间件是介于操作系统与机器人应用之间的通信与工具层：让传感器、控制器、规划器等节点以统一方式交换消息、调用服务。" />
+  <link rel="canonical" href="https://learn.specul.com/term/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%AD%E9%97%B4%E4%BB%B6/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="学 AI" />
+  <meta property="og:url" content="https://learn.specul.com/term/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%AD%E9%97%B4%E4%BB%B6/" />
+  <meta property="og:title" content="机器人中间件 · 学 AI" />
+  <meta property="og:description" content="把机器人的驱动、算法与工具接成一套能互相通信的软件骨架。 机器人中间件是介于操作系统与机器人应用之间的通信与工具层：让传感器、控制器、规划器等节点以统一方式交换消息、调用服务。" />
+  <meta name="theme-color" content="#16121f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <script src="../../brand.js?v=5e907aab579b"></script>
+  <script defer src="../../data/paths.js"></script>
+  <script defer src="../../data/reading.js"></script>
+  <link rel="stylesheet" href="../../brand.css?v=5e907aab579b" />
+  <link rel="stylesheet" href="../../learn.css" />
+  <style>:root { --accent: var(--cyan); }</style>
+  <!-- B5：词条页的结构性数据（DefinedTerm） -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTerm","name":"机器人中间件","alternateName":"Robot Middleware","description":"把机器人的驱动、算法与工具接成一套能互相通信的软件骨架。","url":"https://learn.specul.com/term/%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%AD%E9%97%B4%E4%BB%B6/","inLanguage":"zh-Hans","inDefinedTermSet":{"@type":"DefinedTermSet","name":"学 AI · 第五站（跑起来）","url":"https://learn.specul.com/#layer-5"},"isPartOf":{"@type":"WebSite","name":"学 AI","url":"https://learn.specul.com/"}}</script>
+</head>
+<body class="brand-ambient has-tabbar" style="--accent:var(--cyan)">
+  <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+          <span class="brand-sub" id="markSub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/" aria-current="page"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://tools.specul.com/"><span data-zh>AI 工具</span><span data-en>AI Tools</span></a>
+        <a href="https://models.specul.com/"><span data-zh>AI 模型</span><span data-en>AI Models</span></a>
+        <a href="https://demos.specul.com/"><span data-zh>作品库</span><span data-en>Demos</span></a>
+        <a href="https://hardware.specul.com/"><span data-zh>AI 硬件</span><span data-en>AI Hardware</span></a>
+        <a href="https://papers.specul.com/"><span data-zh>论文</span><span data-en>Papers</span></a>
+        <a href="https://chain.specul.com/"><span data-zh>链 × AI</span><span data-en>Chain × AI</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>AI 导航</span><span data-en>AI Directory</span></a>
+      </nav>
+      <!-- 2026-10-10：.nav-tools 从 nav 元素**内部**移到外面，与 .nav-links 平级。
+           放里面时窄屏下它会跟着链接一起换行：链接占满整行 → 按钮被挤到第三条
+           （实测顶栏 134px、按钮组孤零零一行）。移出来后它与品牌同行，
+           链接独占第二行居中 —— 这才是下面注释里方案 B 想要的样子。 -->
+      <span class="nav-tools">
+        <a class="icon-btn" href="https://specul.com/search.html" aria-label="搜索" data-ui-aria-label-zh="搜索" data-ui-aria-label-en="Search" title="搜索全站" data-ui-title-zh="搜索全站" data-ui-title-en="Search all sites"><span aria-hidden="true">⌕</span></a>
+        <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+        <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+      </span>
+      <!-- B6（2026-10-09）：窄屏（≤900px）下 .nav-links 会隐藏，这个汉堡是替代入口。
+           行为在共享 brand.js 里（一处实现、六站共用），样式在共享 brand.css。
+           无脚本时 CSS 不会显示它，而是把 .nav-links 在窄屏放出来 —— 不会出现
+           「导航被藏进一个点了没反应的按钮」。 -->
+      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
+  </header>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <span class="brand-sub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/" aria-current="page"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://tools.specul.com/"><span><span data-zh>AI 工具</span><span data-en>AI Tools</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>AI 模型</span><span data-en>AI Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://demos.specul.com/"><span><span data-zh>作品库</span><span data-en>Demos</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://hardware.specul.com/"><span><span data-zh>AI 硬件</span><span data-en>AI Hardware</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://papers.specul.com/"><span><span data-zh>论文</span><span data-en>Papers</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://chain.specul.com/"><span><span data-zh>链 × AI</span><span data-en>Chain × AI</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/"><span><span data-zh>AI 导航</span><span data-en>AI Directory</span></span><span class="ar" aria-hidden="true">→</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>9 个站，各管一件事</span><span data-en>Nine sites, one job each</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
+  <main id="main">
+    <div class="container">
+      <article class="tp tp-wrap">
+        <nav class="tp-crumbs" aria-label="面包屑">
+          <a href="../../"><span data-zh>← 名词地图</span><span data-en>← Term map</span></a>
+          <span aria-hidden="true">·</span>
+          <a href="../../#layer-5"><span data-zh>跑起来</span><span data-en>Running It</span></a>
+        </nav>
+        <h1><span data-zh>机器人中间件</span><span data-en>Robot Middleware</span></h1>
+        <p class="tp-en">Robot Middleware</p>
+        <ul class="tp-tags">
+          <li class="tp-tag"><span data-zh>硬件与部署</span><span data-en>Hardware &amp; deployment</span></li>
+          <li class="tp-tag"><span data-zh>第五站 · 跑起来</span><span data-en>Station 5 · Running It</span></li>
+          <li class="tp-tag"><span data-zh>引用核验 2026-11-07</span><span data-en>refs checked 2026-11-07</span></li>
+        </ul>
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>解决什么问题</span><span data-en>What problem it solves</span></div>
+          <p class="tp-p"><span data-zh>把机器人的驱动、算法与工具接成一套能互相通信的软件骨架。</span><span data-en>Connect robot drivers, algorithms and tools into a software skeleton whose parts can communicate.</span></p>
+        </div>
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>这是什么</span><span data-en>What it is</span></div>
+<span data-zh>
+      <p class="tp-li">机器人中间件是介于操作系统与机器人应用之间的通信与工具层：让传感器、控制器、规划器等节点以统一方式交换消息、调用服务。</p>
+      <p class="tp-li">ROS 2 是代表性实现，提供话题、服务、动作等通信原语，配套启动、日志与可视化工具，设计文档公开可查。</p>
+      <p class="tp-li">它解决的不是某个算法，而是「算法之间怎么连」：换一个规划器或传感器，不必重写整套系统。</p>
+</span>
+<span data-en>
+      <p class="tp-li" data-en>Robot middleware is the communication and tooling layer between the operating system and robot applications: sensors, controllers and planners exchange messages and call services in a uniform way.</p>
+      <p class="tp-li" data-en>ROS 2 is a representative implementation, providing communication primitives such as topics, services and actions, with launch, logging and visualisation tools; its design documents are public.</p>
+      <p class="tp-li" data-en>It solves how algorithms connect, not any single algorithm: replacing a planner or sensor does not require rewriting the whole system.</p>
+</span>
+        </div>
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>为什么需要知道</span><span data-en>Why it matters</span></div>
+          <p class="tp-p"><span data-zh>自己搭机器人或与机器人团队协作，绕不开这层骨架。知道中间件管通信与工具、不管智能本身，就能把「系统跑不起来」和「模型不够聪明」两类问题分开排查。</span><span data-en>Building a robot or working with a robotics team means dealing with this skeleton. Knowing middleware handles communication and tools, not intelligence itself, helps separate system integration failures from model capability failures.</span></p>
+        </div>
+      <div class="tp-sec"><div class="tp-lab"><span data-zh>别名</span><span data-en>Chinese aliases</span></div><p class="tp-p"><span data-zh>ROS · 机器人操作系统</span></p></div>
+
+<div class="tp-sec tp-related"><div class="tp-lab"><span data-zh>接着读什么，为什么</span><span data-en>What to read next, and why</span></div><ul><li><a href="../%E8%BF%90%E5%8A%A8%E8%A7%84%E5%88%92/"><span data-zh>运动规划</span><span data-en>Motion Planning</span></a><p class="t-sm"><span data-zh>在《机器人软件与学习路线》中接着读</span><span data-en>Continue in “Robot software and learning route”</span></p></li><li><a href="../%E4%BB%BF%E7%9C%9F%E5%88%B0%E5%AE%9E%E6%9C%BA%E8%BF%81%E7%A7%BB/"><span data-zh>仿真到实机迁移</span><span data-en>Sim-to-Real Transfer</span></a><p class="t-sm"><span data-zh>在《机器人软件与学习路线》中接着读</span><span data-en>Continue in “Robot software and learning route”</span></p></li></ul></div>
+      <div class="tp-sec">
+        <div class="tp-lab"><span data-zh>现在能做什么</span><span data-en>What you can do now</span></div>
+        <p class="tp-p"><a href="https://models.specul.com/"><span data-zh>去 Models 图谱：看这个模型有哪些量化版、按你的显存该下哪一档</span><span data-en>Models atlas: which quantisations exist and which tier fits your VRAM</span> ↗</a></p>
+        <p class="tp-p"><a href="../../#layer-5"><span data-zh>回到名词地图看第5站的其他 34 个词 →</span><span data-en>Back to the map: the other 34 terms in station 5 →</span></a></p>
+      </div>
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>出处</span><span data-en>Sources</span></div>
+          <ul class="tp-refs">
+      <li><span data-zh>ROS 2 官方文档</span><span data-en>ROS 2 official documentation</span> <a href="https://docs.ros.org/en/rolling/index.html" target="_blank" rel="noopener">↗</a></li>
+      <li><span data-zh>ROS 2 官方设计文档</span><span data-en>ROS 2 official design documents</span> <a href="https://design.ros2.org/" target="_blank" rel="noopener">↗</a></li>
+          </ul>
+        </div>
+
+        <nav class="tp-pn" aria-label="上下篇" data-ui-aria-label-zh="上下篇" data-ui-aria-label-en="Previous and next">
+          <a href="../%E6%95%B0%E6%8D%AE%E9%A9%BB%E7%95%99%E4%B8%8E%E5%87%BA%E5%A2%83/"><span class="tp-ph"><span data-zh>上一篇</span><span data-en>Previous</span></span><span data-zh>数据驻留与出境</span><span data-en>Data Residency and Cross-border Transfer</span></a>
+          <a href="../%E5%BC%80%E6%BA%90%E6%A8%A1%E5%9E%8B/" style="text-align:right"><span class="tp-ph"><span data-zh>下一篇</span><span data-en>Next</span></span><span data-zh>开源模型</span><span data-en>Open-weight Model</span></a>
+        </nav>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 <span data-zh>投机取巧</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+          <a href="https://tools.specul.com/"><span data-zh>AI 工具</span><span data-en>AI Tools</span></a>
+          <a href="https://models.specul.com/"><span data-zh>AI 模型</span><span data-en>AI Models</span></a>
+          <a href="https://demos.specul.com/"><span data-zh>作品库</span><span data-en>Demos</span></a>
+          <a href="https://hardware.specul.com/"><span data-zh>AI 硬件</span><span data-en>AI Hardware</span></a>
+          <a href="https://papers.specul.com/"><span data-zh>论文</span><span data-en>Papers</span></a>
+          <a href="https://chain.specul.com/"><span data-zh>链 × AI</span><span data-en>Chain × AI</span></a>
+          <a href="https://nav.specul.com/"><span data-zh>AI 导航</span><span data-en>AI Directory</span></a>
+          <a href="https://github.com/speculcom/ai-handbook" target="_blank" rel="noopener"><span data-zh>开源</span><span data-en>Open source</span></a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+    <div class="container">
+      <p><a href="https://specul.com/search.html"><span data-zh>搜索全站内容</span><span data-en>Search all sites</span></a></p>
+      <p><a href="https://specul.com/correct.html"><span data-zh>发现错误？生成纠错草稿</span><span data-en>Spot an error? Compose a correction draft</span></a></p>
+      <p class="foot-trademark"><span data-zh>产品名与商标归各权利方所有，本站仅作识别与评论之用。</span><span data-en>Product names and trademarks belong to their respective owners and are used here for identification and commentary only.</span></p>
+    </div>
+  </footer>
+<nav class="nav-tabbar" aria-label="快捷导航">
+  <a href="https://specul.com/"><span class="ti" aria-hidden="true">◎</span><span data-zh>首页</span><span data-en>Home</span></a>
+  <a href="https://learn.specul.com/" aria-current="page"><span class="ti" aria-hidden="true">▤</span><span data-zh>学 AI</span><span data-en>Learn</span></a>
+  <a href="https://tools.specul.com/"><span class="ti" aria-hidden="true">◈</span><span data-zh>工具</span><span data-en>Tools</span></a>
+  <a href="https://models.specul.com/"><span class="ti" aria-hidden="true">▦</span><span data-zh>模型</span><span data-en>Models</span></a>
+  <button type="button" id="tabMore" aria-controls="navDrawer" aria-expanded="false"><span class="ti" aria-hidden="true">⋯</span><span data-zh>更多</span><span data-en>More</span></button>
+</nav>
+</body>
+</html>

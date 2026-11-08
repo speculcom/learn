@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>课堂-AI 能力与边界入门 · 学 AI 课堂教案 | 投机取巧</title>
+  <meta name="description" content="第一节微课把「AI 能做什么」换成可核对的任务清单。学员分清「读起来通顺」与「有来源支持」，并写出需要人工兜底的情形。 能把一个模糊需求改写成有输入、有完成标准的任务。" />
+  <link rel="canonical" href="https://learn.specul.com/guide/%E8%AF%BE%E5%A0%82-AI%20%E8%83%BD%E5%8A%9B%E4%B8%8E%E8%BE%B9%E7%95%8C%E5%85%A5%E9%97%A8/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="学 AI" />
+  <meta property="og:url" content="https://learn.specul.com/guide/%E8%AF%BE%E5%A0%82-AI%20%E8%83%BD%E5%8A%9B%E4%B8%8E%E8%BE%B9%E7%95%8C%E5%85%A5%E9%97%A8/" />
+  <meta property="og:title" content="课堂-AI 能力与边界入门 · 学 AI 课堂教案" />
+  <meta property="og:description" content="第一节微课把「AI 能做什么」换成可核对的任务清单。学员分清「读起来通顺」与「有来源支持」，并写出需要人工兜底的情形。 能把一个模糊需求改写成有输入、有完成标准的任务。" />
+  <meta name="theme-color" content="#16121f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <script src="../../brand.js?v=5e907aab579b"></script>
+  <script defer src="../../data/paths.js"></script>
+  <script defer src="../../data/reading.js"></script>
+  <link rel="stylesheet" href="../../brand.css?v=5e907aab579b" />
+  <link rel="stylesheet" href="../../learn.css" />
+  <style>:root { --accent: var(--gold); }</style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"课堂-AI 能力与边界入门","description":"第一节微课把「AI 能做什么」换成可核对的任务清单。学员分清「读起来通顺」与「有来源支持」，并写出需要人工兜底的情形。","url":"https://learn.specul.com/guide/%E8%AF%BE%E5%A0%82-AI%20%E8%83%BD%E5%8A%9B%E4%B8%8E%E8%BE%B9%E7%95%8C%E5%85%A5%E9%97%A8/","inLanguage":"zh-Hans","teaches":["能把一个模糊需求改写成有输入、有完成标准的任务。","能区分输出通顺与输出有来源支持，并各举一个课堂例子。","能说出三类要人工复核的内容：数字与日期、外部事实、影响他人权益的判断。","能按场景与多个指标描述一次结果，不只报一个总分。"]}</script>
+</head>
+<body class="brand-ambient has-tabbar" style="--accent:var(--gold)">
+  <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+          <span class="brand-sub" id="markSub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/" aria-current="page"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://tools.specul.com/"><span data-zh>AI 工具</span><span data-en>AI Tools</span></a>
+        <a href="https://models.specul.com/"><span data-zh>AI 模型</span><span data-en>AI Models</span></a>
+        <a href="https://demos.specul.com/"><span data-zh>作品库</span><span data-en>Demos</span></a>
+        <a href="https://hardware.specul.com/"><span data-zh>AI 硬件</span><span data-en>AI Hardware</span></a>
+        <a href="https://papers.specul.com/"><span data-zh>论文</span><span data-en>Papers</span></a>
+        <a href="https://chain.specul.com/"><span data-zh>链 × AI</span><span data-en>Chain × AI</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>AI 导航</span><span data-en>AI Directory</span></a>
+      </nav>
+      <!-- 2026-10-10：.nav-tools 从 nav 元素**内部**移到外面，与 .nav-links 平级。
+           放里面时窄屏下它会跟着链接一起换行：链接占满整行 → 按钮被挤到第三条
+           （实测顶栏 134px、按钮组孤零零一行）。移出来后它与品牌同行，
+           链接独占第二行居中 —— 这才是下面注释里方案 B 想要的样子。 -->
+      <span class="nav-tools">
+        <a class="icon-btn" href="https://specul.com/search.html" aria-label="搜索" data-ui-aria-label-zh="搜索" data-ui-aria-label-en="Search" title="搜索全站" data-ui-title-zh="搜索全站" data-ui-title-en="Search all sites"><span aria-hidden="true">⌕</span></a>
+        <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+        <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+      </span>
+      <!-- B6（2026-10-09）：窄屏（≤900px）下 .nav-links 会隐藏，这个汉堡是替代入口。
+           行为在共享 brand.js 里（一处实现、六站共用），样式在共享 brand.css。
+           无脚本时 CSS 不会显示它，而是把 .nav-links 在窄屏放出来 —— 不会出现
+           「导航被藏进一个点了没反应的按钮」。 -->
+      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
+  </header>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <span class="brand-sub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/" aria-current="page"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://tools.specul.com/"><span><span data-zh>AI 工具</span><span data-en>AI Tools</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>AI 模型</span><span data-en>AI Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://demos.specul.com/"><span><span data-zh>作品库</span><span data-en>Demos</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://hardware.specul.com/"><span><span data-zh>AI 硬件</span><span data-en>AI Hardware</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://papers.specul.com/"><span><span data-zh>论文</span><span data-en>Papers</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://chain.specul.com/"><span><span data-zh>链 × AI</span><span data-en>Chain × AI</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/"><span><span data-zh>AI 导航</span><span data-en>AI Directory</span></span><span class="ar" aria-hidden="true">→</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>9 个站，各管一件事</span><span data-en>Nine sites, one job each</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
+  <main id="main">
+    <div class="container">
+      <article class="tp tp-wrap">
+        <nav class="tp-crumbs" aria-label="面包屑">
+          <a href="../../"><span data-zh>← 名词地图</span><span data-en>← Term map</span></a>
+          <span aria-hidden="true">·</span>
+          <a href="../../#layer-1"><span data-zh>第1站 · 一</span><span data-en>Station 1 · Getting In</span></a>
+          <span aria-hidden="true">·</span>
+          <span><span data-zh>课堂教案</span><span data-en>Lesson plan</span></span>
+        </nav>
+        <h1><span data-zh>课堂-AI 能力与边界入门</span><span data-en>Lesson - AI Capabilities and Limits</span></h1>
+        <p class="tp-en"><span data-zh>课堂教案 · 约 12 分钟</span><span data-en>Lesson plan · about 12 min</span><span data-zh> · 引用核验 2026-11-07（仅引用链接与日期）</span><span data-en> · refs checked 2026-11-07 (reference links and dates only)</span></p>
+        <p class="tp-p"><span data-zh>第一节微课把「AI 能做什么」换成可核对的任务清单。学员分清「读起来通顺」与「有来源支持」，并写出需要人工兜底的情形。</span><span data-en>The first micro-lesson turns what AI can do into a checkable task list. Learners separate fluent output from source-supported output and write down cases that need human fallback.</span></p>
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>课时目标</span><span data-en>Lesson objectives</span></div>
+<span data-zh>
+      <p class="tp-li">能把一个模糊需求改写成有输入、有完成标准的任务。</p>
+      <p class="tp-li">能区分输出通顺与输出有来源支持，并各举一个课堂例子。</p>
+      <p class="tp-li">能说出三类要人工复核的内容：数字与日期、外部事实、影响他人权益的判断。</p>
+      <p class="tp-li">能按场景与多个指标描述一次结果，不只报一个总分。</p>
+</span>
+<span data-en>
+      <p class="tp-li" data-en>Rewrite a vague need into a task with inputs and completion criteria.</p>
+      <p class="tp-li" data-en>Distinguish fluent output from source-supported output and give one classroom example of each.</p>
+      <p class="tp-li" data-en>Name three kinds of content that need human review: numbers and dates, external facts, and decisions affecting people’s rights.</p>
+      <p class="tp-li" data-en>Describe a result by scenario and multiple metrics rather than reporting only one total score.</p>
+</span>
+        </div>
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>材料</span><span data-en>Materials</span></div>
+<span data-zh>
+      <p class="tp-li">微软 Learn《Introduction to generative AI and agents》模块页：课前读 LLM 与提示两节。</p>
+      <p class="tp-li">HELM 论文摘要页（arXiv 2211.09110）：看它为什么分场景、分指标。</p>
+      <p class="tp-li">每组一张记录表，五列：任务、输入材料、模型输出、判断依据、待复核项。</p>
+      <p class="tp-li">学员自带一个对话式 AI 入口；课堂不统一采购，也不收集账号信息。</p>
+</span>
+<span data-en>
+      <p class="tp-li" data-en>Microsoft Learn module Introduction to generative AI and agents: read the LLM and prompt sections before class.</p>
+      <p class="tp-li" data-en>HELM abstract page (arXiv 2211.09110): see why it evaluates by scenario and metric.</p>
+      <p class="tp-li" data-en>One recording sheet per group with five columns: task, input material, model output, basis for judgment, items to recheck.</p>
+      <p class="tp-li" data-en>Learners bring their own chat AI entry point; the class does not procure accounts or collect account information.</p>
+</span>
+        </div>
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>步骤</span><span data-en>Steps</span></div>
+<span data-zh>
+          <ol>
+            <li>2 分钟导入：各组写下一个真实需求，教师把它改写成「输入＋完成标准」。</li>
+            <li>4 分钟演示：同一份材料问两次。一次只说「介绍一下」，一次给字段与限制。</li>
+            <li>4 分钟练习：各组填记录表，把断言分成「材料支持」与「需外部核对」两类。</li>
+            <li>2 分钟小结：每组报一条边界与一条兜底动作，教师按场景与指标口径归拢。</li>
+          </ol>
+</span>
+<span data-en>
+          <ol>
+            <li data-en>2-minute opener: each group writes a real need, and the teacher rewrites it as input plus completion criteria.</li>
+            <li data-en>4-minute demo: ask about the same material twice, once with only introduce this and once with fields and limits.</li>
+            <li data-en>4-minute practice: groups fill the sheet and split claims into supported by the material and needing external checks.</li>
+            <li data-en>2-minute wrap-up: each group reports one limit and one fallback action; the teacher groups them by scenario and metric.</li>
+          </ol>
+</span>
+        </div>
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>常见误解</span><span data-en>Common misconceptions</span></div>
+<span data-zh>
+      <p class="tp-li">把语气笃定、结构完整当成内容正确；流畅度不是证据。</p>
+      <p class="tp-li">把一个总分或榜单名次当成所有任务都能用；HELM 分场景测七个指标。</p>
+      <p class="tp-li">把「模型说不知道」当成能力差；缺输入或超范围时承认未知是可用的行为。</p>
+</span>
+<span data-en>
+      <p class="tp-li" data-en>Treating confident tone and complete structure as correctness; fluency is not evidence.</p>
+      <p class="tp-li" data-en>Treating one total score or leaderboard rank as fit for every task; HELM measures seven metrics across scenarios.</p>
+      <p class="tp-li" data-en>Treating the model saying it does not know as weakness; admitting unknown when input is missing or out of scope is usable behaviour.</p>
+</span>
+        </div>
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>评分核对</span><span data-en>Assessment checks</span></div>
+<span data-zh>
+      <p class="tp-li">任务写全「输入＋完成标准」，缺一项就回到导入环节重写。</p>
+      <p class="tp-li">至少标出一处需外部核对的断言，并说明准备用哪个来源核对。</p>
+      <p class="tp-li">能说清这节课没做什么：只核对来源与条件，不做性能实测，也不给模型排名。</p>
+</span>
+<span data-en>
+      <p class="tp-li" data-en>The task includes input and completion criteria; if either is missing, return to the opener and rewrite.</p>
+      <p class="tp-li" data-en>At least one claim is marked as needing external checking, with the source to be used named.</p>
+      <p class="tp-li" data-en>Learners can state what this lesson did not do: only source and condition checks, no performance benchmark and no model ranking.</p>
+</span>
+        </div>
+        <section class="tp-sec"><h2><span data-zh>例子与判断</span><span data-en>Example and interpretation</span></h2><p class="t-sm"><span data-zh>以下是教学情境，不是本站运行或实测记录。</span><span data-en>A teaching scenario, not a measured or executed site test.</span></p><p class="tp-p"><span data-zh>课堂练习：把「帮我介绍这份通知」改写成「提取时间、地点、报名方式；原文没有的字段留空」。输出后逐字段回连原文，通顺但无依据的字段标为待复核。</span><span data-en>Class exercise: rewrite introduce this notice into extract time, place and registration method; leave fields absent from the source empty. After output, link each field back to the source and mark fluent but unsupported fields for review.</span></p></section>
+<section class="tp-sec diagnostic-guide"><h2><span data-zh>做完例子后怎么检查</span><span data-en>How to check your practice</span></h2><p><span data-zh>先用自己的话解释上面的判断，再检查输入条件，最后回原文验证。说不清原因时回概念；缺日期、字段或权限时补输入；结论无出处时先撤回结论。</span><span data-en>Explain the example in your own words, inspect input constraints, then verify against the source. Revisit concepts if you cannot explain why; supply missing dates, fields or permissions; withdraw unsupported conclusions.</span></p><p><a href="../../#diagnose-concept"><span data-zh>按这篇主题，先从“概念没分清”练习查起</span><span data-en>For this topic, start with concept confusion</span></a> · <a href="../../#diagnose"><span data-zh>查看全部六个情境与理由</span><span data-en>See all six scenarios and their reasoning</span></a></p></section>
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>先懂这几个词</span><span data-en>Terms behind this</span></div>
+          <p class="tp-p"><a class="t-guidechip" href="../../term/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"><span data-zh>人工智能</span><span data-en>Artificial Intelligence, AI</span></a> <a class="t-guidechip" href="../../term/%E7%94%9F%E6%88%90%E5%BC%8F%20AI/"><span data-zh>生成式 AI</span><span data-en>Generative AI</span></a> <a class="t-guidechip" href="../../term/%E8%83%BD%E5%8A%9B%E8%BE%B9%E7%95%8C/"><span data-zh>能力边界</span><span data-en>Capability Boundary</span></a> <a class="t-guidechip" href="../../term/%E5%B9%BB%E8%A7%89/"><span data-zh>幻觉</span><span data-en>Hallucination</span></a> <a class="t-guidechip" href="../../term/%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/"><span data-zh>基准测试</span><span data-en>Benchmark</span></a></p>
+        </div>
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>出处</span><span data-en>Sources</span></div>
+          <ul class="tp-refs">
+      <li><span data-zh>微软 Learn：生成式 AI 与智能体入门模块</span><span data-en>Microsoft Learn: Introduction to generative AI and agents</span> <a href="https://learn.microsoft.com/en-us/training/modules/fundamentals-generative-ai/" target="_blank" rel="noopener">↗</a></li>
+      <li><span data-zh>HELM：语言模型的整体评测（arXiv 2211.09110）</span><span data-en>HELM: Holistic Evaluation of Language Models (arXiv 2211.09110)</span> <a href="https://arxiv.org/abs/2211.09110" target="_blank" rel="noopener">↗</a></li>
+          </ul>
+        </div>
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>围绕这些概念继续读</span><span data-en>More on these concepts</span></div>
+          <p class="tp-p"><a href="../AI 常见误区总索引/"><span data-zh>AI 常见误区总索引</span><span data-en>AI Misconceptions: Index</span></a> · <a href="../怎么向 AI 提问/"><span data-zh>怎么向 AI 提问</span><span data-en>How to Ask AI</span></a> · <a href="../怎么判断 AI 新闻是不是炒作/"><span data-zh>怎么判断 AI 新闻是不是炒作</span><span data-en>How to Tell if AI News Is Hype</span></a> · <a href="../怎么评测 RAG 的效果/"><span data-zh>怎么评测 RAG 的效果</span><span data-en>How to Evaluate a RAG System</span></a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 <span data-zh>投机取巧</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+          <a href="https://tools.specul.com/"><span data-zh>AI 工具</span><span data-en>AI Tools</span></a>
+          <a href="https://models.specul.com/"><span data-zh>AI 模型</span><span data-en>AI Models</span></a>
+          <a href="https://demos.specul.com/"><span data-zh>作品库</span><span data-en>Demos</span></a>
+          <a href="https://hardware.specul.com/"><span data-zh>AI 硬件</span><span data-en>AI Hardware</span></a>
+          <a href="https://papers.specul.com/"><span data-zh>论文</span><span data-en>Papers</span></a>
+          <a href="https://chain.specul.com/"><span data-zh>链 × AI</span><span data-en>Chain × AI</span></a>
+          <a href="https://nav.specul.com/"><span data-zh>AI 导航</span><span data-en>AI Directory</span></a>
+          <a href="https://github.com/speculcom/ai-handbook" target="_blank" rel="noopener"><span data-zh>开源</span><span data-en>Open source</span></a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+    <div class="container">
+      <p><a href="https://specul.com/search.html"><span data-zh>搜索全站内容</span><span data-en>Search all sites</span></a></p>
+      <p><a href="https://specul.com/correct.html"><span data-zh>发现错误？生成纠错草稿</span><span data-en>Spot an error? Compose a correction draft</span></a></p>
+      <p class="foot-trademark"><span data-zh>产品名与商标归各权利方所有，本站仅作识别与评论之用。</span><span data-en>Product names and trademarks belong to their respective owners and are used here for identification and commentary only.</span></p>
+    </div>
+  </footer>
+<nav class="nav-tabbar" aria-label="快捷导航">
+  <a href="https://specul.com/"><span class="ti" aria-hidden="true">◎</span><span data-zh>首页</span><span data-en>Home</span></a>
+  <a href="https://learn.specul.com/" aria-current="page"><span class="ti" aria-hidden="true">▤</span><span data-zh>学 AI</span><span data-en>Learn</span></a>
+  <a href="https://tools.specul.com/"><span class="ti" aria-hidden="true">◈</span><span data-zh>工具</span><span data-en>Tools</span></a>
+  <a href="https://models.specul.com/"><span class="ti" aria-hidden="true">▦</span><span data-zh>模型</span><span data-en>Models</span></a>
+  <button type="button" id="tabMore" aria-controls="navDrawer" aria-expanded="false"><span class="ti" aria-hidden="true">⋯</span><span data-zh>更多</span><span data-en>More</span></button>
+</nav>
+</body>
+</html>

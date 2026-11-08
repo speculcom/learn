@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>物理仿真 · 学 AI | 投机取巧</title>
+  <meta name="description" content="在计算机里算出物体的运动与接触，给机器人一个能反复试错的练习场。 物理仿真用物理引擎数值求解运动方程：给定质量、关节、摩擦与碰撞，算出下一时刻物体会怎么动。" />
+  <link rel="canonical" href="https://learn.specul.com/term/%E7%89%A9%E7%90%86%E4%BB%BF%E7%9C%9F/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="学 AI" />
+  <meta property="og:url" content="https://learn.specul.com/term/%E7%89%A9%E7%90%86%E4%BB%BF%E7%9C%9F/" />
+  <meta property="og:title" content="物理仿真 · 学 AI" />
+  <meta property="og:description" content="在计算机里算出物体的运动与接触，给机器人一个能反复试错的练习场。 物理仿真用物理引擎数值求解运动方程：给定质量、关节、摩擦与碰撞，算出下一时刻物体会怎么动。" />
+  <meta name="theme-color" content="#16121f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <script src="../../brand.js?v=5e907aab579b"></script>
+  <script defer src="../../data/paths.js"></script>
+  <script defer src="../../data/reading.js"></script>
+  <link rel="stylesheet" href="../../brand.css?v=5e907aab579b" />
+  <link rel="stylesheet" href="../../learn.css" />
+  <style>:root { --accent: var(--cyan); }</style>
+  <!-- B5：词条页的结构性数据（DefinedTerm） -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTerm","name":"物理仿真","alternateName":"Physics Simulation","description":"在计算机里算出物体的运动与接触，给机器人一个能反复试错的练习场。","url":"https://learn.specul.com/term/%E7%89%A9%E7%90%86%E4%BB%BF%E7%9C%9F/","inLanguage":"zh-Hans","inDefinedTermSet":{"@type":"DefinedTermSet","name":"学 AI · 第三站（用深）","url":"https://learn.specul.com/#layer-3"},"isPartOf":{"@type":"WebSite","name":"学 AI","url":"https://learn.specul.com/"}}</script>
+</head>
+<body class="brand-ambient has-tabbar" style="--accent:var(--cyan)">
+  <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+          <span class="brand-sub" id="markSub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/" aria-current="page"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://tools.specul.com/"><span data-zh>AI 工具</span><span data-en>AI Tools</span></a>
+        <a href="https://models.specul.com/"><span data-zh>AI 模型</span><span data-en>AI Models</span></a>
+        <a href="https://demos.specul.com/"><span data-zh>作品库</span><span data-en>Demos</span></a>
+        <a href="https://hardware.specul.com/"><span data-zh>AI 硬件</span><span data-en>AI Hardware</span></a>
+        <a href="https://papers.specul.com/"><span data-zh>论文</span><span data-en>Papers</span></a>
+        <a href="https://chain.specul.com/"><span data-zh>链 × AI</span><span data-en>Chain × AI</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>AI 导航</span><span data-en>AI Directory</span></a>
+      </nav>
+      <!-- 2026-10-10：.nav-tools 从 nav 元素**内部**移到外面，与 .nav-links 平级。
+           放里面时窄屏下它会跟着链接一起换行：链接占满整行 → 按钮被挤到第三条
+           （实测顶栏 134px、按钮组孤零零一行）。移出来后它与品牌同行，
+           链接独占第二行居中 —— 这才是下面注释里方案 B 想要的样子。 -->
+      <span class="nav-tools">
+        <a class="icon-btn" href="https://specul.com/search.html" aria-label="搜索" data-ui-aria-label-zh="搜索" data-ui-aria-label-en="Search" title="搜索全站" data-ui-title-zh="搜索全站" data-ui-title-en="Search all sites"><span aria-hidden="true">⌕</span></a>
+        <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+        <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+      </span>
+      <!-- B6（2026-10-09）：窄屏（≤900px）下 .nav-links 会隐藏，这个汉堡是替代入口。
+           行为在共享 brand.js 里（一处实现、六站共用），样式在共享 brand.css。
+           无脚本时 CSS 不会显示它，而是把 .nav-links 在窄屏放出来 —— 不会出现
+           「导航被藏进一个点了没反应的按钮」。 -->
+      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
+  </header>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <span class="brand-sub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/" aria-current="page"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://tools.specul.com/"><span><span data-zh>AI 工具</span><span data-en>AI Tools</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>AI 模型</span><span data-en>AI Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://demos.specul.com/"><span><span data-zh>作品库</span><span data-en>Demos</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://hardware.specul.com/"><span><span data-zh>AI 硬件</span><span data-en>AI Hardware</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://papers.specul.com/"><span><span data-zh>论文</span><span data-en>Papers</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://chain.specul.com/"><span><span data-zh>链 × AI</span><span data-en>Chain × AI</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/"><span><span data-zh>AI 导航</span><span data-en>AI Directory</span></span><span class="ar" aria-hidden="true">→</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>9 个站，各管一件事</span><span data-en>Nine sites, one job each</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
+  <main id="main">
+    <div class="container">
+      <article class="tp tp-wrap">
+        <nav class="tp-crumbs" aria-label="面包屑">
+          <a href="../../"><span data-zh>← 名词地图</span><span data-en>← Term map</span></a>
+          <span aria-hidden="true">·</span>
+          <a href="../../#layer-3"><span data-zh>用深</span><span data-en>Going Deeper</span></a>
+        </nav>
+        <h1><span data-zh>物理仿真</span><span data-en>Physics Simulation</span></h1>
+        <p class="tp-en">Physics Simulation</p>
+        <ul class="tp-tags">
+          <li class="tp-tag"><span data-zh>硬件与部署</span><span data-en>Hardware &amp; deployment</span></li>
+          <li class="tp-tag"><span data-zh>第三站 · 用深</span><span data-en>Station 3 · Going Deeper</span></li>
+          <li class="tp-tag"><span data-zh>引用核验 2026-11-07</span><span data-en>refs checked 2026-11-07</span></li>
+        </ul>
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>解决什么问题</span><span data-en>What problem it solves</span></div>
+          <p class="tp-p"><span data-zh>在计算机里算出物体的运动与接触，给机器人一个能反复试错的练习场。</span><span data-en>Compute object motion and contact in a computer, giving robots a practice ground for repeated trial-and-error.</span></p>
+        </div>
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>这是什么</span><span data-en>What it is</span></div>
+<span data-zh>
+      <p class="tp-li">物理仿真用物理引擎数值求解运动方程：给定质量、关节、摩擦与碰撞，算出下一时刻物体会怎么动。</p>
+      <p class="tp-li">MuJoCo 这类引擎专为机器人与生物力学设计，支持接触丰富的操作任务；研究者先在仿真里训练和测试策略，再考虑搬到实机。</p>
+      <p class="tp-li">仿真是近似：步长、接触模型与参数误差都会让仿真里的行为偏离现实，这正是仿真到实机迁移要处理的缺口。</p>
+</span>
+<span data-en>
+      <p class="tp-li" data-en>Physics simulation numerically solves equations of motion with a physics engine: given mass, joints, friction and collisions, it computes how objects move at the next time step.</p>
+      <p class="tp-li" data-en>Engines such as MuJoCo are designed for robotics and biomechanics and support contact-rich manipulation; researchers train and test policies in simulation before considering real hardware.</p>
+      <p class="tp-li" data-en>Simulation is an approximation: step size, contact models and parameter errors make simulated behaviour diverge from reality, which is exactly the gap sim-to-real transfer must handle.</p>
+</span>
+        </div>
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>为什么需要知道</span><span data-en>Why it matters</span></div>
+          <p class="tp-p"><span data-zh>真机试错又贵又慢还可能摔坏硬件，仿真让同一套练习可以并行跑成千上万次。但「仿真里跑通」不等于「现实里跑通」，评估机器人方案时要先问它的验证是在哪一层做的。</span><span data-en>Real-robot trial-and-error is expensive, slow and can break hardware; simulation lets the same practice run thousands of times in parallel. But passing in simulation does not mean passing in reality, so evaluation should ask at which layer validation was done.</span></p>
+        </div>
+
+<div class="tp-sec tp-related"><div class="tp-lab"><span data-zh>接着读什么，为什么</span><span data-en>What to read next, and why</span></div><ul><li><a href="../%E9%81%A5%E6%93%8D%E4%BD%9C/"><span data-zh>遥操作</span><span data-en>Teleoperation</span></a><p class="t-sm"><span data-zh>在《机器人软件与学习路线》中接着读</span><span data-en>Continue in “Robot software and learning route”</span></p></li><li><a href="../%E8%BF%90%E5%8A%A8%E8%A7%84%E5%88%92/"><span data-zh>运动规划</span><span data-en>Motion Planning</span></a><p class="t-sm"><span data-zh>在《机器人软件与学习路线》中接着读</span><span data-en>Continue in “Robot software and learning route”</span></p></li></ul></div>
+      <div class="tp-sec">
+        <div class="tp-lab"><span data-zh>现在能做什么</span><span data-en>What you can do now</span></div>
+        <p class="tp-p"><a href="https://models.specul.com/"><span data-zh>去 Models 图谱：看这个模型有哪些量化版、按你的显存该下哪一档</span><span data-en>Models atlas: which quantisations exist and which tier fits your VRAM</span> ↗</a></p>
+        <p class="tp-p"><a href="../../#layer-3"><span data-zh>回到名词地图看第3站的其他 45 个词 →</span><span data-en>Back to the map: the other 45 terms in station 3 →</span></a></p>
+      </div>
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>出处</span><span data-en>Sources</span></div>
+          <ul class="tp-refs">
+      <li><span data-zh>MuJoCo 官网</span><span data-en>MuJoCo official website</span> <a href="https://mujoco.org/" target="_blank" rel="noopener">↗</a></li>
+      <li><span data-zh>MuJoCo 官方文档 · Overview</span><span data-en>MuJoCo documentation: overview</span> <a href="https://mujoco.readthedocs.io/en/stable/overview.html" target="_blank" rel="noopener">↗</a></li>
+          </ul>
+        </div>
+
+        <nav class="tp-pn" aria-label="上下篇" data-ui-aria-label-zh="上下篇" data-ui-aria-label-en="Previous and next">
+          <a href="../%E5%BC%95%E7%94%A8%E4%B8%8E%E5%8F%AF%E8%BF%BD%E6%BA%AF/"><span class="tp-ph"><span data-zh>上一篇</span><span data-en>Previous</span></span><span data-zh>引用与可追溯</span><span data-en>Citations and Traceability</span></a>
+          <a href="../%E8%BF%90%E5%8A%A8%E8%A7%84%E5%88%92/" style="text-align:right"><span class="tp-ph"><span data-zh>下一篇</span><span data-en>Next</span></span><span data-zh>运动规划</span><span data-en>Motion Planning</span></a>
+        </nav>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 <span data-zh>投机取巧</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+          <a href="https://tools.specul.com/"><span data-zh>AI 工具</span><span data-en>AI Tools</span></a>
+          <a href="https://models.specul.com/"><span data-zh>AI 模型</span><span data-en>AI Models</span></a>
+          <a href="https://demos.specul.com/"><span data-zh>作品库</span><span data-en>Demos</span></a>
+          <a href="https://hardware.specul.com/"><span data-zh>AI 硬件</span><span data-en>AI Hardware</span></a>
+          <a href="https://papers.specul.com/"><span data-zh>论文</span><span data-en>Papers</span></a>
+          <a href="https://chain.specul.com/"><span data-zh>链 × AI</span><span data-en>Chain × AI</span></a>
+          <a href="https://nav.specul.com/"><span data-zh>AI 导航</span><span data-en>AI Directory</span></a>
+          <a href="https://github.com/speculcom/ai-handbook" target="_blank" rel="noopener"><span data-zh>开源</span><span data-en>Open source</span></a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+    <div class="container">
+      <p><a href="https://specul.com/search.html"><span data-zh>搜索全站内容</span><span data-en>Search all sites</span></a></p>
+      <p><a href="https://specul.com/correct.html"><span data-zh>发现错误？生成纠错草稿</span><span data-en>Spot an error? Compose a correction draft</span></a></p>
+      <p class="foot-trademark"><span data-zh>产品名与商标归各权利方所有，本站仅作识别与评论之用。</span><span data-en>Product names and trademarks belong to their respective owners and are used here for identification and commentary only.</span></p>
+    </div>
+  </footer>
+<nav class="nav-tabbar" aria-label="快捷导航">
+  <a href="https://specul.com/"><span class="ti" aria-hidden="true">◎</span><span data-zh>首页</span><span data-en>Home</span></a>
+  <a href="https://learn.specul.com/" aria-current="page"><span class="ti" aria-hidden="true">▤</span><span data-zh>学 AI</span><span data-en>Learn</span></a>
+  <a href="https://tools.specul.com/"><span class="ti" aria-hidden="true">◈</span><span data-zh>工具</span><span data-en>Tools</span></a>
+  <a href="https://models.specul.com/"><span class="ti" aria-hidden="true">▦</span><span data-zh>模型</span><span data-en>Models</span></a>
+  <button type="button" id="tabMore" aria-controls="navDrawer" aria-expanded="false"><span class="ti" aria-hidden="true">⋯</span><span data-zh>更多</span><span data-en>More</span></button>
+</nav>
+</body>
+</html>
