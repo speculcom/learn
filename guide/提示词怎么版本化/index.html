@@ -13,10 +13,10 @@
   <meta property="og:description" content="线上效果说不清是哪次改动带来的，多半因为提示词散在代码里随手改。这篇讲把提示词当代码管的最小做法。 提示词从代码字符串里拆出来单独存放：改提示词不该触发重新编译或部署。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
-  <script src="../../brand.js?v=2cf1b9037c48"></script>
+  <script src="../../brand.js?v=2b96a18d1fa6"></script>
   <script defer src="../../data/paths.js"></script>
   <script defer src="../../data/reading.js"></script>
-  <link rel="stylesheet" href="../../brand.css?v=2cf1b9037c48" />
+  <link rel="stylesheet" href="../../brand.css?v=2b96a18d1fa6" />
   <link rel="stylesheet" href="../../learn.css" />
   <style>:root { --accent: var(--gold); }</style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"提示词怎么版本化","description":"线上效果说不清是哪次改动带来的，多半因为提示词散在代码里随手改。这篇讲把提示词当代码管的最小做法。","url":"https://learn.specul.com/guide/%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%80%8E%E4%B9%88%E7%89%88%E6%9C%AC%E5%8C%96/","inLanguage":"zh-Hans","step":[{"@type":"HowToStep","position":1,"name":"提示词从代码字符串里拆出来单独存放：改提示词不该触发重新编译或部署。"},{"@type":"HowToStep","position":2,"name":"每次改动进版本控制并写清动机：和代码一样可回溯、可对比、可回滚。"},{"@type":"HowToStep","position":3,"name":"改动配回归：跑一套固定输入对比新旧输出，没有评测就谈不上「改好了」。"},{"@type":"HowToStep","position":4,"name":"记录提示词与模型版本的配对：同一提示词换模型可能失效，两者要一起记。"},{"@type":"HowToStep","position":5,"name":"线上出问题时先查提示词变更记录：它和代码一样是常见变更源，却常不在审计范围里。"},{"@type":"HowToStep","position":6,"name":"A/B 对比要控制变量：同时换提示词和模型，就难以区分两者各自的影响。"}]}</script>

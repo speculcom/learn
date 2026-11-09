@@ -13,10 +13,10 @@
   <meta property="og:description" content="人工复核不是「加个人点确认」，而是让人看得出错、有权拦下、责任能落到人的一个环节。 先定触发条件：涉及金额、对外发布、不可逆操作、或模型自陈不确定的那部分进复核；其余不占用人的注意力。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
-  <script src="../../brand.js?v=2cf1b9037c48"></script>
+  <script src="../../brand.js?v=2b96a18d1fa6"></script>
   <script defer src="../../data/paths.js"></script>
   <script defer src="../../data/reading.js"></script>
-  <link rel="stylesheet" href="../../brand.css?v=2cf1b9037c48" />
+  <link rel="stylesheet" href="../../brand.css?v=2b96a18d1fa6" />
   <link rel="stylesheet" href="../../learn.css" />
   <style>:root { --accent: var(--gold); }</style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"怎么设计人工复核环节","description":"人工复核不是「加个人点确认」，而是让人看得出错、有权拦下、责任能落到人的一个环节。","url":"https://learn.specul.com/guide/%E6%80%8E%E4%B9%88%E8%AE%BE%E8%AE%A1%E4%BA%BA%E5%B7%A5%E5%A4%8D%E6%A0%B8%E7%8E%AF%E8%8A%82/","inLanguage":"zh-Hans","step":[{"@type":"HowToStep","position":1,"name":"先定触发条件：涉及金额、对外发布、不可逆操作、或模型自陈不确定的那部分进复核；其余不占用人的注意力。"},{"@type":"HowToStep","position":2,"name":"给复核人看比对材料而不是只看结论：原文与生成并排、引用编号、模型说明自己没把握的地方。只给一段结论文本，复核会退化成盖章。"},{"@type":"HowToStep","position":3,"name":"规定复核动作：能改、能驳回、能升级。如果流程里只有「同意」一个按钮，驳回率长期为零，这个指标就没有信息量。"},{"@type":"HowToStep","position":4,"name":"防自动化偏见：连续快速通过会让人不再细看。抽检复核质量（复核人之间的分歧率、事后被纠正的比例）比只抽检输出更能发现问题。"},{"@type":"HowToStep","position":5,"name":"记三项指标：每类任务的复核耗时、驳回率、驳回原因分布。用它们回推是提示写得含糊，还是验收标准本身不清。"},{"@type":"HowToStep","position":6,"name":"举个例子（虚构情境）：输入是模型产出的「合同违约条款摘要」→ 处理是复核人对照原文三处关键表述，按模板勾「一致 / 不一致 / 不确定」并写明依据段落 → 结果判断是不一致即驳回、不确定即升级给法务 → 若同一类任务连续两类不一致，下一步是把该类任务默认改回由人起草，再回头修提示与检索，而不是让复核人多审几遍。"}]}</script>
