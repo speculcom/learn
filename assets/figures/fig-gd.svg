@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img">
+<defs><marker id="arr" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#1F5B45"/></marker></defs>
+<rect width="1200" height="600" fill="#F7F5EF"/>
+<rect x="0" y="0" width="1200" height="6" fill="#1F5B45"/>
+<text x="48" y="58" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#1F5B45" text-anchor="start">OPTIMISATION</text>
+<text x="48" y="100" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="30" font-weight="700" fill="#1E2A24" text-anchor="start">Step size decides the path</text>
+<line x1="48" y1="122" x2="1152" y2="122" stroke="#C9D2CB" stroke-width="1"/>
+
+<ellipse cx="400" cy="330" rx="240" ry="150" fill="none" stroke="#C9D2CB" stroke-width="1.4"/><ellipse cx="400" cy="330" rx="180" ry="112" fill="none" stroke="#C9D2CB" stroke-width="1.4"/><ellipse cx="400" cy="330" rx="120" ry="74" fill="none" stroke="#C9D2CB" stroke-width="1.4"/>
+<text x="400" y="330" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="16" font-weight="500" fill="#6E7A72" text-anchor="middle">minimum</text>
+<path d="M190,190 C270,220 300,270 340,300 380,318 400,330" fill="none" stroke="#1F5B45" stroke-width="3"/>
+<circle cx="190" cy="190" r="6" fill="#1F5B45"/><circle cx="232" cy="218" r="6" fill="#1F5B45"/><circle cx="274" cy="246" r="6" fill="#1F5B45"/><circle cx="316" cy="274" r="6" fill="#1F5B45"/><circle cx="358" cy="302" r="6" fill="#1F5B45"/><circle cx="400" cy="330" r="6" fill="#1F5B45"/>
+<text x="250" y="170" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#1F5B45" text-anchor="start">good learning rate</text>
+<path d="M720,200 C660,260 800,300 740,340 820,360 760,330 820,330" fill="none" stroke="#9C3B2C" stroke-width="3"/>
+<circle cx="690" cy="200" r="6" fill="#9C3B2C"/><circle cx="760" cy="224" r="6" fill="#9C3B2C"/><circle cx="690" cy="248" r="6" fill="#9C3B2C"/><circle cx="760" cy="272" r="6" fill="#9C3B2C"/><circle cx="690" cy="296" r="6" fill="#9C3B2C"/><circle cx="760" cy="320" r="6" fill="#9C3B2C"/><circle cx="690" cy="344" r="6" fill="#9C3B2C"/>
+<text x="700" y="170" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#9C3B2C" text-anchor="start">too large: oscillates</text>
+<path d="M980,220 C1040,260 1060,300 1080,320" fill="none" stroke="#A9701F" stroke-width="3"/>
+<circle cx="980" cy="220" r="5" fill="#A9701F"/><circle cx="1014" cy="246" r="5" fill="#A9701F"/><circle cx="1048" cy="272" r="5" fill="#A9701F"/><circle cx="1082" cy="298" r="5" fill="#A9701F"/>
+<text x="960" y="190" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#A9701F" text-anchor="start">too small: crawls</text>
+<text x="48" y="500" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="17" font-weight="500" fill="#6E7A72" text-anchor="start">The gradient gives direction; the learning rate gives distance. Both interact with batch size and optimizer.</text>
+
+<text x="48" y="576" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="13" font-weight="500" fill="#6E7A72" text-anchor="start">Specul · original diagram · CC BY 4.0</text>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img">
+<defs><marker id="arr" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#1F5B45"/></marker></defs>
+<rect width="1200" height="600" fill="#F7F5EF"/>
+<rect x="0" y="0" width="1200" height="6" fill="#1F5B45"/>
+<text x="48" y="58" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#1F5B45" text-anchor="start">LOSS</text>
+<text x="48" y="100" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="30" font-weight="700" fill="#1E2A24" text-anchor="start">Cross-entropy reads one probability</text>
+<line x1="48" y1="122" x2="1152" y2="122" stroke="#C9D2CB" stroke-width="1"/>
+
+<text x="70" y="180" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="18" font-weight="650" fill="#1E2A24" text-anchor="start">predicted distribution</text>
+<rect x="70" y="271.6" width="90" height="158.4" rx="6" fill="#1F5B45"/><text x="115" y="460" font-family="Inter, sans-serif" font-size="15" fill="#1E2A24" text-anchor="middle">cat 72%</text><rect x="220" y="390.4" width="90" height="39.6" rx="6" fill="#8A938C"/><text x="265" y="460" font-family="Inter, sans-serif" font-size="15" fill="#1E2A24" text-anchor="middle">dog 18%</text><rect x="370" y="408" width="90" height="22" rx="6" fill="#8A938C"/><text x="415" y="460" font-family="Inter, sans-serif" font-size="15" fill="#1E2A24" text-anchor="middle">bird 10%</text>
+<g><rect x="600" y="200" width="250" height="200" rx="14" fill="#DDE9E1" stroke="#1F5B45" stroke-width="1.5"/><text x="618" y="232" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="650" fill="#1F5B45" text-anchor="start">True class: cat</text><text x="618" y="258" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#1F5B45" text-anchor="start">loss = −log(0.72) ≈ 0.33</text></g>
+<g><rect x="900" y="200" width="250" height="200" rx="14" fill="#F1DDD7" stroke="#9C3B2C" stroke-width="1.5"/><text x="918" y="232" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="650" fill="#9C3B2C" text-anchor="start">If p(cat) = 0.05</text><text x="918" y="258" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#9C3B2C" text-anchor="start">loss = −log(0.05) ≈ 3.0</text></g>
+<text x="48" y="510" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="17" font-weight="500" fill="#6E7A72" text-anchor="start">Confident and right → small loss. Confident and wrong → large loss. That is the whole penalty.</text>
+
+<text x="48" y="576" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="13" font-weight="500" fill="#6E7A72" text-anchor="start">Specul · original diagram · CC BY 4.0</text>
+</svg>

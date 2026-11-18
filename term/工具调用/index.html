@@ -38,7 +38,7 @@
         <a href="https://learn.specul.com/" aria-current="page"><span data-zh>学 AI</span><span data-en>Learn</span></a>
         <a href="https://tools.specul.com/"><span data-zh>工具</span><span data-en>Tools</span></a>
         <a href="https://models.specul.com/"><span data-zh>模型</span><span data-en>Models</span></a>
-        <a href="https://demos.specul.com/"><span data-zh>作品库</span><span data-en>Demos</span></a>
+        <a href="https://demos.specul.com/"><span data-zh>作品演示</span><span data-en>Playground</span></a>
         <a href="https://hardware.specul.com/" class="nav-group-start"><span data-zh>硬件算力</span><span data-en>Compute</span></a>
         <a href="https://papers.specul.com/"><span data-zh>AI 论文</span><span data-en>AI Papers</span></a>
         <a href="https://chain.specul.com/"><span data-zh>链</span><span data-en>Chain</span></a>
@@ -74,7 +74,7 @@
       <a href="https://learn.specul.com/" aria-current="page"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
       <a href="https://tools.specul.com/"><span><span data-zh>工具</span><span data-en>Tools</span></span><span class="ar" aria-hidden="true">→</span></a>
       <a href="https://models.specul.com/"><span><span data-zh>模型</span><span data-en>Models</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://demos.specul.com/"><span><span data-zh>作品库</span><span data-en>Demos</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://demos.specul.com/"><span><span data-zh>作品演示</span><span data-en>Playground</span></span><span class="ar" aria-hidden="true">→</span></a>
       <a href="https://hardware.specul.com/" class="nav-group-start"><span><span data-zh>硬件算力</span><span data-en>Compute</span></span><span class="ar" aria-hidden="true">→</span></a>
       <a href="https://papers.specul.com/"><span><span data-zh>AI 论文</span><span data-en>AI Papers</span></span><span class="ar" aria-hidden="true">→</span></a>
       <a href="https://chain.specul.com/"><span><span data-zh>链</span><span data-en>Chain</span></span><span class="ar" aria-hidden="true">→</span></a>
@@ -117,18 +117,20 @@
 </span>
         </div>
 
+
+
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>为什么需要知道</span><span data-en>Why it matters</span></div>
           <p class="tp-p"><span data-zh>这是 Agent 能「真的做事」而不是「只是说要做」的分界线。没有它，模型只能空谈。</span><span data-en>It is what turns a language model into a usable assistant. It also introduces real risk: the model can act wrongly, not just speak wrongly.</span></p>
         </div>
 
 <div class="tp-sec tp-related"><div class="tp-lab"><span data-zh>接着读什么，为什么</span><span data-en>What to read next, and why</span></div><ul><li><a href="../%E5%B7%A5%E5%85%B7%E5%AE%9A%E4%B9%89/"><span data-zh>工具定义</span><span data-en>Tool Definition</span></a><p class="t-sm"><span data-zh>调用前先明确参数与返回值。</span><span data-en>Specify arguments and results before executing a call.</span></p></li><li><a href="../%E6%9D%83%E9%99%90/"><span data-zh>权限</span><span data-en>Permission</span></a><p class="t-sm"><span data-zh>能生成调用请求，不等于有权执行。</span><span data-en>Producing a call request does not authorize execution.</span></p></li><li><a href="../MCP/"><span data-zh>MCP</span><span data-en>Model Context Protocol</span></a><p class="t-sm"><span data-zh>分清接入协议与具体调用动作。</span><span data-en>Separate the connection protocol from a tool invocation.</span></p></li></ul></div>
-<div class="tp-sec"><div class="tp-lab"><span data-zh>相关指南</span><span data-en>Related guides</span></div><ul class="tp-refs"><li><a href="../../guide/%E6%80%8E%E4%B9%88%E9%98%B2%E6%8F%90%E7%A4%BA%E6%B3%A8%E5%85%A5/"><span data-zh>怎么防提示注入</span><span data-en>How to Guard Against Prompt Injection</span></a></li><li><a href="../../guide/%E6%80%8E%E4%B9%88%E7%BB%99%20AI%20%E5%B7%A5%E5%85%B7%E9%85%8D%E6%9D%83%E9%99%90/"><span data-zh>怎么给 AI 工具配权限</span><span data-en>How to Set Permissions for AI Tools</span></a></li></ul></div>
+<div class="tp-sec"><div class="tp-lab"><span data-zh>相关指南</span><span data-en>Related guides</span></div><ul class="tp-refs"><li><a href="../../guide/%E6%80%8E%E4%B9%88%E9%98%B2%E6%8F%90%E7%A4%BA%E6%B3%A8%E5%85%A5/"><span data-zh>怎么防提示注入</span><span data-en>How to Guard Against Prompt Injection</span></a></li><li><a href="../../guide/%E6%80%8E%E4%B9%88%E7%BB%99%20AI%20%E5%B7%A5%E5%85%B7%E9%85%8D%E6%9D%83%E9%99%90/"><span data-zh>怎么给 AI 工具配权限</span><span data-en>How to Set Permissions for AI Tools</span></a></li><li><a href="../../guide/%E6%80%8E%E4%B9%88%E8%AE%BE%E8%AE%A1%20Agent%20%E7%9A%84%E5%B7%A5%E5%85%B7%E6%9D%83%E9%99%90%E8%BE%B9%E7%95%8C/"><span data-zh>怎么设计 Agent 的工具权限边界</span><span data-en>How to Set Tool Permissions for an Agent</span></a></li></ul></div>
 
       <div class="tp-sec">
         <div class="tp-lab"><span data-zh>现在能做什么</span><span data-en>What you can do now</span></div>
         <p class="tp-p"><a href="https://tools.specul.com/mcp/guides/toolkit-agent-ops.html"><span data-zh>把工具调用纳入验收清单</span><span data-en>Include tool calls in an acceptance checklist</span> ↗</a></p>
-        <p class="tp-p"><a href="../../#layer-3"><span data-zh>回到名词地图看第3站的其他 45 个词 →</span><span data-en>Back to the map: the other 45 terms in station 3 →</span></a></p>
+        <p class="tp-p"><a href="../../#layer-3"><span data-zh>回到名词地图看第3站的其他 54 个词 →</span><span data-en>Back to the map: the other 54 terms in station 3 →</span></a></p>
       </div>
 
         <div class="tp-sec">
@@ -157,7 +159,7 @@
           <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
           <a href="https://tools.specul.com/"><span data-zh>工具</span><span data-en>Tools</span></a>
           <a href="https://models.specul.com/"><span data-zh>模型</span><span data-en>Models</span></a>
-          <a href="https://demos.specul.com/"><span data-zh>作品库</span><span data-en>Demos</span></a>
+          <a href="https://demos.specul.com/"><span data-zh>作品演示</span><span data-en>Playground</span></a>
           <a href="https://hardware.specul.com/"><span data-zh>硬件算力</span><span data-en>Compute</span></a>
           <a href="https://papers.specul.com/"><span data-zh>AI 论文</span><span data-en>AI Papers</span></a>
           <a href="https://chain.specul.com/"><span data-zh>链</span><span data-en>Chain</span></a>

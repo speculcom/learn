@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img">
+<defs><marker id="arr" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#1F5B45"/></marker></defs>
+<rect width="1200" height="600" fill="#F7F5EF"/>
+<rect x="0" y="0" width="1200" height="6" fill="#1F5B45"/>
+<text x="48" y="58" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#1F5B45" text-anchor="start">AGENT LOOP</text>
+<text x="48" y="100" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="30" font-weight="700" fill="#1E2A24" text-anchor="start">How a coding agent works</text>
+<line x1="48" y1="122" x2="1152" y2="122" stroke="#C9D2CB" stroke-width="1"/>
+
+<g><rect x="48" y="170" width="240" height="110" rx="14" fill="#FFFFFF" stroke="#C9D2CB" stroke-width="1.5"/><text x="66" y="202" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="650" fill="#1E2A24" text-anchor="start">Issue</text><text x="66" y="228" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#6E7A72" text-anchor="start">goal + reproduction</text></g>
+<g><rect x="330" y="170" width="240" height="110" rx="14" fill="#DCE5EF" stroke="#2C4A6B" stroke-width="1.5"/><text x="348" y="202" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="650" fill="#2C4A6B" text-anchor="start">Read repo</text><text x="348" y="228" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#2C4A6B" text-anchor="start">search · symbols · tests</text></g>
+<g><rect x="612" y="170" width="240" height="110" rx="14" fill="#DDE9E1" stroke="#1F5B45" stroke-width="1.5"/><text x="630" y="202" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="650" fill="#1F5B45" text-anchor="start">Plan + edit</text><text x="630" y="228" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#1F5B45" text-anchor="start">multi-file patch</text></g>
+<g><rect x="894" y="170" width="260" height="110" rx="14" fill="#F2E4CE" stroke="#A9701F" stroke-width="1.5"/><text x="912" y="202" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="650" fill="#A9701F" text-anchor="start">Run tests</text><text x="912" y="228" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#A9701F" text-anchor="start">unit · integration</text></g>
+<g><line x1="288" y1="225" x2="330" y2="225" stroke="#1F5B45" stroke-width="2.4" marker-end="url(#arr)"/></g><g><line x1="570" y1="225" x2="612" y2="225" stroke="#1F5B45" stroke-width="2.4" marker-end="url(#arr)"/></g><g><line x1="852" y1="225" x2="894" y2="225" stroke="#1F5B45" stroke-width="2.4" marker-end="url(#arr)"/></g>
+<g><rect x="894" y="360" width="260" height="110" rx="14" fill="#F1DDD7" stroke="#9C3B2C" stroke-width="1.5"/><text x="912" y="392" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="650" fill="#9C3B2C" text-anchor="start">Read failure</text><text x="912" y="418" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#9C3B2C" text-anchor="start">stack trace · diff</text></g>
+<g><line x1="1024" y1="280" x2="1024" y2="360" stroke="#9C3B2C" stroke-width="2.4" marker-end="url(#arr)"/></g>
+<g><line x1="894" y1="415" x2="732" y2="415" stroke="#9C3B2C" stroke-width="2.4" marker-end="url(#arr)"/></g>
+<g><line x1="732" y1="415" x2="732" y2="280" stroke="#9C3B2C" stroke-width="2.4" marker-end="url(#arr)"/></g>
+<g><rect x="500" y="360" width="300" height="110" rx="14" fill="#FFFFFF" stroke="#C9D2CB" stroke-width="1.5"/><text x="518" y="392" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="650" fill="#1E2A24" text-anchor="start">Human review</text><text x="518" y="418" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#6E7A72" text-anchor="start">diff · permissions · tests</text></g>
+<g><line x1="1024" y1="470" x2="1024" y2="500" stroke="#1F5B45" stroke-width="2.4" marker-end="url(#arr)"/></g>
+<text x="760" y="540" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="16" font-weight="500" fill="#6E7A72" text-anchor="start">done when tests pass — and a human accepts the diff</text>
+
+<text x="48" y="576" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="13" font-weight="500" fill="#6E7A72" text-anchor="start">Specul · original diagram · CC BY 4.0</text>
+</svg>

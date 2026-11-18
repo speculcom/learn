@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img">
+<defs><marker id="arr" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#1F5B45"/></marker></defs>
+<rect width="1200" height="600" fill="#F7F5EF"/>
+<rect x="0" y="0" width="1200" height="6" fill="#1F5B45"/>
+<text x="48" y="58" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#1F5B45" text-anchor="start">TWO-STAGE RETRIEVAL</text>
+<text x="48" y="100" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="30" font-weight="700" fill="#1E2A24" text-anchor="start">Recall wide, rerank precise</text>
+<line x1="48" y1="122" x2="1152" y2="122" stroke="#C9D2CB" stroke-width="1"/>
+
+<g><rect x="48" y="156" width="520" height="250" rx="14" fill="#DCE5EF" stroke="#2C4A6B" stroke-width="1.5"/><text x="66" y="188" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="650" fill="#2C4A6B" text-anchor="start">Stage 1 · Recall</text><text x="66" y="214" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#2C4A6B" text-anchor="start">fast and approximate</text></g>
+<circle cx="90" cy="255" r="10" fill="#2C4A6B"/><circle cx="136" cy="273" r="10" fill="#2C4A6B"/><circle cx="182" cy="291" r="10" fill="#2C4A6B"/><circle cx="228" cy="255" r="10" fill="#2C4A6B"/><circle cx="274" cy="273" r="8" fill="#B9CBDD"/><circle cx="320" cy="291" r="8" fill="#B9CBDD"/><circle cx="366" cy="255" r="8" fill="#B9CBDD"/><circle cx="412" cy="273" r="8" fill="#B9CBDD"/><circle cx="458" cy="291" r="8" fill="#B9CBDD"/><circle cx="504" cy="255" r="8" fill="#B9CBDD"/>
+<text x="88" y="360" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="16" font-weight="500" fill="#2C4A6B" text-anchor="start">candidates 1..100</text>
+<g><rect x="632" y="156" width="520" height="250" rx="14" fill="#F2E4CE" stroke="#A9701F" stroke-width="1.5"/><text x="650" y="188" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="650" fill="#A9701F" text-anchor="start">Stage 2 · Rerank</text><text x="650" y="214" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#A9701F" text-anchor="start">cross-encoder reads query + passage</text></g>
+<rect x="672" y="206" width="300" height="22" rx="6" fill="#A9701F"/><text x="984" y="222" font-family="Inter, sans-serif" font-size="14" fill="#1E2A24">doc 7</text><rect x="672" y="244" width="256" height="22" rx="6" fill="#E9D6B8"/><text x="940" y="260" font-family="Inter, sans-serif" font-size="14" fill="#1E2A24">doc 2</text><rect x="672" y="282" width="212" height="22" rx="6" fill="#E9D6B8"/><text x="896" y="298" font-family="Inter, sans-serif" font-size="14" fill="#1E2A24">doc 9</text><rect x="672" y="320" width="168" height="22" rx="6" fill="#E9D6B8"/><text x="852" y="336" font-family="Inter, sans-serif" font-size="14" fill="#1E2A24">doc 1</text><rect x="672" y="358" width="124" height="22" rx="6" fill="#E9D6B8"/><text x="808" y="374" font-family="Inter, sans-serif" font-size="14" fill="#1E2A24">doc 4</text>
+<text x="672" y="380" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#A9701F" text-anchor="start">top 5 kept · order matters</text>
+<g><line x1="568" y1="280" x2="632" y2="280" stroke="#A9701F" stroke-width="2.4" marker-end="url(#arr)"/></g>
+<text x="48" y="470" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="17" font-weight="500" fill="#6E7A72" text-anchor="start">Why not rerank everything? A cross-encoder scores each pair separately, so cost grows with candidates.</text>
+<text x="48" y="500" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="17" font-weight="500" fill="#6E7A72" text-anchor="start">Typical recipe: recall 50–200, rerank to 3–10, then generate.</text>
+
+<text x="48" y="576" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="13" font-weight="500" fill="#6E7A72" text-anchor="start">Specul · original diagram · CC BY 4.0</text>
+</svg>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>怎么做跨模型的一致性回归测试 · 学 AI 微型指南 | 投机取巧</title>
+  <meta name="description" content="模型升级不是「换个更强的就行」；同一套回归集必须前后跑，才能知道哪些能力变了、哪些只是风格变了。 先固定 50–100 条回归集，覆盖常见任务、边界输入和必须拒答的场景。" />
+  <link rel="canonical" href="https://learn.specul.com/guide/%E6%80%8E%E4%B9%88%E5%81%9A%E8%B7%A8%E6%A8%A1%E5%9E%8B%E7%9A%84%E4%B8%80%E8%87%B4%E6%80%A7%E5%9B%9E%E5%BD%92%E6%B5%8B%E8%AF%95/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="学 AI" />
+  <meta property="og:url" content="https://learn.specul.com/guide/%E6%80%8E%E4%B9%88%E5%81%9A%E8%B7%A8%E6%A8%A1%E5%9E%8B%E7%9A%84%E4%B8%80%E8%87%B4%E6%80%A7%E5%9B%9E%E5%BD%92%E6%B5%8B%E8%AF%95/" />
+  <meta property="og:title" content="怎么做跨模型的一致性回归测试 · 学 AI 微型指南" />
+  <meta property="og:description" content="模型升级不是「换个更强的就行」；同一套回归集必须前后跑，才能知道哪些能力变了、哪些只是风格变了。 先固定 50–100 条回归集，覆盖常见任务、边界输入和必须拒答的场景。" />
+  <meta name="theme-color" content="#16121f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <script src="../../brand.js?v=2b96a18d1fa6"></script>
+  <script defer src="../../data/paths.js"></script>
+  <script defer src="../../data/reading.js"></script>
+  <link rel="stylesheet" href="../../brand.css?v=2b96a18d1fa6" />
+  <link rel="stylesheet" href="../../learn.css" />
+  <style>:root { --accent: var(--gold); }</style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"怎么做跨模型的一致性回归测试","description":"模型升级不是「换个更强的就行」；同一套回归集必须前后跑，才能知道哪些能力变了、哪些只是风格变了。","url":"https://learn.specul.com/guide/%E6%80%8E%E4%B9%88%E5%81%9A%E8%B7%A8%E6%A8%A1%E5%9E%8B%E7%9A%84%E4%B8%80%E8%87%B4%E6%80%A7%E5%9B%9E%E5%BD%92%E6%B5%8B%E8%AF%95/","inLanguage":"zh-Hans","step":[{"@type":"HowToStep","position":1,"name":"先固定 50–100 条回归集，覆盖常见任务、边界输入和必须拒答的场景。"},{"@type":"HowToStep","position":2,"name":"每条写期望要点而不是唯一答案，用要点覆盖率打分。"},{"@type":"HowToStep","position":3,"name":"升级前后跑同一套集，记录通过率、引用正确率、拒答率和平均长度。"},{"@type":"HowToStep","position":4,"name":"分开统计能力变化与风格变化：变长、变客气不等于变好。"},{"@type":"HowToStep","position":5,"name":"模型评审只做初筛，抽 20% 人工复核，防止位置与冗长偏差。"},{"@type":"HowToStep","position":6,"name":"设回滚阈值：低于阈值就回滚，不要用「整体感觉更好」上线。"},{"@type":"HowToStep","position":7,"name":"保留每次原始输出；系统提示、工具描述、检索库更新也各算一次变更。"}]}</script>
+</head>
+<body class="brand-ambient has-tabbar" style="--accent:var(--gold)">
+  <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+          <span class="brand-sub" id="markSub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/" aria-current="page"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://tools.specul.com/"><span data-zh>工具</span><span data-en>Tools</span></a>
+        <a href="https://models.specul.com/"><span data-zh>模型</span><span data-en>Models</span></a>
+        <a href="https://demos.specul.com/"><span data-zh>作品演示</span><span data-en>Playground</span></a>
+        <a href="https://hardware.specul.com/" class="nav-group-start"><span data-zh>硬件算力</span><span data-en>Compute</span></a>
+        <a href="https://papers.specul.com/"><span data-zh>AI 论文</span><span data-en>AI Papers</span></a>
+        <a href="https://chain.specul.com/"><span data-zh>链</span><span data-en>Chain</span></a>
+        <a href="https://nav.specul.com/" class="nav-group-start" data-nav-group="external"><span data-zh>外部站点</span><span data-en>External</span></a>
+      </nav>
+      <!-- 2026-10-10：.nav-tools 从 nav 元素**内部**移到外面，与 .nav-links 平级。
+           放里面时窄屏下它会跟着链接一起换行：链接占满整行 → 按钮被挤到第三条
+           （实测顶栏 134px、按钮组孤零零一行）。移出来后它与品牌同行，
+           链接独占第二行居中 —— 这才是下面注释里方案 B 想要的样子。 -->
+      <span class="nav-tools">
+        <a class="icon-btn" href="https://specul.com/search.html" aria-label="搜索" data-ui-aria-label-zh="搜索" data-ui-aria-label-en="Search" title="搜索全站" data-ui-title-zh="搜索全站" data-ui-title-en="Search all sites"><span aria-hidden="true">⌕</span></a>
+        <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+        <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+      </span>
+      <!-- B6（2026-10-09）：窄屏（≤900px）下 .nav-links 会隐藏，这个汉堡是替代入口。
+           行为在共享 brand.js 里（一处实现、六站共用），样式在共享 brand.css。
+           无脚本时 CSS 不会显示它，而是把 .nav-links 在窄屏放出来 —— 不会出现
+           「导航被藏进一个点了没反应的按钮」。 -->
+      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
+  </header>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <span class="brand-sub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/" aria-current="page"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://tools.specul.com/"><span><span data-zh>工具</span><span data-en>Tools</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>模型</span><span data-en>Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://demos.specul.com/"><span><span data-zh>作品演示</span><span data-en>Playground</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://hardware.specul.com/" class="nav-group-start"><span><span data-zh>硬件算力</span><span data-en>Compute</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://papers.specul.com/"><span><span data-zh>AI 论文</span><span data-en>AI Papers</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://chain.specul.com/"><span><span data-zh>链</span><span data-en>Chain</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/" class="nav-group-start" data-nav-group="external"><span><span data-zh>外部站点</span><span data-en>External</span></span><span class="ar" aria-hidden="true">↗</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>8 个内容站，外加一个去别处的出口</span><span data-en>Eight content sites, plus one gateway to other sites</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
+  <main id="main">
+    <div class="container">
+      <article class="tp tp-wrap">
+        <nav class="tp-crumbs" aria-label="面包屑">
+          <a href="../../"><span data-zh>← 名词地图</span><span data-en>← Term map</span></a>
+          <span aria-hidden="true">·</span>
+          <a href="../../#layer-3"><span data-zh>第3站 · 三</span><span data-en>Station 3 · Going Deeper</span></a>
+          <span aria-hidden="true">·</span>
+          <span><span data-zh>微型指南</span><span data-en>Guide</span></span>
+        </nav>
+        <h1><span data-zh>怎么做跨模型的一致性回归测试</span><span data-en>How to Run Cross-Model Regression Tests</span></h1>
+        <p class="tp-en"><span data-zh>微型指南 · 约 9 分钟</span><span data-en>Guide · about 9 min</span><span data-zh> · 引用核验 2026-11-17（仅引用链接与日期）</span><span data-en> · refs checked 2026-11-17 (reference links and dates only)</span></p>
+        <p class="tp-p"><span data-zh>模型升级不是「换个更强的就行」；同一套回归集必须前后跑，才能知道哪些能力变了、哪些只是风格变了。</span><span data-en>A model upgrade is not just “a stronger model”. The same regression set must run before and after to separate capability changes from style changes.</span></p>
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>怎么做</span><span data-en>How to</span></div>
+<span data-zh>
+      <p class="tp-li">先固定 50–100 条回归集，覆盖常见任务、边界输入和必须拒答的场景。</p>
+      <p class="tp-li">每条写期望要点而不是唯一答案，用要点覆盖率打分。</p>
+      <p class="tp-li">升级前后跑同一套集，记录通过率、引用正确率、拒答率和平均长度。</p>
+      <p class="tp-li">分开统计能力变化与风格变化：变长、变客气不等于变好。</p>
+      <p class="tp-li">模型评审只做初筛，抽 20% 人工复核，防止位置与冗长偏差。</p>
+      <p class="tp-li">设回滚阈值：低于阈值就回滚，不要用「整体感觉更好」上线。</p>
+      <p class="tp-li">保留每次原始输出；系统提示、工具描述、检索库更新也各算一次变更。</p>
+</span>
+<span data-en>
+      <p class="tp-li" data-en>Fix a 50–100 case regression set covering common tasks, edge inputs and must-refuse scenarios.</p>
+      <p class="tp-li" data-en>Write expected bullet points rather than one gold answer, and score coverage of those points.</p>
+      <p class="tp-li" data-en>Run the same set before and after, recording pass rate, citation accuracy, refusal rate and average length.</p>
+      <p class="tp-li" data-en>Report capability change and style change separately: longer or more polite is not better.</p>
+      <p class="tp-li" data-en>Use model judging only for triage, with 20 percent human review to counter position and verbosity bias.</p>
+      <p class="tp-li" data-en>Set a rollback threshold and use it; do not ship on “it feels better overall”.</p>
+      <p class="tp-li" data-en>Keep every raw output, and count system-prompt, tool-description and retrieval-index changes as changes too.</p>
+</span>
+        </div>
+        <section class="tp-sec"><h2><span data-zh>例子与判断</span><span data-en>Example and interpretation</span></h2><p class="t-sm"><span data-zh>以下是教学情境，不是本站运行或实测记录。</span><span data-en>A teaching scenario, not a measured or executed site test.</span></p><p class="tp-p"><span data-zh>建一个 60 条的回归集，其中 20 条是「必须拒答或必须说不知道」；模型升级时，这 20 条的通过率比总分更重要。</span><span data-en>Build a 60-case regression set, 20 of which must be refused or answered with “I don’t know”. On a model upgrade, the pass rate on those 20 matters more than the total score.</span></p></section>
+<section class="tp-sec diagnostic-guide"><h2><span data-zh>做完例子后怎么检查</span><span data-en>How to check your practice</span></h2><p><span data-zh>先用自己的话解释上面的判断，再检查输入条件，最后回原文验证。说不清原因时回概念；缺日期、字段或权限时补输入；结论无出处时先撤回结论。</span><span data-en>Explain the example in your own words, inspect input constraints, then verify against the source. Revisit concepts if you cannot explain why; supply missing dates, fields or permissions; withdraw unsupported conclusions.</span></p><p><a href="../../#diagnose-concept"><span data-zh>按这篇主题，先从“概念没分清”练习查起</span><span data-en>For this topic, start with concept confusion</span></a> · <a href="../../#diagnose"><span data-zh>查看全部六个情境与理由</span><span data-en>See all six scenarios and their reasoning</span></a></p></section>
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>先懂这几个词</span><span data-en>Terms behind this</span></div>
+          <p class="tp-p"><a class="t-guidechip" href="../../term/%E7%A6%BB%E7%BA%BF%E8%AF%84%E6%B5%8B%E4%B8%8E%E5%9C%A8%E7%BA%BF%E8%AF%84%E6%B5%8B/"><span data-zh>离线评测与在线评测</span><span data-en>Offline vs Online Evaluation</span></a> <a class="t-guidechip" href="../../term/%E8%AF%84%E6%B5%8B%E9%9B%86%E8%AE%BE%E8%AE%A1/"><span data-zh>评测集设计</span><span data-en>Eval Set Design</span></a> <a class="t-guidechip" href="../../term/%E6%A8%A1%E5%9E%8B%E8%AF%84%E6%B5%8B%E7%9A%84%E5%B1%80%E9%99%90/"><span data-zh>模型评测的局限</span><span data-en>Evaluation Limits</span></a></p>
+        </div>
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>出处</span><span data-en>Sources</span></div>
+          <ul class="tp-refs">
+      <li><span data-zh>Liang 等 · HELM（arXiv 2211.09110）</span><span data-en>Liang et al., Holistic Evaluation of Language Models</span> <a href="https://arxiv.org/abs/2211.09110" target="_blank" rel="noopener">↗</a></li>
+      <li><span data-zh>Zheng 等 · LLM-as-a-Judge（arXiv 2306.05685）</span><span data-en>Zheng et al., Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena</span> <a href="https://arxiv.org/abs/2306.05685" target="_blank" rel="noopener">↗</a></li>
+          </ul>
+        </div>
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>围绕这些概念继续读</span><span data-en>More on these concepts</span></div>
+          <p class="tp-p"><a href="../怎么评测 RAG 的效果/"><span data-zh>怎么评测 RAG 的效果</span><span data-en>How to Evaluate a RAG System</span></a> · <a href="../怎么自建评测口径/"><span data-zh>怎么自建评测口径</span><span data-en>How to Build Your Own Eval</span></a> · <a href="../榜单怎么读/"><span data-zh>榜单怎么读</span><span data-en>How to Read a Leaderboard</span></a> · <a href="../怎么读一篇AI论文/"><span data-zh>怎么读一篇AI论文</span><span data-en>How to Read an AI Paper</span></a></p>
+        </div>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 <span data-zh>投机取巧</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+          <a href="https://tools.specul.com/"><span data-zh>工具</span><span data-en>Tools</span></a>
+          <a href="https://models.specul.com/"><span data-zh>模型</span><span data-en>Models</span></a>
+          <a href="https://demos.specul.com/"><span data-zh>作品演示</span><span data-en>Playground</span></a>
+          <a href="https://hardware.specul.com/"><span data-zh>硬件算力</span><span data-en>Compute</span></a>
+          <a href="https://papers.specul.com/"><span data-zh>AI 论文</span><span data-en>AI Papers</span></a>
+          <a href="https://chain.specul.com/"><span data-zh>链</span><span data-en>Chain</span></a>
+          <a href="https://nav.specul.com/"><span data-zh>外部站点</span><span data-en>External</span></a>
+          <a href="https://github.com/speculcom/ai-handbook" target="_blank" rel="noopener"><span data-zh>开源</span><span data-en>Open source</span></a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+    <div class="container">
+      <p><a href="https://specul.com/search.html"><span data-zh>搜索全站内容</span><span data-en>Search all sites</span></a></p>
+      <p><a href="https://specul.com/correct.html"><span data-zh>发现错误？生成纠错草稿</span><span data-en>Spot an error? Compose a correction draft</span></a></p>
+      <p class="foot-trademark"><span data-zh>产品名与商标归各权利方所有，本站仅作识别与评论之用。</span><span data-en>Product names and trademarks belong to their respective owners and are used here for identification and commentary only.</span></p>
+    </div>
+  </footer>
+<nav class="nav-tabbar" aria-label="快捷导航">
+  <a href="https://specul.com/"><span class="ti" aria-hidden="true">◎</span><span data-zh>首页</span><span data-en>Home</span></a>
+  <a href="https://learn.specul.com/" aria-current="page"><span class="ti" aria-hidden="true">▤</span><span data-zh>学 AI</span><span data-en>Learn</span></a>
+  <a href="https://tools.specul.com/"><span class="ti" aria-hidden="true">◈</span><span data-zh>工具</span><span data-en>Tools</span></a>
+  <a href="https://models.specul.com/"><span class="ti" aria-hidden="true">▦</span><span data-zh>模型</span><span data-en>Models</span></a>
+  <button type="button" id="tabMore" aria-controls="navDrawer" aria-expanded="false"><span class="ti" aria-hidden="true">⋯</span><span data-zh>更多</span><span data-en>More</span></button>
+</nav>
+</body>
+</html>

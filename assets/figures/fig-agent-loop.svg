@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img">
+<defs><marker id="arr" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#1F5B45"/></marker></defs>
+<rect width="1200" height="600" fill="#F7F5EF"/>
+<rect x="0" y="0" width="1200" height="6" fill="#1F5B45"/>
+<text x="48" y="58" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#1F5B45">AGENT LOOP</text>
+<text x="48" y="100" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="30" font-weight="700" fill="#1E2A24">A model that acts, observes and revises</text>
+<line x1="48" y1="122" x2="1152" y2="122" stroke="#C9D2CB" stroke-width="1"/>
+<g><rect x="48" y="170" width="250" height="100" rx="14" fill="#FFFFFF" stroke="#C9D2CB" stroke-width="1.5"/><text x="66" y="202" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="650" fill="#1E2A24">Goal</text><text x="66" y="228" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#1E2A24">用户给的任务</text></g>
+<g><rect x="360" y="170" width="250" height="100" rx="14" fill="#DCE5EF" stroke="#2C4A6B" stroke-width="1.5"/><text x="378" y="202" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="650" fill="#2C4A6B">Planner</text><text x="378" y="228" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#2C4A6B">拆步骤、选工具</text></g>
+<g><rect x="672" y="170" width="210" height="100" rx="14" fill="#F2E4CE" stroke="#A9701F" stroke-width="1.5"/><text x="690" y="202" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="650" fill="#A9701F">Tool call</text><text x="690" y="228" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#A9701F">搜索 / 代码 / 文件</text></g>
+<g><rect x="944" y="170" width="208" height="100" rx="14" fill="#FFFFFF" stroke="#C9D2CB" stroke-width="1.5"/><text x="962" y="202" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="650" fill="#1E2A24">Environment</text><text x="962" y="228" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#1E2A24">真实世界或沙箱</text></g>
+<g><rect x="672" y="360" width="210" height="100" rx="14" fill="#DDE9E1" stroke="#1F5B45" stroke-width="1.5"/><text x="690" y="392" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="650" fill="#1F5B45">Observation</text><text x="690" y="418" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#1F5B45">结果、报错、文件</text></g>
+<g><rect x="360" y="360" width="250" height="100" rx="14" fill="#FFFFFF" stroke="#C9D2CB" stroke-width="1.5"/><text x="378" y="392" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="650" fill="#1E2A24">Revise</text><text x="378" y="418" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#1E2A24">根据观察改计划</text></g>
+<g><rect x="48" y="360" width="250" height="100" rx="14" fill="#DDE9E1" stroke="#1F5B45" stroke-width="1.5"/><text x="66" y="392" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="650" fill="#1F5B45">Answer</text><text x="66" y="418" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#1F5B45">交付或请求确认</text></g>
+<line x1="298" y1="220" x2="360" y2="220" stroke="#1F5B45" stroke-width="2.4" marker-end="url(#arr)"/>
+<line x1="610" y1="220" x2="672" y2="220" stroke="#1F5B45" stroke-width="2.4" marker-end="url(#arr)"/>
+<line x1="882" y1="220" x2="944" y2="220" stroke="#1F5B45" stroke-width="2.4" marker-end="url(#arr)"/>
+<line x1="1048" y1="270" x2="1048" y2="410" stroke="#1F5B45" stroke-width="2.4" marker-end="url(#arr)"/>
+<line x1="1048" y1="410" x2="882" y2="410" stroke="#1F5B45" stroke-width="2.4" marker-end="url(#arr)"/>
+<line x1="672" y1="410" x2="610" y2="410" stroke="#1F5B45" stroke-width="2.4" marker-end="url(#arr)"/>
+<line x1="360" y1="410" x2="298" y2="410" stroke="#1F5B45" stroke-width="2.4" marker-end="url(#arr)"/>
+<path d="M 485 360 C 485 320 485 300 485 270" stroke="#1F5B45" stroke-width="2.4" fill="none" marker-end="url(#arr)"/>
+<text x="500" y="350" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="14" font-weight="600" fill="#1F5B45">loop until done</text>
+<text x="48" y="510" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#6E7A72">权限边界、预算与人工确认点，决定这个循环能走多远。</text>
+<text x="48" y="540" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="17" font-weight="500" fill="#6E7A72">Agent 的差别不在「会说话」，而在能观察环境并根据结果修正下一步。</text>
+<text x="48" y="576" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="13" font-weight="500" fill="#6E7A72">Specul · original diagram · CC BY 4.0</text>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img">
+<defs><marker id="arr" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#1F5B45"/></marker></defs>
+<rect width="1200" height="600" fill="#F7F5EF"/>
+<rect x="0" y="0" width="1200" height="6" fill="#1F5B45"/>
+<text x="48" y="58" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#1F5B45">EMBEDDING</text>
+<text x="48" y="100" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="30" font-weight="700" fill="#1E2A24">From token IDs to vectors with geometry</text>
+<line x1="48" y1="122" x2="1152" y2="122" stroke="#C9D2CB" stroke-width="1"/>
+<g><rect x="48" y="160" width="330" height="250" rx="14" fill="#FFFFFF" stroke="#C9D2CB" stroke-width="1.5"/><text x="66" y="192" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="650" fill="#1E2A24">Embedding table</text><text x="66" y="218" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#1E2A24">vocab × dim（示意：6 × 4）</text></g>
+<text x="72" y="250" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#6E7A72">猫    → [0.2, -0.4, 0.8, 0.1]</text>
+<text x="72" y="286" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#6E7A72">狗    → [0.1, -0.3, 0.7, 0.2]</text>
+<text x="72" y="322" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#6E7A72">汽车  → [-0.6, 0.5, 0.1, -0.7]</text>
+<text x="72" y="358" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#6E7A72">银行  → [0.4, 0.2, -0.1, 0.5]</text>
+<line x1="378" y1="285" x2="470" y2="285" stroke="#1F5B45" stroke-width="2.4" marker-end="url(#arr)"/>
+<g><rect x="470" y="160" width="682" height="250" rx="14" fill="#DDE9E1" stroke="#1F5B45" stroke-width="1.5"/><text x="488" y="192" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="650" fill="#1F5B45">向量空间（降到二维只为示意）</text></g>
+<circle cx="700" cy="250" r="10" fill="#A9701F"/><text x="718" y="256" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#A9701F">猫</text>
+<circle cx="748" cy="278" r="10" fill="#A9701F"/><text x="766" y="284" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#A9701F">狗</text>
+<circle cx="860" cy="330" r="10" fill="#2C4A6B"/><text x="878" y="336" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#2C4A6B">汽车</text>
+<circle cx="980" cy="220" r="10" fill="#1F5B45"/><text x="998" y="226" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="16" font-weight="600" fill="#1F5B45">银行</text>
+<text x="640" y="388" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#6E7A72">相近语义的向量距离更近；相似度常用余弦</text>
+<text x="48" y="462" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="17" font-weight="600" fill="#6E7A72">真实模型的维度常见 768–4096，不是二维；二维图只帮助理解「距离」。</text>
+<text x="48" y="540" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="17" font-weight="500" fill="#6E7A72">嵌入是查表得到的稠密向量，不是「模型理解了词义」的同义词。</text>
+<text x="48" y="576" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="13" font-weight="500" fill="#6E7A72">Specul · original diagram · CC BY 4.0</text>
+</svg>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>近似最近邻检索（ANN） · 学 AI | 投机取巧</title>
+  <meta name="description" content="在海量向量里快速找出与查询最相近的一小批，允许少量漏检。 精确最近邻在大规模下太慢，ANN 用图索引、量化或哈希做近似。 向量库的核心就是 ANN；召回率、内存和延迟要一起调，换索引参数会改变检索质量。" />
+  <link rel="canonical" href="https://learn.specul.com/term/%E8%BF%91%E4%BC%BC%E6%9C%80%E8%BF%91%E9%82%BB%E6%A3%80%E7%B4%A2/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="学 AI" />
+  <meta property="og:url" content="https://learn.specul.com/term/%E8%BF%91%E4%BC%BC%E6%9C%80%E8%BF%91%E9%82%BB%E6%A3%80%E7%B4%A2/" />
+  <meta property="og:title" content="近似最近邻检索（ANN） · 学 AI" />
+  <meta property="og:description" content="在海量向量里快速找出与查询最相近的一小批，允许少量漏检。 精确最近邻在大规模下太慢，ANN 用图索引、量化或哈希做近似。 向量库的核心就是 ANN；召回率、内存和延迟要一起调，换索引参数会改变检索质量。" />
+  <meta name="theme-color" content="#16121f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <script src="../../brand.js?v=2b96a18d1fa6"></script>
+  <script defer src="../../data/paths.js"></script>
+  <script defer src="../../data/reading.js"></script>
+  <link rel="stylesheet" href="../../brand.css?v=2b96a18d1fa6" />
+  <link rel="stylesheet" href="../../learn.css" />
+  <style>:root { --accent: var(--cyan); }</style>
+  <!-- B5：词条页的结构性数据（DefinedTerm） -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTerm","name":"近似最近邻检索（ANN）","alternateName":"Approximate Nearest Neighbor Search (ANN)","description":"在海量向量里快速找出与查询最相近的一小批，允许少量漏检。","url":"https://learn.specul.com/term/%E8%BF%91%E4%BC%BC%E6%9C%80%E8%BF%91%E9%82%BB%E6%A3%80%E7%B4%A2/","inLanguage":"zh-Hans","inDefinedTermSet":{"@type":"DefinedTermSet","name":"学 AI · 第五站（跑起来）","url":"https://learn.specul.com/#layer-5"},"isPartOf":{"@type":"WebSite","name":"学 AI","url":"https://learn.specul.com/"}}</script>
+</head>
+<body class="brand-ambient has-tabbar" style="--accent:var(--cyan)">
+  <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+          <span class="brand-sub" id="markSub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/" aria-current="page"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://tools.specul.com/"><span data-zh>工具</span><span data-en>Tools</span></a>
+        <a href="https://models.specul.com/"><span data-zh>模型</span><span data-en>Models</span></a>
+        <a href="https://demos.specul.com/"><span data-zh>作品演示</span><span data-en>Playground</span></a>
+        <a href="https://hardware.specul.com/" class="nav-group-start"><span data-zh>硬件算力</span><span data-en>Compute</span></a>
+        <a href="https://papers.specul.com/"><span data-zh>AI 论文</span><span data-en>AI Papers</span></a>
+        <a href="https://chain.specul.com/"><span data-zh>链</span><span data-en>Chain</span></a>
+        <a href="https://nav.specul.com/" class="nav-group-start" data-nav-group="external"><span data-zh>外部站点</span><span data-en>External</span></a>
+      </nav>
+      <!-- 2026-10-10：.nav-tools 从 nav 元素**内部**移到外面，与 .nav-links 平级。
+           放里面时窄屏下它会跟着链接一起换行：链接占满整行 → 按钮被挤到第三条
+           （实测顶栏 134px、按钮组孤零零一行）。移出来后它与品牌同行，
+           链接独占第二行居中 —— 这才是下面注释里方案 B 想要的样子。 -->
+      <span class="nav-tools">
+        <a class="icon-btn" href="https://specul.com/search.html" aria-label="搜索" data-ui-aria-label-zh="搜索" data-ui-aria-label-en="Search" title="搜索全站" data-ui-title-zh="搜索全站" data-ui-title-en="Search all sites"><span aria-hidden="true">⌕</span></a>
+        <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+        <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+      </span>
+      <!-- B6（2026-10-09）：窄屏（≤900px）下 .nav-links 会隐藏，这个汉堡是替代入口。
+           行为在共享 brand.js 里（一处实现、六站共用），样式在共享 brand.css。
+           无脚本时 CSS 不会显示它，而是把 .nav-links 在窄屏放出来 —— 不会出现
+           「导航被藏进一个点了没反应的按钮」。 -->
+      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
+  </header>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <span class="brand-sub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/" aria-current="page"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://tools.specul.com/"><span><span data-zh>工具</span><span data-en>Tools</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>模型</span><span data-en>Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://demos.specul.com/"><span><span data-zh>作品演示</span><span data-en>Playground</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://hardware.specul.com/" class="nav-group-start"><span><span data-zh>硬件算力</span><span data-en>Compute</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://papers.specul.com/"><span><span data-zh>AI 论文</span><span data-en>AI Papers</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://chain.specul.com/"><span><span data-zh>链</span><span data-en>Chain</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/" class="nav-group-start" data-nav-group="external"><span><span data-zh>外部站点</span><span data-en>External</span></span><span class="ar" aria-hidden="true">↗</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>8 个内容站，外加一个去别处的出口</span><span data-en>Eight content sites, plus one gateway to other sites</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
+  <main id="main">
+    <div class="container">
+      <article class="tp tp-wrap">
+        <nav class="tp-crumbs" aria-label="面包屑">
+          <a href="../../"><span data-zh>← 名词地图</span><span data-en>← Term map</span></a>
+          <span aria-hidden="true">·</span>
+          <a href="../../#layer-5"><span data-zh>跑起来</span><span data-en>Running It</span></a>
+        </nav>
+        <h1><span data-zh>近似最近邻检索（ANN）</span><span data-en>Approximate Nearest Neighbor Search (ANN)</span></h1>
+        <p class="tp-en">Approximate Nearest Neighbor Search (ANN)</p>
+        <ul class="tp-tags">
+          <li class="tp-tag"><span data-zh>数据与检索</span><span data-en>Data &amp; retrieval</span></li>
+          <li class="tp-tag"><span data-zh>第五站 · 跑起来</span><span data-en>Station 5 · Running It</span></li>
+          <li class="tp-tag"><span data-zh>引用核验 2026-11-17</span><span data-en>refs checked 2026-11-17</span></li>
+        </ul>
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>解决什么问题</span><span data-en>What problem it solves</span></div>
+          <p class="tp-p"><span data-zh>在海量向量里快速找出与查询最相近的一小批，允许少量漏检。</span><span data-en>Find the nearest vectors to a query quickly among billions, accepting a small amount of missed recall.</span></p>
+        </div>
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>这是什么</span><span data-en>What it is</span></div>
+<span data-zh>
+      <p class="tp-li">精确最近邻在大规模下太慢，ANN 用图索引、量化或哈希做近似。</p>
+      <p class="tp-li">HNSW 用多层可导航图，把查询复杂度降到近似对数级。</p>
+</span>
+<span data-en>
+      <p class="tp-li" data-en>Exact nearest-neighbor search is too slow at scale; ANN approximates with graph indexes, quantization or hashing.</p>
+      <p class="tp-li" data-en>HNSW uses a multi-layer navigable graph and brings query cost close to logarithmic.</p>
+</span>
+        </div>
+
+<div class="tp-sec"><figure class="tp-figure"><img src="../../assets/figures/fig-ann.svg" alt="An HNSW multi-layer graph: long links on upper layers approach quickly, short links below refine. A small recall loss buys orders-of-magnitude speed." loading="lazy" width="1200" height="600" /><figcaption><span data-zh>HNSW 的多层图：上层长跳快速接近，下层短跳精确定位；用少量召回损失换数量级的加速。</span><span data-en>An HNSW multi-layer graph: long links on upper layers approach quickly, short links below refine. A small recall loss buys orders-of-magnitude speed.</span></figcaption></figure></div>
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>为什么需要知道</span><span data-en>Why it matters</span></div>
+          <p class="tp-p"><span data-zh>向量库的核心就是 ANN；召回率、内存和延迟要一起调，换索引参数会改变检索质量。</span><span data-en>ANN is the core of a vector database. Recall, memory and latency must be tuned together; changing index parameters changes retrieval quality.</span></p>
+        </div>
+      <div class="tp-sec"><div class="tp-lab"><span data-zh>别名</span><span data-en>Chinese aliases</span></div><p class="tp-p"><span data-zh>ANN · 近似最近邻 · 向量检索 · ANN 检索</span></p></div>
+
+
+
+<div class="tp-sec"><div class="tp-lab"><span data-zh>同域词条</span><span data-en>Terms in the same area</span></div><ul class="tp-refs"><li><a href="../Agentic%20RAG/"><span data-zh>Agentic RAG</span><span data-en>Agentic RAG</span></a></li><li><a href="../%E8%AE%AD%E7%BB%83%E9%9B%86%E4%B8%8E%E6%B5%8B%E8%AF%95%E9%9B%86/"><span data-zh>训练集与测试集</span><span data-en>Training Set, Test Set</span></a></li><li><a href="../%E6%95%B0%E6%8D%AE%E5%A4%96%E5%B8%A6%E8%B7%AF%E5%BE%84/"><span data-zh>数据外带路径</span><span data-en>Data Exfiltration Paths</span></a></li><li><a href="../%E8%AF%84%E6%B5%8B%E9%9B%86%E8%AE%BE%E8%AE%A1/"><span data-zh>评测集设计</span><span data-en>Eval Set Design</span></a></li><li><a href="../%E8%92%B8%E9%A6%8F%E4%B8%8E%E7%9F%A5%E8%AF%86%E6%9D%A5%E6%BA%90/"><span data-zh>蒸馏与知识来源</span><span data-en>Distillation and Knowledge Provenance</span></a></li></ul></div>
+      <div class="tp-sec">
+        <div class="tp-lab"><span data-zh>现在能做什么</span><span data-en>What you can do now</span></div>
+        <p class="tp-p"><a href="https://models.specul.com/"><span data-zh>去 Models 图谱：看这个模型有哪些量化版、按你的显存该下哪一档</span><span data-en>Models atlas: which quantisations exist and which tier fits your VRAM</span> ↗</a></p>
+        <p class="tp-p"><a href="../../#layer-5"><span data-zh>回到名词地图看第5站的其他 38 个词 →</span><span data-en>Back to the map: the other 38 terms in station 5 →</span></a></p>
+      </div>
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>出处</span><span data-en>Sources</span></div>
+          <ul class="tp-refs">
+      <li><span data-zh>Malkov 与 Yashunin · HNSW（arXiv 1603.09320）</span><span data-en>Malkov and Yashunin, Efficient and robust approximate nearest neighbor search using Hierarchical Navigable Small World graphs</span> <a href="https://arxiv.org/abs/1603.09320" target="_blank" rel="noopener">↗</a></li>
+      <li><span data-zh>FAISS · 官方仓库</span><span data-en>FAISS repository</span> <a href="https://github.com/facebookresearch/faiss" target="_blank" rel="noopener">↗</a></li>
+          </ul>
+        </div>
+
+        <nav class="tp-pn" aria-label="上下篇" data-ui-aria-label-zh="上下篇" data-ui-aria-label-en="Previous and next">
+          <a href="../%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%AD%E9%97%B4%E4%BB%B6/"><span class="tp-ph"><span data-zh>上一篇</span><span data-en>Previous</span></span><span data-zh>机器人中间件</span><span data-en>Robot Middleware</span></a>
+          <a href="../ONNX/" style="text-align:right"><span class="tp-ph"><span data-zh>下一篇</span><span data-en>Next</span></span><span data-zh>ONNX（开放神经网络交换格式）</span><span data-en>ONNX (Open Neural Network Exchange)</span></a>
+        </nav>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 <span data-zh>投机取巧</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+          <a href="https://tools.specul.com/"><span data-zh>工具</span><span data-en>Tools</span></a>
+          <a href="https://models.specul.com/"><span data-zh>模型</span><span data-en>Models</span></a>
+          <a href="https://demos.specul.com/"><span data-zh>作品演示</span><span data-en>Playground</span></a>
+          <a href="https://hardware.specul.com/"><span data-zh>硬件算力</span><span data-en>Compute</span></a>
+          <a href="https://papers.specul.com/"><span data-zh>AI 论文</span><span data-en>AI Papers</span></a>
+          <a href="https://chain.specul.com/"><span data-zh>链</span><span data-en>Chain</span></a>
+          <a href="https://nav.specul.com/"><span data-zh>外部站点</span><span data-en>External</span></a>
+          <a href="https://github.com/speculcom/ai-handbook" target="_blank" rel="noopener"><span data-zh>开源</span><span data-en>Open source</span></a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+    <div class="container">
+      <p><a href="https://specul.com/search.html"><span data-zh>搜索全站内容</span><span data-en>Search all sites</span></a></p>
+      <p><a href="https://specul.com/correct.html"><span data-zh>发现错误？生成纠错草稿</span><span data-en>Spot an error? Compose a correction draft</span></a></p>
+      <p class="foot-trademark"><span data-zh>产品名与商标归各权利方所有，本站仅作识别与评论之用。</span><span data-en>Product names and trademarks belong to their respective owners and are used here for identification and commentary only.</span></p>
+    </div>
+  </footer>
+<nav class="nav-tabbar" aria-label="快捷导航">
+  <a href="https://specul.com/"><span class="ti" aria-hidden="true">◎</span><span data-zh>首页</span><span data-en>Home</span></a>
+  <a href="https://learn.specul.com/" aria-current="page"><span class="ti" aria-hidden="true">▤</span><span data-zh>学 AI</span><span data-en>Learn</span></a>
+  <a href="https://tools.specul.com/"><span class="ti" aria-hidden="true">◈</span><span data-zh>工具</span><span data-en>Tools</span></a>
+  <a href="https://models.specul.com/"><span class="ti" aria-hidden="true">▦</span><span data-zh>模型</span><span data-en>Models</span></a>
+  <button type="button" id="tabMore" aria-controls="navDrawer" aria-expanded="false"><span class="ti" aria-hidden="true">⋯</span><span data-zh>更多</span><span data-en>More</span></button>
+</nav>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img">
+<defs><marker id="arr" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#1F5B45"/></marker></defs>
+<rect width="1200" height="600" fill="#F7F5EF"/>
+<rect x="0" y="0" width="1200" height="6" fill="#1F5B45"/>
+<text x="48" y="58" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#1F5B45">PREFERENCE ALIGNMENT</text>
+<text x="48" y="100" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="30" font-weight="700" fill="#1E2A24">From demonstrations to preference optimisation</text>
+<line x1="48" y1="122" x2="1152" y2="122" stroke="#C9D2CB" stroke-width="1"/>
+<g><rect x="48" y="160" width="230" height="100" rx="14" fill="#FFFFFF" stroke="#C9D2CB" stroke-width="1.5"/><text x="66" y="192" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="650" fill="#1E2A24">Prompt</text><text x="66" y="218" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#1E2A24">用户请求</text></g>
+<g><rect x="310" y="160" width="230" height="100" rx="14" fill="#DCE5EF" stroke="#2C4A6B" stroke-width="1.5"/><text x="328" y="192" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="650" fill="#2C4A6B">Policy</text><text x="328" y="218" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#2C4A6B">当前模型</text></g>
+<g><rect x="572" y="140" width="250" height="70" rx="14" fill="#DDE9E1" stroke="#1F5B45" stroke-width="1.5"/><text x="590" y="172" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="650" fill="#1F5B45">Answer A</text></g>
+<g><rect x="572" y="226" width="250" height="70" rx="14" fill="#F2E4CE" stroke="#A9701F" stroke-width="1.5"/><text x="590" y="258" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="650" fill="#A9701F">Answer B</text></g>
+<g><rect x="864" y="160" width="288" height="100" rx="14" fill="#FFFFFF" stroke="#C9D2CB" stroke-width="1.5"/><text x="882" y="192" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="650" fill="#1E2A24">Preference</text><text x="882" y="218" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#1E2A24">人 / AI 判 A 更好</text></g>
+<line x1="278" y1="210" x2="310" y2="210" stroke="#1F5B45" stroke-width="2.4" marker-end="url(#arr)"/>
+<line x1="540" y1="200" x2="572" y2="178" stroke="#1F5B45" stroke-width="2.4" marker-end="url(#arr)"/>
+<line x1="540" y1="220" x2="572" y2="254" stroke="#1F5B45" stroke-width="2.4" marker-end="url(#arr)"/>
+<line x1="822" y1="178" x2="864" y2="198" stroke="#1F5B45" stroke-width="2.4" marker-end="url(#arr)"/>
+<line x1="822" y1="254" x2="864" y2="222" stroke="#1F5B45" stroke-width="2.4" marker-end="url(#arr)"/>
+<text x="48" y="340" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="17" font-weight="600" fill="#6E7A72">两种更新方式</text>
+<g><rect x="48" y="360" width="520" height="120" rx="14" fill="#FFFFFF" stroke="#C9D2CB" stroke-width="1.5"/><text x="66" y="392" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="650" fill="#1E2A24">RLHF / PPO</text><text x="66" y="418" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#1E2A24">先训奖励模型，再用强化学习更新策略</text></g>
+<g><rect x="600" y="360" width="552" height="120" rx="14" fill="#DDE9E1" stroke="#1F5B45" stroke-width="1.5"/><text x="618" y="392" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="650" fill="#1F5B45">DPO</text><text x="618" y="418" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#1F5B45">直接用偏好对优化策略，不另训奖励模型</text></g>
+<line x1="1004" y1="260" x2="1004" y2="360" stroke="#1F5B45" stroke-width="2.4" marker-end="url(#arr)"/>
+<text x="72" y="452" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#6E7A72">成本高、流程长，但可控</text>
+<text x="624" y="452" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#1F5B45">更简单，但对偏好数据质量敏感</text>
+<text x="48" y="540" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="17" font-weight="500" fill="#6E7A72">偏好对齐优化的是「更像人想要的选择」，不等于事实正确或安全。</text>
+<text x="48" y="576" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="13" font-weight="500" fill="#6E7A72">Specul · original diagram · CC BY 4.0</text>
+</svg>
