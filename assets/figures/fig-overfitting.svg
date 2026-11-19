@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img">
+<defs><marker id="arr" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#1F5B45"/></marker></defs>
+<rect width="1200" height="600" fill="#F7F5EF"/>
+<rect x="0" y="0" width="1200" height="6" fill="#1F5B45"/>
+<text x="48" y="58" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#1F5B45" text-anchor="start">COMPARE</text>
+<text x="48" y="100" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="30" font-weight="700" fill="#1E2A24" text-anchor="start">Training accuracy vs Validation accuracy</text>
+<line x1="48" y1="122" x2="1152" y2="122" stroke="#C9D2CB" stroke-width="1"/>
+<g><rect x="48" y="180" width="500" height="250" rx="14" fill="#DDE9E1" stroke="#1F5B45" stroke-width="1.4"/>
+<text x="66" y="218" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="20" font-weight="700" fill="#1F5B45" text-anchor="start">Training accuracy</text><text x="66" y="248" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#1F5B45" text-anchor="start">keeps improving</text></g><g><rect x="652" y="180" width="500" height="250" rx="14" fill="#F1DDD7" stroke="#9C3B2C" stroke-width="1.4"/>
+<text x="670" y="218" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="20" font-weight="700" fill="#9C3B2C" text-anchor="start">Validation accuracy</text><text x="670" y="248" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="15" font-weight="500" fill="#9C3B2C" text-anchor="start">stops improving / degrades</text></g><text x="574" y="315" font-family="Inter, sans-serif" font-size="28" font-weight="700" fill="#6E7A72" text-anchor="middle">vs</text>
+<text x="48" y="510" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="17" font-weight="500" fill="#6E7A72" text-anchor="start">The gap is the signal: more capacity is not always better.</text>
+<text x="48" y="576" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="13" font-weight="500" fill="#6E7A72" text-anchor="start">Specul · original diagram · CC BY 4.0</text>
+</svg>
