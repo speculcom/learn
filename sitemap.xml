@@ -222,6 +222,8 @@
   <url><loc>https://learn.specul.com/term/ONNX/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learn.specul.com/term/CUDA/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learn.specul.com/term/HBM%EF%BC%88%E9%AB%98%E5%B8%A6%E5%AE%BD%E6%98%BE%E5%AD%98%EF%BC%89/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learn.specul.com/term/GRPO/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learn.specul.com/term/MLA/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learn.specul.com/term/%E5%BC%80%E6%BA%90%E6%A8%A1%E5%9E%8B/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learn.specul.com/term/%E9%97%AD%E6%BA%90%E6%A8%A1%E5%9E%8B/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learn.specul.com/term/%E8%AE%B8%E5%8F%AF%E8%AF%81/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
@@ -257,6 +259,8 @@
   <url><loc>https://learn.specul.com/term/%E4%BE%9B%E5%BA%94%E5%95%86%E5%AE%89%E5%85%A8%E9%97%AE%E5%8D%B7%E6%80%8E%E4%B9%88%E8%AF%BB/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learn.specul.com/term/%E4%BA%8B%E6%95%85%E5%93%8D%E5%BA%94%E9%A2%84%E6%A1%88/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learn.specul.com/term/%E4%B8%8A%E7%BA%BF%E5%89%8D%E6%A3%80%E6%9F%A5%E9%97%A8%E7%A6%81/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learn.specul.com/term/JEPA/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learn.specul.com/term/Flow%20Matching/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learn.specul.com/path/quick-start/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learn.specul.com/path/afternoon-principles/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learn.specul.com/path/full-week/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
@@ -365,4 +369,5 @@
   <url><loc>https://learn.specul.com/guide/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E5%B0%B1%E7%AD%89%E4%BA%8E%E5%90%88%E8%A7%84/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learn.specul.com/atlas/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learn.specul.com/aliases/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learn.specul.com/2026.html</loc><lastmod>2026-11-19</lastmod></url>
 </urlset>

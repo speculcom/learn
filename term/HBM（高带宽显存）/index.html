@@ -13,10 +13,10 @@
   <meta property="og:description" content="堆叠在 GPU 旁边的高带宽显存，决定大模型能不能装下、跑多快。 HBM 用硅通孔把多层 DRAM 垂直堆叠，再通过宽接口与 GPU 相连。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
-  <script src="../../brand.js?v=f87953d167b3"></script>
+  <script src="../../brand.js?v=8e209a2fd1c9"></script>
   <script defer src="../../data/paths.js"></script>
   <script defer src="../../data/reading.js"></script>
-  <link rel="stylesheet" href="../../brand.css?v=f87953d167b3" />
+  <link rel="stylesheet" href="../../brand.css?v=8e209a2fd1c9" />
   <link rel="stylesheet" href="../../learn.css" />
   <style>:root { --accent: var(--cyan); }</style>
   <!-- B5：词条页的结构性数据（DefinedTerm） -->
@@ -39,6 +39,7 @@
         <a href="https://tools.specul.com/"><span data-zh>工具</span><span data-en>Tools</span></a>
         <a href="https://models.specul.com/"><span data-zh>模型</span><span data-en>Models</span></a>
         <a href="https://demos.specul.com/"><span data-zh>作品演示</span><span data-en>Playground</span></a>
+        <a href="https://oss.specul.com/"><span data-zh>开源库</span><span data-en>OSS</span></a>
         <a href="https://hardware.specul.com/" class="nav-group-start"><span data-zh>硬件算力</span><span data-en>Compute</span></a>
         <a href="https://papers.specul.com/"><span data-zh>AI 论文</span><span data-en>AI Papers</span></a>
         <a href="https://chain.specul.com/"><span data-zh>链</span><span data-en>Chain</span></a>
@@ -75,6 +76,7 @@
       <a href="https://tools.specul.com/"><span><span data-zh>工具</span><span data-en>Tools</span></span><span class="ar" aria-hidden="true">→</span></a>
       <a href="https://models.specul.com/"><span><span data-zh>模型</span><span data-en>Models</span></span><span class="ar" aria-hidden="true">→</span></a>
       <a href="https://demos.specul.com/"><span><span data-zh>作品演示</span><span data-en>Playground</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://oss.specul.com/"><span><span data-zh>开源库</span><span data-en>OSS</span></span><span class="ar" aria-hidden="true">→</span></a>
       <a href="https://hardware.specul.com/" class="nav-group-start"><span><span data-zh>硬件算力</span><span data-en>Compute</span></span><span class="ar" aria-hidden="true">→</span></a>
       <a href="https://papers.specul.com/"><span><span data-zh>AI 论文</span><span data-en>AI Papers</span></span><span class="ar" aria-hidden="true">→</span></a>
       <a href="https://chain.specul.com/"><span><span data-zh>链</span><span data-en>Chain</span></span><span class="ar" aria-hidden="true">→</span></a>
@@ -128,11 +130,11 @@
 
 
 
-<div class="tp-sec"><div class="tp-lab"><span data-zh>同域词条</span><span data-en>Terms in the same area</span></div><ul class="tp-refs"><li><a href="../%E6%8A%A4%E6%A0%8F%E4%B8%8E%E5%86%85%E5%AE%B9%E8%BF%87%E6%BB%A4/"><span data-zh>护栏与内容过滤</span><span data-en>Guardrails and Content Filtering</span></a></li><li><a href="../CUDA/"><span data-zh>CUDA</span><span data-en>CUDA</span></a></li><li><a href="../ONNX/"><span data-zh>ONNX（开放神经网络交换格式）</span><span data-en>ONNX (Open Neural Network Exchange)</span></a></li><li><a href="../%E6%97%A5%E5%BF%97%E9%87%8C%E7%95%99%E4%B8%8B%E4%BA%86%E4%BB%80%E4%B9%88/"><span data-zh>日志里留下了什么</span><span data-en>What the Logs Keep</span></a></li><li><a href="../%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%AD%E9%97%B4%E4%BB%B6/"><span data-zh>机器人中间件</span><span data-en>Robot Middleware</span></a></li></ul></div>
+<div class="tp-sec"><div class="tp-lab"><span data-zh>同域词条</span><span data-en>Terms in the same area</span></div><ul class="tp-refs"><li><a href="../%E6%8A%A4%E6%A0%8F%E4%B8%8E%E5%86%85%E5%AE%B9%E8%BF%87%E6%BB%A4/"><span data-zh>护栏与内容过滤</span><span data-en>Guardrails and Content Filtering</span></a></li><li><a href="../CUDA/"><span data-zh>CUDA</span><span data-en>CUDA</span></a></li><li><a href="../ONNX/"><span data-zh>ONNX（开放神经网络交换格式）</span><span data-en>ONNX (Open Neural Network Exchange)</span></a></li><li><a href="../MLA/"><span data-zh>MLA</span><span data-en>Multi-head Latent Attention</span></a></li><li><a href="../%E6%97%A5%E5%BF%97%E9%87%8C%E7%95%99%E4%B8%8B%E4%BA%86%E4%BB%80%E4%B9%88/"><span data-zh>日志里留下了什么</span><span data-en>What the Logs Keep</span></a></li></ul></div>
       <div class="tp-sec">
         <div class="tp-lab"><span data-zh>现在能做什么</span><span data-en>What you can do now</span></div>
         <p class="tp-p"><a href="https://models.specul.com/"><span data-zh>去 Models 图谱：看这个模型有哪些量化版、按你的显存该下哪一档</span><span data-en>Models atlas: which quantisations exist and which tier fits your VRAM</span> ↗</a></p>
-        <p class="tp-p"><a href="../../#layer-5"><span data-zh>回到名词地图看第5站的其他 38 个词 →</span><span data-en>Back to the map: the other 38 terms in station 5 →</span></a></p>
+        <p class="tp-p"><a href="../../#layer-5"><span data-zh>回到名词地图看第5站的其他 40 个词 →</span><span data-en>Back to the map: the other 40 terms in station 5 →</span></a></p>
       </div>
 
         <div class="tp-sec">
@@ -145,7 +147,7 @@
 
         <nav class="tp-pn" aria-label="上下篇" data-ui-aria-label-zh="上下篇" data-ui-aria-label-en="Previous and next">
           <a href="../CUDA/"><span class="tp-ph"><span data-zh>上一篇</span><span data-en>Previous</span></span><span data-zh>CUDA</span><span data-en>CUDA</span></a>
-          <a href="../%E5%BC%80%E6%BA%90%E6%A8%A1%E5%9E%8B/" style="text-align:right"><span class="tp-ph"><span data-zh>下一篇</span><span data-en>Next</span></span><span data-zh>开源模型</span><span data-en>Open-weight Model</span></a>
+          <a href="../GRPO/" style="text-align:right"><span class="tp-ph"><span data-zh>下一篇</span><span data-en>Next</span></span><span data-zh>GRPO</span><span data-en>Group Relative Policy Optimization</span></a>
         </nav>
       </article>
     </div>
@@ -162,6 +164,7 @@
           <a href="https://tools.specul.com/"><span data-zh>工具</span><span data-en>Tools</span></a>
           <a href="https://models.specul.com/"><span data-zh>模型</span><span data-en>Models</span></a>
           <a href="https://demos.specul.com/"><span data-zh>作品演示</span><span data-en>Playground</span></a>
+          <a href="https://oss.specul.com/"><span data-zh>开源库</span><span data-en>OSS</span></a>
           <a href="https://hardware.specul.com/"><span data-zh>硬件算力</span><span data-en>Compute</span></a>
           <a href="https://papers.specul.com/"><span data-zh>AI 论文</span><span data-en>AI Papers</span></a>
           <a href="https://chain.specul.com/"><span data-zh>链</span><span data-en>Chain</span></a>
@@ -186,10 +189,11 @@
     <a href="https://tools.specul.com/"><span class="ti" aria-hidden="true">◈</span><span data-zh>工具</span><span data-en>Tools</span></a>
     <a href="https://models.specul.com/"><span class="ti" aria-hidden="true">▦</span><span data-zh>模型</span><span data-en>Models</span></a>
     <a href="https://demos.specul.com/"><span class="ti" aria-hidden="true">▷</span><span data-zh>演示</span><span data-en>Demos</span></a>
+    <a href="https://oss.specul.com/"><span class="ti" aria-hidden="true">▧</span><span data-zh>开源</span><span data-en>OSS</span></a>
     <a href="https://hardware.specul.com/"><span class="ti" aria-hidden="true">▣</span><span data-zh>算力</span><span data-en>Chips</span></a>
-    <a href="https://papers.specul.com/"><span class="ti" aria-hidden="true">▥</span><span data-zh>AI论文</span><span data-en>Papers</span></a>
+    <a href="https://papers.specul.com/"><span class="ti" aria-hidden="true">▥</span><span data-zh>论文</span><span data-en>Papers</span></a>
     <a href="https://chain.specul.com/"><span class="ti" aria-hidden="true">◇</span><span data-zh>链</span><span data-en>Chain</span></a>
-    <a href="https://nav.specul.com/" data-nav-group="external"><span class="ti" aria-hidden="true">↗</span><span data-zh>AI导航</span><span data-en>AI Nav</span></a>
+    <a href="https://nav.specul.com/" data-nav-group="external"><span class="ti" aria-hidden="true">↗</span><span data-zh>导航</span><span data-en>Nav</span></a>
 </nav>
 </body>
 </html>
