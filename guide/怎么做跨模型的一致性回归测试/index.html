@@ -13,10 +13,10 @@
   <meta property="og:description" content="模型升级不是「换个更强的就行」；同一套回归集必须前后跑，才能知道哪些能力变了、哪些只是风格变了。 先固定 50–100 条回归集，覆盖常见任务、边界输入和必须拒答的场景。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
-  <script src="../../brand.js?v=11bc9d7dba82"></script>
+  <script src="../../brand.js?v=c81d6c81488e"></script>
   <script defer src="../../data/paths.js"></script>
   <script defer src="../../data/reading.js"></script>
-  <link rel="stylesheet" href="../../brand.css?v=11bc9d7dba82" />
+  <link rel="stylesheet" href="../../brand.css?v=c81d6c81488e" />
   <link rel="stylesheet" href="../../learn.css" />
   <style>:root { --accent: var(--gold); }</style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"怎么做跨模型的一致性回归测试","description":"模型升级不是「换个更强的就行」；同一套回归集必须前后跑，才能知道哪些能力变了、哪些只是风格变了。","url":"https://learn.specul.com/guide/%E6%80%8E%E4%B9%88%E5%81%9A%E8%B7%A8%E6%A8%A1%E5%9E%8B%E7%9A%84%E4%B8%80%E8%87%B4%E6%80%A7%E5%9B%9E%E5%BD%92%E6%B5%8B%E8%AF%95/","inLanguage":"zh-Hans","step":[{"@type":"HowToStep","position":1,"name":"先固定 50–100 条回归集，覆盖常见任务、边界输入和必须拒答的场景。"},{"@type":"HowToStep","position":2,"name":"每条写期望要点而不是唯一答案，用要点覆盖率打分。"},{"@type":"HowToStep","position":3,"name":"升级前后跑同一套集，记录通过率、引用正确率、拒答率和平均长度。"},{"@type":"HowToStep","position":4,"name":"分开统计能力变化与风格变化：变长、变客气不等于变好。"},{"@type":"HowToStep","position":5,"name":"模型评审只做初筛，抽 20% 人工复核，防止位置与冗长偏差。"},{"@type":"HowToStep","position":6,"name":"设回滚阈值：低于阈值就回滚，不要用「整体感觉更好」上线。"},{"@type":"HowToStep","position":7,"name":"保留每次原始输出；系统提示、工具描述、检索库更新也各算一次变更。"}]}</script>
@@ -39,10 +39,10 @@
         <a href="https://models.specul.com/"><span data-zh>模型</span><span data-en>Models</span></a>
         <a href="https://demos.specul.com/"><span data-zh>作品演示</span><span data-en>Playground</span></a>
         <a href="https://oss.specul.com/"><span data-zh>开源库</span><span data-en>OSS</span></a>
-        <a href="https://hardware.specul.com/" class="nav-group-start"><span data-zh>硬件算力</span><span data-en>Compute</span></a>
+        <a href="https://hardware.specul.com/"><span data-zh>硬件算力</span><span data-en>Compute</span></a>
         <a href="https://papers.specul.com/"><span data-zh>AI 论文</span><span data-en>AI Papers</span></a>
         <a href="https://chain.specul.com/"><span data-zh>链</span><span data-en>Chain</span></a>
-        <a href="https://nav.specul.com/" class="nav-group-start" data-nav-group="external"><span data-zh>AI导航</span><span data-en>AI Directory</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>AI 导航</span><span data-en>AI Directory</span></a>
       </nav>
       <!-- 2026-10-10：.nav-tools 从 nav 元素**内部**移到外面，与 .nav-links 平级。
            放里面时窄屏下它会跟着链接一起换行：链接占满整行 → 按钮被挤到第三条

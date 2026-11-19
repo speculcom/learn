@@ -13,10 +13,10 @@
   <meta property="og:description" content="RAG 的效果八成取决于语料，而不是模型；先把「收什么、怎么切、怎么测」定下来。 先定问题域和拒答边界：哪些问题必须答、哪些必须说不知道；语料只收能支撑这些问题的内容。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
-  <script src="../../brand.js?v=11bc9d7dba82"></script>
+  <script src="../../brand.js?v=c81d6c81488e"></script>
   <script defer src="../../data/paths.js"></script>
   <script defer src="../../data/reading.js"></script>
-  <link rel="stylesheet" href="../../brand.css?v=11bc9d7dba82" />
+  <link rel="stylesheet" href="../../brand.css?v=c81d6c81488e" />
   <link rel="stylesheet" href="../../learn.css" />
   <style>:root { --accent: var(--gold); }</style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"怎么用 AI 搭 RAG 语料","description":"RAG 的效果八成取决于语料，而不是模型；先把「收什么、怎么切、怎么测」定下来。","url":"https://learn.specul.com/guide/%E6%80%8E%E4%B9%88%E7%94%A8%20AI%20%E6%90%AD%20RAG%20%E8%AF%AD%E6%96%99/","inLanguage":"zh-Hans","step":[{"@type":"HowToStep","position":1,"name":"先定问题域和拒答边界：哪些问题必须答、哪些必须说不知道；语料只收能支撑这些问题的内容。"},{"@type":"HowToStep","position":2,"name":"文档先去噪（页眉页脚、广告、导航），保留标题层级和来源 URL；扫描件先 OCR。"},{"@type":"HowToStep","position":3,"name":"按语义结构切块，不按固定字数硬切；每块带文档标题、章节路径和来源链接。"},{"@type":"HowToStep","position":4,"name":"给每块生成「可检索的问题/摘要」并保留原文，向量检索用问题、生成答案用原文。"},{"@type":"HowToStep","position":5,"name":"建一个小评测集：真实问题 + 标准答案 + 必须引用的文档；每次换切法/模型都重跑。"},{"@type":"HowToStep","position":6,"name":"定期清过期文档，保留版本与删除记录；不要让旧政策和新政策同时被检索到。"}]}</script>
@@ -39,10 +39,10 @@
         <a href="https://models.specul.com/"><span data-zh>模型</span><span data-en>Models</span></a>
         <a href="https://demos.specul.com/"><span data-zh>作品演示</span><span data-en>Playground</span></a>
         <a href="https://oss.specul.com/"><span data-zh>开源库</span><span data-en>OSS</span></a>
-        <a href="https://hardware.specul.com/" class="nav-group-start"><span data-zh>硬件算力</span><span data-en>Compute</span></a>
+        <a href="https://hardware.specul.com/"><span data-zh>硬件算力</span><span data-en>Compute</span></a>
         <a href="https://papers.specul.com/"><span data-zh>AI 论文</span><span data-en>AI Papers</span></a>
         <a href="https://chain.specul.com/"><span data-zh>链</span><span data-en>Chain</span></a>
-        <a href="https://nav.specul.com/" class="nav-group-start" data-nav-group="external"><span data-zh>AI导航</span><span data-en>AI Directory</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>AI 导航</span><span data-en>AI Directory</span></a>
       </nav>
       <!-- 2026-10-10：.nav-tools 从 nav 元素**内部**移到外面，与 .nav-links 平级。
            放里面时窄屏下它会跟着链接一起换行：链接占满整行 → 按钮被挤到第三条
