@@ -92,6 +92,9 @@ a:hover{text-decoration:underline}
 .hero h1{margin:0 0 var(--sp-3)}
 .hero p{margin:0 0 9px; color:var(--tx-2); max-width:68ch}
 .hero .lead{color:var(--tx); font-size:17px}
+.hero-links{display:flex; flex-wrap:wrap; gap:6px 10px; align-items:center}
+.hero-links a{font-size:var(--fs-xs)}
+.hero-note{color:var(--tx-3); font-size:var(--fs-xs)}
 
 /* ===== 入门路径 =====
  * 6 层编成 1→6 步。跟 .dchip / .tb 一样用 --dc 吃功能域色，
@@ -477,3 +480,32 @@ footer a{color:var(--tx-2)}
 .reading-panel select{display:block;margin-top:var(--sp-2);width:100%}
 .reading-done{text-decoration:line-through}
 .reading-button:focus-visible,.reading-panel a:focus-visible,.reading-panel select:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* ── 学习起点：把目标平铺成卡片，不用下拉框 ─────────────────────
+   2026-11-19 用户明确要求「不要下拉式菜单，把能选的东西平铺出来」。
+   这里只用 brand.css 的 token，不引新颜色；选中态用强调色描边。 */
+.start-panel{padding:clamp(18px,2.6vw,26px)}
+.start-kicker{margin:0 0 4px;color:var(--accent);font-size:var(--fs-micro);letter-spacing:.08em;text-transform:uppercase}
+.start-panel h2{font-size:var(--fs-lg);margin:0 0 6px}
+.start-deck{margin:0 0 var(--sp-4);color:var(--ink-mid);font-size:var(--fs-xs);line-height:1.7;max-width:72ch}
+.goal-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.goal-card{
+  display:flex;flex-direction:column;gap:8px;min-height:150px;
+  padding:14px;text-align:left;font:inherit;color:var(--ink);
+  background:var(--bg-raise);border:1px solid var(--line);border-radius:var(--r-sm);
+  cursor:pointer;transition:border-color .15s ease,transform .15s ease,background .15s ease;
+}
+.goal-card:hover{border-color:var(--accent);transform:translateY(-1px)}
+.goal-card[aria-pressed="true"]{border-color:var(--accent);background:var(--bg-inset);box-shadow:inset 0 0 0 1px var(--accent)}
+.goal-card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.gc-top{display:flex;flex-direction:column;gap:4px}
+.gc-title{font-size:var(--fs-sm);font-weight:600;line-height:1.35}
+.gc-time{color:var(--ink-dim);font-size:var(--fs-micro);white-space:nowrap}
+.gc-blurb{flex:1;color:var(--ink-mid);font-size:var(--fs-xs);line-height:1.55}
+.gc-meta{color:var(--ink-dim);font-size:var(--fs-micro)}
+.goal-result{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-top:var(--sp-4);padding-top:var(--sp-3);border-top:1px solid var(--line)}
+.goal-result-lead{flex:1 1 100%;margin:0;color:var(--ink-mid);font-size:var(--fs-xs);line-height:1.7}
+.goal-result a{font-size:var(--fs-xs);font-weight:600}
+@media(max-width:900px){.goal-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.goal-grid{grid-template-columns:1fr}.goal-card{min-height:0}}
+
