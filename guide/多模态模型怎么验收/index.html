@@ -98,7 +98,7 @@
         </nav>
         <h1><span data-zh>多模态模型怎么验收</span><span data-en>How to Acceptance-Test a Multimodal Model</span></h1>
         <p class="tp-en"><span data-zh>微型指南 · 约 8 分钟</span><span data-en>Guide · about 8 min</span><span data-zh> · 引用核验 2026-11-19（仅引用链接与日期）</span><span data-en> · refs checked 2026-11-19 (reference links and dates only)</span></p>
-        <p class="tp-p"><span data-zh>看图答得漂亮不等于能用；验收要把「看见」「看懂」「据此做事」分开测。</span><span data-en>看图答得漂亮不等于能用；验收要把「看见」「看懂」「据此做事」分开测。</span></p>
+        <p class="tp-p"><span data-zh>看图答得漂亮不等于能用；验收要把「看见」「看懂」「据此做事」分开测。</span><span data-en>A pretty answer about an image does not mean it works. Acceptance testing separates seeing, understanding and acting on it.</span></p>
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>怎么做</span><span data-en>How to</span></div>
 <span data-zh>
@@ -110,12 +110,12 @@
       <p class="tp-li">用同一组题对比至少一个基线模型；没有基线就没有「好」。</p>
 </span>
 <span data-en>
-      <p class="tp-li" data-en>建三组题：纯识别（OCR、物体、图表读数）、关系推理（比较、因果、空间）、任务执行（按图改代码、填表、导航）。</p>
-      <p class="tp-li" data-en>每题保留原图与标准答案，要求模型引用图上坐标或区域；不能引用就判「蒙对」。</p>
-      <p class="tp-li" data-en>加入对抗样本：模糊、旋转、遮挡、错别字、图表误导；看它是否承认看不见。</p>
-      <p class="tp-li" data-en>分开测「描述」与「决策」：描述对但行动错，说明视觉到动作的链路没打通。</p>
-      <p class="tp-li" data-en>记录 token 成本：图像 token 化很贵，长图与多图会显著推高单价。</p>
-      <p class="tp-li" data-en>用同一组题对比至少一个基线模型；没有基线就没有「好」。</p>
+      <p class="tp-li" data-en>Build three sets: pure recognition (OCR, objects, chart reading), relational reasoning (comparison, cause, space), and task execution (edit code from an image, fill a form, navigate).</p>
+      <p class="tp-li" data-en>Keep the original image and the reference answer for every item; require the model to cite coordinates or regions. If it cannot, count it as a lucky guess.</p>
+      <p class="tp-li" data-en>Add adversarial samples: blur, rotation, occlusion, typos, misleading charts; see whether it admits it cannot see.</p>
+      <p class="tp-li" data-en>Test description and decision separately: a correct description with a wrong action means the vision-to-action path is not connected.</p>
+      <p class="tp-li" data-en>Record token cost: image tokenisation is expensive, and long or multiple images raise the unit price sharply.</p>
+      <p class="tp-li" data-en>Compare against at least one baseline on the same set; without a baseline there is no “good”.</p>
 </span>
         </div>
         <section class="tp-sec"><h2><span data-zh>例子与判断</span><span data-en>Example and interpretation</span></h2><p class="t-sm"><span data-zh>以下是教学情境，不是本站运行或实测记录。</span><span data-en>A teaching scenario, not a measured or executed site test.</span></p><p class="tp-p"><span data-zh>找一张带小字与图例的财务报表截图，要求模型读出三个数字并给出坐标区域；再把图旋转 15 度、局部遮挡，看它是否承认读不清。两次都过，才算具备可用的图表理解。</span><span data-en>Give the model a financial table screenshot with small text and a legend, ask for three numbers plus their bounding regions. Rotate the image 15 degrees and occlude part of it; a usable chart reader must say what it cannot see. Pass both to qualify.</span></p></section>

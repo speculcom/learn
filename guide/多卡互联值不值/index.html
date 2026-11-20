@@ -98,7 +98,7 @@
         </nav>
         <h1><span data-zh>多卡互联值不值</span><span data-en>Is Multi-GPU Interconnect Worth It?</span></h1>
         <p class="tp-en"><span data-zh>微型指南 · 约 8 分钟</span><span data-en>Guide · about 8 min</span><span data-zh> · 引用核验 2026-11-19（仅引用链接与日期）</span><span data-en> · refs checked 2026-11-19 (reference links and dates only)</span></p>
-        <p class="tp-p"><span data-zh>多卡不是「显存加法」；先算通信、并行方式与真实吞吐，再决定掏不掏钱。</span><span data-en>多卡不是「显存加法」；先算通信、并行方式与真实吞吐，再决定掏不掏钱。</span></p>
+        <p class="tp-p"><span data-zh>多卡不是「显存加法」；先算通信、并行方式与真实吞吐，再决定掏不掏钱。</span><span data-en>More GPUs is not additive VRAM. Calculate communication, parallelism and real throughput before spending.</span></p>
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>怎么做</span><span data-en>How to</span></div>
 <span data-zh>
@@ -110,12 +110,12 @@
       <p class="tp-li">先租后买：用云上同规格多卡跑一周真实负载，再决定。</p>
 </span>
 <span data-en>
-      <p class="tp-li" data-en>先判断瓶颈：单卡显存不够、单卡算力不够、还是要更大并发；三种问题解法不同。</p>
-      <p class="tp-li" data-en>张量并行吃互联带宽，流水并行吃显存与气泡；NVLink、PCIe、雷电的差距先查清。</p>
-      <p class="tp-li" data-en>算有效吞吐：不是峰值 FLOPS 相加，而是端到端 tokens/s 与首字延迟。</p>
-      <p class="tp-li" data-en>算总拥有成本：卡、主板、电源、散热、机房、电费、运维；别只算卡价。</p>
-      <p class="tp-li" data-en>小模型与低并发通常单卡更划算；多卡适合大模型、长上下文、高并发。</p>
-      <p class="tp-li" data-en>先租后买：用云上同规格多卡跑一周真实负载，再决定。</p>
+      <p class="tp-li" data-en>Find the bottleneck first: not enough VRAM, not enough compute, or need more concurrency. Each has a different fix.</p>
+      <p class="tp-li" data-en>Tensor parallelism eats interconnect bandwidth; pipeline parallelism eats VRAM and bubbles. Check NVLink, PCIe and Thunderbolt gaps first.</p>
+      <p class="tp-li" data-en>Calculate effective throughput: not summed peak FLOPS, but end-to-end tokens/s and time to first token.</p>
+      <p class="tp-li" data-en>Calculate total cost of ownership: cards, board, PSU, cooling, room, power, operations; not just card price.</p>
+      <p class="tp-li" data-en>Small models at low concurrency are usually cheaper on one card; multi-GPU suits large models, long context and high concurrency.</p>
+      <p class="tp-li" data-en>Rent before buying: run the real workload for a week on the same cloud configuration, then decide.</p>
 </span>
         </div>
         <section class="tp-sec"><h2><span data-zh>例子与判断</span><span data-en>Example and interpretation</span></h2><p class="t-sm"><span data-zh>以下是教学情境，不是本站运行或实测记录。</span><span data-en>A teaching scenario, not a measured or executed site test.</span></p><p class="tp-p"><span data-zh>同一台机器先跑单卡 70B 4bit 的 tokens/s 与首字延迟，再跑双卡张量并行；如果双卡只提升 20% 而功耗翻倍，就先别买第二张卡，改用更小模型或量化。</span><span data-en>Benchmark a 70B 4-bit model on one GPU for tokens/s and time-to-first-token, then on two GPUs with tensor parallelism. If two cards add only 20% throughput while doubling power, do not buy the second card; use a smaller model or stronger quantization.</span></p></section>

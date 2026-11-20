@@ -98,7 +98,7 @@
         </nav>
         <h1><span data-zh>长任务 Agent 怎么做检查点</span><span data-en>How to Add Checkpoints to Long-Running Agents</span></h1>
         <p class="tp-en"><span data-zh>微型指南 · 约 8 分钟</span><span data-en>Guide · about 8 min</span><span data-zh> · 引用核验 2026-11-19（仅引用链接与日期）</span><span data-en> · refs checked 2026-11-19 (reference links and dates only)</span></p>
-        <p class="tp-p"><span data-zh>长任务不怕慢，怕的是一步错、全盘重来；检查点是把「可恢复」设计进流程。</span><span data-en>长任务不怕慢，怕的是一步错、全盘重来；检查点是把「可恢复」设计进流程。</span></p>
+        <p class="tp-p"><span data-zh>长任务不怕慢，怕的是一步错、全盘重来；检查点是把「可恢复」设计进流程。</span><span data-en>Long jobs are not afraid of being slow; they are afraid of one bad step forcing a full restart. Checkpoints design recoverability into the flow.</span></p>
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>怎么做</span><span data-en>How to</span></div>
 <span data-zh>
@@ -110,12 +110,12 @@
       <p class="tp-li">记录「不可逆操作」清单；恢复时默认不重放，先核对外部状态。</p>
 </span>
 <span data-en>
-      <p class="tp-li" data-en>把任务切成可验证的阶段，每阶段有明确产物与成功条件；不要用「继续做」当阶段。</p>
-      <p class="tp-li" data-en>每阶段结束写结构化状态：目标、已完成、未完成、关键决策、外部 ID、花费。</p>
-      <p class="tp-li" data-en>副作用操作（发消息、下单、改文件）前先落检查点；失败时知道做过什么、没做什么。</p>
-      <p class="tp-li" data-en>恢复时先读状态再行动；不要凭对话历史猜进度。</p>
-      <p class="tp-li" data-en>设最大步数、预算与时限，超限暂停并请求人工；不要无限重试。</p>
-      <p class="tp-li" data-en>记录「不可逆操作」清单；恢复时默认不重放，先核对外部状态。</p>
+      <p class="tp-li" data-en>Cut the job into verifiable stages, each with a clear artefact and success condition; “keep going” is not a stage.</p>
+      <p class="tp-li" data-en>At the end of each stage write structured state: goal, done, not done, key decisions, external IDs, spend.</p>
+      <p class="tp-li" data-en>Checkpoint before side effects (send, order, edit a file), so a failure knows what was and was not done.</p>
+      <p class="tp-li" data-en>On resume, read the state before acting; never guess progress from chat history.</p>
+      <p class="tp-li" data-en>Set maximum steps, budget and time; stop and ask a human when exceeded. Do not retry forever.</p>
+      <p class="tp-li" data-en>Keep a list of irreversible actions; on resume, do not replay by default — verify external state first.</p>
 </span>
         </div>
         <section class="tp-sec"><h2><span data-zh>例子与判断</span><span data-en>Example and interpretation</span></h2><p class="t-sm"><span data-zh>以下是教学情境，不是本站运行或实测记录。</span><span data-en>A teaching scenario, not a measured or executed site test.</span></p><p class="tp-p"><span data-zh>把「整理 20 封客户邮件并起草回复」拆成读取、分类、起草、审批四段；每段结束写一行状态（已处理几封、哪些待确认、花了多少 token）。中途杀掉进程，恢复后先读状态再继续，不重发已批准的邮件。</span><span data-en>Split &amp;quot;triage 20 customer emails and draft replies&amp;quot; into read, classify, draft and approve. After each stage write one state line: how many processed, what needs confirmation, tokens spent. Kill the process midway; on resume read the state first and never resend approved mail.</span></p></section>

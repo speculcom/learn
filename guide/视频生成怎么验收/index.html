@@ -98,7 +98,7 @@
         </nav>
         <h1><span data-zh>视频生成怎么验收</span><span data-en>How to Acceptance-Test AI Video Generation</span></h1>
         <p class="tp-en"><span data-zh>微型指南 · 约 9 分钟</span><span data-en>Guide · about 9 min</span><span data-zh> · 引用核验 2026-11-19（仅引用链接与日期）</span><span data-en> · refs checked 2026-11-19 (reference links and dates only)</span></p>
-        <p class="tp-p"><span data-zh>视频验收不是「看着像」，而是画面、运动、时序、音画同步四项分开打分。</span><span data-en>视频验收不是「看着像」，而是画面、运动、时序、音画同步四项分开打分。</span></p>
+        <p class="tp-p"><span data-zh>视频验收不是「看着像」，而是画面、运动、时序、音画同步四项分开打分。</span><span data-en>Video acceptance is not “it looks right”. Score picture, motion, temporal order and audio-visual sync separately.</span></p>
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>怎么做</span><span data-en>How to</span></div>
 <span data-zh>
@@ -111,13 +111,13 @@
       <p class="tp-li">记录每条失败样本与参数，建回归集；不要只存「最好的一条」。</p>
 </span>
 <span data-en>
-      <p class="tp-li" data-en>先定交付标准：时长、分辨率、帧率、比例、是否有水印；不达标直接拒。</p>
-      <p class="tp-li" data-en>画面：主体一致性、文字与 Logo 正确性、手部与人脸等高风险区域。</p>
-      <p class="tp-li" data-en>运动：镜头运动是否按提示、物理是否合理、有没有跳变或闪烁。</p>
-      <p class="tp-li" data-en>时序：跨镜头角色、服装、场景是否一致；长视频要看接缝。</p>
-      <p class="tp-li" data-en>音画：有对白或音效时检查口型、声画同步与环境声。</p>
-      <p class="tp-li" data-en>可编辑性：能否局部重生成、延长、换参考；不能改的片子返工成本高。</p>
-      <p class="tp-li" data-en>记录每条失败样本与参数，建回归集；不要只存「最好的一条」。</p>
+      <p class="tp-li" data-en>Set delivery criteria first: duration, resolution, frame rate, aspect ratio, watermark; reject anything that misses.</p>
+      <p class="tp-li" data-en>Picture: subject consistency, correct text and logos, high-risk areas such as hands and faces.</p>
+      <p class="tp-li" data-en>Motion: does the camera move as prompted, is the physics plausible, are there jumps or flicker?</p>
+      <p class="tp-li" data-en>Temporal: do character, costume and scene stay consistent across cuts? Check the seams in long videos.</p>
+      <p class="tp-li" data-en>Audio-visual: with dialogue or effects, check lip sync, sound-picture sync and room tone.</p>
+      <p class="tp-li" data-en>Editability: can it be partially regenerated, extended or re-referenced? A piece you cannot edit is expensive to redo.</p>
+      <p class="tp-li" data-en>Log every failed sample and its parameters into a regression set; do not keep only the best take.</p>
 </span>
         </div>
         <section class="tp-sec"><h2><span data-zh>例子与判断</span><span data-en>Example and interpretation</span></h2><p class="t-sm"><span data-zh>以下是教学情境，不是本站运行或实测记录。</span><span data-en>A teaching scenario, not a measured or executed site test.</span></p><p class="tp-p"><span data-zh>做一条 8 秒产品短片：先定 1080p、24fps、9:16、无水印；再逐项检查瓶身 Logo 是否变形、镜头推进是否按提示、跨镜头标签是否一致、旁白口型是否同步。任何一项失败就记参数并重跑。</span><span data-en>Produce an 8-second product clip: fix 1080p, 24fps, 9:16 and no watermark first. Then check logo distortion, whether the push-in follows the prompt, label consistency across shots, and lip-sync against the voiceover. Log the settings for any failure and rerun.</span></p></section>
