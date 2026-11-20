@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>音视频联合生成 · 学 AI | 投机取巧</title>
+  <meta name="description" content="让画面和对白、音效在同一次生成里对齐，而不是先出视频再配音。 模型在同一个生成过程里同时建模视觉帧与音频 token，口型、动作声、环境声按时间轴对齐。" />
+  <link rel="canonical" href="https://learn.specul.com/term/%E9%9F%B3%E8%A7%86%E9%A2%91%E8%81%94%E5%90%88%E7%94%9F%E6%88%90/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="学 AI" />
+  <meta property="og:url" content="https://learn.specul.com/term/%E9%9F%B3%E8%A7%86%E9%A2%91%E8%81%94%E5%90%88%E7%94%9F%E6%88%90/" />
+  <meta property="og:title" content="音视频联合生成 · 学 AI" />
+  <meta property="og:description" content="让画面和对白、音效在同一次生成里对齐，而不是先出视频再配音。 模型在同一个生成过程里同时建模视觉帧与音频 token，口型、动作声、环境声按时间轴对齐。" />
+  <meta name="theme-color" content="#16121f" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
+  <script src="../../brand.js?v=c81d6c81488e"></script>
+  <script defer src="../../data/paths.js"></script>
+  <script defer src="../../data/reading.js"></script>
+  <link rel="stylesheet" href="../../brand.css?v=c81d6c81488e" />
+  <link rel="stylesheet" href="../../learn.css" />
+  <style>:root { --accent: var(--cyan); }</style>
+  <!-- B5：词条页的结构性数据（DefinedTerm） -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTerm","name":"音视频联合生成","alternateName":"Joint Audio-Video Generation","description":"让画面和对白、音效在同一次生成里对齐，而不是先出视频再配音。","url":"https://learn.specul.com/term/%E9%9F%B3%E8%A7%86%E9%A2%91%E8%81%94%E5%90%88%E7%94%9F%E6%88%90/","inLanguage":"zh-Hans","inDefinedTermSet":{"@type":"DefinedTermSet","name":"学 AI · 第四站（看懂）","url":"https://learn.specul.com/#layer-4"},"isPartOf":{"@type":"WebSite","name":"学 AI","url":"https://learn.specul.com/"}}</script>
+</head>
+<body class="brand-ambient has-tabbar has-tabbar-1row" style="--accent:var(--cyan)">
+  <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
+  <header class="site-header">
+    <div class="container site-bar">
+      <a class="brand" href="https://specul.com/" title="投机取巧">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
+          <span class="brand-sub" id="markSub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="站点导航">
+        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+        <a href="https://learn.specul.com/" aria-current="page"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+        <a href="https://tools.specul.com/"><span data-zh>工具</span><span data-en>Tools</span></a>
+        <a href="https://models.specul.com/"><span data-zh>模型</span><span data-en>Models</span></a>
+        <a href="https://demos.specul.com/"><span data-zh>作品演示</span><span data-en>Playground</span></a>
+        <a href="https://oss.specul.com/"><span data-zh>开源库</span><span data-en>OSS</span></a>
+        <a href="https://hardware.specul.com/"><span data-zh>硬件算力</span><span data-en>Compute</span></a>
+        <a href="https://papers.specul.com/"><span data-zh>AI 论文</span><span data-en>AI Papers</span></a>
+        <a href="https://chain.specul.com/"><span data-zh>链</span><span data-en>Chain</span></a>
+        <a href="https://nav.specul.com/"><span data-zh>AI导航</span><span data-en>AI Directory</span></a>
+      </nav>
+      <!-- 2026-10-10：.nav-tools 从 nav 元素**内部**移到外面，与 .nav-links 平级。
+           放里面时窄屏下它会跟着链接一起换行：链接占满整行 → 按钮被挤到第三条
+           （实测顶栏 134px、按钮组孤零零一行）。移出来后它与品牌同行，
+           链接独占第二行居中 —— 这才是下面注释里方案 B 想要的样子。 -->
+      <span class="nav-tools">
+        <a class="icon-btn" href="https://specul.com/search.html" aria-label="搜索" data-ui-aria-label-zh="搜索" data-ui-aria-label-en="Search" title="搜索全站" data-ui-title-zh="搜索全站" data-ui-title-en="Search all sites"><span aria-hidden="true">⌕</span></a>
+        <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
+        <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
+      </span>
+      <!-- B6（2026-10-09）：窄屏（≤900px）下 .nav-links 会隐藏，这个汉堡是替代入口。
+           行为在共享 brand.js 里（一处实现、六站共用），样式在共享 brand.css。
+           无脚本时 CSS 不会显示它，而是把 .nav-links 在窄屏放出来 —— 不会出现
+           「导航被藏进一个点了没反应的按钮」。 -->
+      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
+        <i></i><i></i><i></i>
+      </button>
+    </div>
+  </header>
+  <div class="nav-scrim"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
+    <div class="nav-drawer-h">
+      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
+      <span class="brand-sub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
+      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
+    </div>
+    <nav class="nav-drawer-list">
+      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://learn.specul.com/" aria-current="page"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://tools.specul.com/"><span><span data-zh>工具</span><span data-en>Tools</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://models.specul.com/"><span><span data-zh>模型</span><span data-en>Models</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://demos.specul.com/"><span><span data-zh>作品演示</span><span data-en>Playground</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://oss.specul.com/"><span><span data-zh>开源库</span><span data-en>OSS</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://hardware.specul.com/" class="nav-group-start"><span><span data-zh>硬件算力</span><span data-en>Compute</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://papers.specul.com/"><span><span data-zh>AI 论文</span><span data-en>AI Papers</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://chain.specul.com/"><span><span data-zh>链</span><span data-en>Chain</span></span><span class="ar" aria-hidden="true">→</span></a>
+      <a href="https://nav.specul.com/" class="nav-group-start" data-nav-group="external"><span><span data-zh>AI导航</span><span data-en>AI Directory</span></span><span class="ar" aria-hidden="true">↗</span></a>
+    </nav>
+    <div class="nav-drawer-foot">
+      <p><span data-zh>内容站覆盖学、用、选、跑；AI导航是站外的 AI 网站目录，点出去看。</span><span data-en>Content sites cover learn, use, choose and run; AI Directory is a catalogue of off-site AI sites.</span></p>
+      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
+    </div>
+  </aside>
+  <main id="main">
+    <div class="container">
+      <article class="tp tp-wrap">
+        <nav class="tp-crumbs" aria-label="面包屑">
+          <a href="../../"><span data-zh>← 名词地图</span><span data-en>← Term map</span></a>
+          <span aria-hidden="true">·</span>
+          <a href="../../#layer-4"><span data-zh>看懂</span><span data-en>Under the Hood</span></a>
+        </nav>
+        <h1><span data-zh>音视频联合生成</span><span data-en>Joint Audio-Video Generation</span></h1>
+        <p class="tp-en">Joint Audio-Video Generation</p>
+        <ul class="tp-tags">
+          <li class="tp-tag"><span data-zh>图像语音视频</span><span data-en>Image, speech &amp; video</span></li>
+          <li class="tp-tag"><span data-zh>第四站 · 看懂</span><span data-en>Station 4 · Under the Hood</span></li>
+          <li class="tp-tag"><span data-zh>引用核验 2026-11-19</span><span data-en>refs checked 2026-11-19</span></li>
+        </ul>
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>解决什么问题</span><span data-en>What problem it solves</span></div>
+          <p class="tp-p"><span data-zh>让画面和对白、音效在同一次生成里对齐，而不是先出视频再配音。</span><span data-en>Align picture with dialogue and sound effects in one generation pass instead of generating video and dubbing it afterwards.</span></p>
+        </div>
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>这是什么</span><span data-en>What it is</span></div>
+<span data-zh>
+      <p class="tp-li">模型在同一个生成过程里同时建模视觉帧与音频 token，口型、动作声、环境声按时间轴对齐。</p>
+      <p class="tp-li">与「视频生成 + TTS 后配」的区别：联合生成能让人物说话口型与环境声同步，后配通常对不上。</p>
+      <p class="tp-li">代价是训练数据与算力更贵，评测也要同时看画质、音质与同步，不能只挑一帧好看。</p>
+      <p class="tp-li">它不等于「自动配乐」：音乐版权、音色授权与内容标识仍是单独的问题。</p>
+</span>
+<span data-en>
+      <p class="tp-li" data-en>The model jointly models visual frames and audio tokens in one generation process, aligning lip movement, action sounds and ambience on a timeline.</p>
+      <p class="tp-li" data-en>Unlike video generation plus TTS, joint generation can synchronise a speaker’s lips with ambience; post-dubbing usually does not match.</p>
+      <p class="tp-li" data-en>The price is more expensive training data and compute, and evaluation must check picture, audio and sync together rather than one pretty frame.</p>
+      <p class="tp-li" data-en>It is not automatic scoring: music copyright, voice licensing and content labelling remain separate issues.</p>
+</span>
+        </div>
+
+
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>为什么需要知道</span><span data-en>Why it matters</span></div>
+          <p class="tp-p"><span data-zh>2026 年的视频模型已经把声音当成一等公民；只看画面不看音画同步，会高估模型。</span><span data-en>Video models in 2026 treat sound as a first-class citizen; judging only the picture overestimates the model.</span></p>
+        </div>
+
+<div class="tp-sec tp-related"><div class="tp-lab"><span data-zh>接着读什么，为什么</span><span data-en>What to read next, and why</span></div><ul><li><a href="../%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/"><span data-zh>视频生成</span><span data-en>Video Generation</span></a><p class="t-sm"><span data-zh>一起用于《视频生成怎么验收》</span><span data-en>Used together in “How to Acceptance-Test AI Video Generation”</span></p></li><li><a href="../%E5%8F%82%E8%80%83%E7%94%9F%E8%A7%86%E9%A2%91/"><span data-zh>参考生视频</span><span data-en>Reference-to-Video</span></a><p class="t-sm"><span data-zh>一起用于《视频生成怎么验收》</span><span data-en>Used together in “How to Acceptance-Test AI Video Generation”</span></p></li></ul></div>
+<div class="tp-sec"><div class="tp-lab"><span data-zh>相关指南</span><span data-en>Related guides</span></div><ul class="tp-refs"><li><a href="../../guide/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90%E6%80%8E%E4%B9%88%E9%AA%8C%E6%94%B6/"><span data-zh>视频生成怎么验收</span><span data-en>How to Acceptance-Test AI Video Generation</span></a></li></ul></div>
+
+      <div class="tp-sec">
+        <div class="tp-lab"><span data-zh>现在能做什么</span><span data-en>What you can do now</span></div>
+        <p class="tp-p"><a href="https://models.specul.com/"><span data-zh>去 Models 图谱：看这个模型有哪些量化版、按你的显存该下哪一档</span><span data-en>Models atlas: which quantisations exist and which tier fits your VRAM</span> ↗</a></p>
+        <p class="tp-p"><a href="../../#layer-4"><span data-zh>回到名词地图看第4站的其他 59 个词 →</span><span data-en>Back to the map: the other 59 terms in station 4 →</span></a></p>
+      </div>
+
+        <div class="tp-sec">
+          <div class="tp-lab"><span data-zh>出处</span><span data-en>Sources</span></div>
+          <ul class="tp-refs">
+      <li><span data-zh>字节 Seed · Seedance 2.5</span><span data-en>ByteDance Seed · Seedance 2.5</span> <a href="https://seed.bytedance.com/seedance2_5" target="_blank" rel="noopener">↗</a></li>
+      <li><span data-zh>Google DeepMind · Veo</span><span data-en>Google DeepMind · Veo</span> <a href="https://deepmind.google/models/veo/" target="_blank" rel="noopener">↗</a></li>
+      <li><span data-zh>学 AI · 视频生成是怎么做的</span><span data-en>Learn AI · How video generation works</span> <a href="https://learn.specul.com/" target="_blank" rel="noopener">↗</a></li>
+          </ul>
+        </div>
+
+        <nav class="tp-pn" aria-label="上下篇" data-ui-aria-label-zh="上下篇" data-ui-aria-label-en="Previous and next">
+          <a href="../%E5%A4%9A%E6%A8%A1%E6%80%81%E6%8E%A8%E7%90%86/"><span class="tp-ph"><span data-zh>上一篇</span><span data-en>Previous</span></span><span data-zh>多模态推理</span><span data-en>Multimodal Reasoning</span></a>
+          <a href="../%E6%A8%A1%E5%9E%8B%E5%90%88%E5%B9%B6/" style="text-align:right"><span class="tp-ph"><span data-zh>下一篇</span><span data-en>Next</span></span><span data-zh>模型合并</span><span data-en>Model Merging</span></a>
+        </nav>
+      </article>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container foot-row">
+      <div class="foot-brand">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="foot-copy">© 2026 <span data-zh>投机取巧</span><span data-en>Specul</span></span>
+      </div>
+      <nav class="foot-links" aria-label="页脚导航">
+          <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
+          <a href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a>
+          <a href="https://tools.specul.com/"><span data-zh>工具</span><span data-en>Tools</span></a>
+          <a href="https://models.specul.com/"><span data-zh>模型</span><span data-en>Models</span></a>
+          <a href="https://demos.specul.com/"><span data-zh>作品演示</span><span data-en>Playground</span></a>
+          <a href="https://oss.specul.com/"><span data-zh>开源库</span><span data-en>OSS</span></a>
+          <a href="https://hardware.specul.com/"><span data-zh>硬件算力</span><span data-en>Compute</span></a>
+          <a href="https://papers.specul.com/"><span data-zh>AI 论文</span><span data-en>AI Papers</span></a>
+          <a href="https://chain.specul.com/"><span data-zh>链</span><span data-en>Chain</span></a>
+          <a href="https://nav.specul.com/"><span data-zh>AI导航</span><span data-en>AI Directory</span></a>
+          <a href="https://github.com/speculcom/ai-handbook" target="_blank" rel="noopener"><span data-zh>开源</span><span data-en>Open source</span></a>
+      </nav>
+      <nav class="foot-legal-links" aria-label="法律">
+        <a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a>
+        <a href="https://specul.com/legal.html#s6"><span data-zh>免责声明</span><span data-en>Disclaimer</span></a>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私与本地存储</span><span data-en>Privacy</span></a>
+      </nav>
+    </div>
+    <div class="container">
+      <p><a href="https://specul.com/search.html"><span data-zh>搜索全站内容</span><span data-en>Search all sites</span></a></p>
+      <p><a href="https://specul.com/correct.html"><span data-zh>发现错误？生成纠错草稿</span><span data-en>Spot an error? Compose a correction draft</span></a></p>
+      <p class="foot-trademark"><span data-zh>产品名与商标归各权利方所有，本站仅作识别与评论之用。</span><span data-en>Product names and trademarks belong to their respective owners and are used here for identification and commentary only.</span></p>
+    </div>
+  </footer>
+<nav class="nav-tabbar nav-tabbar-1row" aria-label="快捷导航">
+    <a href="https://specul.com/"><span class="ti" aria-hidden="true">◎</span><span data-zh>首页</span><span data-en>Home</span></a>
+    <a href="https://learn.specul.com/" aria-current="page"><span class="ti" aria-hidden="true">▤</span><span data-zh>学AI</span><span data-en>Learn</span></a>
+    <a href="https://tools.specul.com/"><span class="ti" aria-hidden="true">◈</span><span data-zh>工具</span><span data-en>Tools</span></a>
+    <a href="https://models.specul.com/"><span class="ti" aria-hidden="true">▦</span><span data-zh>模型</span><span data-en>Models</span></a>
+    <a href="https://demos.specul.com/"><span class="ti" aria-hidden="true">▷</span><span data-zh>演示</span><span data-en>Demos</span></a>
+    <a href="https://oss.specul.com/"><span class="ti" aria-hidden="true">▧</span><span data-zh>开源</span><span data-en>OSS</span></a>
+    <a href="https://hardware.specul.com/"><span class="ti" aria-hidden="true">▣</span><span data-zh>算力</span><span data-en>Chips</span></a>
+    <a href="https://papers.specul.com/"><span class="ti" aria-hidden="true">▥</span><span data-zh>论文</span><span data-en>Papers</span></a>
+    <a href="https://chain.specul.com/"><span class="ti" aria-hidden="true">◇</span><span data-zh>链</span><span data-en>Chain</span></a>
+    <a href="https://nav.specul.com/" data-nav-group="external"><span class="ti" aria-hidden="true">↗</span><span data-zh>导航</span><span data-en>Nav</span></a>
+</nav>
+</body>
+</html>
