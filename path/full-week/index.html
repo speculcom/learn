@@ -136,6 +136,13 @@
           <li>拿到一个新模型的介绍页，能列出该问的问题：能力、边界、成本、许可、锁定</li>
           <li>判断一件事该用 API 还是本地跑，并说出判断依据</li>
           <li>看懂一份基准榜单，并说出它至少一处代表不了你的实际效果</li>
+          <li>为什么第一周先跑通一条最小链路，而不是先读完全部理论？</li>
+          <li>每日复盘应该记录什么，才能让第二周继续？</li>
+          <li>怎么判断一个周计划已经过载？</li>
+          <li>项目从 demo 到可交付，最先补哪三样？</li>
+          <li>为什么同一周内不要同时换模型、数据和评测？</li>
+          <li>周结束时，什么证据能证明你真的学会了？</li>
+          <li>第二周该保留什么、删掉什么？</li>
           </ol>
 </span>
 <span data-en>
@@ -143,6 +150,13 @@
           <li>Given a new model's page, list the questions to ask: capability, limits, cost, licence, lock-in</li>
           <li>Decide API or local for a given job, and state the reasoning</li>
           <li>Read a benchmark table and name at least one thing it cannot say about your actual use</li>
+          <li>Why build one minimal pipeline in week one instead of reading all the theory first?</li>
+          <li>What should a daily review record so week two can continue?</li>
+          <li>How do you know a one-week plan is overloaded?</li>
+          <li>Moving from demo to delivery, what three things come first?</li>
+          <li>Why not change model, data and evaluation in the same week?</li>
+          <li>At the end of the week, what evidence shows you actually learned?</li>
+          <li>In week two, what should you keep and what should you cut?</li>
           </ol>
 </span>
         </div>
@@ -151,6 +165,13 @@
 <details class="tp-sec"><summary><span data-zh>第 1 题 · 参考回答</span><span data-en>Question 1 · Reference answer</span></summary><p class="tp-p"><span data-zh>先写任务和验收条件，再查能力限制、数据去向、总成本、许可证、导出与迁移方式。不能用一个榜单名次替代这些问题。</span><span data-en>Define the task and acceptance criteria, then check limits, data handling, total cost, licensing, export and migration. A leaderboard position cannot answer these questions.</span></p><p><a href="../../term/%E8%AE%B8%E5%8F%AF%E8%AF%81/?path=full-week"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
 <details class="tp-sec"><summary><span data-zh>第 2 题 · 参考回答</span><span data-en>Question 2 · Reference answer</span></summary><p class="tp-p"><span data-zh>示例：低频且无部署经验的任务可先评估 API；不能把数据交给外部服务时，应评估符合约束的本地或私有方案。两边都要核算成本、质量、维护和硬件限制。</span><span data-en>For example, assess an API for occasional work without deployment expertise; assess a suitable local/private option when external data transfer is disallowed. Compare cost, quality, maintenance and hardware limits in both cases.</span></p><p><a href="../../term/%E5%BC%80%E6%BA%90%E6%A8%A1%E5%9E%8B/?path=full-week"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
 <details class="tp-sec"><summary><span data-zh>第 3 题 · 参考回答</span><span data-en>Question 3 · Reference answer</span></summary><p class="tp-p"><span data-zh>核对基准版本、输入、工具与评分口径；它未必覆盖你的中文材料、长文档、响应时间或失败成本。用自己的代表性任务补足缺口。</span><span data-en>Check benchmark version, inputs, tools and scoring. It may omit your Chinese documents, long inputs, latency requirements or cost of failure. Add representative tasks of your own.</span></p><p><a href="../../term/%E6%A8%A1%E5%9E%8B%E8%AF%84%E6%B5%8B%E7%9A%84%E5%B1%80%E9%99%90/?path=full-week"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
+<details class="tp-sec"><summary><span data-zh>第 4 题 · 参考回答</span><span data-en>Question 4 · Reference answer</span></summary><p class="tp-p"><span data-zh>最小链路会暴露真实约束：数据、接口、成本、延迟和验收。理论可以按问题补，先读完全部理论容易把时间花在不会用到的章节上。</span><span data-en>A minimal pipeline exposes real constraints: data, interfaces, cost, latency and acceptance. Read theory as questions arise; reading everything first spends time on chapters you may never use.</span></p></details>
+<details class="tp-sec"><summary><span data-zh>第 5 题 · 参考回答</span><span data-en>Question 5 · Reference answer</span></summary><p class="tp-p"><span data-zh>记录今天验证/否定的假设、卡住的具体点、下一步和证据位置。不要只写「学了什么」；没有决策与证据，第二周会重复第一周。</span><span data-en>Record which hypotheses were confirmed or rejected, the exact blocker, the next step and where evidence sits. Do not just log “what I studied”; without decisions and evidence week two repeats week one.</span></p></details>
+<details class="tp-sec"><summary><span data-zh>第 6 题 · 参考回答</span><span data-en>Question 6 · Reference answer</span></summary><p class="tp-p"><span data-zh>看是否同时要求读理论、搭环境、做评测、写文档和上线；任一项没有可交付物，就会挤压其它项。先删到一条主链路和一个可验收结果。</span><span data-en>If it demands theory, environment, evaluation, docs and launch at once, and any lacks a deliverable, it will squeeze the rest. Cut to one main pipeline and one acceptance result.</span></p></details>
+<details class="tp-sec"><summary><span data-zh>第 7 题 · 参考回答</span><span data-en>Question 7 · Reference answer</span></summary><p class="tp-p"><span data-zh>先补失败处理、评测与观测，再补权限和成本。demo 只证明顺利路径能跑；交付要证明失败可发现、可回滚、可解释。</span><span data-en>Failure handling, evaluation and observability first; then permissions and cost. A demo proves the happy path; delivery proves failure is visible, reversible and explainable.</span></p><p><a href="../../term/%E5%8F%AF%E8%A7%82%E6%B5%8B%E6%80%A7/?path=full-week"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
+<details class="tp-sec"><summary><span data-zh>第 8 题 · 参考回答</span><span data-en>Question 8 · Reference answer</span></summary><p class="tp-p"><span data-zh>三件事同时变，结果变好或变坏都无法归因。一次只动一个变量，保留旧版本做对照，才能知道是哪一步带来变化。</span><span data-en>Change all three and you cannot attribute improvement or regression. Move one variable at a time and keep the old version as a control.</span></p><p><a href="../../term/%E8%BF%81%E7%A7%BB%E8%AF%84%E4%BC%B0/?path=full-week"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
+<details class="tp-sec"><summary><span data-zh>第 9 题 · 参考回答</span><span data-en>Question 9 · Reference answer</span></summary><p class="tp-p"><span data-zh>能对一个未见案例解释决策、能复跑关键结果、能说清失败边界，并留下可检查的产物。只写总结不算证据。</span><span data-en>You can explain decisions on an unseen case, reproduce the key result, state failure boundaries and leave inspectable artefacts. A written summary alone is not evidence.</span></p><p><a href="../../term/%E8%83%BD%E5%8A%9B%E8%BE%B9%E7%95%8C/?path=full-week"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
+<details class="tp-sec"><summary><span data-zh>第 10 题 · 参考回答</span><span data-en>Question 10 · Reference answer</span></summary><p class="tp-p"><span data-zh>保留能复用的数据、评测与观测；删掉只服务演示的临时代码和没有验收标准的任务。第二周应围绕一个真实约束加深，而不是横向再开五个主题。</span><span data-en>Keep reusable data, evaluation and observability; cut demo-only code and tasks without acceptance criteria. Week two should deepen around one real constraint, not open five more topics sideways.</span></p></details>
         <section class="tp-sec"><h2><span data-zh>用在一个具体任务里</span><span data-en>Apply this to a concrete task</span></h2><p><a href="https://tools.specul.com/mcp/guides/toolkit-prompt-context.html#worked-example"><span data-zh>把一个实际任务写进工作表</span><span data-en>Put a concrete task into a worksheet</span> →</a></p></section>
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>其他路径</span><span data-en>Other paths</span></div>

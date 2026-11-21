@@ -125,6 +125,13 @@
           <li>用三个维度对比「调 API」与「自己部署」的总成本</li>
           <li>说出更换模型供应商之前必须核实的三件事</li>
           <li>看一份供应商评测报告，判断哪些分数可以直接采信、哪些要打问号</li>
+          <li>API 与自托管的成本，为什么不能只比单价？</li>
+          <li>供应商锁定的三个早期迹象是什么？</li>
+          <li>数据驻留与「数据不出网」有什么区别？</li>
+          <li>开源模型许可证要核对哪四项？</li>
+          <li>模型评测榜单为什么不能直接用于采购决策？</li>
+          <li>换模型前，迁移评估至少要跑哪几类样本？</li>
+          <li>采购记录里的未知项应该怎么写？</li>
           </ol>
 </span>
 <span data-en>
@@ -132,6 +139,13 @@
           <li>Compare API usage against self-hosting on three cost dimensions</li>
           <li>Name three things to verify before switching model vendors</li>
           <li>Read a vendor's evaluation report and say which scores stand up and which need a question mark</li>
+          <li>Why can API and self-hosting not be compared on unit price alone?</li>
+          <li>What are three early signs of vendor lock-in?</li>
+          <li>What is the difference between data residency and “data never leaves the network”?</li>
+          <li>Which four terms should you check in an open-model licence?</li>
+          <li>Why can a model benchmark table not be used directly for procurement?</li>
+          <li>Which sample types should a migration evaluation cover before switching models?</li>
+          <li>How should unknowns be written in a procurement record?</li>
           </ol>
 </span>
         </div>
@@ -140,6 +154,13 @@
 <details class="tp-sec"><summary><span data-zh>第 1 题 · 参考回答</span><span data-en>Question 1 · Reference answer</span></summary><p class="tp-p"><span data-zh>除调用或硬件费，还要算接入、数据处理、维护、监控、复核和迁移。对相同任务量与质量要求计算，避免拿不同范围的报价直接比较。</span><span data-en>Include integration, data processing, maintenance, monitoring, review and migration beyond API or hardware fees. Compare equal workload and quality requirements.</span></p><p><a href="../../term/%E8%87%AA%E6%89%98%E7%AE%A1%E6%88%90%E6%9C%AC/?path=for-managers"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
 <details class="tp-sec"><summary><span data-zh>第 2 题 · 参考回答</span><span data-en>Question 2 · Reference answer</span></summary><p class="tp-p"><span data-zh>核实数据留存与删除方式、服务可用与退役政策、数据和配置的导出迁移条件；把产品版本、条款链接与核验时间写入记录。</span><span data-en>Verify retention/deletion, availability/retirement policy, and export/migration of data and configuration. Record product version, terms URL and checking date.</span></p><p><a href="../../term/%E4%BE%9B%E5%BA%94%E5%95%86%E9%94%81%E5%AE%9A/?path=for-managers"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
 <details class="tp-sec"><summary><span data-zh>第 3 题 · 参考回答</span><span data-en>Question 3 · Reference answer</span></summary><p class="tp-p"><span data-zh>相同基准版本和设置下的结果才适合对照；自选演示和未经披露的设置不能直接外推。要求提供失败样本和与你任务相近的评测说明。</span><span data-en>Compare results with the same benchmark version and settings. Selected demos and undisclosed setups do not support broad conclusions. Ask for failures and task-relevant evaluation details.</span></p><p><a href="../../term/%E6%A8%A1%E5%9E%8B%E8%AF%84%E6%B5%8B%E7%9A%84%E5%B1%80%E9%99%90/?path=for-managers"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
+<details class="tp-sec"><summary><span data-zh>第 4 题 · 参考回答</span><span data-en>Question 4 · Reference answer</span></summary><p class="tp-p"><span data-zh>单价只覆盖调用或硬件本身；还要算接入、数据处理、维护、监控、复核和迁移。按相同任务量与质量要求算总成本，否则报价范围不同，结论会失真。</span><span data-en>Unit price covers only calls or hardware; integration, data processing, maintenance, monitoring, review and migration also count. Compare total cost at equal workload and quality, or differing scopes distort the conclusion.</span></p><p><a href="../../term/%E8%87%AA%E6%89%98%E7%AE%A1%E6%88%90%E6%9C%AC/?path=for-managers"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
+<details class="tp-sec"><summary><span data-zh>第 5 题 · 参考回答</span><span data-en>Question 5 · Reference answer</span></summary><p class="tp-p"><span data-zh>数据和配置导不出、关键能力只能用厂商私有接口、退役或涨价时没有可执行的替代路径。出现任一条，就应把迁移成本写进采购记录。</span><span data-en>Data and configuration cannot be exported, key capabilities require proprietary interfaces, or there is no executable alternative when the vendor retires or raises prices. Any one should put migration cost into the procurement record.</span></p><p><a href="../../term/%E4%BE%9B%E5%BA%94%E5%95%86%E9%94%81%E5%AE%9A/?path=for-managers"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
+<details class="tp-sec"><summary><span data-zh>第 6 题 · 参考回答</span><span data-en>Question 6 · Reference answer</span></summary><p class="tp-p"><span data-zh>驻留说明数据存在哪个国家/区域、受哪套法律约束；不出网说明数据是否离开你的边界。前者是位置与合规问题，后者是部署与网络问题，不能互相替代。</span><span data-en>Residency defines which country or region stores the data and which law applies; “never leaves the network” says whether data crosses your boundary. One is location and compliance, the other deployment and networking; neither substitutes for the other.</span></p><p><a href="../../term/%E6%95%B0%E6%8D%AE%E9%A9%BB%E7%95%99/?path=for-managers"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
+<details class="tp-sec"><summary><span data-zh>第 7 题 · 参考回答</span><span data-en>Question 7 · Reference answer</span></summary><p class="tp-p"><span data-zh>商用与再分发、衍生作品与权重再发布、用户量与营收等附加条件、专利与商标条款。『开放权重』不等于『无限制使用』。</span><span data-en>Commercial use and redistribution, derivatives and weight redistribution, thresholds such as users or revenue, and patent/trademark terms. “Open weights” is not “unrestricted use”.</span></p><p><a href="../../term/%E8%AE%B8%E5%8F%AF%E8%AF%81/?path=for-managers"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
+<details class="tp-sec"><summary><span data-zh>第 8 题 · 参考回答</span><span data-en>Question 8 · Reference answer</span></summary><p class="tp-p"><span data-zh>榜单通常测公开任务与固定判法，和你的语言、数据、工具链与验收标准不同；版本、污染和提示设置也会改变分数。采购要补自己任务上的小样本评测。</span><span data-en>Benchmarks test public tasks with a fixed method, unlike your language, data, toolchain and acceptance criteria; version, contamination and prompting also change scores. Add a small evaluation on your own task.</span></p><p><a href="../../term/%E6%A8%A1%E5%9E%8B%E8%AF%84%E6%B5%8B%E7%9A%84%E5%B1%80%E9%99%90/?path=for-managers"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
+<details class="tp-sec"><summary><span data-zh>第 9 题 · 参考回答</span><span data-en>Question 9 · Reference answer</span></summary><p class="tp-p"><span data-zh>常见成功、边界歧义、应拒答/转人工、工具调用与长上下文各一组；再记录接口、流式、成本和回滚。只在普通问答上对比，会漏掉真正会出事故的路径。</span><span data-en>Typical success, boundary/ambiguous, should-refuse or escalate, tool-calling and long-context sets; also record interface, streaming, cost and rollback. Comparing ordinary Q&amp;amp;A only misses the paths that fail in production.</span></p><p><a href="../../term/%E9%80%80%E5%87%BA%E6%88%90%E6%9C%AC/?path=for-managers"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
+<details class="tp-sec"><summary><span data-zh>第 10 题 · 参考回答</span><span data-en>Question 10 · Reference answer</span></summary><p class="tp-p"><span data-zh>写成「哪一项未确认、缺哪份官方说明、谁负责补、何时复核」，不要写成「应该没问题」。未知项保留在记录里，才能在涨价、退役或事故时追溯。</span><span data-en>Write which item is unconfirmed, which official statement is missing, who owns it and when to recheck. Do not write “should be fine”. Keeping unknowns traceable matters when prices, retirement or incidents arrive.</span></p><p><a href="../../term/AI%20%E4%BA%A7%E5%93%81%20vs%20AI%20%E6%A8%A1%E5%9E%8B/?path=for-managers"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
         <section class="tp-sec"><h2><span data-zh>用在一个具体任务里</span><span data-en>Apply this to a concrete task</span></h2><p><a href="https://tools.specul.com/mcp/guides/toolkit-worksheets.html#worked-example"><span data-zh>照已填示例完成一份项目记录</span><span data-en>Complete a project record using the filled example</span> →</a></p></section>
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>其他路径</span><span data-en>Other paths</span></div>

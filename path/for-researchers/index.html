@@ -135,6 +135,12 @@
           <li>看到「刷新 SOTA」的说法，先查评测集发布时间和训练截止日期的关系</li>
           <li>读模型卡时能指出许可证、评测口径和已知局限三处关键信息</li>
           <li>对路线里的论文卡，各说出研究问题与核心证据位置，并说出至少一条「论文没有主张」的流行说法</li>
+          <li>读论文时，摘要、实验设置、局限性分别该抓什么？</li>
+          <li>困惑度低是否等于生成质量高？</li>
+          <li>知识蒸馏与量化的目标有何不同？</li>
+          <li>论文卡里的「证据位置」为什么比结论更重要？</li>
+          <li>开放权重与开源模型的差别，为什么要看许可证？</li>
+          <li>看到「模型卡」时，如何判断评测是否可复现？</li>
           </ol>
 </span>
 <span data-en>
@@ -143,6 +149,12 @@
           <li>On seeing a &quot;new SOTA&quot; claim, first check the benchmark's release date against the model's training cutoff</li>
           <li>When reading a model card, point out the license, the eval setup, and the stated limitations</li>
           <li>For each paper card on this route, state its research question and where the core evidence sits, and name at least one popular claim the paper never makes</li>
+          <li>When reading a paper, what should you take from the abstract, setup and limitations?</li>
+          <li>Does lower perplexity mean better generation quality?</li>
+          <li>How do knowledge distillation and quantisation differ in goal?</li>
+          <li>Why does the evidence location on a paper card matter more than the conclusion?</li>
+          <li>Why distinguish open weights from open-source models, and why read the licence?</li>
+          <li>When reading a model card, how do you judge whether its evaluation is reproducible?</li>
           </ol>
 </span>
         </div>
@@ -152,6 +164,12 @@
 <details class="tp-sec"><summary><span data-zh>第 2 题 · 参考回答</span><span data-en>Question 2 · Reference answer</span></summary><p class="tp-p"><span data-zh>对照题集公开时间、训练截止、基准版本与去重说明。时间重叠只能提示污染风险，不能单独证明泄题；还需看污染检查和未见任务表现。</span><span data-en>Compare dataset release, training cutoff, benchmark version and decontamination. Temporal overlap suggests risk, not proof of contamination; inspect checks and held-out tasks.</span></p><p><a href="../../term/%E6%95%B0%E6%8D%AE%E6%B1%A1%E6%9F%93/?path=for-researchers"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
 <details class="tp-sec"><summary><span data-zh>第 3 题 · 参考回答</span><span data-en>Question 3 · Reference answer</span></summary><p class="tp-p"><span data-zh>分别记录有实验支持、设置受限与未披露的项目。例如，模型卡只报告英文结果时，不推断中文表现或生产可靠性。</span><span data-en>Separate experimentally supported, setup-limited and undisclosed claims. English-only model-card results do not establish Chinese performance or production reliability.</span></p><p><a href="../../term/%E6%A8%A1%E5%9E%8B%E5%8D%A1/?path=for-researchers"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
 <details class="tp-sec"><summary><span data-zh>第 4 题 · 参考回答</span><span data-en>Question 4 · Reference answer</span></summary><p class="tp-p"><span data-zh>示例：LIMA 研究少量高质量指令数据的作用，查看其受控人评与消融；不能据此声称少量数据能解决所有安全与鲁棒性问题。其他论文同样对应问题、证据和适用边界。</span><span data-en>For LIMA, inspect controlled human evaluation and ablations on small high-quality instruction datasets. This does not establish that little data solves every safety or robustness problem. Apply the same question/evidence/limits structure to other papers.</span></p><p><a href="../../guide/%E8%AE%BA%E6%96%87%E5%8D%A1-LIMA/?path=for-researchers"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
+<details class="tp-sec"><summary><span data-zh>第 5 题 · 参考回答</span><span data-en>Question 5 · Reference answer</span></summary><p class="tp-p"><span data-zh>摘要抓研究问题与主要主张；实验设置抓数据、基线、算力和判法；局限性抓作者承认的适用范围与未覆盖项。三处不能互相替代。</span><span data-en>The abstract gives the question and main claim; the setup gives data, baselines, compute and evaluation; limitations give the scope and gaps the authors admit. None substitutes for another.</span></p><p><a href="../../guide/%E6%80%8E%E4%B9%88%E8%AF%BB%E4%B8%80%E7%AF%87AI%E8%AE%BA%E6%96%87/?path=for-researchers"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
+<details class="tp-sec"><summary><span data-zh>第 6 题 · 参考回答</span><span data-en>Question 6 · Reference answer</span></summary><p class="tp-p"><span data-zh>困惑度衡量模型对文本的预测概率，和人类偏好、事实正确性、任务完成度不是一回事。它可用于同设置下的语言建模对比，不能单独证明产品更好。</span><span data-en>Perplexity measures how well a model predicts text; it is not human preference, factual correctness or task success. It compares language modelling under the same setup, not product quality on its own.</span></p><p><a href="../../term/%E5%9B%B0%E6%83%91%E5%BA%A6/?path=for-researchers"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
+<details class="tp-sec"><summary><span data-zh>第 7 题 · 参考回答</span><span data-en>Question 7 · Reference answer</span></summary><p class="tp-p"><span data-zh>蒸馏让小模型学大模型的输出或表示，目标是能力迁移；量化降低权重/激活精度，目标是省显存与带宽。两者可叠加，但失败模式不同。</span><span data-en>Distillation trains a smaller model on a larger model’s outputs or representations to transfer capability; quantisation lowers weight/activation precision to save memory and bandwidth. They can combine, with different failure modes.</span></p><p><a href="../../term/%E7%9F%A5%E8%AF%86%E8%92%B8%E9%A6%8F/?path=for-researchers"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
+<details class="tp-sec"><summary><span data-zh>第 8 题 · 参考回答</span><span data-en>Question 8 · Reference answer</span></summary><p class="tp-p"><span data-zh>结论可能被摘要简化或媒体转述；证据位置能回到具体表、图和实验设置，判断结论是否被数据支撑。没有证据位置的引用只是转述。</span><span data-en>Conclusions get simplified in abstracts or media; the evidence location leads back to the exact table, figure and setup, showing whether data supports the claim. A citation without a location is just retelling.</span></p><p><a href="../../guide/%E8%AE%BA%E6%96%87%E5%8D%A1-HELM/?path=for-researchers"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
+<details class="tp-sec"><summary><span data-zh>第 9 题 · 参考回答</span><span data-en>Question 9 · Reference answer</span></summary><p class="tp-p"><span data-zh>开放权重只保证权重可下载，不一定允许商用、再发布或衍生；开源还涉及代码、训练数据和许可条件。许可证决定你能不能把权重放进产品。</span><span data-en>Open weights only means the weights can be downloaded; commercial use, redistribution or derivatives may be restricted. Open source also covers code, training data and licence terms. The licence decides whether weights can ship in a product.</span></p><p><a href="../../term/%E5%BC%80%E6%94%BE%E6%9D%83%E9%87%8D/?path=for-researchers"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
+<details class="tp-sec"><summary><span data-zh>第 10 题 · 参考回答</span><span data-en>Question 10 · Reference answer</span></summary><p class="tp-p"><span data-zh>看它是否给出模型版本、提示与系统设置、样本集与切分、判法、判定人和日期。缺任一项，分数只能当参考，不能当可复跑的证据。</span><span data-en>Check whether it gives model version, prompts and system settings, sample set and split, method, judges and dates. Missing any one makes the score a reference, not reproducible evidence.</span></p><p><a href="../../term/%E6%A8%A1%E5%9E%8B%E5%8D%A1/?path=for-researchers"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
         <section class="tp-sec"><h2><span data-zh>用在一个具体任务里</span><span data-en>Apply this to a concrete task</span></h2><p><a href="https://learn.specul.com/guide/%E6%80%8E%E4%B9%88%E8%AF%BB%E4%B8%80%E7%AF%87AI%E8%AE%BA%E6%96%87/"><span data-zh>选一篇论文完成问题、证据与局限记录</span><span data-en>Read a paper into a question/evidence/limits record</span> →</a></p></section>
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>其他路径</span><span data-en>Other paths</span></div>
