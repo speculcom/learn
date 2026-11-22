@@ -1,53 +1,42 @@
 # 学 AI（learn.specul.com）
 
-`specul.com` 站群的**概念层**：把 AI 领域的名词按「先学什么后学什么」排成六站，
-每个词都能回到原始出处。
+> English version: [README.en.md](./README.en.md)
 
-站点是产物，内容源在 [`speculcom/ai-glossary`](https://github.com/speculcom/ai-glossary)。
+`specul.com` 站群的**概念层**：把 AI 领域的高频名词按「先学什么、后学什么」排成六段，每个词都带可回查的原始出处。
+
+站上的版本：<https://learn.specul.com/>
 
 ## 内容规模
 
-- 204 个术语，分六站（进门 / 上手 / 用深 / 看懂 / 跑起来 / 选得对）
-- 8 + 3 个维度对照表
-- 中英双语，释义、用途、为什么不了解它会有代价，各 204/204 条都有英文
+- 299 个术语，按六段排列：进门 36、上手 44、用深 76、看懂 60、跑起来 46、选得对 37。
+- 111 篇微型指南，每篇 5–10 分钟；另有 16 条带检查点的学习路径。
+- 中英双语：299 个词条的释义、用途与英文摘要全部覆盖。
+- 八个领域、四种使用目的、三组观察维度，均可作为筛选入口。
 
 ## 口径
 
-- **未知就写未知**，不给总分排名
-- 每条判断挂官方源，附核验日期
-- 序号 `level` 与所在站必须一致（不一致时抽屉会同时显示两个矛盾的站标签）
+- **未知就写未知**，不给模型或工具打总分排名。
+- 每条判断挂官方源，并记录核验日期。
+- 词条 `level` 与所在段必须一致；不一致时页面会显示矛盾的段标签，构建门禁会拦截。
+- 事实是核验当天的快照，不等于永久有效；价格、版本、可用区域会变，引用前请回查原始出处。
 
-## 构建
+## 这个仓是什么
 
-```bash
-# 改完 terms/*.md 之后
-node scripts/build.mjs
+本仓是**部署产物仓**（`speculcom/learn`），由主工作区的 `_data/handbook/terms` 构建后同步到这里，再发布到 GitHub Pages。
+
+- 站点文件：`index.html`、`term/`、`guide/`、`path/`、`data/`、`2026.html`、`404.html`。
+- 内容真相源在 `speculcom/ai-handbook` 的 `terms/` 子树：`terms/*.md`、`terms.en.json`、`paths/`、`guides/`、`meta.js`。
+- **不要直接改本仓的生成文件**；下次构建会覆盖。改内容请改 `ai-handbook/terms`，然后跑主工作区的学习站构建器。
+
+## 构建与发布
+
+```powershell
+node _data\handbook\terms\scripts\build.mjs
+node _toolchain\publish\publish.mjs --publish --inline-text --message "content: update learn"
 ```
 
-构建器有两道门禁：
-
-- **逐字段等价校验**：产物必须与 `terms.en.json` 实算的词条（204）逐字段一致，
-  不一致就报错退出、不写文件。防止「静默少词 / 丢 refs」。
-- **故意改字段时**加 `--accept`：跳过校验并把新产物刷成新基准。
-  以前只能删基准文件绕过，那等于把门禁永久关掉。
-
-构建末尾会**自动同步**到部署目录 `learn.specul/data/`
-（词条产物 + meta.js + dims.js）—— 改完跑 build 就够了，不需要手工复制。
-
-## 数据分工
-
-| 文件 | 真相源 | 说明 |
-|---|---|---|
-| `terms/*.md` | 本仓 | 一词一文件，frontmatter + 正文 + 英文 |
-| `terms/INDEX.md` | 本仓 | 词条索引，按站分组 |
-| `meta.js` | 本仓 | 六站定义（名称 / 描述 / 「学完你能」/ 中英）—— **页面分层标题读的是它** |
-| `paths/*.json` | 本仓 | 学习路径真相源（有序 slug + 检查点，中英双语）—— 构建出 `path/<id>/` 页面 |
-| `guides/*.md` + `guides.en.json` | 本仓 | 微型指南真相源（frontmatter 纪律同词条）—— 构建出 `guide/<slug>/` 页面 |
-| `dims.js` | 本仓 | 维度对照表（8 + 3） |
-| `terms.en.json` | 本仓 | 词条释义英文，键 = md 文件名 |
-| `data/*.js` | **产物** | 不要手改，改了会被下次 build 覆盖 |
+构建器带逐字段等价门禁：产物必须与 `terms.en.json` 实算的词条逐字段一致，不一致就退出、不写半成品。确实要改字段时，先确认变更意图，再用 `--accept` 刷新基准；不要靠删基准文件绕过门禁。
 
 ## 法律
 
-内容 CC BY 4.0（署名即可自由使用与改编，含商业用途）；源码 MIT。
-自有内容与第三方内容的界限见 <https://specul.com/legal.html>。
+内容 CC BY 4.0（署名即可自由使用与改编，含商业用途）；源码 MIT。自有内容与第三方内容的界限见 <https://specul.com/legal.html>。
