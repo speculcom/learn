@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>课堂-结构化提问与输出验证 · 学 AI 课堂教案 | 投机取巧</title>
-  <meta name="description" content="学员把同一份材料先自由提问、再结构化提问，比较字段完整度与事实一致度，并记住格式合法不等于内容正确。 能写出含目标、输入、输出字段、禁止事项四部分的指令。" />
+  <meta name="description" content="学员把同一份材料先自由提问、再结构化提问，比较字段完整度与事实一致度。还要记住：格式合法不等于内容正确。 能写出含目标、输入、输出字段、禁止事项四部分的指令。" />
   <link rel="canonical" href="https://learn.specul.com/guide/%E8%AF%BE%E5%A0%82-%E7%BB%93%E6%9E%84%E5%8C%96%E6%8F%90%E9%97%AE%E4%B8%8E%E8%BE%93%E5%87%BA%E9%AA%8C%E8%AF%81/" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="学 AI" />
   <meta property="og:url" content="https://learn.specul.com/guide/%E8%AF%BE%E5%A0%82-%E7%BB%93%E6%9E%84%E5%8C%96%E6%8F%90%E9%97%AE%E4%B8%8E%E8%BE%93%E5%87%BA%E9%AA%8C%E8%AF%81/" />
   <meta property="og:title" content="课堂-结构化提问与输出验证 · 学 AI 课堂教案" />
-  <meta property="og:description" content="学员把同一份材料先自由提问、再结构化提问，比较字段完整度与事实一致度，并记住格式合法不等于内容正确。 能写出含目标、输入、输出字段、禁止事项四部分的指令。" />
+  <meta property="og:description" content="学员把同一份材料先自由提问、再结构化提问，比较字段完整度与事实一致度。还要记住：格式合法不等于内容正确。 能写出含目标、输入、输出字段、禁止事项四部分的指令。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <script src="../../brand.js?v=8bbd4e9fb874"></script>
@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="../../brand.css?v=8bbd4e9fb874" />
   <link rel="stylesheet" href="../../learn.css" />
   <style>:root { --accent: var(--gold); }</style>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"课堂-结构化提问与输出验证","description":"学员把同一份材料先自由提问、再结构化提问，比较字段完整度与事实一致度，并记住格式合法不等于内容正确。","url":"https://learn.specul.com/guide/%E8%AF%BE%E5%A0%82-%E7%BB%93%E6%9E%84%E5%8C%96%E6%8F%90%E9%97%AE%E4%B8%8E%E8%BE%93%E5%87%BA%E9%AA%8C%E8%AF%81/","inLanguage":"zh-Hans","teaches":["能写出含目标、输入、输出字段、禁止事项四部分的指令。","能用字段清单或 JSON Schema 校验结构，并说明校验只覆盖格式。","能把每个事实字段回连到原文位置，无依据的字段留空或标未知。","能说明少样本示例只进入当次上下文，不等于重新训练模型。"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"课堂-结构化提问与输出验证","description":"学员把同一份材料先自由提问、再结构化提问，比较字段完整度与事实一致度。还要记住：格式合法不等于内容正确。","url":"https://learn.specul.com/guide/%E8%AF%BE%E5%A0%82-%E7%BB%93%E6%9E%84%E5%8C%96%E6%8F%90%E9%97%AE%E4%B8%8E%E8%BE%93%E5%87%BA%E9%AA%8C%E8%AF%81/","inLanguage":"zh-Hans","teaches":["能写出含目标、输入、输出字段、禁止事项四部分的指令。","能用字段清单或 JSON Schema 校验结构，并说明校验只覆盖格式。","能把每个事实字段回连到原文位置，无依据的字段留空或标未知。","能说明少样本示例只进入当次上下文，不等于重新训练模型。"]}</script>
 </head>
 <body class="brand-ambient has-tabbar has-tabbar-1row" style="--accent:var(--gold)">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
@@ -98,7 +98,7 @@
         </nav>
         <h1><span data-zh>课堂-结构化提问与输出验证</span><span data-en>Lesson - Structured Prompting and Output Verification</span></h1>
         <p class="tp-en"><span data-zh>课堂教案 · 约 15 分钟</span><span data-en>Lesson plan · about 15 min</span><span data-zh> · 引用核验 2026-11-07（仅引用链接与日期）</span><span data-en> · refs checked 2026-11-07 (reference links and dates only)</span></p>
-        <p class="tp-p"><span data-zh>学员把同一份材料先自由提问、再结构化提问，比较字段完整度与事实一致度，并记住格式合法不等于内容正确。</span><span data-en>Learners ask about the same material freely first and then with a structured prompt, compare field completeness and factual consistency, and remember that valid format does not mean correct content.</span></p>
+        <p class="tp-p"><span data-zh>学员把同一份材料先自由提问、再结构化提问，比较字段完整度与事实一致度。还要记住：格式合法不等于内容正确。</span><span data-en>Learners ask about the same material freely first and then with a structured prompt, compare field completeness and factual consistency, and remember that valid format does not mean correct content.</span></p>
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>课时目标</span><span data-en>Lesson objectives</span></div>
 <span data-zh>
@@ -117,8 +117,8 @@
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>材料</span><span data-en>Materials</span></div>
 <span data-zh>
-      <p class="tp-li">微软 Learn《Prompt engineering techniques》：系统消息、少样本示例与指令位置的官方口径。</p>
-      <p class="tp-li">微软 Learn《How to use structured outputs》：结构化输出遵循调用方给的 JSON Schema。</p>
+      <p class="tp-li">微软 Learn《Prompt engineering techniques》。系统消息、少样本示例与指令位置的官方口径。</p>
+      <p class="tp-li">微软 Learn《How to use structured outputs》。结构化输出遵循调用方给的 JSON Schema。</p>
       <p class="tp-li">JSON Schema 官方站：查字段类型与必填项的写法。</p>
       <p class="tp-li">一份虚构活动通知原文（约 200 字）＋字段清单：时间、地点、主题、报名方式。</p>
 </span>
@@ -134,7 +134,7 @@
 <span data-zh>
           <ol>
             <li>3 分钟基线：各组自由提问一次，保存原始输出，不改指令。</li>
-            <li>4 分钟改写：把指令补成四部分，禁止事项要可判定，例如不得添加原文没有的费用。</li>
+            <li>4 分钟改写：把指令补成四部分，禁止事项要可判定。例如不得添加原文没有的费用。</li>
             <li>4 分钟校验：先查结构是否合法，再逐字段回连原文，标出无依据项。</li>
             <li>4 分钟对照：比较两次的字段完整度与事实一致度，说明差异来自哪一部分指令。</li>
           </ol>
@@ -151,9 +151,9 @@
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>常见误解</span><span data-en>Common misconceptions</span></div>
 <span data-zh>
-      <p class="tp-li">把「输出是合法 JSON」当成「字段值正确」；官方文档区分 JSON 模式与按 schema 的结构化输出。</p>
-      <p class="tp-li">把「给了示例」当成「模型学会了」；示例只影响当次推理。</p>
-      <p class="tp-li">以为加一句「不要编造」就能消除无依据字段；仍要逐字段回连原文。</p>
+      <p class="tp-li">把「输出是合法 JSON」当成「字段值正确」。官方文档区分 JSON 模式与按 schema 的结构化输出。</p>
+      <p class="tp-li">把「给了示例」当成「模型学会了」。示例只影响当次推理。</p>
+      <p class="tp-li">以为加一句「不要编造」就能消除无依据字段。仍要逐字段回连原文。</p>
 </span>
 <span data-en>
       <p class="tp-li" data-en>Treating valid JSON as correct field values; official documentation distinguishes JSON mode from schema-based structured outputs.</p>
@@ -184,8 +184,8 @@
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>出处</span><span data-en>Sources</span></div>
           <ul class="tp-refs">
-      <li><span data-zh>微软 Learn：提示工程技巧</span><span data-en>Microsoft Learn: Prompt engineering techniques</span> <a href="https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/prompt-engineering" target="_blank" rel="noopener">↗</a></li>
-      <li><span data-zh>微软 Learn：结构化输出怎么用</span><span data-en>Microsoft Learn: How to use structured outputs</span> <a href="https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/structured-outputs" target="_blank" rel="noopener">↗</a></li>
+      <li><span data-zh>微软 Learn。提示工程技巧</span><span data-en>Microsoft Learn: Prompt engineering techniques</span> <a href="https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/prompt-engineering" target="_blank" rel="noopener">↗</a></li>
+      <li><span data-zh>微软 Learn。结构化输出怎么用</span><span data-en>Microsoft Learn: How to use structured outputs</span> <a href="https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/structured-outputs" target="_blank" rel="noopener">↗</a></li>
       <li><span data-zh>JSON Schema 官方站</span><span data-en>JSON Schema official site</span> <a href="https://json-schema.org/" target="_blank" rel="noopener">↗</a></li>
           </ul>
         </div>

@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>模仿学习 · 学 AI | 投机取巧</title>
-  <meta name="description" content="让机器照着示范学动作，而不是自己从头试错。 模仿学习指从专家示范中学策略：记录「什么状态下做什么动作」的成对样本，再训练模型复现这些动作。 机器人学动作最常见的起点就是它：遥操作采来的示范直接变成训练数据。分清「从示范学」和「从奖励学」，能看懂为什么很多机器人项目先花钱采数据，而不是先设计奖励函数。" />
+  <meta name="description" content="让机器照着示范学动作，而不是自己从头试错。 模仿学习指从专家示范中学策略。记录「什么状态下做什么动作」的成对样本，再训练模型复现这些动作。 机器人学动作最常见的起点就是它：遥操作采来的示范直接变成训练数据。分清「从示范学」和「从奖励学」，能看懂一个现象。很多机器人项目先花钱采数据，而不是先设计奖励函数。" />
   <link rel="canonical" href="https://learn.specul.com/term/%E6%A8%A1%E4%BB%BF%E5%AD%A6%E4%B9%A0/" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="学 AI" />
   <meta property="og:url" content="https://learn.specul.com/term/%E6%A8%A1%E4%BB%BF%E5%AD%A6%E4%B9%A0/" />
   <meta property="og:title" content="模仿学习 · 学 AI" />
-  <meta property="og:description" content="让机器照着示范学动作，而不是自己从头试错。 模仿学习指从专家示范中学策略：记录「什么状态下做什么动作」的成对样本，再训练模型复现这些动作。 机器人学动作最常见的起点就是它：遥操作采来的示范直接变成训练数据。分清「从示范学」和「从奖励学」，能看懂为什么很多机器人项目先花钱采数据，而不是先设计奖励函数。" />
+  <meta property="og:description" content="让机器照着示范学动作，而不是自己从头试错。 模仿学习指从专家示范中学策略。记录「什么状态下做什么动作」的成对样本，再训练模型复现这些动作。 机器人学动作最常见的起点就是它：遥操作采来的示范直接变成训练数据。分清「从示范学」和「从奖励学」，能看懂一个现象。很多机器人项目先花钱采数据，而不是先设计奖励函数。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <script src="../../brand.js?v=8bbd4e9fb874"></script>
@@ -111,9 +111,9 @@
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>这是什么</span><span data-en>What it is</span></div>
 <span data-zh>
-      <p class="tp-li">模仿学习指从专家示范中学策略：记录「什么状态下做什么动作」的成对样本，再训练模型复现这些动作。</p>
-      <p class="tp-li">最直接的实现是行为克隆，把示范当监督学习来拟合；示范没覆盖到的状态容易出错，DAgger 等方法让专家在学习者走过的状态上继续标注来补救。</p>
-      <p class="tp-li">它与强化学习互补：一个靠现成示范，一个靠奖励试错；机器人遥操作采集的演示数据常走这条路。</p>
+      <p class="tp-li">模仿学习指从专家示范中学策略。记录「什么状态下做什么动作」的成对样本，再训练模型复现这些动作。</p>
+      <p class="tp-li">最直接的实现是行为克隆，把示范当监督学习来拟合。示范没覆盖到的状态容易出错。DAgger 等方法让专家在学习者走过的状态上继续标注，用来补救。</p>
+      <p class="tp-li">它与强化学习互补：一个靠现成示范，一个靠奖励试错。机器人遥操作采集的演示数据常走这条路。</p>
 </span>
 <span data-en>
       <p class="tp-li" data-en>Imitation learning learns a policy from expert demonstrations: record paired samples of what action to take in what state, then train a model to reproduce those actions.</p>
@@ -126,7 +126,7 @@
 
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>为什么需要知道</span><span data-en>Why it matters</span></div>
-          <p class="tp-p"><span data-zh>机器人学动作最常见的起点就是它：遥操作采来的示范直接变成训练数据。分清「从示范学」和「从奖励学」，能看懂为什么很多机器人项目先花钱采数据，而不是先设计奖励函数。</span><span data-en>This is the most common starting point for robot action learning: teleoperated demonstrations become training data. Separating learning from demonstrations and learning from reward explains why many robot projects spend on data collection before designing reward functions.</span></p>
+          <p class="tp-p"><span data-zh>机器人学动作最常见的起点就是它：遥操作采来的示范直接变成训练数据。分清「从示范学」和「从奖励学」，能看懂一个现象。很多机器人项目先花钱采数据，而不是先设计奖励函数。</span><span data-en>This is the most common starting point for robot action learning: teleoperated demonstrations become training data. Separating learning from demonstrations and learning from reward explains why many robot projects spend on data collection before designing reward functions.</span></p>
         </div>
 
 <div class="tp-sec tp-related"><div class="tp-lab"><span data-zh>接着读什么，为什么</span><span data-en>What to read next, and why</span></div><ul><li><a href="../%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AD%96%E7%95%A5/"><span data-zh>机器人策略</span><span data-en>Robot Policy</span></a><p class="t-sm"><span data-zh>在《机器人软件与学习路线》中接着读</span><span data-en>Continue in “Robot software and learning route”</span></p></li><li><a href="../%E9%81%A5%E6%93%8D%E4%BD%9C/"><span data-zh>遥操作</span><span data-en>Teleoperation</span></a><p class="t-sm"><span data-zh>在《机器人软件与学习路线》中接着读</span><span data-en>Continue in “Robot software and learning route”</span></p></li></ul></div>

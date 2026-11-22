@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Agent Memory（智能体记忆） · 学 AI | 投机取巧</title>
-  <meta name="description" content="让 agent 在跨会话、跨任务时保留有用的经历、事实和做法，并在需要时检索、更新、遗忘，而不是每次从零开始。 Agent Memory 通常分工作记忆、情景记忆、语义记忆与程序性记忆：分别对应当前上下文、过去交互、结构化事实和可复用技能。" />
+  <meta name="description" content="让 agent 在跨会话、跨任务时保留有用的经历、事实和做法。需要时能检索、更新、遗忘，而不是每次从零开始。 Agent Memory 通常分工作记忆、情景记忆、语义记忆与程序性记忆。分别对应当前上下文、过去交互、结构化事实和可复用技能。" />
   <link rel="canonical" href="https://learn.specul.com/term/Agent%20Memory/" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="学 AI" />
   <meta property="og:url" content="https://learn.specul.com/term/Agent%20Memory/" />
   <meta property="og:title" content="Agent Memory（智能体记忆） · 学 AI" />
-  <meta property="og:description" content="让 agent 在跨会话、跨任务时保留有用的经历、事实和做法，并在需要时检索、更新、遗忘，而不是每次从零开始。 Agent Memory 通常分工作记忆、情景记忆、语义记忆与程序性记忆：分别对应当前上下文、过去交互、结构化事实和可复用技能。" />
+  <meta property="og:description" content="让 agent 在跨会话、跨任务时保留有用的经历、事实和做法。需要时能检索、更新、遗忘，而不是每次从零开始。 Agent Memory 通常分工作记忆、情景记忆、语义记忆与程序性记忆。分别对应当前上下文、过去交互、结构化事实和可复用技能。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <script src="../../brand.js?v=8bbd4e9fb874"></script>
@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="../../learn.css" />
   <style>:root { --accent: var(--cyan); }</style>
   <!-- B5：词条页的结构性数据（DefinedTerm） -->
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTerm","name":"Agent Memory（智能体记忆）","alternateName":"Agent Memory","description":"让 agent 在跨会话、跨任务时保留有用的经历、事实和做法，并在需要时检索、更新、遗忘，而不是每次从零开始。","url":"https://learn.specul.com/term/Agent%20Memory/","inLanguage":"zh-Hans","inDefinedTermSet":{"@type":"DefinedTermSet","name":"学 AI · 第三段（用深）","url":"https://learn.specul.com/#layer-3"},"isPartOf":{"@type":"WebSite","name":"学 AI","url":"https://learn.specul.com/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTerm","name":"Agent Memory（智能体记忆）","alternateName":"Agent Memory","description":"让 agent 在跨会话、跨任务时保留有用的经历、事实和做法。需要时能检索、更新、遗忘，而不是每次从零开始。","url":"https://learn.specul.com/term/Agent%20Memory/","inLanguage":"zh-Hans","inDefinedTermSet":{"@type":"DefinedTermSet","name":"学 AI · 第三段（用深）","url":"https://learn.specul.com/#layer-3"},"isPartOf":{"@type":"WebSite","name":"学 AI","url":"https://learn.specul.com/"}}</script>
 </head>
 <body class="brand-ambient has-tabbar has-tabbar-1row" style="--accent:var(--cyan)">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
@@ -105,14 +105,14 @@
 
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>解决什么问题</span><span data-en>What problem it solves</span></div>
-          <p class="tp-p"><span data-zh>让 agent 在跨会话、跨任务时保留有用的经历、事实和做法，并在需要时检索、更新、遗忘，而不是每次从零开始。</span><span data-en>Let an agent retain useful experiences, facts and procedures across sessions and tasks, then retrieve, update and forget them instead of starting from scratch each time.</span></p>
+          <p class="tp-p"><span data-zh>让 agent 在跨会话、跨任务时保留有用的经历、事实和做法。需要时能检索、更新、遗忘，而不是每次从零开始。</span><span data-en>Let an agent retain useful experiences, facts and procedures across sessions and tasks, then retrieve, update and forget them instead of starting from scratch each time.</span></p>
         </div>
 
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>这是什么</span><span data-en>What it is</span></div>
 <span data-zh>
-      <p class="tp-li">Agent Memory 通常分工作记忆、情景记忆、语义记忆与程序性记忆：分别对应当前上下文、过去交互、结构化事实和可复用技能。</p>
-      <p class="tp-li">完整链路不止「存」，还包括写入筛选、索引与检索、冲突处理、巩固与遗忘；只加一个向量库不等于有记忆。</p>
+      <p class="tp-li">Agent Memory 通常分工作记忆、情景记忆、语义记忆与程序性记忆。分别对应当前上下文、过去交互、结构化事实和可复用技能。</p>
+      <p class="tp-li">完整链路不止「存」，还包括写入筛选、索引与检索、冲突处理、巩固与遗忘。只加一个向量库不等于有记忆。</p>
 </span>
 <span data-en>
       <p class="tp-li" data-en>Agent memory is usually split into working, episodic, semantic and procedural memory: the current context, past interactions, structured facts and reusable skills.</p>
@@ -124,7 +124,7 @@
 
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>为什么需要知道</span><span data-en>Why it matters</span></div>
-          <p class="tp-p"><span data-zh>长任务和多轮协作里，重复问同一件事、忘记上次的约束、把过期信息当事实，都会直接降低可用性。记忆是 agent 从「一次性问答」走向「持续协作」的关键一层。</span><span data-en>In long tasks and repeated collaboration, asking the same question again, forgetting a previous constraint or treating stale information as fact quickly destroys usability. Memory is the layer that moves an agent from one-shot answering to sustained work.</span></p>
+          <p class="tp-p"><span data-zh>长任务和多轮协作里，有三种情况会直接降低可用性。重复问同一件事。忘记上次的约束。把过期信息当事实。记忆是 agent 从「一次性问答」走向「持续协作」的关键一层。</span><span data-en>In long tasks and repeated collaboration, asking the same question again, forgetting a previous constraint or treating stale information as fact quickly destroys usability. Memory is the layer that moves an agent from one-shot answering to sustained work.</span></p>
         </div>
       <div class="tp-sec"><div class="tp-lab"><span data-zh>别名</span><span data-en>Chinese aliases</span></div><p class="tp-p"><span data-zh>智能体记忆 · 长期记忆 · Agent Memory</span></p></div>
 

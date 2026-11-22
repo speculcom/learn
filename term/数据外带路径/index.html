@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>数据外带路径 · 学 AI | 投机取巧</title>
-  <meta name="description" content="把你的资料能离开机器的几条实际路线列出来，知道关掉哪一条最省事。 外带指内容被送到你没打算发送的地方。Agent 场景里的路线不止一条：模型发起的网络请求、工具调用的参数、写进文件的内容、图片 URL 的查询串。" />
+  <meta name="description" content="把你的资料能离开机器的几条实际路线列出来，知道关掉哪一条最省事。 外带指内容被送到你没打算发送的地方。Agent 场景里的路线不止一条。模型发起的网络请求、工具调用的参数、写进文件的内容、图片 URL 的查询串。" />
   <link rel="canonical" href="https://learn.specul.com/term/%E6%95%B0%E6%8D%AE%E5%A4%96%E5%B8%A6%E8%B7%AF%E5%BE%84/" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="学 AI" />
   <meta property="og:url" content="https://learn.specul.com/term/%E6%95%B0%E6%8D%AE%E5%A4%96%E5%B8%A6%E8%B7%AF%E5%BE%84/" />
   <meta property="og:title" content="数据外带路径 · 学 AI" />
-  <meta property="og:description" content="把你的资料能离开机器的几条实际路线列出来，知道关掉哪一条最省事。 外带指内容被送到你没打算发送的地方。Agent 场景里的路线不止一条：模型发起的网络请求、工具调用的参数、写进文件的内容、图片 URL 的查询串。" />
+  <meta property="og:description" content="把你的资料能离开机器的几条实际路线列出来，知道关掉哪一条最省事。 外带指内容被送到你没打算发送的地方。Agent 场景里的路线不止一条。模型发起的网络请求、工具调用的参数、写进文件的内容、图片 URL 的查询串。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <script src="../../brand.js?v=8bbd4e9fb874"></script>
@@ -111,9 +111,9 @@
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>这是什么</span><span data-en>What it is</span></div>
 <span data-zh>
-      <p class="tp-li">外带指内容被送到你没打算发送的地方。Agent 场景里的路线不止一条：模型发起的网络请求、工具调用的参数、写进文件的内容、图片 URL 的查询串。</p>
-      <p class="tp-li">最常见的一套组合是「读到不可信内容 + 能发请求」。网页或文档里藏一段指令，让模型把已经读到的东西拼进一个网址发出去。OWASP 把提示注入列为 LLM01、把敏感信息泄露列为 LLM06，说的就是这两步。</p>
-      <p class="tp-li">带网络能力的 server 还会碰到内网。MCP 官方安全实践把 SSRF、令牌透传、confused deputy 单独列出；本站抓取 server 的页面直接写了它能访问本地与内网 IP 地址。</p>
+      <p class="tp-li">外带指内容被送到你没打算发送的地方。Agent 场景里的路线不止一条。模型发起的网络请求、工具调用的参数、写进文件的内容、图片 URL 的查询串。</p>
+      <p class="tp-li">最常见的一套组合是「读到不可信内容 + 能发请求」。网页或文档里藏一段指令，让模型把已经读到的东西拼进一个网址发出去。OWASP 把提示注入列为 LLM01，把敏感信息泄露列为 LLM06。这两项说的就是这两步。</p>
+      <p class="tp-li">带网络能力的 server 还会碰到内网。MCP 官方安全实践单独列了三类风险：SSRF、令牌透传、confused deputy。本站抓取 server 的页面直接写了它能访问本地与内网 IP 地址。</p>
       <p class="tp-li">你的数据实际走了多远，取决于给了哪些工具、哪些凭据、开了哪些目录。各家没有公布统一的泄露率数字，这件事只能在自己的权限配置上判断。</p>
 </span>
 <span data-en>

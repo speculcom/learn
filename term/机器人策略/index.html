@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>机器人策略 · 学 AI | 投机取巧</title>
-  <meta name="description" content="说清机器人「看到什么就做什么」的那条映射，它才是机器人行为的直接来源。 策略是观测到动作的映射：给定当前状态或观测，策略决定下一步执行什么动作，可以是确定性规则，也可以是输出动作分布的随机策略。" />
+  <meta name="description" content="说清机器人「看到什么就做什么」的那条映射。它才是机器人行为的直接来源。 策略是观测到动作的映射。给定当前状态或观测，策略决定下一步执行什么动作，可以是确定性规则，也可以是输出动作分布的随机策略。" />
   <link rel="canonical" href="https://learn.specul.com/term/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AD%96%E7%95%A5/" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="学 AI" />
   <meta property="og:url" content="https://learn.specul.com/term/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AD%96%E7%95%A5/" />
   <meta property="og:title" content="机器人策略 · 学 AI" />
-  <meta property="og:description" content="说清机器人「看到什么就做什么」的那条映射，它才是机器人行为的直接来源。 策略是观测到动作的映射：给定当前状态或观测，策略决定下一步执行什么动作，可以是确定性规则，也可以是输出动作分布的随机策略。" />
+  <meta property="og:description" content="说清机器人「看到什么就做什么」的那条映射。它才是机器人行为的直接来源。 策略是观测到动作的映射。给定当前状态或观测，策略决定下一步执行什么动作，可以是确定性规则，也可以是输出动作分布的随机策略。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <script src="../../brand.js?v=8bbd4e9fb874"></script>
@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="../../learn.css" />
   <style>:root { --accent: var(--cyan); }</style>
   <!-- B5：词条页的结构性数据（DefinedTerm） -->
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTerm","name":"机器人策略","alternateName":"Robot Policy","description":"说清机器人「看到什么就做什么」的那条映射，它才是机器人行为的直接来源。","url":"https://learn.specul.com/term/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AD%96%E7%95%A5/","inLanguage":"zh-Hans","inDefinedTermSet":{"@type":"DefinedTermSet","name":"学 AI · 第四段（看懂）","url":"https://learn.specul.com/#layer-4"},"isPartOf":{"@type":"WebSite","name":"学 AI","url":"https://learn.specul.com/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTerm","name":"机器人策略","alternateName":"Robot Policy","description":"说清机器人「看到什么就做什么」的那条映射。它才是机器人行为的直接来源。","url":"https://learn.specul.com/term/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%AD%96%E7%95%A5/","inLanguage":"zh-Hans","inDefinedTermSet":{"@type":"DefinedTermSet","name":"学 AI · 第四段（看懂）","url":"https://learn.specul.com/#layer-4"},"isPartOf":{"@type":"WebSite","name":"学 AI","url":"https://learn.specul.com/"}}</script>
 </head>
 <body class="brand-ambient has-tabbar has-tabbar-1row" style="--accent:var(--cyan)">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
@@ -105,14 +105,14 @@
 
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>解决什么问题</span><span data-en>What problem it solves</span></div>
-          <p class="tp-p"><span data-zh>说清机器人「看到什么就做什么」的那条映射，它才是机器人行为的直接来源。</span><span data-en>Name the mapping from what a robot observes to what it does — the direct source of robot behaviour.</span></p>
+          <p class="tp-p"><span data-zh>说清机器人「看到什么就做什么」的那条映射。它才是机器人行为的直接来源。</span><span data-en>Name the mapping from what a robot observes to what it does — the direct source of robot behaviour.</span></p>
         </div>
 
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>这是什么</span><span data-en>What it is</span></div>
 <span data-zh>
-      <p class="tp-li">策略是观测到动作的映射：给定当前状态或观测，策略决定下一步执行什么动作，可以是确定性规则，也可以是输出动作分布的随机策略。</p>
-      <p class="tp-li">机器人策略通常由学习得到——模仿学习从示范拟合它，强化学习按奖励优化它；训练完成后，部署到机器人上的就是这个映射本身。</p>
+      <p class="tp-li">策略是观测到动作的映射。给定当前状态或观测，策略决定下一步执行什么动作，可以是确定性规则，也可以是输出动作分布的随机策略。</p>
+      <p class="tp-li">机器人策略通常由学习得到——模仿学习从示范拟合它，强化学习按奖励优化它。训练完成后，部署到机器人上的就是这个映射本身。</p>
       <p class="tp-li">策略与环境构成闭环：动作改变环境，新观测又喂回策略。机器人行为的连贯或失控，都要从这个闭环里找原因，而不是归结为某一条单步指令。</p>
 </span>
 <span data-en>
@@ -126,7 +126,7 @@
 
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>为什么需要知道</span><span data-en>Why it matters</span></div>
-          <p class="tp-p"><span data-zh>看懂「策略」这个词，机器人新闻里的「端到端」「策略泛化」「策略失效」才有落点：它们说的都是同一条观测到动作的映射，在不同条件下的表现。</span><span data-en>Understanding policy gives robot news terms such as end-to-end, policy generalisation and policy failure a concrete referent: they all describe the same observation-to-action mapping under different conditions.</span></p>
+          <p class="tp-p"><span data-zh>看懂「策略」这个词，机器人新闻里的「端到端」「策略泛化」「策略失效」才有落点。它们说的都是同一条观测到动作的映射。在不同条件下的表现。</span><span data-en>Understanding policy gives robot news terms such as end-to-end, policy generalisation and policy failure a concrete referent: they all describe the same observation-to-action mapping under different conditions.</span></p>
         </div>
 
 <div class="tp-sec tp-related"><div class="tp-lab"><span data-zh>接着读什么，为什么</span><span data-en>What to read next, and why</span></div><ul><li><a href="../%E5%85%B7%E8%BA%AB%E6%99%BA%E8%83%BD/"><span data-zh>具身智能</span><span data-en>Embodied AI</span></a><p class="t-sm"><span data-zh>在《机器人软件与学习路线》中接着读</span><span data-en>Continue in “Robot software and learning route”</span></p></li><li><a href="../%E6%A8%A1%E4%BB%BF%E5%AD%A6%E4%B9%A0/"><span data-zh>模仿学习</span><span data-en>Imitation Learning</span></a><p class="t-sm"><span data-zh>在《机器人软件与学习路线》中接着读</span><span data-en>Continue in “Robot software and learning route”</span></p></li></ul></div>

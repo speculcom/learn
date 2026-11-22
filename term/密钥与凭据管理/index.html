@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>密钥与凭据管理 · 学 AI | 投机取巧</title>
-  <meta name="description" content="让调用模型的凭据不泄漏、能撤销、可追责。 一套本地或自建部署的凭据面通常不止一个 key：模型 API key、云账号密钥、向量库与数据库口令、CI/CD 里的 token、以及推理服务自己那把访问 key。" />
+  <meta name="description" content="让调用模型的凭据不泄漏、能撤销、可追责。 一套本地或自建部署的凭据面通常不止一个 key。要管的凭据不止一种。模型 API key、云账号密钥、向量库与数据库口令、CI/CD 里的 token，以及推理服务自己的访问 key。" />
   <link rel="canonical" href="https://learn.specul.com/term/%E5%AF%86%E9%92%A5%E4%B8%8E%E5%87%AD%E6%8D%AE%E7%AE%A1%E7%90%86/" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="学 AI" />
   <meta property="og:url" content="https://learn.specul.com/term/%E5%AF%86%E9%92%A5%E4%B8%8E%E5%87%AD%E6%8D%AE%E7%AE%A1%E7%90%86/" />
   <meta property="og:title" content="密钥与凭据管理 · 学 AI" />
-  <meta property="og:description" content="让调用模型的凭据不泄漏、能撤销、可追责。 一套本地或自建部署的凭据面通常不止一个 key：模型 API key、云账号密钥、向量库与数据库口令、CI/CD 里的 token、以及推理服务自己那把访问 key。" />
+  <meta property="og:description" content="让调用模型的凭据不泄漏、能撤销、可追责。 一套本地或自建部署的凭据面通常不止一个 key。要管的凭据不止一种。模型 API key、云账号密钥、向量库与数据库口令、CI/CD 里的 token，以及推理服务自己的访问 key。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <script src="../../brand.js?v=8bbd4e9fb874"></script>
@@ -111,10 +111,10 @@
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>这是什么</span><span data-en>What it is</span></div>
 <span data-zh>
-      <p class="tp-li">一套本地或自建部署的凭据面通常不止一个 key：模型 API key、云账号密钥、向量库与数据库口令、CI/CD 里的 token、以及推理服务自己那把访问 key。</p>
-      <p class="tp-li">OWASP 的密钥管理清单给出四条主线：集中存放并统一格式、自动化管理（含轮换）、按最小权限发放、以及把访问本身记进审计日志；同时明确不要硬编码。</p>
-      <p class="tp-li">轮换周期是可以查的数字：AWS 的密钥管理服务把「长期不换更容易被攻陷」写在最佳实践里，并把自动轮换的最短间隔给到每四小时一次。</p>
-      <p class="tp-li">泄漏路径常常不走代码：AWS 专门提醒命令行使用会把敏感参数留在 shell 历史与日志里；本机给工具配的 key，同一台机器上的其他进程也可能读到。</p>
+      <p class="tp-li">一套本地或自建部署的凭据面通常不止一个 key。要管的凭据不止一种。模型 API key、云账号密钥、向量库与数据库口令、CI/CD 里的 token，以及推理服务自己的访问 key。</p>
+      <p class="tp-li">OWASP 的密钥管理清单给出四条主线。管理动作包括四项。集中存放并统一格式。自动化管理，含轮换。按最小权限发放。把访问本身记进审计日志。同时明确不要硬编码。</p>
+      <p class="tp-li">轮换周期是可以查的数字。AWS 的密钥管理服务把「长期不换更容易被攻陷」写在最佳实践里，并把自动轮换的最短间隔给到每四小时一次。</p>
+      <p class="tp-li">泄漏路径常常不走代码。AWS 专门提醒命令行使用会把敏感参数留在 shell 历史与日志里。本机给工具配的 key，同一台机器上的其他进程也可能读到。</p>
       <p class="tp-li">自建服务侧还要多问一句：这把 key 是谁的 key？共享一把意味着事后无法区分哪个团队、哪个应用在调用。</p>
 </span>
 <span data-en>
@@ -130,7 +130,7 @@
 
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>为什么需要知道</span><span data-en>Why it matters</span></div>
-          <p class="tp-p"><span data-zh>一次 key 泄漏的实际代价通常高于「模型跑在谁家」这类差别：账单、数据外带、以及被冒用身份发起的调用。轮换与审计决定了你能不能发现它，最小权限决定了发现时已经损失多少。</span><span data-en>The real cost of one leaked key usually exceeds the difference between hosting options: billed usage, data exfiltration, and calls made under a stolen identity. Rotation and auditing decide whether you notice; least privilege decides how much was already lost when you do.</span></p>
+          <p class="tp-p"><span data-zh>一次 key 泄漏的实际代价通常高于「模型跑在谁家」这类差别。账单、数据外带、以及被冒用身份发起的调用。轮换与审计决定了你能不能发现它，最小权限决定了发现时已经损失多少。</span><span data-en>The real cost of one leaked key usually exceeds the difference between hosting options: billed usage, data exfiltration, and calls made under a stolen identity. Rotation and auditing decide whether you notice; least privilege decides how much was already lost when you do.</span></p>
         </div>
       <div class="tp-sec"><div class="tp-lab"><span data-zh>别名</span><span data-en>Chinese aliases</span></div><p class="tp-p"><span data-zh>API key 管理</span></p></div>
 

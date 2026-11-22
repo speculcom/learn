@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>蒸馏与知识来源 · 学 AI | 投机取巧</title>
-  <meta name="description" content="说明小模型的能力从哪个已有模型学来，以及这条来源线为什么常常说不清。 蒸馏的原始定义：Hinton 等人 2015 年的论文写的是把一个「笨重模型（cumbersome model）」ensemble 的知识压进单个可部署的模型，靠的是匹配软化的输出分布，而不是只匹配标签。" />
+  <meta name="description" content="说明小模型的能力从哪个已有模型学来，以及这条来源线为什么常常说不清。 蒸馏的原始定义。Hinton 等人 2015 年的论文写的是把一个「笨重模型（cumbersome model）」ensemble 的知识压进单个可部署的模型，靠的是匹配软化的输出分布，而不是只匹配标签。" />
   <link rel="canonical" href="https://learn.specul.com/term/%E8%92%B8%E9%A6%8F%E4%B8%8E%E7%9F%A5%E8%AF%86%E6%9D%A5%E6%BA%90/" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="学 AI" />
   <meta property="og:url" content="https://learn.specul.com/term/%E8%92%B8%E9%A6%8F%E4%B8%8E%E7%9F%A5%E8%AF%86%E6%9D%A5%E6%BA%90/" />
   <meta property="og:title" content="蒸馏与知识来源 · 学 AI" />
-  <meta property="og:description" content="说明小模型的能力从哪个已有模型学来，以及这条来源线为什么常常说不清。 蒸馏的原始定义：Hinton 等人 2015 年的论文写的是把一个「笨重模型（cumbersome model）」ensemble 的知识压进单个可部署的模型，靠的是匹配软化的输出分布，而不是只匹配标签。" />
+  <meta property="og:description" content="说明小模型的能力从哪个已有模型学来，以及这条来源线为什么常常说不清。 蒸馏的原始定义。Hinton 等人 2015 年的论文写的是把一个「笨重模型（cumbersome model）」ensemble 的知识压进单个可部署的模型，靠的是匹配软化的输出分布，而不是只匹配标签。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <script src="../../brand.js?v=8bbd4e9fb874"></script>
@@ -111,11 +111,11 @@
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>这是什么</span><span data-en>What it is</span></div>
 <span data-zh>
-      <p class="tp-li">蒸馏的原始定义：Hinton 等人 2015 年的论文写的是把一个「笨重模型（cumbersome model）」ensemble 的知识压进单个可部署的模型，靠的是匹配软化的输出分布，而不是只匹配标签。</p>
-      <p class="tp-li">工程上可用的来源有三类：教师模型的输出文本、教师模型的概率分布（需要能取到 logprobs）、公开语料与上一代自研模型。</p>
+      <p class="tp-li">蒸馏的原始定义。Hinton 等人 2015 年的论文写的是把一个「笨重模型（cumbersome model）」ensemble 的知识压进单个可部署的模型，靠的是匹配软化的输出分布，而不是只匹配标签。</p>
+      <p class="tp-li">工程上可用的来源有三类。教师模型的输出文本、教师模型的概率分布（需要能取到 logprobs）、公开语料与上一代自研模型。</p>
       <p class="tp-li">只调用公开 API 也能近似出软标签：同一提示多次采样统计频率。但能否这么做，先由条款决定，再由技术决定。</p>
       <p class="tp-li">多数厂商的服务条款限制把服务用于训练竞品模型。Anthropic 商业服务条款把「访问服务以构建竞争产品或服务，包括训练竞争性 AI 模型」列为不允许用途，同时写明客户保留对 Inputs 的权利并拥有 Outputs。</p>
-      <p class="tp-li">来源是否公开：模型卡与训练数据摘要通常不写教师是谁；未写出来就是未知，不能靠模型名字里带 -distill 反推。</p>
+      <p class="tp-li">来源是否公开：模型卡与训练数据摘要通常不写教师是谁。未写出来就是未知，不能靠模型名字里带 -distill 反推。</p>
 </span>
 <span data-en>
       <p class="tp-li" data-en>The original definition is Hinton et al. (2015): compress the knowledge of a cumbersome model ensemble into a single deployable model by matching softened output distributions rather than hard labels alone.</p>
@@ -130,7 +130,7 @@
 
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>为什么需要知道</span><span data-en>Why it matters</span></div>
-          <p class="tp-p"><span data-zh>「小模型接近大模型」这句话背后可能是一条蒸馏线。你要么查到来源，要么把它记成未知并承担说不清的风险；同时，用别人的输出去喂自己的模型，风险主要在合同条款那一侧，而不是在能不能做到那一侧。</span><span data-en>A claim that a small model nearly matches a big one may sit on top of a distillation line. Either you find the source or you record it as unknown and live with not being able to explain it. And when someone feeds another provider's outputs into their own training run, the exposure is on the contract side, not on the technical-possibility side.</span></p>
+          <p class="tp-p"><span data-zh>「小模型接近大模型」这句话背后可能是一条蒸馏线。你要么查到来源，要么把它记成未知并承担说不清的风险。同时，用别人的输出去喂自己的模型，风险主要在合同条款那一侧，而不是在能不能做到那一侧。</span><span data-en>A claim that a small model nearly matches a big one may sit on top of a distillation line. Either you find the source or you record it as unknown and live with not being able to explain it. And when someone feeds another provider's outputs into their own training run, the exposure is on the contract side, not on the technical-possibility side.</span></p>
         </div>
       <div class="tp-sec"><div class="tp-lab"><span data-zh>别名</span><span data-en>Chinese aliases</span></div><p class="tp-p"><span data-zh>能力从哪来</span></p></div>
 

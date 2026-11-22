@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Flow Matching · 学 AI | 投机取巧</title>
-  <meta name="description" content="学一个从噪声到数据的连续速度场，用常微分方程把噪声推成样本。 训练时让模型回归「从噪声点指向数据点」的速度，而不是直接预测噪声或像素。 扩散模型要很多步采样，Flow Matching 把「走哪条路」学得更直，步数可以更少；理解它，才能看懂 2025–2026 图像 / 视频生成模型为什么普遍从「扩散」转向「流」…" />
+  <meta name="description" content="学一个从噪声到数据的连续速度场，用常微分方程把噪声推成样本。 训练时让模型回归「从噪声点指向数据点」的速度，而不是直接预测噪声或像素。 扩散模型要很多步采样，Flow Matching 把「走哪条路」学得更直，步数可以更少。理解它，才能看懂 2025–2026 图像 / 视频生成模型为什么普遍从「扩散」转向「流」…" />
   <link rel="canonical" href="https://learn.specul.com/term/Flow%20Matching/" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="学 AI" />
   <meta property="og:url" content="https://learn.specul.com/term/Flow%20Matching/" />
   <meta property="og:title" content="Flow Matching · 学 AI" />
-  <meta property="og:description" content="学一个从噪声到数据的连续速度场，用常微分方程把噪声推成样本。 训练时让模型回归「从噪声点指向数据点」的速度，而不是直接预测噪声或像素。 扩散模型要很多步采样，Flow Matching 把「走哪条路」学得更直，步数可以更少；理解它，才能看懂 2025–2026 图像 / 视频生成模型为什么普遍从「扩散」转向「流」…" />
+  <meta property="og:description" content="学一个从噪声到数据的连续速度场，用常微分方程把噪声推成样本。 训练时让模型回归「从噪声点指向数据点」的速度，而不是直接预测噪声或像素。 扩散模型要很多步采样，Flow Matching 把「走哪条路」学得更直，步数可以更少。理解它，才能看懂 2025–2026 图像 / 视频生成模型为什么普遍从「扩散」转向「流」…" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <script src="../../brand.js?v=8bbd4e9fb874"></script>
@@ -113,7 +113,7 @@
 <span data-zh>
       <p class="tp-li">训练时让模型回归「从噪声点指向数据点」的速度，而不是直接预测噪声或像素。</p>
       <p class="tp-li">推理时从噪声出发，沿速度场积分若干步，得到样本。</p>
-      <p class="tp-li">它是扩散模型之外的连续生成框架；Stable Diffusion 3、Flux 等图像模型采用了 rectified flow 变体。</p>
+      <p class="tp-li">它是扩散模型之外的连续生成框架。Stable Diffusion 3、Flux 等图像模型采用了 rectified flow 变体。</p>
 </span>
 <span data-en>
       <p class="tp-li" data-en>Training regresses the velocity from a noise point toward a data point, rather than predicting noise or pixels directly.</p>
@@ -126,7 +126,7 @@
 
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>为什么需要知道</span><span data-en>Why it matters</span></div>
-          <p class="tp-p"><span data-zh>扩散模型要很多步采样，Flow Matching 把「走哪条路」学得更直，步数可以更少；理解它，才能看懂 2025–2026 图像 / 视频生成模型为什么普遍从「扩散」转向「流」。</span><span data-en>Diffusion needs many sampling steps; Flow Matching learns a straighter path, so fewer steps can suffice. It explains why image and video generators moved from “diffusion” to “flow” in 2025–2026.</span></p>
+          <p class="tp-p"><span data-zh>扩散模型要很多步采样，Flow Matching 把「走哪条路」学得更直，步数可以更少。理解它，才能看懂 2025–2026 图像 / 视频生成模型为什么普遍从「扩散」转向「流」。</span><span data-en>Diffusion needs many sampling steps; Flow Matching learns a straighter path, so fewer steps can suffice. It explains why image and video generators moved from “diffusion” to “flow” in 2025–2026.</span></p>
         </div>
 
 

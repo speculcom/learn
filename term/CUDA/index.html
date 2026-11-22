@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>CUDA · 学 AI | 投机取巧</title>
-  <meta name="description" content="NVIDIA GPU 的并行计算平台，也是多数训练框架默认的底层执行环境。 CUDA 提供编程模型、编译器与库，让开发者把计算任务交给 GPU 的数千个核心。" />
+  <meta name="description" content="NVIDIA GPU 的并行计算平台，也是多数训练框架默认的底层执行环境。 CUDA 提供编程模型、编译器与库。让开发者把计算任务交给 GPU 的数千个核心。" />
   <link rel="canonical" href="https://learn.specul.com/term/CUDA/" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="学 AI" />
   <meta property="og:url" content="https://learn.specul.com/term/CUDA/" />
   <meta property="og:title" content="CUDA · 学 AI" />
-  <meta property="og:description" content="NVIDIA GPU 的并行计算平台，也是多数训练框架默认的底层执行环境。 CUDA 提供编程模型、编译器与库，让开发者把计算任务交给 GPU 的数千个核心。" />
+  <meta property="og:description" content="NVIDIA GPU 的并行计算平台，也是多数训练框架默认的底层执行环境。 CUDA 提供编程模型、编译器与库。让开发者把计算任务交给 GPU 的数千个核心。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <script src="../../brand.js?v=8bbd4e9fb874"></script>
@@ -111,8 +111,8 @@
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>这是什么</span><span data-en>What it is</span></div>
 <span data-zh>
-      <p class="tp-li">CUDA 提供编程模型、编译器与库，让开发者把计算任务交给 GPU 的数千个核心。</p>
-      <p class="tp-li">PyTorch 等框架的 GPU 加速建立在 CUDA 及其库（如 cuBLAS、cuDNN）之上。</p>
+      <p class="tp-li">CUDA 提供编程模型、编译器与库。让开发者把计算任务交给 GPU 的数千个核心。</p>
+      <p class="tp-li">PyTorch 等框架的 GPU 加速建立在 CUDA 及其库之上。这些库包括 cuBLAS、cuDNN。</p>
 </span>
 <span data-en>
       <p class="tp-li" data-en>CUDA provides a programming model, compiler and libraries so work can be spread across thousands of GPU cores.</p>
@@ -120,11 +120,11 @@
 </span>
         </div>
 
-<div class="tp-sec"><figure class="tp-figure"><img src="../../assets/figures/fig-cuda.svg" alt="CUDA is the parallel execution layer on NVIDIA GPUs: frameworks hand operators to the CUDA runtime, and the driver schedules them across thousands of cores." loading="lazy" width="1200" height="600" /><figcaption><span data-zh>CUDA 是 GPU 上的并行执行层：框架把算子交给 CUDA 运行时，再由驱动调度到数千个核心。</span><span data-en>CUDA is the parallel execution layer on NVIDIA GPUs: frameworks hand operators to the CUDA runtime, and the driver schedules them across thousands of cores.</span></figcaption></figure></div>
+<div class="tp-sec"><figure class="tp-figure"><img src="../../assets/figures/fig-cuda.svg" alt="CUDA is the parallel execution layer on NVIDIA GPUs: frameworks hand operators to the CUDA runtime, and the driver schedules them across thousands of cores." loading="lazy" width="1200" height="600" /><figcaption><span data-zh>CUDA 是 GPU 上的并行执行层。框架把算子交给 CUDA 运行时，再由驱动调度到数千个核心。</span><span data-en>CUDA is the parallel execution layer on NVIDIA GPUs: frameworks hand operators to the CUDA runtime, and the driver schedules them across thousands of cores.</span></figcaption></figure></div>
 
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>为什么需要知道</span><span data-en>Why it matters</span></div>
-          <p class="tp-p"><span data-zh>它解释了为什么「有 GPU」不等于「能跑」：驱动、运行时、框架版本要匹配；也是 CUDA 生态锁定讨论的起点。</span><span data-en>It explains why having a GPU is not the same as being able to run: driver, runtime and framework versions must match. It is also the starting point of the CUDA lock-in debate.</span></p>
+          <p class="tp-p"><span data-zh>它解释了为什么「有 GPU」不等于「能跑」。驱动、运行时、框架版本要匹配。也是 CUDA 生态锁定讨论的起点。</span><span data-en>It explains why having a GPU is not the same as being able to run: driver, runtime and framework versions must match. It is also the starting point of the CUDA lock-in debate.</span></p>
         </div>
       <div class="tp-sec"><div class="tp-lab"><span data-zh>别名</span><span data-en>Chinese aliases</span></div><p class="tp-p"><span data-zh>统一计算架构 · NVIDIA CUDA</span></p></div>
 

@@ -114,7 +114,7 @@
       <p class="tp-li">离线评测是在固定题集上重跑同一批输入，可复现、适合比较版本先后。在线评测是对已经发生的真实交互打分，看的是线上分布有没有变。微软那份文档把这句话写成部署前用它验证行为、部署后用它监控质量。</p>
       <p class="tp-li">两者的数据来源不一样。Foundry 支持四种来源：合成数据、已有数据集、已有对话、已有 traces。后两种只有等真实流量跑起来以后才存在，所以在线评测天然是事后。</p>
       <p class="tp-li">在线评测更贴近你关心的东西，但它不会把同一批输入重跑一遍。分数掉了，你分不清是提示词改坏了还是当天的输入更难。要控制这点，只能一次只放一个变更，并留一版可比的参照。</p>
-      <p class="tp-li">离线题集通过不代表线上不出事：真实输入更长也更脏、工具更容易超时、资料更容易过期。离线分数与线上表现之间的通用换算关系，官方没有给出。</p>
+      <p class="tp-li">离线题集通过不代表线上不出事。真实输入更长也更脏、工具更容易超时、资料更容易过期。离线分数与线上表现之间的通用换算关系，官方没有给出。</p>
 </span>
 <span data-en>
       <p class="tp-li" data-en>Offline evaluation reruns the same inputs against a fixed dataset: reproducible, good for comparing one version with the next. Online evaluation scores interactions that really happened, which is how you notice the production distribution has moved. Microsoft frames it as validating behaviour before deployment and monitoring quality afterwards.</p>
@@ -128,7 +128,7 @@
 
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>为什么需要知道</span><span data-en>Why it matters</span></div>
-          <p class="tp-p"><span data-zh>只做离线评测的团队会以为已经安全；只看线上监控的团队说不清为什么变差。两件事各管一半，讲清楚才不会被一句「我们评测过了」带过去。</span><span data-en>Teams that only run offline evals assume they are covered; teams that only watch online metrics cannot say why quality slipped. The two halves answer different questions, which is what stops one line about we ran the evals from closing the discussion.</span></p>
+          <p class="tp-p"><span data-zh>只做离线评测的团队会以为已经安全。只看线上监控的团队说不清为什么变差。两件事各管一半，讲清楚才不会被一句「我们评测过了」带过去。</span><span data-en>Teams that only run offline evals assume they are covered; teams that only watch online metrics cannot say why quality slipped. The two halves answer different questions, which is what stops one line about we ran the evals from closing the discussion.</span></p>
         </div>
 
 <div class="tp-sec tp-related"><div class="tp-lab"><span data-zh>接着读什么，为什么</span><span data-en>What to read next, and why</span></div><ul><li><a href="../%E8%AF%84%E6%B5%8B%E9%A5%B1%E5%92%8C/"><span data-zh>评测饱和</span><span data-en>Benchmark Saturation</span></a><p class="t-sm"><span data-zh>离线指标跑满之后，线上差异才真正显出来。</span><span data-en>Once offline metrics saturate, online differences are what surface.</span></p></li><li><a href="../%E6%A8%A1%E5%9E%8B%E8%AF%84%E6%B5%8B%E7%9A%84%E5%B1%80%E9%99%90/"><span data-zh>模型评测的局限</span><span data-en>Evaluation Limits</span></a><p class="t-sm"><span data-zh>两者的差别正是公开评测解释不了的部分。</span><span data-en>The gap between them is what published evaluations cannot explain.</span></p></li><li><a href="../%E8%AF%84%E6%B5%8B%E9%9B%86%E8%AE%BE%E8%AE%A1/"><span data-zh>评测集设计</span><span data-en>Eval Set Design</span></a><p class="t-sm"><span data-zh>一起用于《怎么做跨模型的一致性回归测试》</span><span data-en>Used together in “How to Run Cross-Model Regression Tests”</span></p></li></ul></div>
@@ -143,7 +143,7 @@
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>出处</span><span data-en>Sources</span></div>
           <ul class="tp-refs">
-      <li><span data-zh>Microsoft Foundry：部署前验证与部署后监控、四种评估数据来源</span><span data-en>Run evaluations from the Microsoft Foundry portal</span> <a href="https://learn.microsoft.com/en-us/azure/ai-foundry/how-to/evaluate-generative-ai-app" target="_blank" rel="noopener">↗</a></li>
+      <li><span data-zh>Microsoft Foundry。部署前验证与部署后监控、四种评估数据来源</span><span data-en>Run evaluations from the Microsoft Foundry portal</span> <a href="https://learn.microsoft.com/en-us/azure/ai-foundry/how-to/evaluate-generative-ai-app" target="_blank" rel="noopener">↗</a></li>
       <li><span data-zh>OpenTelemetry 可观测性入门（在线评测要先有 traces）</span><span data-en>OpenTelemetry Observability Primer</span> <a href="https://opentelemetry.io/docs/concepts/observability-primer/" target="_blank" rel="noopener">↗</a></li>
           </ul>
         </div>

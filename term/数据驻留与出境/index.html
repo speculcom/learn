@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>数据驻留与出境 · 学 AI | 投机取巧</title>
-  <meta name="description" content="分清「数据存在哪个区域」和「数据凭什么可以离开这个区域」。 驻留讲存储位置，由配置决定；出境讲传输的合法路径，由法律决定。开了同一个区域开关，不等于有出境合法依据。" />
+  <meta name="description" content="分清「数据存在哪个区域」和「数据凭什么可以离开这个区域」。 驻留讲存储位置，由配置决定。出境讲传输的合法路径，由法律决定。开了同一个区域开关，不等于有出境合法依据。" />
   <link rel="canonical" href="https://learn.specul.com/term/%E6%95%B0%E6%8D%AE%E9%A9%BB%E7%95%99%E4%B8%8E%E5%87%BA%E5%A2%83/" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="学 AI" />
   <meta property="og:url" content="https://learn.specul.com/term/%E6%95%B0%E6%8D%AE%E9%A9%BB%E7%95%99%E4%B8%8E%E5%87%BA%E5%A2%83/" />
   <meta property="og:title" content="数据驻留与出境 · 学 AI" />
-  <meta property="og:description" content="分清「数据存在哪个区域」和「数据凭什么可以离开这个区域」。 驻留讲存储位置，由配置决定；出境讲传输的合法路径，由法律决定。开了同一个区域开关，不等于有出境合法依据。" />
+  <meta property="og:description" content="分清「数据存在哪个区域」和「数据凭什么可以离开这个区域」。 驻留讲存储位置，由配置决定。出境讲传输的合法路径，由法律决定。开了同一个区域开关，不等于有出境合法依据。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <script src="../../brand.js?v=8bbd4e9fb874"></script>
@@ -111,11 +111,11 @@
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>这是什么</span><span data-en>What it is</span></div>
 <span data-zh>
-      <p class="tp-li">驻留讲存储位置，由配置决定；出境讲传输的合法路径，由法律决定。开了同一个区域开关，不等于有出境合法依据。</p>
-      <p class="tp-li">云端的驻留通常是可选项：AWS 的数据隐私问答写明由客户选择内容存储在哪个区域，并声明未经客户同意不会把内容移出或复制到所选区域之外。</p>
-      <p class="tp-li">欧盟侧的机制是合同：欧委会提供预先批准的标准合同条款（SCC），用于向第三国转移个人数据。</p>
-      <p class="tp-li">中国侧的机制是申报评估：《数据出境安全评估办法》第四条列举应当申报的情形，包括向境外提供重要数据，以及关键信息基础设施运营者或处理一百万人以上个人信息的数据处理者向境外提供个人信息。</p>
-      <p class="tp-li">自建部署把出境问题挪了位置：提示词和日志留在本地，但模型的权重、更新源、以及你调用的任何外部服务（向量库、监控、第三方 API）仍可能在另一个辖区。</p>
+      <p class="tp-li">驻留讲存储位置，由配置决定。出境讲传输的合法路径，由法律决定。开了同一个区域开关，不等于有出境合法依据。</p>
+      <p class="tp-li">云端驻留通常是可选项。AWS 的数据隐私问答写明，内容存储区域由客户选择。未经客户同意，不会把内容移出或复制到所选区域之外。</p>
+      <p class="tp-li">欧盟侧靠合同。欧委会提供预先批准的标准合同条款（SCC），用于向第三国转移个人数据。</p>
+      <p class="tp-li">中国侧靠申报评估。《数据出境安全评估办法》第四条列出应当申报的情形。包括向境外提供重要数据。也包括关键信息基础设施运营者向境外提供个人信息。还包括处理一百万人以上个人信息的数据处理者向境外提供个人信息。</p>
+      <p class="tp-li">自建部署把出境问题挪了位置。提示词和日志留在本地。但模型权重、更新源，以及你调用的外部服务仍可能在另一个辖区。外部服务包括向量库、监控和第三方 API。</p>
 </span>
 <span data-en>
       <p class="tp-li" data-en>Residency is about storage location and is a configuration decision. Cross-border transfer is about the lawful route and is a legal decision. Picking a region does not by itself give you a basis for exporting data.</p>
@@ -130,7 +130,7 @@
 
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>为什么需要知道</span><span data-en>Why it matters</span></div>
-          <p class="tp-p"><span data-zh>合规评审问的不是「你们用哪家的模型」，而是「这些数据会到哪个司法辖区、依据什么合法路径、谁签的字」。区域设置截图答不上第二个问题。</span><span data-en>A compliance review does not ask which vendor's model you use. It asks which jurisdiction the data reaches, on what legal route, and who signed for it. A screenshot of a region selector does not answer the second question.</span></p>
+          <p class="tp-p"><span data-zh>合规评审问的不是「你们用哪家的模型」。它问的是「这些数据会到哪个司法辖区、依据什么合法路径、谁签的字」。区域设置截图答不上第二个问题。</span><span data-en>A compliance review does not ask which vendor's model you use. It asks which jurisdiction the data reaches, on what legal route, and who signed for it. A screenshot of a region selector does not answer the second question.</span></p>
         </div>
       <div class="tp-sec"><div class="tp-lab"><span data-zh>别名</span><span data-en>Chinese aliases</span></div><p class="tp-p"><span data-zh>数据会不会出境</span></p></div>
 
@@ -148,7 +148,7 @@
           <ul class="tp-refs">
       <li><span data-zh>欧盟委员会：国际数据转移的标准合同条款（SCC）</span><span data-en>European Commission: Standard contractual clauses for international transfers</span> <a href="https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/standard-contractual-clauses-scc_en" target="_blank" rel="noopener">↗</a></li>
       <li><span data-zh>《数据出境安全评估办法》全文（国家互联网信息办公室令第 11 号，天津网信网转载）</span><span data-en>Measures for Security Assessment of Outbound Data Transfers (CAC Order No. 11)</span> <a href="https://www.tjcac.gov.cn/wlaq/aqdt/202207/t20220712_5931849.html" target="_blank" rel="noopener">↗</a></li>
-      <li><span data-zh>AWS 数据隐私常见问题：内容存储区域由客户选择</span><span data-en>AWS data privacy FAQs</span> <a href="https://aws.amazon.com/compliance/data-privacy-faq/" target="_blank" rel="noopener">↗</a></li>
+      <li><span data-zh>AWS 数据隐私常见问题。内容存储区域由客户选择</span><span data-en>AWS data privacy FAQs</span> <a href="https://aws.amazon.com/compliance/data-privacy-faq/" target="_blank" rel="noopener">↗</a></li>
           </ul>
         </div>
 

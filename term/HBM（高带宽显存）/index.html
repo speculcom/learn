@@ -112,7 +112,7 @@
           <div class="tp-lab"><span data-zh>这是什么</span><span data-en>What it is</span></div>
 <span data-zh>
       <p class="tp-li">HBM 用硅通孔把多层 DRAM 垂直堆叠，再通过宽接口与 GPU 相连。</p>
-      <p class="tp-li">以 NVIDIA DGX B200 为例：8 张 GPU 共 1,440 GB HBM3e、合计 64 TB/s 带宽，折合单卡约 180 GB 与 8 TB/s。</p>
+      <p class="tp-li">以 NVIDIA DGX B200 为例。8 张 GPU 共 1,440 GB HBM3e、合计 64 TB/s 带宽，折合单卡约 180 GB 与 8 TB/s。</p>
 </span>
 <span data-en>
       <p class="tp-li" data-en>HBM stacks DRAM layers with through-silicon vias and connects them to the GPU through a wide interface.</p>
@@ -120,11 +120,11 @@
 </span>
         </div>
 
-<div class="tp-sec"><figure class="tp-figure"><img src="../../assets/figures/fig-hbm.svg" alt="HBM sits in the GPU package: stacked DRAM layers and a very wide interface deliver far more bandwidth than GDDR, but capacity is capped by the package." loading="lazy" width="1200" height="600" /><figcaption><span data-zh>HBM 与 GPU 同封装：多层 DRAM 堆叠、超宽接口，换来远高于 GDDR 的带宽，但容量受封装限制。</span><span data-en>HBM sits in the GPU package: stacked DRAM layers and a very wide interface deliver far more bandwidth than GDDR, but capacity is capped by the package.</span></figcaption></figure></div>
+<div class="tp-sec"><figure class="tp-figure"><img src="../../assets/figures/fig-hbm.svg" alt="HBM sits in the GPU package: stacked DRAM layers and a very wide interface deliver far more bandwidth than GDDR, but capacity is capped by the package." loading="lazy" width="1200" height="600" /><figcaption><span data-zh>HBM 与 GPU 同封装。多层 DRAM 堆叠、超宽接口，换来远高于 GDDR 的带宽，但容量受封装限制。</span><span data-en>HBM sits in the GPU package: stacked DRAM layers and a very wide interface deliver far more bandwidth than GDDR, but capacity is capped by the package.</span></figcaption></figure></div>
 
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>为什么需要知道</span><span data-en>Why it matters</span></div>
-          <p class="tp-p"><span data-zh>显存容量决定能装多少参数和 KV cache，带宽决定解码速度；两者常是比算力更紧的瓶颈。</span><span data-en>Capacity sets how many parameters and KV cache fit; bandwidth sets decoding speed. Either can bind before raw compute does.</span></p>
+          <p class="tp-p"><span data-zh>显存容量决定能装多少参数和 KV cache，带宽决定解码速度。两者常是比算力更紧的瓶颈。</span><span data-en>Capacity sets how many parameters and KV cache fit; bandwidth sets decoding speed. Either can bind before raw compute does.</span></p>
         </div>
       <div class="tp-sec"><div class="tp-lab"><span data-zh>别名</span><span data-en>Chinese aliases</span></div><p class="tp-p"><span data-zh>高带宽显存 · HBM3e · HBM 显存</span></p></div>
 

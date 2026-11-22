@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>RAG（检索增强生成） · 学 AI | 投机取巧</title>
-  <meta name="description" content="让模型在回答前先检索外部资料，把找到的原文片段放进上下文，再据此作答。 RAG 把参数化记忆（模型权重）与非参数化记忆（外部文档索引）组合起来：先用检索器找相关片段，再让生成模型基于片段写答案。" />
+  <meta name="description" content="让模型在回答前先检索外部资料。把找到的原文片段放进上下文，再据此作答。 RAG 把参数化记忆（模型权重）与非参数化记忆（外部文档索引）组合起来。先用检索器找相关片段。再让生成模型基于片段写答案。" />
   <link rel="canonical" href="https://learn.specul.com/term/RAG%EF%BC%88%E6%A3%80%E7%B4%A2%E5%A2%9E%E5%BC%BA%E7%94%9F%E6%88%90%EF%BC%89/" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="学 AI" />
   <meta property="og:url" content="https://learn.specul.com/term/RAG%EF%BC%88%E6%A3%80%E7%B4%A2%E5%A2%9E%E5%BC%BA%E7%94%9F%E6%88%90%EF%BC%89/" />
   <meta property="og:title" content="RAG（检索增强生成） · 学 AI" />
-  <meta property="og:description" content="让模型在回答前先检索外部资料，把找到的原文片段放进上下文，再据此作答。 RAG 把参数化记忆（模型权重）与非参数化记忆（外部文档索引）组合起来：先用检索器找相关片段，再让生成模型基于片段写答案。" />
+  <meta property="og:description" content="让模型在回答前先检索外部资料。把找到的原文片段放进上下文，再据此作答。 RAG 把参数化记忆（模型权重）与非参数化记忆（外部文档索引）组合起来。先用检索器找相关片段。再让生成模型基于片段写答案。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <script src="../../brand.js?v=8bbd4e9fb874"></script>
@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="../../learn.css" />
   <style>:root { --accent: var(--cyan); }</style>
   <!-- B5：词条页的结构性数据（DefinedTerm） -->
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTerm","name":"RAG（检索增强生成）","alternateName":"RAG (Retrieval-Augmented Generation)","description":"让模型在回答前先检索外部资料，把找到的原文片段放进上下文，再据此作答。","url":"https://learn.specul.com/term/RAG%EF%BC%88%E6%A3%80%E7%B4%A2%E5%A2%9E%E5%BC%BA%E7%94%9F%E6%88%90%EF%BC%89/","inLanguage":"zh-Hans","inDefinedTermSet":{"@type":"DefinedTermSet","name":"学 AI · 第三段（用深）","url":"https://learn.specul.com/#layer-3"},"isPartOf":{"@type":"WebSite","name":"学 AI","url":"https://learn.specul.com/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTerm","name":"RAG（检索增强生成）","alternateName":"RAG (Retrieval-Augmented Generation)","description":"让模型在回答前先检索外部资料。把找到的原文片段放进上下文，再据此作答。","url":"https://learn.specul.com/term/RAG%EF%BC%88%E6%A3%80%E7%B4%A2%E5%A2%9E%E5%BC%BA%E7%94%9F%E6%88%90%EF%BC%89/","inLanguage":"zh-Hans","inDefinedTermSet":{"@type":"DefinedTermSet","name":"学 AI · 第三段（用深）","url":"https://learn.specul.com/#layer-3"},"isPartOf":{"@type":"WebSite","name":"学 AI","url":"https://learn.specul.com/"}}</script>
 </head>
 <body class="brand-ambient has-tabbar has-tabbar-1row" style="--accent:var(--cyan)">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
@@ -105,13 +105,13 @@
 
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>解决什么问题</span><span data-en>What problem it solves</span></div>
-          <p class="tp-p"><span data-zh>让模型在回答前先检索外部资料，把找到的原文片段放进上下文，再据此作答。</span><span data-en>Let the model retrieve external material first, put the found passages into context, and answer from them.</span></p>
+          <p class="tp-p"><span data-zh>让模型在回答前先检索外部资料。把找到的原文片段放进上下文，再据此作答。</span><span data-en>Let the model retrieve external material first, put the found passages into context, and answer from them.</span></p>
         </div>
 
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>这是什么</span><span data-en>What it is</span></div>
 <span data-zh>
-      <p class="tp-li">RAG 把参数化记忆（模型权重）与非参数化记忆（外部文档索引）组合起来：先用检索器找相关片段，再让生成模型基于片段写答案。</p>
+      <p class="tp-li">RAG 把参数化记忆（模型权重）与非参数化记忆（外部文档索引）组合起来。先用检索器找相关片段。再让生成模型基于片段写答案。</p>
       <p class="tp-li">它的价值不只是多知道一些事实，还在于答案可以附出处、资料可以更新而不用重训模型。</p>
 </span>
 <span data-en>
@@ -120,11 +120,11 @@
 </span>
         </div>
 
-<div class="tp-sec"><figure class="tp-figure"><img src="../../assets/figures/fig-rag.svg" alt="A RAG pipeline: documents are chunked and embedded, candidates are retrieved and reranked, then the generator answers with citations." loading="lazy" width="1200" height="600" /><figcaption><span data-zh>一条 RAG 链路：文档先被切块并转成向量，检索召回候选，重排收窄，生成阶段带上引用。</span><span data-en>A RAG pipeline: documents are chunked and embedded, candidates are retrieved and reranked, then the generator answers with citations.</span></figcaption></figure></div>
+<div class="tp-sec"><figure class="tp-figure"><img src="../../assets/figures/fig-rag.svg" alt="A RAG pipeline: documents are chunked and embedded, candidates are retrieved and reranked, then the generator answers with citations." loading="lazy" width="1200" height="600" /><figcaption><span data-zh>一条 RAG 链路。文档先被切块并转成向量，检索召回候选，重排收窄，生成阶段带上引用。</span><span data-en>A RAG pipeline: documents are chunked and embedded, candidates are retrieved and reranked, then the generator answers with citations.</span></figcaption></figure></div>
 
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>为什么需要知道</span><span data-en>Why it matters</span></div>
-          <p class="tp-p"><span data-zh>遇到私有资料、时效性强的问题，微调不是唯一答案；RAG 往往更快、更可追溯，但检索错、分块错会直接传导到答案。</span><span data-en>For private or time-sensitive knowledge, fine-tuning is not the only option. RAG is often faster and traceable, but retrieval and chunking errors propagate straight into the answer.</span></p>
+          <p class="tp-p"><span data-zh>遇到私有资料、时效性强的问题，微调不是唯一答案。RAG 往往更快、更可追溯，但检索错、分块错会直接传导到答案。</span><span data-en>For private or time-sensitive knowledge, fine-tuning is not the only option. RAG is often faster and traceable, but retrieval and chunking errors propagate straight into the answer.</span></p>
         </div>
       <div class="tp-sec"><div class="tp-lab"><span data-zh>别名</span><span data-en>Chinese aliases</span></div><p class="tp-p"><span data-zh>检索增强生成 · 检索增强 · RAG 检索</span></p></div>
 

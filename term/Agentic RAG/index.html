@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Agentic RAG · 学 AI | 投机取巧</title>
-  <meta name="description" content="让 agent 自己决定要不要检索、检索几次、怎么改写 query，而不是一次检索就生成。 Agentic RAG 把检索当成 agent 的工具：它可以多轮改写查询、选择不同索引、判断资料是否足够，再决定是否继续。" />
+  <meta name="description" content="让 agent 自己决定要不要检索、检索几次、怎么改写 query。它不是一次检索就生成。 Agentic RAG 把检索当成 agent 的工具。它可以多轮改写查询、选择不同索引、判断资料是否足够，再决定是否继续。" />
   <link rel="canonical" href="https://learn.specul.com/term/Agentic%20RAG/" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="学 AI" />
   <meta property="og:url" content="https://learn.specul.com/term/Agentic%20RAG/" />
   <meta property="og:title" content="Agentic RAG · 学 AI" />
-  <meta property="og:description" content="让 agent 自己决定要不要检索、检索几次、怎么改写 query，而不是一次检索就生成。 Agentic RAG 把检索当成 agent 的工具：它可以多轮改写查询、选择不同索引、判断资料是否足够，再决定是否继续。" />
+  <meta property="og:description" content="让 agent 自己决定要不要检索、检索几次、怎么改写 query。它不是一次检索就生成。 Agentic RAG 把检索当成 agent 的工具。它可以多轮改写查询、选择不同索引、判断资料是否足够，再决定是否继续。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <script src="../../brand.js?v=8bbd4e9fb874"></script>
@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="../../learn.css" />
   <style>:root { --accent: var(--cyan); }</style>
   <!-- B5：词条页的结构性数据（DefinedTerm） -->
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTerm","name":"Agentic RAG","alternateName":"Agentic RAG","description":"让 agent 自己决定要不要检索、检索几次、怎么改写 query，而不是一次检索就生成。","url":"https://learn.specul.com/term/Agentic%20RAG/","inLanguage":"zh-Hans","inDefinedTermSet":{"@type":"DefinedTermSet","name":"学 AI · 第三段（用深）","url":"https://learn.specul.com/#layer-3"},"isPartOf":{"@type":"WebSite","name":"学 AI","url":"https://learn.specul.com/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTerm","name":"Agentic RAG","alternateName":"Agentic RAG","description":"让 agent 自己决定要不要检索、检索几次、怎么改写 query。它不是一次检索就生成。","url":"https://learn.specul.com/term/Agentic%20RAG/","inLanguage":"zh-Hans","inDefinedTermSet":{"@type":"DefinedTermSet","name":"学 AI · 第三段（用深）","url":"https://learn.specul.com/#layer-3"},"isPartOf":{"@type":"WebSite","name":"学 AI","url":"https://learn.specul.com/"}}</script>
 </head>
 <body class="brand-ambient has-tabbar has-tabbar-1row" style="--accent:var(--cyan)">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
@@ -105,13 +105,13 @@
 
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>解决什么问题</span><span data-en>What problem it solves</span></div>
-          <p class="tp-p"><span data-zh>让 agent 自己决定要不要检索、检索几次、怎么改写 query，而不是一次检索就生成。</span><span data-en>Let the agent decide whether to retrieve, how many times, and how to rewrite the query, instead of generating after one retrieval.</span></p>
+          <p class="tp-p"><span data-zh>让 agent 自己决定要不要检索、检索几次、怎么改写 query。它不是一次检索就生成。</span><span data-en>Let the agent decide whether to retrieve, how many times, and how to rewrite the query, instead of generating after one retrieval.</span></p>
         </div>
 
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>这是什么</span><span data-en>What it is</span></div>
 <span data-zh>
-      <p class="tp-li">Agentic RAG 把检索当成 agent 的工具：它可以多轮改写查询、选择不同索引、判断资料是否足够，再决定是否继续。</p>
+      <p class="tp-li">Agentic RAG 把检索当成 agent 的工具。它可以多轮改写查询、选择不同索引、判断资料是否足够，再决定是否继续。</p>
       <p class="tp-li">与固定 RAG 链路相比，它更灵活，但步数、成本与不可控性也更高。</p>
 </span>
 <span data-en>
@@ -124,7 +124,7 @@
 
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>为什么需要知道</span><span data-en>Why it matters</span></div>
-          <p class="tp-p"><span data-zh>复杂问题常常一次检索不够；理解这一层，才能判断「RAG 效果不好」到底是检索器的问题，还是流程设计的问题。</span><span data-en>Complex questions often need more than one retrieval. Understanding this layer tells you whether poor RAG results come from the retriever or from workflow design.</span></p>
+          <p class="tp-p"><span data-zh>复杂问题常常一次检索不够。理解这一层，才能判断「RAG 效果不好」到底是检索器的问题，还是流程设计的问题。</span><span data-en>Complex questions often need more than one retrieval. Understanding this layer tells you whether poor RAG results come from the retriever or from workflow design.</span></p>
         </div>
 
 

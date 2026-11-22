@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>近似最近邻检索（ANN） · 学 AI | 投机取巧</title>
-  <meta name="description" content="在海量向量里快速找出与查询最相近的一小批，允许少量漏检。 精确最近邻在大规模下太慢，ANN 用图索引、量化或哈希做近似。 向量库的核心就是 ANN；召回率、内存和延迟要一起调，换索引参数会改变检索质量。" />
+  <meta name="description" content="在海量向量里快速找出与查询最相近的一小批，允许少量漏检。 精确最近邻在大规模下太慢，ANN 用图索引、量化或哈希做近似。 向量库的核心就是 ANN。召回率、内存和延迟要一起调，换索引参数会改变检索质量。" />
   <link rel="canonical" href="https://learn.specul.com/term/%E8%BF%91%E4%BC%BC%E6%9C%80%E8%BF%91%E9%82%BB%E6%A3%80%E7%B4%A2/" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="学 AI" />
   <meta property="og:url" content="https://learn.specul.com/term/%E8%BF%91%E4%BC%BC%E6%9C%80%E8%BF%91%E9%82%BB%E6%A3%80%E7%B4%A2/" />
   <meta property="og:title" content="近似最近邻检索（ANN） · 学 AI" />
-  <meta property="og:description" content="在海量向量里快速找出与查询最相近的一小批，允许少量漏检。 精确最近邻在大规模下太慢，ANN 用图索引、量化或哈希做近似。 向量库的核心就是 ANN；召回率、内存和延迟要一起调，换索引参数会改变检索质量。" />
+  <meta property="og:description" content="在海量向量里快速找出与查询最相近的一小批，允许少量漏检。 精确最近邻在大规模下太慢，ANN 用图索引、量化或哈希做近似。 向量库的核心就是 ANN。召回率、内存和延迟要一起调，换索引参数会改变检索质量。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <script src="../../brand.js?v=8bbd4e9fb874"></script>
@@ -120,11 +120,11 @@
 </span>
         </div>
 
-<div class="tp-sec"><figure class="tp-figure"><img src="../../assets/figures/fig-ann.svg" alt="An HNSW multi-layer graph: long links on upper layers approach quickly, short links below refine. A small recall loss buys orders-of-magnitude speed." loading="lazy" width="1200" height="600" /><figcaption><span data-zh>HNSW 的多层图：上层长跳快速接近，下层短跳精确定位；用少量召回损失换数量级的加速。</span><span data-en>An HNSW multi-layer graph: long links on upper layers approach quickly, short links below refine. A small recall loss buys orders-of-magnitude speed.</span></figcaption></figure></div>
+<div class="tp-sec"><figure class="tp-figure"><img src="../../assets/figures/fig-ann.svg" alt="An HNSW multi-layer graph: long links on upper layers approach quickly, short links below refine. A small recall loss buys orders-of-magnitude speed." loading="lazy" width="1200" height="600" /><figcaption><span data-zh>HNSW 的多层图。上层长跳快速接近，下层短跳精确定位。用少量召回损失换数量级的加速。</span><span data-en>An HNSW multi-layer graph: long links on upper layers approach quickly, short links below refine. A small recall loss buys orders-of-magnitude speed.</span></figcaption></figure></div>
 
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>为什么需要知道</span><span data-en>Why it matters</span></div>
-          <p class="tp-p"><span data-zh>向量库的核心就是 ANN；召回率、内存和延迟要一起调，换索引参数会改变检索质量。</span><span data-en>ANN is the core of a vector database. Recall, memory and latency must be tuned together; changing index parameters changes retrieval quality.</span></p>
+          <p class="tp-p"><span data-zh>向量库的核心就是 ANN。召回率、内存和延迟要一起调，换索引参数会改变检索质量。</span><span data-en>ANN is the core of a vector database. Recall, memory and latency must be tuned together; changing index parameters changes retrieval quality.</span></p>
         </div>
       <div class="tp-sec"><div class="tp-lab"><span data-zh>别名</span><span data-en>Chinese aliases</span></div><p class="tp-p"><span data-zh>ANN · 近似最近邻 · 向量检索 · ANN 检索</span></p></div>
 

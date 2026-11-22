@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>重排（Reranking） · 学 AI | 投机取巧</title>
-  <meta name="description" content="在初步召回的一批候选里，用更精细的模型重新排序，把真正相关的几条排到最前面。 检索系统通常先做召回（向量或关键词），再用交叉编码器逐对打分。" />
+  <meta name="description" content="在初步召回的一批候选里，用更精细的模型重新排序。把真正相关的几条排到最前面。 检索系统通常先做召回（向量或关键词），再用交叉编码器逐对打分。" />
   <link rel="canonical" href="https://learn.specul.com/term/%E9%87%8D%E6%8E%92%EF%BC%88Reranking%EF%BC%89/" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="学 AI" />
   <meta property="og:url" content="https://learn.specul.com/term/%E9%87%8D%E6%8E%92%EF%BC%88Reranking%EF%BC%89/" />
   <meta property="og:title" content="重排（Reranking） · 学 AI" />
-  <meta property="og:description" content="在初步召回的一批候选里，用更精细的模型重新排序，把真正相关的几条排到最前面。 检索系统通常先做召回（向量或关键词），再用交叉编码器逐对打分。" />
+  <meta property="og:description" content="在初步召回的一批候选里，用更精细的模型重新排序。把真正相关的几条排到最前面。 检索系统通常先做召回（向量或关键词），再用交叉编码器逐对打分。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <script src="../../brand.js?v=8bbd4e9fb874"></script>
@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="../../learn.css" />
   <style>:root { --accent: var(--cyan); }</style>
   <!-- B5：词条页的结构性数据（DefinedTerm） -->
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTerm","name":"重排（Reranking）","alternateName":"Reranking","description":"在初步召回的一批候选里，用更精细的模型重新排序，把真正相关的几条排到最前面。","url":"https://learn.specul.com/term/%E9%87%8D%E6%8E%92%EF%BC%88Reranking%EF%BC%89/","inLanguage":"zh-Hans","inDefinedTermSet":{"@type":"DefinedTermSet","name":"学 AI · 第三段（用深）","url":"https://learn.specul.com/#layer-3"},"isPartOf":{"@type":"WebSite","name":"学 AI","url":"https://learn.specul.com/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTerm","name":"重排（Reranking）","alternateName":"Reranking","description":"在初步召回的一批候选里，用更精细的模型重新排序。把真正相关的几条排到最前面。","url":"https://learn.specul.com/term/%E9%87%8D%E6%8E%92%EF%BC%88Reranking%EF%BC%89/","inLanguage":"zh-Hans","inDefinedTermSet":{"@type":"DefinedTermSet","name":"学 AI · 第三段（用深）","url":"https://learn.specul.com/#layer-3"},"isPartOf":{"@type":"WebSite","name":"学 AI","url":"https://learn.specul.com/"}}</script>
 </head>
 <body class="brand-ambient has-tabbar has-tabbar-1row" style="--accent:var(--cyan)">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
@@ -105,14 +105,14 @@
 
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>解决什么问题</span><span data-en>What problem it solves</span></div>
-          <p class="tp-p"><span data-zh>在初步召回的一批候选里，用更精细的模型重新排序，把真正相关的几条排到最前面。</span><span data-en>Reorder a small candidate set with a more precise model so the genuinely relevant passages reach the top.</span></p>
+          <p class="tp-p"><span data-zh>在初步召回的一批候选里，用更精细的模型重新排序。把真正相关的几条排到最前面。</span><span data-en>Reorder a small candidate set with a more precise model so the genuinely relevant passages reach the top.</span></p>
         </div>
 
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>这是什么</span><span data-en>What it is</span></div>
 <span data-zh>
       <p class="tp-li">检索系统通常先做召回（向量或关键词），再用交叉编码器逐对打分。</p>
-      <p class="tp-li">重排模型同时读查询和候选文本，算得慢但更准，所以一般只用在几十到两百条候选的小集合上。</p>
+      <p class="tp-li">重排模型同时读查询和候选文本。它算得慢但更准，所以一般只用在几十到两百条候选的小集合上。</p>
 </span>
 <span data-en>
       <p class="tp-li" data-en>Retrieval systems usually recall first (vector or keyword search), then score query-passage pairs with a cross-encoder.</p>
@@ -120,11 +120,11 @@
 </span>
         </div>
 
-<div class="tp-sec"><figure class="tp-figure"><img src="../../assets/figures/fig-rerank.svg" alt="Two-stage retrieval: recall collects candidates, reranking reads each pair and moves the most relevant to the top." loading="lazy" width="1200" height="600" /><figcaption><span data-zh>两阶段检索：召回先取一批候选，重排再逐对精读，把最相关的排到顶部。</span><span data-en>Two-stage retrieval: recall collects candidates, reranking reads each pair and moves the most relevant to the top.</span></figcaption></figure></div>
+<div class="tp-sec"><figure class="tp-figure"><img src="../../assets/figures/fig-rerank.svg" alt="Two-stage retrieval: recall collects candidates, reranking reads each pair and moves the most relevant to the top." loading="lazy" width="1200" height="600" /><figcaption><span data-zh>两阶段检索。召回先取一批候选，重排再逐对精读。把最相关的排到顶部。</span><span data-en>Two-stage retrieval: recall collects candidates, reranking reads each pair and moves the most relevant to the top.</span></figcaption></figure></div>
 
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>为什么需要知道</span><span data-en>Why it matters</span></div>
-          <p class="tp-p"><span data-zh>只靠向量相似度，顺序常常不理想；加一层重排通常能明显提升引用质量，代价是延迟和算力。</span><span data-en>Vector similarity alone often produces a mediocre order. A reranking layer usually improves citation quality, at the cost of latency and compute.</span></p>
+          <p class="tp-p"><span data-zh>只靠向量相似度，顺序常常不理想。加一层重排通常能明显提升引用质量，代价是延迟和算力。</span><span data-en>Vector similarity alone often produces a mediocre order. A reranking layer usually improves citation quality, at the cost of latency and compute.</span></p>
         </div>
       <div class="tp-sec"><div class="tp-lab"><span data-zh>别名</span><span data-en>Chinese aliases</span></div><p class="tp-p"><span data-zh>重排序 · rerank · 交叉编码器重排</span></p></div>
 

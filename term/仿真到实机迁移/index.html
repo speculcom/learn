@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>仿真到实机迁移 · 学 AI | 投机取巧</title>
-  <meta name="description" content="把在仿真里练好的策略搬到真实机器人上，还能照样管用——跨越仿真与现实的差距。 仿真到实机迁移指把在物理仿真中训练出的控制策略部署到真实机器人，核心障碍是「现实差距」：仿真的摩擦、延迟、传感噪声与真实世界对不上。" />
+  <meta name="description" content="把在仿真里练好的策略搬到真实机器人上，还能照样管用。跨越仿真与现实的差距。 仿真到实机迁移指把仿真中训练出的控制策略部署到真实机器人。核心障碍是「现实差距」。仿真的摩擦、延迟、传感噪声与真实世界对不上。" />
   <link rel="canonical" href="https://learn.specul.com/term/%E4%BB%BF%E7%9C%9F%E5%88%B0%E5%AE%9E%E6%9C%BA%E8%BF%81%E7%A7%BB/" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="学 AI" />
   <meta property="og:url" content="https://learn.specul.com/term/%E4%BB%BF%E7%9C%9F%E5%88%B0%E5%AE%9E%E6%9C%BA%E8%BF%81%E7%A7%BB/" />
   <meta property="og:title" content="仿真到实机迁移 · 学 AI" />
-  <meta property="og:description" content="把在仿真里练好的策略搬到真实机器人上，还能照样管用——跨越仿真与现实的差距。 仿真到实机迁移指把在物理仿真中训练出的控制策略部署到真实机器人，核心障碍是「现实差距」：仿真的摩擦、延迟、传感噪声与真实世界对不上。" />
+  <meta property="og:description" content="把在仿真里练好的策略搬到真实机器人上，还能照样管用。跨越仿真与现实的差距。 仿真到实机迁移指把仿真中训练出的控制策略部署到真实机器人。核心障碍是「现实差距」。仿真的摩擦、延迟、传感噪声与真实世界对不上。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <script src="../../brand.js?v=8bbd4e9fb874"></script>
@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="../../learn.css" />
   <style>:root { --accent: var(--cyan); }</style>
   <!-- B5：词条页的结构性数据（DefinedTerm） -->
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTerm","name":"仿真到实机迁移","alternateName":"Sim-to-Real Transfer","description":"把在仿真里练好的策略搬到真实机器人上，还能照样管用——跨越仿真与现实的差距。","url":"https://learn.specul.com/term/%E4%BB%BF%E7%9C%9F%E5%88%B0%E5%AE%9E%E6%9C%BA%E8%BF%81%E7%A7%BB/","inLanguage":"zh-Hans","inDefinedTermSet":{"@type":"DefinedTermSet","name":"学 AI · 第三段（用深）","url":"https://learn.specul.com/#layer-3"},"isPartOf":{"@type":"WebSite","name":"学 AI","url":"https://learn.specul.com/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTerm","name":"仿真到实机迁移","alternateName":"Sim-to-Real Transfer","description":"把在仿真里练好的策略搬到真实机器人上，还能照样管用。跨越仿真与现实的差距。","url":"https://learn.specul.com/term/%E4%BB%BF%E7%9C%9F%E5%88%B0%E5%AE%9E%E6%9C%BA%E8%BF%81%E7%A7%BB/","inLanguage":"zh-Hans","inDefinedTermSet":{"@type":"DefinedTermSet","name":"学 AI · 第三段（用深）","url":"https://learn.specul.com/#layer-3"},"isPartOf":{"@type":"WebSite","name":"学 AI","url":"https://learn.specul.com/"}}</script>
 </head>
 <body class="brand-ambient has-tabbar has-tabbar-1row" style="--accent:var(--cyan)">
   <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
@@ -105,15 +105,15 @@
 
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>解决什么问题</span><span data-en>What problem it solves</span></div>
-          <p class="tp-p"><span data-zh>把在仿真里练好的策略搬到真实机器人上，还能照样管用——跨越仿真与现实的差距。</span><span data-en>Move a policy trained in simulation onto a real robot and still have it work — crossing the gap between simulation and reality.</span></p>
+          <p class="tp-p"><span data-zh>把在仿真里练好的策略搬到真实机器人上，还能照样管用。跨越仿真与现实的差距。</span><span data-en>Move a policy trained in simulation onto a real robot and still have it work — crossing the gap between simulation and reality.</span></p>
         </div>
 
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>这是什么</span><span data-en>What it is</span></div>
 <span data-zh>
-      <p class="tp-li">仿真到实机迁移指把在物理仿真中训练出的控制策略部署到真实机器人，核心障碍是「现实差距」：仿真的摩擦、延迟、传感噪声与真实世界对不上。</p>
-      <p class="tp-li">域随机化是主流手段之一：训练时故意把物理参数、纹理、光照随机化，让策略见过各种变化，到了实机才不至于只认得那一个仿真世界。</p>
-      <p class="tp-li">Tobin 等用域随机化把仿真里练的视觉策略迁到真实机械臂，Peng 等则随机化动力学参数，让四足与双足步态从仿真走到实机。</p>
+      <p class="tp-li">仿真到实机迁移指把仿真中训练出的控制策略部署到真实机器人。核心障碍是「现实差距」。仿真的摩擦、延迟、传感噪声与真实世界对不上。</p>
+      <p class="tp-li">域随机化是主流手段之一。训练时故意把物理参数、纹理、光照随机化。让策略见过各种变化，到了实机才不至于只认得那一个仿真世界。</p>
+      <p class="tp-li">Tobin 等用域随机化，把仿真里练的视觉策略迁到真实机械臂。Peng 等则随机化动力学参数。让四足与双足步态从仿真走到实机。</p>
 </span>
 <span data-en>
       <p class="tp-li" data-en>Sim-to-real transfer means deploying a control policy trained in physics simulation onto a real robot; the core obstacle is the reality gap: friction, delay and sensor noise in simulation do not match the real world.</p>
@@ -126,7 +126,7 @@
 
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>为什么需要知道</span><span data-en>Why it matters</span></div>
-          <p class="tp-p"><span data-zh>机器人 demo 看着灵，真上手就抖，多半栽在这一步。知道有「现实差距」这回事，你就不会把仿真视频里的成功率当成实机能力，也会追问对方做了哪种随机化或系统辨识。</span><span data-en>Robot demos often look agile but shake on real hardware, usually because of this step. Knowing the reality gap exists stops you treating simulation success rates as real capability, and prompts you to ask which randomisation or system identification was used.</span></p>
+          <p class="tp-p"><span data-zh>机器人 demo 看着灵，真上手就抖，多半栽在这一步。知道有「现实差距」这回事。你就不会把仿真视频里的成功率当成实机能力，也会追问对方做了哪种随机化或系统辨识。</span><span data-en>Robot demos often look agile but shake on real hardware, usually because of this step. Knowing the reality gap exists stops you treating simulation success rates as real capability, and prompts you to ask which randomisation or system identification was used.</span></p>
         </div>
       <div class="tp-sec"><div class="tp-lab"><span data-zh>别名</span><span data-en>Chinese aliases</span></div><p class="tp-p"><span data-zh>Sim-to-Real · 仿真到现实迁移</span></p></div>
 

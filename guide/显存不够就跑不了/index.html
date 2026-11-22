@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>显存不够就跑不了 · 学 AI 微型指南 | 投机取巧</title>
-  <meta name="description" content="能不能跑与跑多快，是两个问题。 部分运行器支持把一部分工作放到系统内存或 CPU，但还受总内存、架构支持和速度要求限制。先分别计算权重、缓存与运行时占用，再评估更小规格、量化或卸载方案。" />
+  <meta name="description" content="能不能跑与跑多快，是两个问题。 部分运行器支持把一部分工作放到系统内存或 CPU。这样做仍受总内存、架构支持和速度要求限制。先分别计算权重、缓存与运行时占用，再评估更小规格、量化或卸载方案。" />
   <link rel="canonical" href="https://learn.specul.com/guide/%E6%98%BE%E5%AD%98%E4%B8%8D%E5%A4%9F%E5%B0%B1%E8%B7%91%E4%B8%8D%E4%BA%86/" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="学 AI" />
   <meta property="og:url" content="https://learn.specul.com/guide/%E6%98%BE%E5%AD%98%E4%B8%8D%E5%A4%9F%E5%B0%B1%E8%B7%91%E4%B8%8D%E4%BA%86/" />
   <meta property="og:title" content="显存不够就跑不了 · 学 AI 微型指南" />
-  <meta property="og:description" content="能不能跑与跑多快，是两个问题。 部分运行器支持把一部分工作放到系统内存或 CPU，但还受总内存、架构支持和速度要求限制。先分别计算权重、缓存与运行时占用，再评估更小规格、量化或卸载方案。" />
+  <meta property="og:description" content="能不能跑与跑多快，是两个问题。 部分运行器支持把一部分工作放到系统内存或 CPU。这样做仍受总内存、架构支持和速度要求限制。先分别计算权重、缓存与运行时占用，再评估更小规格、量化或卸载方案。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <script src="../../brand.js?v=8bbd4e9fb874"></script>
@@ -101,7 +101,7 @@
         <p class="tp-p"><span data-zh>能不能跑与跑多快，是两个问题。</span><span data-en>Whether it runs and how fast it runs are two questions.</span></p>
         <div class="t-myth">
           <p class="t-myth-said"><span data-zh>显存装不下，就只能换显卡。</span><span data-en>If it does not fit in VRAM, the only option is a better graphics card.</span></p>
-          <p class="t-myth-fact"><span data-zh>部分运行器支持把一部分工作放到系统内存或 CPU，但还受总内存、架构支持和速度要求限制。先分别计算权重、缓存与运行时占用，再评估更小规格、量化或卸载方案。</span><span data-en>Some runtimes support system-memory/CPU offload, subject to total memory, architecture and speed constraints. Budget weights, cache and runtime separately before assessing smaller variants, quantization or offload.</span></p>
+          <p class="t-myth-fact"><span data-zh>部分运行器支持把一部分工作放到系统内存或 CPU。这样做仍受总内存、架构支持和速度要求限制。先分别计算权重、缓存与运行时占用，再评估更小规格、量化或卸载方案。</span><span data-en>Some runtimes support system-memory/CPU offload, subject to total memory, architecture and speed constraints. Budget weights, cache and runtime separately before assessing smaller variants, quantization or offload.</span></p>
         </div>
         <section class="tp-sec"><h2><span data-zh>例子与判断</span><span data-en>Example and interpretation</span></h2><p class="t-sm"><span data-zh>以下是教学情境，不是本站运行或实测记录。</span><span data-en>A teaching scenario, not a measured or executed site test.</span></p><p class="tp-p"><span data-zh>文件装不进显存时，先看运行器是否支持部分卸载、机器内存是否足够，也可比较更小模型或其他量化档。能启动后仍要检查速度与上下文需求，不能把“启动成功”当作“可用”。</span><span data-en>If weights exceed VRAM, check runtime offload support and system RAM, or assess a smaller model/quantization. After startup, assess speed and context needs. Starting successfully is not the same as being usable.</span></p></section>
 <section class="tp-sec diagnostic-guide"><h2><span data-zh>做完例子后怎么检查</span><span data-en>How to check your practice</span></h2><p><span data-zh>先用自己的话解释上面的判断，再检查输入条件，最后回原文验证。说不清原因时回概念；缺日期、字段或权限时补输入；结论无出处时先撤回结论。</span><span data-en>Explain the example in your own words, inspect input constraints, then verify against the source. Revisit concepts if you cannot explain why; supply missing dates, fields or permissions; withdraw unsupported conclusions.</span></p><p><a href="../../#diagnose-concept"><span data-zh>按这篇主题，先从“概念没分清”练习查起</span><span data-en>For this topic, start with concept confusion</span></a> · <a href="../../#diagnose"><span data-zh>查看全部六个情境与理由</span><span data-en>See all six scenarios and their reasoning</span></a></p></section>

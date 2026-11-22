@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>模型合并 · 学 AI | 投机取巧</title>
-  <meta name="description" content="把两个或多个微调模型的权重合在一起，不重新训练就得到一个新的能力组合。 常见做法包括线性加权、TIES、DARE 与任务向量；核心是处理参数冲突与冗余。" />
+  <meta name="description" content="把两个或多个微调模型的权重合在一起，不重新训练就得到一个新的能力组合。 常见做法包括线性加权、TIES、DARE 与任务向量。核心是处理参数冲突与冗余。" />
   <link rel="canonical" href="https://learn.specul.com/term/%E6%A8%A1%E5%9E%8B%E5%90%88%E5%B9%B6/" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="学 AI" />
   <meta property="og:url" content="https://learn.specul.com/term/%E6%A8%A1%E5%9E%8B%E5%90%88%E5%B9%B6/" />
   <meta property="og:title" content="模型合并 · 学 AI" />
-  <meta property="og:description" content="把两个或多个微调模型的权重合在一起，不重新训练就得到一个新的能力组合。 常见做法包括线性加权、TIES、DARE 与任务向量；核心是处理参数冲突与冗余。" />
+  <meta property="og:description" content="把两个或多个微调模型的权重合在一起，不重新训练就得到一个新的能力组合。 常见做法包括线性加权、TIES、DARE 与任务向量。核心是处理参数冲突与冗余。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <script src="../../brand.js?v=8bbd4e9fb874"></script>
@@ -111,10 +111,10 @@
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>这是什么</span><span data-en>What it is</span></div>
 <span data-zh>
-      <p class="tp-li">常见做法包括线性加权、TIES、DARE 与任务向量；核心是处理参数冲突与冗余。</p>
+      <p class="tp-li">常见做法包括线性加权、TIES、DARE 与任务向量。核心是处理参数冲突与冗余。</p>
       <p class="tp-li">与集成（ensemble）的区别：合并产出一个模型，集成要同时跑多个模型。</p>
-      <p class="tp-li">合并前要确认同源底座与相同词表；不同底座或不同分词的模型直接合会坏。</p>
-      <p class="tp-li">许可证要逐个看：合并后的权重仍受各来源模型条款约束，不能因为「自己合的」就当成全新模型。</p>
+      <p class="tp-li">合并前要确认同源底座与相同词表。不同底座或不同分词的模型直接合会坏。</p>
+      <p class="tp-li">许可证要逐个看。合并后的权重仍受各来源模型条款约束。不能因为「自己合的」就当成全新模型。</p>
 </span>
 <span data-en>
       <p class="tp-li" data-en>Common methods include linear weighting, TIES, DARE and task vectors; the core problem is parameter conflict and redundancy.</p>
@@ -128,7 +128,7 @@
 
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>为什么需要知道</span><span data-en>Why it matters</span></div>
-          <p class="tp-p"><span data-zh>开源社区大量「合并模型」刷榜；不懂合并，容易把拼装当成新训练，也会误判许可证。</span><span data-en>Open-source communities merge models at scale to chase leaderboards; without understanding merging, repackaging looks like new training and licences get misjudged.</span></p>
+          <p class="tp-p"><span data-zh>开源社区大量「合并模型」刷榜。不懂合并，容易把拼装当成新训练，也会误判许可证。</span><span data-en>Open-source communities merge models at scale to chase leaderboards; without understanding merging, repackaging looks like new training and licences get misjudged.</span></p>
         </div>
 
 

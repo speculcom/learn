@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>交叉熵 · 学 AI | 投机取巧</title>
-  <meta name="description" content="衡量预测分布与真实分布差多远，是分类与语言模型最常用的损失。 交叉熵等于真实分布的负对数似然：给正确答案的概率越低，惩罚越大。 语言模型的困惑度就是交叉熵的指数形式；看到 loss 数值要先确认单位与词表口径。" />
+  <meta name="description" content="衡量预测分布与真实分布差多远，是分类与语言模型最常用的损失。 交叉熵等于真实分布的负对数似然：给正确答案的概率越低，惩罚越大。 语言模型的困惑度就是交叉熵的指数形式。看到 loss 数值要先确认单位与词表口径。" />
   <link rel="canonical" href="https://learn.specul.com/term/%E4%BA%A4%E5%8F%89%E7%86%B5/" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="学 AI" />
   <meta property="og:url" content="https://learn.specul.com/term/%E4%BA%A4%E5%8F%89%E7%86%B5/" />
   <meta property="og:title" content="交叉熵 · 学 AI" />
-  <meta property="og:description" content="衡量预测分布与真实分布差多远，是分类与语言模型最常用的损失。 交叉熵等于真实分布的负对数似然：给正确答案的概率越低，惩罚越大。 语言模型的困惑度就是交叉熵的指数形式；看到 loss 数值要先确认单位与词表口径。" />
+  <meta property="og:description" content="衡量预测分布与真实分布差多远，是分类与语言模型最常用的损失。 交叉熵等于真实分布的负对数似然：给正确答案的概率越低，惩罚越大。 语言模型的困惑度就是交叉熵的指数形式。看到 loss 数值要先确认单位与词表口径。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
   <script src="../../brand.js?v=8bbd4e9fb874"></script>
@@ -120,11 +120,11 @@
 </span>
         </div>
 
-<div class="tp-sec"><figure class="tp-figure"><img src="../../assets/figures/fig-ce.svg" alt="Cross-entropy looks at the probability assigned to the correct class: near 1 gives near-zero loss, near 0 gives a large penalty." loading="lazy" width="1200" height="600" /><figcaption><span data-zh>交叉熵只看正确答案那一项的概率：概率越接近 1，损失越接近 0；越接近 0，惩罚越大。</span><span data-en>Cross-entropy looks at the probability assigned to the correct class: near 1 gives near-zero loss, near 0 gives a large penalty.</span></figcaption></figure></div>
+<div class="tp-sec"><figure class="tp-figure"><img src="../../assets/figures/fig-ce.svg" alt="Cross-entropy looks at the probability assigned to the correct class: near 1 gives near-zero loss, near 0 gives a large penalty." loading="lazy" width="1200" height="600" /><figcaption><span data-zh>交叉熵只看正确答案那一项的概率。概率越接近 1，损失越接近 0。越接近 0，惩罚越大。</span><span data-en>Cross-entropy looks at the probability assigned to the correct class: near 1 gives near-zero loss, near 0 gives a large penalty.</span></figcaption></figure></div>
 
         <div class="tp-sec">
           <div class="tp-lab"><span data-zh>为什么需要知道</span><span data-en>Why it matters</span></div>
-          <p class="tp-p"><span data-zh>语言模型的困惑度就是交叉熵的指数形式；看到 loss 数值要先确认单位与词表口径。</span><span data-en>Perplexity is the exponential of cross-entropy. Before comparing loss numbers, check the unit and the vocabulary denominator.</span></p>
+          <p class="tp-p"><span data-zh>语言模型的困惑度就是交叉熵的指数形式。看到 loss 数值要先确认单位与词表口径。</span><span data-en>Perplexity is the exponential of cross-entropy. Before comparing loss numbers, check the unit and the vocabulary denominator.</span></p>
         </div>
       <div class="tp-sec"><div class="tp-lab"><span data-zh>别名</span><span data-en>Chinese aliases</span></div><p class="tp-p"><span data-zh>CE · cross entropy · 负对数似然</span></p></div>
 
