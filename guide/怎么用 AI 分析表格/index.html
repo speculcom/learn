@@ -13,10 +13,10 @@
   <meta property="og:description" content="先让 AI 理解字段和口径，再让它写公式或查询，最后用原始表复核关键数字。 先贴表头和 5 行样例，说明每列含义、单位、空值规则；不要让模型猜字段。" />
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
-  <script src="../../brand.js?v=8bbd4e9fb874"></script>
+  <script src="../../brand.js?v=bb632b891131"></script>
   <script defer src="../../data/paths.js"></script>
   <script defer src="../../data/reading.js"></script>
-  <link rel="stylesheet" href="../../brand.css?v=8bbd4e9fb874" />
+  <link rel="stylesheet" href="../../brand.css?v=bb632b891131" />
   <link rel="stylesheet" href="../../learn.css" />
   <style>:root { --accent: var(--gold); }</style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"怎么用 AI 分析表格","description":"先让 AI 理解字段和口径，再让它写公式或查询，最后用原始表复核关键数字。","url":"https://learn.specul.com/guide/%E6%80%8E%E4%B9%88%E7%94%A8%20AI%20%E5%88%86%E6%9E%90%E8%A1%A8%E6%A0%BC/","inLanguage":"zh-Hans","step":[{"@type":"HowToStep","position":1,"name":"先贴表头和 5 行样例，说明每列含义、单位、空值规则；不要让模型猜字段。"},{"@type":"HowToStep","position":2,"name":"把问题拆成「口径 → 计算 → 呈现」：同比还是环比、含不含税、去不去重，先写清楚。"},{"@type":"HowToStep","position":3,"name":"优先让模型生成可检查的公式/SQL，而不是直接给一个结论数字。"},{"@type":"HowToStep","position":4,"name":"关键数字用第二条路径复算（例如透视表 vs 公式），两条路径不一致就以原始表为准。"},{"@type":"HowToStep","position":5,"name":"图表只保留能支持结论的维度；AI 很容易把相关性画成因果。"}]}</script>
@@ -96,7 +96,7 @@
           <span aria-hidden="true">·</span>
           <span><span data-zh>微型指南</span><span data-en>Guide</span></span>
         </nav>
-        <h1><span data-zh>怎么用 AI 分析表格</span><span data-en>[object Object]</span></h1>
+        <h1><span data-zh>怎么用 AI 分析表格</span><span data-en>How to analyse a spreadsheet with AI</span></h1>
         <p class="tp-en"><span data-zh>微型指南 · 约 7 分钟</span><span data-en>Guide · about 7 min</span><span data-zh> · 引用核验 2026-11-19（仅引用链接与日期）</span><span data-en> · refs checked 2026-11-19 (reference links and dates only)</span></p>
         <p class="tp-p"><span data-zh>先让 AI 理解字段和口径，再让它写公式或查询，最后用原始表复核关键数字。</span><span data-en>Have AI understand fields and definitions first, then write formulas or queries, then reconcile key numbers against the source sheet.</span></p>
         <div class="tp-sec">
