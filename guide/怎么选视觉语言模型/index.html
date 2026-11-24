@@ -14,10 +14,10 @@
   <meta name="theme-color" content="#16121f" />
   <link rel="icon" type="image/png" href="/assets/brand/dandelion-favicon-mint.png" />
   <link rel="apple-touch-icon" href="/assets/brand/dandelion-apple-touch-mint.png" />
-  <script src="../../brand.js?v=3275c4e05536"></script>
+  <script src="../../brand.js?v=383da6719a68"></script>
   <script defer src="../../data/paths.js"></script>
   <script defer src="../../data/reading.js"></script>
-  <link rel="stylesheet" href="../../brand.css?v=3275c4e05536" />
+  <link rel="stylesheet" href="../../brand.css?v=383da6719a68" />
   <link rel="stylesheet" href="../../learn.css" />
   <style>:root { --accent: var(--gold); }</style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"怎么选视觉语言模型","description":"VLM 不是「什么图都能读」；先分清描述、抽取、计数、定位、读字五类任务，再按任务选。","url":"https://learn.specul.com/guide/%E6%80%8E%E4%B9%88%E9%80%89%E8%A7%86%E8%A7%89%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/","inLanguage":"zh-Hans","step":[{"@type":"HowToStep","position":1,"name":"把任务分成五类：描述、信息抽取、计数、定位坐标、读小字；VLM 强在前两类，弱在后三类。"},{"@type":"HowToStep","position":2,"name":"票据、截图、表单读字，优先 OCR 加文本模型，不要只靠 VLM 看图。"},{"@type":"HowToStep","position":3,"name":"需要框选或坐标时，确认模型支持 grounding；普通 VLM 只给文字描述。"},{"@type":"HowToStep","position":4,"name":"验证输入分辨率：小字、表格线在缩图后是否还能读；这常是硬上限。"},{"@type":"HowToStep","position":5,"name":"测幻觉：给它一张没有某物体的图，看它是否承认「看不到」。"},{"@type":"HowToStep","position":6,"name":"用 30–50 张真实业务图盲测，分「答对 / 部分对 / 编造」三档，不只看 demo。"},{"@type":"HowToStep","position":7,"name":"先估单张成本：图像 token 远多于文本 token，批量任务容易被低估。"}]}</script>
