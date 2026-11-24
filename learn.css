@@ -484,7 +484,7 @@ footer a{color:var(--tx-2)}
 /* ── 学习起点：把目标平铺成卡片，不用下拉框 ─────────────────────
    2026-11-19 用户明确要求「不要下拉式菜单，把能选的东西平铺出来」。
    这里只用 brand.css 的 token，不引新颜色；选中态用强调色描边。 */
-.start-panel{padding:clamp(18px,2.6vw,26px)}
+.start-panel{margin:0 0 var(--sp-4);padding:clamp(14px,2vw,20px)}
 .start-kicker{margin:0 0 4px;color:var(--accent);font-size:var(--fs-micro);letter-spacing:.08em;text-transform:uppercase}
 .start-panel h2{font-size:var(--fs-lg);margin:0 0 6px}
 .start-deck{margin:0 0 var(--sp-4);color:var(--ink-mid);font-size:var(--fs-xs);line-height:1.7;max-width:72ch}
