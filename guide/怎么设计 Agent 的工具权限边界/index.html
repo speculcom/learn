@@ -12,12 +12,12 @@
   <meta property="og:title" content="怎么设计 Agent 的工具权限边界 · 学 AI 微型指南" />
   <meta property="og:description" content="Agent 的风险不在「会不会说错」，而在「能不能替你按下不可撤销的按钮」。权限要先分级，再收窄。 先列工具清单，按只读、写入、对外发送、花钱、删改五级分类。" />
   <meta name="theme-color" content="#16121f" />
-  <link rel="icon" type="image/png" href="/assets/brand/dandelion-favicon.png" />
-  <link rel="apple-touch-icon" href="/assets/brand/dandelion-apple-touch.png" />
-  <script src="../../brand.js?v=18e84553660e"></script>
+  <link rel="icon" type="image/png" href="/assets/brand/dandelion-favicon-mint.png" />
+  <link rel="apple-touch-icon" href="/assets/brand/dandelion-apple-touch-mint.png" />
+  <script src="../../brand.js?v=3275c4e05536"></script>
   <script defer src="../../data/paths.js"></script>
   <script defer src="../../data/reading.js"></script>
-  <link rel="stylesheet" href="../../brand.css?v=18e84553660e" />
+  <link rel="stylesheet" href="../../brand.css?v=3275c4e05536" />
   <link rel="stylesheet" href="../../learn.css" />
   <style>:root { --accent: var(--gold); }</style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"怎么设计 Agent 的工具权限边界","description":"Agent 的风险不在「会不会说错」，而在「能不能替你按下不可撤销的按钮」。权限要先分级，再收窄。","url":"https://learn.specul.com/guide/%E6%80%8E%E4%B9%88%E8%AE%BE%E8%AE%A1%20Agent%20%E7%9A%84%E5%B7%A5%E5%85%B7%E6%9D%83%E9%99%90%E8%BE%B9%E7%95%8C/","inLanguage":"zh-Hans","step":[{"@type":"HowToStep","position":1,"name":"先列工具清单，按只读、写入、对外发送、花钱、删改五级分类。"},{"@type":"HowToStep","position":2,"name":"默认最小权限：能读一个目录就不要给整个盘。能查就不要给改。"},{"@type":"HowToStep","position":3,"name":"写操作要二次确认：把参数和影响范围展示给人，确认后才执行。"},{"@type":"HowToStep","position":4,"name":"对外发送与支付单列：这类动作不可撤销，必须人工在场。"},{"@type":"HowToStep","position":5,"name":"用白名单而不是黑名单：URL、命令、路径都列允许集合。"},{"@type":"HowToStep","position":6,"name":"记录每次调用：谁、什么参数、结果、耗时。日志要能回放到具体任务。"},{"@type":"HowToStep","position":7,"name":"把工具返回内容当不可信输入，不执行其中的指令。定期做越权演练验证拦截。"}]}</script>
