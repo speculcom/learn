@@ -12,12 +12,12 @@
   <meta property="og:title" content="2026 评测基准地图 · 学 AI 微型指南" />
   <meta property="og:description" content="榜单不是真理，但不同基准测的是不同能力。这张地图按编码、Agent、长文、多模态、安全分组，并给出读榜检查项。 编码：HumanEval 已偏老，SWE-bench 系列更接近真实仓库任务；看 Verified 子集与版本。" />
   <meta name="theme-color" content="#16121f" />
-  <link rel="icon" type="image/png" href="/assets/brand/dandelion-favicon-site.png" />
-  <link rel="apple-touch-icon" href="/assets/brand/dandelion-apple-touch-site.png" />
-  <script src="../../brand.js?v=775a6f0ca8a6"></script>
+  <link rel="icon" type="image/png" href="../../assets/brand/dandelion-favicon-site.png" />
+  <link rel="apple-touch-icon" href="../../assets/brand/dandelion-apple-touch-site.png" />
+  <script src="../../brand.js?v=e1ea0c16e2de"></script>
   <script defer src="../../data/paths.js"></script>
   <script defer src="../../data/reading.js"></script>
-  <link rel="stylesheet" href="../../brand.css?v=775a6f0ca8a6" />
+  <link rel="stylesheet" href="../../brand.css?v=e1ea0c16e2de" />
   <link rel="stylesheet" href="../../learn.css" />
   <style>:root { --accent: var(--gold); }</style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"2026 评测基准地图","description":"榜单不是真理，但不同基准测的是不同能力。这张地图按编码、Agent、长文、多模态、安全分组，并给出读榜检查项。","url":"https://learn.specul.com/guide/2026%20%E8%AF%84%E6%B5%8B%E5%9F%BA%E5%87%86%E5%9C%B0%E5%9B%BE/","inLanguage":"zh-Hans","step":[{"@type":"HowToStep","position":1,"name":"编码：HumanEval 已偏老，SWE-bench 系列更接近真实仓库任务；看 Verified 子集与版本。"},{"@type":"HowToStep","position":2,"name":"Agent：τ-bench、AgentBench、Terminal-Bench 测多步任务与工具调用；看任务集、工具面与运行次数。"},{"@type":"HowToStep","position":3,"name":"长文：RULER、LongBench 测长上下文检索与推理；看长度档位与「中段」表现。"},{"@type":"HowToStep","position":4,"name":"多模态：MMMU 测大学级图文推理，Video-MME 测视频理解；看模态覆盖与评测协议。"},{"@type":"HowToStep","position":5,"name":"安全与对齐：看拒答、越狱、偏见与红队基准，但不要用单一分数替代你的业务验收。"},{"@type":"HowToStep","position":6,"name":"读榜六问：版本、训练截止日、任务集是否公开、是否去污染、pass@k 还是单次、成本与步数是否披露。"},{"@type":"HowToStep","position":7,"name":"结论：基准帮你缩小候选，不能替你决定；最终用你自己的任务集回归。"}]}</script>
@@ -144,16 +144,16 @@
       </article>
     </div>
   </main>
-    <footer class="site-footer foot-single">
+      <footer class="site-footer foot-single">
     <div class="container foot-line">
       <div class="foot-brand">
         <span class="foot-brand-main">
           <span class="brand-dot" aria-hidden="true"></span>
           <span class="foot-copy"><span data-zh>投机取巧 · specul.com</span><span data-en>Specul · specul.com</span></span>
         </span>
-        <span class="foot-license"><a href="https://specul.com/LICENSE-CONTENT.txt"><span data-zh>内容 CC BY 4.0</span><span data-en>Content CC BY 4.0</span></a><span class="sep" aria-hidden="true">·</span><a href="https://specul.com/LICENSE.txt"><span data-zh>代码 MIT</span><span data-en>Code MIT</span></a></span>
+        <span class="foot-license"><a href="https://specul.com/LICENSE-CONTENT.txt"><span data-zh>内容 CC BY 4.0</span><span data-en>Content CC BY 4.0</span></a><span class="sep" aria-hidden="true">·</span><a href="https://specul.com/LICENSE.txt"><span data-zh>代码 MIT</span><span data-en>Code MIT</span></a><span class="sep" aria-hidden="true">·</span><a class="foot-source" href="https://github.com/speculcom/ai-handbook" target="_blank" rel="noopener"><span data-zh>源码</span><span data-en>Source</span></a></span>
       </div>
-      <nav class="foot-sites" aria-label="站内导航">
+      <nav class="foot-sites" aria-label="Footer site links">
         <a class="site-link" href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a><span class="sep site-sep" aria-hidden="true">·</span>
         <a class="site-link" href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a><span class="sep site-sep" aria-hidden="true">·</span>
         <a class="site-link" href="https://tools.specul.com/"><span data-zh>工具</span><span data-en>Tools</span></a><span class="sep site-sep" aria-hidden="true">·</span>
@@ -165,8 +165,9 @@
         <a class="site-link" href="https://chain.specul.com/"><span data-zh>链</span><span data-en>Chain</span></a><span class="sep site-sep" aria-hidden="true">·</span>
         <a class="site-link" href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
       </nav>
-      <nav class="foot-legal" aria-label="法律与纠错">
+      <nav class="foot-legal" aria-label="Legal and corrections">
         <a href="https://specul.com/legal.html"><span data-zh>法律</span><span data-en>Legal</span></a><span class="sep" aria-hidden="true">·</span>
+        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私</span><span data-en>Privacy</span></a><span class="sep" aria-hidden="true">·</span>
         <a href="https://specul.com/correct.html"><span data-zh>纠错</span><span data-en>Corrections</span></a>
       </nav>
     </div>
