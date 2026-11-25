@@ -84,41 +84,19 @@
       ['for-researchers', '看懂原理 / 论文', 'Methods and papers', '从 Transformer 到评测，知道它为什么这样表现。', 'From Transformers to evaluation, understand why models behave this way.'],
       ['for-operators', '部署 / 运维', 'Deploy and operate', '显存、吞吐、上线，把模型跑稳。', 'VRAM, throughput and launch: keep it running.'],
     ];
-    let chosen = anchor.dataset.choice || 'quick-start';
-    if (!choices.some(([id]) => id === chosen)) chosen = 'quick-start';
     const grid = el('div', '', 'goal-grid');
     choices.forEach(([id, zh, english, blurbZh, blurbEn]) => {
       const p = routes.find(x => x.id === id);
       if (!p) return;
-      const card = el('button', '', 'goal-card');
-      card.type = 'button';
-      card.dataset.goal = id;
-      card.setAttribute('aria-pressed', id === chosen ? 'true' : 'false');
+      const card = el('a', '', 'goal-card');
+      card.href = routeHref(p);
+      card.setAttribute('aria-label', tr(zh, english) + tr('，打开这条路线', ', open this route'));
       const top = el('span', '', 'gc-top');
       top.append(el('b', tr(zh, english), 'gc-title'), el('span', p.span[en() ? 'en' : 'zh'], 'gc-time'));
-      card.append(top, el('span', tr(blurbZh, blurbEn), 'gc-blurb'), el('span', p.steps.length + tr(' 步', ' steps'), 'gc-meta'));
+      card.append(top, el('span', tr(blurbZh, blurbEn), 'gc-blurb'), el('span', p.steps.length + tr(' 步 · 开始这条路 →', ' steps · Open this route →'), 'gc-meta'));
       grid.append(card);
     });
     host.append(grid);
-    const result = el('div', '', 'goal-result');
-    const recommend = () => {
-      anchor.dataset.choice = chosen;
-      Array.from(grid.querySelectorAll('.goal-card')).forEach((card) => {
-        card.setAttribute('aria-pressed', card.dataset.goal === chosen ? 'true' : 'false');
-      });
-      const p = routes.find(x => x.id === chosen); if (!p) return;
-      result.replaceChildren(
-        el('p', tr('这条路：', 'This route: ') + (en() ? p.lead.en : p.lead.zh), 'goal-result-lead'),
-        link(tr('开始这条路 →', 'Open this route →'), routeHref(p))
-      );
-    };
-    grid.addEventListener('click', (event) => {
-      const card = event.target.closest('.goal-card');
-      if (!card) return;
-      chosen = card.dataset.goal;
-      recommend();
-    });
-    recommend(); host.append(result);
     const latest = routes.filter(p => memory[p.id]?.last).sort((a,b) => (memory[b.id].updated || 0) - (memory[a.id].updated || 0))[0];
     if (latest) { const s = state(latest); host.append(el('p', tr('上次读到：', 'Last visited: ')), link((en() ? latest.en : latest.zh) + tr(' · 继续阅读', ' · Resume'), stepHref(latest, latest.steps.indexOf(s.last)))); }
     anchor.append(host);
