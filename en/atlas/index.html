@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html data-lang="en" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>AI Chronicle and Atlas | Learn AI</title>
+<meta content="Getting into AI starts with who's who and what came first. Three columns here: a timeline of key models, a company map, and how the vocabulary changed.…" name="description"/>
+<link href="https://learn.specul.com/en/atlas/" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="Learn AI" property="og:site_name"/>
+<meta content="https://learn.specul.com/en/atlas/" property="og:url"/>
+<meta content="AI Chronicle and Atlas | Learn AI" property="og:title"/>
+<meta content="Getting into AI starts with who's who and what came first. Three columns here: a timeline of key models, a company map, and how the vocabulary changed.…" property="og:description"/>
+<meta content="#16121f" name="theme-color"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" rel="icon" type="image/svg+xml"/>
+<script src="/brand.js"></script>
+<link href="/brand.css" rel="stylesheet"/>
+<link href="/learn.css" rel="stylesheet"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","name":"AI Chronicle and Atlas | Learn AI","alternateName":"AI Chronicle and Atlas","description":"Getting into AI starts with who's who and what came first. Three columns here: a timeline of key models, a company map, and how the vocabulary changed.…","url":"https://learn.specul.com/en/atlas/","inLanguage":"en"}</script>
+<meta content="en_US" property="og:locale"/><meta content="zh_CN" property="og:locale:alternate"/><meta content="AI Chronicle and Atlas | Learn AI" name="twitter:title"/><meta content="Getting into AI starts with who's who and what came first. Three columns here: a timeline of key models, a company map, and how the vocabulary changed.…" name="twitter:description"/><link href="https://learn.specul.com/atlas/" hreflang="zh-CN" rel="alternate"/><link href="https://learn.specul.com/en/atlas/" hreflang="en" rel="alternate"/><link href="https://learn.specul.com/atlas/" hreflang="x-default" rel="alternate"/></head>
+<body class="brand-ambient has-tabbar has-tabbar-1row">
+<a class="t-skip" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="container site-bar">
+<a class="brand" href="https://specul.com/en/" title="投机取巧">
+<span aria-hidden="true" class="brand-dot"></span>
+<span class="brand-text">
+<span class="brand-name" id="markName">Speculative Speculation</span>
+<span class="brand-sub" id="markSub"></span>
+</span>
+</a>
+<nav aria-label="站点导航" class="nav-links">
+<a href="https://specul.com/en/">Home</a>
+<a aria-current="page" href="https://learn.specul.com/en/">Learn</a>
+<a href="https://tools.specul.com/en/">Tools</a>
+<a href="https://models.specul.com/en/">Models</a>
+<a href="https://demos.specul.com/en/">Playground</a>
+<a href="https://oss.specul.com/en/">OSS</a>
+<a href="https://hardware.specul.com/en/">Compute</a>
+<a href="https://papers.specul.com/en/">AI Papers</a>
+<a href="https://chain.specul.com/en/">Chain</a>
+<a href="https://nav.specul.com/en/">AI Directory</a>
+</nav>
+<!-- 2026-10-10：.nav-tools 从 nav 元素**内部**移到外面，与 .nav-links 平级。
+           放里面时窄屏下它会跟着链接一起换行：链接占满整行 → 按钮被挤到第三条
+           （实测顶栏 134px、按钮组孤零零一行）。移出来后它与品牌同行，
+           链接独占第二行居中 —— 这才是下面注释里方案 B 想要的样子。 -->
+<span class="nav-tools">
+<a aria-label="Search" class="icon-btn" href="https://specul.com/en/search.html" title="Search all sites"><span aria-hidden="true">⌕</span></a>
+<button aria-label="切换明暗主题" class="icon-btn" id="themeBtn" title="切换明暗主题" type="button">☾</button>
+<a aria-label="切换到中文" class="icon-btn" href="/atlas/" hreflang="zh-CN" id="langBtn" lang="zh-CN" title="切换到中文">中文</a>
+</span>
+<!-- B6（2026-10-09）：窄屏（≤900px）下 .nav-links 会隐藏，这个汉堡是替代入口。
+           行为在共享 brand.js 里（一处实现、十站共用），样式在共享 brand.css。
+           无脚本时 CSS 不会显示它，而是把 .nav-links 在窄屏放出来 —— 不会出现
+           「导航被藏进一个点了没反应的按钮」。 -->
+<button aria-controls="navDrawer" aria-expanded="false" aria-label="打开菜单" class="nav-burger" type="button">
+<i></i><i></i><i></i>
+</button>
+</div>
+</header>
+<div class="nav-scrim"></div>
+<aside aria-hidden="true" aria-label="站点导航" class="nav-drawer" id="navDrawer">
+<div class="nav-drawer-h">
+<span class="brand-name">Speculative Speculation</span>
+<span class="brand-sub"></span>
+<button aria-label="关闭" class="nav-dclose" type="button">×</button>
+</div>
+<nav class="nav-drawer-list">
+<a href="https://specul.com/en/"><span>Home</span><span aria-hidden="true" class="ar">→</span></a>
+<a aria-current="page" href="https://learn.specul.com/en/"><span>Learn</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://tools.specul.com/en/"><span>Tools</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://models.specul.com/en/"><span>Models</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://demos.specul.com/en/"><span>Playground</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://oss.specul.com/en/"><span>OSS</span><span aria-hidden="true" class="ar">→</span></a>
+<a class="nav-group-start" href="https://hardware.specul.com/en/"><span>Compute</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://papers.specul.com/en/"><span>AI Papers</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://chain.specul.com/en/"><span>Chain</span><span aria-hidden="true" class="ar">→</span></a>
+<a class="nav-group-start" data-nav-group="external" href="https://nav.specul.com/en/"><span>AI Directory</span><span aria-hidden="true" class="ar">↗</span></a>
+</nav>
+<div class="nav-drawer-foot">
+<p>Content sites cover learn, use, choose and run; AI Directory is a catalogue of off-site AI sites.</p>
+<nav><a href="https://specul.com/en/legal.html">Legal terms</a></nav>
+</div>
+</aside>
+<main id="main">
+<div class="container">
+<article class="tp tp-wrap">
+<nav aria-label="面包屑" class="tp-crumbs">
+<a href="/en/">← Term map</a>
+<span aria-hidden="true">·</span>
+<span>Chronicle &amp; atlas</span>
+</nav>
+<h1>AI Chronicle and Atlas</h1>
+<p class="tp-p">Getting into AI starts with who's who and what came first. Three columns here: a timeline of key models, a company map, and how the vocabulary changed. Every entry carries an official source.</p>
+<div class="tp-sec">
+<div class="tp-lab">Timeline of key models</div>
+<ol class="t-atlas-tl">
+<li><span class="t-atlas-date">2025-01</span><div class="t-atlas-ev"><h3>DeepSeek-R1</h3><p>Reasoning ability trained via reinforcement learning, with the method open-sourced. <a href="https://arxiv.org/abs/2501.12948" rel="noopener" target="_blank">DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning (arXiv 2501.12948) ↗</a></p></div></li>
+<li><span class="t-atlas-date">2024-12</span><div class="t-atlas-ev"><h3>DeepSeek-V3</h3><p>A Chinese team's open-weight model approaching top closed models on benchmarks. <a href="https://arxiv.org/abs/2412.19437" rel="noopener" target="_blank">DeepSeek-V3 Technical Report (arXiv 2412.19437) ↗</a></p></div></li>
+<li><span class="t-atlas-date">2024-04</span><div class="t-atlas-ev"><h3>Llama 3</h3><p>Meta's open-weight family; its technical report follows in July. <a href="https://arxiv.org/abs/2407.21783" rel="noopener" target="_blank">The Llama 3 Herd of Models (arXiv 2407.21783) ↗</a></p></div></li>
+<li><span class="t-atlas-date">2024-03</span><div class="t-atlas-ev"><h3>Claude 3</h3><p>A three-tier product line; on the published evaluations of the time, the top tier came close to leading closed models. <a href="https://www.anthropic.com/news/claude-3-family" rel="noopener" target="_blank">Introducing the Claude 3 family (Anthropic official) ↗</a></p></div></li>
+<li><span class="t-atlas-date">2023-12</span><div class="t-atlas-ev"><h3>Gemini</h3><p>Google's multimodal model family, launched after DeepMind and Brain merged. <a href="https://storage.googleapis.com/deepmind-media/gemini/gemini_1_report.pdf" rel="noopener" target="_blank">Gemini 1 Technical Report (DeepMind official PDF) ↗</a></p></div></li>
+<li><span class="t-atlas-date">2023-10</span><div class="t-atlas-ev"><h3>Mistral 7B</h3><p>A small model beats larger ones on benchmarks, open-weight. <a href="https://arxiv.org/abs/2310.06825" rel="noopener" target="_blank">Mistral 7B (arXiv 2310.06825) ↗</a></p></div></li>
+<li><span class="t-atlas-date">2023-07</span><div class="t-atlas-ev"><h3>Llama 2</h3><p>Meta releases an open-weight model that permits commercial use. <a href="https://arxiv.org/abs/2307.09288" rel="noopener" target="_blank">Llama 2: Open Foundation and Fine-Tuned Chat Models (arXiv 2307.09288) ↗</a></p></div></li>
+<li><span class="t-atlas-date">2023-03</span><div class="t-atlas-ev"><h3>Claude launches</h3><p>Anthropic's conversational model goes public, with safety alignment front and center. <a href="https://www.anthropic.com/claude" rel="noopener" target="_blank">Claude (Anthropic official) ↗</a></p></div></li>
+<li><span class="t-atlas-date">2023-03</span><div class="t-atlas-ev"><h3>GPT-4</h3><p>Multimodal input and stronger reasoning, published with an official technical report. <a href="https://arxiv.org/abs/2303.08774" rel="noopener" target="_blank">GPT-4 Technical Report (arXiv 2303.08774) ↗</a></p></div></li>
+<li><span class="t-atlas-date">2023-02</span><div class="t-atlas-ev"><h3>LLaMA</h3><p>Meta releases open-weight models; a large family of community derivatives follows. <a href="https://arxiv.org/abs/2302.13971" rel="noopener" target="_blank">LLaMA: Open and Efficient Foundation Language Models (arXiv 2302.13971) ↗</a></p></div></li>
+<li><span class="t-atlas-date">2022-11</span><div class="t-atlas-ev"><h3>ChatGPT launches</h3><p>Conversational AI reaches the public; "AI" starts defaulting to chatbots. <a href="https://openai.com/index/chatgpt/" rel="noopener" target="_blank">Introducing ChatGPT (OpenAI official) ↗</a></p></div></li>
+<li><span class="t-atlas-date">2022-03</span><div class="t-atlas-ev"><h3>InstructGPT</h3><p>Fine-tuning with human feedback (RLHF): models start following instructions. <a href="https://arxiv.org/abs/2203.02155" rel="noopener" target="_blank">Training language models to follow instructions with human feedback (arXiv 2203.02155) ↗</a></p></div></li>
+<li><span class="t-atlas-date">2021-07</span><div class="t-atlas-ev"><h3>Codex</h3><p>Models trained on code write code; the AI-coding path opens here. <a href="https://arxiv.org/abs/2107.03374" rel="noopener" target="_blank">Evaluating Large Language Models Trained on Code (arXiv 2107.03374) ↗</a></p></div></li>
+<li><span class="t-atlas-date">2020-05</span><div class="t-atlas-ev"><h3>GPT-3</h3><p>Few-shot learning: no training, just a few examples in the prompt. <a href="https://arxiv.org/abs/2005.14165" rel="noopener" target="_blank">Language Models are Few-Shot Learners (arXiv 2005.14165) ↗</a></p></div></li>
+<li><span class="t-atlas-date">2019-02</span><div class="t-atlas-ev"><h3>GPT-2</h3><p>OpenAI demonstrates publicly: scale up the model, general ability appears. <a href="https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf" rel="noopener" target="_blank">Language Models are Unsupervised Multitask Learners (OpenAI official PDF) ↗</a></p></div></li>
+<li><span class="t-atlas-date">2018-10</span><div class="t-atlas-ev"><h3>BERT</h3><p>Bidirectional encoding becomes the standard pre-training recipe of that period. <a href="https://arxiv.org/abs/1810.04805" rel="noopener" target="_blank">BERT (arXiv 1810.04805) ↗</a></p></div></li>
+<li><span class="t-atlas-date">2018-06</span><div class="t-atlas-ev"><h3>GPT-1</h3><p>OpenAI shows that pre-training then fine-tuning works for language models. <a href="https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf" rel="noopener" target="_blank">Improving Language Understanding by Generative Pre-Training (OpenAI official PDF) ↗</a></p></div></li>
+<li><span class="t-atlas-date">2017-06</span><div class="t-atlas-ev"><h3>Transformer paper</h3><p>"Attention Is All You Need" is published. Every mainstream large model today builds on this architecture. <a href="https://arxiv.org/abs/1706.03762" rel="noopener" target="_blank">Attention Is All You Need (arXiv 1706.03762) ↗</a></p></div></li>
+</ol>
+</div>
+<div class="tp-sec">
+<div class="tp-lab">Company map</div>
+<div class="t-grid t-grid-3">
+<div class="t-atlas-org"><h3>OpenAI</h3><span class="t-atlas-founded">founded 2015</span><p>Maker of ChatGPT and the GPT series; the most influential closed lab. <a href="https://openai.com/" rel="noopener" target="_blank">Website ↗</a></p></div>
+<div class="t-atlas-org"><h3>Anthropic</h3><span class="t-atlas-founded">founded 2021</span><p>Maker of the Claude series; safety alignment leads its product story. <a href="https://www.anthropic.com/" rel="noopener" target="_blank">Website ↗</a></p></div>
+<div class="t-atlas-org"><h3>Google DeepMind</h3><span class="t-atlas-founded">founded 2010</span><p>Origin of AlphaGo; merged with Google Brain in 2023 and now builds Gemini. <a href="https://deepmind.google/" rel="noopener" target="_blank">Website ↗</a></p></div>
+<div class="t-atlas-org"><h3>Meta AI</h3><span class="t-atlas-founded">founded 2013</span><p>Research arm since 2013; the Llama series anchors the open ecosystem from 2023. <a href="https://ai.meta.com/" rel="noopener" target="_blank">Website ↗</a></p></div>
+<div class="t-atlas-org"><h3>Mistral AI</h3><span class="t-atlas-founded">founded 2023</span><p>Europe's open-weight model company, founded on Mistral 7B. <a href="https://mistral.ai/" rel="noopener" target="_blank">Website ↗</a></p></div>
+<div class="t-atlas-org"><h3>DeepSeek</h3><span class="t-atlas-founded">founded 2023</span><p>Chinese open-weight team; both V3 and R1 reached the front tier. <a href="https://www.deepseek.com/" rel="noopener" target="_blank">Website ↗</a></p></div>
+<div class="t-atlas-org"><h3>xAI</h3><span class="t-atlas-founded">founded 2023</span><p>Founded by Elon Musk; builds the Grok series. <a href="https://x.ai/" rel="noopener" target="_blank">Website ↗</a></p></div>
+<div class="t-atlas-org"><h3>Moonshot AI</h3><span class="t-atlas-founded">founded 2023</span><p>Maker of Kimi; long context is its signature. <a href="https://www.moonshot.cn/" rel="noopener" target="_blank">Website ↗</a></p></div>
+<div class="t-atlas-org"><h3>Zhipu AI</h3><span class="t-atlas-founded">founded 2019</span><p>The GLM series; one of China's earliest large-model teams. <a href="https://www.zhipuai.cn/" rel="noopener" target="_blank">Website ↗</a></p></div>
+<div class="t-atlas-org"><h3>Alibaba · Qwen</h3><span class="t-atlas-founded">founded 2023</span><p>The Qwen open-weight family; among the most downloaded open models. <a href="https://qwenlm.github.io/" rel="noopener" target="_blank">Website ↗</a></p></div>
+<div class="t-atlas-org"><h3>Cohere</h3><span class="t-atlas-founded">founded 2019</span><p>Enterprise models and retrieval tooling; a common source of rerank models. <a href="https://cohere.com/" rel="noopener" target="_blank">Website ↗</a></p></div>
+<div class="t-atlas-org"><h3>Hugging Face</h3><span class="t-atlas-founded">founded 2016</span><p>Model hosting and open community; often called the GitHub of AI. <a href="https://huggingface.co/" rel="noopener" target="_blank">Website ↗</a></p></div>
+</div>
+</div>
+<div class="tp-sec">
+<div class="tp-lab">How the vocabulary changed</div>
+<ol class="t-atlas-tl">
+<li><div class="t-atlas-ev"><h3>"Foundation model"</h3><p>Formally defined by a Stanford team in 2021: models trained on broad data and adaptable to many downstream tasks. <a href="https://arxiv.org/abs/2108.07258" rel="noopener" target="_blank">On the Opportunities and Risks of Foundation Models (arXiv 2108.07258) ↗</a></p></div></li>
+<li><div class="t-atlas-ev"><h3>"Alignment"</h3><p>InstructGPT made training models to follow human feedback mainstream in 2022. <a href="https://arxiv.org/abs/2203.02155" rel="noopener" target="_blank">Training language models to follow instructions with human feedback (arXiv 2203.02155) ↗</a></p></div></li>
+<li><div class="t-atlas-ev"><h3>"Hallucination"</h3><p>Models inventing plausible-sounding falsehoods; the term moved from researcher slang to common vocabulary. <a href="https://internationalaisafetyreport.org/publication/2026-report-extended-summary-policymakers" rel="noopener" target="_blank">International AI Safety Report 2026, Extended Summary for Policymakers ↗</a></p></div></li>
+<li><div class="t-atlas-ev"><h3>"Agent"</h3><p>Once models could call tools, "AI that does things by itself" became common vocabulary. <a href="https://platform.openai.com/docs/guides/function-calling" rel="noopener" target="_blank">OpenAI Function Calling Guide (official) ↗</a></p></div></li>
+<li><div class="t-atlas-ev"><h3>"Reasoning model"</h3><p>Closed long-chain-of-thought models came first; DeepSeek-R1 open-sourced the reinforcement-learning recipe in 2025. <a href="https://arxiv.org/abs/2501.12948" rel="noopener" target="_blank">DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning (arXiv 2501.12948) ↗</a></p></div></li>
+</ol>
+</div>
+<div class="tp-sec">
+<div class="tp-lab">Terms behind this</div>
+<p class="tp-p"><a class="t-guidechip" href="/en/term/Transformer/">Transformer</a> <a class="t-guidechip" href="/en/term/%E9%A2%84%E8%AE%AD%E7%BB%83/">Pre-training</a> <a class="t-guidechip" href="/en/term/%E5%B9%BB%E8%A7%89/">Hallucination</a> <a class="t-guidechip" href="/en/term/%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/">Tool Calling / Function Calling</a> <a class="t-guidechip" href="/en/term/%E7%BC%A9%E6%94%BE%E5%AE%9A%E5%BE%8B/">Scaling Laws</a> <a class="t-guidechip" href="/en/term/%E6%80%9D%E7%BB%B4%E9%93%BE/">Chain of Thought (CoT)</a></p>
+</div>
+</article>
+</div>
+</main>
+<footer class="site-footer foot-single">
+<div class="container foot-line">
+<div class="foot-brand">
+<span class="foot-brand-main">
+<span aria-hidden="true" class="brand-dot"></span>
+<span class="foot-copy">Specul · specul.com</span>
+</span>
+<span class="foot-license"><a href="https://specul.com/LICENSE-CONTENT.txt">Content CC BY 4.0</a><span aria-hidden="true" class="sep">·</span><a href="https://specul.com/LICENSE.txt">Code MIT</a><span aria-hidden="true" class="sep">·</span><a class="foot-source" href="https://github.com/speculcom/ai-handbook" rel="noopener" target="_blank">Source</a></span>
+</div>
+<nav aria-label="Footer site links" class="foot-sites">
+<a class="site-link" href="https://specul.com/en/">Home</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://learn.specul.com/en/">Learn</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://tools.specul.com/en/">Tools</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://models.specul.com/en/">Models</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://demos.specul.com/en/">Demos</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://oss.specul.com/en/">OSS</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://hardware.specul.com/en/">Compute</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://papers.specul.com/en/">Papers</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://chain.specul.com/en/">Chain</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://nav.specul.com/en/">Directory</a>
+</nav>
+<nav aria-label="Legal and corrections" class="foot-legal">
+<a href="https://specul.com/en/legal.html">Legal</a><span aria-hidden="true" class="sep">·</span>
+<a href="https://specul.com/en/legal.html#s8">Privacy</a><span aria-hidden="true" class="sep">·</span>
+<a href="https://specul.com/en/correct.html">Corrections</a>
+</nav>
+</div>
+</footer>
+<nav aria-label="快捷导航" class="nav-tabbar nav-tabbar-1row">
+<a href="https://specul.com/en/"><span aria-hidden="true" class="ti">◎</span>Home</a>
+<a aria-current="page" href="https://learn.specul.com/en/"><span aria-hidden="true" class="ti">▤</span>Learn</a>
+<a href="https://tools.specul.com/en/"><span aria-hidden="true" class="ti">◈</span>Tools</a>
+<a href="https://models.specul.com/en/"><span aria-hidden="true" class="ti">▦</span>Models</a>
+<a href="https://demos.specul.com/en/"><span aria-hidden="true" class="ti">▷</span>Demos</a>
+<a href="https://oss.specul.com/en/"><span aria-hidden="true" class="ti">▧</span>OSS</a>
+<a href="https://hardware.specul.com/en/"><span aria-hidden="true" class="ti">▣</span>Chips</a>
+<a href="https://papers.specul.com/en/"><span aria-hidden="true" class="ti">▥</span>Papers</a>
+<a href="https://chain.specul.com/en/"><span aria-hidden="true" class="ti">◇</span>Chain</a>
+<a data-nav-group="external" href="https://nav.specul.com/en/"><span aria-hidden="true" class="ti">↗</span>Nav</a>
+</nav>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html data-lang="en" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Deepfake | Learn AI</title>
+<meta content="Generative models producing indistinguishable fake video and audio of real people: seeing is no longer believing." name="description"/>
+<link href="https://learn.specul.com/en/term/深度伪造/" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="Learn AI" property="og:site_name"/>
+<meta content="https://learn.specul.com/en/term/深度伪造/" property="og:url"/>
+<meta content="Deepfake | Learn AI" property="og:title"/>
+<meta content="Generative models producing indistinguishable fake video and audio of real people: seeing is no longer believing." property="og:description"/>
+<meta content="#16121f" name="theme-color"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" rel="icon" type="image/svg+xml"/>
+<script src="/brand.js"></script>
+<script defer="" src="/data/paths.js"></script>
+<script defer="" src="/data/reading.js"></script>
+<link href="/brand.css" rel="stylesheet"/>
+<link href="/learn.css" rel="stylesheet"/>
+<style>:root { --accent: var(--cyan); }</style>
+<!-- B5：词条页的结构性数据（DefinedTerm） -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTerm","name":"Deepfake | Learn AI","alternateName":"Deepfake","description":"Generative models producing indistinguishable fake video and audio of real people: seeing is no longer believing.","url":"https://learn.specul.com/en/term/深度伪造/","inLanguage":"en","inDefinedTermSet":{"@type":"DefinedTermSet","name":"Deepfake | Learn AI","url":"https://learn.specul.com/en/term/深度伪造/"},"isPartOf":{"@type":"WebSite","name":"Deepfake | Learn AI","url":"https://learn.specul.com/en/term/深度伪造/"}}</script>
+<meta content="en_US" property="og:locale"/><meta content="zh_CN" property="og:locale:alternate"/><meta content="Deepfake | Learn AI" name="twitter:title"/><meta content="Generative models producing indistinguishable fake video and audio of real people: seeing is no longer believing." name="twitter:description"/><link href="https://learn.specul.com/term/深度伪造/" hreflang="zh-CN" rel="alternate"/><link href="https://learn.specul.com/en/term/深度伪造/" hreflang="en" rel="alternate"/><link href="https://learn.specul.com/term/深度伪造/" hreflang="x-default" rel="alternate"/></head>
+<body class="brand-ambient has-tabbar has-tabbar-1row" style="--accent:var(--cyan)">
+<a class="t-skip" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="container site-bar">
+<a class="brand" href="https://specul.com/en/" title="投机取巧">
+<span aria-hidden="true" class="brand-dot"></span>
+<span class="brand-text">
+<span class="brand-name" id="markName">Speculative Speculation</span>
+<span class="brand-sub" id="markSub"></span>
+</span>
+</a>
+<nav aria-label="站点导航" class="nav-links">
+<a href="https://specul.com/en/">Home</a>
+<a aria-current="page" href="https://learn.specul.com/en/">Learn</a>
+<a href="https://tools.specul.com/en/">Tools</a>
+<a href="https://models.specul.com/en/">Models</a>
+<a href="https://demos.specul.com/en/">Playground</a>
+<a href="https://oss.specul.com/en/">OSS</a>
+<a href="https://hardware.specul.com/en/">Compute</a>
+<a href="https://papers.specul.com/en/">AI Papers</a>
+<a href="https://chain.specul.com/en/">Chain</a>
+<a href="https://nav.specul.com/en/">AI Directory</a>
+</nav>
+<!-- 2026-10-10：.nav-tools 从 nav 元素**内部**移到外面，与 .nav-links 平级。
+           放里面时窄屏下它会跟着链接一起换行：链接占满整行 → 按钮被挤到第三条
+           （实测顶栏 134px、按钮组孤零零一行）。移出来后它与品牌同行，
+           链接独占第二行居中 —— 这才是下面注释里方案 B 想要的样子。 -->
+<span class="nav-tools">
+<a aria-label="Search" class="icon-btn" href="https://specul.com/en/search.html" title="Search all sites"><span aria-hidden="true">⌕</span></a>
+<button aria-label="切换明暗主题" class="icon-btn" id="themeBtn" title="切换明暗主题" type="button">☾</button>
+<a aria-label="切换到中文" class="icon-btn" href="/term/深度伪造/" hreflang="zh-CN" id="langBtn" lang="zh-CN" title="切换到中文">中文</a>
+</span>
+<!-- B6（2026-10-09）：窄屏（≤900px）下 .nav-links 会隐藏，这个汉堡是替代入口。
+           行为在共享 brand.js 里（一处实现、十站共用），样式在共享 brand.css。
+           无脚本时 CSS 不会显示它，而是把 .nav-links 在窄屏放出来 —— 不会出现
+           「导航被藏进一个点了没反应的按钮」。 -->
+<button aria-controls="navDrawer" aria-expanded="false" aria-label="打开菜单" class="nav-burger" type="button">
+<i></i><i></i><i></i>
+</button>
+</div>
+</header>
+<div class="nav-scrim"></div>
+<aside aria-hidden="true" aria-label="站点导航" class="nav-drawer" id="navDrawer">
+<div class="nav-drawer-h">
+<span class="brand-name">Speculative Speculation</span>
+<span class="brand-sub"></span>
+<button aria-label="关闭" class="nav-dclose" type="button">×</button>
+</div>
+<nav class="nav-drawer-list">
+<a href="https://specul.com/en/"><span>Home</span><span aria-hidden="true" class="ar">→</span></a>
+<a aria-current="page" href="https://learn.specul.com/en/"><span>Learn</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://tools.specul.com/en/"><span>Tools</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://models.specul.com/en/"><span>Models</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://demos.specul.com/en/"><span>Playground</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://oss.specul.com/en/"><span>OSS</span><span aria-hidden="true" class="ar">→</span></a>
+<a class="nav-group-start" href="https://hardware.specul.com/en/"><span>Compute</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://papers.specul.com/en/"><span>AI Papers</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://chain.specul.com/en/"><span>Chain</span><span aria-hidden="true" class="ar">→</span></a>
+<a class="nav-group-start" data-nav-group="external" href="https://nav.specul.com/en/"><span>AI Directory</span><span aria-hidden="true" class="ar">↗</span></a>
+</nav>
+<div class="nav-drawer-foot">
+<p>Content sites cover learn, use, choose and run; AI Directory is a catalogue of off-site AI sites.</p>
+<nav><a href="https://specul.com/en/legal.html">Legal terms</a></nav>
+</div>
+</aside>
+<main id="main">
+<div class="container">
+<article class="tp tp-wrap">
+<nav aria-label="面包屑" class="tp-crumbs">
+<a href="/en/">← Term map</a>
+<span aria-hidden="true">·</span>
+<a href="/en/#layer-2">Hands On</a>
+</nav>
+<h1>Deepfake</h1>
+<p class="tp-en">Deepfake</p>
+<ul class="tp-tags">
+<li class="tp-tag">Image, speech &amp; video</li>
+<li class="tp-tag">Stage 2 · Hands On</li>
+<li class="tp-tag">refs checked 2026-11-03</li>
+</ul>
+<div class="tp-sec">
+<div class="tp-lab">What problem it solves</div>
+<p class="tp-p">Generative models producing indistinguishable fake video and audio of real people: seeing is no longer believing.</p>
+</div>
+<div class="tp-sec">
+<div class="tp-lab">What it is</div>
+
+
+Deepfakes are deep-learning-synthesized or manipulated images, audio, or video that humans struggle to distinguish from authentic ones, often targeting real people.
+Surveys: deepfake algorithms can create fake media indistinguishable from authentic media.
+Detection and generation are an ongoing arms race; detectors generally lag generators.
+Abuse scenarios include impersonation scams and fabricated footage of events.
+
+</div>
+<div class="tp-sec">
+<div class="tp-lab">Why it matters</div>
+<p class="tp-p">When you see 'real footage', ask first whether it could be synthetic. For audio and video involving money or decisions, verify through a second channel.</p>
+</div>
+<div class="tp-sec tp-related"><div class="tp-lab">What to read next, and why</div><ul><li><a href="/en/term/%E6%B0%B4%E5%8D%B0%E4%B8%8E%E5%86%85%E5%AE%B9%E5%87%AD%E8%AF%81/">Watermarks and Content Credentials</a><p class="t-sm">Used together in “How to Label AI-Generated Content”</p></li><li><a href="/en/term/%E7%94%9F%E6%88%90%E5%BC%8F%20AI%20%E5%90%88%E8%A7%84%E4%B9%89%E5%8A%A1/">Generative AI Compliance Duties</a><p class="t-sm">Used together in “How to Label AI-Generated Content”</p></li></ul></div>
+<div class="tp-sec"><div class="tp-lab">Related guides</div><ul class="tp-refs"><li><a href="/en/guide/%E6%80%8E%E4%B9%88%E7%BB%99%20AI%20%E5%86%85%E5%AE%B9%E5%8A%A0%E6%9D%A5%E6%BA%90%E6%A0%87%E8%AF%86/">How to Label AI-Generated Content</a></li></ul></div>
+<div class="tp-sec">
+<div class="tp-lab">What you can do now</div>
+<p class="tp-p"><a href="https://nav.specul.com/en/">Directory: ready-made tools, platforms, benchmarks and courses ↗</a></p>
+<p class="tp-p"><a href="/en/#layer-2">Back to the map: the other 43 terms in stage 2 →</a></p>
+</div>
+<div class="tp-sec">
+<div class="tp-lab">Sources</div>
+<ul class="tp-refs">
+<li>Survey: Deep Learning for Deepfakes Creation and Detection <a href="https://arxiv.org/abs/1909.11573" rel="noopener" target="_blank">↗</a></li>
+</ul>
+</div>
+<nav aria-label="Previous and next" class="tp-pn">
+<a href="/en/term/%E6%B0%B4%E5%8D%B0%E4%B8%8E%E5%86%85%E5%AE%B9%E5%87%AD%E8%AF%81/"><span class="tp-ph">Previous</span>Watermarks and Content Credentials</a>
+<a href="/en/term/%E5%81%8F%E8%A7%81/" style="text-align:right"><span class="tp-ph">Next</span>Bias</a>
+</nav>
+<div class="tp-sec term-task-entry">
+<div class="tp-lab">Use this term in a task</div>
+<p class="tp-p">Don’t stop at the definition: use the task handbook for the order and checks, or filter three tool candidates for the job at hand.</p>
+<p class="tp-p"><a href="https://tools.specul.com/en/guides/">Task handbooks →</a>　·　<a href="https://tools.specul.com/en/finder/">Filter three candidates →</a></p>
+</div>
+</article>
+</div>
+</main>
+<footer class="site-footer foot-single">
+<div class="container foot-line">
+<div class="foot-brand">
+<span class="foot-brand-main">
+<span aria-hidden="true" class="brand-dot"></span>
+<span class="foot-copy">Specul · specul.com</span>
+</span>
+<span class="foot-license"><a href="https://specul.com/LICENSE-CONTENT.txt">Content CC BY 4.0</a><span aria-hidden="true" class="sep">·</span><a href="https://specul.com/LICENSE.txt">Code MIT</a><span aria-hidden="true" class="sep">·</span><a class="foot-source" href="https://github.com/speculcom/ai-handbook" rel="noopener" target="_blank">Source</a></span>
+</div>
+<nav aria-label="Footer site links" class="foot-sites">
+<a class="site-link" href="https://specul.com/en/">Home</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://learn.specul.com/en/">Learn</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://tools.specul.com/en/">Tools</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://models.specul.com/en/">Models</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://demos.specul.com/en/">Demos</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://oss.specul.com/en/">OSS</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://hardware.specul.com/en/">Compute</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://papers.specul.com/en/">Papers</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://chain.specul.com/en/">Chain</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://nav.specul.com/en/">Directory</a>
+</nav>
+<nav aria-label="Legal and corrections" class="foot-legal">
+<a href="https://specul.com/en/legal.html">Legal</a><span aria-hidden="true" class="sep">·</span>
+<a href="https://specul.com/en/legal.html#s8">Privacy</a><span aria-hidden="true" class="sep">·</span>
+<a href="https://specul.com/en/correct.html">Corrections</a>
+</nav>
+</div>
+</footer>
+<nav aria-label="快捷导航" class="nav-tabbar nav-tabbar-1row">
+<a href="https://specul.com/en/"><span aria-hidden="true" class="ti">◎</span>Home</a>
+<a aria-current="page" href="https://learn.specul.com/en/"><span aria-hidden="true" class="ti">▤</span>Learn</a>
+<a href="https://tools.specul.com/en/"><span aria-hidden="true" class="ti">◈</span>Tools</a>
+<a href="https://models.specul.com/en/"><span aria-hidden="true" class="ti">▦</span>Models</a>
+<a href="https://demos.specul.com/en/"><span aria-hidden="true" class="ti">▷</span>Demos</a>
+<a href="https://oss.specul.com/en/"><span aria-hidden="true" class="ti">▧</span>OSS</a>
+<a href="https://hardware.specul.com/en/"><span aria-hidden="true" class="ti">▣</span>Chips</a>
+<a href="https://papers.specul.com/en/"><span aria-hidden="true" class="ti">▥</span>Papers</a>
+<a href="https://chain.specul.com/en/"><span aria-hidden="true" class="ti">◇</span>Chain</a>
+<a data-nav-group="external" href="https://nav.specul.com/en/"><span aria-hidden="true" class="ti">↗</span>Nav</a>
+</nav>
+</body>
+</html>

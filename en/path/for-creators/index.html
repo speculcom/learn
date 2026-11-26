@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html data-lang="en" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>The Image / Video / Audio Creator's Route | Learn AI</title>
+<meta content="Study generation across text, image, video and sound, including failures, provenance and publication conditions. Aim to define acceptance checks." name="description"/>
+<link href="https://learn.specul.com/en/path/for-creators/" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="Learn AI" property="og:site_name"/>
+<meta content="https://learn.specul.com/en/path/for-creators/" property="og:url"/>
+<meta content="The Image / Video / Audio Creator's Route | Learn AI" property="og:title"/>
+<meta content="Study generation across text, image, video and sound, including failures, provenance and publication conditions. Aim to define acceptance checks." property="og:description"/>
+<meta content="#16121f" name="theme-color"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" rel="icon" type="image/svg+xml"/>
+<script src="/brand.js"></script>
+<script defer="" src="/data/paths.js"></script>
+<script defer="" src="/data/reading.js"></script>
+<link href="/brand.css" rel="stylesheet"/>
+<link href="/learn.css" rel="stylesheet"/>
+<style>:root { --accent: var(--cyan); }</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"The Image / Video / Audio Creator's Route | Learn AI","description":"Study generation across text, image, video and sound, including failures, provenance and publication conditions. Aim to define acceptance checks.","url":"https://learn.specul.com/en/path/for-creators/","inLanguage":"en","itemListOrder":"ItemListOrderAscending","numberOfItems":8,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://learn.specul.com/en/path/for-creators/"},{"@type":"ListItem","position":2,"url":"https://learn.specul.com/en/path/for-creators/"},{"@type":"ListItem","position":3,"url":"https://learn.specul.com/en/path/for-creators/"},{"@type":"ListItem","position":4,"url":"https://learn.specul.com/en/path/for-creators/"},{"@type":"ListItem","position":5,"url":"https://learn.specul.com/en/path/for-creators/"},{"@type":"ListItem","position":6,"url":"https://learn.specul.com/en/path/for-creators/"},{"@type":"ListItem","position":7,"url":"https://learn.specul.com/en/path/for-creators/"},{"@type":"ListItem","position":8,"url":"https://learn.specul.com/en/path/for-creators/"}]}</script>
+<meta content="en_US" property="og:locale"/><meta content="zh_CN" property="og:locale:alternate"/><meta content="The Image / Video / Audio Creator's Route | Learn AI" name="twitter:title"/><meta content="Study generation across text, image, video and sound, including failures, provenance and publication conditions. Aim to define acceptance checks." name="twitter:description"/><link href="https://learn.specul.com/path/for-creators/" hreflang="zh-CN" rel="alternate"/><link href="https://learn.specul.com/en/path/for-creators/" hreflang="en" rel="alternate"/><link href="https://learn.specul.com/path/for-creators/" hreflang="x-default" rel="alternate"/></head>
+<body class="brand-ambient has-tabbar has-tabbar-1row" style="--accent:var(--cyan)">
+<a class="t-skip" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="container site-bar">
+<a class="brand" href="https://specul.com/en/" title="投机取巧">
+<span aria-hidden="true" class="brand-dot"></span>
+<span class="brand-text">
+<span class="brand-name" id="markName">Speculative Speculation</span>
+<span class="brand-sub" id="markSub"></span>
+</span>
+</a>
+<nav aria-label="站点导航" class="nav-links">
+<a href="https://specul.com/en/">Home</a>
+<a aria-current="page" href="https://learn.specul.com/en/">Learn</a>
+<a href="https://tools.specul.com/en/">Tools</a>
+<a href="https://models.specul.com/en/">Models</a>
+<a href="https://demos.specul.com/en/">Playground</a>
+<a href="https://oss.specul.com/en/">OSS</a>
+<a href="https://hardware.specul.com/en/">Compute</a>
+<a href="https://papers.specul.com/en/">AI Papers</a>
+<a href="https://chain.specul.com/en/">Chain</a>
+<a href="https://nav.specul.com/en/">AI Directory</a>
+</nav>
+<!-- 2026-10-10：.nav-tools 从 nav 元素**内部**移到外面，与 .nav-links 平级。
+           放里面时窄屏下它会跟着链接一起换行：链接占满整行 → 按钮被挤到第三条
+           （实测顶栏 134px、按钮组孤零零一行）。移出来后它与品牌同行，
+           链接独占第二行居中 —— 这才是下面注释里方案 B 想要的样子。 -->
+<span class="nav-tools">
+<a aria-label="Search" class="icon-btn" href="https://specul.com/en/search.html" title="Search all sites"><span aria-hidden="true">⌕</span></a>
+<button aria-label="切换明暗主题" class="icon-btn" id="themeBtn" title="切换明暗主题" type="button">☾</button>
+<a aria-label="切换到中文" class="icon-btn" href="/path/for-creators/" hreflang="zh-CN" id="langBtn" lang="zh-CN" title="切换到中文">中文</a>
+</span>
+<!-- B6（2026-10-09）：窄屏（≤900px）下 .nav-links 会隐藏，这个汉堡是替代入口。
+           行为在共享 brand.js 里（一处实现、十站共用），样式在共享 brand.css。
+           无脚本时 CSS 不会显示它，而是把 .nav-links 在窄屏放出来 —— 不会出现
+           「导航被藏进一个点了没反应的按钮」。 -->
+<button aria-controls="navDrawer" aria-expanded="false" aria-label="打开菜单" class="nav-burger" type="button">
+<i></i><i></i><i></i>
+</button>
+</div>
+</header>
+<div class="nav-scrim"></div>
+<aside aria-hidden="true" aria-label="站点导航" class="nav-drawer" id="navDrawer">
+<div class="nav-drawer-h">
+<span class="brand-name">Speculative Speculation</span>
+<span class="brand-sub"></span>
+<button aria-label="关闭" class="nav-dclose" type="button">×</button>
+</div>
+<nav class="nav-drawer-list">
+<a href="https://specul.com/en/"><span>Home</span><span aria-hidden="true" class="ar">→</span></a>
+<a aria-current="page" href="https://learn.specul.com/en/"><span>Learn</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://tools.specul.com/en/"><span>Tools</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://models.specul.com/en/"><span>Models</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://demos.specul.com/en/"><span>Playground</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://oss.specul.com/en/"><span>OSS</span><span aria-hidden="true" class="ar">→</span></a>
+<a class="nav-group-start" href="https://hardware.specul.com/en/"><span>Compute</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://papers.specul.com/en/"><span>AI Papers</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://chain.specul.com/en/"><span>Chain</span><span aria-hidden="true" class="ar">→</span></a>
+<a class="nav-group-start" data-nav-group="external" href="https://nav.specul.com/en/"><span>AI Directory</span><span aria-hidden="true" class="ar">↗</span></a>
+</nav>
+<div class="nav-drawer-foot">
+<p>Content sites cover learn, use, choose and run; AI Directory is a catalogue of off-site AI sites.</p>
+<nav><a href="https://specul.com/en/legal.html">Legal terms</a></nav>
+</div>
+</aside>
+<main id="main">
+<div class="container">
+<article class="tp tp-wrap">
+<nav aria-label="面包屑" class="tp-crumbs">
+<a href="/en/">← Term map</a>
+<span aria-hidden="true">·</span>
+<span>Learning paths</span>
+</nav>
+<h1>The Image / Video / Audio Creator's Route</h1>
+<p class="t-pathmeta"><span class="t-level is-starter">Starter</span><span class="t-levelnote">No background needed: build the concepts first</span></p>
+<p class="tp-en">about 40 minutes</p>
+<p class="tp-p">Study generation across text, image, video and sound, including failures, provenance and publication conditions. Aim to define acceptance checks.</p>
+<div class="tp-sec">
+<div class="tp-lab">Read in this order</div>
+<ol class="t-pathsteps">
+<li><a href="/en/term/%E7%94%9F%E6%88%90%E5%BC%8F%20AI/?path=for-creators">Generative AI</a></li>
+<li><a href="/en/term/%E6%96%87%E7%94%9F%E5%9B%BE/?path=for-creators">Text-to-Image Generation</a></li>
+<li><a href="/en/term/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/?path=for-creators">Video Generation</a></li>
+<li><a href="/en/term/%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90/?path=for-creators">TTS, Text-to-Speech</a></li>
+<li><a href="/en/term/%E5%A4%9A%E6%A8%A1%E6%80%81/?path=for-creators">Multimodal</a></li>
+<li><a href="/en/term/%E6%B0%B4%E5%8D%B0%E4%B8%8E%E5%86%85%E5%AE%B9%E5%87%AD%E8%AF%81/?path=for-creators">Watermarks and Content Credentials</a></li>
+<li><a href="/en/term/%E7%94%9F%E6%88%90%E5%BC%8F%20AI%20%E5%90%88%E8%A7%84%E4%B9%89%E5%8A%A1/?path=for-creators">Generative AI Compliance Duties</a></li>
+<li><a href="/en/term/%E9%9A%90%E7%A7%81%E4%B8%8E%E5%90%88%E8%A7%84/?path=for-creators">Privacy &amp; Compliance</a></li>
+</ol>
+</div>
+<div class="t-check" id="checkpoint">
+<div class="t-check-h">Checkpoint</div>
+<ol>
+<li>Name one main failure mode for text-to-image, video generation and speech synthesis each</li>
+<li>Given a generation tool, check commercial licensing and training-data provenance before judging output</li>
+<li>Know the labelling duties for publishing AI-generated content and which assets cannot be used commercially</li>
+<li>Why does text in generated images often fail, and how do you check it?</li>
+<li>Where do you check temporal consistency in generated video?</li>
+<li>Beyond sounding pleasant, what should speech synthesis acceptance check?</li>
+<li>Why record input provenance and output licence separately in multimodal generation?</li>
+<li>What determines the labelling duty for AI-generated content?</li>
+<li>How do you assess training-data provenance risk for a commercial job?</li>
+<li>Compress this route into an acceptance checklist with at least five items.</li>
+</ol>
+</div>
+<p class="tp-p">Try answering before opening the reference. Revisit the relevant step above if needed. These answers highlight key ideas; you do not need to repeat the wording.</p>
+<details class="tp-sec"><summary>Question 1 · Reference answer</summary><p class="tp-p">Check local structure and text in images, continuity across video frames, and pronunciation, pacing and identity authorization in speech. Use explicit checks rather than overall polish.</p><p><a href="/en/term/%E5%A4%9A%E6%A8%A1%E6%80%81/?path=for-creators">Revisit this concept</a></p></details>
+<details class="tp-sec"><summary>Question 2 · Reference answer</summary><p class="tp-p">Read terms for the actual product, tier and asset type. Check input rights, intended output use and training use separately. Permission to publish does not clear every third-party right.</p><p><a href="/en/term/%E9%9A%90%E7%A7%81%E4%B8%8E%E5%90%88%E8%A7%84/?path=for-creators">Revisit this concept</a></p></details>
+<details class="tp-sec"><summary>Question 3 · Reference answer</summary><p class="tp-p">Check current labeling rules for the publication region and platform. Record sources and permissions for fonts, music, likenesses and references separately. Replace or withhold unresolved assets.</p><p><a href="/en/term/%E6%B0%B4%E5%8D%B0%E4%B8%8E%E5%86%85%E5%AE%B9%E5%87%AD%E8%AF%81/?path=for-creators">Revisit this concept</a></p></details>
+<details class="tp-sec"><summary>Question 4 · Reference answer</summary><p class="tp-p">Image models generate in pixel or latent space and are weak at exact glyphs and layout; small text, long words, numbers and brand names fail most. Zoom in and read every character, then fix typography afterwards; thumbnails are not enough.</p><p><a href="/en/term/%E6%96%87%E7%94%9F%E5%9B%BE/?path=for-creators">Revisit this concept</a></p></details>
+<details class="tp-sec"><summary>Question 5 · Reference answer</summary><p class="tp-p">Check whether the subject’s shape and identity drift across frames, and whether background and lighting jump during camera motion. Then inspect hands, text and fast action, where breaks show first.</p><p><a href="/en/term/%E8%A7%86%E9%A2%91%E7%94%9F%E6%88%90/?path=for-creators">Revisit this concept</a></p></details>
+<details class="tp-sec"><summary>Question 6 · Reference answer</summary><p class="tp-p">Check pronunciation (heteronyms, proper nouns), numbers and units, pauses and stress, emotional fit, and authorisation for voice cloning. Pleasant is not publishable.</p><p><a href="/en/term/%E8%AF%AD%E9%9F%B3%E5%90%88%E6%88%90/?path=for-creators">Revisit this concept</a></p></details>
+<details class="tp-sec"><summary>Question 7 · Reference answer</summary><p class="tp-p">Input copyright, likeness and training-data provenance are separate from what the product terms allow you to do with output. A lawful input does not clear output for commercial use, or vice versa.</p><p><a href="/en/term/%E7%94%9F%E6%88%90%E5%BC%8F%20AI%20%E5%90%88%E8%A7%84%E4%B9%89%E5%8A%A1/?path=for-creators">Revisit this concept</a></p></details>
+<details class="tp-sec"><summary>Question 8 · Reference answer</summary><p class="tp-p">Check the official text in force for the publication region, platform rules and content type; deep synthesis, news, advertising and general creation differ. Record the document, date and applicable clause.</p><p><a href="/en/term/%E6%B0%B4%E5%8D%B0%E4%B8%8E%E5%86%85%E5%AE%B9%E5%87%AD%E8%AF%81/?path=for-creators">Revisit this concept</a></p></details>
+<details class="tp-sec"><summary>Question 9 · Reference answer</summary><p class="tp-p">Check whether the terms state training-data provenance and indemnity, then whether inputs contain client-unauthorised brands, people or works. If unresolved, change tool, change asset or do not use the output.</p><p><a href="/en/term/%E9%9A%90%E7%A7%81%E4%B8%8E%E5%90%88%E8%A7%84/?path=for-creators">Revisit this concept</a></p></details>
+<details class="tp-sec"><summary>Question 10 · Reference answer</summary><p class="tp-p">Use text/numbers, cross-frame consistency, pronunciation and voice rights, asset provenance, commercial output licence and AI labelling. Name the checker and evidence for each; deliver only after all pass.</p><p><a href="/en/term/%E7%94%9F%E6%88%90%E5%BC%8F%20AI/?path=for-creators">Revisit this concept</a></p></details>
+<section class="tp-sec"><h2>Apply this to a concrete task</h2><p><a href="https://tools.specul.com/en/mcp/guides/playbook-60s-video.html#worked-example">Plan a one-minute video with asset and acceptance records →</a></p></section>
+<section class="tp-sec tp-handoff">
+<h2>Where to practise after this route</h2>
+<p class="tp-p">This route gets the concepts across. Do not reread it; pick one place below and use what you just learned once.</p>
+<div class="t-grid t-grid-3">
+<div class="t-pathcard"><h3><a href="https://tools.specul.com/en/">Pick one ready-made tool and finish one job</a></h3><p class="t-pathlead">No theory first. Read the 30-second check in each profile, then limits and pricing.</p><a class="t-pathgo" href="https://tools.specul.com/en/">Open →</a></div>
+<div class="t-pathcard"><h3><a href="https://demos.specul.com/en/">See three real pieces for a feel</a></h3><p class="t-pathlead">See the result first, then decide whether to revisit the theory. Each piece links to its original site and prompt.</p><a class="t-pathgo" href="https://demos.specul.com/en/">Open →</a></div>
+<div class="t-pathcard"><h3><a href="https://learn.specul.com/en/atlas/">Put the terms back on the map</a></h3><p class="t-pathlead">Concepts are not a straight line. Seeing how they neighbour each other beats memorising more terms.</p><a class="t-pathgo" href="https://learn.specul.com/en/atlas/">Open →</a></div>
+</div>
+</section>
+<div class="tp-sec">
+<div class="tp-lab">Other paths</div>
+<p class="tp-p"><a href="/en/path/quick-start/">The Half-Hour Primer</a> · <a href="/en/path/afternoon-principles/">One Afternoon Under the Hood</a> · <a href="/en/path/full-week/">The Full Week</a> · <a href="/en/path/for-writers/">The Writer's Route</a> · <a href="/en/path/for-builders/">The Builder's Route</a> · <a href="/en/path/for-managers/">The Decision-Maker's Route</a> · <a href="/en/path/for-researchers/">The Researcher's Route</a> · <a href="/en/path/for-operators/">The Operator's Route</a> · <a href="/en/path/for-consumers/">The Everyday User's Route</a> · <a href="/en/path/for-safety-review/">The Safety and Compliance Review Route</a> · <a href="/en/path/for-eval-builders/">The Evaluation and Quality Route</a> · <a href="/en/path/for-robotics/">Robot software and learning route</a> · <a href="/en/path/for-office/">The Office Route</a> · <a href="/en/path/for-data/">The Data &amp; RAG Route</a> · <a href="/en/path/for-teachers/">The Teacher Route</a></p>
+</div>
+<p class="tp-p t-sm">This page appears in: <a href="https://specul.com/en/topic-music.html">Make music with AI</a> · <a href="https://specul.com/en/topic-video.html">Make video with AI</a></p>
+</article>
+</div>
+</main>
+<footer class="site-footer foot-single">
+<div class="container foot-line">
+<div class="foot-brand">
+<span class="foot-brand-main">
+<span aria-hidden="true" class="brand-dot"></span>
+<span class="foot-copy">Specul · specul.com</span>
+</span>
+<span class="foot-license"><a href="https://specul.com/LICENSE-CONTENT.txt">Content CC BY 4.0</a><span aria-hidden="true" class="sep">·</span><a href="https://specul.com/LICENSE.txt">Code MIT</a><span aria-hidden="true" class="sep">·</span><a class="foot-source" href="https://github.com/speculcom/ai-handbook" rel="noopener" target="_blank">Source</a></span>
+</div>
+<nav aria-label="Footer site links" class="foot-sites">
+<a class="site-link" href="https://specul.com/en/">Home</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://learn.specul.com/en/">Learn</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://tools.specul.com/en/">Tools</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://models.specul.com/en/">Models</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://demos.specul.com/en/">Demos</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://oss.specul.com/en/">OSS</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://hardware.specul.com/en/">Compute</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://papers.specul.com/en/">Papers</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://chain.specul.com/en/">Chain</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://nav.specul.com/en/">Directory</a>
+</nav>
+<nav aria-label="Legal and corrections" class="foot-legal">
+<a href="https://specul.com/en/legal.html">Legal</a><span aria-hidden="true" class="sep">·</span>
+<a href="https://specul.com/en/legal.html#s8">Privacy</a><span aria-hidden="true" class="sep">·</span>
+<a href="https://specul.com/en/correct.html">Corrections</a>
+</nav>
+</div>
+</footer>
+<nav aria-label="快捷导航" class="nav-tabbar nav-tabbar-1row">
+<a href="https://specul.com/en/"><span aria-hidden="true" class="ti">◎</span>Home</a>
+<a aria-current="page" href="https://learn.specul.com/en/"><span aria-hidden="true" class="ti">▤</span>Learn</a>
+<a href="https://tools.specul.com/en/"><span aria-hidden="true" class="ti">◈</span>Tools</a>
+<a href="https://models.specul.com/en/"><span aria-hidden="true" class="ti">▦</span>Models</a>
+<a href="https://demos.specul.com/en/"><span aria-hidden="true" class="ti">▷</span>Demos</a>
+<a href="https://oss.specul.com/en/"><span aria-hidden="true" class="ti">▧</span>OSS</a>
+<a href="https://hardware.specul.com/en/"><span aria-hidden="true" class="ti">▣</span>Chips</a>
+<a href="https://papers.specul.com/en/"><span aria-hidden="true" class="ti">▥</span>Papers</a>
+<a href="https://chain.specul.com/en/"><span aria-hidden="true" class="ti">◇</span>Chain</a>
+<a data-nav-group="external" href="https://nav.specul.com/en/"><span aria-hidden="true" class="ti">↗</span>Nav</a>
+</nav>
+</body>
+</html>

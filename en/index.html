@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html data-lang="en" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Learn AI</title>
+<meta content="No need to memorise terms first. See which part you are missing, then read down from there; the six stages and sixteen routes are all on this map." name="description"/>
+<link href="https://learn.specul.com/en/" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Learn AI" property="og:site_name"/>
+<meta content="https://learn.specul.com/en/" property="og:url"/>
+<meta content="Learn AI" property="og:title"/>
+<meta content="No need to memorise terms first. See which part you are missing, then read down from there; the six stages and sixteen routes are all on this map." property="og:description"/>
+<meta content="#16121f" name="theme-color"/>
+<link href="/assets/brand/dandelion-favicon-site.png" rel="icon" type="image/png"/>
+<link href="/assets/brand/dandelion-apple-touch-site.png" rel="apple-touch-icon"/>
+<script src="/brand.js"></script>
+<link href="/brand.css" rel="stylesheet"/>
+<link href="/learn.css" rel="stylesheet"/>
+<style>:root { --accent: var(--cyan); }</style>
+<!-- B5（2026-10-09）：名词地图的结构性数据。
+       用 DefinedTermSet（术语集）—— 与每个词条页的 DefinedTerm 对应；
+       词条数量从数据算不出来（这里是手写页），所以写静态的 260 并由 content-freshness 探针核对
+       （content-freshness 已有词条数守卫，改数据时会同时报出来）。 -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTermSet","name":"Learn AI","url":"https://learn.specul.com/en/","description":"No need to memorise terms first. See which part you are missing, then read down from there; the six stages and sixteen routes are all on this map.","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"Learn AI","url":"https://learn.specul.com/en/"}}</script>
+<meta content="en_US" property="og:locale"/><meta content="zh_CN" property="og:locale:alternate"/><meta content="Learn AI" name="twitter:title"/><meta content="No need to memorise terms first. See which part you are missing, then read down from there; the six stages and sixteen routes are all on this map." name="twitter:description"/><link href="https://learn.specul.com/" hreflang="zh-CN" rel="alternate"/><link href="https://learn.specul.com/en/" hreflang="en" rel="alternate"/><link href="https://learn.specul.com/" hreflang="x-default" rel="alternate"/></head>
+<body class="brand-ambient has-tabbar has-tabbar-1row" style="--accent:var(--cyan)">
+<a class="t-skip" href="#main">Skip to main content</a>
+<!-- SPECUL:HEADER:START -->
+<header class="site-header">
+<div class="container site-bar">
+<a class="brand" href="https://specul.com/en/" title="投机取巧">
+<span aria-hidden="true" class="brand-dot"></span>
+<span class="brand-text">
+<span class="brand-name" id="markName">Speculative Speculation</span>
+<span class="brand-sub" id="markSub"></span>
+</span>
+</a>
+<nav aria-label="站点导航" class="nav-links">
+<a href="https://specul.com/en/">Home</a>
+<a aria-current="page" href="https://learn.specul.com/en/">Learn</a>
+<a href="https://tools.specul.com/en/">Tools</a>
+<a href="https://models.specul.com/en/">Models</a>
+<a href="https://demos.specul.com/en/">Playground</a>
+<a href="https://oss.specul.com/en/">OSS</a>
+<a href="https://hardware.specul.com/en/">Compute</a>
+<a href="https://papers.specul.com/en/">AI Papers</a>
+<a href="https://chain.specul.com/en/">Chain</a>
+<a href="https://nav.specul.com/en/">AI Directory</a>
+</nav>
+<!-- 2026-10-10：.nav-tools 从 nav 元素**内部**移到外面，与 .nav-links 平级。
+           放里面时窄屏下它会跟着链接一起换行：链接占满整行 → 按钮被挤到第三条
+           （实测顶栏 134px、按钮组孤零零一行）。移出来后它与品牌同行，
+           链接独占第二行居中 —— 这才是下面注释里方案 B 想要的样子。 -->
+<span class="nav-tools">
+<a aria-label="Search" class="icon-btn" href="https://specul.com/en/search.html" title="Search all sites"><span aria-hidden="true">⌕</span></a>
+<button aria-label="切换明暗主题" class="icon-btn" id="themeBtn" title="切换明暗主题" type="button">☾</button>
+<a aria-label="切换到中文" class="icon-btn" href="/" hreflang="zh-CN" id="langBtn" lang="zh-CN" title="切换到中文">中文</a>
+</span>
+<!-- B6（2026-10-09）：窄屏（≤900px）下 .nav-links 会隐藏，这个汉堡是替代入口。
+           行为在共享 brand.js 里（一处实现、十站共用），样式在共享 brand.css。
+           无脚本时 CSS 不会显示它，而是把 .nav-links 在窄屏放出来 —— 不会出现
+           「导航被藏进一个点了没反应的按钮」。 -->
+<button aria-controls="navDrawer" aria-expanded="false" aria-label="打开菜单" class="nav-burger" type="button">
+<i></i><i></i><i></i>
+</button>
+</div>
+</header>
+<div class="nav-scrim"></div>
+<aside aria-hidden="true" aria-label="站点导航" class="nav-drawer" id="navDrawer">
+<div class="nav-drawer-h">
+<span class="brand-name">Speculative Speculation</span>
+<span class="brand-sub"></span>
+<button aria-label="关闭" class="nav-dclose" type="button">×</button>
+</div>
+<nav class="nav-drawer-list">
+<a href="https://specul.com/en/"><span>Home</span><span aria-hidden="true" class="ar">→</span></a>
+<a aria-current="page" href="https://learn.specul.com/en/"><span>Learn</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://tools.specul.com/en/"><span>Tools</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://models.specul.com/en/"><span>Models</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://demos.specul.com/en/"><span>Playground</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://oss.specul.com/en/"><span>OSS</span><span aria-hidden="true" class="ar">→</span></a>
+<a class="nav-group-start" href="https://hardware.specul.com/en/"><span>Compute</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://papers.specul.com/en/"><span>AI Papers</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://chain.specul.com/en/"><span>Chain</span><span aria-hidden="true" class="ar">→</span></a>
+<a class="nav-group-start" data-nav-group="external" href="https://nav.specul.com/en/"><span>AI Directory</span><span aria-hidden="true" class="ar">↗</span></a>
+</nav>
+<div class="nav-drawer-foot">
+<p>Content sites cover learn, use, choose and run; AI Directory is a catalogue of off-site AI sites.</p>
+<nav><a href="https://specul.com/en/legal.html">Legal terms</a></nav>
+</div>
+</aside>
+<!-- SPECUL:HEADER:END -->
+<main id="main">
+<div class="container">
+<section class="site-hero">
+<h1>Learn AI</h1>
+<p class="site-hero-deck">300 terms, 16 routes: look one up, or follow a route.</p>
+</section>
+<section id="reading-start"><p><a href="/en/path/quick-start/">Start with the half-hour primer →</a></p></section>
+<!-- SPECUL:VIZ:LEARN:START -->
+<section class="vz-section" id="map">
+<div class="container">
+<div class="vz-head">
+<h2 class="vz-title">See the whole map, then pick a path <span class="vz-title-sub">learning map</span></h2>
+<p class="vz-dek">No need to memorise terms first. See which part you are missing, then read down from there; the six stages and sixteen routes are all on this map.</p>
+</div>
+<div class="vz-grid"><figure class="vz-card vz-span-7">
+<figcaption class="vz-cap"><span class="vz-no">01</span><span><b>Where the six stages sit</b><small>current glossary</small></span></figcaption>
+<div class="vz-plot"><svg aria-label="Horizontal bar chart" class="vz-svg" role="img" viewbox="0 0 720 234" xmlns="http://www.w3.org/2000/svg">
+<line class="vz-gridline" x1="170" x2="710" y1="41" y2="41"></line>
+1 · Enter
+<rect class="vz-bar" height="18" rx="7" style="fill:var(--cat-teal)" width="219.78947368421052" x="170" y="25"></rect>
+<text class="vz-t-strong" text-anchor="end" x="716" y="40">36</text>
+<line class="vz-gridline" x1="170" x2="710" y1="75" y2="75"></line>
+2 · Use
+<rect class="vz-bar" height="18" rx="7" style="fill:var(--cat-blue)" width="268.63157894736844" x="170" y="59"></rect>
+<text class="vz-t-strong" text-anchor="end" x="716" y="74">44</text>
+<line class="vz-gridline" x1="170" x2="710" y1="109" y2="109"></line>
+3 · Use deeply
+<rect class="vz-bar" height="18" rx="7" style="fill:var(--cat-amber)" width="464" x="170" y="93"></rect>
+<text class="vz-t-strong" text-anchor="end" x="716" y="108">76</text>
+<line class="vz-gridline" x1="170" x2="710" y1="143" y2="143"></line>
+4 · Understand
+<rect class="vz-bar" height="18" rx="7" style="fill:var(--cat-violet)" width="372.42105263157896" x="170" y="127"></rect>
+<text class="vz-t-strong" text-anchor="end" x="716" y="142">61</text>
+<line class="vz-gridline" x1="170" x2="710" y1="177" y2="177"></line>
+5 · Choose
+<rect class="vz-bar" height="18" rx="7" style="fill:var(--cat-lime)" width="280.8421052631579" x="170" y="161"></rect>
+<text class="vz-t-strong" text-anchor="end" x="716" y="176">46</text>
+<line class="vz-gridline" x1="170" x2="710" y1="211" y2="211"></line>
+6 · Frontier
+<rect class="vz-bar" height="18" rx="7" style="fill:var(--cat-rose)" width="225.89473684210526" x="170" y="195"></rect>
+<text class="vz-t-strong" text-anchor="end" x="716" y="210">37</text></svg></div>
+<p class="vz-foot">“Use deeply” and “understand” carry the most terms because those are where jargon gets densest. Start with the stage you are stuck on; no need to memorise them all.</p>
+</figure><figure class="vz-card vz-span-5">
+<figcaption class="vz-cap"><span class="vz-no">02</span><span><b>Four inflection-point terms</b><small>one each for training, inference, representation, generation</small></span></figcaption>
+<div class="vz-plot"><div class="vz-map">
+<div class="vz-map-row"><span class="vz-tag">Training</span><b>GRPO</b><small>group-relative advantage, no critic</small></div>
+<div class="vz-map-row"><span class="vz-tag">Inference</span><b>MLA</b><small>low-rank KV compression for long context</small></div>
+<div class="vz-map-row"><span class="vz-tag">Representation</span><b>JEPA</b><small>predict representations, not pixels</small></div>
+<div class="vz-map-row"><span class="vz-tag">Generation</span><b>Flow Matching</b><small>continuous flow, fewer steps than diffusion</small></div>
+</div></div>
+<p class="vz-foot">These four come up often but had no standalone explanation here; each now has a page covering what it is, where it is used and where it is not.</p>
+</figure><figure class="vz-card vz-span-12">
+<figcaption class="vz-cap"><span class="vz-no">03</span><span><b>From terms to paths</b><small>six stages, one walkable route</small></span></figcaption>
+<div class="vz-plot"><div class="vz-path">
+<span>Getting in</span><i>→</i><span>Hands on</span><i>→</i><span>Going deeper</span><i>→</i><span>Under the hood</span><i>→</i><span>Running it</span><i>→</i><span>Choosing right</span>
+</div></div>
+<p class="vz-foot">Every term carries its stage and difficulty; the path page orders what to read first, not alphabetically.</p>
+</figure><figure class="vz-card vz-span-7">
+<figcaption class="vz-cap"><span class="vz-no">04</span><span><b>Six stages, cumulative: knowledge stacks up</b><small>cumulative terms · current glossary</small></span></figcaption>
+<div class="vz-plot"><svg aria-label="Cumulative term line chart" class="vz-svg" role="img" viewbox="0 0 720 260" xmlns="http://www.w3.org/2000/svg"><line class="vz-gridline" x1="46" x2="696" y1="204" y2="204"></line><text class="vz-t-dim" text-anchor="end" x="36" y="209">0</text><line class="vz-gridline" x1="46" x2="696" y1="121" y2="121"></line><text class="vz-t-dim" text-anchor="end" x="36" y="126">150</text><line class="vz-gridline" x1="46" x2="696" y1="38" y2="38"></line><text class="vz-t-dim" text-anchor="end" x="36" y="43">300</text><path d="M 46 204 L 46 184.08 L176 159.73333333333335 L306 117.67999999999999 L436 83.92666666666666 L566 58.47333333333333 L696 38 L 696 204 Z" fill="var(--brand)" fill-opacity=".12"></path><path d="M 46 184.08 L176 159.73333333333335 L306 117.67999999999999 L436 83.92666666666666 L566 58.47333333333333 L696 38" fill="none" stroke="var(--brand)" stroke-width="2"></path><circle cx="46" cy="184.08" r="5" style="fill:var(--brand)"></circle><text class="vz-t-strong" text-anchor="middle" x="46" y="172.08">36</text>Enter<circle cx="176" cy="159.73333333333335" r="5" style="fill:var(--brand)"></circle><text class="vz-t-strong" text-anchor="middle" x="176" y="147.73333333333335">80</text>Use<circle cx="306" cy="117.67999999999999" r="5" style="fill:var(--brand)"></circle><text class="vz-t-strong" text-anchor="middle" x="306" y="105.67999999999999">156</text>Use deeply<circle cx="436" cy="83.92666666666666" r="5" style="fill:var(--brand)"></circle><text class="vz-t-strong" text-anchor="middle" x="436" y="71.92666666666666">217</text>Understand<circle cx="566" cy="58.47333333333333" r="5" style="fill:var(--brand)"></circle><text class="vz-t-strong" text-anchor="middle" x="566" y="46.47333333333333">263</text>Choose<circle cx="696" cy="38" r="5" style="fill:var(--brand)"></circle><text class="vz-t-strong" text-anchor="middle" x="696" y="26">300</text>FrontierCumulative terms</svg></div>
+<p class="vz-foot">The first two stages lay a foundation of 80 terms; stage three adds 76 more at once. Do not start with the hardest stage — build a base first.</p>
+</figure><figure class="vz-card vz-span-5">
+<figcaption class="vz-cap"><span class="vz-no">05</span><span><b>16 paths, most under 45 minutes</b><small>routes grouped by suggested time</small></span></figcaption>
+<div class="vz-plot"><svg aria-label="Donut chart" class="vz-svg" role="img" viewbox="0 0 460 240" xmlns="http://www.w3.org/2000/svg"><circle cx="110" cy="118" fill="none" r="84" stroke="var(--cat-teal)" stroke-dasharray="296.88050576423547 230.9070600388498" stroke-dashoffset="0" stroke-width="23" transform="rotate(-90 110 118)"></circle><circle cx="110" cy="118" fill="none" r="84" stroke="var(--cat-blue)" stroke-dasharray="164.93361431346415 362.8539514896211" stroke-dashoffset="-296.88050576423547" stroke-width="23" transform="rotate(-90 110 118)"></circle><circle cx="110" cy="118" fill="none" r="84" stroke="var(--cat-amber)" stroke-dasharray="32.98672286269283 494.80084294039244" stroke-dashoffset="-461.8141200776996" stroke-width="23" transform="rotate(-90 110 118)"></circle><circle cx="110" cy="118" fill="none" r="84" stroke="var(--cat-rose)" stroke-dasharray="32.98672286269283 494.80084294039244" stroke-dashoffset="-494.80084294039244" stroke-width="23" transform="rotate(-90 110 118)"></circle><text class="vz-t-big" text-anchor="middle" x="110" y="120">16</text><text class="vz-t-dim" text-anchor="middle" x="110" y="142"></text><circle cx="236" cy="39" fill="var(--cat-teal)" r="5"></circle>30–45 min<text class="vz-t-strong" text-anchor="end" x="448" y="44">9</text><circle cx="236" cy="70" fill="var(--cat-blue)" r="5"></circle>50–75 min<text class="vz-t-strong" text-anchor="end" x="448" y="75">5</text><circle cx="236" cy="101" fill="var(--cat-amber)" r="5"></circle>One afternoon<text class="vz-t-strong" text-anchor="end" x="448" y="106">1</text><circle cx="236" cy="132" fill="var(--cat-rose)" r="5"></circle>One week<text class="vz-t-strong" text-anchor="end" x="448" y="137">1</text></svg></div>
+<p class="vz-foot">9 routes finish within 45 minutes — enough to start today; 1 afternoon-length and 1 week-length route are for deeper study.</p>
+</figure></div>
+<p class="vz-foot vz-foot-wide">Note: terms count by their level; guides and path pages are excluded.</p>
+<p class="vz-more"><a href="/en/2026.html">Read the 2026 learn patch: four concepts + one guide update →</a></p>
+</div>
+</section>
+<!-- SPECUL:VIZ:LEARN:END -->
+<section class="path" id="path">
+<div class="path-h">
+<h2>Starting from zero? Take stage one</h2>
+<p>The six stages are not six courses; it is one route you can stop at any time. Each stage ends with something small you can do — if you run out of time, stop there.</p>
+</div>
+<ol class="steps" id="steps"></ol>
+<p class="path-foot" id="pathFoot"></p>
+</section>
+<section class="paths" id="paths">
+<div class="path-h">
+<h2>Sixteen routes — pick one you can start today</h2>
+<p>You do not need to read them all. Pick by the time you actually have: half an hour, an hour, an afternoon or a week. Every route orders what to read first and ends with a checkpoint; if you are unsure where you stand, use the level filter below.</p>
+</div>
+<div aria-label="Filter routes by learning level" class="level-filter" id="pathLevel" role="group"></div>
+<p class="level-hint"><b>Starter</b>: no background needed; build the concepts first. <b>Builder</b>: know the basics and start building. <b>Deep dive</b>: methods, evaluation and safety review. <b>Ship it</b>: deploy, operate and decide for a team.</p>
+<div class="t-grid t-grid-2" id="pathCards"></div>
+</section>
+<section class="paths" id="guides">
+<div class="path-h">
+<h2>Want to do something? Start with one short guide</h2>
+<p>Five to ten minutes each, about how to do the thing rather than explaining the theory. Every guide cites its sources and names the terms it leans on — look those up if you get stuck.</p>
+</div>
+<div class="t-grid t-grid-2" id="guideCards"></div>
+</section>
+<!-- S39（2026-10-19）· 编年史与版图入口。卡片版式借用共享层 brand.css 的 .t-guidecard
+     （宪章 1：不为本页新写样式）。数字 18/12/5 与 atlas/atlas.json 的条数由
+     content-freshness 的「learn 版图」守卫对账 —— 改数据不改这里就会被拦。 -->
+<section class="paths" id="atlas">
+<div class="path-h">
+<h2>Who's who, and what came first</h2>
+<p>Chronicle and atlas: 18 key-model milestones, 12 companies, 5 vocabulary shifts — every entry carries an official source.</p>
+</div>
+<div class="t-grid t-grid-2">
+<div class="t-guidecard">
+<h3>AI Chronicle and Atlas</h3>
+<span class="t-guidespan">One page · 18 milestones · 12 companies · 5 vocabulary shifts</span>
+<p class="t-guidelead">The three things newcomers need first: which models came first, what each company builds, and how the vocabulary became what it means today.</p>
+<a class="t-guidego" href="/en/atlas/">Open the atlas page →</a>
+</div>
+</div>
+</section>
+<div class="ctrl">
+<div class="crow">
+<span class="clab">Arrange by</span>
+<div aria-label="Arrange terms" class="segs" id="segGroup" role="group">
+<button aria-pressed="true" class="seg" data-mode="domain" type="button">By domain<small id="c-domain"></small></button>
+<button aria-pressed="false" class="seg" data-mode="purpose" type="button">By purpose<small id="c-purpose"></small></button>
+<button aria-pressed="false" class="seg" data-mode="level" type="button">By level<small id="c-level"></small></button>
+<button aria-pressed="false" class="seg" data-mode="dims" type="button">Compare dimensions<small id="c-dims"></small></button>
+<button aria-pressed="false" class="seg" data-mode="flat" type="button">All terms<small id="c-flat"></small></button>
+</div>
+</div>
+<div class="cbar">
+<input aria-label="Search terms" class="search" id="q" placeholder="Search terms or definitions, such as VRAM or hallucination" type="search"/>
+<span class="cnt" id="cnt"></span>
+</div>
+</div>
+<div id="wall"></div>
+<div class="empty" hidden="" id="empty">No matching terms. Try a different word, or clear the search box.</div>
+<p class="t-sm" style="margin:10px 0 0"><a href="/en/aliases/">Not finding it? Browse the bilingual term index</a></p>
+<section class="dest">
+<h2>Have a concrete need? Go straight to the right site</h2>
+<p>You do not need to finish the glossary first. These questions are answered directly by the site family.</p>
+<div class="dgrid">
+<a class="d" href="https://tools.specul.com/en/"><b>I want AI to do work for me</b><span>282 product profiles in 12 categories — from agents you run in an editor or terminal to office and multimodal tools.</span><i>tools.specul.com</i></a>
+<a class="d" href="https://models.specul.com/en/"><b>I want to run models on my own machine</b><span>Choose a model and quantization tier for your VRAM, task and runtime.</span><i>models.specul.com</i></a>
+<a class="d" href="https://nav.specul.com/en/"><b>I just want to know what exists</b><span>816 entries, 633 on-site, in 12 categories.</span><i>nav.specul.com</i></a>
+<a class="d" href="https://tools.specul.com/en/"><b>I want to connect AI to external data</b><span>32 MCP server profiles — tools you install for an agent, for whatever's missing.</span><i>tools.specul.com</i></a>
+</div>
+</section>
+<div class="note">
+<b>On trustworthiness.</b>This page solves “I don't understand it.” Claims about numbers, pricing or performance appear only with a source; without one, it says “not officially confirmed” rather than guessing. For product choices, read the profile on each site — every fact carries its source list.
+</div>
+</div>
+<!-- SPECUL:DIAGNOSTICS:START -->
+<div class="container"><section class="section" id="diagnose"><h2>Stuck? Identify the failing step</h2><p>Choose a response before opening the reasoning. Concept, input and verification problems may coexist. These fictional scenarios do not score, certify or mark learning complete.</p><nav aria-label="Practice branches"><a href="#diagnose-concept">Concept confusion</a> · <a href="#diagnose-input">Missing input</a> · <a href="#diagnose-check">Unchecked output</a></nav><section id="diagnose-concept"><h3>Concept confusion</h3><article class="panel is-slim diagnostic-case" id="diagnostic-context"><h3>Window and memory</h3><p>A model advertises a large context window. Does that alone establish that it remembers you in the next conversation?</p><ol><li>A: Yes; a larger window means longer lasting memory.</li><li>B: No; inspect the next request and any separate persistence mechanism.</li></ol><details><summary>After answering: reasoning and next steps</summary><p>Choose B. Capacity, actual request content and persistence are separate questions. A turns capacity into an unsupported memory promise. Map one request before discussing what is saved.</p><ul><li><a href="https://learn.specul.com/en/guide/%E5%AE%83%E8%AE%B0%E5%BE%97%E4%BD%A0%E4%B9%8B%E5%89%8D%E8%AF%B4%E8%BF%87%E7%9A%84/">Distinguish request context and persistence</a></li><li><a href="https://tools.specul.com/en/mcp/guides/toolkit-prompt-context.html">Write the input and limits of one request</a></li></ul></details></article><article class="panel is-slim diagnostic-case" id="diagnostic-retrieval"><h3>Similarity and evidence</h3><p>The top retrieved passage resembles the question but describes last year. Does it establish this year’s price?</p><ol><li>A: No; relevance does not establish the current time/scope.</li><li>B: Yes; the first rank is the answer.</li></ol><details><summary>After answering: reasoning and next steps</summary><p>Choose A. Ranking supplies candidates; check object, date, tier and support in the passage. B mistakes order for verification. Keep the current fact unknown without evidence.</p><ul><li><a href="https://learn.specul.com/en/guide/%E6%80%8E%E4%B9%88%E8%AF%84%E6%B5%8B%20RAG%20%E7%9A%84%E6%95%88%E6%9E%9C/">Check retrieval and answer support separately</a></li><li><a href="https://tools.specul.com/en/mcp/guides/playbook-research-brief.html">Prepare a brief with evidence locations</a></li></ul></details></article></section><section id="diagnose-input"><h3>Missing input</h3><article class="panel is-slim diagnostic-case" id="diagnostic-blank-price"><h3>A blank price</h3><p>The scan has a blank price for item 003. How should conversion record it?</p><ol><li>A: Fill zero so a total can be calculated.</li><li>B: Keep it blank, mark it missing and retain page/row evidence.</li></ol><details><summary>After answering: reasoning and next steps</summary><p>Choose B. Missing is not zero. A invents a price and can disguise a partial sum as a total. Establish whether the original is blank or extraction omitted a value before adding anything.</p><ul><li><a href="https://learn.specul.com/en/guide/%E6%80%8E%E4%B9%88%E6%8A%8A%E6%8F%90%E7%A4%BA%E8%AF%8D%E5%86%99%E7%BB%93%E6%9E%84/">Specify missing-value and evidence rules</a></li><li><a href="https://tools.specul.com/en/mcp/guides/playbook-pdf-table.html">Try the PDF and reference table</a></li></ul></details></article><article class="panel is-slim diagnostic-case" id="diagnostic-date"><h3>An ambiguous date</h3><p>Two orders say 03/11/2026 without a locale. Can you normalize it directly to 2026-11-03?</p><ol><li>A: Yes; use the computer’s locale.</li><li>B: No; retain the raw value, ask for the convention and quarantine it.</li></ol><details><summary>After answering: reasoning and next steps</summary><p>Choose B. The same string can denote different dates. Local computer settings do not define source data. Normalize only after the convention is established, recording the rule and affected rows.</p><ul><li><a href="https://learn.specul.com/en/guide/%E4%B8%8A%E4%B8%8B%E6%96%87%E5%B7%A5%E7%A8%8B%E6%80%8E%E4%B9%88%E5%81%9A/">Identify information the task is missing</a></li><li><a href="https://tools.specul.com/en/mcp/guides/playbook-table-merge.html">Handle duplicates, conflicts and ambiguous dates</a></li></ul></details></article></section><section id="diagnose-check"><h3>Unchecked output</h3><article class="panel is-slim diagnostic-case" id="diagnostic-citation"><h3>Is a source marker enough?</h3><p>A summary has a citation, but the source says preview while the summary says available to everyone. What needs correction?</p><ol><li>A: Keep the claim and add more citations.</li><li>B: Limit the claim to source support, then check date and eligible users.</li></ol><details><summary>After answering: reasoning and next steps</summary><p>Choose B. A working URL does not establish support for a sentence. A adds quantity without fixing meaning. Check each passage and retain preview status, availability scope and check date; withdraw unsupported claims.</p><ul><li><a href="https://learn.specul.com/en/guide/%E6%80%8E%E4%B9%88%E9%AA%8C%E8%AF%81%20AI%20%E7%9A%84%E8%BE%93%E5%87%BA/">Check support, scope and numbers</a></li><li><a href="https://tools.specul.com/en/mcp/guides/playbook-document-review.html">Review conflicting document versions</a></li></ul></details></article><article class="panel is-slim diagnostic-case" id="diagnostic-proposal"><h3>Proposal or decision</h3><p>Jo suggests subtitles but says they cannot own them this week. Notes assign the work to Jo. Is that acceptable?</p><ol><li>A: No; proposing differs from accepting ownership. Keep the owner unresolved.</li><li>B: Yes; whoever suggests it owns it.</li></ol><details><summary>After answering: reasoning and next steps</summary><p>Choose A. The speaker did not accept assignment and explicitly cannot own it. B invents an assignment rule. Replay the passage, restore proposal status, and confirm owner and deadline separately.</p><ul><li><a href="https://learn.specul.com/en/guide/AI%20%E5%B8%B8%E7%8A%AF%E4%BB%80%E4%B9%88%E9%94%99/">Separate extraction errors from plausible wording</a></li><li><a href="https://tools.specul.com/en/mcp/guides/playbook-meeting-notes.html">Replay synthetic audio and check actions</a></li></ul></details></article></section></section></div>
+<!-- SPECUL:DIAGNOSTICS:END -->
+</main>
+<!-- SPECUL:FOOTER:START -->
+<footer class="site-footer foot-single">
+<div class="container foot-line">
+<div class="foot-brand">
+<span class="foot-brand-main">
+<span aria-hidden="true" class="brand-dot"></span>
+<span class="foot-copy">Specul · specul.com</span>
+</span>
+<span class="foot-license"><a href="https://specul.com/LICENSE-CONTENT.txt">Content CC BY 4.0</a><span aria-hidden="true" class="sep">·</span><a href="https://specul.com/LICENSE.txt">Code MIT</a><span aria-hidden="true" class="sep">·</span><a class="foot-source" href="https://github.com/speculcom/ai-handbook" rel="noopener" target="_blank">Source</a></span>
+</div>
+<nav aria-label="Footer site links" class="foot-sites">
+<a class="site-link" href="https://specul.com/en/">Home</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://learn.specul.com/en/">Learn</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://tools.specul.com/en/">Tools</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://models.specul.com/en/">Models</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://demos.specul.com/en/">Demos</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://oss.specul.com/en/">OSS</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://hardware.specul.com/en/">Compute</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://papers.specul.com/en/">Papers</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://chain.specul.com/en/">Chain</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://nav.specul.com/en/">Directory</a>
+</nav>
+<nav aria-label="Legal and corrections" class="foot-legal">
+<a href="https://specul.com/en/legal.html">Legal</a><span aria-hidden="true" class="sep">·</span>
+<a href="https://specul.com/en/legal.html#s8">Privacy</a><span aria-hidden="true" class="sep">·</span>
+<a href="https://specul.com/en/correct.html">Corrections</a>
+</nav>
+</div>
+</footer>
+<!-- SPECUL:FOOTER:END -->
+<div class="scrim" id="scrim"></div>
+<aside aria-hidden="true" aria-labelledby="dTitle" aria-modal="true" class="drawer" id="drawer" role="dialog">
+<div class="dh">
+<div class="dh-txt">
+<h3 id="dTitle"></h3>
+<p class="en" id="dEn"></p>
+<div class="dtags" id="dTags"></div>
+</div>
+<button aria-label="关闭" class="dclose" id="dClose" type="button">×</button>
+</div>
+<div class="db" id="dBody"></div>
+</aside>
+<!-- 底部 tab bar（手机端 App 式固定导航）—— 与 www 首页 / 共享 shell 同一份标记。
+     样式在 brand.css，行为在 brand.js（点「更多」开的就是上面那个 .nav-drawer）。 -->
+<!-- SPECUL:TABBAR:START -->
+<nav aria-label="快捷导航" class="nav-tabbar nav-tabbar-1row">
+<a href="https://specul.com/en/"><span aria-hidden="true" class="ti">◎</span>Home</a>
+<a aria-current="page" href="https://learn.specul.com/en/"><span aria-hidden="true" class="ti">▤</span>Learn</a>
+<a href="https://tools.specul.com/en/"><span aria-hidden="true" class="ti">◈</span>Tools</a>
+<a href="https://models.specul.com/en/"><span aria-hidden="true" class="ti">▦</span>Models</a>
+<a href="https://demos.specul.com/en/"><span aria-hidden="true" class="ti">▷</span>Demos</a>
+<a href="https://oss.specul.com/en/"><span aria-hidden="true" class="ti">▧</span>OSS</a>
+<a href="https://hardware.specul.com/en/"><span aria-hidden="true" class="ti">▣</span>Chips</a>
+<a href="https://papers.specul.com/en/"><span aria-hidden="true" class="ti">▥</span>Papers</a>
+<a href="https://chain.specul.com/en/"><span aria-hidden="true" class="ti">◇</span>Chain</a>
+<a data-nav-group="external" href="https://nav.specul.com/en/"><span aria-hidden="true" class="ti">↗</span>Nav</a>
+</nav>
+<!-- SPECUL:TABBAR:END -->
+<script src="/data/terms.all.js"></script>
+<script src="/data/meta.js"></script>
+<script src="/data/dims.js"></script>
+<script src="/data/paths.js"></script>
+<script defer="" src="/data/reading.js"></script>
+<script src="/data/guides.js"></script>
+<script>
+
+var DOMAINS = META.domains, PURPOSES = META.purposes, LEVELS = META.levels;
+
+/* ── 双语取词（2026-10-04）─────────────────────────────────────────
+   meta.js 的 18 条（8 域 / 4 用途 / 6 层）此前只有中文，英文态下
+   实测首屏仍显示「核心概念 / 第一层·入门层 / 21 词」。
+   data/meta.js 已补 nameEn / shortEn / descEn，这里负责按语言取值。
+   **所有双语取值都必须走这两个函数** —— 逐处写三元表达式在新增调用点时必漏。 */
+function IS_EN(){ return document.documentElement.lang === 'en'; }
+/* 取 meta 对象的 name / desc（field 为 'name' 或 'desc'）*/
+function L(meta, field){
+  if(!meta) return '';
+  var en = meta[field + 'En'];
+  return (IS_EN() && en) ? en : meta[field];
+}
+/* 取层级的短名 */
+function LS(k){
+  var lv = LEVELS[k];
+  if(!lv) return '';
+  return IS_EN() && lv.shortEn ? lv.shortEn : lv.short;
+}
+/* 组装「第X 段 · 段名」的写法（v7 §1.3：六层→六段，2026-10-18）
+ * ⚠ 锚点 id 仍是 `layer-N` —— 它出现在 260 个词条页的面包屑里，
+ *   改 id 等于全站死链。名字改、锚点不改（anchor-check 守的就是它）。 */
+function LN(k){
+  var lv = LEVELS[k];
+  if(!lv) return '';
+  var n = IS_EN() && lv.nameEn ? lv.nameEn : lv.name;
+  return IS_EN() ? ('Stage ' + k + ' · ' + LS(k))
+                 : ('第' + n + '段 · ' + LS(k));
+}
+var PATH_LEVEL_LABELS = {
+  starter: {zh:'入门', en:'Starter'},
+  builder: {zh:'进阶', en:'Builder'},
+  deep: {zh:'深入', en:'Deep dive'},
+  ship: {zh:'落地', en:'Ship it'}
+};
+function pathLevelLabel(k){
+  var l = PATH_LEVEL_LABELS[k];
+  return l ? (IS_EN() ? l.en : l.zh) : '';
+}
+var DCOLOR = {};
+Object.keys(DOMAINS).forEach(function(k){ DCOLOR[k] = DOMAINS[k].color; });
+
+function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+/* 词条正文里我用了 **强调** 标记（和档案里一致）。esc 会把 * 原样输出，
+ * 页面上就会露出裸的 ** —— 所以这里做一次轻量 markdown 处理：
+ * 只处理 **加粗**，其余字符保持 esc 后的结果。
+ * 用占位符往返，避免动到已转义的实体。 */
+function escMd(s){
+  var out = esc(s);
+  var slots = [];
+  out = out.replace(/\*\*([^*]+)\*\*/g, function(_, inner){
+    slots.push(inner);
+    return '\u0000' + (slots.length - 1) + '\u0000';
+  });
+  out = out.replace(/\u0000(\d+)\u0000/g, function(_, i){
+    return '<strong>' + slots[Number(i)] + '</strong>';
+  });
+  return out;
+}
+
+// 建立扁平列表 + 索引
+var FLAT = [];
+TERMS.forEach(function(L){
+  L.terms.forEach(function(t){ t._layer = L.name; t._lvlName = LEVELS[String(t.level)].name;
+    /* _lvlNameEn 已退役（2026-10-18）：英文态的站标签改走 LN()/t.level，
+       不再需要「One/Two」这种数字英文名 —— 留着它正是「采集了却从不渲染」。 */
+    FLAT.push(t); });
+});
+
+var byZh = {};
+FLAT.forEach(function(t){ byZh[t.zh] = t; });
+
+function groupsOf(mode, terms){
+  if(mode === 'flat') return [{key:'all',
+      name:IS_EN()?'All terms':'全部名词',
+      desc:IS_EN()?'Not grouped, sorted alphabetically. Best when you already know what you want.'
+                  :'不分组，按首字排。适合已经知道要找什么。',
+      items:terms.slice()}];
+  if(mode === 'domain'){
+    return Object.keys(DOMAINS).map(function(k){
+      return {key:k, name:L(DOMAINS[k],'name'), desc:L(DOMAINS[k],'desc'),
+        items:terms.filter(function(t){ return t.domain===k; })};
+    }).filter(function(g){ return g.items.length; });
+  }
+  if(mode === 'purpose'){
+    return Object.keys(PURPOSES).map(function(k){
+      return {key:k, name:L(PURPOSES[k],'name'), desc:L(PURPOSES[k],'desc'),
+        items:terms.filter(function(t){ return t.purposeTag===k; })};
+    }).filter(function(g){ return g.items.length; });
+  }
+  // level
+  return Object.keys(LEVELS).map(function(k){
+    return {key:k, name:LN(k), desc:L(LEVELS[k], 'desc'),
+      items:terms.filter(function(t){ return String(t.level)===k; })};
+  }).filter(function(g){ return g.items.length; });
+}
+
+/* 搜索匹配。返回命中层级（0=不中，数字越大越相关），
+ * 排序时命中词名的要排在只命中解释的前面 —— 否则搜「显存」
+ * 会把只在正文里提过一句的词排在「显存」自己前面。 */
+function matchScore(t, q){
+  if(!q) return 1;
+  q = q.toLowerCase();
+  if(t.zh.toLowerCase().indexOf(q)>=0) return 6;          // 词名
+  if((t.alias||[]).join(' ').toLowerCase().indexOf(q)>=0) return 5; // 别名
+  if((t.en||'').toLowerCase().indexOf(q)>=0) return 4;    // 英文名
+  if([t.purpose,t.purposeEn].join(' ').toLowerCase().indexOf(q)>=0) return 3;
+  if((t.def||[]).concat(t.defEn||[]).join(' ').toLowerCase().indexOf(q)>=0) return 2;
+  if([t.why,t.whyEn].join(' ').toLowerCase().indexOf(q)>=0) return 1;
+  return 0;
+}
+function match(t, q){ return matchScore(t, q) > 0; }
+
+var mode = 'domain', query = '';
+
+function tile(t){
+  var en=IS_EN(), name=en?(t.en||t.zh):t.zh, purpose=en?(t.purposeEn||t.purpose):t.purpose;
+  return '<button class="tb" type="button" data-term="'+esc(t.zh)+'" style="--dc:'+DCOLOR[t.domain]+'" aria-label="'+esc(name+(en?' — open definition':'，点击查看解释'))+'">'
+    + '<span class="tb-lv">L'+t.level+'</span>'
+    + '<span class="tb-n">'+esc(name)+'</span>'
+    + (!en&&t.en ? '<span class="tb-en">'+esc(t.en)+'</span>' : '')
+    + (purpose ? '<span class="tb-p">'+escMd(purpose)+'</span>' : '')
+    + '</button>';
+}
+
+/* ===== 维度对照视图 =====
+ * 这不是第四种排布，而是**另一张表**：把分区维度摊开，
+ * 每个维度下挂它涉及的名词，点词照样开抽屉。
+ */
+function renderDims(q){
+  var h = '<div class="dintro"><h2>'+(IS_EN()?'Dimensions ↔ terms':'分区维度 ↔ 名词对照表')+'</h2>'
+    + (IS_EN()
+      ? '<p>The atlas sites compare products along a fixed set of dimensions. This table connects those dimensions to the term map — <b>what each dimension asks, which terms it involves, click a term to read it</b>.</p>'
+      : '<p>站群在比较产品时，看的是固定的几组维度。这张表把维度和名词地图接起来——<b>一个维度在问什么，涉及哪些名词，点词进解释</b>。</p>')
+    + (IS_EN()
+        ? '<p class="warn">Only the eight IDE / CLI / Harness dimensions and the three MCP ones are listed. Most <b>introductory, usage and deployment terms</b> are not here — those are about <em>how to put AI to work</em>, while the sites compare <em>how to choose among comparable products</em>. Different purposes, not an omission.</p>'
+        : '<p class="warn">这里只列 IDE / CLI / Harness 的八维与 MCP 的三维。名词地图里的<b>进门、上手、跑起来三段大部分词不在这张表里</b>——那些是「怎么把AI 用起来」的知识，而站点比较的是「同类产品怎么选」。两者用途不同，不是遗漏。</p>') + '</div>';
+  var totalUsed = 0;
+  [[IS_EN()?'Eight dimensions · IDE / CLI / Harness':'八维 · IDE / CLI / Harness 共用', DIMS.DIMENSIONS8], [IS_EN()?'Three dimensions · MCP':'三维 · MCP 分区专用', DIMS.DIMENSIONS3]].forEach(function(pair){
+    h += '<section class="dset"><h3>'+esc(pair[0])+'</h3><p>'+(IS_EN()?'Each dimension maps to a fixed set of profile questions.':'每个维度对应档案里的一组固定考察项。')+'</p>';
+    pair[1].forEach(function(d){
+      var items = d.terms.map(function(z){ return byZh[z]; }).filter(Boolean);
+      totalUsed += items.length;
+      // 搜索过滤：维度里任一词命中就保留该维度
+      var visible = !q || items.some(function(t){ return match(t, q); });
+      if(!visible) return;
+      var shown = q ? items.filter(function(t){ return match(t, q); }) : items;
+      h += '<div class="drow"><div class="drow-h"><b>'+esc(L(d,'label'))+'</b>'
+         + '<span class="tagcode">'+esc(d.key)+'</span>'
+         + '<span class="n">'+shown.length+(IS_EN()?' terms':' 个词')+'</span></div>'
+         + '<div class="drow-q">'+escMd(d.q)+'</div><div class="dchips">';
+      shown.forEach(function(t){
+        h += '<button class="dchip" type="button" data-term="'+esc(t.zh)+'" style="border-color:'+DCOLOR[t.domain]+'33">'+esc(IS_EN()?(t.en||t.zh):t.zh)+'</button>';
+      });
+      h += '</div>';
+      if(d.caveat && !q) h += '<div class="dcaveat"><i>'+(IS_EN()?'Common misunderstanding':'容易误解')+'</i>　'+escMd(d.caveat)+'</div>';
+      h += '</div>';
+    });
+    h += '</section>';
+  });
+  document.getElementById('wall').innerHTML = h;
+  document.getElementById('empty').hidden = true;
+  var cov = Math.round(totalUsed / FLAT.length * 100);
+  document.getElementById('cnt').textContent = (IS_EN()?'Dimensions ':'维度 ')
+    + (DIMS.DIMENSIONS8.length+DIMS.DIMENSIONS3.length)
+    + (IS_EN()
+        ? ' · covering ' + totalUsed + ' / ' + FLAT.length + ' terms (' + cov + '%)'
+        : ' 个 · 覆盖名词 ' + totalUsed + ' / ' + FLAT.length + '（' + cov + '%）')
+    + (q ? (IS_EN()?(' (filter: '+q+')') : ('（筛选：'+q+'）')) : '');
+}
+
+function render(){
+  if(mode === 'dims'){ renderDims(query); return; }
+  var terms = FLAT.filter(function(t){ return match(t, query); });
+  //有关键词时按命中层级排序，命中越直接越靠前
+  if(query){
+    terms = terms.slice().sort(function(a,b){
+      return matchScore(b, query) - matchScore(a, query);
+    });
+  }
+  var groups = groupsOf(mode, terms);
+  var h = '';
+  groups.forEach(function(g){
+    /* B3：给分层视图的每个分组一个稳定锚点 id="layer-N"。
+     * 为什么需要：词条独立页的面包屑写着「← 第N层」并链到 ../../#layer-5，
+     * 而原先首页**根本没有这个 id** —— 点了等于没反应（死锚点，2026-10-09 发现）。
+     * 只在分层模式下挂 id：别的视图里「层」不是分组轴，挂了反而会误导。 */
+    var lvl = (mode === 'level' && g.items[0]) ? g.items[0].level : null;
+    h += '<section class="grp"' + (lvl ? ' id="layer-'+lvl+'"' : '') + '><div class="gh"><span class="gnum">'+g.items.length+(IS_EN()?' terms':' 词')+'</span>'
+       + '<h2>'+esc(g.name)+'</h2><p>'+esc(g.desc)+'</p>'
+       /* v7 §1.3：分层视图里每一段都自带「学完你能…」与「通往下一段」。
+        * 只有分层模式有「站」这个概念，别的排布（域/用途/字母）不挂。 */
+       + (lvl ? '<p class="t-take">'+esc(TAKE_TAKE(lvl))+'</p>' : '')
+       + (lvl && NEXT_TAKE(lvl) ? '<p class="t-next">'+esc(NEXT_TAKE(lvl))+'</p>' : '')
+       + '</div><div class="wall">';
+    g.items.forEach(function(t){ h += tile(t); });
+    h += '</div></section>';
+  });
+  document.getElementById('wall').innerHTML = h;
+  document.getElementById('empty').hidden = terms.length > 0;
+  document.getElementById('cnt').textContent = terms.length + ' / ' + FLAT.length + (IS_EN()?' terms':' 个名词')
+    + (query ? (IS_EN()?' (filter: '+query+')':'（筛选：'+query+'）') : '');
+}
+
+/* 相关词算法（三次修正后的最终版）
+ *
+ * 第一版：同域 +2 / 同用途 +2 / 同层 +1 ——「幻觉」的相关词里
+ *   混进「可替换性」「bpw」，因为同层信号太弱、被同域无关词挤满 8 个。
+ * 第二版：去掉同层、加英文名匹配 ——「幻觉」的相关词里
+ *   出现「供应商锁定」「差异对比」。根因：**purpose 标签太粗**，
+ *   guard(不出事) 下有 18 个词，「同用途」等于把整类都拉进来。
+ * 最终版：**必须命中「被提及」或「同域」之一才进榜**，
+ *   同用途/英文名匹配只作为加权项，不能单独构成相关。
+ */
+function related(t){
+  var out=[], seen={};
+  var tText = ((t.def||[]).concat([t.purpose], [t.why||''])).join(' ');
+  var tEn = (t.en||'').toLowerCase().replace(/[^a-z]/g,'');
+  FLAT.forEach(function(o){
+    if(o.zh===t.zh) return;
+    if(seen[o.zh]) return;
+    var s = 0;
+    // 强信号：一方解释里直接提到另一方
+    var mentioned = tText.indexOf(o.zh)>=0 || oTextHits(o, t.zh);
+    if(mentioned) s += 6;
+    // 弱信号：同一功能域
+    if(o.domain===t.domain) s += 2;
+    // 修饰项：同用途 / 英文名包含（只能加分，不能单独进榜）
+    if(o.purposeTag===t.purposeTag) s += 1;
+    if(tEn.length>4){
+      var oEn=(o.en||'').toLowerCase().replace(/[^a-z]/g,'');
+      if(oEn.indexOf(tEn)>=0 || (tEn.indexOf(oEn)>=0 && oEn.length>4)) s += 2;
+    }
+    // 门槛：必须有强信号或同域，否则不相关
+    if(!mentioned && o.domain!==t.domain) return;
+    if(s < 3) return;
+    seen[o.zh]=1;
+    out.push([o.zh, s]);
+  });
+  out.sort(function(a,b){ return b[1]-a[1] || (a[0]<b[0]?-1:1); });
+  return out.slice(0,8).map(function(x){ return x[0]; });
+}
+function oTextHits(o, zh){
+  var txt=((o.def||[]).concat([o.purpose],[o.why||''])).join(' ');
+  return txt.indexOf(zh)>=0;
+}
+
+/* ===== 入门路径 =====
+ * 这不是第四种排布，而是**一条顺序**：把 6 个难度层编成 1→6 步，
+ * 每步给一句「学完这层你能干什么」+ 该层词数 + 几个代表词。
+ * 数据源就是 groupsOf('level') —— 与方块墙读同一份 LEVELS/FLAT，
+ * **不存在两套词表对不上的可能**（这是刻意的：另建一份索引必然漂移）。
+ */
+/* v7 §1.3「学完你能…」与「通往下一段」——**真相源在 meta.js 的 levels[].take / next**。
+ * 原先这两句手写在首页里（PATH_TAKE / PATH_TAKE_EN），与 meta.js 的 desc 各说各话；
+ * 同一句话存两处必然漂（本项目头号疾病「同一件事两个口径」），所以搬进 meta.js 只留一份。 */
+function TAKE_TAKE(k){
+  var lv = LEVELS[k] || {};
+  if(IS_EN()) return lv.takeEn || LS(k);
+  return '学完能：' + (lv.take || lv.short);
+}
+function NEXT_TAKE(k){
+  var lv = LEVELS[k] || {};
+  return IS_EN() ? (lv.nextEn || '') : (lv.next || '');
+}
+function renderPath(){
+  var groups = groupsOf('level', FLAT);
+  var h = '';
+  groups.forEach(function(g, i){
+    var key = g.key;
+    // 每层挑 3 个代表词：优先用途标签是「搞懂概念」的，其余按原序
+    var picks = g.items.filter(function(t){ return t.purposeTag === 'learn'; }).slice(0, 3);
+    if(picks.length < 3) picks = g.items.slice(0, 3);
+    h += '<li class="step"><div class="step-h">'
+      + '<span class="step-n">'+(i+1)+'</span>'
+      + '<div class="step-txt"><b>'+esc(LN(key))+'</b>'
+      + '<span class="step-take">'+esc(TAKE_TAKE(key))+'</span></div>'
+      + '<span class="step-n2">'+g.items.length+(IS_EN()?' terms':' 词')+'</span></div>'
+      + '<p class="step-d">'+esc(L(LEVELS[key],'desc'))+'</p>'
+      + (NEXT_TAKE(key) ? '<p class="t-next">'+esc(NEXT_TAKE(key))+'</p>' : '')
+      + '<div class="step-words">';
+    picks.forEach(function(t){
+      h += '<button class="wchip" type="button" data-term="'+esc(t.zh)+'" style="border-color:'+DCOLOR[t.domain]+'33">'+esc(IS_EN()?(t.en||t.zh):t.zh)+'</button>';
+    });
+    h += '<button class="step-all" type="button" data-level="'+esc(key)+'">'
+      + (IS_EN()? 'See all ' + g.items.length + ' terms in this station →'
+                : '看这一段全部 ' + g.items.length + ' 词 →') + '</button>'
+      + '</div></li>';
+  });
+  document.getElementById('steps').innerHTML = h;
+  document.getElementById('pathFoot').textContent = IS_EN()
+    ? FLAT.length + ' terms in all. You do not need to read them in order — stopping at one station is enough. '
+      + 'Most people do not deploy locally, so station 5 can be skipped.'
+    : '一共 ' + FLAT.length + ' 个词。全部读完不需要顺序，但停在一段就够用了——'
+      + '大多数人不做本地部署，第 5 段可以先跳过。';
+}
+
+/* S23（2026-10-19）· 路径导览条：读 data/paths.js（产物；真相源 paths/*.json）。
+ * 卡片版式全部走共享层 brand.css 的 .t-pathcard / .t-grid（宪章 1：
+ * 与 path/<id>/ 路径页同一套类，learn.css 里不写路径样式）。 */
+var pathLevel = 'all';
+function renderPaths(){
+  var list = (typeof PATHS !== 'undefined' && PATHS) ? PATHS : [];
+  var host = document.getElementById('pathLevel');
+  var cards = document.getElementById('pathCards');
+  if(!cards) return;
+  if(host){
+    var order = ['all','starter','builder','deep','ship'];
+    var counts = {all:list.length};
+    list.forEach(function(p){ counts[p.level] = (counts[p.level]||0)+1; });
+    host.innerHTML = order.map(function(k){
+      var label = k==='all' ? (IS_EN()?'All':'全部') : pathLevelLabel(k);
+      var on = pathLevel===k ? ' aria-pressed="true"' : ' aria-pressed="false"';
+      return '<button type="button" data-level="'+k+'"'+on+'>'+esc(label)+' <span>'+counts[k]+'</span></button>';
+    }).join('');
+    host.onclick = function(e){
+      var b = e.target.closest('button[data-level]');
+      if(!b) return;
+      pathLevel = b.dataset.level;
+      renderPaths();
+    };
+  }
+  var shown = list.filter(function(p){ return pathLevel==='all' || p.level===pathLevel; });
+  var h = '';
+  shown.forEach(function(p){
+    var lv = p.level ? '<span class="t-level is-'+esc(p.level)+'">'+esc(pathLevelLabel(p.level))+'</span>' : '';
+    h += '<div class="t-pathcard" data-level="'+esc(p.level||'')+'">'
+      + '<h3>'+esc(IS_EN()?p.en:p.zh)+'</h3>'
+      + '<p class="t-pathmeta">'+lv+'<span class="t-pathspan">'+esc(IS_EN()?p.span.en:p.span.zh)+' · '+p.steps.length+(IS_EN()?' terms':' 词')+'</span></p>'
+      + '<p class="t-pathlead">'+esc(IS_EN()?p.lead.en:p.lead.zh)+'</p>'
+      + '<a class="t-pathgo" href="path/'+encodeURIComponent(p.id)+'/">'+(IS_EN()?'Open this route →':'打开这条路径 →')+'</a>'
+      + '</div>';
+  });
+  cards.innerHTML = h;
+}
+
+/* S24（2026-10-19）· 指南导览条：读 data/guides.js（产物；真相源 guides/*.md frontmatter）。
+ * 卡片版式走共享层 brand.css 的 .t-guidecard（宪章 1：与 guide/<slug>/ 页同一套类）。 */
+function renderGuides(){
+  var list = (typeof GUIDES !== 'undefined' && GUIDES) ? GUIDES : [];
+  var el = document.getElementById('guideCards');
+  if (!el) return;
+  var h = '';
+  list.forEach(function(g){
+    var lead = IS_EN() ? g.lead.en : g.lead.zh;
+    var kind = g.kind === 'myth' ? (IS_EN() ? 'Myth' : '误区') : g.kind === 'paper' ? (IS_EN() ? 'Paper card' : '论文卡') : (IS_EN() ? 'Guide' : '指南');
+    h += '<div class="t-guidecard">'
+      + '<h3>'+esc(IS_EN()?g.en:g.zh)+'</h3>'
+      + '<span class="t-guidespan">'+kind+' · '+(IS_EN()?'Stage ':'第')+esc(String(g.station))+(IS_EN()?'':'段')+' · ~'+g.span+(IS_EN()?' min':' 分钟')+'</span>'
+      + '<p class="t-guidelead">'+esc(lead)+'</p>'
+      + '<a class="t-guidego" href="guide/'+encodeURIComponent(g.id)+'/">'+(g.kind==='paper'?(IS_EN()?'Read this paper card →':'打开这张论文卡 →'):(IS_EN()?'Read this guide →':'打开这篇指南 →'))+'</a>'
+      + '</div>';
+  });
+  el.innerHTML = h;
+}
+
+var cur = null, termTrigger = null, termOverflow = '';
+document.getElementById('drawer').inert = true;
+
+function openTerm(zh){
+  var t = byZh[zh];
+  if(!t) return;
+  if(!cur){ termTrigger=document.activeElement; termOverflow=document.body.style.overflow; }
+  cur = zh;
+  document.getElementById('dTitle').textContent = IS_EN()?(t.en||t.zh):t.zh;
+  document.getElementById('dEn').textContent = t.en || '';
+  document.getElementById('dEn').hidden = IS_EN();
+  var tg = document.getElementById('dTags');
+  tg.innerHTML = ''
+    + '<span class="dtag d" style="--dc:'+DCOLOR[t.domain]+'">'+esc(L(DOMAINS[t.domain],'name'))+'</span>'
+    + '<span class="dtag">'+esc(L(PURPOSES[t.purposeTag],'name'))+'</span>'
+    + '<span class="dtag">'+(IS_EN()?'Stage '+esc(t.level)+' · '+esc(LS(t.level)):'第'+esc(t._lvlName)+'段 · '+esc(LS(t.level)))+'</span>'
+    + '<span class="dtag">'+esc(IS_EN() ? LS(String(t.level)) : t._layer)+'</span>'
+    /* B1：链到该词的独立页（/term/<slug>/）。没有这条，260 个词条页就是孤岛。
+     * slug 来自数据字段（不是从 zh 拼的 —— 9 个词的 zh 与文件名不同）。 */
+    + (t.slug ? '<a class="dtag dlink" href="term/'+encodeURIComponent(t.slug)+'/"><span data-zh>独立页面</span><span data-en>Standalone page</span> ↗</a>' : '');
+  var b = document.getElementById('dBody');
+  var h = '';
+  var purposeTxt = IS_EN() ? (t.purposeEn || t.purpose) : t.purpose;
+  if(purposeTxt) h += '<div class="ds p"><div class="dslabel">'
+    + (IS_EN()?'What problem it solves':'它解决什么问题')
+    + '</div><div class="ds txt">'+escMd(purposeTxt)+'</div></div>';
+  h += '<div class="dslabel">'+(IS_EN()?'What it is':'这是什么')+'</div>';
+  /* def的渲染收敛到这一处：原先下面还有一行 (t.def||[]).forEach 渲染中文，
+   * 那样加了 defEn 之后英文态会**同时**显示中英两段（实测 .ddef 里全是中文）。
+   * 现在按语言选一份列表，逐条渲染成 .ddef（保留原有样式与结构）。 */
+  var defList = (IS_EN() && t.defEn && t.defEn.length) ? t.defEn : t.def;
+  (defList||[]).forEach(function(d){ h += '<div class="ddef">'+escMd(d)+'</div>'; });
+  /* 别名渲染。
+   * 英文态优先 aliasEn（terms.en.json 提供），**并且过滤掉含汉字的别名**——
+   * 之前是「有 aliasEn 就用它，否则整包回落中文 alias」，于是 MCP→模型上下文协议、
+   * Token→词元、幻觉→胡说八道 这类中文别名在英文态原样露出（20 个词条受影响）。
+   * 不给它们硬造英文译名：多数只是英文名的直译（MCP = Model Context Protocol
+   * 已经在 en 字段里了），编一个反而是假信息。含汉字的一律不显示，
+   * 纯 ASCII 的缩写（AI / LLM / RAG / TP / TTS / ASR / Git / tok/s）照常显示。 */
+  var aliasList = (IS_EN() && t.aliasEn && t.aliasEn.length) ? t.aliasEn : (t.alias || []);
+  if(IS_EN()) aliasList = aliasList.filter(function(a){ return !/[一-鿿]/.test(String(a)); });
+  if(aliasList.length){
+    h += '<div class="alias">';
+    aliasList.forEach(function(a){ h += '<span>'+(IS_EN()?'Also called ':'也叫 ')+esc(a)+'</span>'; });
+    h += '</div>';
+  }
+  var whyTxt = IS_EN() ? (t.whyEn || t.why) : t.why;
+  if(whyTxt) h += '<div class="ds w"><div class="dslabel">'
+    + (IS_EN()?'Why it is worth knowing':'为什么需要知道')
+    + '</div><div class="ds txt">'+escMd(whyTxt)+'</div></div>';
+  if(t.refs && t.refs.length){
+    /* refs = 出处与实例（2026-10-08 起语义明确化）。
+     * 每条 = [中文标签, url] 或 [中文标签, url, 英文标签]。
+     * ⚠ 原 h4 硬编码「看具体例子」没有英文分支、标签也只输出中文 r[0] ——
+     *   英文态整块露中文（探针补了「点开带 refs 的词条」后才抓到）。
+     *   英文标签缺失时回落中文（可接受降级，但探针会如实报出来）。*/
+    h += '<div class="refs"><h4>'+(IS_EN()?'Sources & examples':'出处与实例')+'</h4><div class="refs-grid">';
+    t.refs.forEach(function(r){
+      var lab = (IS_EN() && r[2]) ? r[2] : r[0];
+      h += '<a href="'+esc(r[1])+'" target="_blank" rel="noopener">'+esc(lab)+' ↗</a>';
+    });
+    h += '</div></div>';
+  }
+  var rel = related(t);
+  if(rel.length){
+    h += '<div class="related"><h4>'+(IS_EN()?'Related terms':'相关的词')+'</h4>'
+      + '<p>'+(IS_EN()?'Click to jump there.':'点一下跳过去看。')+'</p><div class="rgrid">';
+    rel.forEach(function(z){ h += '<button class="rbtn" type="button" data-go="'+esc(z)+'">'+esc(IS_EN()?(byZh[z]?.en||z):z)+'</button>'; });
+    h += '</div></div>';
+  }
+  var i = FLAT.indexOf(t);
+  h += '<div class="dnav">'
+     + '<button type="button" id="prevT"'+(i<=0?' disabled':'')+'><b>'+(IS_EN()?'Previous':'上一个')+'</b><span>'+(i>0?esc(IS_EN()?FLAT[i-1].en:FLAT[i-1].zh):'')+'</span></button>'
+     + '<button type="button" id="nextT"'+(i>=FLAT.length-1?' disabled':'')+'><b>'+(IS_EN()?'Next':'下一个')+'</b><span>'+(i<FLAT.length-1?esc(IS_EN()?FLAT[i+1].en:FLAT[i+1].zh):'')+'</span></button>'
+     + '</div>';
+  b.innerHTML = h;
+  b.scrollTop = 0;
+  document.getElementById('drawer').classList.add('on');
+  document.getElementById('drawer').inert = false;
+  document.getElementById('drawer').setAttribute('role','dialog');
+  document.getElementById('drawer').setAttribute('aria-modal','true');
+  document.getElementById('drawer').setAttribute('aria-hidden','false');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('scrim').classList.add('on');
+  Array.prototype.forEach.call(document.querySelectorAll('.tb'), function(x){
+    x.classList.toggle('is-open', x.dataset.term === zh);
+  });
+  document.getElementById('dClose').focus();
+}
+
+function closeDrawer(){
+  if(!cur) return;
+  document.getElementById('drawer').classList.remove('on');
+  document.getElementById('drawer').inert = true;
+  document.getElementById('drawer').removeAttribute('aria-modal');
+  document.getElementById('drawer').setAttribute('aria-hidden','true');
+  document.getElementById('scrim').classList.remove('on');
+  Array.prototype.forEach.call(document.querySelectorAll('.tb'), function(x){ x.classList.remove('is-open'); });
+  cur = null;
+  document.body.style.overflow = termOverflow;
+  var trigger=termTrigger?.isConnected?termTrigger:Array.from(document.querySelectorAll('[data-term]')).find(function(el){return el.dataset.term===termTrigger?.dataset?.term;});
+  (trigger || document.getElementById('q')).focus({preventScroll:true});
+}
+
+document.getElementById('wall').addEventListener('click', function(e){
+  // 维度视图里的词是 .dchip，其余三种是 .tb
+  var t = e.target.closest('.tb') || e.target.closest('.dchip');
+  if(t) openTerm(t.dataset.term);
+});
+document.getElementById('dBody').addEventListener('click', function(e){
+  var g = e.target.closest('[data-go]');
+  if(g){ openTerm(g.dataset.go); return; }
+  // ⚠ 必须用 closest()，不能写 e.target.id === 'nextT'（2026-10-03 修）。
+  // 上一版就是那么写的，于是「上一个/下一个」**基本点不动** ——
+  // 按钮内容全是子元素（<b>上一个</b><span>词名</span>），没有直接文本节点，
+  // 访客点「下一个」那三个字时 e.target 是那个 <b>，id 为空，判断永远不成立。
+  // 表现与那几个「静默丢内容」的坑同一类：不报错、元素在那、就是不响应。
+  // （旁边的 .rbtn 一直用 closest()，所以相关词跳转是好的 —— 一个不留神就会漏掉）
+  var nb = e.target.closest('#prevT');
+  var na = e.target.closest('#nextT');
+  if(nb){ var i=FLAT.findIndex(function(t){return t.zh===cur;}); if(i>0) openTerm(FLAT[i-1].zh); return; }
+  if(na){ var j=FLAT.findIndex(function(t){return t.zh===cur;}); if(j<FLAT.length-1) openTerm(FLAT[j+1].zh); return; }
+});
+document.getElementById('dClose').addEventListener('click', closeDrawer);
+document.getElementById('scrim').addEventListener('click', closeDrawer);
+document.addEventListener('keydown', function(e){
+  if(!cur) return;
+  if(e.key === 'Escape'){ e.preventDefault(); closeDrawer(); }
+  if(e.key !== 'Tab') return;
+  var nodes=Array.from(document.querySelectorAll('#drawer a[href],#drawer button:not([disabled])')).filter(function(el){return el.getClientRects().length>0;});
+  var first=nodes[0], last=nodes[nodes.length-1];
+  if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+  else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+});
+
+// 入门路径：代表词直接开抽屉；「看全部」切到按难度排布
+document.getElementById('steps').addEventListener('click', function(e){
+  var w = e.target.closest('.wchip');
+  if(w){ openTerm(w.dataset.term); return; }
+  var a = e.target.closest('[data-level]');
+  if(!a) return;
+  // 切成按难度排布（点第 3 个分段按钮），再滚到对应分组标题
+  var segs = document.querySelectorAll('#segGroup .seg');
+  var target = null;
+  Array.prototype.forEach.call(segs, function(s){ if(s.dataset.mode === 'level') target = s; });
+  if(target) target.click();
+  var grp = document.querySelectorAll('#wall .grp');
+  // groupsOf('level') 的顺序与 DOM 顺序一致，按层级键匹配而非按下标
+  var lvls = groupsOf('level', FLAT).map(function(g){ return g.key; });
+  var idx = lvls.indexOf(a.dataset.level);
+  if(grp[idx]) grp[idx].scrollIntoView({ behavior:'smooth', block:'start' });
+});
+
+var segBox = document.getElementById('segGroup');
+segBox.addEventListener('click', function(e){
+  var b = e.target.closest('.seg');
+  if(!b) return;
+  mode = b.dataset.mode;
+  Array.prototype.forEach.call(segBox.querySelectorAll('.seg'), function(x){
+    x.setAttribute('aria-pressed', x === b ? 'true' : 'false');
+  });
+  render();
+});
+
+/* B3：让 #layer-N 这个锚点真的能用。
+ * 为什么需要额外的 JS：方块墙是**渲染出来的**（render() 之后才有 #layer-N），
+ * 浏览器只在文档加载时尝试滚到锚点 —— 那时元素还不存在，所以不会滚。
+ * 词条独立页的面包屑写着「← 第N层」并链到 ../../#layer-5，原先首页连这个 id 都没有
+ * （死锚点，2026-10-09 发现；_deadlink 只查页不查锚点，所以一直没被抓到）。
+ * 现在：切到按难度排布 → 渲染 → 滚到该层 → 顺便把焦点给它（键盘用户也能接着读）。 */
+function gotoLayerHash(){
+  var m = (location.hash || '').match(/^#layer-([1-6])$/);
+  if(!m) return false;
+  var lvl = m[1];
+  if(mode !== 'level'){
+    var seg = null;
+    Array.prototype.forEach.call(segBox.querySelectorAll('.seg'), function(s){ if(s.dataset.mode === 'level') seg = s; });
+    if(seg) seg.click();          // click 会 setMode + render
+  }
+  var el = document.getElementById('layer-' + lvl);
+  if(!el) return false;
+  el.scrollIntoView({ block:'start' });
+  el.setAttribute('tabindex','-1');
+  el.focus({ preventScroll:true });
+  return true;
+}
+window.addEventListener('hashchange', function(){ gotoLayerHash(); });
+
+var qEl = document.getElementById('q');
+qEl.addEventListener('input', function(){ query = qEl.value.trim(); render(); });
+
+// 各模式词数标注
+['domain','purpose','level'].forEach(function(k){
+  document.getElementById('c-'+k).textContent = Object.keys(k==='domain'?DOMAINS:k==='purpose'?PURPOSES:LEVELS).length;
+});
+document.getElementById('c-dims').textContent = DIMS.DIMENSIONS8.length + DIMS.DIMENSIONS3.length;
+document.getElementById('c-flat').textContent = FLAT.length;
+
+renderPath();
+renderPaths();
+renderGuides();
+render();
+// Re-render localized data without resetting the current search, mode or term.
+var renderedLanguage = document.documentElement.lang;
+document.addEventListener('specul:preferences', function(){
+  if(renderedLanguage === document.documentElement.lang) return;
+  renderedLanguage = document.documentElement.lang;
+  var y=window.scrollY, focus=document.activeElement, term=focus?.dataset?.term;
+  var body=document.getElementById('dBody'), bodyY=body.scrollTop;
+  var focusId=focus?.id, go=focus?.dataset?.go;
+  renderPath(); renderPaths(); renderGuides(); render();
+  if(cur){ openTerm(cur); body.scrollTop=bodyY; }
+  var next=focus?.isConnected?focus:(focusId?document.getElementById(focusId):null);
+  if(!next && term) next=Array.from(document.querySelectorAll('[data-term]')).find(function(el){return el.dataset.term===term;});
+  if(!next && go) next=Array.from(body.querySelectorAll('[data-go]')).find(function(el){return el.dataset.go===go;});
+  next?.focus({preventScroll:true});
+  window.scrollTo({top:y,behavior:'instant'});
+});
+/* ⚠ 必须**在首次 render() 之后**调：方块墙是渲染出来的，早于它调用时
+ *   document.getElementById('layer-N') 一定是 null（第一版就放在前面，等于没生效，
+ *   锚点检查探针如实报出「运行时也没有 #layer-N」）。 */
+gotoLayerHash();
+  </script>
+</body>
+</html>

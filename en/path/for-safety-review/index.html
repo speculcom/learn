@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html data-lang="en" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>The Safety and Compliance Review Route | Learn AI</title>
+<meta content="Split the pre-launch review into risk, data and obligation: how it can be misused, where the data goes, and what records you must keep. Finish with a…" name="description"/>
+<link href="https://learn.specul.com/en/path/for-safety-review/" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="Learn AI" property="og:site_name"/>
+<meta content="https://learn.specul.com/en/path/for-safety-review/" property="og:url"/>
+<meta content="The Safety and Compliance Review Route | Learn AI" property="og:title"/>
+<meta content="Split the pre-launch review into risk, data and obligation: how it can be misused, where the data goes, and what records you must keep. Finish with a…" property="og:description"/>
+<meta content="#16121f" name="theme-color"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" rel="icon" type="image/svg+xml"/>
+<script src="/brand.js"></script>
+<script defer="" src="/data/paths.js"></script>
+<script defer="" src="/data/reading.js"></script>
+<link href="/brand.css" rel="stylesheet"/>
+<link href="/learn.css" rel="stylesheet"/>
+<style>:root { --accent: var(--cyan); }</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"The Safety and Compliance Review Route | Learn AI","description":"Split the pre-launch review into risk, data and obligation: how it can be misused, where the data goes, and what records you must keep. Finish with a…","url":"https://learn.specul.com/en/path/for-safety-review/","inLanguage":"en","itemListOrder":"ItemListOrderAscending","numberOfItems":12,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://learn.specul.com/en/path/for-safety-review/"},{"@type":"ListItem","position":2,"url":"https://learn.specul.com/en/path/for-safety-review/"},{"@type":"ListItem","position":3,"url":"https://learn.specul.com/en/path/for-safety-review/"},{"@type":"ListItem","position":4,"url":"https://learn.specul.com/en/path/for-safety-review/"},{"@type":"ListItem","position":5,"url":"https://learn.specul.com/en/path/for-safety-review/"},{"@type":"ListItem","position":6,"url":"https://learn.specul.com/en/path/for-safety-review/"},{"@type":"ListItem","position":7,"url":"https://learn.specul.com/en/path/for-safety-review/"},{"@type":"ListItem","position":8,"url":"https://learn.specul.com/en/path/for-safety-review/"},{"@type":"ListItem","position":9,"url":"https://learn.specul.com/en/path/for-safety-review/"},{"@type":"ListItem","position":10,"url":"https://learn.specul.com/en/path/for-safety-review/"},{"@type":"ListItem","position":11,"url":"https://learn.specul.com/en/path/for-safety-review/"},{"@type":"ListItem","position":12,"url":"https://learn.specul.com/en/path/for-safety-review/"}]}</script>
+<meta content="en_US" property="og:locale"/><meta content="zh_CN" property="og:locale:alternate"/><meta content="The Safety and Compliance Review Route | Learn AI" name="twitter:title"/><meta content="Split the pre-launch review into risk, data and obligation: how it can be misused, where the data goes, and what records you must keep. Finish with a…" name="twitter:description"/><link href="https://learn.specul.com/path/for-safety-review/" hreflang="zh-CN" rel="alternate"/><link href="https://learn.specul.com/en/path/for-safety-review/" hreflang="en" rel="alternate"/><link href="https://learn.specul.com/path/for-safety-review/" hreflang="x-default" rel="alternate"/></head>
+<body class="brand-ambient has-tabbar has-tabbar-1row" style="--accent:var(--cyan)">
+<a class="t-skip" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="container site-bar">
+<a class="brand" href="https://specul.com/en/" title="投机取巧">
+<span aria-hidden="true" class="brand-dot"></span>
+<span class="brand-text">
+<span class="brand-name" id="markName">Speculative Speculation</span>
+<span class="brand-sub" id="markSub"></span>
+</span>
+</a>
+<nav aria-label="站点导航" class="nav-links">
+<a href="https://specul.com/en/">Home</a>
+<a aria-current="page" href="https://learn.specul.com/en/">Learn</a>
+<a href="https://tools.specul.com/en/">Tools</a>
+<a href="https://models.specul.com/en/">Models</a>
+<a href="https://demos.specul.com/en/">Playground</a>
+<a href="https://oss.specul.com/en/">OSS</a>
+<a href="https://hardware.specul.com/en/">Compute</a>
+<a href="https://papers.specul.com/en/">AI Papers</a>
+<a href="https://chain.specul.com/en/">Chain</a>
+<a href="https://nav.specul.com/en/">AI Directory</a>
+</nav>
+<!-- 2026-10-10：.nav-tools 从 nav 元素**内部**移到外面，与 .nav-links 平级。
+           放里面时窄屏下它会跟着链接一起换行：链接占满整行 → 按钮被挤到第三条
+           （实测顶栏 134px、按钮组孤零零一行）。移出来后它与品牌同行，
+           链接独占第二行居中 —— 这才是下面注释里方案 B 想要的样子。 -->
+<span class="nav-tools">
+<a aria-label="Search" class="icon-btn" href="https://specul.com/en/search.html" title="Search all sites"><span aria-hidden="true">⌕</span></a>
+<button aria-label="切换明暗主题" class="icon-btn" id="themeBtn" title="切换明暗主题" type="button">☾</button>
+<a aria-label="切换到中文" class="icon-btn" href="/path/for-safety-review/" hreflang="zh-CN" id="langBtn" lang="zh-CN" title="切换到中文">中文</a>
+</span>
+<!-- B6（2026-10-09）：窄屏（≤900px）下 .nav-links 会隐藏，这个汉堡是替代入口。
+           行为在共享 brand.js 里（一处实现、十站共用），样式在共享 brand.css。
+           无脚本时 CSS 不会显示它，而是把 .nav-links 在窄屏放出来 —— 不会出现
+           「导航被藏进一个点了没反应的按钮」。 -->
+<button aria-controls="navDrawer" aria-expanded="false" aria-label="打开菜单" class="nav-burger" type="button">
+<i></i><i></i><i></i>
+</button>
+</div>
+</header>
+<div class="nav-scrim"></div>
+<aside aria-hidden="true" aria-label="站点导航" class="nav-drawer" id="navDrawer">
+<div class="nav-drawer-h">
+<span class="brand-name">Speculative Speculation</span>
+<span class="brand-sub"></span>
+<button aria-label="关闭" class="nav-dclose" type="button">×</button>
+</div>
+<nav class="nav-drawer-list">
+<a href="https://specul.com/en/"><span>Home</span><span aria-hidden="true" class="ar">→</span></a>
+<a aria-current="page" href="https://learn.specul.com/en/"><span>Learn</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://tools.specul.com/en/"><span>Tools</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://models.specul.com/en/"><span>Models</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://demos.specul.com/en/"><span>Playground</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://oss.specul.com/en/"><span>OSS</span><span aria-hidden="true" class="ar">→</span></a>
+<a class="nav-group-start" href="https://hardware.specul.com/en/"><span>Compute</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://papers.specul.com/en/"><span>AI Papers</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://chain.specul.com/en/"><span>Chain</span><span aria-hidden="true" class="ar">→</span></a>
+<a class="nav-group-start" data-nav-group="external" href="https://nav.specul.com/en/"><span>AI Directory</span><span aria-hidden="true" class="ar">↗</span></a>
+</nav>
+<div class="nav-drawer-foot">
+<p>Content sites cover learn, use, choose and run; AI Directory is a catalogue of off-site AI sites.</p>
+<nav><a href="https://specul.com/en/legal.html">Legal terms</a></nav>
+</div>
+</aside>
+<main id="main">
+<div class="container">
+<article class="tp tp-wrap">
+<nav aria-label="面包屑" class="tp-crumbs">
+<a href="/en/">← Term map</a>
+<span aria-hidden="true">·</span>
+<span>Learning paths</span>
+</nav>
+<h1>The Safety and Compliance Review Route</h1>
+<p class="t-pathmeta"><span class="t-level is-deep">Deep dive</span><span class="t-levelnote">Methods, evaluation and safety review</span></p>
+<p class="tp-en">about 45 minutes</p>
+<p class="tp-p">Split the pre-launch review into risk, data and obligation: how it can be misused, where the data goes, and what records you must keep. Finish with a written review that names unresolved items.</p>
+<div class="tp-sec">
+<div class="tp-lab">Read in this order</div>
+<ol class="t-pathsteps">
+<li><a href="/en/term/AI%20%E5%AE%89%E5%85%A8/?path=for-safety-review">AI Safety</a></li>
+<li><a href="/en/term/%E6%8F%90%E7%A4%BA%E6%B3%A8%E5%85%A5/?path=for-safety-review">Prompt Injection</a></li>
+<li><a href="/en/term/%E5%81%8F%E5%A5%BD%E5%AF%B9%E9%BD%90/?path=for-safety-review">RLHF / Alignment</a></li>
+<li><a href="/en/term/%E6%8B%92%E7%AD%94/?path=for-safety-review">Refusal</a></li>
+<li><a href="/en/term/%E8%BE%93%E5%87%BA%E8%B6%8A%E7%95%8C%E4%B8%8E%E6%8B%92%E7%AD%94/?path=for-safety-review">Output Overreach and Refusal</a></li>
+<li><a href="/en/term/%E7%BA%A2%E9%98%9F%E6%B5%8B%E8%AF%95/?path=for-safety-review">Red Teaming</a></li>
+<li><a href="/en/term/%E6%95%B0%E6%8D%AE%E4%B8%8D%E5%87%BA%E7%BD%91/?path=for-safety-review">Data Sovereignty</a></li>
+<li><a href="/en/term/%E6%95%B0%E6%8D%AE%E9%A9%BB%E7%95%99/?path=for-safety-review">Data Residency</a></li>
+<li><a href="/en/term/%E9%9A%90%E7%A7%81%E4%B8%8E%E5%90%88%E8%A7%84/?path=for-safety-review">Privacy &amp; Compliance</a></li>
+<li><a href="/en/term/%E7%94%9F%E6%88%90%E5%BC%8F%20AI%20%E5%90%88%E8%A7%84%E4%B9%89%E5%8A%A1/?path=for-safety-review">Generative AI Compliance Duties</a></li>
+<li><a href="/en/term/%E6%B0%B4%E5%8D%B0%E4%B8%8E%E5%86%85%E5%AE%B9%E5%87%AD%E8%AF%81/?path=for-safety-review">Watermarks and Content Credentials</a></li>
+<li><a href="/en/term/%E5%8F%AF%E8%A7%82%E6%B5%8B%E6%80%A7/?path=for-safety-review">Observability</a></li>
+</ol>
+</div>
+<div class="t-check" id="checkpoint">
+<div class="t-check-h">Checkpoint</div>
+<ol>
+<li>Name three risk areas you would press for in a review meeting and what evidence answers each</li>
+<li>Judge whether a feature triggers a record-keeping obligation and cite which official text it comes from</li>
+<li>Write one item you cannot confirm as safe and say which official statement is missing</li>
+<li>Give one piece of evidence each for the input and output sides of prompt injection.</li>
+<li>Why can’t refusal and out-of-scope output be judged by “did it refuse” alone?</li>
+<li>What should a minimal red-team record contain?</li>
+<li>What does preference alignment solve, and what does it not?</li>
+<li>What evidence do “data never leaves the network” and “data residency” each need in review?</li>
+<li>Why is observability part of a safety review?</li>
+<li>What three elements must a “cannot confirm safety” conclusion contain?</li>
+</ol>
+</div>
+<p class="tp-p">Try answering before opening the reference. Revisit the relevant step above if needed. These answers highlight key ideas; you do not need to repeat the wording.</p>
+<details class="tp-sec"><summary>Question 1 · Reference answer</summary><p class="tp-p">Take input (prompt injection, instruction override), output (refusal boundaries, out-of-scope content) and data (leaves the network, residency). For input ask how interception works and what happens after a bypass; for output ask the conditions of refusal, not whether refusal exists; for data read the retention and deletion terms verbatim. A bare 'passed security testing' claim is not evidence.</p><p><a href="/en/term/%E6%8F%90%E7%A4%BA%E6%B3%A8%E5%85%A5/?path=for-safety-review">Revisit this concept</a></p></details>
+<details class="tp-sec"><summary>Question 2 · Reference answer</summary><p class="tp-p">Ask whether user content enters the model, whether output is published externally, and whether inputs are retained. Services that generate or spread content usually face labelling and record duties; the scope follows the official text in force for your jurisdiction, not peer practice. If verified, write the document name and date into the review record; if not, mark it unverified instead of writing 'not applicable'.</p><p><a href="/en/term/%E7%94%9F%E6%88%90%E5%BC%8F%20AI%20%E5%90%88%E8%A7%84%E4%B9%89%E5%8A%A1/?path=for-safety-review">Revisit this concept</a></p></details>
+<details class="tp-sec"><summary>Question 3 · Reference answer</summary><p class="tp-p">Write it as 'not stated officially' plus which specifics are absent. If you only find marketing-level claims about guardrails but no description of interception, post-bypass handling or log retention, record that effectiveness cannot be confirmed and list the three missing items. Keeping the unknown in the conclusion is more useful than a tidy judgement that collapses during incident review.</p><p><a href="/en/term/%E7%BA%A2%E9%98%9F%E6%B5%8B%E8%AF%95/?path=for-safety-review">Revisit this concept</a></p></details>
+<details class="tp-sec"><summary>Question 4 · Reference answer</summary><p class="tp-p">Input evidence: a retrieved document saying “ignore previous instructions” and a log of the external request it triggered. Output evidence: a call record showing system-prompt leakage or an unauthorised tool. Both must link to the session and authorisation outcome.</p><p><a href="/en/term/%E6%8F%90%E7%A4%BA%E6%B3%A8%E5%85%A5/?path=for-safety-review">Revisit this concept</a></p></details>
+<details class="tp-sec"><summary>Question 5 · Reference answer</summary><p class="tp-p">A refusal can be over-cautious or missing when needed; evaluate whether the condition covers risk, whether a safe alternative is offered, and whether out-of-scope output is blocked and traceable. Refusal rate alone hides both errors.</p><p><a href="/en/term/%E8%BE%93%E5%87%BA%E8%B6%8A%E7%95%8C%E4%B8%8E%E6%8B%92%E7%AD%94/?path=for-safety-review">Revisit this concept</a></p></details>
+<details class="tp-sec"><summary>Question 6 · Reference answer</summary><p class="tp-p">Goal and scope, input samples, model version and settings, rubric, verbatim failures, fixes and recheck date. “Tested, no issue” cannot be reproduced.</p><p><a href="/en/term/%E7%BA%A2%E9%98%9F%E6%B5%8B%E8%AF%95/?path=for-safety-review">Revisit this concept</a></p></details>
+<details class="tp-sec"><summary>Question 7 · Reference answer</summary><p class="tp-p">It makes output fit human preferences and safety constraints; it does not guarantee truth, cover every cultural context or prevent over-refusal. Alignment shapes behaviour, not facts.</p><p><a href="/en/term/%E5%81%8F%E5%A5%BD%E5%AF%B9%E9%BD%90/?path=for-safety-review">Revisit this concept</a></p></details>
+<details class="tp-sec"><summary>Question 8 · Reference answer</summary><p class="tp-p">For no-egress, inspect network boundaries, logs and third-party calls; for residency, inspect storage region, cross-border transfer and contract terms. Both need current version and check date, not a sales claim.</p><p><a href="/en/term/%E6%95%B0%E6%8D%AE%E4%B8%8D%E5%87%BA%E7%BD%91/?path=for-safety-review">Revisit this concept</a></p></details>
+<details class="tp-sec"><summary>Question 9 · Reference answer</summary><p class="tp-p">Without logs you cannot prove a block worked, review privilege abuse or injection, or answer who did what when. Review that key events are recorded, searchable and retained long enough.</p><p><a href="/en/term/%E5%8F%AF%E8%A7%82%E6%B5%8B%E6%80%A7/?path=for-safety-review">Revisit this concept</a></p></details>
+<details class="tp-sec"><summary>Question 10 · Reference answer</summary><p class="tp-p">Which official statement is missing, how far the current evidence goes, and who must supply what by when. Make it an actionable unknown, not a vague “there is risk”.</p><p><a href="/en/term/AI%20%E5%AE%89%E5%85%A8/?path=for-safety-review">Revisit this concept</a></p></details>
+<section class="tp-sec"><h2>Apply this to a concrete task</h2><p><a href="https://learn.specul.com/en/guide/%E6%80%8E%E4%B9%88%E7%BB%99%E5%9B%A2%E9%98%9F%E5%81%9A%20AI%20%E9%A3%8E%E9%99%A9%E6%B8%85%E5%8D%95/">Turn these twelve steps into a risk list you can bring to a meeting →</a></p></section>
+<section class="tp-sec tp-handoff">
+<h2>Where to practise after this route</h2>
+<p class="tp-p">This route gets the concepts across. Do not reread it; pick one place below and use what you just learned once.</p>
+<div class="t-grid t-grid-3">
+<div class="t-pathcard"><h3><a href="https://papers.specul.com/en/">Read the original paper and check the numbers</a></h3><p class="t-pathlead">Each paper card states the question, evidence and limits. Check the numbers in the abstract against the paper.</p><a class="t-pathgo" href="https://papers.specul.com/en/">Open →</a></div>
+<div class="t-pathcard"><h3><a href="https://models.specul.com/en/">Check family generations and quant builds</a></h3><p class="t-pathlead">Split one name into generation, context, quant build and licence. Do not mistake an old card for a new model.</p><a class="t-pathgo" href="https://models.specul.com/en/">Open →</a></div>
+<div class="t-pathcard"><h3><a href="https://learn.specul.com/en/atlas/">Reconnect the theory to the concept map</a></h3><p class="t-pathlead">Return to the map after the paper and see which terms changed meaning, so the knowledge does not stay in scattered points.</p><a class="t-pathgo" href="https://learn.specul.com/en/atlas/">Open →</a></div>
+</div>
+</section>
+<div class="tp-sec">
+<div class="tp-lab">Other paths</div>
+<p class="tp-p"><a href="/en/path/quick-start/">The Half-Hour Primer</a> · <a href="/en/path/afternoon-principles/">One Afternoon Under the Hood</a> · <a href="/en/path/full-week/">The Full Week</a> · <a href="/en/path/for-writers/">The Writer's Route</a> · <a href="/en/path/for-builders/">The Builder's Route</a> · <a href="/en/path/for-managers/">The Decision-Maker's Route</a> · <a href="/en/path/for-researchers/">The Researcher's Route</a> · <a href="/en/path/for-operators/">The Operator's Route</a> · <a href="/en/path/for-consumers/">The Everyday User's Route</a> · <a href="/en/path/for-creators/">The Image / Video / Audio Creator's Route</a> · <a href="/en/path/for-eval-builders/">The Evaluation and Quality Route</a> · <a href="/en/path/for-robotics/">Robot software and learning route</a> · <a href="/en/path/for-office/">The Office Route</a> · <a href="/en/path/for-data/">The Data &amp; RAG Route</a> · <a href="/en/path/for-teachers/">The Teacher Route</a></p>
+</div>
+<p class="tp-p t-sm">This page appears in: <a href="https://specul.com/en/topic-game.html">Make games with AI</a></p>
+</article>
+</div>
+</main>
+<footer class="site-footer foot-single">
+<div class="container foot-line">
+<div class="foot-brand">
+<span class="foot-brand-main">
+<span aria-hidden="true" class="brand-dot"></span>
+<span class="foot-copy">Specul · specul.com</span>
+</span>
+<span class="foot-license"><a href="https://specul.com/LICENSE-CONTENT.txt">Content CC BY 4.0</a><span aria-hidden="true" class="sep">·</span><a href="https://specul.com/LICENSE.txt">Code MIT</a><span aria-hidden="true" class="sep">·</span><a class="foot-source" href="https://github.com/speculcom/ai-handbook" rel="noopener" target="_blank">Source</a></span>
+</div>
+<nav aria-label="Footer site links" class="foot-sites">
+<a class="site-link" href="https://specul.com/en/">Home</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://learn.specul.com/en/">Learn</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://tools.specul.com/en/">Tools</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://models.specul.com/en/">Models</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://demos.specul.com/en/">Demos</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://oss.specul.com/en/">OSS</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://hardware.specul.com/en/">Compute</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://papers.specul.com/en/">Papers</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://chain.specul.com/en/">Chain</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://nav.specul.com/en/">Directory</a>
+</nav>
+<nav aria-label="Legal and corrections" class="foot-legal">
+<a href="https://specul.com/en/legal.html">Legal</a><span aria-hidden="true" class="sep">·</span>
+<a href="https://specul.com/en/legal.html#s8">Privacy</a><span aria-hidden="true" class="sep">·</span>
+<a href="https://specul.com/en/correct.html">Corrections</a>
+</nav>
+</div>
+</footer>
+<nav aria-label="快捷导航" class="nav-tabbar nav-tabbar-1row">
+<a href="https://specul.com/en/"><span aria-hidden="true" class="ti">◎</span>Home</a>
+<a aria-current="page" href="https://learn.specul.com/en/"><span aria-hidden="true" class="ti">▤</span>Learn</a>
+<a href="https://tools.specul.com/en/"><span aria-hidden="true" class="ti">◈</span>Tools</a>
+<a href="https://models.specul.com/en/"><span aria-hidden="true" class="ti">▦</span>Models</a>
+<a href="https://demos.specul.com/en/"><span aria-hidden="true" class="ti">▷</span>Demos</a>
+<a href="https://oss.specul.com/en/"><span aria-hidden="true" class="ti">▧</span>OSS</a>
+<a href="https://hardware.specul.com/en/"><span aria-hidden="true" class="ti">▣</span>Chips</a>
+<a href="https://papers.specul.com/en/"><span aria-hidden="true" class="ti">▥</span>Papers</a>
+<a href="https://chain.specul.com/en/"><span aria-hidden="true" class="ti">◇</span>Chain</a>
+<a data-nav-group="external" href="https://nav.specul.com/en/"><span aria-hidden="true" class="ti">↗</span>Nav</a>
+</nav>
+</body>
+</html>

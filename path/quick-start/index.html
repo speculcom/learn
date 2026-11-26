@@ -1,219 +1,216 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>半小时入门 · 学 AI 学习路径 | 投机取巧</title>
-  <meta name="description" content="先读十个常用概念，再做十道自测。目标是分清模型、产品与能力边界，不需要记住全部名词。 10 个词 · 约 30 分钟 向外行解释：大模型是怎么「学会」的，为什么按 Token 计费" />
-  <link rel="canonical" href="https://learn.specul.com/path/quick-start/" />
-  <meta property="og:type" content="article" />
-  <meta property="og:site_name" content="学 AI" />
-  <meta property="og:url" content="https://learn.specul.com/path/quick-start/" />
-  <meta property="og:title" content="半小时入门 · 学 AI 学习路径" />
-  <meta property="og:description" content="先读十个常用概念，再做十道自测。目标是分清模型、产品与能力边界，不需要记住全部名词。 10 个词 · 约 30 分钟 向外行解释：大模型是怎么「学会」的，为什么按 Token 计费" />
-  <meta name="theme-color" content="#16121f" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
-  <script src="../../brand.js?v=37d1072be69b"></script>
-  <script defer src="../../data/paths.js"></script>
-  <script defer src="../../data/reading.js"></script>
-  <link rel="stylesheet" href="../../brand.css?v=37d1072be69b" />
-  <link rel="stylesheet" href="../../learn.css" />
-  <style>:root { --accent: var(--cyan); }</style>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"半小时入门","description":"先读十个常用概念，再做十道自测。目标是分清模型、产品与能力边界，不需要记住全部名词。","url":"https://learn.specul.com/path/quick-start/","inLanguage":"zh-Hans","itemListOrder":"ItemListOrderAscending","numberOfItems":10,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://learn.specul.com/term/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"},{"@type":"ListItem","position":2,"url":"https://learn.specul.com/term/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"},{"@type":"ListItem","position":3,"url":"https://learn.specul.com/term/%E5%A4%A7%E6%A8%A1%E5%9E%8B%20-%20%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/"},{"@type":"ListItem","position":4,"url":"https://learn.specul.com/term/%E6%8F%90%E7%A4%BA%E8%AF%8D/"},{"@type":"ListItem","position":5,"url":"https://learn.specul.com/term/Token/"},{"@type":"ListItem","position":6,"url":"https://learn.specul.com/term/%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AA%97%E5%8F%A3/"},{"@type":"ListItem","position":7,"url":"https://learn.specul.com/term/AI%20%E4%BA%A7%E5%93%81%20vs%20AI%20%E6%A8%A1%E5%9E%8B/"},{"@type":"ListItem","position":8,"url":"https://learn.specul.com/term/%E7%94%9F%E6%88%90%E5%BC%8F%20AI/"},{"@type":"ListItem","position":9,"url":"https://learn.specul.com/term/AI%20Agent%20%E4%B8%8E%E8%81%8A%E5%A4%A9%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E5%8C%BA%E5%88%AB/"},{"@type":"ListItem","position":10,"url":"https://learn.specul.com/term/%E8%83%BD%E5%8A%9B%E8%BE%B9%E7%95%8C/"}]}</script>
-</head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>半小时入门 · 学 AI 学习路径 | 投机取巧</title>
+<meta content="先读十个常用概念，再做十道自测。目标是分清模型、产品与能力边界，不需要记住全部名词。 10 个词 · 约 30 分钟 向外行解释：大模型是怎么「学会」的，为什么按 Token 计费" name="description"/>
+<link href="https://learn.specul.com/path/quick-start/" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="学 AI" property="og:site_name"/>
+<meta content="https://learn.specul.com/path/quick-start/" property="og:url"/>
+<meta content="半小时入门 · 学 AI 学习路径" property="og:title"/>
+<meta content="先读十个常用概念，再做十道自测。目标是分清模型、产品与能力边界，不需要记住全部名词。 10 个词 · 约 30 分钟 向外行解释：大模型是怎么「学会」的，为什么按 Token 计费" property="og:description"/>
+<meta content="#16121f" name="theme-color"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" rel="icon" type="image/svg+xml"/>
+<script src="../../brand.js?v=37d1072be69b"></script>
+<script defer="" src="../../data/paths.js"></script>
+<script defer="" src="../../data/reading.js"></script>
+<link href="../../brand.css?v=37d1072be69b" rel="stylesheet"/>
+<link href="../../learn.css" rel="stylesheet"/>
+<style>:root { --accent: var(--cyan); }</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"半小时入门","description":"先读十个常用概念，再做十道自测。目标是分清模型、产品与能力边界，不需要记住全部名词。","url":"https://learn.specul.com/path/quick-start/","inLanguage":"zh-Hans","itemListOrder":"ItemListOrderAscending","numberOfItems":10,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://learn.specul.com/term/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"},{"@type":"ListItem","position":2,"url":"https://learn.specul.com/term/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"},{"@type":"ListItem","position":3,"url":"https://learn.specul.com/term/%E5%A4%A7%E6%A8%A1%E5%9E%8B%20-%20%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/"},{"@type":"ListItem","position":4,"url":"https://learn.specul.com/term/%E6%8F%90%E7%A4%BA%E8%AF%8D/"},{"@type":"ListItem","position":5,"url":"https://learn.specul.com/term/Token/"},{"@type":"ListItem","position":6,"url":"https://learn.specul.com/term/%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AA%97%E5%8F%A3/"},{"@type":"ListItem","position":7,"url":"https://learn.specul.com/term/AI%20%E4%BA%A7%E5%93%81%20vs%20AI%20%E6%A8%A1%E5%9E%8B/"},{"@type":"ListItem","position":8,"url":"https://learn.specul.com/term/%E7%94%9F%E6%88%90%E5%BC%8F%20AI/"},{"@type":"ListItem","position":9,"url":"https://learn.specul.com/term/AI%20Agent%20%E4%B8%8E%E8%81%8A%E5%A4%A9%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E5%8C%BA%E5%88%AB/"},{"@type":"ListItem","position":10,"url":"https://learn.specul.com/term/%E8%83%BD%E5%8A%9B%E8%BE%B9%E7%95%8C/"}]}</script>
+<link href="https://learn.specul.com/path/quick-start/" hreflang="zh-CN" rel="alternate"/><link href="https://learn.specul.com/en/path/quick-start/" hreflang="en" rel="alternate"/><link href="https://learn.specul.com/path/quick-start/" hreflang="x-default" rel="alternate"/></head>
 <body class="brand-ambient has-tabbar has-tabbar-1row" style="--accent:var(--cyan)">
-  <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
-  <header class="site-header">
-    <div class="container site-bar">
-      <a class="brand" href="https://specul.com/" title="投机取巧">
-        <span class="brand-dot" aria-hidden="true"></span>
-        <span class="brand-text">
-          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
-          <span class="brand-sub" id="markSub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
-        </span>
-      </a>
-      <nav class="nav-links" aria-label="站点导航">
-        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
-        <a href="https://learn.specul.com/" aria-current="page"><span data-zh>学 AI</span><span data-en>Learn</span></a>
-        <a href="https://tools.specul.com/"><span data-zh>工具</span><span data-en>Tools</span></a>
-        <a href="https://models.specul.com/"><span data-zh>模型</span><span data-en>Models</span></a>
-        <a href="https://demos.specul.com/"><span data-zh>作品演示</span><span data-en>Playground</span></a>
-        <a href="https://oss.specul.com/"><span data-zh>开源库</span><span data-en>OSS</span></a>
-        <a href="https://hardware.specul.com/"><span data-zh>硬件算力</span><span data-en>Compute</span></a>
-        <a href="https://papers.specul.com/"><span data-zh>AI 论文</span><span data-en>AI Papers</span></a>
-        <a href="https://chain.specul.com/"><span data-zh>链</span><span data-en>Chain</span></a>
-        <a href="https://nav.specul.com/"><span data-zh>AI 导航</span><span data-en>AI Directory</span></a>
-      </nav>
-      <!-- 2026-10-10：.nav-tools 从 nav 元素**内部**移到外面，与 .nav-links 平级。
+<a class="t-skip" href="#main"><span data-zh="">跳到主要内容</span><span data-en="">Skip to main content</span></a>
+<header class="site-header">
+<div class="container site-bar">
+<a class="brand" href="https://specul.com/" title="投机取巧">
+<span aria-hidden="true" class="brand-dot"></span>
+<span class="brand-text">
+<span class="brand-name" data-en-name="Speculative Speculation" data-zh-name="投机取巧" id="markName">投机取巧</span>
+<span class="brand-sub" data-en-sub="" data-zh-sub="Speculative Speculation" id="markSub">Speculative Speculation</span>
+</span>
+</a>
+<nav aria-label="站点导航" class="nav-links">
+<a href="https://specul.com/"><span data-zh="">首页</span><span data-en="">Home</span></a>
+<a aria-current="page" href="https://learn.specul.com/"><span data-zh="">学 AI</span><span data-en="">Learn</span></a>
+<a href="https://tools.specul.com/"><span data-zh="">工具</span><span data-en="">Tools</span></a>
+<a href="https://models.specul.com/"><span data-zh="">模型</span><span data-en="">Models</span></a>
+<a href="https://demos.specul.com/"><span data-zh="">作品演示</span><span data-en="">Playground</span></a>
+<a href="https://oss.specul.com/"><span data-zh="">开源库</span><span data-en="">OSS</span></a>
+<a href="https://hardware.specul.com/"><span data-zh="">硬件算力</span><span data-en="">Compute</span></a>
+<a href="https://papers.specul.com/"><span data-zh="">AI 论文</span><span data-en="">AI Papers</span></a>
+<a href="https://chain.specul.com/"><span data-zh="">链</span><span data-en="">Chain</span></a>
+<a href="https://nav.specul.com/"><span data-zh="">AI 导航</span><span data-en="">AI Directory</span></a>
+</nav>
+<!-- 2026-10-10：.nav-tools 从 nav 元素**内部**移到外面，与 .nav-links 平级。
            放里面时窄屏下它会跟着链接一起换行：链接占满整行 → 按钮被挤到第三条
            （实测顶栏 134px、按钮组孤零零一行）。移出来后它与品牌同行，
            链接独占第二行居中 —— 这才是下面注释里方案 B 想要的样子。 -->
-      <span class="nav-tools">
-        <a class="icon-btn" href="https://specul.com/search.html" aria-label="搜索" data-ui-aria-label-zh="搜索" data-ui-aria-label-en="Search" title="搜索全站" data-ui-title-zh="搜索全站" data-ui-title-en="Search all sites"><span aria-hidden="true">⌕</span></a>
-        <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
-        <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
-      </span>
-      <!-- B6（2026-10-09）：窄屏（≤900px）下 .nav-links 会隐藏，这个汉堡是替代入口。
+<span class="nav-tools">
+<a aria-label="搜索" class="icon-btn" data-ui-aria-label-en="Search" data-ui-aria-label-zh="搜索" data-ui-title-en="Search all sites" data-ui-title-zh="搜索全站" href="https://specul.com/search.html" title="搜索全站"><span aria-hidden="true">⌕</span></a>
+<button aria-label="切换明暗主题" class="icon-btn" id="themeBtn" title="切换明暗主题" type="button">☾</button>
+<a aria-label="Switch to English" class="icon-btn" href="/en/path/quick-start/" hreflang="en" id="langBtn" lang="en" title="Switch to English">EN</a>
+</span>
+<!-- B6（2026-10-09）：窄屏（≤900px）下 .nav-links 会隐藏，这个汉堡是替代入口。
            行为在共享 brand.js 里（一处实现、十站共用），样式在共享 brand.css。
            无脚本时 CSS 不会显示它，而是把 .nav-links 在窄屏放出来 —— 不会出现
            「导航被藏进一个点了没反应的按钮」。 -->
-      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
-        <i></i><i></i><i></i>
-      </button>
-    </div>
-  </header>
-  <div class="nav-scrim"></div>
-  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
-    <div class="nav-drawer-h">
-      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
-      <span class="brand-sub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
-      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
-    </div>
-    <nav class="nav-drawer-list">
-      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://learn.specul.com/" aria-current="page"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://tools.specul.com/"><span><span data-zh>工具</span><span data-en>Tools</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://models.specul.com/"><span><span data-zh>模型</span><span data-en>Models</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://demos.specul.com/"><span><span data-zh>作品演示</span><span data-en>Playground</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://oss.specul.com/"><span><span data-zh>开源库</span><span data-en>OSS</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://hardware.specul.com/" class="nav-group-start"><span><span data-zh>硬件算力</span><span data-en>Compute</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://papers.specul.com/"><span><span data-zh>AI 论文</span><span data-en>AI Papers</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://chain.specul.com/"><span><span data-zh>链</span><span data-en>Chain</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://nav.specul.com/" class="nav-group-start" data-nav-group="external"><span><span data-zh>AI 导航</span><span data-en>AI Directory</span></span><span class="ar" aria-hidden="true">↗</span></a>
-    </nav>
-    <div class="nav-drawer-foot">
-      <p><span data-zh>内容站覆盖学、用、选、跑；AI 导航是站外的 AI 网站目录，点出去看。</span><span data-en>Content sites cover learn, use, choose and run; AI Directory is a catalogue of off-site AI sites.</span></p>
-      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
-    </div>
-  </aside>
-  <main id="main">
-    <div class="container">
-      <article class="tp tp-wrap">
-        <nav class="tp-crumbs" aria-label="面包屑">
-          <a href="../../"><span data-zh>← 名词地图</span><span data-en>← Term map</span></a>
-          <span aria-hidden="true">·</span>
-          <span><span data-zh>学习路径</span><span data-en>Learning paths</span></span>
-        </nav>
-        <h1><span data-zh>半小时入门</span><span data-en>The Half-Hour Primer</span></h1>
-        <p class="t-pathmeta"><span class="t-level is-starter"><span data-zh>入门</span><span data-en>Starter</span></span><span class="t-levelnote"><span data-zh>没基础也能读，先建立概念</span><span data-en>No background needed: build the concepts first</span></span></p>
-        <p class="tp-en"><span data-zh>约 30 分钟</span><span data-en>about 30 minutes</span></p>
-        <p class="tp-p"><span data-zh>先读十个常用概念，再做十道自测。目标是分清模型、产品与能力边界，不需要记住全部名词。</span><span data-en>Read ten common concepts, then try ten questions. Aim to distinguish models, products and limits without memorizing the whole glossary.</span></p>
-
-        <div class="tp-sec">
-          <div class="tp-lab"><span data-zh>按这个顺序读</span><span data-en>Read in this order</span></div>
-          <ol class="t-pathsteps">
-        <li><a href="../../term/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/?path=quick-start"><span data-zh>人工智能</span><span data-en>Artificial Intelligence, AI</span></a></li>
-        <li><a href="../../term/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/?path=quick-start"><span data-zh>机器学习</span><span data-en>Machine Learning, ML</span></a></li>
-        <li><a href="../../term/%E5%A4%A7%E6%A8%A1%E5%9E%8B%20-%20%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/?path=quick-start"><span data-zh>大模型 / 大语言模型</span><span data-en>Large Language Model, LLM</span></a></li>
-        <li><a href="../../term/%E6%8F%90%E7%A4%BA%E8%AF%8D/?path=quick-start"><span data-zh>提示词</span><span data-en>Prompt</span></a></li>
-        <li><a href="../../term/Token/?path=quick-start"><span data-zh>Token</span><span data-en>Token</span></a></li>
-        <li><a href="../../term/%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AA%97%E5%8F%A3/?path=quick-start"><span data-zh>上下文窗口</span><span data-en>Context Window</span></a></li>
-        <li><a href="../../term/AI%20%E4%BA%A7%E5%93%81%20vs%20AI%20%E6%A8%A1%E5%9E%8B/?path=quick-start"><span data-zh>AI 产品 vs AI 模型</span><span data-en>Product vs Model</span></a></li>
-        <li><a href="../../term/%E7%94%9F%E6%88%90%E5%BC%8F%20AI/?path=quick-start"><span data-zh>生成式 AI</span><span data-en>Generative AI</span></a></li>
-        <li><a href="../../term/AI%20Agent%20%E4%B8%8E%E8%81%8A%E5%A4%A9%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E5%8C%BA%E5%88%AB/?path=quick-start"><span data-zh>AI Agent 与聊天机器人的区别</span><span data-en>Agent vs Chatbot</span></a></li>
-        <li><a href="../../term/%E8%83%BD%E5%8A%9B%E8%BE%B9%E7%95%8C/?path=quick-start"><span data-zh>能力边界</span><span data-en>Capability Boundary</span></a></li>
-          </ol>
-        </div>
-
-        <div class="t-check" id="checkpoint">
-          <div class="t-check-h"><span data-zh>学完自测</span><span data-en>Checkpoint</span></div>
-<span data-zh>
-          <ol>
-          <li>向外行解释：大模型是怎么「学会」的，为什么按 Token 计费</li>
-          <li>说清「AI 产品」和「AI 模型」的区别，各举一个例子</li>
-          <li>说出大模型至少一件明确做不到的事</li>
-          <li>机器学习、深度学习、大模型三者是什么关系？</li>
-          <li>把上下文窗口从 8k 扩到 128k，为什么成本和延迟通常会上升？</li>
-          <li>生成式 AI 与只做分类的模型，输出目标有什么根本不同？</li>
-          <li>AI Agent 与聊天机器人最大的区别是什么？各举一个任务。</li>
-          <li>为什么「回答很流畅」不能当作正确性的证据？</li>
-          <li>同一句提示，为什么两次输出可能不同？</li>
-          <li>拿到一个 AI 产品页，先用哪三个问题判断它是否适合？</li>
-          </ol>
+<button aria-controls="navDrawer" aria-expanded="false" aria-label="打开菜单" class="nav-burger" type="button">
+<i></i><i></i><i></i>
+</button>
+</div>
+</header>
+<div class="nav-scrim"></div>
+<aside aria-hidden="true" aria-label="站点导航" class="nav-drawer" id="navDrawer">
+<div class="nav-drawer-h">
+<span class="brand-name"><span data-zh="">投机取巧</span><span data-en="">Speculative Speculation</span></span>
+<span class="brand-sub" data-en-sub="" data-zh-sub="Speculative Speculation">Speculative Speculation</span>
+<button aria-label="关闭" class="nav-dclose" type="button">×</button>
+</div>
+<nav class="nav-drawer-list">
+<a href="https://specul.com/"><span><span data-zh="">首页</span><span data-en="">Home</span></span><span aria-hidden="true" class="ar">→</span></a>
+<a aria-current="page" href="https://learn.specul.com/"><span><span data-zh="">学 AI</span><span data-en="">Learn</span></span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://tools.specul.com/"><span><span data-zh="">工具</span><span data-en="">Tools</span></span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://models.specul.com/"><span><span data-zh="">模型</span><span data-en="">Models</span></span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://demos.specul.com/"><span><span data-zh="">作品演示</span><span data-en="">Playground</span></span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://oss.specul.com/"><span><span data-zh="">开源库</span><span data-en="">OSS</span></span><span aria-hidden="true" class="ar">→</span></a>
+<a class="nav-group-start" href="https://hardware.specul.com/"><span><span data-zh="">硬件算力</span><span data-en="">Compute</span></span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://papers.specul.com/"><span><span data-zh="">AI 论文</span><span data-en="">AI Papers</span></span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://chain.specul.com/"><span><span data-zh="">链</span><span data-en="">Chain</span></span><span aria-hidden="true" class="ar">→</span></a>
+<a class="nav-group-start" data-nav-group="external" href="https://nav.specul.com/"><span><span data-zh="">AI 导航</span><span data-en="">AI Directory</span></span><span aria-hidden="true" class="ar">↗</span></a>
+</nav>
+<div class="nav-drawer-foot">
+<p><span data-zh="">内容站覆盖学、用、选、跑；AI 导航是站外的 AI 网站目录，点出去看。</span><span data-en="">Content sites cover learn, use, choose and run; AI Directory is a catalogue of off-site AI sites.</span></p>
+<nav><a href="https://specul.com/legal.html"><span data-zh="">法律条款</span><span data-en="">Legal terms</span></a></nav>
+</div>
+</aside>
+<main id="main">
+<div class="container">
+<article class="tp tp-wrap">
+<nav aria-label="面包屑" class="tp-crumbs">
+<a href="../../"><span data-zh="">← 名词地图</span><span data-en="">← Term map</span></a>
+<span aria-hidden="true">·</span>
+<span><span data-zh="">学习路径</span><span data-en="">Learning paths</span></span>
+</nav>
+<h1><span data-zh="">半小时入门</span><span data-en="">The Half-Hour Primer</span></h1>
+<p class="t-pathmeta"><span class="t-level is-starter"><span data-zh="">入门</span><span data-en="">Starter</span></span><span class="t-levelnote"><span data-zh="">没基础也能读，先建立概念</span><span data-en="">No background needed: build the concepts first</span></span></p>
+<p class="tp-en"><span data-zh="">约 30 分钟</span><span data-en="">about 30 minutes</span></p>
+<p class="tp-p"><span data-zh="">先读十个常用概念，再做十道自测。目标是分清模型、产品与能力边界，不需要记住全部名词。</span><span data-en="">Read ten common concepts, then try ten questions. Aim to distinguish models, products and limits without memorizing the whole glossary.</span></p>
+<div class="tp-sec">
+<div class="tp-lab"><span data-zh="">按这个顺序读</span><span data-en="">Read in this order</span></div>
+<ol class="t-pathsteps">
+<li><a href="../../term/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/?path=quick-start"><span data-zh="">人工智能</span><span data-en="">Artificial Intelligence, AI</span></a></li>
+<li><a href="../../term/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/?path=quick-start"><span data-zh="">机器学习</span><span data-en="">Machine Learning, ML</span></a></li>
+<li><a href="../../term/%E5%A4%A7%E6%A8%A1%E5%9E%8B%20-%20%E5%A4%A7%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/?path=quick-start"><span data-zh="">大模型 / 大语言模型</span><span data-en="">Large Language Model, LLM</span></a></li>
+<li><a href="../../term/%E6%8F%90%E7%A4%BA%E8%AF%8D/?path=quick-start"><span data-zh="">提示词</span><span data-en="">Prompt</span></a></li>
+<li><a href="../../term/Token/?path=quick-start"><span data-zh="">Token</span><span data-en="">Token</span></a></li>
+<li><a href="../../term/%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AA%97%E5%8F%A3/?path=quick-start"><span data-zh="">上下文窗口</span><span data-en="">Context Window</span></a></li>
+<li><a href="../../term/AI%20%E4%BA%A7%E5%93%81%20vs%20AI%20%E6%A8%A1%E5%9E%8B/?path=quick-start"><span data-zh="">AI 产品 vs AI 模型</span><span data-en="">Product vs Model</span></a></li>
+<li><a href="../../term/%E7%94%9F%E6%88%90%E5%BC%8F%20AI/?path=quick-start"><span data-zh="">生成式 AI</span><span data-en="">Generative AI</span></a></li>
+<li><a href="../../term/AI%20Agent%20%E4%B8%8E%E8%81%8A%E5%A4%A9%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E5%8C%BA%E5%88%AB/?path=quick-start"><span data-zh="">AI Agent 与聊天机器人的区别</span><span data-en="">Agent vs Chatbot</span></a></li>
+<li><a href="../../term/%E8%83%BD%E5%8A%9B%E8%BE%B9%E7%95%8C/?path=quick-start"><span data-zh="">能力边界</span><span data-en="">Capability Boundary</span></a></li>
+</ol>
+</div>
+<div class="t-check" id="checkpoint">
+<div class="t-check-h"><span data-zh="">学完自测</span><span data-en="">Checkpoint</span></div>
+<span data-zh="">
+<ol>
+<li>向外行解释：大模型是怎么「学会」的，为什么按 Token 计费</li>
+<li>说清「AI 产品」和「AI 模型」的区别，各举一个例子</li>
+<li>说出大模型至少一件明确做不到的事</li>
+<li>机器学习、深度学习、大模型三者是什么关系？</li>
+<li>把上下文窗口从 8k 扩到 128k，为什么成本和延迟通常会上升？</li>
+<li>生成式 AI 与只做分类的模型，输出目标有什么根本不同？</li>
+<li>AI Agent 与聊天机器人最大的区别是什么？各举一个任务。</li>
+<li>为什么「回答很流畅」不能当作正确性的证据？</li>
+<li>同一句提示，为什么两次输出可能不同？</li>
+<li>拿到一个 AI 产品页，先用哪三个问题判断它是否适合？</li>
+</ol>
 </span>
-<span data-en>
-          <ol>
-          <li>Explain to a newcomer how a large model learned, and why billing counts tokens</li>
-          <li>Tell apart an AI product from an AI model, with one example each</li>
-          <li>Name at least one thing a large model plainly cannot do</li>
-          <li>How do machine learning, deep learning and large models relate?</li>
-          <li>Why do cost and latency usually rise when context grows from 8k to 128k?</li>
-          <li>What fundamentally differs between generative AI and a classifier?</li>
-          <li>What is the biggest difference between an AI agent and a chatbot? Give one task for each.</li>
-          <li>Why is fluent wording not evidence of correctness?</li>
-          <li>Why can the same prompt produce different outputs twice?</li>
-          <li>Which three questions should you ask first about an AI product page?</li>
-          </ol>
+<span data-en="">
+<ol>
+<li>Explain to a newcomer how a large model learned, and why billing counts tokens</li>
+<li>Tell apart an AI product from an AI model, with one example each</li>
+<li>Name at least one thing a large model plainly cannot do</li>
+<li>How do machine learning, deep learning and large models relate?</li>
+<li>Why do cost and latency usually rise when context grows from 8k to 128k?</li>
+<li>What fundamentally differs between generative AI and a classifier?</li>
+<li>What is the biggest difference between an AI agent and a chatbot? Give one task for each.</li>
+<li>Why is fluent wording not evidence of correctness?</li>
+<li>Why can the same prompt produce different outputs twice?</li>
+<li>Which three questions should you ask first about an AI product page?</li>
+</ol>
 </span>
-        </div>
-
-        <p class="tp-p"><span data-zh>先试着回答，再展开参考答案。答不上来的地方，可从上方步骤返回对应词条。参考回答是核对要点，不要求逐字复述。</span><span data-en>Try answering before opening the reference. Revisit the relevant step above if needed. These answers highlight key ideas; you do not need to repeat the wording.</span></p>
-<details class="tp-sec"><summary><span data-zh>第 1 题 · 参考回答</span><span data-en>Question 1 · Reference answer</span></summary><p class="tp-p"><span data-zh>训练用样本调整模型参数，推理时依据输入生成输出。Token 是处理文本的单位；服务商通常分别统计输入与输出的用量，具体收费规则看产品说明。</span><span data-en>Training adjusts model parameters from examples; inference generates output from an input. Tokens are text-processing units. Providers commonly count input and output usage separately; the product defines billing.</span></p><p><a href="../../term/Token/?path=quick-start"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
-<details class="tp-sec"><summary><span data-zh>第 2 题 · 参考回答</span><span data-en>Question 2 · Reference answer</span></summary><p class="tp-p"><span data-zh>模型是生成或处理内容的核心；产品还包括界面、检索、存储和权限。例如，一个聊天网站是产品，它接入的语言模型是其中一个部件。</span><span data-en>A model generates or processes content. A product also has an interface, retrieval, storage and permissions. A chat website is a product; its language model is one component.</span></p><p><a href="../../term/AI%20%E4%BA%A7%E5%93%81%20vs%20AI%20%E6%A8%A1%E5%9E%8B/?path=quick-start"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
-<details class="tp-sec"><summary><span data-zh>第 3 题 · 参考回答</span><span data-en>Question 3 · Reference answer</span></summary><p class="tp-p"><span data-zh>没有可靠资料或相应工具时，模型不能保证给出最新事实，也不能仅凭流畅的回答证明内容正确。可举一个需要核对原始出处的例子。</span><span data-en>Without reliable sources or suitable tools, a model cannot guarantee current facts. Fluent wording does not prove correctness. Give one example that needs an original-source check.</span></p><p><a href="../../term/%E8%83%BD%E5%8A%9B%E8%BE%B9%E7%95%8C/?path=quick-start"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
-<details class="tp-sec"><summary><span data-zh>第 4 题 · 参考回答</span><span data-en>Question 4 · Reference answer</span></summary><p class="tp-p"><span data-zh>机器学习是让模型从数据中找规律的总称；深度学习是用多层神经网络做这件事；大模型通常指参数规模很大、以 Transformer 为主的深度学习模型。大模型不是机器学习的全部，也不等于某个产品。</span><span data-en>Machine learning is the broad approach of learning patterns from data; deep learning uses multilayer neural networks; large models are usually very large Transformer-based deep networks. A large model is not all of machine learning, nor a product.</span></p><p><a href="../../term/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/?path=quick-start"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
-<details class="tp-sec"><summary><span data-zh>第 5 题 · 参考回答</span><span data-en>Question 5 · Reference answer</span></summary><p class="tp-p"><span data-zh>模型要处理更多 token，注意力和缓存的计算/存储随长度增长；服务端还要为更长请求预留显存与带宽。窗口变大只说明能放更多输入，不代表每个位置都同样被有效利用。</span><span data-en>The model processes more tokens, and attention plus cache computation and storage grow with length; the server also reserves more memory and bandwidth. A larger window only means more input fits, not that every position is used equally well.</span></p><p><a href="../../term/%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AA%97%E5%8F%A3/?path=quick-start"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
-<details class="tp-sec"><summary><span data-zh>第 6 题 · 参考回答</span><span data-en>Question 6 · Reference answer</span></summary><p class="tp-p"><span data-zh>分类模型输出有限标签上的概率；生成式模型输出 token 序列的分布，需要逐词采样。后者能写新内容，也带来事实不一致和不可复现的风险。</span><span data-en>A classifier outputs probabilities over a finite label set; a generative model outputs a distribution over token sequences and samples token by token. The latter can write new content, and brings factual inconsistency and non-reproducibility.</span></p><p><a href="../../term/%E7%94%9F%E6%88%90%E5%BC%8F%20AI/?path=quick-start"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
-<details class="tp-sec"><summary><span data-zh>第 7 题 · 参考回答</span><span data-en>Question 7 · Reference answer</span></summary><p class="tp-p"><span data-zh>聊天机器人主要生成回答；Agent 还会规划步骤、调用工具、读取结果并继续行动。比如问答是聊天；查库存、改工单、发邮件则是 Agent 任务。是否自主调用工具与承担副作用，是分界线。</span><span data-en>A chatbot mainly generates replies; an agent also plans steps, calls tools, reads results and keeps acting. Q&amp;amp;A is chat; checking inventory, editing a ticket or sending mail is an agent task. Tool use and side effects are the dividing line.</span></p><p><a href="../../term/AI%20Agent%20%E4%B8%8E%E8%81%8A%E5%A4%A9%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E5%8C%BA%E5%88%AB/?path=quick-start"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
-<details class="tp-sec"><summary><span data-zh>第 8 题 · 参考回答</span><span data-en>Question 8 · Reference answer</span></summary><p class="tp-p"><span data-zh>流畅只说明语言模型在预测下一个 token 上表现好，不保证每个断言有来源。核对要回到原始资料，尤其是数字、日期、引文和承诺。</span><span data-en>Fluency only shows the model is good at predicting the next token; it does not guarantee a source for every claim. Check original material, especially numbers, dates, quotations and commitments.</span></p><p><a href="../../term/%E8%83%BD%E5%8A%9B%E8%BE%B9%E7%95%8C/?path=quick-start"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
-<details class="tp-sec"><summary><span data-zh>第 9 题 · 参考回答</span><span data-en>Question 9 · Reference answer</span></summary><p class="tp-p"><span data-zh>生成时通常按概率采样，温度、随机种子和服务端批处理都会影响结果；模型版本或上下文变化也会改变输出。需要可复现时，要固定设置并记录版本。</span><span data-en>Generation usually samples from probabilities; temperature, random seeds and server batching all affect the result, as do model version and context changes. For reproducibility, pin settings and record the version.</span></p><p><a href="../../term/%E7%94%9F%E6%88%90%E5%BC%8F%20AI/?path=quick-start"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
-<details class="tp-sec"><summary><span data-zh>第 10 题 · 参考回答</span><span data-en>Question 10 · Reference answer</span></summary><p class="tp-p"><span data-zh>一问任务与验收标准是否能被它覆盖；二问数据去哪里、是否留存或跨境；三问总成本、许可和退出方式。先答这三题，再看演示效果。</span><span data-en>First, can it cover the task and acceptance criteria; second, where data goes and whether it is retained or transferred; third, total cost, licence and exit. Answer these before judging demos.</span></p><p><a href="../../term/AI%20%E4%BA%A7%E5%93%81%20vs%20AI%20%E6%A8%A1%E5%9E%8B/?path=quick-start"><span data-zh>回看这一题的概念</span><span data-en>Revisit this concept</span></a></p></details>
-        <section class="tp-sec"><h2><span data-zh>用在一个具体任务里</span><span data-en>Apply this to a concrete task</span></h2><p><a href="https://learn.specul.com/guide/%E6%80%8E%E4%B9%88%E5%90%91%20AI%20%E6%8F%90%E9%97%AE/"><span data-zh>试着写一份有资料、有边界的提示</span><span data-en>Try writing a source-grounded, scoped prompt</span> →</a></p></section>
-        <section class="tp-sec tp-handoff">
-          <h2><span data-zh>走完这一段，去哪练</span><span data-en>Where to practise after this route</span></h2>
-          <p class="tp-p"><span data-zh>这条路线负责把概念讲通。下一步不用再读一遍；挑一个地方，把刚学的用一次。</span><span data-en>This route gets the concepts across. Do not reread it; pick one place below and use what you just learned once.</span></p>
-          <div class="t-grid t-grid-3">
-            <div class="t-pathcard"><h3><a href="https://tools.specul.com/"><span data-zh>挑一件现成工具，先干完一件活</span><span data-en>Pick one ready-made tool and finish one job</span></a></h3><p class="t-pathlead"><span data-zh>不用先学完原理。每份档案先看「30 秒判断」，再看限制和收费。</span><span data-en>No theory first. Read the 30-second check in each profile, then limits and pricing.</span></p><a class="t-pathgo" href="https://tools.specul.com/"><span data-zh>去这里 →</span><span data-en>Open →</span></a></div>
-            <div class="t-pathcard"><h3><a href="https://demos.specul.com/"><span data-zh>看三件真实作品，找感觉</span><span data-en>See three real pieces for a feel</span></a></h3><p class="t-pathlead"><span data-zh>先看结果，再决定要不要回头补原理；每件都带原站和 prompt。</span><span data-en>See the result first, then decide whether to revisit the theory. Each piece links to its original site and prompt.</span></p><a class="t-pathgo" href="https://demos.specul.com/"><span data-zh>去这里 →</span><span data-en>Open →</span></a></div>
-            <div class="t-pathcard"><h3><a href="https://learn.specul.com/atlas/"><span data-zh>把学过的词放回地图</span><span data-en>Put the terms back on the map</span></a></h3><p class="t-pathlead"><span data-zh>概念不是一条直线；在地图上看它们怎么相邻，比继续背词有用。</span><span data-en>Concepts are not a straight line. Seeing how they neighbour each other beats memorising more terms.</span></p><a class="t-pathgo" href="https://learn.specul.com/atlas/"><span data-zh>去这里 →</span><span data-en>Open →</span></a></div>
-          </div>
-        </section>
-        <div class="tp-sec">
-          <div class="tp-lab"><span data-zh>其他路径</span><span data-en>Other paths</span></div>
-          <p class="tp-p"><a href="../afternoon-principles/"><span data-zh>一个下午看懂原理</span><span data-en>One Afternoon Under the Hood</span></a> · <a href="../full-week/"><span data-zh>一周路线</span><span data-en>The Full Week</span></a> · <a href="../for-writers/"><span data-zh>内容工作者路线</span><span data-en>The Writer's Route</span></a> · <a href="../for-builders/"><span data-zh>动手开发者路线</span><span data-en>The Builder's Route</span></a> · <a href="../for-managers/"><span data-zh>选型决策者路线</span><span data-en>The Decision-Maker's Route</span></a> · <a href="../for-researchers/"><span data-zh>研究学习者路线</span><span data-en>The Researcher's Route</span></a> · <a href="../for-operators/"><span data-zh>运维上线路线</span><span data-en>The Operator's Route</span></a> · <a href="../for-consumers/"><span data-zh>普通消费者路线</span><span data-en>The Everyday User's Route</span></a> · <a href="../for-creators/"><span data-zh>图像 / 视频 / 音频创作者路线</span><span data-en>The Image / Video / Audio Creator's Route</span></a> · <a href="../for-safety-review/"><span data-zh>安全与合规评审路线</span><span data-en>The Safety and Compliance Review Route</span></a> · <a href="../for-eval-builders/"><span data-zh>评测与质量路线</span><span data-en>The Evaluation and Quality Route</span></a> · <a href="../for-robotics/"><span data-zh>机器人软件与学习路线</span><span data-en>Robot software and learning route</span></a> · <a href="../for-office/"><span data-zh>办公与写作路线</span><span data-en>The Office Route</span></a> · <a href="../for-data/"><span data-zh>数据与 RAG 路线</span><span data-en>The Data &amp; RAG Route</span></a> · <a href="../for-teachers/"><span data-zh>教师与课堂路线</span><span data-en>The Teacher Route</span></a></p>
-        </div>
-      </article>
-    </div>
-  </main>
-  <footer class="site-footer foot-single">
-    <div class="container foot-line">
-      <div class="foot-brand">
-        <span class="foot-brand-main">
-          <span class="brand-dot" aria-hidden="true"></span>
-          <span class="foot-copy"><span data-zh>投机取巧 · specul.com</span><span data-en>Specul · specul.com</span></span>
-        </span>
-        <span class="foot-license"><a href="https://specul.com/LICENSE-CONTENT.txt"><span data-zh>内容 CC BY 4.0</span><span data-en>Content CC BY 4.0</span></a><span class="sep" aria-hidden="true">·</span><a href="https://specul.com/LICENSE.txt"><span data-zh>代码 MIT</span><span data-en>Code MIT</span></a><span class="sep" aria-hidden="true">·</span><a class="foot-source" href="https://github.com/speculcom/ai-handbook" target="_blank" rel="noopener"><span data-zh>源码</span><span data-en>Source</span></a></span>
-      </div>
-      <nav class="foot-sites" aria-label="Footer site links">
-        <a class="site-link" href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a><span class="sep site-sep" aria-hidden="true">·</span>
-        <a class="site-link" href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a><span class="sep site-sep" aria-hidden="true">·</span>
-        <a class="site-link" href="https://tools.specul.com/"><span data-zh>工具</span><span data-en>Tools</span></a><span class="sep site-sep" aria-hidden="true">·</span>
-        <a class="site-link" href="https://models.specul.com/"><span data-zh>模型</span><span data-en>Models</span></a><span class="sep site-sep" aria-hidden="true">·</span>
-        <a class="site-link" href="https://demos.specul.com/"><span data-zh>演示</span><span data-en>Demos</span></a><span class="sep site-sep" aria-hidden="true">·</span>
-        <a class="site-link" href="https://oss.specul.com/"><span data-zh>开源</span><span data-en>OSS</span></a><span class="sep site-sep" aria-hidden="true">·</span>
-        <a class="site-link" href="https://hardware.specul.com/"><span data-zh>算力</span><span data-en>Compute</span></a><span class="sep site-sep" aria-hidden="true">·</span>
-        <a class="site-link" href="https://papers.specul.com/"><span data-zh>论文</span><span data-en>Papers</span></a><span class="sep site-sep" aria-hidden="true">·</span>
-        <a class="site-link" href="https://chain.specul.com/"><span data-zh>链</span><span data-en>Chain</span></a><span class="sep site-sep" aria-hidden="true">·</span>
-        <a class="site-link" href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
-      </nav>
-      <nav class="foot-legal" aria-label="Legal and corrections">
-        <a href="https://specul.com/legal.html"><span data-zh>法律</span><span data-en>Legal</span></a><span class="sep" aria-hidden="true">·</span>
-        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私</span><span data-en>Privacy</span></a><span class="sep" aria-hidden="true">·</span>
-        <a href="https://specul.com/correct.html"><span data-zh>纠错</span><span data-en>Corrections</span></a>
-      </nav>
-    </div>
-  </footer>
-<nav class="nav-tabbar nav-tabbar-1row" aria-label="快捷导航">
-    <a href="https://specul.com/"><span class="ti" aria-hidden="true">◎</span><span data-zh>首页</span><span data-en>Home</span></a>
-    <a href="https://learn.specul.com/" aria-current="page"><span class="ti" aria-hidden="true">▤</span><span data-zh>学AI</span><span data-en>Learn</span></a>
-    <a href="https://tools.specul.com/"><span class="ti" aria-hidden="true">◈</span><span data-zh>工具</span><span data-en>Tools</span></a>
-    <a href="https://models.specul.com/"><span class="ti" aria-hidden="true">▦</span><span data-zh>模型</span><span data-en>Models</span></a>
-    <a href="https://demos.specul.com/"><span class="ti" aria-hidden="true">▷</span><span data-zh>演示</span><span data-en>Demos</span></a>
-    <a href="https://oss.specul.com/"><span class="ti" aria-hidden="true">▧</span><span data-zh>开源</span><span data-en>OSS</span></a>
-    <a href="https://hardware.specul.com/"><span class="ti" aria-hidden="true">▣</span><span data-zh>算力</span><span data-en>Chips</span></a>
-    <a href="https://papers.specul.com/"><span class="ti" aria-hidden="true">▥</span><span data-zh>论文</span><span data-en>Papers</span></a>
-    <a href="https://chain.specul.com/"><span class="ti" aria-hidden="true">◇</span><span data-zh>链</span><span data-en>Chain</span></a>
-    <a href="https://nav.specul.com/" data-nav-group="external"><span class="ti" aria-hidden="true">↗</span><span data-zh>导航</span><span data-en>Nav</span></a>
+</div>
+<p class="tp-p"><span data-zh="">先试着回答，再展开参考答案。答不上来的地方，可从上方步骤返回对应词条。参考回答是核对要点，不要求逐字复述。</span><span data-en="">Try answering before opening the reference. Revisit the relevant step above if needed. These answers highlight key ideas; you do not need to repeat the wording.</span></p>
+<details class="tp-sec"><summary><span data-zh="">第 1 题 · 参考回答</span><span data-en="">Question 1 · Reference answer</span></summary><p class="tp-p"><span data-zh="">训练用样本调整模型参数，推理时依据输入生成输出。Token 是处理文本的单位；服务商通常分别统计输入与输出的用量，具体收费规则看产品说明。</span><span data-en="">Training adjusts model parameters from examples; inference generates output from an input. Tokens are text-processing units. Providers commonly count input and output usage separately; the product defines billing.</span></p><p><a href="../../term/Token/?path=quick-start"><span data-zh="">回看这一题的概念</span><span data-en="">Revisit this concept</span></a></p></details>
+<details class="tp-sec"><summary><span data-zh="">第 2 题 · 参考回答</span><span data-en="">Question 2 · Reference answer</span></summary><p class="tp-p"><span data-zh="">模型是生成或处理内容的核心；产品还包括界面、检索、存储和权限。例如，一个聊天网站是产品，它接入的语言模型是其中一个部件。</span><span data-en="">A model generates or processes content. A product also has an interface, retrieval, storage and permissions. A chat website is a product; its language model is one component.</span></p><p><a href="../../term/AI%20%E4%BA%A7%E5%93%81%20vs%20AI%20%E6%A8%A1%E5%9E%8B/?path=quick-start"><span data-zh="">回看这一题的概念</span><span data-en="">Revisit this concept</span></a></p></details>
+<details class="tp-sec"><summary><span data-zh="">第 3 题 · 参考回答</span><span data-en="">Question 3 · Reference answer</span></summary><p class="tp-p"><span data-zh="">没有可靠资料或相应工具时，模型不能保证给出最新事实，也不能仅凭流畅的回答证明内容正确。可举一个需要核对原始出处的例子。</span><span data-en="">Without reliable sources or suitable tools, a model cannot guarantee current facts. Fluent wording does not prove correctness. Give one example that needs an original-source check.</span></p><p><a href="../../term/%E8%83%BD%E5%8A%9B%E8%BE%B9%E7%95%8C/?path=quick-start"><span data-zh="">回看这一题的概念</span><span data-en="">Revisit this concept</span></a></p></details>
+<details class="tp-sec"><summary><span data-zh="">第 4 题 · 参考回答</span><span data-en="">Question 4 · Reference answer</span></summary><p class="tp-p"><span data-zh="">机器学习是让模型从数据中找规律的总称；深度学习是用多层神经网络做这件事；大模型通常指参数规模很大、以 Transformer 为主的深度学习模型。大模型不是机器学习的全部，也不等于某个产品。</span><span data-en="">Machine learning is the broad approach of learning patterns from data; deep learning uses multilayer neural networks; large models are usually very large Transformer-based deep networks. A large model is not all of machine learning, nor a product.</span></p><p><a href="../../term/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/?path=quick-start"><span data-zh="">回看这一题的概念</span><span data-en="">Revisit this concept</span></a></p></details>
+<details class="tp-sec"><summary><span data-zh="">第 5 题 · 参考回答</span><span data-en="">Question 5 · Reference answer</span></summary><p class="tp-p"><span data-zh="">模型要处理更多 token，注意力和缓存的计算/存储随长度增长；服务端还要为更长请求预留显存与带宽。窗口变大只说明能放更多输入，不代表每个位置都同样被有效利用。</span><span data-en="">The model processes more tokens, and attention plus cache computation and storage grow with length; the server also reserves more memory and bandwidth. A larger window only means more input fits, not that every position is used equally well.</span></p><p><a href="../../term/%E4%B8%8A%E4%B8%8B%E6%96%87%E7%AA%97%E5%8F%A3/?path=quick-start"><span data-zh="">回看这一题的概念</span><span data-en="">Revisit this concept</span></a></p></details>
+<details class="tp-sec"><summary><span data-zh="">第 6 题 · 参考回答</span><span data-en="">Question 6 · Reference answer</span></summary><p class="tp-p"><span data-zh="">分类模型输出有限标签上的概率；生成式模型输出 token 序列的分布，需要逐词采样。后者能写新内容，也带来事实不一致和不可复现的风险。</span><span data-en="">A classifier outputs probabilities over a finite label set; a generative model outputs a distribution over token sequences and samples token by token. The latter can write new content, and brings factual inconsistency and non-reproducibility.</span></p><p><a href="../../term/%E7%94%9F%E6%88%90%E5%BC%8F%20AI/?path=quick-start"><span data-zh="">回看这一题的概念</span><span data-en="">Revisit this concept</span></a></p></details>
+<details class="tp-sec"><summary><span data-zh="">第 7 题 · 参考回答</span><span data-en="">Question 7 · Reference answer</span></summary><p class="tp-p"><span data-zh="">聊天机器人主要生成回答；Agent 还会规划步骤、调用工具、读取结果并继续行动。比如问答是聊天；查库存、改工单、发邮件则是 Agent 任务。是否自主调用工具与承担副作用，是分界线。</span><span data-en="">A chatbot mainly generates replies; an agent also plans steps, calls tools, reads results and keeps acting. Q&amp;amp;A is chat; checking inventory, editing a ticket or sending mail is an agent task. Tool use and side effects are the dividing line.</span></p><p><a href="../../term/AI%20Agent%20%E4%B8%8E%E8%81%8A%E5%A4%A9%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E5%8C%BA%E5%88%AB/?path=quick-start"><span data-zh="">回看这一题的概念</span><span data-en="">Revisit this concept</span></a></p></details>
+<details class="tp-sec"><summary><span data-zh="">第 8 题 · 参考回答</span><span data-en="">Question 8 · Reference answer</span></summary><p class="tp-p"><span data-zh="">流畅只说明语言模型在预测下一个 token 上表现好，不保证每个断言有来源。核对要回到原始资料，尤其是数字、日期、引文和承诺。</span><span data-en="">Fluency only shows the model is good at predicting the next token; it does not guarantee a source for every claim. Check original material, especially numbers, dates, quotations and commitments.</span></p><p><a href="../../term/%E8%83%BD%E5%8A%9B%E8%BE%B9%E7%95%8C/?path=quick-start"><span data-zh="">回看这一题的概念</span><span data-en="">Revisit this concept</span></a></p></details>
+<details class="tp-sec"><summary><span data-zh="">第 9 题 · 参考回答</span><span data-en="">Question 9 · Reference answer</span></summary><p class="tp-p"><span data-zh="">生成时通常按概率采样，温度、随机种子和服务端批处理都会影响结果；模型版本或上下文变化也会改变输出。需要可复现时，要固定设置并记录版本。</span><span data-en="">Generation usually samples from probabilities; temperature, random seeds and server batching all affect the result, as do model version and context changes. For reproducibility, pin settings and record the version.</span></p><p><a href="../../term/%E7%94%9F%E6%88%90%E5%BC%8F%20AI/?path=quick-start"><span data-zh="">回看这一题的概念</span><span data-en="">Revisit this concept</span></a></p></details>
+<details class="tp-sec"><summary><span data-zh="">第 10 题 · 参考回答</span><span data-en="">Question 10 · Reference answer</span></summary><p class="tp-p"><span data-zh="">一问任务与验收标准是否能被它覆盖；二问数据去哪里、是否留存或跨境；三问总成本、许可和退出方式。先答这三题，再看演示效果。</span><span data-en="">First, can it cover the task and acceptance criteria; second, where data goes and whether it is retained or transferred; third, total cost, licence and exit. Answer these before judging demos.</span></p><p><a href="../../term/AI%20%E4%BA%A7%E5%93%81%20vs%20AI%20%E6%A8%A1%E5%9E%8B/?path=quick-start"><span data-zh="">回看这一题的概念</span><span data-en="">Revisit this concept</span></a></p></details>
+<section class="tp-sec"><h2><span data-zh="">用在一个具体任务里</span><span data-en="">Apply this to a concrete task</span></h2><p><a href="https://learn.specul.com/guide/%E6%80%8E%E4%B9%88%E5%90%91%20AI%20%E6%8F%90%E9%97%AE/"><span data-zh="">试着写一份有资料、有边界的提示</span><span data-en="">Try writing a source-grounded, scoped prompt</span> →</a></p></section>
+<section class="tp-sec tp-handoff">
+<h2><span data-zh="">走完这一段，去哪练</span><span data-en="">Where to practise after this route</span></h2>
+<p class="tp-p"><span data-zh="">这条路线负责把概念讲通。下一步不用再读一遍；挑一个地方，把刚学的用一次。</span><span data-en="">This route gets the concepts across. Do not reread it; pick one place below and use what you just learned once.</span></p>
+<div class="t-grid t-grid-3">
+<div class="t-pathcard"><h3><a href="https://tools.specul.com/"><span data-zh="">挑一件现成工具，先干完一件活</span><span data-en="">Pick one ready-made tool and finish one job</span></a></h3><p class="t-pathlead"><span data-zh="">不用先学完原理。每份档案先看「30 秒判断」，再看限制和收费。</span><span data-en="">No theory first. Read the 30-second check in each profile, then limits and pricing.</span></p><a class="t-pathgo" href="https://tools.specul.com/"><span data-zh="">去这里 →</span><span data-en="">Open →</span></a></div>
+<div class="t-pathcard"><h3><a href="https://demos.specul.com/"><span data-zh="">看三件真实作品，找感觉</span><span data-en="">See three real pieces for a feel</span></a></h3><p class="t-pathlead"><span data-zh="">先看结果，再决定要不要回头补原理；每件都带原站和 prompt。</span><span data-en="">See the result first, then decide whether to revisit the theory. Each piece links to its original site and prompt.</span></p><a class="t-pathgo" href="https://demos.specul.com/"><span data-zh="">去这里 →</span><span data-en="">Open →</span></a></div>
+<div class="t-pathcard"><h3><a href="https://learn.specul.com/atlas/"><span data-zh="">把学过的词放回地图</span><span data-en="">Put the terms back on the map</span></a></h3><p class="t-pathlead"><span data-zh="">概念不是一条直线；在地图上看它们怎么相邻，比继续背词有用。</span><span data-en="">Concepts are not a straight line. Seeing how they neighbour each other beats memorising more terms.</span></p><a class="t-pathgo" href="https://learn.specul.com/atlas/"><span data-zh="">去这里 →</span><span data-en="">Open →</span></a></div>
+</div>
+</section>
+<div class="tp-sec">
+<div class="tp-lab"><span data-zh="">其他路径</span><span data-en="">Other paths</span></div>
+<p class="tp-p"><a href="../afternoon-principles/"><span data-zh="">一个下午看懂原理</span><span data-en="">One Afternoon Under the Hood</span></a> · <a href="../full-week/"><span data-zh="">一周路线</span><span data-en="">The Full Week</span></a> · <a href="../for-writers/"><span data-zh="">内容工作者路线</span><span data-en="">The Writer's Route</span></a> · <a href="../for-builders/"><span data-zh="">动手开发者路线</span><span data-en="">The Builder's Route</span></a> · <a href="../for-managers/"><span data-zh="">选型决策者路线</span><span data-en="">The Decision-Maker's Route</span></a> · <a href="../for-researchers/"><span data-zh="">研究学习者路线</span><span data-en="">The Researcher's Route</span></a> · <a href="../for-operators/"><span data-zh="">运维上线路线</span><span data-en="">The Operator's Route</span></a> · <a href="../for-consumers/"><span data-zh="">普通消费者路线</span><span data-en="">The Everyday User's Route</span></a> · <a href="../for-creators/"><span data-zh="">图像 / 视频 / 音频创作者路线</span><span data-en="">The Image / Video / Audio Creator's Route</span></a> · <a href="../for-safety-review/"><span data-zh="">安全与合规评审路线</span><span data-en="">The Safety and Compliance Review Route</span></a> · <a href="../for-eval-builders/"><span data-zh="">评测与质量路线</span><span data-en="">The Evaluation and Quality Route</span></a> · <a href="../for-robotics/"><span data-zh="">机器人软件与学习路线</span><span data-en="">Robot software and learning route</span></a> · <a href="../for-office/"><span data-zh="">办公与写作路线</span><span data-en="">The Office Route</span></a> · <a href="../for-data/"><span data-zh="">数据与 RAG 路线</span><span data-en="">The Data &amp; RAG Route</span></a> · <a href="../for-teachers/"><span data-zh="">教师与课堂路线</span><span data-en="">The Teacher Route</span></a></p>
+</div>
+</article>
+</div>
+</main>
+<footer class="site-footer foot-single">
+<div class="container foot-line">
+<div class="foot-brand">
+<span class="foot-brand-main">
+<span aria-hidden="true" class="brand-dot"></span>
+<span class="foot-copy"><span data-zh="">投机取巧 · specul.com</span><span data-en="">Specul · specul.com</span></span>
+</span>
+<span class="foot-license"><a href="https://specul.com/LICENSE-CONTENT.txt"><span data-zh="">内容 CC BY 4.0</span><span data-en="">Content CC BY 4.0</span></a><span aria-hidden="true" class="sep">·</span><a href="https://specul.com/LICENSE.txt"><span data-zh="">代码 MIT</span><span data-en="">Code MIT</span></a><span aria-hidden="true" class="sep">·</span><a class="foot-source" href="https://github.com/speculcom/ai-handbook" rel="noopener" target="_blank"><span data-zh="">源码</span><span data-en="">Source</span></a></span>
+</div>
+<nav aria-label="Footer site links" class="foot-sites">
+<a class="site-link" href="https://specul.com/"><span data-zh="">首页</span><span data-en="">Home</span></a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://learn.specul.com/"><span data-zh="">学 AI</span><span data-en="">Learn</span></a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://tools.specul.com/"><span data-zh="">工具</span><span data-en="">Tools</span></a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://models.specul.com/"><span data-zh="">模型</span><span data-en="">Models</span></a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://demos.specul.com/"><span data-zh="">演示</span><span data-en="">Demos</span></a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://oss.specul.com/"><span data-zh="">开源</span><span data-en="">OSS</span></a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://hardware.specul.com/"><span data-zh="">算力</span><span data-en="">Compute</span></a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://papers.specul.com/"><span data-zh="">论文</span><span data-en="">Papers</span></a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://chain.specul.com/"><span data-zh="">链</span><span data-en="">Chain</span></a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://nav.specul.com/"><span data-zh="">导航</span><span data-en="">Directory</span></a>
+</nav>
+<nav aria-label="Legal and corrections" class="foot-legal">
+<a href="https://specul.com/legal.html"><span data-zh="">法律</span><span data-en="">Legal</span></a><span aria-hidden="true" class="sep">·</span>
+<a href="https://specul.com/legal.html#s8"><span data-zh="">隐私</span><span data-en="">Privacy</span></a><span aria-hidden="true" class="sep">·</span>
+<a href="https://specul.com/correct.html"><span data-zh="">纠错</span><span data-en="">Corrections</span></a>
+</nav>
+</div>
+</footer>
+<nav aria-label="快捷导航" class="nav-tabbar nav-tabbar-1row">
+<a href="https://specul.com/"><span aria-hidden="true" class="ti">◎</span><span data-zh="">首页</span><span data-en="">Home</span></a>
+<a aria-current="page" href="https://learn.specul.com/"><span aria-hidden="true" class="ti">▤</span><span data-zh="">学AI</span><span data-en="">Learn</span></a>
+<a href="https://tools.specul.com/"><span aria-hidden="true" class="ti">◈</span><span data-zh="">工具</span><span data-en="">Tools</span></a>
+<a href="https://models.specul.com/"><span aria-hidden="true" class="ti">▦</span><span data-zh="">模型</span><span data-en="">Models</span></a>
+<a href="https://demos.specul.com/"><span aria-hidden="true" class="ti">▷</span><span data-zh="">演示</span><span data-en="">Demos</span></a>
+<a href="https://oss.specul.com/"><span aria-hidden="true" class="ti">▧</span><span data-zh="">开源</span><span data-en="">OSS</span></a>
+<a href="https://hardware.specul.com/"><span aria-hidden="true" class="ti">▣</span><span data-zh="">算力</span><span data-en="">Chips</span></a>
+<a href="https://papers.specul.com/"><span aria-hidden="true" class="ti">▥</span><span data-zh="">论文</span><span data-en="">Papers</span></a>
+<a href="https://chain.specul.com/"><span aria-hidden="true" class="ti">◇</span><span data-zh="">链</span><span data-en="">Chain</span></a>
+<a data-nav-group="external" href="https://nav.specul.com/"><span aria-hidden="true" class="ti">↗</span><span data-zh="">导航</span><span data-en="">Nav</span></a>
 </nav>
 </body>
 </html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html data-lang="en" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>Lesson - Local Deployment and VRAM Estimation | Learn AI</title>
+<meta content="Lesson plan · about 15 min · refs checked 2026-11-07 (reference links and dates only)" name="description"/>
+<link href="https://learn.specul.com/en/guide/课堂-本地部署与显存估算/" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="Learn AI" property="og:site_name"/>
+<meta content="https://learn.specul.com/en/guide/课堂-本地部署与显存估算/" property="og:url"/>
+<meta content="Lesson - Local Deployment and VRAM Estimation | Learn AI" property="og:title"/>
+<meta content="Lesson plan · about 15 min · refs checked 2026-11-07 (reference links and dates only)" property="og:description"/>
+<meta content="#16121f" name="theme-color"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" rel="icon" type="image/svg+xml"/>
+<script src="/brand.js"></script>
+<script defer="" src="/data/paths.js"></script>
+<script defer="" src="/data/reading.js"></script>
+<link href="/brand.css" rel="stylesheet"/>
+<link href="/learn.css" rel="stylesheet"/>
+<style>:root { --accent: var(--gold); }</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LearningResource","name":"Lesson - Local Deployment and VRAM Estimation | Learn AI","description":"Lesson plan · about 15 min · refs checked 2026-11-07 (reference links and dates only)","url":"https://learn.specul.com/en/guide/课堂-本地部署与显存估算/","inLanguage":"en","teaches":["能把显存需求拆成权重、KV 缓存与运行时开销，并说明每项随什么变化。","能用参数量与量化位宽做权重量级的算术估算，并标明这是估算。","能读懂运行器占用输出，判断是否发生 CPU 与 GPU 混合加载。","能给出装不下时的三条备选路径，并说明各自代价。"]}</script>
+<meta content="en_US" property="og:locale"/><meta content="zh_CN" property="og:locale:alternate"/><meta content="Lesson - Local Deployment and VRAM Estimation | Learn AI" name="twitter:title"/><meta content="Lesson plan · about 15 min · refs checked 2026-11-07 (reference links and dates only)" name="twitter:description"/><link href="https://learn.specul.com/guide/课堂-本地部署与显存估算/" hreflang="zh-CN" rel="alternate"/><link href="https://learn.specul.com/en/guide/课堂-本地部署与显存估算/" hreflang="en" rel="alternate"/><link href="https://learn.specul.com/guide/课堂-本地部署与显存估算/" hreflang="x-default" rel="alternate"/></head>
+<body class="brand-ambient has-tabbar has-tabbar-1row" style="--accent:var(--gold)">
+<a class="t-skip" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="container site-bar">
+<a class="brand" href="https://specul.com/en/" title="投机取巧">
+<span aria-hidden="true" class="brand-dot"></span>
+<span class="brand-text">
+<span class="brand-name" id="markName">Speculative Speculation</span>
+<span class="brand-sub" id="markSub"></span>
+</span>
+</a>
+<nav aria-label="站点导航" class="nav-links">
+<a href="https://specul.com/en/">Home</a>
+<a aria-current="page" href="https://learn.specul.com/en/">Learn</a>
+<a href="https://tools.specul.com/en/">Tools</a>
+<a href="https://models.specul.com/en/">Models</a>
+<a href="https://demos.specul.com/en/">Playground</a>
+<a href="https://oss.specul.com/en/">OSS</a>
+<a href="https://hardware.specul.com/en/">Compute</a>
+<a href="https://papers.specul.com/en/">AI Papers</a>
+<a href="https://chain.specul.com/en/">Chain</a>
+<a href="https://nav.specul.com/en/">AI Directory</a>
+</nav>
+<!-- 2026-10-10：.nav-tools 从 nav 元素**内部**移到外面，与 .nav-links 平级。
+           放里面时窄屏下它会跟着链接一起换行：链接占满整行 → 按钮被挤到第三条
+           （实测顶栏 134px、按钮组孤零零一行）。移出来后它与品牌同行，
+           链接独占第二行居中 —— 这才是下面注释里方案 B 想要的样子。 -->
+<span class="nav-tools">
+<a aria-label="Search" class="icon-btn" href="https://specul.com/en/search.html" title="Search all sites"><span aria-hidden="true">⌕</span></a>
+<button aria-label="切换明暗主题" class="icon-btn" id="themeBtn" title="切换明暗主题" type="button">☾</button>
+<a aria-label="切换到中文" class="icon-btn" href="/guide/课堂-本地部署与显存估算/" hreflang="zh-CN" id="langBtn" lang="zh-CN" title="切换到中文">中文</a>
+</span>
+<!-- B6（2026-10-09）：窄屏（≤900px）下 .nav-links 会隐藏，这个汉堡是替代入口。
+           行为在共享 brand.js 里（一处实现、十站共用），样式在共享 brand.css。
+           无脚本时 CSS 不会显示它，而是把 .nav-links 在窄屏放出来 —— 不会出现
+           「导航被藏进一个点了没反应的按钮」。 -->
+<button aria-controls="navDrawer" aria-expanded="false" aria-label="打开菜单" class="nav-burger" type="button">
+<i></i><i></i><i></i>
+</button>
+</div>
+</header>
+<div class="nav-scrim"></div>
+<aside aria-hidden="true" aria-label="站点导航" class="nav-drawer" id="navDrawer">
+<div class="nav-drawer-h">
+<span class="brand-name">Speculative Speculation</span>
+<span class="brand-sub"></span>
+<button aria-label="关闭" class="nav-dclose" type="button">×</button>
+</div>
+<nav class="nav-drawer-list">
+<a href="https://specul.com/en/"><span>Home</span><span aria-hidden="true" class="ar">→</span></a>
+<a aria-current="page" href="https://learn.specul.com/en/"><span>Learn</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://tools.specul.com/en/"><span>Tools</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://models.specul.com/en/"><span>Models</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://demos.specul.com/en/"><span>Playground</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://oss.specul.com/en/"><span>OSS</span><span aria-hidden="true" class="ar">→</span></a>
+<a class="nav-group-start" href="https://hardware.specul.com/en/"><span>Compute</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://papers.specul.com/en/"><span>AI Papers</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://chain.specul.com/en/"><span>Chain</span><span aria-hidden="true" class="ar">→</span></a>
+<a class="nav-group-start" data-nav-group="external" href="https://nav.specul.com/en/"><span>AI Directory</span><span aria-hidden="true" class="ar">↗</span></a>
+</nav>
+<div class="nav-drawer-foot">
+<p>Content sites cover learn, use, choose and run; AI Directory is a catalogue of off-site AI sites.</p>
+<nav><a href="https://specul.com/en/legal.html">Legal terms</a></nav>
+</div>
+</aside>
+<main id="main">
+<div class="container">
+<article class="tp tp-wrap">
+<nav aria-label="面包屑" class="tp-crumbs">
+<a href="/en/">← Term map</a>
+<span aria-hidden="true">·</span>
+<a href="/en/#layer-5">Stage 5 · Running It</a>
+<span aria-hidden="true">·</span>
+<span>Lesson plan</span>
+</nav>
+<h1>Lesson - Local Deployment and VRAM Estimation</h1>
+<p class="tp-en">Lesson plan · about 15 min · refs checked 2026-11-07 (reference links and dates only)</p>
+<p class="tp-p">Learners build an estimate from weights, KV cache and runtime overhead, check it against runner occupancy output, and separate can start, can run and can finish answering.</p>
+<div class="tp-sec">
+<div class="tp-lab">Lesson objectives</div>
+
+
+Split VRAM demand into weights, KV cache and runtime overhead, and explain what each varies with.
+Make an arithmetic weight estimate from parameter count and quantisation bit width, and label it as an estimate.
+Read runner occupancy output and judge whether CPU and GPU mixed loading occurs.
+Give three fallback paths when the model does not fit and state the cost of each.
+
+</div>
+<div class="tp-sec">
+<div class="tp-lab">Materials</div>
+
+
+llama.cpp official README: 1.5 to 8-bit integer quantisation and CPU plus GPU hybrid inference.
+Ollama official FAQ: the PROCESSOR column in ollama ps and the num_ctx context setting.
+Hugging Face Transformers KV cache documentation in the repository source: cache occupancy, offloading and quantised cache.
+An estimate sheet: parameter count, bit width, context length, batch size, available VRAM and available RAM.
+
+</div>
+<div class="tp-sec">
+<div class="tp-lab">Steps</div>
+<ol>
+3-minute weights: multiply parameter count by bytes per parameter and write the bit-width assumption and formula.
+4-minute cache and overhead: mark items that vary with context length and batch size, and leave headroom.
+4-minute occupancy check: read example output from official docs and judge loading location and whether offloading is needed.
+4-minute fallbacks: smaller model, lower quantisation tier and partial offloading each get one cost and one next-step test condition.
+</ol>
+</div>
+<div class="tp-sec">
+<div class="tp-lab">Common misconceptions</div>
+
+
+Assuming that if weights fit the model runs fast; cache and offloading change speed and latency.
+Assuming quantisation only saves VRAM; official docs describe a memory-speed tradeoff and quality must be checked on your own task.
+Assuming local deployment equals data compliance; logs, permissions and outbound paths still matter.
+Treating occupancy numbers in documentation examples as results on your machine; hardware and settings differ.
+
+</div>
+<div class="tp-sec">
+<div class="tp-lab">Assessment checks</div>
+
+
+The estimate sheet has all three items, each with assumptions and sources, and the formula can be checked.
+Learners can distinguish estimate from measurement and state which conditions must be fixed for the next measurement.
+Fallback paths include costs, do not write best, and do not promise specific speed numbers.
+
+</div>
+<section class="tp-sec"><h2>Example and interpretation</h2><p class="t-sm">A teaching scenario, not a measured or executed site test.</p><p class="tp-p">Class exercise: estimate the weight magnitude of a 7B model at 4-bit, then list KV cache and runtime overhead separately. If available VRAM only covers weights, do not write can run; write that offloading and latency must be checked.</p></section>
+<section class="tp-sec diagnostic-guide"><h2>How to check your practice</h2><p>Explain the example in your own words, inspect input constraints, then verify against the source. Revisit concepts if you cannot explain why; supply missing dates, fields or permissions; withdraw unsupported conclusions.</p><p><a href="/en/#diagnose-concept">For this topic, start with concept confusion</a> · <a href="/en/#diagnose">See all six scenarios and their reasoning</a></p></section>
+<div class="tp-sec">
+<div class="tp-lab">Terms behind this</div>
+<p class="tp-p"><a class="t-guidechip" href="/en/term/%E6%98%BE%E5%AD%98/">VRAM</a> <a class="t-guidechip" href="/en/term/%E9%87%8F%E5%8C%96/">Quantization</a> <a class="t-guidechip" href="/en/term/KV%20%E7%BC%93%E5%AD%98/">KV Cache</a> <a class="t-guidechip" href="/en/term/GPU%20%E5%B1%82%E5%8D%B8%E8%BD%BD/">-ngl / Offload</a> <a class="t-guidechip" href="/en/term/%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2/">Local Deployment</a></p>
+</div>
+<div class="tp-sec">
+<div class="tp-lab">Sources</div>
+<ul class="tp-refs">
+<li>llama.cpp official README (repository source) <a href="https://raw.githubusercontent.com/ggml-org/llama.cpp/master/README.md" rel="noopener" target="_blank">↗</a></li>
+<li>Ollama official FAQ <a href="https://docs.ollama.com/faq" rel="noopener" target="_blank">↗</a></li>
+<li>Hugging Face Transformers: KV cache docs (repository source) <a href="https://raw.githubusercontent.com/huggingface/transformers/main/docs/source/en/kv_cache.md" rel="noopener" target="_blank">↗</a></li>
+</ul>
+</div>
+<div class="tp-sec">
+<div class="tp-lab">More on these concepts</div>
+<p class="tp-p"><a href="/en/guide/AI%20%E5%B8%B8%E8%A7%81%E8%AF%AF%E5%8C%BA%E6%80%BB%E7%B4%A2%E5%BC%95/">AI Misconceptions: Index</a> · <a href="/en/guide/%E9%87%8F%E5%8C%96%E3%80%81%E8%92%B8%E9%A6%8F%E3%80%81%E5%89%AA%E6%9E%9D%E7%9A%84%E5%8C%BA%E5%88%AB/">Quantisation vs Distillation vs Pruning</a> · <a href="/en/guide/%E9%87%8F%E5%8C%96%E4%BC%9A%E8%AE%A9%E6%A8%A1%E5%9E%8B%E5%8F%98%E7%AC%A8%E4%B8%80%E5%8D%8A/">Quantisation Halves the Quality</a> · <a href="/en/guide/%E6%98%BE%E5%AD%98%E4%B8%8D%E5%A4%9F%E5%B0%B1%E8%B7%91%E4%B8%8D%E4%BA%86/">Not Enough VRAM Means It Will Not Run</a></p>
+</div>
+</article>
+</div>
+</main>
+<footer class="site-footer foot-single">
+<div class="container foot-line">
+<div class="foot-brand">
+<span class="foot-brand-main">
+<span aria-hidden="true" class="brand-dot"></span>
+<span class="foot-copy">Specul · specul.com</span>
+</span>
+<span class="foot-license"><a href="https://specul.com/LICENSE-CONTENT.txt">Content CC BY 4.0</a><span aria-hidden="true" class="sep">·</span><a href="https://specul.com/LICENSE.txt">Code MIT</a><span aria-hidden="true" class="sep">·</span><a class="foot-source" href="https://github.com/speculcom/ai-handbook" rel="noopener" target="_blank">Source</a></span>
+</div>
+<nav aria-label="Footer site links" class="foot-sites">
+<a class="site-link" href="https://specul.com/en/">Home</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://learn.specul.com/en/">Learn</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://tools.specul.com/en/">Tools</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://models.specul.com/en/">Models</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://demos.specul.com/en/">Demos</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://oss.specul.com/en/">OSS</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://hardware.specul.com/en/">Compute</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://papers.specul.com/en/">Papers</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://chain.specul.com/en/">Chain</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://nav.specul.com/en/">Directory</a>
+</nav>
+<nav aria-label="Legal and corrections" class="foot-legal">
+<a href="https://specul.com/en/legal.html">Legal</a><span aria-hidden="true" class="sep">·</span>
+<a href="https://specul.com/en/legal.html#s8">Privacy</a><span aria-hidden="true" class="sep">·</span>
+<a href="https://specul.com/en/correct.html">Corrections</a>
+</nav>
+</div>
+</footer>
+<nav aria-label="快捷导航" class="nav-tabbar nav-tabbar-1row">
+<a href="https://specul.com/en/"><span aria-hidden="true" class="ti">◎</span>Home</a>
+<a aria-current="page" href="https://learn.specul.com/en/"><span aria-hidden="true" class="ti">▤</span>Learn</a>
+<a href="https://tools.specul.com/en/"><span aria-hidden="true" class="ti">◈</span>Tools</a>
+<a href="https://models.specul.com/en/"><span aria-hidden="true" class="ti">▦</span>Models</a>
+<a href="https://demos.specul.com/en/"><span aria-hidden="true" class="ti">▷</span>Demos</a>
+<a href="https://oss.specul.com/en/"><span aria-hidden="true" class="ti">▧</span>OSS</a>
+<a href="https://hardware.specul.com/en/"><span aria-hidden="true" class="ti">▣</span>Chips</a>
+<a href="https://papers.specul.com/en/"><span aria-hidden="true" class="ti">▥</span>Papers</a>
+<a href="https://chain.specul.com/en/"><span aria-hidden="true" class="ti">◇</span>Chain</a>
+<a data-nav-group="external" href="https://nav.specul.com/en/"><span aria-hidden="true" class="ti">↗</span>Nav</a>
+</nav>
+</body>
+</html>

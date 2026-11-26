@@ -1,201 +1,192 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>智能体 / Agent · 学 AI | 投机取巧</title>
-  <meta name="description" content="让模型不止回答，还能自己动手。调工具、查资料、写文件，循环执行直到完成。 给模型配上目标、工具和循环，让它自主执行多步骤任务的一套做法。 这是本站 harness 分区存在的全部理由。如果你只需要问答，不需要 Agent。" />
-  <link rel="canonical" href="https://learn.specul.com/term/%E6%99%BA%E8%83%BD%E4%BD%93%20-%20Agent/" />
-  <meta property="og:type" content="article" />
-  <meta property="og:site_name" content="学 AI" />
-  <meta property="og:url" content="https://learn.specul.com/term/%E6%99%BA%E8%83%BD%E4%BD%93%20-%20Agent/" />
-  <meta property="og:title" content="智能体 / Agent · 学 AI" />
-  <meta property="og:description" content="让模型不止回答，还能自己动手。调工具、查资料、写文件，循环执行直到完成。 给模型配上目标、工具和循环，让它自主执行多步骤任务的一套做法。 这是本站 harness 分区存在的全部理由。如果你只需要问答，不需要 Agent。" />
-  <meta name="theme-color" content="#16121f" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
-  <script src="../../brand.js?v=37d1072be69b"></script>
-  <script defer src="../../data/paths.js"></script>
-  <script defer src="../../data/reading.js"></script>
-  <link rel="stylesheet" href="../../brand.css?v=37d1072be69b" />
-  <link rel="stylesheet" href="../../learn.css" />
-  <style>:root { --accent: var(--cyan); }</style>
-  <!-- B5：词条页的结构性数据（DefinedTerm） -->
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTerm","name":"智能体 / Agent","alternateName":"Agent","description":"让模型不止回答，还能自己动手。调工具、查资料、写文件，循环执行直到完成。","url":"https://learn.specul.com/term/%E6%99%BA%E8%83%BD%E4%BD%93%20-%20Agent/","inLanguage":"zh-Hans","inDefinedTermSet":{"@type":"DefinedTermSet","name":"学 AI · 第三段（用深）","url":"https://learn.specul.com/#layer-3"},"isPartOf":{"@type":"WebSite","name":"学 AI","url":"https://learn.specul.com/"}}</script>
-</head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>智能体 / Agent · 学 AI | 投机取巧</title>
+<meta content="让模型不止回答，还能自己动手。调工具、查资料、写文件，循环执行直到完成。 给模型配上目标、工具和循环，让它自主执行多步骤任务的一套做法。 这是本站 harness 分区存在的全部理由。如果你只需要问答，不需要 Agent。" name="description"/>
+<link href="https://learn.specul.com/term/%E6%99%BA%E8%83%BD%E4%BD%93%20-%20Agent/" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="学 AI" property="og:site_name"/>
+<meta content="https://learn.specul.com/term/%E6%99%BA%E8%83%BD%E4%BD%93%20-%20Agent/" property="og:url"/>
+<meta content="智能体 / Agent · 学 AI" property="og:title"/>
+<meta content="让模型不止回答，还能自己动手。调工具、查资料、写文件，循环执行直到完成。 给模型配上目标、工具和循环，让它自主执行多步骤任务的一套做法。 这是本站 harness 分区存在的全部理由。如果你只需要问答，不需要 Agent。" property="og:description"/>
+<meta content="#16121f" name="theme-color"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" rel="icon" type="image/svg+xml"/>
+<script src="../../brand.js?v=37d1072be69b"></script>
+<script defer="" src="../../data/paths.js"></script>
+<script defer="" src="../../data/reading.js"></script>
+<link href="../../brand.css?v=37d1072be69b" rel="stylesheet"/>
+<link href="../../learn.css" rel="stylesheet"/>
+<style>:root { --accent: var(--cyan); }</style>
+<!-- B5：词条页的结构性数据（DefinedTerm） -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTerm","name":"智能体 / Agent","alternateName":"Agent","description":"让模型不止回答，还能自己动手。调工具、查资料、写文件，循环执行直到完成。","url":"https://learn.specul.com/term/%E6%99%BA%E8%83%BD%E4%BD%93%20-%20Agent/","inLanguage":"zh-Hans","inDefinedTermSet":{"@type":"DefinedTermSet","name":"学 AI · 第三段（用深）","url":"https://learn.specul.com/#layer-3"},"isPartOf":{"@type":"WebSite","name":"学 AI","url":"https://learn.specul.com/"}}</script>
+<link href="https://learn.specul.com/term/智能体 - Agent/" hreflang="zh-CN" rel="alternate"/><link href="https://learn.specul.com/en/term/智能体 - Agent/" hreflang="en" rel="alternate"/><link href="https://learn.specul.com/term/智能体 - Agent/" hreflang="x-default" rel="alternate"/></head>
 <body class="brand-ambient has-tabbar has-tabbar-1row" style="--accent:var(--cyan)">
-  <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
-  <header class="site-header">
-    <div class="container site-bar">
-      <a class="brand" href="https://specul.com/" title="投机取巧">
-        <span class="brand-dot" aria-hidden="true"></span>
-        <span class="brand-text">
-          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
-          <span class="brand-sub" id="markSub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
-        </span>
-      </a>
-      <nav class="nav-links" aria-label="站点导航">
-        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
-        <a href="https://learn.specul.com/" aria-current="page"><span data-zh>学 AI</span><span data-en>Learn</span></a>
-        <a href="https://tools.specul.com/"><span data-zh>工具</span><span data-en>Tools</span></a>
-        <a href="https://models.specul.com/"><span data-zh>模型</span><span data-en>Models</span></a>
-        <a href="https://demos.specul.com/"><span data-zh>作品演示</span><span data-en>Playground</span></a>
-        <a href="https://oss.specul.com/"><span data-zh>开源库</span><span data-en>OSS</span></a>
-        <a href="https://hardware.specul.com/"><span data-zh>硬件算力</span><span data-en>Compute</span></a>
-        <a href="https://papers.specul.com/"><span data-zh>AI 论文</span><span data-en>AI Papers</span></a>
-        <a href="https://chain.specul.com/"><span data-zh>链</span><span data-en>Chain</span></a>
-        <a href="https://nav.specul.com/"><span data-zh>AI 导航</span><span data-en>AI Directory</span></a>
-      </nav>
-      <!-- 2026-10-10：.nav-tools 从 nav 元素**内部**移到外面，与 .nav-links 平级。
+<a class="t-skip" href="#main"><span data-zh="">跳到主要内容</span><span data-en="">Skip to main content</span></a>
+<header class="site-header">
+<div class="container site-bar">
+<a class="brand" href="https://specul.com/" title="投机取巧">
+<span aria-hidden="true" class="brand-dot"></span>
+<span class="brand-text">
+<span class="brand-name" data-en-name="Speculative Speculation" data-zh-name="投机取巧" id="markName">投机取巧</span>
+<span class="brand-sub" data-en-sub="" data-zh-sub="Speculative Speculation" id="markSub">Speculative Speculation</span>
+</span>
+</a>
+<nav aria-label="站点导航" class="nav-links">
+<a href="https://specul.com/"><span data-zh="">首页</span><span data-en="">Home</span></a>
+<a aria-current="page" href="https://learn.specul.com/"><span data-zh="">学 AI</span><span data-en="">Learn</span></a>
+<a href="https://tools.specul.com/"><span data-zh="">工具</span><span data-en="">Tools</span></a>
+<a href="https://models.specul.com/"><span data-zh="">模型</span><span data-en="">Models</span></a>
+<a href="https://demos.specul.com/"><span data-zh="">作品演示</span><span data-en="">Playground</span></a>
+<a href="https://oss.specul.com/"><span data-zh="">开源库</span><span data-en="">OSS</span></a>
+<a href="https://hardware.specul.com/"><span data-zh="">硬件算力</span><span data-en="">Compute</span></a>
+<a href="https://papers.specul.com/"><span data-zh="">AI 论文</span><span data-en="">AI Papers</span></a>
+<a href="https://chain.specul.com/"><span data-zh="">链</span><span data-en="">Chain</span></a>
+<a href="https://nav.specul.com/"><span data-zh="">AI 导航</span><span data-en="">AI Directory</span></a>
+</nav>
+<!-- 2026-10-10：.nav-tools 从 nav 元素**内部**移到外面，与 .nav-links 平级。
            放里面时窄屏下它会跟着链接一起换行：链接占满整行 → 按钮被挤到第三条
            （实测顶栏 134px、按钮组孤零零一行）。移出来后它与品牌同行，
            链接独占第二行居中 —— 这才是下面注释里方案 B 想要的样子。 -->
-      <span class="nav-tools">
-        <a class="icon-btn" href="https://specul.com/search.html" aria-label="搜索" data-ui-aria-label-zh="搜索" data-ui-aria-label-en="Search" title="搜索全站" data-ui-title-zh="搜索全站" data-ui-title-en="Search all sites"><span aria-hidden="true">⌕</span></a>
-        <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
-        <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
-      </span>
-      <!-- B6（2026-10-09）：窄屏（≤900px）下 .nav-links 会隐藏，这个汉堡是替代入口。
+<span class="nav-tools">
+<a aria-label="搜索" class="icon-btn" data-ui-aria-label-en="Search" data-ui-aria-label-zh="搜索" data-ui-title-en="Search all sites" data-ui-title-zh="搜索全站" href="https://specul.com/search.html" title="搜索全站"><span aria-hidden="true">⌕</span></a>
+<button aria-label="切换明暗主题" class="icon-btn" id="themeBtn" title="切换明暗主题" type="button">☾</button>
+<a aria-label="Switch to English" class="icon-btn" href="/en/term/智能体 - Agent/" hreflang="en" id="langBtn" lang="en" title="Switch to English">EN</a>
+</span>
+<!-- B6（2026-10-09）：窄屏（≤900px）下 .nav-links 会隐藏，这个汉堡是替代入口。
            行为在共享 brand.js 里（一处实现、十站共用），样式在共享 brand.css。
            无脚本时 CSS 不会显示它，而是把 .nav-links 在窄屏放出来 —— 不会出现
            「导航被藏进一个点了没反应的按钮」。 -->
-      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
-        <i></i><i></i><i></i>
-      </button>
-    </div>
-  </header>
-  <div class="nav-scrim"></div>
-  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
-    <div class="nav-drawer-h">
-      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
-      <span class="brand-sub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
-      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
-    </div>
-    <nav class="nav-drawer-list">
-      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://learn.specul.com/" aria-current="page"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://tools.specul.com/"><span><span data-zh>工具</span><span data-en>Tools</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://models.specul.com/"><span><span data-zh>模型</span><span data-en>Models</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://demos.specul.com/"><span><span data-zh>作品演示</span><span data-en>Playground</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://oss.specul.com/"><span><span data-zh>开源库</span><span data-en>OSS</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://hardware.specul.com/" class="nav-group-start"><span><span data-zh>硬件算力</span><span data-en>Compute</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://papers.specul.com/"><span><span data-zh>AI 论文</span><span data-en>AI Papers</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://chain.specul.com/"><span><span data-zh>链</span><span data-en>Chain</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://nav.specul.com/" class="nav-group-start" data-nav-group="external"><span><span data-zh>AI 导航</span><span data-en>AI Directory</span></span><span class="ar" aria-hidden="true">↗</span></a>
-    </nav>
-    <div class="nav-drawer-foot">
-      <p><span data-zh>内容站覆盖学、用、选、跑；AI 导航是站外的 AI 网站目录，点出去看。</span><span data-en>Content sites cover learn, use, choose and run; AI Directory is a catalogue of off-site AI sites.</span></p>
-      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
-    </div>
-  </aside>
-  <main id="main">
-    <div class="container">
-      <article class="tp tp-wrap">
-        <nav class="tp-crumbs" aria-label="面包屑">
-          <a href="../../"><span data-zh>← 名词地图</span><span data-en>← Term map</span></a>
-          <span aria-hidden="true">·</span>
-          <a href="../../#layer-3"><span data-zh>用深</span><span data-en>Going Deeper</span></a>
-        </nav>
-        <h1><span data-zh>智能体 / Agent</span><span data-en>Agent</span></h1>
-        <p class="tp-en">Agent</p>
-        <ul class="tp-tags">
-          <li class="tp-tag"><span data-zh>智能体</span><span data-en>Agents</span></li>
-          <li class="tp-tag"><span data-zh>第三段 · 用深</span><span data-en>Stage 3 · Going Deeper</span></li>
-          <li class="tp-tag"><span data-zh>引用核验 2026-11-09</span><span data-en>refs checked 2026-11-09</span></li>
-        </ul>
-
-        <div class="tp-sec">
-          <div class="tp-lab"><span data-zh>解决什么问题</span><span data-en>What problem it solves</span></div>
-          <p class="tp-p"><span data-zh>让模型不止回答，还能自己动手。调工具、查资料、写文件，循环执行直到完成。</span><span data-en>Stop answering and start acting: let the model take multi-step actions on its own.</span></p>
-        </div>
-
-        <div class="tp-sec">
-          <div class="tp-lab"><span data-zh>这是什么</span><span data-en>What it is</span></div>
-<span data-zh>
-      <p class="tp-li">给模型配上目标、工具和循环，让它自主执行多步骤任务的一套做法。</p>
-      <p class="tp-li">关键区别：普通问答是「你问一句它答一句」。Agent 是「给它一件事，它自己走到完成」。</p>
+<button aria-controls="navDrawer" aria-expanded="false" aria-label="打开菜单" class="nav-burger" type="button">
+<i></i><i></i><i></i>
+</button>
+</div>
+</header>
+<div class="nav-scrim"></div>
+<aside aria-hidden="true" aria-label="站点导航" class="nav-drawer" id="navDrawer">
+<div class="nav-drawer-h">
+<span class="brand-name"><span data-zh="">投机取巧</span><span data-en="">Speculative Speculation</span></span>
+<span class="brand-sub" data-en-sub="" data-zh-sub="Speculative Speculation">Speculative Speculation</span>
+<button aria-label="关闭" class="nav-dclose" type="button">×</button>
+</div>
+<nav class="nav-drawer-list">
+<a href="https://specul.com/"><span><span data-zh="">首页</span><span data-en="">Home</span></span><span aria-hidden="true" class="ar">→</span></a>
+<a aria-current="page" href="https://learn.specul.com/"><span><span data-zh="">学 AI</span><span data-en="">Learn</span></span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://tools.specul.com/"><span><span data-zh="">工具</span><span data-en="">Tools</span></span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://models.specul.com/"><span><span data-zh="">模型</span><span data-en="">Models</span></span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://demos.specul.com/"><span><span data-zh="">作品演示</span><span data-en="">Playground</span></span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://oss.specul.com/"><span><span data-zh="">开源库</span><span data-en="">OSS</span></span><span aria-hidden="true" class="ar">→</span></a>
+<a class="nav-group-start" href="https://hardware.specul.com/"><span><span data-zh="">硬件算力</span><span data-en="">Compute</span></span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://papers.specul.com/"><span><span data-zh="">AI 论文</span><span data-en="">AI Papers</span></span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://chain.specul.com/"><span><span data-zh="">链</span><span data-en="">Chain</span></span><span aria-hidden="true" class="ar">→</span></a>
+<a class="nav-group-start" data-nav-group="external" href="https://nav.specul.com/"><span><span data-zh="">AI 导航</span><span data-en="">AI Directory</span></span><span aria-hidden="true" class="ar">↗</span></a>
+</nav>
+<div class="nav-drawer-foot">
+<p><span data-zh="">内容站覆盖学、用、选、跑；AI 导航是站外的 AI 网站目录，点出去看。</span><span data-en="">Content sites cover learn, use, choose and run; AI Directory is a catalogue of off-site AI sites.</span></p>
+<nav><a href="https://specul.com/legal.html"><span data-zh="">法律条款</span><span data-en="">Legal terms</span></a></nav>
+</div>
+</aside>
+<main id="main">
+<div class="container">
+<article class="tp tp-wrap">
+<nav aria-label="面包屑" class="tp-crumbs">
+<a href="../../"><span data-zh="">← 名词地图</span><span data-en="">← Term map</span></a>
+<span aria-hidden="true">·</span>
+<a href="../../#layer-3"><span data-zh="">用深</span><span data-en="">Going Deeper</span></a>
+</nav>
+<h1><span data-zh="">智能体 / Agent</span><span data-en="">Agent</span></h1>
+<p class="tp-en">Agent</p>
+<ul class="tp-tags">
+<li class="tp-tag"><span data-zh="">智能体</span><span data-en="">Agents</span></li>
+<li class="tp-tag"><span data-zh="">第三段 · 用深</span><span data-en="">Stage 3 · Going Deeper</span></li>
+<li class="tp-tag"><span data-zh="">引用核验 2026-11-09</span><span data-en="">refs checked 2026-11-09</span></li>
+</ul>
+<div class="tp-sec">
+<div class="tp-lab"><span data-zh="">解决什么问题</span><span data-en="">What problem it solves</span></div>
+<p class="tp-p"><span data-zh="">让模型不止回答，还能自己动手。调工具、查资料、写文件，循环执行直到完成。</span><span data-en="">Stop answering and start acting: let the model take multi-step actions on its own.</span></p>
+</div>
+<div class="tp-sec">
+<div class="tp-lab"><span data-zh="">这是什么</span><span data-en="">What it is</span></div>
+<span data-zh="">
+<p class="tp-li">给模型配上目标、工具和循环，让它自主执行多步骤任务的一套做法。</p>
+<p class="tp-li">关键区别：普通问答是「你问一句它答一句」。Agent 是「给它一件事，它自己走到完成」。</p>
 </span>
-<span data-en>
-      <p class="tp-li" data-en>A system where a model plans, calls tools, reads results and repeats until the task is done, rather than replying once.</p>
+<span data-en="">
+<p class="tp-li" data-en="">A system where a model plans, calls tools, reads results and repeats until the task is done, rather than replying once.</p>
 </span>
-        </div>
-
-<div class="tp-sec"><figure class="tp-figure"><img src="../../assets/figures/fig-agent-loop.svg" alt="A goal → plan → tool call → observation → revise loop; permissions and budget bound it." loading="lazy" width="1200" height="600" /><figcaption><span data-zh>目标 → 计划 → 工具调用 → 观察 → 修正的循环；权限与预算决定循环边界。</span><span data-en>A goal → plan → tool call → observation → revise loop; permissions and budget bound it.</span></figcaption></figure></div>
-
-        <div class="tp-sec">
-          <div class="tp-lab"><span data-zh>为什么需要知道</span><span data-en>Why it matters</span></div>
-          <p class="tp-p"><span data-zh>这是本站 harness 分区存在的全部理由。如果你只需要问答，不需要 Agent。</span><span data-en>It is the difference between &quot;it tells you how&quot; and &quot;it does it for you&quot;. Most of the practical value in agents comes from tool use, not conversation.</span></p>
-        </div>
-      <div class="tp-sec"><div class="tp-lab"><span data-zh>别名</span><span data-en>Chinese aliases</span></div><p class="tp-p"><span data-zh>智能体 · 代理</span></p></div>
-
-<div class="tp-sec tp-related"><div class="tp-lab"><span data-zh>接着读什么，为什么</span><span data-en>What to read next, and why</span></div><ul><li><a href="../%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%BC%96%E6%8E%92/"><span data-zh>工作流编排</span><span data-en>Orchestration / Pipeline</span></a><p class="t-sm"><span data-zh>比较动态选择步骤与预先定义流程。</span><span data-en>Compare dynamically chosen steps with predefined flows.</span></p></li><li><a href="../%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><span data-zh>工具调用</span><span data-en>Tool Calling / Function Calling</span></a><p class="t-sm"><span data-zh>一起用于《怎么设计 Agent 的工具权限边界》</span><span data-en>Used together in “How to Set Tool Permissions for an Agent”</span></p></li><li><a href="../%E6%9D%83%E9%99%90/"><span data-zh>权限</span><span data-en>Permission</span></a><p class="t-sm"><span data-zh>一起用于《怎么设计 Agent 的工具权限边界》</span><span data-en>Used together in “How to Set Tool Permissions for an Agent”</span></p></li></ul></div>
-<div class="tp-sec"><div class="tp-lab"><span data-zh>相关指南</span><span data-en>Related guides</span></div><ul class="tp-refs"><li><a href="../../guide/%E6%80%8E%E4%B9%88%E8%AE%BE%E8%AE%A1%20Agent%20%E7%9A%84%E5%B7%A5%E5%85%B7%E6%9D%83%E9%99%90%E8%BE%B9%E7%95%8C/"><span data-zh>怎么设计 Agent 的工具权限边界</span><span data-en>How to Set Tool Permissions for an Agent</span></a></li><li><a href="../../guide/%E6%80%8E%E4%B9%88%E6%8A%8A%20AI%20%E6%8E%A5%E5%85%A5%E7%8E%B0%E6%9C%89%E5%8A%9E%E5%85%AC%E6%B5%81%E7%A8%8B/"><span data-zh>怎么把 AI 接入现有办公流程</span><span data-en>How to Put AI into an Existing Office Workflow</span></a></li></ul></div>
-
-      <div class="tp-sec">
-        <div class="tp-lab"><span data-zh>现在能做什么</span><span data-en>What you can do now</span></div>
-        <p class="tp-p"><a href="https://tools.specul.com/"><span data-zh>10 份 Agent 框架档案</span><span data-en>10 agent framework profiles</span> ↗</a></p>
-        <p class="tp-p"><a href="../../#layer-3"><span data-zh>回到名词地图看第3段的其他 75 个词 →</span><span data-en>Back to the map: the other 75 terms in stage 3 →</span></a></p>
-      </div>
-
-        <div class="tp-sec">
-          <div class="tp-lab"><span data-zh>出处</span><span data-en>Sources</span></div>
-          <ul class="tp-refs">
-      <li><span data-zh>10 份 Agent 框架档案</span><span data-en>10 agent framework profiles</span> <a href="https://tools.specul.com/" target="_blank" rel="noopener">↗</a></li>
-      <li><span data-zh>CrewAI 的角色分工</span><span data-en>CrewAI role division</span> <a href="https://tools.specul.com/framework/crewai.html" target="_blank" rel="noopener">↗</a></li>
-          </ul>
-        </div>
-
-        <nav class="tp-pn" aria-label="上下篇" data-ui-aria-label-zh="上下篇" data-ui-aria-label-en="Previous and next">
-          <a href="../%E8%A7%86%E8%A7%89%E8%AF%AD%E8%A8%80%E5%8A%A8%E4%BD%9C%E6%A8%A1%E5%9E%8B/"><span class="tp-ph"><span data-zh>上一篇</span><span data-en>Previous</span></span><span data-zh>视觉语言动作模型</span><span data-en>Vision-Language-Action Model</span></a>
-          <a href="../%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/" style="text-align:right"><span class="tp-ph"><span data-zh>下一篇</span><span data-en>Next</span></span><span data-zh>工具调用</span><span data-en>Tool Calling / Function Calling</span></a>
-        </nav>
-
-        <div class="tp-sec term-task-entry">
-          <div class="tp-lab"><span data-zh>用这个术语做任务</span><span data-en>Use this term in a task</span></div>
-          <p class="tp-p"><span data-zh>别停在定义：去任务手册看按什么顺序做、验收什么；或者按你手头的任务，筛 3 个工具候选。</span><span data-en>Don’t stop at the definition: use the task handbook for the order and checks, or filter three tool candidates for the job at hand.</span></p>
-          <p class="tp-p"><a href="https://tools.specul.com/guides/"><span data-zh>任务手册 →</span><span data-en>Task handbooks →</span></a>　·　<a href="https://tools.specul.com/finder/"><span data-zh>按任务筛 3 个候选 →</span><span data-en>Filter three candidates →</span></a></p>
-        </div>
-      </article>
-    </div>
-  </main>
-  <footer class="site-footer foot-single">
-    <div class="container foot-line">
-      <div class="foot-brand">
-        <span class="foot-brand-main">
-          <span class="brand-dot" aria-hidden="true"></span>
-          <span class="foot-copy"><span data-zh>投机取巧 · specul.com</span><span data-en>Specul · specul.com</span></span>
-        </span>
-        <span class="foot-license"><a href="https://specul.com/LICENSE-CONTENT.txt"><span data-zh>内容 CC BY 4.0</span><span data-en>Content CC BY 4.0</span></a><span class="sep" aria-hidden="true">·</span><a href="https://specul.com/LICENSE.txt"><span data-zh>代码 MIT</span><span data-en>Code MIT</span></a><span class="sep" aria-hidden="true">·</span><a class="foot-source" href="https://github.com/speculcom/ai-handbook" target="_blank" rel="noopener"><span data-zh>源码</span><span data-en>Source</span></a></span>
-      </div>
-      <nav class="foot-sites" aria-label="Footer site links">
-        <a class="site-link" href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a><span class="sep site-sep" aria-hidden="true">·</span>
-        <a class="site-link" href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a><span class="sep site-sep" aria-hidden="true">·</span>
-        <a class="site-link" href="https://tools.specul.com/"><span data-zh>工具</span><span data-en>Tools</span></a><span class="sep site-sep" aria-hidden="true">·</span>
-        <a class="site-link" href="https://models.specul.com/"><span data-zh>模型</span><span data-en>Models</span></a><span class="sep site-sep" aria-hidden="true">·</span>
-        <a class="site-link" href="https://demos.specul.com/"><span data-zh>演示</span><span data-en>Demos</span></a><span class="sep site-sep" aria-hidden="true">·</span>
-        <a class="site-link" href="https://oss.specul.com/"><span data-zh>开源</span><span data-en>OSS</span></a><span class="sep site-sep" aria-hidden="true">·</span>
-        <a class="site-link" href="https://hardware.specul.com/"><span data-zh>算力</span><span data-en>Compute</span></a><span class="sep site-sep" aria-hidden="true">·</span>
-        <a class="site-link" href="https://papers.specul.com/"><span data-zh>论文</span><span data-en>Papers</span></a><span class="sep site-sep" aria-hidden="true">·</span>
-        <a class="site-link" href="https://chain.specul.com/"><span data-zh>链</span><span data-en>Chain</span></a><span class="sep site-sep" aria-hidden="true">·</span>
-        <a class="site-link" href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
-      </nav>
-      <nav class="foot-legal" aria-label="Legal and corrections">
-        <a href="https://specul.com/legal.html"><span data-zh>法律</span><span data-en>Legal</span></a><span class="sep" aria-hidden="true">·</span>
-        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私</span><span data-en>Privacy</span></a><span class="sep" aria-hidden="true">·</span>
-        <a href="https://specul.com/correct.html"><span data-zh>纠错</span><span data-en>Corrections</span></a>
-      </nav>
-    </div>
-  </footer>
-<nav class="nav-tabbar nav-tabbar-1row" aria-label="快捷导航">
-    <a href="https://specul.com/"><span class="ti" aria-hidden="true">◎</span><span data-zh>首页</span><span data-en>Home</span></a>
-    <a href="https://learn.specul.com/" aria-current="page"><span class="ti" aria-hidden="true">▤</span><span data-zh>学AI</span><span data-en>Learn</span></a>
-    <a href="https://tools.specul.com/"><span class="ti" aria-hidden="true">◈</span><span data-zh>工具</span><span data-en>Tools</span></a>
-    <a href="https://models.specul.com/"><span class="ti" aria-hidden="true">▦</span><span data-zh>模型</span><span data-en>Models</span></a>
-    <a href="https://demos.specul.com/"><span class="ti" aria-hidden="true">▷</span><span data-zh>演示</span><span data-en>Demos</span></a>
-    <a href="https://oss.specul.com/"><span class="ti" aria-hidden="true">▧</span><span data-zh>开源</span><span data-en>OSS</span></a>
-    <a href="https://hardware.specul.com/"><span class="ti" aria-hidden="true">▣</span><span data-zh>算力</span><span data-en>Chips</span></a>
-    <a href="https://papers.specul.com/"><span class="ti" aria-hidden="true">▥</span><span data-zh>论文</span><span data-en>Papers</span></a>
-    <a href="https://chain.specul.com/"><span class="ti" aria-hidden="true">◇</span><span data-zh>链</span><span data-en>Chain</span></a>
-    <a href="https://nav.specul.com/" data-nav-group="external"><span class="ti" aria-hidden="true">↗</span><span data-zh>导航</span><span data-en>Nav</span></a>
+</div>
+<div class="tp-sec"><figure class="tp-figure"><img alt="A goal → plan → tool call → observation → revise loop; permissions and budget bound it." height="600" loading="lazy" src="../../assets/figures/fig-agent-loop.svg" width="1200"/><figcaption><span data-zh="">目标 → 计划 → 工具调用 → 观察 → 修正的循环；权限与预算决定循环边界。</span><span data-en="">A goal → plan → tool call → observation → revise loop; permissions and budget bound it.</span></figcaption></figure></div>
+<div class="tp-sec">
+<div class="tp-lab"><span data-zh="">为什么需要知道</span><span data-en="">Why it matters</span></div>
+<p class="tp-p"><span data-zh="">这是本站 harness 分区存在的全部理由。如果你只需要问答，不需要 Agent。</span><span data-en="">It is the difference between "it tells you how" and "it does it for you". Most of the practical value in agents comes from tool use, not conversation.</span></p>
+</div>
+<div class="tp-sec"><div class="tp-lab"><span data-zh="">别名</span><span data-en="">Chinese aliases</span></div><p class="tp-p"><span data-zh="">智能体 · 代理</span></p></div>
+<div class="tp-sec tp-related"><div class="tp-lab"><span data-zh="">接着读什么，为什么</span><span data-en="">What to read next, and why</span></div><ul><li><a href="../%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%BC%96%E6%8E%92/"><span data-zh="">工作流编排</span><span data-en="">Orchestration / Pipeline</span></a><p class="t-sm"><span data-zh="">比较动态选择步骤与预先定义流程。</span><span data-en="">Compare dynamically chosen steps with predefined flows.</span></p></li><li><a href="../%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/"><span data-zh="">工具调用</span><span data-en="">Tool Calling / Function Calling</span></a><p class="t-sm"><span data-zh="">一起用于《怎么设计 Agent 的工具权限边界》</span><span data-en="">Used together in “How to Set Tool Permissions for an Agent”</span></p></li><li><a href="../%E6%9D%83%E9%99%90/"><span data-zh="">权限</span><span data-en="">Permission</span></a><p class="t-sm"><span data-zh="">一起用于《怎么设计 Agent 的工具权限边界》</span><span data-en="">Used together in “How to Set Tool Permissions for an Agent”</span></p></li></ul></div>
+<div class="tp-sec"><div class="tp-lab"><span data-zh="">相关指南</span><span data-en="">Related guides</span></div><ul class="tp-refs"><li><a href="../../guide/%E6%80%8E%E4%B9%88%E8%AE%BE%E8%AE%A1%20Agent%20%E7%9A%84%E5%B7%A5%E5%85%B7%E6%9D%83%E9%99%90%E8%BE%B9%E7%95%8C/"><span data-zh="">怎么设计 Agent 的工具权限边界</span><span data-en="">How to Set Tool Permissions for an Agent</span></a></li><li><a href="../../guide/%E6%80%8E%E4%B9%88%E6%8A%8A%20AI%20%E6%8E%A5%E5%85%A5%E7%8E%B0%E6%9C%89%E5%8A%9E%E5%85%AC%E6%B5%81%E7%A8%8B/"><span data-zh="">怎么把 AI 接入现有办公流程</span><span data-en="">How to Put AI into an Existing Office Workflow</span></a></li></ul></div>
+<div class="tp-sec">
+<div class="tp-lab"><span data-zh="">现在能做什么</span><span data-en="">What you can do now</span></div>
+<p class="tp-p"><a href="https://tools.specul.com/"><span data-zh="">10 份 Agent 框架档案</span><span data-en="">10 agent framework profiles</span> ↗</a></p>
+<p class="tp-p"><a href="../../#layer-3"><span data-zh="">回到名词地图看第3段的其他 75 个词 →</span><span data-en="">Back to the map: the other 75 terms in stage 3 →</span></a></p>
+</div>
+<div class="tp-sec">
+<div class="tp-lab"><span data-zh="">出处</span><span data-en="">Sources</span></div>
+<ul class="tp-refs">
+<li><span data-zh="">10 份 Agent 框架档案</span><span data-en="">10 agent framework profiles</span> <a href="https://tools.specul.com/" rel="noopener" target="_blank">↗</a></li>
+<li><span data-zh="">CrewAI 的角色分工</span><span data-en="">CrewAI role division</span> <a href="https://tools.specul.com/framework/crewai.html" rel="noopener" target="_blank">↗</a></li>
+</ul>
+</div>
+<nav aria-label="上下篇" class="tp-pn" data-ui-aria-label-en="Previous and next" data-ui-aria-label-zh="上下篇">
+<a href="../%E8%A7%86%E8%A7%89%E8%AF%AD%E8%A8%80%E5%8A%A8%E4%BD%9C%E6%A8%A1%E5%9E%8B/"><span class="tp-ph"><span data-zh="">上一篇</span><span data-en="">Previous</span></span><span data-zh="">视觉语言动作模型</span><span data-en="">Vision-Language-Action Model</span></a>
+<a href="../%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8/" style="text-align:right"><span class="tp-ph"><span data-zh="">下一篇</span><span data-en="">Next</span></span><span data-zh="">工具调用</span><span data-en="">Tool Calling / Function Calling</span></a>
+</nav>
+<div class="tp-sec term-task-entry">
+<div class="tp-lab"><span data-zh="">用这个术语做任务</span><span data-en="">Use this term in a task</span></div>
+<p class="tp-p"><span data-zh="">别停在定义：去任务手册看按什么顺序做、验收什么；或者按你手头的任务，筛 3 个工具候选。</span><span data-en="">Don’t stop at the definition: use the task handbook for the order and checks, or filter three tool candidates for the job at hand.</span></p>
+<p class="tp-p"><a href="https://tools.specul.com/guides/"><span data-zh="">任务手册 →</span><span data-en="">Task handbooks →</span></a>　·　<a href="https://tools.specul.com/finder/"><span data-zh="">按任务筛 3 个候选 →</span><span data-en="">Filter three candidates →</span></a></p>
+</div>
+</article>
+</div>
+</main>
+<footer class="site-footer foot-single">
+<div class="container foot-line">
+<div class="foot-brand">
+<span class="foot-brand-main">
+<span aria-hidden="true" class="brand-dot"></span>
+<span class="foot-copy"><span data-zh="">投机取巧 · specul.com</span><span data-en="">Specul · specul.com</span></span>
+</span>
+<span class="foot-license"><a href="https://specul.com/LICENSE-CONTENT.txt"><span data-zh="">内容 CC BY 4.0</span><span data-en="">Content CC BY 4.0</span></a><span aria-hidden="true" class="sep">·</span><a href="https://specul.com/LICENSE.txt"><span data-zh="">代码 MIT</span><span data-en="">Code MIT</span></a><span aria-hidden="true" class="sep">·</span><a class="foot-source" href="https://github.com/speculcom/ai-handbook" rel="noopener" target="_blank"><span data-zh="">源码</span><span data-en="">Source</span></a></span>
+</div>
+<nav aria-label="Footer site links" class="foot-sites">
+<a class="site-link" href="https://specul.com/"><span data-zh="">首页</span><span data-en="">Home</span></a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://learn.specul.com/"><span data-zh="">学 AI</span><span data-en="">Learn</span></a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://tools.specul.com/"><span data-zh="">工具</span><span data-en="">Tools</span></a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://models.specul.com/"><span data-zh="">模型</span><span data-en="">Models</span></a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://demos.specul.com/"><span data-zh="">演示</span><span data-en="">Demos</span></a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://oss.specul.com/"><span data-zh="">开源</span><span data-en="">OSS</span></a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://hardware.specul.com/"><span data-zh="">算力</span><span data-en="">Compute</span></a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://papers.specul.com/"><span data-zh="">论文</span><span data-en="">Papers</span></a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://chain.specul.com/"><span data-zh="">链</span><span data-en="">Chain</span></a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://nav.specul.com/"><span data-zh="">导航</span><span data-en="">Directory</span></a>
+</nav>
+<nav aria-label="Legal and corrections" class="foot-legal">
+<a href="https://specul.com/legal.html"><span data-zh="">法律</span><span data-en="">Legal</span></a><span aria-hidden="true" class="sep">·</span>
+<a href="https://specul.com/legal.html#s8"><span data-zh="">隐私</span><span data-en="">Privacy</span></a><span aria-hidden="true" class="sep">·</span>
+<a href="https://specul.com/correct.html"><span data-zh="">纠错</span><span data-en="">Corrections</span></a>
+</nav>
+</div>
+</footer>
+<nav aria-label="快捷导航" class="nav-tabbar nav-tabbar-1row">
+<a href="https://specul.com/"><span aria-hidden="true" class="ti">◎</span><span data-zh="">首页</span><span data-en="">Home</span></a>
+<a aria-current="page" href="https://learn.specul.com/"><span aria-hidden="true" class="ti">▤</span><span data-zh="">学AI</span><span data-en="">Learn</span></a>
+<a href="https://tools.specul.com/"><span aria-hidden="true" class="ti">◈</span><span data-zh="">工具</span><span data-en="">Tools</span></a>
+<a href="https://models.specul.com/"><span aria-hidden="true" class="ti">▦</span><span data-zh="">模型</span><span data-en="">Models</span></a>
+<a href="https://demos.specul.com/"><span aria-hidden="true" class="ti">▷</span><span data-zh="">演示</span><span data-en="">Demos</span></a>
+<a href="https://oss.specul.com/"><span aria-hidden="true" class="ti">▧</span><span data-zh="">开源</span><span data-en="">OSS</span></a>
+<a href="https://hardware.specul.com/"><span aria-hidden="true" class="ti">▣</span><span data-zh="">算力</span><span data-en="">Chips</span></a>
+<a href="https://papers.specul.com/"><span aria-hidden="true" class="ti">▥</span><span data-zh="">论文</span><span data-en="">Papers</span></a>
+<a href="https://chain.specul.com/"><span aria-hidden="true" class="ti">◇</span><span data-zh="">链</span><span data-en="">Chain</span></a>
+<a data-nav-group="external" href="https://nav.specul.com/"><span aria-hidden="true" class="ti">↗</span><span data-zh="">导航</span><span data-en="">Nav</span></a>
 </nav>
 </body>
 </html>

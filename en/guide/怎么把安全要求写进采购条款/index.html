@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html data-lang="en" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>How to Write Safety Requirements into a Procurement…</title>
+<meta content="Guide · about 9 min · refs checked 2026-11-06 (reference links and dates only)" name="description"/>
+<link href="https://learn.specul.com/en/guide/怎么把安全要求写进采购条款/" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="Learn AI" property="og:site_name"/>
+<meta content="https://learn.specul.com/en/guide/怎么把安全要求写进采购条款/" property="og:url"/>
+<meta content="How to Write Safety Requirements into a Procurement…" property="og:title"/>
+<meta content="Guide · about 9 min · refs checked 2026-11-06 (reference links and dates only)" property="og:description"/>
+<meta content="#16121f" name="theme-color"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" rel="icon" type="image/svg+xml"/>
+<script src="/brand.js"></script>
+<script defer="" src="/data/paths.js"></script>
+<script defer="" src="/data/reading.js"></script>
+<link href="/brand.css" rel="stylesheet"/>
+<link href="/learn.css" rel="stylesheet"/>
+<style>:root { --accent: var(--gold); }</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to Write Safety Requirements into a Procurement…","description":"Guide · about 9 min · refs checked 2026-11-06 (reference links and dates only)","url":"https://learn.specul.com/en/guide/怎么把安全要求写进采购条款/","inLanguage":"en","step":[{"@type":"HowToStep","position":1,"name":"How to Write Safety Requirements into a Procurement…"},{"@type":"HowToStep","position":2,"name":"How to Write Safety Requirements into a Procurement…"},{"@type":"HowToStep","position":3,"name":"How to Write Safety Requirements into a Procurement…"},{"@type":"HowToStep","position":4,"name":"How to Write Safety Requirements into a Procurement…"},{"@type":"HowToStep","position":5,"name":"How to Write Safety Requirements into a Procurement…"},{"@type":"HowToStep","position":6,"name":"How to Write Safety Requirements into a Procurement…"},{"@type":"HowToStep","position":7,"name":"How to Write Safety Requirements into a Procurement…"}]}</script>
+<meta content="en_US" property="og:locale"/><meta content="zh_CN" property="og:locale:alternate"/><meta content="How to Write Safety Requirements into a Procurement…" name="twitter:title"/><meta content="Guide · about 9 min · refs checked 2026-11-06 (reference links and dates only)" name="twitter:description"/><link href="https://learn.specul.com/guide/怎么把安全要求写进采购条款/" hreflang="zh-CN" rel="alternate"/><link href="https://learn.specul.com/en/guide/怎么把安全要求写进采购条款/" hreflang="en" rel="alternate"/><link href="https://learn.specul.com/guide/怎么把安全要求写进采购条款/" hreflang="x-default" rel="alternate"/></head>
+<body class="brand-ambient has-tabbar has-tabbar-1row" style="--accent:var(--gold)">
+<a class="t-skip" href="#main">Skip to main content</a>
+<header class="site-header">
+<div class="container site-bar">
+<a class="brand" href="https://specul.com/en/" title="投机取巧">
+<span aria-hidden="true" class="brand-dot"></span>
+<span class="brand-text">
+<span class="brand-name" id="markName">Speculative Speculation</span>
+<span class="brand-sub" id="markSub"></span>
+</span>
+</a>
+<nav aria-label="站点导航" class="nav-links">
+<a href="https://specul.com/en/">Home</a>
+<a aria-current="page" href="https://learn.specul.com/en/">Learn</a>
+<a href="https://tools.specul.com/en/">Tools</a>
+<a href="https://models.specul.com/en/">Models</a>
+<a href="https://demos.specul.com/en/">Playground</a>
+<a href="https://oss.specul.com/en/">OSS</a>
+<a href="https://hardware.specul.com/en/">Compute</a>
+<a href="https://papers.specul.com/en/">AI Papers</a>
+<a href="https://chain.specul.com/en/">Chain</a>
+<a href="https://nav.specul.com/en/">AI Directory</a>
+</nav>
+<!-- 2026-10-10：.nav-tools 从 nav 元素**内部**移到外面，与 .nav-links 平级。
+           放里面时窄屏下它会跟着链接一起换行：链接占满整行 → 按钮被挤到第三条
+           （实测顶栏 134px、按钮组孤零零一行）。移出来后它与品牌同行，
+           链接独占第二行居中 —— 这才是下面注释里方案 B 想要的样子。 -->
+<span class="nav-tools">
+<a aria-label="Search" class="icon-btn" href="https://specul.com/en/search.html" title="Search all sites"><span aria-hidden="true">⌕</span></a>
+<button aria-label="切换明暗主题" class="icon-btn" id="themeBtn" title="切换明暗主题" type="button">☾</button>
+<a aria-label="切换到中文" class="icon-btn" href="/guide/怎么把安全要求写进采购条款/" hreflang="zh-CN" id="langBtn" lang="zh-CN" title="切换到中文">中文</a>
+</span>
+<!-- B6（2026-10-09）：窄屏（≤900px）下 .nav-links 会隐藏，这个汉堡是替代入口。
+           行为在共享 brand.js 里（一处实现、十站共用），样式在共享 brand.css。
+           无脚本时 CSS 不会显示它，而是把 .nav-links 在窄屏放出来 —— 不会出现
+           「导航被藏进一个点了没反应的按钮」。 -->
+<button aria-controls="navDrawer" aria-expanded="false" aria-label="打开菜单" class="nav-burger" type="button">
+<i></i><i></i><i></i>
+</button>
+</div>
+</header>
+<div class="nav-scrim"></div>
+<aside aria-hidden="true" aria-label="站点导航" class="nav-drawer" id="navDrawer">
+<div class="nav-drawer-h">
+<span class="brand-name">Speculative Speculation</span>
+<span class="brand-sub"></span>
+<button aria-label="关闭" class="nav-dclose" type="button">×</button>
+</div>
+<nav class="nav-drawer-list">
+<a href="https://specul.com/en/"><span>Home</span><span aria-hidden="true" class="ar">→</span></a>
+<a aria-current="page" href="https://learn.specul.com/en/"><span>Learn</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://tools.specul.com/en/"><span>Tools</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://models.specul.com/en/"><span>Models</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://demos.specul.com/en/"><span>Playground</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://oss.specul.com/en/"><span>OSS</span><span aria-hidden="true" class="ar">→</span></a>
+<a class="nav-group-start" href="https://hardware.specul.com/en/"><span>Compute</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://papers.specul.com/en/"><span>AI Papers</span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://chain.specul.com/en/"><span>Chain</span><span aria-hidden="true" class="ar">→</span></a>
+<a class="nav-group-start" data-nav-group="external" href="https://nav.specul.com/en/"><span>AI Directory</span><span aria-hidden="true" class="ar">↗</span></a>
+</nav>
+<div class="nav-drawer-foot">
+<p>Content sites cover learn, use, choose and run; AI Directory is a catalogue of off-site AI sites.</p>
+<nav><a href="https://specul.com/en/legal.html">Legal terms</a></nav>
+</div>
+</aside>
+<main id="main">
+<div class="container">
+<article class="tp tp-wrap">
+<nav aria-label="面包屑" class="tp-crumbs">
+<a href="/en/">← Term map</a>
+<span aria-hidden="true">·</span>
+<a href="/en/#layer-6">Stage 6 · Choosing Right</a>
+<span aria-hidden="true">·</span>
+<span>Guide</span>
+</nav>
+<h1>How to Write Safety Requirements into a Procurement Contract</h1>
+<p class="tp-en">Guide · about 9 min · refs checked 2026-11-06 (reference links and dates only)</p>
+<p class="tp-p">Procurement clauses turn what you care about into what the supplier must deliver: documents, notices, logs and exit - four levers.</p>
+<div class="tp-sec">
+<div class="tp-lab">How to</div>
+
+
+Make document delivery concrete: require model cards or system cards and usage documentation, with version numbers and publication dates. "See our website" is not a deliverable.
+State change-notice conditions and lead time: model replacement, data-retention changes, subprocessor changes each get a point in the process and a notification method.
+Write data flow into the clause: log retention period, whether data trains models, whether processing can stay in a chosen region, and the deadline and format for export and deletion.
+Define incident obligations by what evidence you can obtain: notification duties, which logs you can export as evidence, how responsibility and remediation are assigned.
+Give exit real teeth: export formats for data and configuration, proof of deletion after termination, disposition of historical records. A connection without exit terms writes the dependency into your architecture.
+Hand regulatory wording to legal: how the AI Act's staged duties and China's Measures and labeling rules land on your business is their call; the clause only states who bears which duty and who produces the proof.
+Worked example (fictional clause): input is a draft contract that only promises "a high-quality model" -&gt; processing replaces it clause by clause with the four levers (versioned documents, change notice with agreed lead time, logs not used for training and exportable, deletion proof with deadlines) -&gt; the check asks on the spot "which logs can I obtain to prove inputs and outputs after an incident"; no answer means a clause gap -&gt; next step: turn the gaps into a list for legal and the vendor to work through, rather than accepting a verbal promise.
+
+</div>
+<section class="tp-sec"><h2>Example and interpretation</h2><p class="t-sm">A teaching scenario, not a measured or executed site test.</p><p class="tp-p">When demanding 'data is not used for training', pin the clause to three checkable things: scope, the setting that enforces it, and how changes get notified. A promise without a configuration basis cannot be accepted.</p></section>
+<section class="tp-sec diagnostic-guide"><h2>How to check your practice</h2><p>Explain the example in your own words, inspect input constraints, then verify against the source. Revisit concepts if you cannot explain why; supply missing dates, fields or permissions; withdraw unsupported conclusions.</p><p><a href="/en/#diagnose-concept">For this topic, start with concept confusion</a> · <a href="/en/#diagnose">See all six scenarios and their reasoning</a></p></section>
+<div class="tp-sec">
+<div class="tp-lab">Terms behind this</div>
+<p class="tp-p"><a class="t-guidechip" href="/en/term/%E8%AE%B8%E5%8F%AF%E8%AF%81/">License</a> <a class="t-guidechip" href="/en/term/%E4%BE%9B%E5%BA%94%E5%95%86%E9%94%81%E5%AE%9A/">Vendor Lock-in</a> <a class="t-guidechip" href="/en/term/%E7%94%9F%E6%88%90%E5%BC%8F%20AI%20%E5%90%88%E8%A7%84%E4%B9%89%E5%8A%A1/">Generative AI Compliance Duties</a> <a class="t-guidechip" href="/en/term/%E9%9A%90%E7%A7%81%E4%B8%8E%E5%90%88%E8%A7%84/">Privacy &amp; Compliance</a></p>
+</div>
+<div class="tp-sec">
+<div class="tp-lab">Sources</div>
+<ul class="tp-refs">
+<li>CISA Secure Software Development Attestation Form <a href="https://www.cisa.gov/resources-tools/resources/secure-software-development-attestation-form" rel="noopener" target="_blank">↗</a></li>
+<li>NIST AI Risk Management Framework <a href="https://www.nist.gov/itl/ai-risk-management-framework" rel="noopener" target="_blank">↗</a></li>
+<li>AI Act full text (Regulation (EU) 2024/1689), EUR-Lex <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1689" rel="noopener" target="_blank">↗</a></li>
+<li>Interim Measures for Generative AI Services (CAC, full text) <a href="https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm" rel="noopener" target="_blank">↗</a></li>
+</ul>
+</div>
+<div class="tp-sec">
+<div class="tp-lab">More on these concepts</div>
+<p class="tp-p"><a href="/en/guide/%E6%80%8E%E4%B9%88%E4%BF%9D%E6%8A%A4%E8%87%AA%E5%B7%B1%E7%9A%84%E6%95%B0%E6%8D%AE/">How to Protect Your Data</a> · <a href="/en/guide/%E6%80%8E%E4%B9%88%E6%8E%92%E6%9F%A5%20AI%20%E7%9A%84%E6%95%B0%E6%8D%AE%E6%B3%84%E9%9C%B2%E8%B7%AF%E5%BE%84/">How to Trace AI Data Leak Paths</a> · <a href="/en/guide/%E6%80%8E%E4%B9%88%E7%BB%99%20AI%20%E5%86%85%E5%AE%B9%E5%8A%A0%E6%9D%A5%E6%BA%90%E6%A0%87%E8%AF%86/">How to Label AI-Generated Content</a> · <a href="/en/guide/%E6%80%8E%E4%B9%88%E7%94%A8%20AI%20%E5%81%9A%E7%BF%BB%E8%AF%91%E4%B8%8E%E6%9C%AC%E5%9C%B0%E5%8C%96/">How to translate and localise with AI</a></p>
+</div>
+</article>
+</div>
+</main>
+<footer class="site-footer foot-single">
+<div class="container foot-line">
+<div class="foot-brand">
+<span class="foot-brand-main">
+<span aria-hidden="true" class="brand-dot"></span>
+<span class="foot-copy">Specul · specul.com</span>
+</span>
+<span class="foot-license"><a href="https://specul.com/LICENSE-CONTENT.txt">Content CC BY 4.0</a><span aria-hidden="true" class="sep">·</span><a href="https://specul.com/LICENSE.txt">Code MIT</a><span aria-hidden="true" class="sep">·</span><a class="foot-source" href="https://github.com/speculcom/ai-handbook" rel="noopener" target="_blank">Source</a></span>
+</div>
+<nav aria-label="Footer site links" class="foot-sites">
+<a class="site-link" href="https://specul.com/en/">Home</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://learn.specul.com/en/">Learn</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://tools.specul.com/en/">Tools</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://models.specul.com/en/">Models</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://demos.specul.com/en/">Demos</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://oss.specul.com/en/">OSS</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://hardware.specul.com/en/">Compute</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://papers.specul.com/en/">Papers</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://chain.specul.com/en/">Chain</a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://nav.specul.com/en/">Directory</a>
+</nav>
+<nav aria-label="Legal and corrections" class="foot-legal">
+<a href="https://specul.com/en/legal.html">Legal</a><span aria-hidden="true" class="sep">·</span>
+<a href="https://specul.com/en/legal.html#s8">Privacy</a><span aria-hidden="true" class="sep">·</span>
+<a href="https://specul.com/en/correct.html">Corrections</a>
+</nav>
+</div>
+</footer>
+<nav aria-label="快捷导航" class="nav-tabbar nav-tabbar-1row">
+<a href="https://specul.com/en/"><span aria-hidden="true" class="ti">◎</span>Home</a>
+<a aria-current="page" href="https://learn.specul.com/en/"><span aria-hidden="true" class="ti">▤</span>Learn</a>
+<a href="https://tools.specul.com/en/"><span aria-hidden="true" class="ti">◈</span>Tools</a>
+<a href="https://models.specul.com/en/"><span aria-hidden="true" class="ti">▦</span>Models</a>
+<a href="https://demos.specul.com/en/"><span aria-hidden="true" class="ti">▷</span>Demos</a>
+<a href="https://oss.specul.com/en/"><span aria-hidden="true" class="ti">▧</span>OSS</a>
+<a href="https://hardware.specul.com/en/"><span aria-hidden="true" class="ti">▣</span>Chips</a>
+<a href="https://papers.specul.com/en/"><span aria-hidden="true" class="ti">▥</span>Papers</a>
+<a href="https://chain.specul.com/en/"><span aria-hidden="true" class="ti">◇</span>Chain</a>
+<a data-nav-group="external" href="https://nav.specul.com/en/"><span aria-hidden="true" class="ti">↗</span>Nav</a>
+</nav>
+</body>
+</html>

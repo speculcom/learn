@@ -431,4 +431,434 @@
   <url><loc>https://learn.specul.com/atlas/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learn.specul.com/aliases/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learn.specul.com/2026.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learn.specul.com/en/2026.html</loc></url>
+  <url><loc>https://learn.specul.com/en/atlas/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/2026 下半年变化线/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/2026 评测基准地图/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/AI 常犯什么错/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/AI 常见误区总索引/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/AI 真的读懂了你的话吗/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/Agent 评估怎么做/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/RAG 全链路：从文档到答案/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/few-shot示例怎么选/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/上下文工程怎么做/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/上下文窗口越大越好/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/什么时候不该用 RAG/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/加了护栏就安全了/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/参数越多就越聪明/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/多卡互联值不值/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/多模态模型怎么验收/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/它在一步步推理/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/它拒绝，是因为做不到/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/它记得你之前说过的/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/它说得笃定，所以可信/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/它逐字读懂你的文字/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/开源模型一定更省钱/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么估算一次上线的安全成本/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么保护自己的数据/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么做混合检索/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么做跨模型的一致性回归测试/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么写一份能被复核的任务指令/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么判断 AI 新闻是不是炒作/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么判断一张图是不是 AI 生成的/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么判断一次模型发布值不值得跟/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么向 AI 提问/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么处理一次误发事故/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么安全地用 MCP 工具/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么审一次第三方插件/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么对照 EU AI Act 自查/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么把 AI 接入现有办公流程/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么把安全要求写进采购条款/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么把提示词写结构/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么挑 embedding 模型/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么排查 AI 的数据泄露路径/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么搭一条最小评测流程/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么查 AI 生成内容的版权风险/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么查生成式 AI 合规义务/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么用 AI 做 PPT/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么用 AI 做会议纪要/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么用 AI 做翻译与本地化/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么用 AI 写邮件与排日程/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么用 AI 出题与批改/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么用 AI 分析表格/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么用 AI 备课/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么用 AI 审阅合同与长文档/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么用 AI 搭 RAG 语料/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么用 AI 清洗数据/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么用 OCR 把纸质文档变成可检索文本/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么给 AI 内容做发布前检查/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么给 AI 内容加来源标识/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么给 AI 工具配权限/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么给团队做 AI 风险清单/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么给数据集写数据卡/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么给文档做分块/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么给检索结果重排/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么自建评测口径/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么让AI按格式输出/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么设计 Agent 的工具权限边界/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么设计人工复核环节/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么设计课堂 AI 互动/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么评测 RAG 的效果/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么读一篇AI论文/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么读开源模型的许可证/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么读模型卡/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么读模型卡与系统卡/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么选视觉语言模型/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么防提示注入/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/怎么验证 AI 的输出/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/思维链什么时候有用/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/换模型前怎么迁移评估/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/换模型只是改个名字/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/接口兼容就等于行为一致/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/提示词怎么版本化/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/数据标注与质检怎么看/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/显存不够就跑不了/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/本地部署就等于合规/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/榜单分数高就是好用/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/榜单怎么读/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/模型 API 怎么谈 SLA 与退出条款/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/注意力就是它注意到重点/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/温度调高会更聪明/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/系统提示怎么设计/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/视频生成怎么验收/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/论文卡-Attention Is All You Need/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/论文卡-Chinchilla/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/论文卡-Constitutional AI/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/论文卡-Distilling the Knowledge/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/论文卡-GPT-3/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/论文卡-HELM/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/论文卡-InstructGPT/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/论文卡-LIMA/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/论文卡-Llama 2/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/论文卡-Self-Instruct/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/评测分数高就等于可靠/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/课堂-AI 能力与边界入门/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/课堂-RAG 来源核对/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/课堂-本地部署与显存估算/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/课堂-模型原理与论文证据边界/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/课堂-结构化提问与输出验证/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/课堂-选型决策与安全评审/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/通用人工智能快到了/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/通过一次评测就可以上线/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/量化、蒸馏、剪枝的区别/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/量化会让模型变笨一半/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/长任务 Agent 怎么做检查点/</loc></url>
+  <url><loc>https://learn.specul.com/en/guide/预览版不能用于生产/</loc></url>
+  <url><loc>https://learn.specul.com/en/</loc></url>
+  <url><loc>https://learn.specul.com/en/path/afternoon-principles/</loc></url>
+  <url><loc>https://learn.specul.com/en/path/for-builders/</loc></url>
+  <url><loc>https://learn.specul.com/en/path/for-consumers/</loc></url>
+  <url><loc>https://learn.specul.com/en/path/for-creators/</loc></url>
+  <url><loc>https://learn.specul.com/en/path/for-data/</loc></url>
+  <url><loc>https://learn.specul.com/en/path/for-eval-builders/</loc></url>
+  <url><loc>https://learn.specul.com/en/path/for-managers/</loc></url>
+  <url><loc>https://learn.specul.com/en/path/for-office/</loc></url>
+  <url><loc>https://learn.specul.com/en/path/for-operators/</loc></url>
+  <url><loc>https://learn.specul.com/en/path/for-researchers/</loc></url>
+  <url><loc>https://learn.specul.com/en/path/for-robotics/</loc></url>
+  <url><loc>https://learn.specul.com/en/path/for-safety-review/</loc></url>
+  <url><loc>https://learn.specul.com/en/path/for-teachers/</loc></url>
+  <url><loc>https://learn.specul.com/en/path/for-writers/</loc></url>
+  <url><loc>https://learn.specul.com/en/path/full-week/</loc></url>
+  <url><loc>https://learn.specul.com/en/path/quick-start/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/A2A（Agent2Agent 协议）/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/ACP/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/AG-UI/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/AGI/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/AI Agent 与聊天机器人的区别/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/AI 产品 vs AI 模型/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/AI 安全/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/AI 搜索/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/AI 芯片/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/API - 接口调用/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/Agent Memory/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/Agent Payments/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/Agentic RAG/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/App Server/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/Byteification/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/CLIP/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/CPU 推理/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/CUDA/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/Computer Use/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/ControlNet/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/DPO（直接偏好优化）/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/ERC-8004/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/FlashAttention/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/Flow Matching/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/FrugalGPT（级联推理）/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/GGUF/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/GPU 层卸载/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/GPU/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/GRPO/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/GraphRAG/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/HBM（高带宽显存）/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/JEPA/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/KV 缓存/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/LLM-as-a-Judge（模型评审）/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/LM Studio/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/LoRA/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/Looped Transformer - 循环 Transformer/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/MCP Apps/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/MCP/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/MLA/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/MLX/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/MoE - 混合专家/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/OCR（光学字符识别）/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/ONNX/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/Ollama/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/OpenAI 兼容接口/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/PagedAttention/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/Plan-and-Solve/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/Prompt Cache/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/QLoRA/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/RAG（检索增强生成）/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/RLAIF（AI 反馈强化学习）/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/RLHF（人类反馈强化学习）/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/ReAct/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/Reflexion（反思）/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/SFT（监督微调）/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/Self-Consistency（自一致性）/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/Token/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/Transformer/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/Tree of Thoughts（思维树）/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/Workflow 还是 Agent/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/bpw/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/llama.cpp/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/logits 与概率分布/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/safetensors/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/vLLM/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/x402/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/上下文压缩/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/上下文学习/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/上下文工程/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/上下文并行/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/上下文窗口/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/上下文窗口的代价/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/上线前检查门禁/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/专家卸载/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/世界模型/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/事故响应预案/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/交叉熵/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/人工复核队列/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/人工智能/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/人机协作/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/仓库级理解/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/代码补全/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/仿真到实机迁移/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/传输方式/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/位置编码/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/供应商安全问卷怎么读/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/供应商锁定/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/偏好对齐/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/偏见/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/具身智能/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/分块/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/分块预填充/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/前馈网络/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/剪枝/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/区域可用性/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/单次调用成本/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/参数/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/参考服务器/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/参考生视频/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/反向传播/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/可替换性/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/可观测性/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/合成数据/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/合规义务映射/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/向量 - 嵌入/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/向量数据库/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/吞吐/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/困惑度/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/图灵测试/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/基准测试/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/基础模型/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/多 Agent 协作/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/多头注意力/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/多模态/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/多模态推理/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/多模态输入风险/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/大模型 - 大语言模型/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/奖励模型/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/子代理隔离/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/子词分词/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/学习率/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/安全能力尽调清单/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/密钥与凭据管理/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/对抗样本/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/对齐与拒答训练/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/小语言模型/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/层归一化/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/嵌入层/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/工作流编排/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/工具定义/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/工具调用/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/差分隐私/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/差异对比/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/幻觉/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/幻觉检测信号/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/幻觉的成因/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/开放权重/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/开源模型/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/开源生态/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/引用与可追溯/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/张量并行/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/强化学习/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/微调/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/思维链/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/总分 - 综合评测/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/成本/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/扩散强制/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/扩散模型/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/扩散模型怎么生成/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/批大小与轮次/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/技能 - Skills/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/投机解码/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/护栏/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/护栏与内容过滤/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/拒答/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/持续集成/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/损失函数/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/推理/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/推理成本/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/推理服务的访问控制/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/推理模型/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/提示注入/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/提示词/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/提示链/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/插件与 MCP 的信任边界/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/数字人/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/数据不出网/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/数据外带路径/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/数据授权/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/数据污染/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/数据驻留/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/数据驻留与出境/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/文字怎么变成声音/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/文生图/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/无监督学习/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/日志里留下了什么/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/显存/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/智能体 - Agent/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/智能体强化学习/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/服务中断风险/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/本地部署/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/本地部署的隔离面/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/机器人中间件/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/机器人策略/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/机器学习/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/机器视觉/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/机器遗忘/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/机密计算/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/机械可解释性/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/权限/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/校准/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/梯度下降/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/检索质量度量/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/模仿学习/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/模型供应链/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/模型卡/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/模型合并/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/模型指纹与溯源/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/模型版本与变体/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/模型编辑/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/模型评测的局限/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/模型退役/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/残差连接/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/水印与内容凭证/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/沙箱/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/泛化/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/注意力机制/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/流式输出/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/流水线并行/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/测试时计算/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/浏览 - 网页操作/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/涌现能力/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/深度伪造/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/深度学习/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/混合检索/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/温度/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/潜空间/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/版本控制/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/物理仿真/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/生成式 AI 合规义务/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/生成式 AI/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/监督学习/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/知识截止/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/知识蒸馏/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/社区与文档/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/神经网络/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/离线评测与在线评测/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/稀疏自编码器/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/系统提示/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/红队测试/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/终端 Agent/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/结构化输出/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/缓存策略/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/编排模式/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/编码 Agent/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/编码器与解码器/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/缩放定律/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/联网 - 检索增强/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/联邦学习/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/能力边界/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/自动化偏见/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/自动驾驶/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/自回归生成/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/自托管成本/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/蒸馏与知识来源/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/视觉语言动作模型/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/视觉语言模型/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/视频生成/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/视频生成是怎么做的/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/训练/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/训练三阶段/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/训练内容摘要/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/训练数据溯源/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/训练算力/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/训练语料/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/训练集与测试集/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/记忆/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/许可证/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/评估/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/评测集设计/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/评测饱和/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/词表/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/语义缓存/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/语音克隆是怎么做的/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/语音合成/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/语音识别/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/语音识别是怎么听的/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/贪心解码与束搜索/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/越狱/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/路由/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/输出越界与拒答/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/迁移评估/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/过拟合/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/过程监督/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/运动规划/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/近似最近邻检索/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/远程执行/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/连续批处理/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/迭代速度/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/退出成本/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/速率限制/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/遥操作/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/配对编程/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/采样 - 采样参数/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/重排（Reranking）/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/量化/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/量化感知训练/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/量化方法/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/长上下文/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/长时任务/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/长时记忆/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/闭源模型/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/隐私与合规/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/零样本与少样本/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/音视频联合生成/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/预填充/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/预览版与正式版/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/预训练/</loc></url>
+  <url><loc>https://learn.specul.com/en/term/首字延迟/</loc></url>
 </urlset>

@@ -1,208 +1,197 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>密钥与凭据管理 · 学 AI | 投机取巧</title>
-  <meta name="description" content="让调用模型的凭据不泄漏、能撤销、可追责。 一套本地或自建部署的凭据面通常不止一个 key。要管的凭据不止一种。模型 API key、云账号密钥、向量库与数据库口令、CI/CD 里的 token，以及推理服务自己的访问 key。" />
-  <link rel="canonical" href="https://learn.specul.com/term/%E5%AF%86%E9%92%A5%E4%B8%8E%E5%87%AD%E6%8D%AE%E7%AE%A1%E7%90%86/" />
-  <meta property="og:type" content="article" />
-  <meta property="og:site_name" content="学 AI" />
-  <meta property="og:url" content="https://learn.specul.com/term/%E5%AF%86%E9%92%A5%E4%B8%8E%E5%87%AD%E6%8D%AE%E7%AE%A1%E7%90%86/" />
-  <meta property="og:title" content="密钥与凭据管理 · 学 AI" />
-  <meta property="og:description" content="让调用模型的凭据不泄漏、能撤销、可追责。 一套本地或自建部署的凭据面通常不止一个 key。要管的凭据不止一种。模型 API key、云账号密钥、向量库与数据库口令、CI/CD 里的 token，以及推理服务自己的访问 key。" />
-  <meta name="theme-color" content="#16121f" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" />
-  <script src="../../brand.js?v=37d1072be69b"></script>
-  <script defer src="../../data/paths.js"></script>
-  <script defer src="../../data/reading.js"></script>
-  <link rel="stylesheet" href="../../brand.css?v=37d1072be69b" />
-  <link rel="stylesheet" href="../../learn.css" />
-  <style>:root { --accent: var(--cyan); }</style>
-  <!-- B5：词条页的结构性数据（DefinedTerm） -->
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTerm","name":"密钥与凭据管理","alternateName":"Secret and Credential Management","description":"让调用模型的凭据不泄漏、能撤销、可追责。","url":"https://learn.specul.com/term/%E5%AF%86%E9%92%A5%E4%B8%8E%E5%87%AD%E6%8D%AE%E7%AE%A1%E7%90%86/","inLanguage":"zh-Hans","inDefinedTermSet":{"@type":"DefinedTermSet","name":"学 AI · 第五段（跑起来）","url":"https://learn.specul.com/#layer-5"},"isPartOf":{"@type":"WebSite","name":"学 AI","url":"https://learn.specul.com/"}}</script>
-</head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>密钥与凭据管理 · 学 AI | 投机取巧</title>
+<meta content="让调用模型的凭据不泄漏、能撤销、可追责。 一套本地或自建部署的凭据面通常不止一个 key。要管的凭据不止一种。模型 API key、云账号密钥、向量库与数据库口令、CI/CD 里的 token，以及推理服务自己的访问 key。" name="description"/>
+<link href="https://learn.specul.com/term/%E5%AF%86%E9%92%A5%E4%B8%8E%E5%87%AD%E6%8D%AE%E7%AE%A1%E7%90%86/" rel="canonical"/>
+<meta content="article" property="og:type"/>
+<meta content="学 AI" property="og:site_name"/>
+<meta content="https://learn.specul.com/term/%E5%AF%86%E9%92%A5%E4%B8%8E%E5%87%AD%E6%8D%AE%E7%AE%A1%E7%90%86/" property="og:url"/>
+<meta content="密钥与凭据管理 · 学 AI" property="og:title"/>
+<meta content="让调用模型的凭据不泄漏、能撤销、可追责。 一套本地或自建部署的凭据面通常不止一个 key。要管的凭据不止一种。模型 API key、云账号密钥、向量库与数据库口令、CI/CD 里的 token，以及推理服务自己的访问 key。" property="og:description"/>
+<meta content="#16121f" name="theme-color"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238b7cf8'/%3E%3Cstop offset='1' stop-color='%2322d3c5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='48' height='48' rx='12' fill='%2305080f'/%3E%3Cpath d='M14 32 L24 12 L34 32' fill='none' stroke='url(%23g)' stroke-width='2.4' stroke-linejoin='round'/%3E%3Ccircle cx='24' cy='27' r='2.4' fill='%2322d3c5'/%3E%3C/svg%3E" rel="icon" type="image/svg+xml"/>
+<script src="../../brand.js?v=37d1072be69b"></script>
+<script defer="" src="../../data/paths.js"></script>
+<script defer="" src="../../data/reading.js"></script>
+<link href="../../brand.css?v=37d1072be69b" rel="stylesheet"/>
+<link href="../../learn.css" rel="stylesheet"/>
+<style>:root { --accent: var(--cyan); }</style>
+<!-- B5：词条页的结构性数据（DefinedTerm） -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTerm","name":"密钥与凭据管理","alternateName":"Secret and Credential Management","description":"让调用模型的凭据不泄漏、能撤销、可追责。","url":"https://learn.specul.com/term/%E5%AF%86%E9%92%A5%E4%B8%8E%E5%87%AD%E6%8D%AE%E7%AE%A1%E7%90%86/","inLanguage":"zh-Hans","inDefinedTermSet":{"@type":"DefinedTermSet","name":"学 AI · 第五段（跑起来）","url":"https://learn.specul.com/#layer-5"},"isPartOf":{"@type":"WebSite","name":"学 AI","url":"https://learn.specul.com/"}}</script>
+<link href="https://learn.specul.com/term/密钥与凭据管理/" hreflang="zh-CN" rel="alternate"/><link href="https://learn.specul.com/en/term/密钥与凭据管理/" hreflang="en" rel="alternate"/><link href="https://learn.specul.com/term/密钥与凭据管理/" hreflang="x-default" rel="alternate"/></head>
 <body class="brand-ambient has-tabbar has-tabbar-1row" style="--accent:var(--cyan)">
-  <a class="t-skip" href="#main"><span data-zh>跳到主要内容</span><span data-en>Skip to main content</span></a>
-  <header class="site-header">
-    <div class="container site-bar">
-      <a class="brand" href="https://specul.com/" title="投机取巧">
-        <span class="brand-dot" aria-hidden="true"></span>
-        <span class="brand-text">
-          <span class="brand-name" id="markName" data-zh-name="投机取巧" data-en-name="Speculative Speculation">投机取巧</span>
-          <span class="brand-sub" id="markSub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
-        </span>
-      </a>
-      <nav class="nav-links" aria-label="站点导航">
-        <a href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a>
-        <a href="https://learn.specul.com/" aria-current="page"><span data-zh>学 AI</span><span data-en>Learn</span></a>
-        <a href="https://tools.specul.com/"><span data-zh>工具</span><span data-en>Tools</span></a>
-        <a href="https://models.specul.com/"><span data-zh>模型</span><span data-en>Models</span></a>
-        <a href="https://demos.specul.com/"><span data-zh>作品演示</span><span data-en>Playground</span></a>
-        <a href="https://oss.specul.com/"><span data-zh>开源库</span><span data-en>OSS</span></a>
-        <a href="https://hardware.specul.com/"><span data-zh>硬件算力</span><span data-en>Compute</span></a>
-        <a href="https://papers.specul.com/"><span data-zh>AI 论文</span><span data-en>AI Papers</span></a>
-        <a href="https://chain.specul.com/"><span data-zh>链</span><span data-en>Chain</span></a>
-        <a href="https://nav.specul.com/"><span data-zh>AI 导航</span><span data-en>AI Directory</span></a>
-      </nav>
-      <!-- 2026-10-10：.nav-tools 从 nav 元素**内部**移到外面，与 .nav-links 平级。
+<a class="t-skip" href="#main"><span data-zh="">跳到主要内容</span><span data-en="">Skip to main content</span></a>
+<header class="site-header">
+<div class="container site-bar">
+<a class="brand" href="https://specul.com/" title="投机取巧">
+<span aria-hidden="true" class="brand-dot"></span>
+<span class="brand-text">
+<span class="brand-name" data-en-name="Speculative Speculation" data-zh-name="投机取巧" id="markName">投机取巧</span>
+<span class="brand-sub" data-en-sub="" data-zh-sub="Speculative Speculation" id="markSub">Speculative Speculation</span>
+</span>
+</a>
+<nav aria-label="站点导航" class="nav-links">
+<a href="https://specul.com/"><span data-zh="">首页</span><span data-en="">Home</span></a>
+<a aria-current="page" href="https://learn.specul.com/"><span data-zh="">学 AI</span><span data-en="">Learn</span></a>
+<a href="https://tools.specul.com/"><span data-zh="">工具</span><span data-en="">Tools</span></a>
+<a href="https://models.specul.com/"><span data-zh="">模型</span><span data-en="">Models</span></a>
+<a href="https://demos.specul.com/"><span data-zh="">作品演示</span><span data-en="">Playground</span></a>
+<a href="https://oss.specul.com/"><span data-zh="">开源库</span><span data-en="">OSS</span></a>
+<a href="https://hardware.specul.com/"><span data-zh="">硬件算力</span><span data-en="">Compute</span></a>
+<a href="https://papers.specul.com/"><span data-zh="">AI 论文</span><span data-en="">AI Papers</span></a>
+<a href="https://chain.specul.com/"><span data-zh="">链</span><span data-en="">Chain</span></a>
+<a href="https://nav.specul.com/"><span data-zh="">AI 导航</span><span data-en="">AI Directory</span></a>
+</nav>
+<!-- 2026-10-10：.nav-tools 从 nav 元素**内部**移到外面，与 .nav-links 平级。
            放里面时窄屏下它会跟着链接一起换行：链接占满整行 → 按钮被挤到第三条
            （实测顶栏 134px、按钮组孤零零一行）。移出来后它与品牌同行，
            链接独占第二行居中 —— 这才是下面注释里方案 B 想要的样子。 -->
-      <span class="nav-tools">
-        <a class="icon-btn" href="https://specul.com/search.html" aria-label="搜索" data-ui-aria-label-zh="搜索" data-ui-aria-label-en="Search" title="搜索全站" data-ui-title-zh="搜索全站" data-ui-title-en="Search all sites"><span aria-hidden="true">⌕</span></a>
-        <button class="icon-btn" id="themeBtn" type="button" aria-label="切换明暗主题" title="切换明暗主题">☾</button>
-        <button class="icon-btn" id="langBtn" type="button" aria-label="Switch language" title="Switch language">EN</button>
-      </span>
-      <!-- B6（2026-10-09）：窄屏（≤900px）下 .nav-links 会隐藏，这个汉堡是替代入口。
+<span class="nav-tools">
+<a aria-label="搜索" class="icon-btn" data-ui-aria-label-en="Search" data-ui-aria-label-zh="搜索" data-ui-title-en="Search all sites" data-ui-title-zh="搜索全站" href="https://specul.com/search.html" title="搜索全站"><span aria-hidden="true">⌕</span></a>
+<button aria-label="切换明暗主题" class="icon-btn" id="themeBtn" title="切换明暗主题" type="button">☾</button>
+<a aria-label="Switch to English" class="icon-btn" href="/en/term/密钥与凭据管理/" hreflang="en" id="langBtn" lang="en" title="Switch to English">EN</a>
+</span>
+<!-- B6（2026-10-09）：窄屏（≤900px）下 .nav-links 会隐藏，这个汉堡是替代入口。
            行为在共享 brand.js 里（一处实现、十站共用），样式在共享 brand.css。
            无脚本时 CSS 不会显示它，而是把 .nav-links 在窄屏放出来 —— 不会出现
            「导航被藏进一个点了没反应的按钮」。 -->
-      <button class="nav-burger" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="navDrawer">
-        <i></i><i></i><i></i>
-      </button>
-    </div>
-  </header>
-  <div class="nav-scrim"></div>
-  <aside class="nav-drawer" id="navDrawer" aria-hidden="true" aria-label="站点导航">
-    <div class="nav-drawer-h">
-      <span class="brand-name"><span data-zh>投机取巧</span><span data-en>Speculative Speculation</span></span>
-      <span class="brand-sub" data-zh-sub="Speculative Speculation" data-en-sub="">Speculative Speculation</span>
-      <button class="nav-dclose" type="button" aria-label="关闭">×</button>
-    </div>
-    <nav class="nav-drawer-list">
-      <a href="https://specul.com/"><span><span data-zh>首页</span><span data-en>Home</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://learn.specul.com/" aria-current="page"><span><span data-zh>学 AI</span><span data-en>Learn</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://tools.specul.com/"><span><span data-zh>工具</span><span data-en>Tools</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://models.specul.com/"><span><span data-zh>模型</span><span data-en>Models</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://demos.specul.com/"><span><span data-zh>作品演示</span><span data-en>Playground</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://oss.specul.com/"><span><span data-zh>开源库</span><span data-en>OSS</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://hardware.specul.com/" class="nav-group-start"><span><span data-zh>硬件算力</span><span data-en>Compute</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://papers.specul.com/"><span><span data-zh>AI 论文</span><span data-en>AI Papers</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://chain.specul.com/"><span><span data-zh>链</span><span data-en>Chain</span></span><span class="ar" aria-hidden="true">→</span></a>
-      <a href="https://nav.specul.com/" class="nav-group-start" data-nav-group="external"><span><span data-zh>AI 导航</span><span data-en>AI Directory</span></span><span class="ar" aria-hidden="true">↗</span></a>
-    </nav>
-    <div class="nav-drawer-foot">
-      <p><span data-zh>内容站覆盖学、用、选、跑；AI 导航是站外的 AI 网站目录，点出去看。</span><span data-en>Content sites cover learn, use, choose and run; AI Directory is a catalogue of off-site AI sites.</span></p>
-      <nav><a href="https://specul.com/legal.html"><span data-zh>法律条款</span><span data-en>Legal terms</span></a></nav>
-    </div>
-  </aside>
-  <main id="main">
-    <div class="container">
-      <article class="tp tp-wrap">
-        <nav class="tp-crumbs" aria-label="面包屑">
-          <a href="../../"><span data-zh>← 名词地图</span><span data-en>← Term map</span></a>
-          <span aria-hidden="true">·</span>
-          <a href="../../#layer-5"><span data-zh>跑起来</span><span data-en>Running It</span></a>
-        </nav>
-        <h1><span data-zh>密钥与凭据管理</span><span data-en>Secret and Credential Management</span></h1>
-        <p class="tp-en">Secret and Credential Management</p>
-        <ul class="tp-tags">
-          <li class="tp-tag"><span data-zh>硬件与部署</span><span data-en>Hardware &amp; deployment</span></li>
-          <li class="tp-tag"><span data-zh>第五段 · 跑起来</span><span data-en>Stage 5 · Running It</span></li>
-          <li class="tp-tag"><span data-zh>引用核验 2026-11-06</span><span data-en>refs checked 2026-11-06</span></li>
-        </ul>
-
-        <div class="tp-sec">
-          <div class="tp-lab"><span data-zh>解决什么问题</span><span data-en>What problem it solves</span></div>
-          <p class="tp-p"><span data-zh>让调用模型的凭据不泄漏、能撤销、可追责。</span><span data-en>Keeps the credentials that call models from leaking, and makes them revocable and attributable.</span></p>
-        </div>
-
-        <div class="tp-sec">
-          <div class="tp-lab"><span data-zh>这是什么</span><span data-en>What it is</span></div>
-<span data-zh>
-      <p class="tp-li">一套本地或自建部署的凭据面通常不止一个 key。要管的凭据不止一种。模型 API key、云账号密钥、向量库与数据库口令、CI/CD 里的 token，以及推理服务自己的访问 key。</p>
-      <p class="tp-li">OWASP 的密钥管理清单给出四条主线。管理动作包括四项。集中存放并统一格式。自动化管理，含轮换。按最小权限发放。把访问本身记进审计日志。同时明确不要硬编码。</p>
-      <p class="tp-li">轮换周期是可以查的数字。AWS 的密钥管理服务把「长期不换更容易被攻陷」写在最佳实践里，并把自动轮换的最短间隔给到每四小时一次。</p>
-      <p class="tp-li">泄漏路径常常不走代码。AWS 专门提醒命令行使用会把敏感参数留在 shell 历史与日志里。本机给工具配的 key，同一台机器上的其他进程也可能读到。</p>
-      <p class="tp-li">自建服务侧还要多问一句：这把 key 是谁的 key？共享一把意味着事后无法区分哪个团队、哪个应用在调用。</p>
+<button aria-controls="navDrawer" aria-expanded="false" aria-label="打开菜单" class="nav-burger" type="button">
+<i></i><i></i><i></i>
+</button>
+</div>
+</header>
+<div class="nav-scrim"></div>
+<aside aria-hidden="true" aria-label="站点导航" class="nav-drawer" id="navDrawer">
+<div class="nav-drawer-h">
+<span class="brand-name"><span data-zh="">投机取巧</span><span data-en="">Speculative Speculation</span></span>
+<span class="brand-sub" data-en-sub="" data-zh-sub="Speculative Speculation">Speculative Speculation</span>
+<button aria-label="关闭" class="nav-dclose" type="button">×</button>
+</div>
+<nav class="nav-drawer-list">
+<a href="https://specul.com/"><span><span data-zh="">首页</span><span data-en="">Home</span></span><span aria-hidden="true" class="ar">→</span></a>
+<a aria-current="page" href="https://learn.specul.com/"><span><span data-zh="">学 AI</span><span data-en="">Learn</span></span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://tools.specul.com/"><span><span data-zh="">工具</span><span data-en="">Tools</span></span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://models.specul.com/"><span><span data-zh="">模型</span><span data-en="">Models</span></span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://demos.specul.com/"><span><span data-zh="">作品演示</span><span data-en="">Playground</span></span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://oss.specul.com/"><span><span data-zh="">开源库</span><span data-en="">OSS</span></span><span aria-hidden="true" class="ar">→</span></a>
+<a class="nav-group-start" href="https://hardware.specul.com/"><span><span data-zh="">硬件算力</span><span data-en="">Compute</span></span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://papers.specul.com/"><span><span data-zh="">AI 论文</span><span data-en="">AI Papers</span></span><span aria-hidden="true" class="ar">→</span></a>
+<a href="https://chain.specul.com/"><span><span data-zh="">链</span><span data-en="">Chain</span></span><span aria-hidden="true" class="ar">→</span></a>
+<a class="nav-group-start" data-nav-group="external" href="https://nav.specul.com/"><span><span data-zh="">AI 导航</span><span data-en="">AI Directory</span></span><span aria-hidden="true" class="ar">↗</span></a>
+</nav>
+<div class="nav-drawer-foot">
+<p><span data-zh="">内容站覆盖学、用、选、跑；AI 导航是站外的 AI 网站目录，点出去看。</span><span data-en="">Content sites cover learn, use, choose and run; AI Directory is a catalogue of off-site AI sites.</span></p>
+<nav><a href="https://specul.com/legal.html"><span data-zh="">法律条款</span><span data-en="">Legal terms</span></a></nav>
+</div>
+</aside>
+<main id="main">
+<div class="container">
+<article class="tp tp-wrap">
+<nav aria-label="面包屑" class="tp-crumbs">
+<a href="../../"><span data-zh="">← 名词地图</span><span data-en="">← Term map</span></a>
+<span aria-hidden="true">·</span>
+<a href="../../#layer-5"><span data-zh="">跑起来</span><span data-en="">Running It</span></a>
+</nav>
+<h1><span data-zh="">密钥与凭据管理</span><span data-en="">Secret and Credential Management</span></h1>
+<p class="tp-en">Secret and Credential Management</p>
+<ul class="tp-tags">
+<li class="tp-tag"><span data-zh="">硬件与部署</span><span data-en="">Hardware &amp; deployment</span></li>
+<li class="tp-tag"><span data-zh="">第五段 · 跑起来</span><span data-en="">Stage 5 · Running It</span></li>
+<li class="tp-tag"><span data-zh="">引用核验 2026-11-06</span><span data-en="">refs checked 2026-11-06</span></li>
+</ul>
+<div class="tp-sec">
+<div class="tp-lab"><span data-zh="">解决什么问题</span><span data-en="">What problem it solves</span></div>
+<p class="tp-p"><span data-zh="">让调用模型的凭据不泄漏、能撤销、可追责。</span><span data-en="">Keeps the credentials that call models from leaking, and makes them revocable and attributable.</span></p>
+</div>
+<div class="tp-sec">
+<div class="tp-lab"><span data-zh="">这是什么</span><span data-en="">What it is</span></div>
+<span data-zh="">
+<p class="tp-li">一套本地或自建部署的凭据面通常不止一个 key。要管的凭据不止一种。模型 API key、云账号密钥、向量库与数据库口令、CI/CD 里的 token，以及推理服务自己的访问 key。</p>
+<p class="tp-li">OWASP 的密钥管理清单给出四条主线。管理动作包括四项。集中存放并统一格式。自动化管理，含轮换。按最小权限发放。把访问本身记进审计日志。同时明确不要硬编码。</p>
+<p class="tp-li">轮换周期是可以查的数字。AWS 的密钥管理服务把「长期不换更容易被攻陷」写在最佳实践里，并把自动轮换的最短间隔给到每四小时一次。</p>
+<p class="tp-li">泄漏路径常常不走代码。AWS 专门提醒命令行使用会把敏感参数留在 shell 历史与日志里。本机给工具配的 key，同一台机器上的其他进程也可能读到。</p>
+<p class="tp-li">自建服务侧还要多问一句：这把 key 是谁的 key？共享一把意味着事后无法区分哪个团队、哪个应用在调用。</p>
 </span>
-<span data-en>
-      <p class="tp-li" data-en>A self-hosted setup rarely has one secret: provider API keys, cloud account credentials, vector-store and database passwords, CI/CD tokens, and the access key for your own inference endpoint.</p>
-      <p class="tp-li" data-en>OWASP's secrets management guidance organises the work into four lines: centralise and standardise, automate management including rotation, issue on least privilege, and audit access itself - while keeping secrets out of code.</p>
-      <p class="tp-li" data-en>Rotation intervals are a checkable number. AWS writes that secrets left unchanged for a long time become more likely to be compromised, and its Secrets Manager can rotate automatically as often as every four hours.</p>
-      <p class="tp-li" data-en>Leaks often never touch the repository: AWS warns specifically that shell history and command logging can capture sensitive CLI arguments, and any key configured for a local tool is readable by other processes on that machine.</p>
-      <p class="tp-li" data-en>On your own service there is one extra question - whose key is it? A shared key makes it impossible later to say which team or which application made a call.</p>
+<span data-en="">
+<p class="tp-li" data-en="">A self-hosted setup rarely has one secret: provider API keys, cloud account credentials, vector-store and database passwords, CI/CD tokens, and the access key for your own inference endpoint.</p>
+<p class="tp-li" data-en="">OWASP's secrets management guidance organises the work into four lines: centralise and standardise, automate management including rotation, issue on least privilege, and audit access itself - while keeping secrets out of code.</p>
+<p class="tp-li" data-en="">Rotation intervals are a checkable number. AWS writes that secrets left unchanged for a long time become more likely to be compromised, and its Secrets Manager can rotate automatically as often as every four hours.</p>
+<p class="tp-li" data-en="">Leaks often never touch the repository: AWS warns specifically that shell history and command logging can capture sensitive CLI arguments, and any key configured for a local tool is readable by other processes on that machine.</p>
+<p class="tp-li" data-en="">On your own service there is one extra question - whose key is it? A shared key makes it impossible later to say which team or which application made a call.</p>
 </span>
-        </div>
-
-
-
-        <div class="tp-sec">
-          <div class="tp-lab"><span data-zh>为什么需要知道</span><span data-en>Why it matters</span></div>
-          <p class="tp-p"><span data-zh>一次 key 泄漏的实际代价通常高于「模型跑在谁家」这类差别。账单、数据外带、以及被冒用身份发起的调用。轮换与审计决定了你能不能发现它，最小权限决定了发现时已经损失多少。</span><span data-en>The real cost of one leaked key usually exceeds the difference between hosting options: billed usage, data exfiltration, and calls made under a stolen identity. Rotation and auditing decide whether you notice; least privilege decides how much was already lost when you do.</span></p>
-        </div>
-      <div class="tp-sec"><div class="tp-lab"><span data-zh>别名</span><span data-en>Chinese aliases</span></div><p class="tp-p"><span data-zh>API key 管理</span></p></div>
-
-<div class="tp-sec tp-related"><div class="tp-lab"><span data-zh>接着读什么，为什么</span><span data-en>What to read next, and why</span></div><ul><li><a href="../%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E7%9A%84%E9%9A%94%E7%A6%BB%E9%9D%A2/"><span data-zh>本地部署的隔离面</span><span data-en>Isolation Surfaces of a Local Deployment</span></a><p class="t-sm"><span data-zh>凭据一旦外流，隔离就回到起点。</span><span data-en>Once credentials leak, isolation starts over.</span></p></li></ul></div>
-
-
-      <div class="tp-sec">
-        <div class="tp-lab"><span data-zh>现在能做什么</span><span data-en>What you can do now</span></div>
-        <p class="tp-p"><a href="https://models.specul.com/"><span data-zh>去 Models 图谱：看这个模型有哪些量化版、按你的显存该下哪一档</span><span data-en>Models atlas: which quantisations exist and which tier fits your VRAM</span> ↗</a></p>
-        <p class="tp-p"><a href="../../#layer-5"><span data-zh>回到名词地图看第5段的其他 45 个词 →</span><span data-en>Back to the map: the other 45 terms in stage 5 →</span></a></p>
-      </div>
-
-        <div class="tp-sec">
-          <div class="tp-lab"><span data-zh>出处</span><span data-en>Sources</span></div>
-          <ul class="tp-refs">
-      <li><span data-zh>OWASP 密钥管理清单（Secrets Management Cheat Sheet）</span><span data-en>OWASP Secrets Management Cheat Sheet</span> <a href="https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html" target="_blank" rel="noopener">↗</a></li>
-      <li><span data-zh>AWS Secrets Manager 最佳实践</span><span data-en>AWS Secrets Manager: best practices</span> <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/best-practices.html" target="_blank" rel="noopener">↗</a></li>
-          </ul>
-        </div>
-
-        <nav class="tp-pn" aria-label="上下篇" data-ui-aria-label-zh="上下篇" data-ui-aria-label-en="Previous and next">
-          <a href="../%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E7%9A%84%E9%9A%94%E7%A6%BB%E9%9D%A2/"><span class="tp-ph"><span data-zh>上一篇</span><span data-en>Previous</span></span><span data-zh>本地部署的隔离面</span><span data-en>Isolation Surfaces of a Local Deployment</span></a>
-          <a href="../%E6%8E%A8%E7%90%86%E6%9C%8D%E5%8A%A1%E7%9A%84%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/" style="text-align:right"><span class="tp-ph"><span data-zh>下一篇</span><span data-en>Next</span></span><span data-zh>推理服务的访问控制</span><span data-en>Access Control for an Inference Service</span></a>
-        </nav>
-
-        <div class="tp-sec term-task-entry">
-          <div class="tp-lab"><span data-zh>用这个术语做任务</span><span data-en>Use this term in a task</span></div>
-          <p class="tp-p"><span data-zh>别停在定义：去任务手册看按什么顺序做、验收什么；或者按你手头的任务，筛 3 个工具候选。</span><span data-en>Don’t stop at the definition: use the task handbook for the order and checks, or filter three tool candidates for the job at hand.</span></p>
-          <p class="tp-p"><a href="https://tools.specul.com/guides/"><span data-zh>任务手册 →</span><span data-en>Task handbooks →</span></a>　·　<a href="https://tools.specul.com/finder/"><span data-zh>按任务筛 3 个候选 →</span><span data-en>Filter three candidates →</span></a></p>
-        </div>
-      </article>
-    </div>
-  </main>
-  <footer class="site-footer foot-single">
-    <div class="container foot-line">
-      <div class="foot-brand">
-        <span class="foot-brand-main">
-          <span class="brand-dot" aria-hidden="true"></span>
-          <span class="foot-copy"><span data-zh>投机取巧 · specul.com</span><span data-en>Specul · specul.com</span></span>
-        </span>
-        <span class="foot-license"><a href="https://specul.com/LICENSE-CONTENT.txt"><span data-zh>内容 CC BY 4.0</span><span data-en>Content CC BY 4.0</span></a><span class="sep" aria-hidden="true">·</span><a href="https://specul.com/LICENSE.txt"><span data-zh>代码 MIT</span><span data-en>Code MIT</span></a><span class="sep" aria-hidden="true">·</span><a class="foot-source" href="https://github.com/speculcom/ai-handbook" target="_blank" rel="noopener"><span data-zh>源码</span><span data-en>Source</span></a></span>
-      </div>
-      <nav class="foot-sites" aria-label="Footer site links">
-        <a class="site-link" href="https://specul.com/"><span data-zh>首页</span><span data-en>Home</span></a><span class="sep site-sep" aria-hidden="true">·</span>
-        <a class="site-link" href="https://learn.specul.com/"><span data-zh>学 AI</span><span data-en>Learn</span></a><span class="sep site-sep" aria-hidden="true">·</span>
-        <a class="site-link" href="https://tools.specul.com/"><span data-zh>工具</span><span data-en>Tools</span></a><span class="sep site-sep" aria-hidden="true">·</span>
-        <a class="site-link" href="https://models.specul.com/"><span data-zh>模型</span><span data-en>Models</span></a><span class="sep site-sep" aria-hidden="true">·</span>
-        <a class="site-link" href="https://demos.specul.com/"><span data-zh>演示</span><span data-en>Demos</span></a><span class="sep site-sep" aria-hidden="true">·</span>
-        <a class="site-link" href="https://oss.specul.com/"><span data-zh>开源</span><span data-en>OSS</span></a><span class="sep site-sep" aria-hidden="true">·</span>
-        <a class="site-link" href="https://hardware.specul.com/"><span data-zh>算力</span><span data-en>Compute</span></a><span class="sep site-sep" aria-hidden="true">·</span>
-        <a class="site-link" href="https://papers.specul.com/"><span data-zh>论文</span><span data-en>Papers</span></a><span class="sep site-sep" aria-hidden="true">·</span>
-        <a class="site-link" href="https://chain.specul.com/"><span data-zh>链</span><span data-en>Chain</span></a><span class="sep site-sep" aria-hidden="true">·</span>
-        <a class="site-link" href="https://nav.specul.com/"><span data-zh>导航</span><span data-en>Directory</span></a>
-      </nav>
-      <nav class="foot-legal" aria-label="Legal and corrections">
-        <a href="https://specul.com/legal.html"><span data-zh>法律</span><span data-en>Legal</span></a><span class="sep" aria-hidden="true">·</span>
-        <a href="https://specul.com/legal.html#s8"><span data-zh>隐私</span><span data-en>Privacy</span></a><span class="sep" aria-hidden="true">·</span>
-        <a href="https://specul.com/correct.html"><span data-zh>纠错</span><span data-en>Corrections</span></a>
-      </nav>
-    </div>
-  </footer>
-<nav class="nav-tabbar nav-tabbar-1row" aria-label="快捷导航">
-    <a href="https://specul.com/"><span class="ti" aria-hidden="true">◎</span><span data-zh>首页</span><span data-en>Home</span></a>
-    <a href="https://learn.specul.com/" aria-current="page"><span class="ti" aria-hidden="true">▤</span><span data-zh>学AI</span><span data-en>Learn</span></a>
-    <a href="https://tools.specul.com/"><span class="ti" aria-hidden="true">◈</span><span data-zh>工具</span><span data-en>Tools</span></a>
-    <a href="https://models.specul.com/"><span class="ti" aria-hidden="true">▦</span><span data-zh>模型</span><span data-en>Models</span></a>
-    <a href="https://demos.specul.com/"><span class="ti" aria-hidden="true">▷</span><span data-zh>演示</span><span data-en>Demos</span></a>
-    <a href="https://oss.specul.com/"><span class="ti" aria-hidden="true">▧</span><span data-zh>开源</span><span data-en>OSS</span></a>
-    <a href="https://hardware.specul.com/"><span class="ti" aria-hidden="true">▣</span><span data-zh>算力</span><span data-en>Chips</span></a>
-    <a href="https://papers.specul.com/"><span class="ti" aria-hidden="true">▥</span><span data-zh>论文</span><span data-en>Papers</span></a>
-    <a href="https://chain.specul.com/"><span class="ti" aria-hidden="true">◇</span><span data-zh>链</span><span data-en>Chain</span></a>
-    <a href="https://nav.specul.com/" data-nav-group="external"><span class="ti" aria-hidden="true">↗</span><span data-zh>导航</span><span data-en>Nav</span></a>
+</div>
+<div class="tp-sec">
+<div class="tp-lab"><span data-zh="">为什么需要知道</span><span data-en="">Why it matters</span></div>
+<p class="tp-p"><span data-zh="">一次 key 泄漏的实际代价通常高于「模型跑在谁家」这类差别。账单、数据外带、以及被冒用身份发起的调用。轮换与审计决定了你能不能发现它，最小权限决定了发现时已经损失多少。</span><span data-en="">The real cost of one leaked key usually exceeds the difference between hosting options: billed usage, data exfiltration, and calls made under a stolen identity. Rotation and auditing decide whether you notice; least privilege decides how much was already lost when you do.</span></p>
+</div>
+<div class="tp-sec"><div class="tp-lab"><span data-zh="">别名</span><span data-en="">Chinese aliases</span></div><p class="tp-p"><span data-zh="">API key 管理</span></p></div>
+<div class="tp-sec tp-related"><div class="tp-lab"><span data-zh="">接着读什么，为什么</span><span data-en="">What to read next, and why</span></div><ul><li><a href="../%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E7%9A%84%E9%9A%94%E7%A6%BB%E9%9D%A2/"><span data-zh="">本地部署的隔离面</span><span data-en="">Isolation Surfaces of a Local Deployment</span></a><p class="t-sm"><span data-zh="">凭据一旦外流，隔离就回到起点。</span><span data-en="">Once credentials leak, isolation starts over.</span></p></li></ul></div>
+<div class="tp-sec">
+<div class="tp-lab"><span data-zh="">现在能做什么</span><span data-en="">What you can do now</span></div>
+<p class="tp-p"><a href="https://models.specul.com/"><span data-zh="">去 Models 图谱：看这个模型有哪些量化版、按你的显存该下哪一档</span><span data-en="">Models atlas: which quantisations exist and which tier fits your VRAM</span> ↗</a></p>
+<p class="tp-p"><a href="../../#layer-5"><span data-zh="">回到名词地图看第5段的其他 45 个词 →</span><span data-en="">Back to the map: the other 45 terms in stage 5 →</span></a></p>
+</div>
+<div class="tp-sec">
+<div class="tp-lab"><span data-zh="">出处</span><span data-en="">Sources</span></div>
+<ul class="tp-refs">
+<li><span data-zh="">OWASP 密钥管理清单（Secrets Management Cheat Sheet）</span><span data-en="">OWASP Secrets Management Cheat Sheet</span> <a href="https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html" rel="noopener" target="_blank">↗</a></li>
+<li><span data-zh="">AWS Secrets Manager 最佳实践</span><span data-en="">AWS Secrets Manager: best practices</span> <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/best-practices.html" rel="noopener" target="_blank">↗</a></li>
+</ul>
+</div>
+<nav aria-label="上下篇" class="tp-pn" data-ui-aria-label-en="Previous and next" data-ui-aria-label-zh="上下篇">
+<a href="../%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%E7%9A%84%E9%9A%94%E7%A6%BB%E9%9D%A2/"><span class="tp-ph"><span data-zh="">上一篇</span><span data-en="">Previous</span></span><span data-zh="">本地部署的隔离面</span><span data-en="">Isolation Surfaces of a Local Deployment</span></a>
+<a href="../%E6%8E%A8%E7%90%86%E6%9C%8D%E5%8A%A1%E7%9A%84%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/" style="text-align:right"><span class="tp-ph"><span data-zh="">下一篇</span><span data-en="">Next</span></span><span data-zh="">推理服务的访问控制</span><span data-en="">Access Control for an Inference Service</span></a>
+</nav>
+<div class="tp-sec term-task-entry">
+<div class="tp-lab"><span data-zh="">用这个术语做任务</span><span data-en="">Use this term in a task</span></div>
+<p class="tp-p"><span data-zh="">别停在定义：去任务手册看按什么顺序做、验收什么；或者按你手头的任务，筛 3 个工具候选。</span><span data-en="">Don’t stop at the definition: use the task handbook for the order and checks, or filter three tool candidates for the job at hand.</span></p>
+<p class="tp-p"><a href="https://tools.specul.com/guides/"><span data-zh="">任务手册 →</span><span data-en="">Task handbooks →</span></a>　·　<a href="https://tools.specul.com/finder/"><span data-zh="">按任务筛 3 个候选 →</span><span data-en="">Filter three candidates →</span></a></p>
+</div>
+</article>
+</div>
+</main>
+<footer class="site-footer foot-single">
+<div class="container foot-line">
+<div class="foot-brand">
+<span class="foot-brand-main">
+<span aria-hidden="true" class="brand-dot"></span>
+<span class="foot-copy"><span data-zh="">投机取巧 · specul.com</span><span data-en="">Specul · specul.com</span></span>
+</span>
+<span class="foot-license"><a href="https://specul.com/LICENSE-CONTENT.txt"><span data-zh="">内容 CC BY 4.0</span><span data-en="">Content CC BY 4.0</span></a><span aria-hidden="true" class="sep">·</span><a href="https://specul.com/LICENSE.txt"><span data-zh="">代码 MIT</span><span data-en="">Code MIT</span></a><span aria-hidden="true" class="sep">·</span><a class="foot-source" href="https://github.com/speculcom/ai-handbook" rel="noopener" target="_blank"><span data-zh="">源码</span><span data-en="">Source</span></a></span>
+</div>
+<nav aria-label="Footer site links" class="foot-sites">
+<a class="site-link" href="https://specul.com/"><span data-zh="">首页</span><span data-en="">Home</span></a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://learn.specul.com/"><span data-zh="">学 AI</span><span data-en="">Learn</span></a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://tools.specul.com/"><span data-zh="">工具</span><span data-en="">Tools</span></a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://models.specul.com/"><span data-zh="">模型</span><span data-en="">Models</span></a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://demos.specul.com/"><span data-zh="">演示</span><span data-en="">Demos</span></a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://oss.specul.com/"><span data-zh="">开源</span><span data-en="">OSS</span></a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://hardware.specul.com/"><span data-zh="">算力</span><span data-en="">Compute</span></a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://papers.specul.com/"><span data-zh="">论文</span><span data-en="">Papers</span></a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://chain.specul.com/"><span data-zh="">链</span><span data-en="">Chain</span></a><span aria-hidden="true" class="sep site-sep">·</span>
+<a class="site-link" href="https://nav.specul.com/"><span data-zh="">导航</span><span data-en="">Directory</span></a>
+</nav>
+<nav aria-label="Legal and corrections" class="foot-legal">
+<a href="https://specul.com/legal.html"><span data-zh="">法律</span><span data-en="">Legal</span></a><span aria-hidden="true" class="sep">·</span>
+<a href="https://specul.com/legal.html#s8"><span data-zh="">隐私</span><span data-en="">Privacy</span></a><span aria-hidden="true" class="sep">·</span>
+<a href="https://specul.com/correct.html"><span data-zh="">纠错</span><span data-en="">Corrections</span></a>
+</nav>
+</div>
+</footer>
+<nav aria-label="快捷导航" class="nav-tabbar nav-tabbar-1row">
+<a href="https://specul.com/"><span aria-hidden="true" class="ti">◎</span><span data-zh="">首页</span><span data-en="">Home</span></a>
+<a aria-current="page" href="https://learn.specul.com/"><span aria-hidden="true" class="ti">▤</span><span data-zh="">学AI</span><span data-en="">Learn</span></a>
+<a href="https://tools.specul.com/"><span aria-hidden="true" class="ti">◈</span><span data-zh="">工具</span><span data-en="">Tools</span></a>
+<a href="https://models.specul.com/"><span aria-hidden="true" class="ti">▦</span><span data-zh="">模型</span><span data-en="">Models</span></a>
+<a href="https://demos.specul.com/"><span aria-hidden="true" class="ti">▷</span><span data-zh="">演示</span><span data-en="">Demos</span></a>
+<a href="https://oss.specul.com/"><span aria-hidden="true" class="ti">▧</span><span data-zh="">开源</span><span data-en="">OSS</span></a>
+<a href="https://hardware.specul.com/"><span aria-hidden="true" class="ti">▣</span><span data-zh="">算力</span><span data-en="">Chips</span></a>
+<a href="https://papers.specul.com/"><span aria-hidden="true" class="ti">▥</span><span data-zh="">论文</span><span data-en="">Papers</span></a>
+<a href="https://chain.specul.com/"><span aria-hidden="true" class="ti">◇</span><span data-zh="">链</span><span data-en="">Chain</span></a>
+<a data-nav-group="external" href="https://nav.specul.com/"><span aria-hidden="true" class="ti">↗</span><span data-zh="">导航</span><span data-en="">Nav</span></a>
 </nav>
 </body>
 </html>
